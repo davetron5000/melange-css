@@ -1,11 +1,14 @@
 import { DefaultPseudoSelector } from "./PseudoSelector.js"
 
 class MetaProperty {
-  constructor({name, scales, pseudoSelectors, cssClassTemplates}) {
+  constructor({name, enumeratedValues, pseudoSelectors, cssClassTemplates}) {
     this.name              = name
-    this.scales            = scales
+    this._enumeratedValues = enumeratedValues
     this.pseudoSelectors   = pseudoSelectors || [ new DefaultPseudoSelector() ]
     this.cssClassTemplates = cssClassTemplates
+  }
+  enumeratedValues() {
+    return this._enumeratedValues
   }
 }
 export {

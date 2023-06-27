@@ -37,11 +37,11 @@ class CSSClassTemplate {
     this.cssProperties = cssProperties
   }
 
-  toCSSClass(scaleStep) {
+  toCSSClass(enumeratedValue) {
     return new CSSClass({
-      selector: scaleStep.nameFromBase(this.classNameBase),
+      selector: enumeratedValue.selector(this.classNameBase),
       propertiesAndValues: Object.fromEntries(this.cssProperties.map( (property) => {
-        return [ property, scaleStep.cssValue() ]
+        return [ property, enumeratedValue.cssValue() ]
       }))
     })
   }

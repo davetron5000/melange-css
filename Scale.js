@@ -1,21 +1,37 @@
-import { LiteralScaleStep, VariableBasedScaleStep } from "./ScaleStep.js"
+import { EnumeratedValue, EnumeratedValues } from "./EnumeratedValues.js"
 
-class Scale {
-  /*
-   * calls f for each value of the scale.  f is called with a ScaleStep.
-   */
-  eachStep(f) {
-    throw "Subclass must implement"
+class LiteralScaleStep extends EnumeratedValue {
+  constructor({ suffix, value }) {
+    super({suffix})
+    this.value = value
+  }
+  cssValue() {
+    return this.value
   }
 }
 
-class VariableBasedScale extends Scale{
+class VariableBasedScaleStep extends EnumeratedValue {
+  constructor(melangeVariable) {
+    super({suffix: melangeVariable.stepName})
+    this.melangeVariable = melangeVariable
+  }
+
+  cssValue() {
+    if (this.melangeVariable.constructor.name !== "MelangeVariable") {
+      throw `WTF is this: ${this.melangeVariable.constructor.name} '${this.melangeVariable}'`
+    }
+    return this.melangeVariable.toCSSValue()
+  }
+}
+
+
+class VariableBasedScale extends EnumeratedValues {
   constructor(melangeVariables) {
     super()
     this.melangeVariables = melangeVariables
   }
 
-  eachStep(f) {
+  eachValue(f) {
     this.melangeVariables.forEach( (melangeVariable) => {
       f(new VariableBasedScaleStep(melangeVariable))
     })
@@ -23,9 +39,9 @@ class VariableBasedScale extends Scale{
 }
 
 class VariableBasedScaleWithZero extends VariableBasedScale {
-  eachStep(f) {
+  eachValue(f) {
     f(new LiteralScaleStep({ suffix: "0", value: "0" }))
-    super.eachStep(f)
+    super.eachValue(f)
   }
 }
 
@@ -33,7 +49,7 @@ class VariableBasedScaleWithZero extends VariableBasedScale {
  * A scale of literal values that would not be customizable by the theme.
  * For example, percentages.
  */
-class LiteralScale extends Scale {
+class LiteralScale extends EnumeratedValues  {
   /*
    * suffixToValue - an object that maps the suffix added to the CSS class to the value to use
    */
@@ -41,7 +57,7 @@ class LiteralScale extends Scale {
     super()
     this.suffixToValue = suffixToValue;
   }
-  eachStep(f) {
+  eachValue(f) {
     Object.entries(this.suffixToValue).forEach( ([suffix, value]) => {
       f(new LiteralScaleStep({ suffix: suffix, value: value }))
     })

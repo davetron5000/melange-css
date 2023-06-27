@@ -66,7 +66,7 @@ const fontScale = new VariableBasedScale(MelangeVariable.fetchAll("fontSize"))
 
 const spacings = new MetaProperty({
   name: "Spacings",
-  scales: [
+  enumeratedValues: [
     spacingFixedScale
   ],
   cssClassTemplates: [
@@ -89,7 +89,7 @@ const spacings = new MetaProperty({
 
 const fontSizes = new MetaProperty({
   name: "Font Scale",
-  scales: [
+  enumeratedValues: [
     fontScale,
   ],
   cssClassTemplates: [
@@ -105,7 +105,7 @@ const measureScale = new LiteralScale({
 
 const measure = new MetaProperty({
   name: "Measure",
-  scales: [ measureScale ],
+  enumeratedValues: [ measureScale ],
   cssClassTemplates: [
     new CSSClassTemplate("measure", "max-width"),
   ]
@@ -113,7 +113,7 @@ const measure = new MetaProperty({
 
 const widths = new MetaProperty({
   name: "width",
-  scales: [
+  enumeratedValues: [
     spacingFixedScale,
     percentageScale,
     autoScale,

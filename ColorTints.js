@@ -44,7 +44,7 @@ class ColorTints {
     return Array.from(Object.entries(this.colorScale)).map( ([colorName, { variables, tints }]) => {
       return new MetaProperty({
         name: colorName,
-        scales: [ new VariableBasedScale(variables) ],
+        enumeratedValues: [ new VariableBasedScale(variables) ],
         pseudoSelectors: pseudoSelectors,
         cssClassTemplates: [
           new CSSClassTemplate(colorName, "color"),

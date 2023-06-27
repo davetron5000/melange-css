@@ -37,10 +37,10 @@ class MetaTheme {
     this.breakpoints.forEach( (breakpoint) => {
       this.metaProperties.forEach( (metaProperty) => {
         metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
-          metaProperty.scales.forEach( (scale) => {
+          metaProperty.enumeratedValues().forEach( (enumeratedValues) => {
             metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
-              scale.eachStep( (scaleStep) => {
-                f(cssClassTemplate.toCSSClass(scaleStep).forSelector(pseudoSelector).atBreakpoint(breakpoint))
+              enumeratedValues.eachValue( (enumeratedValue) => {
+                f(cssClassTemplate.toCSSClass(enumeratedValue).forSelector(pseudoSelector).atBreakpoint(breakpoint))
               })
             })
           })
