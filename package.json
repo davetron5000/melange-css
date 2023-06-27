@@ -1,0 +1,6 @@
+{
+  "name": "melange",
+  "version": "1.0.0",
+  "description": "Functional CSS for Full Stack Developers",
+  "type": "module"
+}
