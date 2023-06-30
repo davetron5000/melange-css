@@ -1,4 +1,5 @@
 import { MelangeVariable }                       from "./MelangeVariable.js"
+import { EnumeratedValues, LiteralEnumeratedValue } from "./EnumeratedValues.js"
 import {
   VariableBasedScale,
   VariableBasedScaleWithZero,
@@ -7,7 +8,7 @@ import {
 import { CSSClassTemplate }                      from "./CSSClass.js"
 import { DefaultPseudoSelector, PseudoSelector } from "./PseudoSelector.js"
 import { DefaultBreakpoint, Breakpoint }         from "./Breakpoint.js"
-import { MetaProperty }                          from "./MetaProperty.js"
+import { MetaProperty, MetaPropertyGrouping }    from "./MetaProperty.js"
 import { MetaTheme }                             from "./MetaTheme.js"
 import { ColorTints }                            from "./ColorTints.js"
 
@@ -131,13 +132,56 @@ const colorTints = new ColorTints()
 colorTints.register("gray", [ "#F5F5F5", "#ADADAD", "#999999", "#5C5C5C", "#1F1F1F" ])
 colorTints.register("red",  [ "#FFDFDF", "#FF8D86", "#FF4136", "#E7040F", "#80211b" ])
 
+const flex = MetaProperty.literal("flex", "display", "flex")
+const inlineFlex = MetaProperty.literal("inline-flex", "display", "inline-flex")
+const flexNone = MetaProperty.literal("flex-none", "flex", "none")
+const flexDirection = new MetaProperty({
+  name: "Flex Direction",
+  cssClassTemplates: [
+    new CSSClassTemplate("flex", "flex-direction"),
+  ],
+  enumeratedValues: [
+    LiteralEnumeratedValue.literalValues({
+      "-column": "column",
+      "-row": "row",
+      "-column-reverse": "column-reverse",
+      "-row-reverse": "row-reverse",
+    })
+  ]
+})
+const flexWrap = new MetaProperty({
+  name: "Flex Wrap",
+  cssClassTemplates: [
+    new CSSClassTemplate("flex", "flex-wrap"),
+  ],
+  enumeratedValues: [
+    LiteralEnumeratedValue.literalValues({
+      "-wrap": "wrap",
+      "-nowrap": "nowrap",
+      "-wrap-reverse": "wrap-reverse",
+    })
+  ]
+})
 const metaTheme = new MetaTheme({
-  metaProperties: [
-    spacings,
-    measure,
-    widths,
-    fontSizes,
-  ].concat(colorTints.asMetaProperties()),
+  metaPropertyGroupings: [
+    MetaPropertyGrouping.singleton(spacings),
+    new MetaPropertyGrouping({ name: "Widths",
+      metaProperties: [
+        measure,
+        widths,
+      ]
+    }),
+    MetaPropertyGrouping.singleton(fontSizes),
+    new MetaPropertyGrouping({name: "Flexbox",
+      metaProperties: [
+        flex,
+        inlineFlex,
+        flexNone,
+        flexDirection,
+        flexWrap,
+      ]
+    }),
+  ].concat(colorTints.asMetaPropertyGrouping()),
   breakpoints: breakpoints,
 })
 

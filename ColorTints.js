@@ -1,7 +1,7 @@
-import { MetaProperty } from "./MetaProperty.js"
-import { CSSClassTemplate } from "./CSSClass.js"
-import { MelangeVariable } from "./MelangeVariable.js"
-import { VariableBasedScale } from "./Scale.js"
+import { MetaProperty, MetaPropertyGrouping }    from "./MetaProperty.js"
+import { CSSClassTemplate }                      from "./CSSClass.js"
+import { MelangeVariable }                       from "./MelangeVariable.js"
+import { VariableBasedScale }                    from "./Scale.js"
 import { DefaultPseudoSelector, PseudoSelector } from "./PseudoSelector.js"
 
 class ColorTints {
@@ -35,13 +35,13 @@ class ColorTints {
     return variables
   }
 
-  asMetaProperties() {
+  asMetaPropertyGrouping() {
     const pseudoSelectors = [
       new DefaultPseudoSelector(),
       new PseudoSelector({ variableNamePrefix: "hover",selector: "hover"}),
     ]
 
-    return Array.from(Object.entries(this.colorScale)).map( ([colorName, { variables, tints }]) => {
+    const metaProperties = Array.from(Object.entries(this.colorScale)).map( ([colorName, { variables, tints }]) => {
       return new MetaProperty({
         name: colorName,
         enumeratedValues: [ new VariableBasedScale(variables) ],
@@ -53,6 +53,7 @@ class ColorTints {
         ]
       })
     })
+    return new MetaPropertyGrouping({ name: "colors", metaProperties: metaProperties})
   }
 }
 export {

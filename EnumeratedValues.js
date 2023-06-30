@@ -1,6 +1,9 @@
 class EnumeratedValues {
+  constructor(enumeratedValues) {
+    this.enumeratedValues = enumeratedValues
+  }
   eachValue(f) {
-    throw "Subclass must implement"
+    this.enumeratedValues.forEach(f)
   }
 }
 class EnumeratedValue {
@@ -16,7 +19,25 @@ class EnumeratedValue {
     throw "Subclass must implement"
   }
 }
+
+class LiteralEnumeratedValue extends EnumeratedValue {
+  constructor({ suffix, value }) {
+    super({suffix})
+    this.value = value
+  }
+  cssValue() {
+    return this.value
+  }
+
+  static literalValues(literalValues) {
+    return new EnumeratedValues(Array.from(Object.entries(literalValues)).map( ([ key, value ]) => {
+      return new LiteralEnumeratedValue({suffix: key, value: value })
+    }))
+  }
+}
+
 export {
   EnumeratedValue,
+  LiteralEnumeratedValue,
   EnumeratedValues
 }

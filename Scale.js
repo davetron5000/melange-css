@@ -1,14 +1,4 @@
-import { EnumeratedValue, EnumeratedValues } from "./EnumeratedValues.js"
-
-class LiteralScaleStep extends EnumeratedValue {
-  constructor({ suffix, value }) {
-    super({suffix})
-    this.value = value
-  }
-  cssValue() {
-    return this.value
-  }
-}
+import { EnumeratedValue, EnumeratedValues, LiteralEnumeratedValue } from "./EnumeratedValues.js"
 
 class VariableBasedScaleStep extends EnumeratedValue {
   constructor(melangeVariable) {
@@ -40,7 +30,7 @@ class VariableBasedScale extends EnumeratedValues {
 
 class VariableBasedScaleWithZero extends VariableBasedScale {
   eachValue(f) {
-    f(new LiteralScaleStep({ suffix: "0", value: "0" }))
+    f(new LiteralEnumeratedValue({ suffix: "0", value: "0" }))
     super.eachValue(f)
   }
 }
@@ -59,7 +49,7 @@ class LiteralScale extends EnumeratedValues  {
   }
   eachValue(f) {
     Object.entries(this.suffixToValue).forEach( ([suffix, value]) => {
-      f(new LiteralScaleStep({ suffix: suffix, value: value }))
+      f(new LiteralEnumeratedValue({ suffix: suffix, value: value }))
     })
   }
 }

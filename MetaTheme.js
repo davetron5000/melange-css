@@ -1,7 +1,7 @@
 class MetaTheme {
-  constructor({metaProperties, breakpoints}) {
-    this.metaProperties = metaProperties
-    this.breakpoints    = breakpoints
+  constructor({metaPropertyGroupings, breakpoints}) {
+    this.metaPropertyGroupings = metaPropertyGroupings
+    this.breakpoints           = breakpoints
   }
 
   checkForDupes() {
@@ -35,12 +35,14 @@ class MetaTheme {
 
   eachCSSClass(f) {
     this.breakpoints.forEach( (breakpoint) => {
-      this.metaProperties.forEach( (metaProperty) => {
-        metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
-          metaProperty.enumeratedValues().forEach( (enumeratedValues) => {
-            metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
-              enumeratedValues.eachValue( (enumeratedValue) => {
-                f(cssClassTemplate.toCSSClass(enumeratedValue).forSelector(pseudoSelector).atBreakpoint(breakpoint))
+      this.metaPropertyGroupings.forEach( (metaPropertyGrouping) => {
+        metaPropertyGrouping.metaProperties.forEach( (metaProperty) => {
+          metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
+            metaProperty.enumeratedValues().forEach( (enumeratedValues) => {
+              metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
+                enumeratedValues.eachValue( (enumeratedValue) => {
+                  f(cssClassTemplate.toCSSClass(enumeratedValue).forSelector(pseudoSelector).atBreakpoint(breakpoint))
+                })
               })
             })
           })
