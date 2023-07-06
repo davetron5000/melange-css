@@ -2,6 +2,14 @@ import { DefaultPseudoSelector }                    from "./PseudoSelector.js"
 import { EnumeratedValues, LiteralEnumeratedValue } from "./EnumeratedValues.js"
 import { CSSClassTemplate }                         from "./CSSClass.js"
 
+class DocStrings {
+  constructor(docs) {
+    this.paragraphs = Array(docs || []).flat()
+  }
+  forEach(f) {
+    this.paragraphs.forEach(f)
+  }
+}
 /*
  * A Meta Property is the combination of one or more related CSS classes, a list
  * of enumerated values per class and pseudo selectors.  It is the combination
@@ -18,11 +26,12 @@ class MetaProperty {
    *                     EnumeratedValue and PseudoSelector, along with what CSS properties should be given the values from 
    *                     the EnumeratedValue
    */
-  constructor({name, enumeratedValues, pseudoSelectors, cssClassTemplates}) {
+  constructor({name, docs, enumeratedValues, pseudoSelectors, cssClassTemplates}) {
     this.name              = name
     this._enumeratedValues = enumeratedValues
     this.pseudoSelectors   = pseudoSelectors || [ new DefaultPseudoSelector() ]
     this.cssClassTemplates = cssClassTemplates
+    this.docs              = new DocStrings(docs)
   }
   enumeratedValues() {
     return this._enumeratedValues
@@ -36,12 +45,12 @@ class MetaProperty {
       enumeratedValues: [ new EnumeratedValues([ enumeratedValue ]) ],
     })
   }
-  static literal(cssClassName, cssProperty, value, pseudoSelectors) {
+  static literal(cssClassName, cssProperty, value, pseudoSelectors, cssClassTemplateOptions) {
     return new MetaProperty({
       name: cssClassName,
-      cssClassTemplates: [ new CSSClassTemplate(cssClassName, cssProperty) ],
+      cssClassTemplates: [ new CSSClassTemplate(cssClassName, cssProperty, cssClassTemplateOptions) ],
       pseudoSelectors: pseudoSelectors,
-      enumeratedValues: [ new EnumeratedValues([ new LiteralEnumeratedValue({ suffix: "", value: value }) ]) ],
+      enumeratedValues: [ new EnumeratedValues([ new LiteralEnumeratedValue({ qualifier: "", value: value }) ]) ],
     })
   }
 }
@@ -51,9 +60,11 @@ class MetaProperty {
  * A grouping of MetaProperties for the purposes of organization or documentation.
  */
 class MetaPropertyGrouping {
-  constructor({name, metaProperties}) {
-    this.name = name
+  constructor({name, metaProperties, docs}) {
+    this.name           = name
+    this.slug           = name.replaceAll(/[\s\*\.\"\']/g,"-").toLowerCase()
     this.metaProperties = metaProperties
+    this.docs           = new DocStrings(docs)
   }
   static singleton(metaProperty) {
     return new MetaPropertyGrouping({ name: metaProperty.name, metaProperties: [ metaProperty ]})

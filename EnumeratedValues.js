@@ -7,12 +7,12 @@ class EnumeratedValues {
   }
 }
 class EnumeratedValue {
-  constructor({ suffix }) {
-    this.suffix = suffix
+  constructor({ qualifier }) {
+    this.qualifier = qualifier
   }
 
   selector(classNameBase) {
-    return `${classNameBase}${this.suffix}`
+    return `${classNameBase}${this.qualifier}`
   }
 
   cssValue() {
@@ -21,8 +21,8 @@ class EnumeratedValue {
 }
 
 class LiteralEnumeratedValue extends EnumeratedValue {
-  constructor({ suffix, value }) {
-    super({suffix})
+  constructor({ qualifier, value }) {
+    super({qualifier})
     this.value = value
   }
   cssValue() {
@@ -31,7 +31,7 @@ class LiteralEnumeratedValue extends EnumeratedValue {
 
   static literalValues(literalValues) {
     return new EnumeratedValues(Array.from(Object.entries(literalValues)).map( ([ key, value ]) => {
-      return new LiteralEnumeratedValue({suffix: key, value: value })
+      return new LiteralEnumeratedValue({qualifier: key, value: value })
     }))
   }
 }

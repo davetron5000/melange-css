@@ -1,17 +1,17 @@
 class DefaultBreakpoint {
   constructor() {
-    this.variableNamePrefix = ""
+    this.variableNameQualifier = ""
   }
   toMediaQuery() { return "" }
   isDefault() { return true }
 }
 class Breakpoint {
-  constructor({variableNamePrefix, minWidth, maxWidth}) {
-    this.variableNamePrefix = variableNamePrefix
+  constructor({variableNameQualifier, minWidth, maxWidth}) {
+    this.variableNameQualifier = variableNameQualifier
     this.minWidth = minWidth
     this.maxWidth = maxWidth
     if ( !this.minWidth && !this.maxWidth ) {
-      throw `Breakpoint ${variableNamePrefix} must have a min or max width (or both)`
+      throw `Breakpoint ${variableNameQualifier} must have a min or max width (or both)`
     }
   }
 

@@ -5,8 +5,8 @@ class DefaultPseudoSelector {
   isDefault() { return true }
 }
 class PseudoSelector {
-  constructor({variableNamePrefix, selector}) {
-    this.variableNamePrefix = variableNamePrefix
+  constructor({variableNameQualifier, selector}) {
+    this.variableNameQualifier = variableNameQualifier
     this.selector = selector
   }
 

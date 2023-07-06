@@ -1,0 +1,5 @@
+# Generate doc files
+*.doc.html
+
+# Generated CSS file
+melange.css

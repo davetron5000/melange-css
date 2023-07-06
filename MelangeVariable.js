@@ -14,7 +14,7 @@ class MelangeVariable {
 
   static registeredVariables = {}
 
-  static register(baseName, stepNamesAndDefaultValues) {
+  static register(baseName, stepNamesAndDefaultValues, documentation) {
     if (MelangeVariable.registeredVariables[baseName]) {
       throw `'${baseName}' variables have already by registered`
     }
@@ -31,13 +31,16 @@ class MelangeVariable {
         return new MelangeVariable({ baseName: baseName, stepName: stepName, defaultValue: defaultValue })
       })
     }
-    MelangeVariable.registeredVariables[baseName] = Object.fromEntries(variables.map( (variable) => [ variable.stepName, variable ] ))
+    MelangeVariable.registeredVariables[baseName] = {
+      documentation: documentation,
+      variables: Object.fromEntries(variables.map( (variable) => [ variable.stepName, variable ] )),
+    }
     return variables
   }
 
   static fetchAll(baseName) {
     if (MelangeVariable.registeredVariables[baseName]) {
-      return Object.values(MelangeVariable.registeredVariables[baseName])
+      return Object.values(MelangeVariable.registeredVariables[baseName].variables)
     }
     else {
       throw `There are no variables regsitered under '${baseName}'`
@@ -45,8 +48,8 @@ class MelangeVariable {
   }
   static fetch(baseName, stepName) {
     if (MelangeVariable.registeredVariables[baseName]) {
-      if (MelangeVariable.registeredVariables[baseName][stepName]) {
-        return MelangeVariable.registeredVariables[baseName][stepName]
+      if (MelangeVariable.registeredVariables[baseName].variables[stepName]) {
+        return MelangeVariable.registeredVariables[baseName].variables[stepName]
       }
       else {
         throw `${baseName} does not have a variable with step name '${stepName}'`
@@ -55,6 +58,9 @@ class MelangeVariable {
     else {
       throw `There are no variables regsitered under '${baseName}'`
     }
+  }
+  static eachSetOfVariables(f) {
+    Object.entries(MelangeVariable.registeredVariables).forEach( ([key,value]) => f(key,value) ) 
   }
 }
 export { MelangeVariable }

@@ -2,7 +2,7 @@ import { EnumeratedValue, EnumeratedValues, LiteralEnumeratedValue } from "./Enu
 
 class VariableBasedScaleStep extends EnumeratedValue {
   constructor(melangeVariable) {
-    super({suffix: melangeVariable.stepName})
+    super({qualifier: melangeVariable.stepName})
     this.melangeVariable = melangeVariable
   }
 
@@ -30,7 +30,7 @@ class VariableBasedScale extends EnumeratedValues {
 
 class VariableBasedScaleWithZero extends VariableBasedScale {
   eachValue(f) {
-    f(new LiteralEnumeratedValue({ suffix: "0", value: "0" }))
+    f(new LiteralEnumeratedValue({ qualifier: "0", value: "0" }))
     super.eachValue(f)
   }
 }
@@ -41,15 +41,15 @@ class VariableBasedScaleWithZero extends VariableBasedScale {
  */
 class LiteralScale extends EnumeratedValues  {
   /*
-   * suffixToValue - an object that maps the suffix added to the CSS class to the value to use
+   * qualifierToValue - an object that maps the suffix added to the CSS class to the value to use
    */
-  constructor(suffixToValue) {
+  constructor(qualifierToValue) {
     super()
-    this.suffixToValue = suffixToValue;
+    this.qualifierToValue = qualifierToValue;
   }
   eachValue(f) {
-    Object.entries(this.suffixToValue).forEach( ([suffix, value]) => {
-      f(new LiteralEnumeratedValue({ suffix: suffix, value: value }))
+    Object.entries(this.qualifierToValue).forEach( ([qualifier, value]) => {
+      f(new LiteralEnumeratedValue({ qualifier: qualifier, value: value }))
     })
   }
 }
