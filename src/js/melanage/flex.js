@@ -1,4 +1,4 @@
-import { MetaProperty }    from "../lib/MetaProperty.js"
+import { MetaProperty, MetaPropertyGrouping }    from "../lib/MetaProperty.js"
 import { CSSClassTemplate }                      from "../lib/CSSClass.js"
 import { LiteralEnumeratedValue } from "../lib/EnumeratedValues.js"
 
@@ -23,7 +23,7 @@ const flexExample = (additionalCssClass) => {
     },
   }
 }
-const flex = MetaProperty.literal("flex", "display", "flex", undefined, { exampleTemplate: flexExample() })
+const flexMetaProperty = MetaProperty.literal("flex", "display", "flex", undefined, { exampleTemplate: flexExample() })
 const inlineFlex = MetaProperty.literal("inline-flex", "display", "inline-flex", undefined, { exampleTemplate: flexExample()})
 const flexNone = MetaProperty.literal("flex-none", "flex", "none")
 const flexDirection = new MetaProperty({
@@ -55,10 +55,16 @@ const flexWrap = new MetaProperty({
     })
   ]
 })
+
+const flex = new MetaPropertyGrouping({name: "Flexbox",
+  metaProperties: [
+    flexMetaProperty,
+    inlineFlex,
+    flexNone,
+    flexDirection,
+    flexWrap,
+  ]
+})
 export {
   flex,
-  inlineFlex,
-  flexNone,
-  flexDirection,
-  flexWrap,
 }

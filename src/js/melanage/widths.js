@@ -1,4 +1,4 @@
-import { MetaProperty }    from "../lib/MetaProperty.js"
+import { MetaProperty, MetaPropertyGrouping }    from "../lib/MetaProperty.js"
 import { LiteralScale } from "../lib/Scale.js"
 import { CSSClassTemplate }                      from "../lib/CSSClass.js"
 import { spacingFixedScale } from "./scales.js"
@@ -27,7 +27,7 @@ const measure = new MetaProperty({
   ]
 })
 
-const widths = new MetaProperty({
+const widthsMetaProperty = new MetaProperty({
   name: "width",
   enumeratedValues: [
     spacingFixedScale,
@@ -60,7 +60,13 @@ const widths = new MetaProperty({
   ]
 })
 
+const widths = new MetaPropertyGrouping({
+  name: "Widths",
+  metaProperties: [
+    measure,
+    widthsMetaProperty,
+  ]
+})
 export {
   widths,
-  measure,
 }

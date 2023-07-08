@@ -1,4 +1,4 @@
-import { MetaProperty }               from "../lib/MetaProperty.js"
+import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
 import { CSSClassTemplate }           from "../lib/CSSClass.js"
 
 import { spacingFixedScale } from "./scales.js"
@@ -20,7 +20,7 @@ const marginExampleTemplate = {
 }
 
 
-const spacings = new MetaProperty({
+const spacingsMetaProperty = new MetaProperty({
   name: "Spacings",
   docs: [
     "Spacing manages both margins and padding along a grid of reasonable spacings usable for any occasion",
@@ -46,6 +46,7 @@ const spacings = new MetaProperty({
     new CSSClassTemplate("mv", "margin-top", "margin-bottom", { exampleTemplate: marginExampleTemplate }),
   ]
 })
+const spacings = MetaPropertyGrouping.singleton(spacingsMetaProperty)
 
 export {
   spacings,

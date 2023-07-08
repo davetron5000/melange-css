@@ -1,4 +1,4 @@
-import { MetaProperty }       from "../lib/MetaProperty.js"
+import { MetaProperty, MetaPropertyGrouping }       from "../lib/MetaProperty.js"
 import { CSSClassTemplate }   from "../lib/CSSClass.js"
 
 import { fontScale } from "./scales.js"
@@ -23,6 +23,7 @@ const fontSizes = new MetaProperty({
   ]
 })
 
+const typography = MetaPropertyGrouping.singleton(fontSizes)
 export {
-  fontSizes,
+  typography,
 }
