@@ -45,10 +45,22 @@ class MetaProperty {
       enumeratedValues: [ new EnumeratedValues([ enumeratedValue ]) ],
     })
   }
-  static literal(cssClassName, cssProperty, value, pseudoSelectors, cssClassTemplateOptions) {
+  static literal(
+    { className, property, value, pseudoSelectors, exampleTemplate }
+  ) {
+    const cssClassTemplateOptions = {}
+    if (exampleTemplate) {
+      cssClassTemplateOptions.exampleTemplate = exampleTemplate
+    }
     return new MetaProperty({
-      name: cssClassName,
-      cssClassTemplates: [ new CSSClassTemplate(cssClassName, cssProperty, cssClassTemplateOptions) ],
+      name: className,
+      cssClassTemplates: [
+        new CSSClassTemplate(
+          className,
+          property,
+          cssClassTemplateOptions
+        )
+      ],
       pseudoSelectors: pseudoSelectors,
       enumeratedValues: [ new EnumeratedValues([ new LiteralEnumeratedValue({ qualifier: "", value: value }) ]) ],
     })

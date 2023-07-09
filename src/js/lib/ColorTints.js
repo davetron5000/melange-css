@@ -2,7 +2,44 @@ import { MetaProperty, MetaPropertyGrouping }    from "./MetaProperty.js"
 import { CSSClassTemplate }                      from "./CSSClass.js"
 import { MelangeVariable }                       from "./MelangeVariable.js"
 import { VariableBasedScale }                    from "./Scale.js"
+import { ExampleTemplate }                       from "./ExampleTemplate.js"
 import { DefaultPseudoSelector, PseudoSelector } from "./PseudoSelector.js"
+
+class ColorExampleTemplate extends ExampleTemplate {
+  _htmlForDocs(selector, _content) {
+    return `<div class=\"${selector}\"> This is text using ${selector} </div>`
+  }
+  _markupForRendering(htmlForDocs) {
+    const spaced = htmlForDocs.replace("<div ","<div style=\"width: 20rem; border: dotted thin #888; padding: 1rem; background-color: COLOR\" ")
+    const black = spaced.replace("COLOR","#000")
+    const white = spaced.replace("COLOR","#fff")
+    return `<div style="display:flex; gap: 0.25rem;">
+  ${black}${white}
+</div>`
+  }
+}
+
+class BackgroundColorExampleTemplate extends ColorExampleTemplate {
+  _markupForRendering(htmlForDocs) {
+    const spaced = htmlForDocs.replace("<div ","<div style=\"width: 20rem; border: dotted thin #888; padding: 1rem; color: COLOR\" ")
+    const black = spaced.replace("COLOR","#000")
+    const white = spaced.replace("COLOR","#fff")
+    return `<div style="display:flex; gap: 0.25rem;">
+  ${black}${white}
+</div>`
+  }
+}
+
+class BorderColorExampleTemplate extends ColorExampleTemplate {
+  _markupForRendering(htmlForDocs) {
+    const spaced = htmlForDocs.replace("<div ","<div style=\"width: 20rem; border-style: solid; border-width: thick; padding: 1rem; background-color: BG_COLOR; color: COLOR;\" ")
+    const black = spaced.replace("BG_COLOR","#000").replace("COLOR","#fff")
+    const white = spaced.replace("BG_COLOR","#fff").replace("COLOR","#000")
+    return `<div style="display:flex; gap: 0.25rem;">
+${black}${white}
+  </div>`
+  }
+}
 
 class ColorTints {
   static DEFAULT_TINTNAMES = [
@@ -48,55 +85,13 @@ class ColorTints {
         pseudoSelectors: pseudoSelectors,
         cssClassTemplates: [
           new CSSClassTemplate(colorName, "color",{
-            exampleTemplate: {
-              html: (selector, pseudoSelector) => {
-                return `<div class=\"${selector}\"> This is text using ${selector} </div>`
-              },
-              markup: (selector, pseudoSelector, html) => {
-                const spaced = html.replace("<div ","<div style=\"width: 20rem; border: dotted thin #888; padding: 1rem; background-color: COLOR\" ")
-                const black = spaced.replace("COLOR","#000")
-                const white = spaced.replace("COLOR","#fff")
-                return `
-                <div style="display:flex; gap: 0.25rem;">
-                ${black}${white}
-                </div>
-                `
-              }
-            }
+            exampleTemplate: new ColorExampleTemplate(),
           }),
           new CSSClassTemplate(`bg-${colorName}`, "background-color", {
-            exampleTemplate: {
-              html: (selector, pseudoSelector) => {
-                return `<div class=\"${selector}\"> This is text using ${selector} </div>`
-              },
-              markup: (selector, pseudoSelector, html) => {
-                const spaced = html.replace("<div ","<div style=\"width: 20rem; border: dotted thin #888; padding: 1rem; color: COLOR\" ")
-                const black = spaced.replace("COLOR","#000")
-                const white = spaced.replace("COLOR","#fff")
-                return `
-                <div style="display:flex; gap: 0.25rem;">
-                ${black}${white}
-                </div>
-                `
-              }
-            }
+            exampleTemplate: new BackgroundColorExampleTemplate(),
           }),
           new CSSClassTemplate(`b--${colorName}`, "border-color", {
-            exampleTemplate: {
-              html: (selector, pseudoSelector) => {
-                return `<div class=\"${selector}\"> This is text using ${selector} </div>`
-              },
-              markup: (selector, pseudoSelector, html) => {
-                const spaced = html.replace("<div ","<div style=\"width: 20rem; border-style: solid; border-width: thick; padding: 1rem; background-color: BG_COLOR; color: COLOR;\" ")
-                const black = spaced.replace("BG_COLOR","#000").replace("COLOR","#fff")
-                const white = spaced.replace("BG_COLOR","#fff").replace("COLOR","#000")
-                return `
-                <div style="display:flex; gap: 0.25rem;">
-                ${black}${white}
-                </div>
-                `
-              }
-            }
+            exampleTemplate: new BorderColorExampleTemplate(),
           }),
         ]
       })

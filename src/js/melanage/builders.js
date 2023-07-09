@@ -114,8 +114,8 @@ class DocBuilder {
             <code>.${cssClass.className()}</code>\n`)
       if (cssClassTemplate.hasExample()) {
         const example = cssClassTemplate.example(cssClass)
-        doc.push(`            <div><code><pre>${example.escaped}</pre></code></div>`)
-        doc.push(`            ${example.markup}`)
+        doc.push(`            <div><code><pre>${example.escapedHtml()}</pre></code></div>`)
+        doc.push(`            ${example.markup()}`)
       }
       doc.push(`          </li>`)
     }

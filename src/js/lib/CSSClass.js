@@ -33,18 +33,6 @@ class CSSClass {
     return this.pseudoSelector.forSelector(this.className())
   }
 }
-class CSSExampleTemplate {
-
-  static IDENTITY = (_selector,html) => { return html }
-
-  constructor({html, markup}) {
-    if (!html) {
-      throw `CSSExampleTemplate was provided without an 'html' key`
-    }
-    this.html = html
-    this.markup = markup || IDENTITY
-  }
-}
 
 class CSSClassTemplate {
   constructor(classNameBase, ...cssProperties) {
@@ -53,11 +41,8 @@ class CSSClassTemplate {
     if (typeof lastProperty === "object") {
       this.cssProperties = cssProperties.slice(0,cssProperties.length - 1)
       const options = lastProperty
-      if (!options.exampleTemplate) {
-        throw `Options were provided to ${classNameBase}, but the key 'exampleTemplate' is missing`
-      }
-      this.exampleTemplate = new CSSExampleTemplate(options.exampleTemplate)
-      this.docs = options.docs
+      this.exampleTemplate = options.exampleTemplate
+      this.docs = Array(options.docs || []).flat()
     }
     else {
       this.cssProperties = cssProperties
@@ -70,12 +55,7 @@ class CSSClassTemplate {
   }
 
   example(cssClass) {
-    const html = this.exampleTemplate.html(cssClass.className(), cssClass.pseudoSelector)
-    return {
-      html: html,
-      escaped: html.replace(/</g,"&lt;").replace(/>/g,"&gt;"),
-      markup: this.exampleTemplate.markup(cssClass.className(), cssClass.pseudoSelector, html)
-    }
+    return this.exampleTemplate.example(cssClass.className())
   }
 
   toCSSClass(enumeratedValue) {

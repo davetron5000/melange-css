@@ -1,24 +1,21 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
-import { CSSClassTemplate }           from "../lib/CSSClass.js"
+import { CSSClassTemplate }                   from "../lib/CSSClass.js"
+import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
+import { spacingFixedScale }                  from "./scales.js"
 
-import { spacingFixedScale } from "./scales.js"
-
-const paddingExampleTemplate = {
-  html: (selector, pseudoSelector) => {
-    return `<div class=\"${selector}\">.${selector}</div>`
-  },
-  markup: (selector, pseudoSelector, html) => {
-    return html.replace("<div ","<div style=\"display: inline-block; border: solid thin; background-color: #ddd; color: #222;\" ")
+const paddingExampleTemplate = new ExampleTemplate({
+  stylesToAddToMarkup: {
+    "display": "inline-block",
+    "border": "solid thin",
+    "background-color": "#ddd",
+    "color": "#222",
   }
+})
+const marginExampleTemplate = new ExampleTemplate()
+marginExampleTemplate._markupForRendering = (htmlForDocs) => {
+  const innerHTML = htmlForDocs.replace("<div ","<div style=\"border: solid thin black; background-color: #ddd; color: #222;\" ")
+  return `<div style=\"display: inline-block; border: dashed thin black\">${innerHTML}</div>`
 }
-const marginExampleTemplate = {
-  html: (selector, pseudoSelector) => { return `<div class="${selector}">.${selector}</div>` },
-  markup: (selector, pseudoSelector, html) => {
-    const innerHTML = html.replace("<div ","<div style=\"border: solid thin black; background-color: #ddd; color: #222;\" ")
-    return `<div style=\"display: inline-block; border: dashed thin black\">${innerHTML}</div>`
-  }
-}
-
 
 const spacingsMetaProperty = new MetaProperty({
   name: "Spacings",
@@ -46,6 +43,7 @@ const spacingsMetaProperty = new MetaProperty({
     new CSSClassTemplate("mv", "margin-top", "margin-bottom", { exampleTemplate: marginExampleTemplate }),
   ]
 })
+
 const spacings = MetaPropertyGrouping.singleton(spacingsMetaProperty)
 
 export {
