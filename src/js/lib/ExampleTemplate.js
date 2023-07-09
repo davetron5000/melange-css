@@ -7,6 +7,8 @@ class Example {
   html() { return this.htmlForDocs }
   escapedHtml() { return this.html().replace(/</g,"&lt;").replace(/>/g,"&gt;") }
   markup() { return this.markupForRendering }
+
+  hasMarkup() { return !!this.markupForRendering }
 }
 
 class ExampleTemplate {

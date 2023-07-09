@@ -1,5 +1,6 @@
-import fs from "node:fs"
-import { MelangeVariable }                          from "../lib/MelangeVariable.js"
+import fs                  from "node:fs"
+import { MelangeVariable } from "../lib/MelangeVariable.js"
+import { Example }         from "../lib/ExampleTemplate.js"
 
 class CSSBuilder {
   writeCSS(filename, metaTheme) {
@@ -109,15 +110,34 @@ class DocBuilder {
     }
 
     const documentClass = (cssClass, cssClassTemplate) => {
+      let example
+      if (cssClassTemplate.hasExample()) {
+        example = cssClassTemplate.example(cssClass)
+      }
+      else {
+        example = new Example({ htmlForDocs: `<div class=\"${cssClass.className()}\"></div>` })
+      }
       doc.push(`
           <li>
-            <code>.${cssClass.className()}</code>\n`)
-      if (cssClassTemplate.hasExample()) {
-        const example = cssClassTemplate.example(cssClass)
-        doc.push(`            <div><code><pre>${example.escapedHtml()}</pre></code></div>`)
+            <dl>
+              <dt>
+                Using <code>${cssClass.className()}</code>
+              </dt>
+              <dd>
+                <code><pre>${example.escapedHtml()}</pre></code>
+              </dd>
+              <dt>
+                CSS
+              </dt>
+              <dd>
+                <code><pre>${cssClass.toCSS()}</pre></code>
+              </dd>\n`)
+      if (example.hasMarkup()) {
+        doc.push(`<dt>Demo</dt><dd>\n`)
         doc.push(`            ${example.markup()}`)
+        doc.push(`</dd>\n`)
       }
-      doc.push(`          </li>`)
+      doc.push(`          </dl></li>`)
     }
 
     /* Generate Docs */
