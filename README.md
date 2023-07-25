@@ -12,7 +12,7 @@ breakpoints and number of steps in a scale are possible.
 
 Tailwind does not include a design system. Tailwind works by providing a very large set
 of classes to handle almost any styling need. It then runs a build step inside your
-project on ever change to produce only that CSS needed to achieve your goals.
+project on every change to produce only that CSS needed to achieve your goals.
 
 Melange is more like Tachyons in that it provides a vastly smaller amoutn of CSS at the
 cost of flexibilty.  The idea is that where Tailwind provides near infinite font sizes
@@ -39,6 +39,8 @@ Melange is based on these core values:
 * "Pixel Perfect" is a non-sequiter given the wide variety of devices used to view a web
 page.
 * 90% of styling needs can be met with a minimal number of values for each CSS property
+* The remaining 10% should be possible with minimal duplication of existing design system
+decisions.
 * CSS is not the unit of re-use - CSS, JS, and HTML together are
 * The semantics of markup are not defined by CSS but my the markup itself, via the use of appropriate elements and `aria-` attributes.
 
@@ -73,6 +75,52 @@ produce CSS and documentation.
 
 Users of Melange don't need to interact with any of this, however developers may modify
 the theme or meta theme if needed.
+
+## Usage
+
+Melange includes documentation that shows what all the classes available are and what
+they do.  In general, most classes are shorthand for setting a specific CSS property to a
+specific value, where the value is one of a small number in your scale.  For example, to
+set text to take up the entire width on mobile devices, but have a maximum width of the 6th size in the scale for all others, and a font size that is one step larger than the body font, in a dark grey you would write this:
+
+```html
+<p class="mw-auto ns-mw6 f3 gray-darkest">
+  This is some text.
+</p>
+```
+
+Note a few things:
+
+* Melange does not abstract CSS. You must understand CSS to use it.
+* While Melange's classes appear equivalent to inline styles, inline styles cannot use
+media queries and they have a higher specificity than classes.
+* it does not take long to memorize the class names or the underlying naming convention
+to properly guess them.
+
+### Re-use
+
+If you find yourself repeating the same series of classes over and over again, you may
+think you want to create a class, for example `btn` to wrap something like `ph3 pv2 br3
+ba` or something.
+
+First, do you *really* need to re-use the classes?  A surprising number of elements end
+up having a unique set of CSS properties and values, meaning the abstraction of those
+properties and values creates a drag on your team.
+
+Second, note that the re-use you seek is the re-use of a *component*.  CSS, while necessary to the definition of a component, is not sufficient.  You need also markup, along with perhaps JavaScript and back-end support.
+
+Thus, your app's templating system is the logical place for re-usable components to be
+managed.  For example, here is a Rails helper:
+
+```ruby
+def button_component
+  content_tag("button", class: "ph3 pv2 br3 ba")
+end
+```
+
+Let your app's needs and architecture guide both *when* to create a re-usable compoment
+and *how* to do so.  Creating a new clas in a `.css` file is rarely the best way to do
+this.
 
 ## Customization
 
