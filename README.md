@@ -125,7 +125,15 @@ this.
 ## Customization
 
 There are four levels of customization options for Melange, each more complex, depending
-on your needs.
+on your needs:
+
+* Simple Extension, where you use Melange's variables to create new classes consistent with the design system
+* Simple Customization, where you change the values of Melange's variables to fit your
+needs.
+* Advanced Extension, where you use Melange to generate code to create new classes to
+minimize repetition.
+* Advanced Customization, where you use Melange to create your own CSS files based on a
+completely customizable set of scales and colors.
 
 ### Simple Extension
 
