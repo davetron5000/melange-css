@@ -17,11 +17,10 @@ marginExampleTemplate._markupForRendering = (htmlForDocs) => {
   return `<div style=\"display: inline-block; border: dashed thin black\">${innerHTML}</div>`
 }
 
-const spacingsMetaProperty = new MetaProperty({
-  name: "Spacings",
+const paddingMetaProperty = new MetaProperty({
+  name: "Padding",
   docs: [
-    "Spacing manages both margins and padding along a grid of reasonable spacings usable for any occasion",
-    "Each spacing can be applied to the entire box, horizontally, vertically, or to individual dimensions",
+    "Padding is space internal to the box and can be controlled in all four directions, horizontally, vertically, or each individually",
   ],
   enumeratedValues: [
     spacingFixedScale
@@ -34,6 +33,17 @@ const spacingsMetaProperty = new MetaProperty({
     new CSSClassTemplate("pb", "padding-bottom", { exampleTemplate: paddingExampleTemplate }),
     new CSSClassTemplate("ph", "padding-left", "padding-right", { exampleTemplate: paddingExampleTemplate }),
     new CSSClassTemplate("pv", "padding-top", "padding-bottom", { exampleTemplate: paddingExampleTemplate }),
+  ]
+})
+const marginMetaProperty = new MetaProperty({
+  name: "Margin",
+  docs: [
+    "Margin is space outside the box and can be controlled in all four directions, horizontally, vertically, or each individually",
+  ],
+  enumeratedValues: [
+    spacingFixedScale
+  ],
+  cssClassTemplates: [
     new CSSClassTemplate("m", "margin", { exampleTemplate: marginExampleTemplate }),
     new CSSClassTemplate("ml", "margin-left", { exampleTemplate: marginExampleTemplate }),
     new CSSClassTemplate("mr", "margin-right", { exampleTemplate: marginExampleTemplate }),
@@ -44,7 +54,13 @@ const spacingsMetaProperty = new MetaProperty({
   ]
 })
 
-const spacings = MetaPropertyGrouping.singleton(spacingsMetaProperty)
+const spacings = new MetaPropertyGrouping({
+  name: "Spacings",
+  metaProperties: [  
+    paddingMetaProperty,
+    marginMetaProperty,
+  ],
+})
 
 export {
   spacings,

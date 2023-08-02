@@ -4,10 +4,16 @@ import { MelangeVariable }                       from "./MelangeVariable.js"
 import { VariableBasedScale }                    from "./Scale.js"
 import { ExampleTemplate }                       from "./ExampleTemplate.js"
 import { DefaultPseudoSelector, PseudoSelector } from "./PseudoSelector.js"
+import { LiteralEnumeratedValue }                from "./EnumeratedValues.js"
+
+const pseudoSelectors = [
+  new DefaultPseudoSelector(),
+  new PseudoSelector({ variableNameQualifier: "hover",selector: "hover"}),
+]
 
 class ColorExampleTemplate extends ExampleTemplate {
   _htmlForDocs(selector, _content) {
-    return `<div class=\"${selector}\"> This is text using ${selector} </div>`
+    return `<div class=\"${selector}\">\n  This is text using ${selector}\n</div>`
   }
   _markupForRendering(htmlForDocs) {
     const spaced = htmlForDocs.replace("<div ","<div style=\"width: 20rem; border: dotted thin #888; padding: 1rem; background-color: COLOR\" ")
@@ -52,6 +58,7 @@ class ColorTints {
   constructor(tintNames) {
     this.tintNames = tintNames || ColorTints.DEFAULT_TINTNAMES
     this.colorScale = {}
+    this.customColors = []
   }
 
   register(colorName, tints) {
@@ -72,11 +79,27 @@ class ColorTints {
     return variables
   }
 
+  registerCustom(colorName, tintNamesAndValues) {
+    const metaProperty = new MetaProperty({
+      name: colorName,
+      enumeratedValues: [ LiteralEnumeratedValue.literalValues(tintNamesAndValues) ],
+      pseudoSelectors: pseudoSelectors,
+      cssClassTemplates: [
+        new CSSClassTemplate(colorName, "color",{
+          exampleTemplate: new ColorExampleTemplate(),
+        }),
+        new CSSClassTemplate(`bg-${colorName}`, "background-color", {
+          exampleTemplate: new BackgroundColorExampleTemplate(),
+        }),
+        new CSSClassTemplate(`b--${colorName}`, "border-color", {
+          exampleTemplate: new BorderColorExampleTemplate(),
+        }),
+      ]
+    })
+    this.customColors.push(metaProperty)
+  }
+
   asMetaPropertyGrouping() {
-    const pseudoSelectors = [
-      new DefaultPseudoSelector(),
-      new PseudoSelector({ variableNameQualifier: "hover",selector: "hover"}),
-    ]
 
     const metaProperties = Array.from(Object.entries(this.colorScale)).map( ([colorName, { variables, tints }]) => {
       return new MetaProperty({
@@ -95,8 +118,36 @@ class ColorTints {
           }),
         ]
       })
+    }).concat(this.customColors)
+
+    const summarization = []
+    metaProperties.forEach( (metaProperty) => {
+      summarization.push(`<div style=\"display: flex; align-items: stretch; justify-content: start; margin-bottom: 1rem;\"><h3 style="width: 8rem;"><a style=\"color: black; text-decoration: underline;\" href=\"#${metaProperty.name}\">${metaProperty.name}</a></h3>`)
+      metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
+        metaProperty.enumeratedValues().forEach( (enumeratedValues) => {
+          enumeratedValues.eachValue( (enumeratedValue) => {
+            const cssClass = cssClassTemplate.toCSSClass(enumeratedValue)
+            if (cssClass.propertiesAndValues.color) {
+              summarization.push(`<div>
+  <div style=\"width: 8rem; height: 4rem; background-color: ${cssClass.propertiesAndValues.color}\">
+  &nbsp;
+  </div>
+  <div><code>${cssClass.selector}</code></div>
+</div>`)
+            }
+          })
+        })
+      })
+      summarization.push("</div>")
     })
-    return new MetaPropertyGrouping({ name: "colors", metaProperties: metaProperties})
+    return new MetaPropertyGrouping({
+      name: "colors",
+      metaProperties: metaProperties,
+      docs: [
+        "All colors can be used for text, borders, or backgrounds by using the color name and tint on its own (for text), with <code>b--</code> (for borders), or <code>bg-</code> (for backgrounds).  Hover styles are available by prefixing <code>hover-</code> in front of the class",
+      ],
+      summarization: summarization.join("\n")
+    })
   }
 }
 export {

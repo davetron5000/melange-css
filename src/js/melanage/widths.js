@@ -8,25 +8,6 @@ import {
   autoScale,
   thirdsScale }                               from "./scales.js"
 
-const measureScale = new LiteralScale({
-  "": "30rem",
-  "-wide": "40rem",
-  "-narrow": "25rem",
-})
-
-const measure = new MetaProperty({
-  name: "Measure",
-  docs: "Measure allows styling maximum widths when text is involved, to ensure the text wraps properly for good reading",
-  enumeratedValues: [ measureScale ],
-  cssClassTemplates: [
-    new CSSClassTemplate("measure", "max-width", {
-      exampleTemplate: new ExampleTemplate({
-        contentForDemonstration: "The studio was filled with the rich odour of roses, and when the light summer wind stirred amidst the trees of the garden, there came through the open door the heavy scent of the lilac, or the more delicate perfume of the pink-flowering thorn."
-      }),
-    }),
-  ]
-})
-
 const maxWidthExampleTemplate = new ExampleTemplate({
 })
 
@@ -64,7 +45,6 @@ const widthsMetaProperty = new MetaProperty({
 const widths = new MetaPropertyGrouping({
   name: "Widths",
   metaProperties: [
-    measure,
     widthsMetaProperty,
   ]
 })

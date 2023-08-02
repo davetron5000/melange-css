@@ -69,6 +69,11 @@ class DocBuilder {
         metaPropertyGrouping.docs.forEach( (docParagraph) => {
           doc.push(`    <p class="measure f2">${docParagraph}</p>\n`)
         })
+
+        if (metaPropertyGrouping.summarization) {
+          doc.push(`    ${metaPropertyGrouping.summarization}`)
+        }
+
       },
       end: (metaPropertyGrouping) => {
         doc.push("</body>")
@@ -85,6 +90,7 @@ class DocBuilder {
     const documentMetaProperty = {
       start: (metaProperty) => {
         doc.push(`    <section>
+      <a name=\"${metaProperty.name}\"></a>
       <h2 class="f4">${metaProperty.name}</h2>
 `)
         metaProperty.docs.forEach( (docParagraph) => {
@@ -102,10 +108,18 @@ class DocBuilder {
             doc.push(`         <p class="measure f2">${docParagraph}</p>\n`)
           })
         }
-        doc.push("       <ul>\n")
+        doc.push(`
+<table>
+<thead>
+<tr>
+<th style=\"text-align: left\">Example</th>
+<th style=\"text-align: left\">Demo</th>
+</thead>
+<tbody>
+        `)
       },
       end: (cssClassTemplate) => {
-        doc.push("        </ul>\n      </section>\n")
+        doc.push("        </tbody></table>\n      </section>\n")
       }
     }
 
@@ -117,27 +131,15 @@ class DocBuilder {
       else {
         example = new Example({ htmlForDocs: `<div class=\"${cssClass.className()}\"></div>` })
       }
-      doc.push(`
-          <li>
-            <dl>
-              <dt>
-                Using <code>${cssClass.className()}</code>
-              </dt>
-              <dd>
-                <code><pre>${example.escapedHtml()}</pre></code>
-              </dd>
-              <dt>
-                CSS
-              </dt>
-              <dd>
-                <code><pre>${cssClass.toCSS()}</pre></code>
-              </dd>\n`)
+      doc.push(`<tr><td style="padding: 0.5rem; border: solid thin gray"><code><pre>${example.escapedHtml()}</pre></code>`)
+      doc.push(`<div style=\"padding: 0.25rem; border: solid thin black; background-color: #111111; color: #F4F4F4; border-radius: 0.25rem;\"><code><pre>${cssClass.toCSS()}</pre></code></div><div>CSS</div></td>`)
       if (example.hasMarkup()) {
-        doc.push(`<dt>Demo</dt><dd>\n`)
-        doc.push(`            ${example.markup()}`)
-        doc.push(`</dd>\n`)
+        doc.push(`<td style="padding: 0.5rem; border: solid thin gray">${example.markup()}</td>`)
       }
-      doc.push(`          </dl></li>`)
+      else {
+        doc.push("<td>&nbsp;</td>")
+      }
+      doc.push("</tr>")
     }
 
     /* Generate Docs */

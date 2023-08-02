@@ -17,7 +17,16 @@ class FlexExampleTemplate extends ExampleTemplate {
   }
 
   _markupForRendering(htmlForDocs) {
-    return "<div style=\"width: 30%;\">" + 
+    return "<div>" + 
+      htmlForDocs.
+      replace("<div ","<div style=\"gap: 0.25rem;\" ").
+      replaceAll("<div>","<div style=\"padding: 0.25rem; border: solid thin black;\">") + "</div>"
+  }
+}
+class FlexWrapExampleTemplate extends FlexExampleTemplate {
+
+  _markupForRendering(htmlForDocs) {
+    return "<div style=\"width: 40%\">" + 
       htmlForDocs.
       replace("<div ","<div style=\"gap: 0.25rem;\" ").
       replaceAll("<div>","<div style=\"padding: 0.25rem; border: solid thin black;\">") + "</div>"
@@ -26,6 +35,7 @@ class FlexExampleTemplate extends ExampleTemplate {
 
 const flexExampleTemplate = new FlexExampleTemplate()
 const flexExampleTemplateWithFlex = new FlexExampleTemplate({ classesRequiredForSelector: "flex"})
+const flexExampleTemplateWrap = new FlexWrapExampleTemplate({ classesRequiredForSelector: "flex"})
 
 const flexMetaProperty = MetaProperty.literal({
   className: "flex",
@@ -67,7 +77,7 @@ const flexWrap = new MetaProperty({
   name: "Flex Wrap",
   cssClassTemplates: [
     new CSSClassTemplate("flex", "flex-wrap", {
-      exampleTemplate: flexExampleTemplateWithFlex,
+      exampleTemplate: flexExampleTemplateWrap,
     })
   ],
   enumeratedValues: [
