@@ -27,7 +27,20 @@ const fontSizes = MelangeVariable.register(
   ],
   "Font scale, with size 2 being the body font size"
 )
+
+const fontFamily = MelangeVariable.register(
+  "fontFamily",
+  {
+    "-sans": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif",
+    "-serif": "Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif",
+    "-mono": "'Nimbus Mono PS', 'Courier New', monospace",
+    "-cursive": "'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive",
+    "-fantasy": "'Party Let', fantasy",
+  },
+  "Fonts to use for sans, serif, etc.",
+)
 export {
   spacings,
   fontSizes,
+  fontFamily,
 }

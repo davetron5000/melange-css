@@ -63,7 +63,7 @@ class DocBuilder {
   <title>Melange - Reference - ${metaPropertyGrouping.name}</title>
   <link href="melange.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="font-sans">
     <h1 class="f5">${metaPropertyGrouping.name}</h1>\n`)
 
         metaPropertyGrouping.docs.forEach( (docParagraph) => {

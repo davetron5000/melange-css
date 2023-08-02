@@ -3,7 +3,7 @@ import { CSSClassTemplate }                   from "../lib/CSSClass.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
 import { LiteralScale }                       from "../lib/Scale.js"
 
-import { fontScale } from "./scales.js"
+import { fontScale, fontFamilies } from "./scales.js"
 
 const exampleTemplate = new ExampleTemplate({
   contentForDemonstration: "Greetings, programs!  Remember: fight for the users!",
@@ -111,9 +111,163 @@ pink-flowering thorn.
   ]
 })
 
+const tracking = new MetaProperty({
+  name: "Tracking",
+  enumeratedValues: [
+    new LiteralScale({
+      "": "0.1em",
+      "-tight": "-0.05em",
+      "-mega": "0.25em",
+      "-none": "normal",
+    })
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("tracked", "letter-spacing", {
+      exampleTemplate: new ExampleTemplate({
+        contentForDemonstration: "\nGreetings, programs!  Remember: fight for the users!\n",
+      }),
+    }),
+  ]
+})
+
+const fontStyle = new MetaProperty({
+  name: "Font Style",
+  enumeratedValues: [
+    new LiteralScale({
+      "-normal": "normal",
+      "-i": "italic",
+    })
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("fs", "font-style", {
+      exampleTemplate: new ExampleTemplate({
+        contentForDemonstration: "\nGreetings, programs!\n",
+      }),
+    }),
+  ]
+})
+
+const textTransform = new MetaProperty({
+  name: "Text Tranform",
+  enumeratedValues: [
+    new LiteralScale({
+      "n": "none",
+      "u": "uppercase",
+      "l": "lowercase",
+      "c": "capitalize",
+    })
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("tt", "text-transform", {
+      exampleTemplate: new ExampleTemplate({
+        contentForDemonstration: "\nGreetings, programs!\n",
+      }),
+    }),
+  ]
+})
+
+const textDecoration = new MetaProperty({
+  name: "Text Decoration",
+  docs: [
+    "Text decoration adds lines to the text. You can combine the single letter values together by putting the letters in alphabetical order, for example <code>su</code> combines <code>s</code> and <code>u</code>",
+  ],
+  enumeratedValues: [
+    new LiteralScale({
+      "-n": "none",
+      "-u": "underline",
+      "-s": "line-through",
+      "-o": "overline",
+      "-su": "underline line-through",
+      "-ou": "underline overline",
+      "-os": "overline line-through",
+      "-ou": "underline overline",
+      "-osu": "line-through underline overline",
+    })
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("td", "text-decoration", {
+      exampleTemplate: new ExampleTemplate({
+        contentForDemonstration: "\nGreetings, programs!\n",
+      }),
+    }),
+  ]
+})
+
+const whiteSpace = new MetaProperty({
+  name: "White Space",
+  enumeratedValues: [
+    new LiteralScale({
+      "-normal": "normal",
+      "-nowrap": "nowrap",
+      "-pre": "pre",
+      "-prewrap": "pre-wrap",
+      "-preline": "pre-line",
+      "-breakspaces": "break-spaces",
+    })
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("ws", "white-space", {
+      exampleTemplate: new ExampleTemplate({
+        classesRequiredForSelector: "measure-narrow",
+        contentForDemonstration: `
+The studio was filled with the rich odour of roses,
+    and when the light summer wind stirred
+    amidst the trees of the garden,
+        there came through the open door
+        the heavy scent of the lilac,
+    or the more delicate perfume of the pink-flowering thorn.
+`
+      }),
+    }),
+  ]
+})
+
+const fontWeight = new MetaProperty({
+  name: "Font Weights",
+  enumeratedValues: [
+    new LiteralScale({
+      "-normal": "normal",
+      "-bold": "bold"
+    }),
+    new LiteralScale({
+      "1": "100",
+      "2": "200",
+      "3": "300",
+      "4": "400",
+      "5": "500",
+      "6": "600",
+      "7": "700",
+      "8": "800",
+      "9": "900",
+    })
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("fw", "font-weight", {
+      exampleTemplate: new ExampleTemplate({
+        contentForDemonstration: "\nGreetings, programs!\n",
+      }),
+    }),
+  ]
+})
+
+const fontFamily = new MetaProperty({
+  name: "Font Families",
+  enumeratedValues: [
+    fontFamilies,
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("font", "font-family", {
+      exampleTemplate: new ExampleTemplate({
+        classesRequiredForSelector: "f4",
+        contentForDemonstration: "\nGreetings, programs!\n",
+      })
+    }),
+  ]
+})
+
 const typography = new MetaPropertyGrouping({
   name: "Typography",
-  metaProperties: [ measure, fontSizes, textAlign, leading ],
+  metaProperties: [ fontFamily, fontSizes, fontWeight, fontStyle, textAlign, textTransform, textDecoration, whiteSpace, leading, tracking, measure ],
   summarization: summarization.join("\n")
 })
 
