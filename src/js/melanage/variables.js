@@ -34,7 +34,7 @@ const fontFamily = MelangeVariable.register(
     "-sans": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif",
     "-serif": "Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif",
     "-mono": "'Nimbus Mono PS', 'Courier New', monospace",
-    "-cursive": "'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive",
+    "-cursive": "'Snell Roundhand', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive",
     "-fantasy": "'Party Let', fantasy",
   },
   "Fonts to use for sans, serif, etc.",
