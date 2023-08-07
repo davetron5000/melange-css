@@ -1,8 +1,9 @@
 import { MelangeVariable }            from "../lib/MelangeVariable.js"
 import { VariableBasedScale, VariableBasedScaleWithZero, LiteralScale } from "../lib/Scale.js"
 
-import { spacings, fontSizes, fontFamily } from "./variables.js"
+import { spacings, negativeSpacings, fontSizes, fontFamily } from "./variables.js"
 const spacingFixedScale = new VariableBasedScaleWithZero(spacings)
+const negativeSpacingFixedScale = new VariableBasedScale(negativeSpacings)
 const fontScale = new VariableBasedScale(fontSizes)
 const fontFamilies = new VariableBasedScale(fontFamily)
 const percentageScale = new LiteralScale({
@@ -29,6 +30,7 @@ const thirdsScale = new LiteralScale({
 
 export {
   spacingFixedScale,
+  negativeSpacingFixedScale,
   fontScale,
   percentageScale,
   autoScale,

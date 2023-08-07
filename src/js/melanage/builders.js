@@ -132,7 +132,7 @@ class DocBuilder {
         example = new Example({ htmlForDocs: `<div class=\"${cssClass.className()}\"></div>` })
       }
       doc.push(`<tr><td style="padding: 0.5rem; border: solid thin gray"><code><pre>${example.escapedHtml()}</pre></code>`)
-      doc.push(`<div style=\"padding: 0.25rem; border: solid thin black; background-color: #111111; color: #F4F4F4; border-radius: 0.25rem;\"><code><pre>${cssClass.toCSS()}</pre></code></div><div>CSS</div></td>`)
+      doc.push(`<div style=\"max-width: 500px; overflow-x: scroll; padding: 0.25rem; border: solid thin black; background-color: #111111; color: #F4F4F4; border-radius: 0.25rem;\"><code><pre>${cssClass.toCSS()}</pre></code></div><div>CSS</div></td>`)
       if (example.hasMarkup()) {
         doc.push(`<td style="padding: 0.5rem; border: solid thin gray">${example.markup()}</td>`)
       }

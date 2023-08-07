@@ -1,6 +1,7 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
 import { CSSClassTemplate }                   from "../lib/CSSClass.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
+import { LiteralEnumeratedValue }             from "../lib/EnumeratedValues.js"
 import { spacingFixedScale }                  from "./scales.js"
 
 const paddingExampleTemplate = new ExampleTemplate({
@@ -54,9 +55,29 @@ const marginMetaProperty = new MetaProperty({
   ]
 })
 
+const floatExampleTemplate = new ExampleTemplate()
+floatExampleTemplate._markupForRendering = (htmlForDocs) => {
+  const innerHTML = htmlForDocs.replace("<div ","<div style=\"border: solid thin black; display: inline; padding-left: 1rem; padding-right: 1rem; background-color: #ddd; color: #222;\" ")
+  return `<div style=\"width: 8rem; display: inline-block; border: dashed thin black\">${innerHTML}</div>`
+}
+const floats = new MetaProperty({
+  name: "Floats",
+  enumeratedValues: [
+    LiteralEnumeratedValue.literalValues({
+      "l": "left",
+      "r": "right",
+      "n": "none",
+    })
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("f", "float", { exampleTemplate: floatExampleTemplate })
+  ]
+})
+
 const spacings = new MetaPropertyGrouping({
   name: "Spacings",
   metaProperties: [  
+    floats,
     paddingMetaProperty,
     marginMetaProperty,
   ],

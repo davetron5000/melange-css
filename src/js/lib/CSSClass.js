@@ -2,11 +2,12 @@ import { DefaultPseudoSelector } from "./PseudoSelector.js"
 import { DefaultBreakpoint } from "./Breakpoint.js"
 
 class CSSClass {
-  constructor({ selector, pseudoSelector, breakpoint, propertiesAndValues }) {
+  constructor({ selector, pseudoSelector, breakpoint, propertiesAndValues, postSelectorSelector }) {
     this.selector = selector
     this.pseudoSelector = pseudoSelector || new DefaultPseudoSelector()
     this.breakpoint = breakpoint || new DefaultBreakpoint()
     this.propertiesAndValues = propertiesAndValues
+    this.postSelectorSelector = postSelectorSelector
   }
 
   toCSS() {
@@ -30,7 +31,13 @@ class CSSClass {
   }
 
   fullSelector() {
-    return this.pseudoSelector.forSelector(this.className())
+    const selector = this.pseudoSelector.forSelector(this.className())
+    if (this.postSelectorSelector) {
+      return `${selector} ${this.postSelectorSelector}`
+    }
+    else {
+      return selector
+    }
   }
 }
 
@@ -59,14 +66,19 @@ class CSSClassTemplate {
   }
 
   toCSSClass(enumeratedValue) {
-    return new CSSClass({
+    const cssClass = new CSSClass({
       selector: enumeratedValue.selector(this.classNameBase),
       propertiesAndValues: Object.fromEntries(this.cssProperties.map( (property) => {
         return [ property, enumeratedValue.cssValue() ]
       }))
     })
+    return this._tweakCSSClass(cssClass)
+  }
+
+  _tweakCSSClass(cssClass) {
+    return cssClass
   }
 }
 
 
-export { CSSClass, CSSClassTemplate }
+export { CSSClassTemplate }

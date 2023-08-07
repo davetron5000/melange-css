@@ -89,8 +89,60 @@ const flexWrap = new MetaProperty({
   ]
 })
 
-const flex = new MetaPropertyGrouping({name: "Flexbox",
+const displayExampleTemplate = new ExampleTemplate({
+  classesRequiredForSelector: "w5 h5 m1 p1",
+  stylesToAddToMarkup: {
+    border: "solid thin black",
+  }
+})
+displayExampleTemplate._htmlForDocs = (selector, content) => {
+  return `<div class="${selector}">${content}</div>
+<div class="${selector}">${content}</div>
+<div class="${selector}">${content}</div>`
+}
+
+
+const display = new MetaProperty({
+  name: "Display",
+  cssClassTemplates: [
+    new CSSClassTemplate("d", "display", {
+      exampleTemplate: displayExampleTemplate
+    })
+  ],
+  enumeratedValues: [
+    LiteralEnumeratedValue.literalValues({
+      "b": "block",
+      "i": "inline",
+      "ib": "inline-block",
+      "n": "none",
+    })
+  ]
+})
+
+const tableDisplay = new MetaProperty({
+  name: "Table Display",
+  docs: [
+    "Table-related display values can also be set",
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("dt", "display", { })
+  ],
+  enumeratedValues: [
+    LiteralEnumeratedValue.literalValues({
+      "": "table",
+      "c": "table-cell",
+      "-row": "table-row",
+      "-row-group": "table-row-group",
+      "-column": "table-column",
+      "-column-group": "table-column-group",
+    })
+  ]
+})
+
+const flex = new MetaPropertyGrouping({name: "Display and Flexbox",
   metaProperties: [
+    display,
+    tableDisplay,
     flexMetaProperty,
     inlineFlex,
     flexNone,

@@ -11,8 +11,22 @@ const spacings = MelangeVariable.register(
     "8rem",
     "18rem",
   ],
-  "Spacing scale for margins, paddings, widths, etc.",
+  "Spacing scale for margins, paddings, widths, positions, etc.",
 )
+const negativeSpacings = MelangeVariable.register(
+  "negativeSpacing",
+  {
+    "-1": "-0.25rem",
+    "-2": "-0.5rem",
+    "-3": "-1rem",
+    "-4": "-2rem",
+    "-5": "-4rem",
+    "-6": "-8rem",
+    "-7": "-18rem",
+  },
+  "Negative spacing scale for margins, paddings, widths, positions, etc.",
+)
+
 const fontSizes = MelangeVariable.register(
   "fontSize",
   [
@@ -41,6 +55,7 @@ const fontFamily = MelangeVariable.register(
 )
 export {
   spacings,
+  negativeSpacings,
   fontSizes,
   fontFamily,
 }

@@ -42,7 +42,7 @@ class ExampleTemplate {
     const styleTag = Object.keys(this.stylesToAddToMarkup).map( (key) => {
       return `${key}: ${this.stylesToAddToMarkup[key]}`
     }).join("; ")
-    return htmlForDocs.replace("<div ",`<div style=\"${styleTag}\" `)
+    return htmlForDocs.replaceAll("<div ",`<div style=\"${styleTag}\" `)
   }
 }
 export {
