@@ -1,4 +1,4 @@
-import ColorTints from "../lib/ColorTints.js"
+import ColorTints from "../../lib/ColorTints.js"
 
 const colorTints = new ColorTints()
 colorTints.register("gray",   [ "#F5F5F5", "#ADADAD", "#999999", "#5C5C5C", "#1F1F1F" ])
@@ -13,6 +13,4 @@ colorTints.registerCustom("white", {"": "#FFFFFF", "ish": "#F4F4F4"})
 
 const colors = colorTints.asMetaPropertyGrouping()
 
-export {
-  colors
-}
+export default colors

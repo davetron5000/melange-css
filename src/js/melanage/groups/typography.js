@@ -1,17 +1,22 @@
-import MetaProperty from "../lib/MetaProperty.js"
-import MetaPropertyGrouping    from "../lib/MetaPropertyGrouping.js"
-import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
-import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
-import Scale                        from "../lib/scales/Scale.js"
+import CSSClassTemplate     from "../../lib/CSSClassTemplate.js"
+import Example              from "../../lib/Example.js"
+import ExampleTemplate      from "../../lib/ExampleTemplate.js"
+import MetaProperty         from "../../lib/MetaProperty.js"
+import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
+import Scale                from "../../lib/scales/Scale.js"
 
-import { fontScale, fontFamilies } from "./scales.js"
+import {
+  fontScale,
+  fontFamilies
+} from "../scales.js"
 
-const exampleTemplate = new ExampleTemplate({
-  contentForDemonstration: "Greetings, programs!  Remember: fight for the users!",
-  stylesToAddToMarkup: {
-    "max-width": "75%",
-  }
-})
+const exampleTemplate = (selector) => {
+  const html = `<div class=\"${selector}\">\nThe spice must flow!\n</div>`
+  return new Example({
+    htmlForDocs: html,
+    markupForRendering: html.replace("<div ","<div style=\"max-widtyh: 75%\" "),
+  })
+}
 
 const fontSizes = new MetaProperty({
   name: "Font Scale",
@@ -58,14 +63,11 @@ const measure = new MetaProperty({
   enumeratedValues: [ measureScale ],
   cssClassTemplates: [
     new CSSClassTemplate("measure", "max-width", {
-      exampleTemplate: new ExampleTemplate({
-        contentForDemonstration: `
-The studio was filled with the rich odour of roses, and when the light 
-summer wind stirred amidst the trees of the garden, there came through the 
-open door the heavy scent of the lilac, or the more delicate perfume of the 
-pink-flowering thorn.
-`
-      }),
+      exampleTemplate: ExampleTemplate.divWithSelector(`Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
+  started by the original six books, you will get a perfectly fine reading 
+  experience by reading only “Dune”, “Dune Messiah”, “Children of Dune”, “God 
+  Emperor of Dune”, “Heretics of Dune”, and finishing with “Chapterhouse 
+  Dune”. Trust me.`),
     }),
   ]
 })
@@ -81,10 +83,9 @@ const textAlign = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("text", "text-align", {
-      exampleTemplate: new ExampleTemplate({
-        classesRequiredForSelector: "w-6",
-        contentForDemonstration: "The spice must flow!",
-      }),
+      exampleTemplate: (selector) => {
+        return `<div class="w-6 ${selector}">\nThe spice must flow!\n</div>`
+      }
     }),
   ]
 })
@@ -99,15 +100,11 @@ const leading = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("lh", "line-height", {
-      exampleTemplate: new ExampleTemplate({
-        classesRequiredForSelector: "measure",
-        contentForDemonstration: `
-The studio was filled with the rich odour of roses, and when the light 
-summer wind stirred amidst the trees of the garden, there came through the 
-open door the heavy scent of the lilac, or the more delicate perfume of the 
-pink-flowering thorn.
-`
-      }),
+      exampleTemplate: ExampleTemplate.divWithSelector(`Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
+  started by the original six books, you will get a perfectly fine reading 
+  experience by reading only “Dune”, “Dune Messiah”, “Children of Dune”, “God 
+  Emperor of Dune”, “Heretics of Dune”, and finishing with “Chapterhouse 
+  Dune”. Trust me.`),
     }),
   ]
 })
@@ -124,9 +121,7 @@ const tracking = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("tracked", "letter-spacing", {
-      exampleTemplate: new ExampleTemplate({
-        contentForDemonstration: "\nGreetings, programs!  Remember: fight for the users!\n",
-      }),
+      exampleTemplate: ExampleTemplate.divWithSelector("The spice must flow!"),
     }),
   ]
 })
@@ -141,9 +136,7 @@ const fontStyle = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("fs", "font-style", {
-      exampleTemplate: new ExampleTemplate({
-        contentForDemonstration: "\nGreetings, programs!\n",
-      }),
+      exampleTemplate: ExampleTemplate.divWithSelector("The spice must flow!"),
     }),
   ]
 })
@@ -160,9 +153,7 @@ const textTransform = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("tt", "text-transform", {
-      exampleTemplate: new ExampleTemplate({
-        contentForDemonstration: "\nGreetings, programs!\n",
-      }),
+      exampleTemplate: ExampleTemplate.divWithSelector("The spice must flow!"),
     }),
   ]
 })
@@ -187,9 +178,7 @@ const textDecoration = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("td", "text-decoration", {
-      exampleTemplate: new ExampleTemplate({
-        contentForDemonstration: "\nGreetings, programs!\n",
-      }),
+      exampleTemplate: ExampleTemplate.divWithSelector("The spice must flow!"),
     }),
   ]
 })
@@ -208,17 +197,20 @@ const whiteSpace = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("ws", "white-space", {
-      exampleTemplate: new ExampleTemplate({
-        classesRequiredForSelector: "measure-narrow",
-        contentForDemonstration: `
-The studio was filled with the rich odour of roses,
-    and when the light summer wind stirred
-    amidst the trees of the garden,
-        there came through the open door
-        the heavy scent of the lilac,
-    or the more delicate perfume of the pink-flowering thorn.
-`
-      }),
+      exampleTemplate: (selector) => {
+        return `<div class="measure-narrow ${selector}">
+  Although “Hunters of Dune” and 
+           “Sandworms of Dune” carry on the story 
+     started by the original six books, you will
+
+     get a perfectly fine reading experience by reading only 
+
+     “Dune”, “Dune Messiah”, “Children of Dune”,
+     “God Emperor of Dune”, “Heretics of Dune”, 
+     and finishing with “Chapterhouse Dune”.
+
+Trust me.
+</div>`}
     }),
   ]
 })
@@ -244,9 +236,7 @@ const fontWeight = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("fw", "font-weight", {
-      exampleTemplate: new ExampleTemplate({
-        contentForDemonstration: "\nGreetings, programs!\n",
-      }),
+      exampleTemplate: ExampleTemplate.divWithSelector("The spice must flow!"),
     }),
   ]
 })
@@ -258,10 +248,11 @@ const fontFamily = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("font", "font-family", {
-      exampleTemplate: new ExampleTemplate({
-        classesRequiredForSelector: "f4",
-        contentForDemonstration: "\nGreetings, programs!\n",
-      })
+      exampleTemplate: (selector) => {
+        return `<div class="f-5 ${selector}">
+  The spice must flow
+</div>`
+      }
     }),
   ]
 })
@@ -272,8 +263,4 @@ const typography = new MetaPropertyGrouping({
   summarization: summarization.join("\n")
 })
 
-
-
-export {
-  typography,
-}
+export default typography

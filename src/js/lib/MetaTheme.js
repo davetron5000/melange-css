@@ -1,4 +1,4 @@
-class MetaTheme {
+export default class MetaTheme {
   constructor({metaPropertyGroupings, breakpoints}) {
     this.metaPropertyGroupings = metaPropertyGroupings
     this.breakpoints           = breakpoints
@@ -100,8 +100,5 @@ class MetaTheme {
       onBreakpoint.end(breakpoint)
     })
   }
-}
-export {
-  MetaTheme
 }
 

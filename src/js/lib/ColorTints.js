@@ -1,51 +1,60 @@
-import CSSClassTemplate                          from "./CSSClassTemplate.js"
-import Step                    from "./scales/Step.js"
-import Scale                    from "./scales/Scale.js"
-import VariableBasedScale              from "./scales/VariableBasedScale.js"
+import CSSClassTemplate      from "./CSSClassTemplate.js"
 import DefaultPseudoSelector from "./DefaultPseudoSelector.js"
-  import PseudoSelector from "./PseudoSelector.js"
-import { ExampleTemplate }                       from "./ExampleTemplate.js"
-import VariableRegistry                       from "./VariableRegistry.js"
-import MetaProperty from "./MetaProperty.js"
-import MetaPropertyGrouping    from "./MetaPropertyGrouping.js"
+import Example               from "./Example.js"
+import ExampleTemplate       from "./ExampleTemplate.js"
+import MetaProperty          from "./MetaProperty.js"
+import MetaPropertyGrouping  from "./MetaPropertyGrouping.js"
+import PseudoSelector        from "./PseudoSelector.js"
+import Scale                 from "./scales/Scale.js"
+import Step                  from "./scales/Step.js"
+import VariableBasedScale    from "./scales/VariableBasedScale.js"
+import VariableRegistry      from "./VariableRegistry.js"
 
 const pseudoSelectors = [
   new DefaultPseudoSelector(),
   new PseudoSelector({ variableNameQualifier: "hover",selector: "hover"}),
 ]
 
-class ColorExampleTemplate extends ExampleTemplate {
-  _markupForRendering(htmlForDocs) {
-    const spaced = htmlForDocs.replace("<div ","<div style=\"width: 20rem; border: dotted thin #888; padding: 1rem; background-color: COLOR\" ")
-    const black = spaced.replace("COLOR","#000")
-    const white = spaced.replace("COLOR","#fff")
-    return `<div style="display:flex; gap: 0.25rem;">
-  ${black}${white}
+const colorExampleTemplate = (selector) => {
+  const oneDiv = `<div class="${selector}"
+     style="width: 20rem; border: dotted thin #888; padding: 1rem; background-color: COLOR">
+  .${selector}
 </div>`
-  }
+  const onBlack = oneDiv.replace("COLOR","#000")
+  const onWhite = oneDiv.replace("COLOR","#fff")
+  return new Example({
+    markupForRendering: `<div style="display:flex; gap: 0.25rem;">
+  ${onBlack}${onWhite}
+</div>`
+  })
+}
+const backgroundColorExampleTemplate = (selector) => {
+  const oneDiv = `<div class="${selector}"
+     style="width: 20rem; border: dotted thin #888; padding: 1rem; color: COLOR">
+  .${selector}
+</div>`
+  const onBlack = oneDiv.replace("COLOR","#000")
+  const onWhite = oneDiv.replace("COLOR","#fff")
+  return new Example({
+    markupForRendering: `<div style="display:flex; gap: 0.25rem;">
+  ${onBlack}${onWhite}
+</div>`
+  })
+}
+const borderColorExampleTemplate = (selector) => {
+  const oneDiv = `<div class="${selector}"
+     style="width: 20rem; padding: 1rem; border-style: solid; border-thickness: thick; color: COLOR; background-color: BG_COLOR">
+  .${selector}
+</div>`
+  const onBlack = oneDiv.replace("COLOR","#fff").replace("BG_COLOR","#000")
+  const onWhite = oneDiv.replace("COLOR","#000").replace("BG_COLOR","#fff")
+  return new Example({
+    markupForRendering: `<div style="display:flex; gap: 0.25rem;">
+  ${onBlack}${onWhite}
+</div>`
+  })
 }
 
-class BackgroundColorExampleTemplate extends ColorExampleTemplate {
-  _markupForRendering(htmlForDocs) {
-    const spaced = htmlForDocs.replace("<div ","<div style=\"width: 20rem; border: dotted thin #888; padding: 1rem; color: COLOR\" ")
-    const black = spaced.replace("COLOR","#000")
-    const white = spaced.replace("COLOR","#fff")
-    return `<div style="display:flex; gap: 0.25rem;">
-  ${black}${white}
-</div>`
-  }
-}
-
-class BorderColorExampleTemplate extends ColorExampleTemplate {
-  _markupForRendering(htmlForDocs) {
-    const spaced = htmlForDocs.replace("<div ","<div style=\"width: 20rem; border-style: solid; border-width: thick; padding: 1rem; background-color: BG_COLOR; color: COLOR;\" ")
-    const black = spaced.replace("BG_COLOR","#000").replace("COLOR","#fff")
-    const white = spaced.replace("BG_COLOR","#fff").replace("COLOR","#000")
-    return `<div style="display:flex; gap: 0.25rem;">
-${black}${white}
-  </div>`
-  }
-}
 
 export default class ColorTints {
   static DEFAULT_TINTNAMES = [
@@ -86,13 +95,13 @@ export default class ColorTints {
       pseudoSelectors: pseudoSelectors,
       cssClassTemplates: [
         new CSSClassTemplate(colorName, "color",{
-          exampleTemplate: new ColorExampleTemplate(),
+          exampleTemplate: colorExampleTemplate,
         }),
         new CSSClassTemplate(`bg-${colorName}`, "background-color", {
-          exampleTemplate: new BackgroundColorExampleTemplate(),
+          exampleTemplate: backgroundColorExampleTemplate,
         }),
         new CSSClassTemplate(`b--${colorName}`, "border-color", {
-          exampleTemplate: new BorderColorExampleTemplate(),
+          exampleTemplate: borderColorExampleTemplate,
         }),
       ]
     })
@@ -108,13 +117,13 @@ export default class ColorTints {
         pseudoSelectors: pseudoSelectors,
         cssClassTemplates: [
           new CSSClassTemplate(colorName, "color",{
-            exampleTemplate: new ColorExampleTemplate(),
+            exampleTemplate: colorExampleTemplate,
           }),
           new CSSClassTemplate(`bg-${colorName}`, "background-color", {
-            exampleTemplate: new BackgroundColorExampleTemplate(),
+            exampleTemplate: backgroundColorExampleTemplate,
           }),
           new CSSClassTemplate(`b--${colorName}`, "border-color", {
-            exampleTemplate: new BorderColorExampleTemplate(),
+            exampleTemplate: borderColorExampleTemplate,
           }),
         ]
       })

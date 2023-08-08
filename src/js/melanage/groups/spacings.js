@@ -1,22 +1,22 @@
-import MetaProperty from "../lib/MetaProperty.js"
-import MetaPropertyGrouping    from "../lib/MetaPropertyGrouping.js"
-import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
-import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
-import Scale from "../lib/scales/Scale.js"
-import { spacingFixedScale }                  from "./scales.js"
+import MetaProperty         from "../../lib/MetaProperty.js"
+import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
+import CSSClassTemplate     from "../../lib/CSSClassTemplate.js"
+import Example              from "../../lib/Example.js"
+import Scale                from "../../lib/scales/Scale.js"
 
-const paddingExampleTemplate = new ExampleTemplate({
-  stylesToAddToMarkup: {
-    "display": "inline-block",
-    "border": "solid thin",
-    "background-color": "#ddd",
-    "color": "#222",
-  }
-})
-const marginExampleTemplate = new ExampleTemplate()
-marginExampleTemplate._markupForRendering = (htmlForDocs) => {
-  const innerHTML = htmlForDocs.replace("<div ","<div style=\"border: solid thin black; background-color: #ddd; color: #222;\" ")
-  return `<div style=\"display: inline-block; border: dashed thin black\">${innerHTML}</div>`
+import {
+  spacingScale
+} from "../scales.js"
+
+const paddingExampleTemplate = (selector) => {
+  return new Example({
+    markupForRendering: `<div style="display: inline-block; border: solid thin; background-color: #ddd; color: #222" class="${selector}">.${selector}</div>`
+  })
+}
+const marginExampleTemplate = (selector) => {
+  return new Example({
+    markupForRendering: `<div style=\"display: inline-block; border: dashed thin black;\"><div style="display: inline-block; border: solid thin; background-color: #ddd; color: #222" class="${selector}">.${selector}</div></div>`
+  })
 }
 
 const paddingMetaProperty = new MetaProperty({
@@ -25,7 +25,7 @@ const paddingMetaProperty = new MetaProperty({
     "Padding is space internal to the box and can be controlled in all four directions, horizontally, vertically, or each individually",
   ],
   enumeratedValues: [
-    spacingFixedScale
+    spacingScale
   ],
   cssClassTemplates: [
     new CSSClassTemplate("pa", "padding", { exampleTemplate: paddingExampleTemplate }),
@@ -43,7 +43,7 @@ const marginMetaProperty = new MetaProperty({
     "Margin is space outside the box and can be controlled in all four directions, horizontally, vertically, or each individually",
   ],
   enumeratedValues: [
-    spacingFixedScale
+    spacingScale
   ],
   cssClassTemplates: [
     new CSSClassTemplate("ma", "margin", { exampleTemplate: marginExampleTemplate }),
@@ -56,11 +56,21 @@ const marginMetaProperty = new MetaProperty({
   ]
 })
 
-const floatExampleTemplate = new ExampleTemplate()
-floatExampleTemplate._markupForRendering = (htmlForDocs) => {
-  const innerHTML = htmlForDocs.replace("<div ","<div style=\"border: solid thin black; display: inline; padding-left: 1rem; padding-right: 1rem; background-color: #ddd; color: #222;\" ")
-  return `<div style=\"width: 8rem; display: inline-block; border: dashed thin black\">${innerHTML}</div>`
+const floatExampleTemplate = (selector) => {
+  const html = `<div>
+  <div class="${selector}">.${selector}</div>
+  <div>Greetings, programs! Remember to fight for the users!</div>
+</div>`
+  const innerMarkup =  `<div style="border: dashed thin black; "><div style="padding-left: 1rem; padding-right: 1rem; border: solid thin black" class="${selector}">.${selector}</div><div style="padding-left: 1rem; padding-right: 1rem; background-color: #ddd;" >Greetings, programs! Remember to fight for the users!</div></div>`
+  return new Example({
+    htmlForDocs: html,
+    markupForRendering: innerMarkup,
+    blah: `<div style=\"width: 8rem; display: inline-block; border: dashed thin black\">
+  <div style=\"border: solid thin black; display: inline; padding-left: 1rem; padding-right: 1rem; background-color: #ddd; color: #222;\" class=\"${selector}\">.${selector}</div>
+    </div>`
+  })
 }
+
 const floats = new MetaProperty({
   name: "Floats",
   enumeratedValues: [
@@ -84,6 +94,4 @@ const spacings = new MetaPropertyGrouping({
   ],
 })
 
-export {
-  spacings,
-}
+export default spacings

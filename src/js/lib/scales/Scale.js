@@ -28,9 +28,10 @@ export default class Scale {
     this.steps.forEach( (step) => f(step) )
   }
 
-  static forLiteralValues(literalValues) {
+  static forLiteralValues(literalValues, options={}) {
     return new Scale(Array.from(Object.entries(literalValues)).map( ([ key, value ]) => {
-      return new Step({qualifier: key, value: value })
+      const qualifier = new Qualifier(key, options.dashPrefix)
+      return new Step({qualifier: qualifier, value: value })
     }))
   }
 }

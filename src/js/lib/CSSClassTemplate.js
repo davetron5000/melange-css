@@ -1,5 +1,6 @@
 import DefaultPseudoSelector from "./DefaultPseudoSelector.js"
 import DefaultBreakpoint from "./breakpoints/DefaultBreakpoint.js"
+import ExampleTemplate from "./ExampleTemplate.js"
 
 class CSSClass {
   constructor({ selector, pseudoSelector, breakpoint, propertiesAndValues, postSelectorSelector }) {
@@ -53,7 +54,15 @@ export default class CSSClassTemplate {
     if (typeof lastProperty === "object") {
       this.cssProperties = cssProperties.slice(0,cssProperties.length - 1)
       const options = lastProperty
-      this.exampleTemplate = options.exampleTemplate
+      const exampleTemplate = options.exampleTemplate
+      if (exampleTemplate) {
+        if (typeof exampleTemplate === "function") {
+          this.exampleTemplate = new ExampleTemplate(exampleTemplate)
+        }
+        else {
+          this.exampleTemplate = exampleTemplate
+        }
+      }
       this.docs = Array(options.docs || []).flat()
     }
     else {

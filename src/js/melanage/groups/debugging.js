@@ -1,11 +1,9 @@
-import MetaProperty from "../lib/MetaProperty.js"
-import MetaPropertyGrouping    from "../lib/MetaPropertyGrouping.js"
-import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
-import Scale from "../lib/scales/Scale.js"
-import { ExampleTemplate } from "../lib/ExampleTemplate.js"
+import MetaProperty         from "../../lib/MetaProperty.js"
+import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
+import CSSClassTemplate     from "../../lib/CSSClassTemplate.js"
+import Scale                from "../../lib/scales/Scale.js"
 
-const debugExampleTemplate = new ExampleTemplate({})
-debugExampleTemplate._htmlForDocs = (fullSelector, content) => {
+const debugExampleTemplate = (fullSelector) => {
   return `<article class="${fullSelector}">
   <h1>Some Title</h2>
   <ul>
@@ -67,6 +65,4 @@ const debugging = new MetaPropertyGrouping({name: "Debuging",
     debugGrid,
   ]
 })
-export {
-  debugging,
-}
+export default debugging
