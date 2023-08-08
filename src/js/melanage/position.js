@@ -1,13 +1,13 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
 import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
-import LiteralEnumeratedValues                       from "../lib/scales/LiteralEnumeratedValues.js"
+import Scale                       from "../lib/scales/Scale.js"
 import { spacingFixedScale, negativeSpacingFixedScale } from "./scales.js"
 
 const positions = new MetaProperty({
   name: "Position",
   enumeratedValues: [
-    new LiteralEnumeratedValues(
+    new Scale(
       {
         "static": "static",
         "relative": "relative",

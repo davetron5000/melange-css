@@ -6,6 +6,11 @@ export default class Qualifier {
       this.value = ""
       this.dashPrefix = false
     }
+    else {
+      if (this.value.constructor.name == "Qualifier") {
+        throw "You passed a Qualifier into the Qualifier constructor for value. Don't"
+      }
+    }
   }
 
   toString() {

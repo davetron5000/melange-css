@@ -1,7 +1,7 @@
 import { DefaultPseudoSelector }                    from "./PseudoSelector.js"
 import CSSClassTemplate                         from "./CSSClassTemplate.js"
-import EnumeratedValues from "./scales/EnumeratedValues.js"
-import LiteralEnumeratedValue from "./scales/LiteralEnumeratedValue.js"
+import Scale from "./scales/Scale.js"
+import Step from "./scales/Step.js"
 
 
 class DocStrings {
@@ -20,13 +20,13 @@ class DocStrings {
 class MetaProperty {
   /*
    * name - a human-readable name for this meta property.  Not used to create CSS, but just for documentation
-   * enumeratedValues - a list of EnumeratedValues instances (themselves a list of EnumeratedValue instances) that
+   * enumeratedValues - a list of Scale instances (themselves a list of Step instances) that
    *                    represent all the combinations of values for the classes described in cssClassTemplates.
    * pseudoSelectors - a list of PseudoSelector instances representing the selectors that should have classes 
    *                   created, for example, you may want background colors, but also background colors only on hover.
    * cssClassTemplates - a list of CSSClassTemplate instances that describe a CSS class to be created for each
-   *                     EnumeratedValue and PseudoSelector, along with what CSS properties should be given the values from 
-   *                     the EnumeratedValue
+   *                     Step and PseudoSelector, along with what CSS properties should be given the values from 
+   *                     the Step
    */
   constructor({name, docs, enumeratedValues, pseudoSelectors, cssClassTemplates}) {
     this.name              = name
@@ -39,14 +39,6 @@ class MetaProperty {
     return this._enumeratedValues
   }
 
-  static forSingleProperty({ name, enumeratedValue, cssClassTemplate, pseudoSelectors }) {
-    return new MetaProperty({
-      name: name,
-      cssClassTemplates: [ cssClassTemplate ],
-      pseudoSelectors: pseudoSelectors,
-      enumeratedValues: [ new EnumeratedValues([ enumeratedValue ]) ],
-    })
-  }
   static literal(
     { className, property, value, pseudoSelectors, exampleTemplate }
   ) {
@@ -64,7 +56,7 @@ class MetaProperty {
         )
       ],
       pseudoSelectors: pseudoSelectors,
-      enumeratedValues: [ new EnumeratedValues([ new LiteralEnumeratedValue({ qualifier: "", value: value }) ]) ],
+      enumeratedValues: [ Scale.forLiteralValues({ "": value }) ],
     })
   }
 }

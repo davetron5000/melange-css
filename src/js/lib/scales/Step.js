@@ -1,8 +1,9 @@
 import Qualifier from "./Qualifier.js"
 
-export default class EnumeratedValue {
-  constructor({ qualifier }) {
+export default class Step {
+  constructor({ qualifier, value }) {
     this.qualifier = Qualifier.fromString(qualifier)
+    this.value = value
   }
 
   selector(classNameBase) {
@@ -10,6 +11,6 @@ export default class EnumeratedValue {
   }
 
   cssValue() {
-    throw "Subclass must implement"
+    return this.value
   }
 }

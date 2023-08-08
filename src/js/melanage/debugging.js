@@ -1,6 +1,6 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
 import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
-import LiteralEnumeratedValue from "../lib/scales/LiteralEnumeratedValue.js"
+import Scale from "../lib/scales/Scale.js"
 import { ExampleTemplate } from "../lib/ExampleTemplate.js"
 
 const debugExampleTemplate = new ExampleTemplate({})
@@ -8,13 +8,13 @@ debugExampleTemplate._htmlForDocs = (fullSelector, content) => {
   return `<article class="${fullSelector}">
   <h1>Some Title</h2>
   <ul>
-    <li class="ma3"><p class="measure">
+    <li class="ma-3"><p class="measure">
       The spice must flow.
     </p></li>
-    <li class="ba br2 b--purple><p class="measure">
+    <li class="b-a br-2 b--purple><p class="measure">
       History is written on the sands of Arrakis.
     </p></li>
-    <li class="pa3"><p class="measure">
+    <li class="pa-3"><p class="measure">
       It is by <strong>will alone</strong>, I set my mind in motion.
     </p></li>
   </ul>
@@ -34,7 +34,7 @@ const debug = new MetaProperty({
     debugClassTemplate,
   ],
   enumeratedValues: [
-    LiteralEnumeratedValue.literalValues({
+    Scale.forLiteralValues({
       "": "1px solid gold",
       "red": "1px solid red",
       "green": "1px solid green",
@@ -50,7 +50,7 @@ const debugGrid = new MetaProperty({
     })
   ],
   enumeratedValues: [
-    LiteralEnumeratedValue.literalValues({
+    Scale.forLiteralValues({
       "": "transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAFElEQVR4AWPAC97/9x0eCsAEPgwAVLshdpENIxcAAAAASUVORK5CYII=) repeat top left",
       "16": "transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMklEQVR4AWOgCLz/b0epAa6UGuBOqQHOQHLUgFEDnAbcBZ4UGwDOkiCnkIhdgNgNxAYAiYlD+8sEuo8AAAAASUVORK5CYII=) repeat top left",
     })

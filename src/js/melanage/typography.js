@@ -1,7 +1,7 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
 import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
-import LiteralEnumeratedValues                        from "../lib/scales/LiteralEnumeratedValues.js"
+import Scale                        from "../lib/scales/Scale.js"
 
 import { fontScale, fontFamilies } from "./scales.js"
 
@@ -30,7 +30,7 @@ const summarization = []
 summarization.push(`<div style=\"display: flex; align-items: baseline; margin-bottom: 1rem;\"><h3 style="width: 8rem;"><a style=\"color: black; text-decoration: underline;\" href=\"#${fontSizes.name}\">${fontSizes.name}</a></h3>`)
 fontSizes.cssClassTemplates.forEach( (cssClassTemplate) => {
   fontSizes.enumeratedValues().forEach( (enumeratedValues) => {
-    enumeratedValues.eachValue( (enumeratedValue) => {
+    enumeratedValues.eachStep( (enumeratedValue) => {
       const cssClass = cssClassTemplate.toCSSClass(enumeratedValue)
       if (cssClass.propertiesAndValues['font-size']) {
         summarization.push(`<div>
@@ -44,7 +44,7 @@ fontSizes.cssClassTemplates.forEach( (cssClassTemplate) => {
 })
 summarization.push("</div>")
 
-const measureScale = new LiteralEnumeratedValues({
+const measureScale = new Scale({
   "": "30rem",
   "wide": "40rem",
   "narrow": "25rem",
@@ -71,7 +71,7 @@ pink-flowering thorn.
 const textAlign = new MetaProperty({
   name: "Text Align",
   enumeratedValues: [
-    new LiteralEnumeratedValues({
+    new Scale({
       "right": "right",
       "center": "center",
       "justify": "justify",
@@ -81,7 +81,7 @@ const textAlign = new MetaProperty({
   cssClassTemplates: [
     new CSSClassTemplate("text", "text-align", {
       exampleTemplate: new ExampleTemplate({
-        classesRequiredForSelector: "w6",
+        classesRequiredForSelector: "w-6",
         contentForDemonstration: "The spice must flow!",
       }),
     }),
@@ -90,7 +90,7 @@ const textAlign = new MetaProperty({
 const leading = new MetaProperty({
   name: "Leading/Line Height",
   enumeratedValues: [
-    new LiteralEnumeratedValues({
+    new Scale({
       "solid": "1",
       "title": "1.25",
       "copy": "1.5",
@@ -114,7 +114,7 @@ pink-flowering thorn.
 const tracking = new MetaProperty({
   name: "Tracking",
   enumeratedValues: [
-    new LiteralEnumeratedValues({
+    new Scale({
       "": "0.1em",
       "tight": "-0.05em",
       "mega": "0.25em",
@@ -133,7 +133,7 @@ const tracking = new MetaProperty({
 const fontStyle = new MetaProperty({
   name: "Font Style",
   enumeratedValues: [
-    new LiteralEnumeratedValues({
+    new Scale({
       "normal": "normal",
       "i": "italic",
     })
@@ -150,7 +150,7 @@ const fontStyle = new MetaProperty({
 const textTransform = new MetaProperty({
   name: "Text Tranform",
   enumeratedValues: [
-    new LiteralEnumeratedValues({
+    new Scale({
       "n": "none",
       "u": "uppercase",
       "l": "lowercase",
@@ -172,7 +172,7 @@ const textDecoration = new MetaProperty({
     "Text decoration adds lines to the text. You can combine the single letter values together by putting the letters in alphabetical order, for example <code>su</code> combines <code>s</code> and <code>u</code>",
   ],
   enumeratedValues: [
-    new LiteralEnumeratedValues({
+    new Scale({
       "n": "none",
       "u": "underline",
       "s": "line-through",
@@ -196,7 +196,7 @@ const textDecoration = new MetaProperty({
 const whiteSpace = new MetaProperty({
   name: "White Space",
   enumeratedValues: [
-    new LiteralEnumeratedValues({
+    new Scale({
       "normal": "normal",
       "nowrap": "nowrap",
       "pre": "pre",
@@ -225,11 +225,11 @@ The studio was filled with the rich odour of roses,
 const fontWeight = new MetaProperty({
   name: "Font Weights",
   enumeratedValues: [
-    new LiteralEnumeratedValues({
+    new Scale({
       "normal": "normal",
       "bold": "bold"
     }),
-    new LiteralEnumeratedValues({
+    new Scale({
       "1": "100",
       "2": "200",
       "3": "300",

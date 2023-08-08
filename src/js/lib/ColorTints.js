@@ -1,6 +1,7 @@
 import CSSClassTemplate                          from "./CSSClassTemplate.js"
-import LiteralEnumeratedValue                    from "./scales/LiteralEnumeratedValue.js"
-import VariableBasedEnumeratedValues              from "./scales/VariableBasedEnumeratedValues.js"
+import Step                    from "./scales/Step.js"
+import Scale                    from "./scales/Scale.js"
+import VariableBasedScale              from "./scales/VariableBasedScale.js"
 import { DefaultPseudoSelector, PseudoSelector } from "./PseudoSelector.js"
 import { ExampleTemplate }                       from "./ExampleTemplate.js"
 import { MelangeVariable }                       from "./MelangeVariable.js"
@@ -79,7 +80,7 @@ export default class ColorTints {
   registerCustom(colorName, tintNamesAndValues) {
     const metaProperty = new MetaProperty({
       name: colorName,
-      enumeratedValues: [ LiteralEnumeratedValue.literalValues(tintNamesAndValues) ],
+      enumeratedValues: [ Scale.forLiteralValues(tintNamesAndValues) ],
       pseudoSelectors: pseudoSelectors,
       cssClassTemplates: [
         new CSSClassTemplate(colorName, "color",{
@@ -101,7 +102,7 @@ export default class ColorTints {
     const metaProperties = Array.from(Object.entries(this.colorScale)).map( ([colorName, { variables, tints }]) => {
       return new MetaProperty({
         name: colorName,
-        enumeratedValues: [ new VariableBasedEnumeratedValues(variables) ],
+        enumeratedValues: [ new VariableBasedScale(variables) ],
         pseudoSelectors: pseudoSelectors,
         cssClassTemplates: [
           new CSSClassTemplate(colorName, "color",{
@@ -122,7 +123,7 @@ export default class ColorTints {
       summarization.push(`<div style=\"display: flex; align-items: stretch; justify-content: start; margin-bottom: 1rem;\"><h3 style="width: 8rem;"><a style=\"color: black; text-decoration: underline;\" href=\"#${metaProperty.name}\">${metaProperty.name}</a></h3>`)
       metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
         metaProperty.enumeratedValues().forEach( (enumeratedValues) => {
-          enumeratedValues.eachValue( (enumeratedValue) => {
+          enumeratedValues.eachStep( (enumeratedValue) => {
             const cssClass = cssClassTemplate.toCSSClass(enumeratedValue)
             if (cssClass.propertiesAndValues.color) {
               summarization.push(`<div>

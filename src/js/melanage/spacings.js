@@ -1,7 +1,7 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
 import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
-import LiteralEnumeratedValue from "../lib/scales/LiteralEnumeratedValue.js"
+import Scale from "../lib/scales/Scale.js"
 import { spacingFixedScale }                  from "./scales.js"
 
 const paddingExampleTemplate = new ExampleTemplate({
@@ -63,7 +63,7 @@ floatExampleTemplate._markupForRendering = (htmlForDocs) => {
 const floats = new MetaProperty({
   name: "Floats",
   enumeratedValues: [
-    LiteralEnumeratedValue.literalValues({
+    Scale.forLiteralValues({
       "l": "left",
       "r": "right",
       "n": "none",

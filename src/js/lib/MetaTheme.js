@@ -84,7 +84,7 @@ class MetaTheme {
             onCSSClassTemplate.start(cssClassTemplate)
             metaProperty.enumeratedValues().forEach( (enumeratedValues) => {
               metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
-                enumeratedValues.eachValue( (enumeratedValue) => {
+                enumeratedValues.eachStep( (enumeratedValue) => {
                   const cssClass = cssClassTemplate.toCSSClass(enumeratedValue).forSelector(pseudoSelector).atBreakpoint(breakpoint)
                   onCSSClass.start(cssClass, cssClassTemplate)
                   onCSSClass.end(cssClass, cssClassTemplate)

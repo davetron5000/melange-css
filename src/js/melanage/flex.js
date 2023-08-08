@@ -1,6 +1,6 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
 import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
-import LiteralEnumeratedValue from "../lib/scales/LiteralEnumeratedValue.js"
+import Scale from "../lib/scales/Scale.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
 
 class FlexExampleTemplate extends ExampleTemplate {
@@ -57,16 +57,15 @@ const flexNone = MetaProperty.literal({
   value: "none",
 })
 
-const flexDirection = new MetaProperty({
-  name: "Flex Direction",
-  enumeratedValues: [
-    LiteralEnumeratedValue.literalValues({
+    const blah = Scale.forLiteralValues({
       "column": "column",
       "row": "row",
       "column-reverse": "column-reverse",
       "row-reverse": "row-reverse",
     })
-  ],
+const flexDirection = new MetaProperty({
+  name: "Flex Direction",
+  enumeratedValues: [ blah ],
   cssClassTemplates: [
     new CSSClassTemplate("flex", "flex-direction", {
       exampleTemplate: flexExampleTemplateWithFlex
@@ -81,7 +80,7 @@ const flexWrap = new MetaProperty({
     })
   ],
   enumeratedValues: [
-    LiteralEnumeratedValue.literalValues({
+    Scale.forLiteralValues({
       "wrap": "wrap",
       "nowrap": "nowrap",
       "wrap-reverse": "wrap-reverse",
@@ -90,7 +89,7 @@ const flexWrap = new MetaProperty({
 })
 
 const displayExampleTemplate = new ExampleTemplate({
-  classesRequiredForSelector: "w5 h5 ma1 pa1",
+  classesRequiredForSelector: "w-5 h-5 ma-1 pa-1",
   stylesToAddToMarkup: {
     border: "solid thin black",
   }
@@ -110,7 +109,7 @@ const display = new MetaProperty({
     })
   ],
   enumeratedValues: [
-    LiteralEnumeratedValue.literalValues({
+    Scale.forLiteralValues({
       "b": "block",
       "i": "inline",
       "ib": "inline-block",
@@ -128,7 +127,7 @@ const tableDisplay = new MetaProperty({
     new CSSClassTemplate("dt", "display", { })
   ],
   enumeratedValues: [
-    LiteralEnumeratedValue.literalValues({
+    Scale.forLiteralValues({
       "": "table",
       "c": "table-cell",
       "row": "table-row",

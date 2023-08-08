@@ -11,7 +11,12 @@ class CSSClass {
   }
 
   toCSS() {
-    const props = Array.from(Object.entries(this.propertiesAndValues)).map( ([property,value]) => `  ${property}: ${value};` ).join("\n")
+    const props = Array.from(Object.entries(this.propertiesAndValues)).map( ([property,value]) => {
+      if (value.toString() == "[object Object]") {
+        throw `WTAF? Got ${JSON.stringify(value)}`
+      }
+      return `  ${property}: ${value};` 
+    }).join("\n")
     return `.${this.fullSelector()} {\n${props}\n}`
   }
 
