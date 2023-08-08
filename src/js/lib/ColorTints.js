@@ -1,10 +1,10 @@
-import { MetaProperty, MetaPropertyGrouping }    from "./MetaProperty.js"
-import { CSSClassTemplate }                      from "./CSSClass.js"
-import { MelangeVariable }                       from "./MelangeVariable.js"
-import { VariableBasedScale }                    from "./Scale.js"
-import { ExampleTemplate }                       from "./ExampleTemplate.js"
+import CSSClassTemplate                          from "./CSSClassTemplate.js"
+import LiteralEnumeratedValue                    from "./scales/LiteralEnumeratedValue.js"
+import VariableBasedEnumeratedValues              from "./scales/VariableBasedEnumeratedValues.js"
 import { DefaultPseudoSelector, PseudoSelector } from "./PseudoSelector.js"
-import { LiteralEnumeratedValue }                from "./EnumeratedValues.js"
+import { ExampleTemplate }                       from "./ExampleTemplate.js"
+import { MelangeVariable }                       from "./MelangeVariable.js"
+import { MetaProperty, MetaPropertyGrouping }    from "./MetaProperty.js"
 
 const pseudoSelectors = [
   new DefaultPseudoSelector(),
@@ -44,7 +44,7 @@ ${black}${white}
   }
 }
 
-class ColorTints {
+export default class ColorTints {
   static DEFAULT_TINTNAMES = [
     "lightest",
     "light",
@@ -101,7 +101,7 @@ class ColorTints {
     const metaProperties = Array.from(Object.entries(this.colorScale)).map( ([colorName, { variables, tints }]) => {
       return new MetaProperty({
         name: colorName,
-        enumeratedValues: [ new VariableBasedScale(variables) ],
+        enumeratedValues: [ new VariableBasedEnumeratedValues(variables) ],
         pseudoSelectors: pseudoSelectors,
         cssClassTemplates: [
           new CSSClassTemplate(colorName, "color",{
@@ -146,7 +146,4 @@ class ColorTints {
       summarization: summarization.join("\n")
     })
   }
-}
-export {
-  ColorTints
 }

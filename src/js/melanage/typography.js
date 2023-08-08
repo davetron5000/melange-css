@@ -1,7 +1,7 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
-import { CSSClassTemplate }                   from "../lib/CSSClass.js"
+import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
-import { LiteralScale }                       from "../lib/Scale.js"
+import LiteralEnumeratedValues                        from "../lib/scales/LiteralEnumeratedValues.js"
 
 import { fontScale, fontFamilies } from "./scales.js"
 
@@ -44,7 +44,7 @@ fontSizes.cssClassTemplates.forEach( (cssClassTemplate) => {
 })
 summarization.push("</div>")
 
-const measureScale = new LiteralScale({
+const measureScale = new LiteralEnumeratedValues({
   "": "30rem",
   "wide": "40rem",
   "narrow": "25rem",
@@ -71,7 +71,7 @@ pink-flowering thorn.
 const textAlign = new MetaProperty({
   name: "Text Align",
   enumeratedValues: [
-    new LiteralScale({
+    new LiteralEnumeratedValues({
       "right": "right",
       "center": "center",
       "justify": "justify",
@@ -90,7 +90,7 @@ const textAlign = new MetaProperty({
 const leading = new MetaProperty({
   name: "Leading/Line Height",
   enumeratedValues: [
-    new LiteralScale({
+    new LiteralEnumeratedValues({
       "solid": "1",
       "title": "1.25",
       "copy": "1.5",
@@ -114,7 +114,7 @@ pink-flowering thorn.
 const tracking = new MetaProperty({
   name: "Tracking",
   enumeratedValues: [
-    new LiteralScale({
+    new LiteralEnumeratedValues({
       "": "0.1em",
       "tight": "-0.05em",
       "mega": "0.25em",
@@ -133,7 +133,7 @@ const tracking = new MetaProperty({
 const fontStyle = new MetaProperty({
   name: "Font Style",
   enumeratedValues: [
-    new LiteralScale({
+    new LiteralEnumeratedValues({
       "normal": "normal",
       "i": "italic",
     })
@@ -150,7 +150,7 @@ const fontStyle = new MetaProperty({
 const textTransform = new MetaProperty({
   name: "Text Tranform",
   enumeratedValues: [
-    new LiteralScale({
+    new LiteralEnumeratedValues({
       "n": "none",
       "u": "uppercase",
       "l": "lowercase",
@@ -172,7 +172,7 @@ const textDecoration = new MetaProperty({
     "Text decoration adds lines to the text. You can combine the single letter values together by putting the letters in alphabetical order, for example <code>su</code> combines <code>s</code> and <code>u</code>",
   ],
   enumeratedValues: [
-    new LiteralScale({
+    new LiteralEnumeratedValues({
       "n": "none",
       "u": "underline",
       "s": "line-through",
@@ -196,7 +196,7 @@ const textDecoration = new MetaProperty({
 const whiteSpace = new MetaProperty({
   name: "White Space",
   enumeratedValues: [
-    new LiteralScale({
+    new LiteralEnumeratedValues({
       "normal": "normal",
       "nowrap": "nowrap",
       "pre": "pre",
@@ -225,11 +225,11 @@ The studio was filled with the rich odour of roses,
 const fontWeight = new MetaProperty({
   name: "Font Weights",
   enumeratedValues: [
-    new LiteralScale({
+    new LiteralEnumeratedValues({
       "normal": "normal",
       "bold": "bold"
     }),
-    new LiteralScale({
+    new LiteralEnumeratedValues({
       "1": "100",
       "2": "200",
       "3": "300",

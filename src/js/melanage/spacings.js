@@ -1,7 +1,7 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
-import { CSSClassTemplate }                   from "../lib/CSSClass.js"
+import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
-import { LiteralEnumeratedValue }             from "../lib/EnumeratedValues.js"
+import LiteralEnumeratedValue from "../lib/scales/LiteralEnumeratedValue.js"
 import { spacingFixedScale }                  from "./scales.js"
 
 const paddingExampleTemplate = new ExampleTemplate({

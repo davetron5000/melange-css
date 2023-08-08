@@ -6,7 +6,7 @@ import { flex }        from "./flex.js"
 import { widths }      from "./widths.js"
 import { colors }      from "./colors.js"
 import { debugging }   from "./debugging.js"
-import { position }   from "./position.js"
+import { position }    from "./position.js"
 
 const metaTheme = new MetaTheme({
   metaPropertyGroupings: [

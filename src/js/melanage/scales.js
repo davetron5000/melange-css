@@ -1,12 +1,14 @@
 import { MelangeVariable }            from "../lib/MelangeVariable.js"
-import { VariableBasedScale, VariableBasedScaleWithZero, LiteralScale } from "../lib/Scale.js"
+import VariableBasedEnumeratedValues from "../lib/scales/VariableBasedEnumeratedValues.js"
+import VariableBasedEnumeratedValuesWithZero from "../lib/scales/VariableBasedEnumeratedValuesWithZero.js"
+import LiteralEnumeratedValues from "../lib/scales/LiteralEnumeratedValues.js"
 
 import { spacings, negativeSpacings, fontSizes, fontFamily } from "./variables.js"
-const spacingFixedScale = new VariableBasedScaleWithZero(spacings)
-const negativeSpacingFixedScale = new VariableBasedScale(negativeSpacings)
-const fontScale = new VariableBasedScale(fontSizes)
-const fontFamilies = new VariableBasedScale(fontFamily)
-const percentageScale = new LiteralScale({
+const spacingFixedScale = new VariableBasedEnumeratedValuesWithZero(spacings)
+const negativeSpacingFixedScale = new VariableBasedEnumeratedValues(negativeSpacings)
+const fontScale = new VariableBasedEnumeratedValues(fontSizes)
+const fontFamilies = new VariableBasedEnumeratedValues(fontFamily)
+const percentageScale = new LiteralEnumeratedValues({
   "10": "10%",
   "20": "20%",
   "30": "30%",
@@ -19,11 +21,11 @@ const percentageScale = new LiteralScale({
   "100": "100%",
 })
 
-const autoScale = new LiteralScale({
+const autoScale = new LiteralEnumeratedValues({
   "auto": "auto",
 })
 
-const thirdsScale = new LiteralScale({
+const thirdsScale = new LiteralEnumeratedValues({
   "third": "calc(100% / 3)",
   "two-thirds": "calc(100% / 1.5)",
 })

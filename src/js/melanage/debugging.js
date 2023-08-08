@@ -1,7 +1,7 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
-import { CSSClassTemplate }                   from "../lib/CSSClass.js"
-import { LiteralEnumeratedValue }             from "../lib/EnumeratedValues.js"
-import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
+import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
+import LiteralEnumeratedValue from "../lib/scales/LiteralEnumeratedValue.js"
+import { ExampleTemplate } from "../lib/ExampleTemplate.js"
 
 const debugExampleTemplate = new ExampleTemplate({})
 debugExampleTemplate._htmlForDocs = (fullSelector, content) => {

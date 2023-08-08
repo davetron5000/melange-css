@@ -1,5 +1,5 @@
 import { DefaultPseudoSelector } from "./PseudoSelector.js"
-import { DefaultBreakpoint } from "./Breakpoint.js"
+import DefaultBreakpoint from "./breakpoints/DefaultBreakpoint.js"
 
 class CSSClass {
   constructor({ selector, pseudoSelector, breakpoint, propertiesAndValues, postSelectorSelector }) {
@@ -41,7 +41,7 @@ class CSSClass {
   }
 }
 
-class CSSClassTemplate {
+export default class CSSClassTemplate {
   constructor(classNameBase, ...cssProperties) {
     this.classNameBase = classNameBase
     const lastProperty  = cssProperties[cssProperties.length - 1]
@@ -80,5 +80,3 @@ class CSSClassTemplate {
   }
 }
 
-
-export { CSSClassTemplate }

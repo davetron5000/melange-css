@@ -1,6 +1,5 @@
 import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
-import { LiteralScale }                       from "../lib/Scale.js"
-import { CSSClassTemplate }                   from "../lib/CSSClass.js"
+import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
 import { spacingFixedScale }                  from "./scales.js"
 import {

@@ -1,6 +1,8 @@
 import { DefaultPseudoSelector }                    from "./PseudoSelector.js"
-import { EnumeratedValues, LiteralEnumeratedValue } from "./EnumeratedValues.js"
-import { CSSClassTemplate }                         from "./CSSClass.js"
+import CSSClassTemplate                         from "./CSSClassTemplate.js"
+import EnumeratedValues from "./scales/EnumeratedValues.js"
+import LiteralEnumeratedValue from "./scales/LiteralEnumeratedValue.js"
+
 
 class DocStrings {
   constructor(docs) {

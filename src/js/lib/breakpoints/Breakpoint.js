@@ -1,11 +1,4 @@
-class DefaultBreakpoint {
-  constructor() {
-    this.variableNameQualifier = ""
-  }
-  toMediaQuery() { return "" }
-  isDefault() { return true }
-}
-class Breakpoint {
+export default class Breakpoint {
   constructor({variableNameQualifier, minWidth, maxWidth}) {
     this.variableNameQualifier = variableNameQualifier
     this.minWidth = minWidth
@@ -30,10 +23,4 @@ class Breakpoint {
   }
   isDefault() { return false }
 
-}
-
-
-export {
-  DefaultBreakpoint,
-  Breakpoint,
 }
