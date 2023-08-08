@@ -8,13 +8,13 @@ debugExampleTemplate._htmlForDocs = (fullSelector, content) => {
   return `<article class="${fullSelector}">
   <h1>Some Title</h2>
   <ul>
-    <li class="m3"><p class="measure">
+    <li class="ma3"><p class="measure">
       The spice must flow.
     </p></li>
     <li class="ba br2 b--purple><p class="measure">
       History is written on the sands of Arrakis.
     </p></li>
-    <li class="p3"><p class="measure">
+    <li class="pa3"><p class="measure">
       It is by <strong>will alone</strong>, I set my mind in motion.
     </p></li>
   </ul>
@@ -36,9 +36,9 @@ const debug = new MetaProperty({
   enumeratedValues: [
     LiteralEnumeratedValue.literalValues({
       "": "1px solid gold",
-      "-red": "1px solid red",
-      "-green": "1px solid green",
-      "-blue": "1px solid blue",
+      "red": "1px solid red",
+      "green": "1px solid green",
+      "blue": "1px solid blue",
     })
   ]
 })
@@ -52,7 +52,7 @@ const debugGrid = new MetaProperty({
   enumeratedValues: [
     LiteralEnumeratedValue.literalValues({
       "": "transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAFElEQVR4AWPAC97/9x0eCsAEPgwAVLshdpENIxcAAAAASUVORK5CYII=) repeat top left",
-      "-16": "transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMklEQVR4AWOgCLz/b0epAa6UGuBOqQHOQHLUgFEDnAbcBZ4UGwDOkiCnkIhdgNgNxAYAiYlD+8sEuo8AAAAASUVORK5CYII=) repeat top left",
+      "16": "transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMklEQVR4AWOgCLz/b0epAa6UGuBOqQHOQHLUgFEDnAbcBZ4UGwDOkiCnkIhdgNgNxAYAiYlD+8sEuo8AAAAASUVORK5CYII=) repeat top left",
     })
   ]
 })

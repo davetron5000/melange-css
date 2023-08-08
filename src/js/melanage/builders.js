@@ -21,18 +21,23 @@ class CSSBuilder {
     const css = fs.createWriteStream("melange.css")
     css.write(":root {\n")
     MelangeVariable.eachSetOfVariables( (baseName,variablesSet) => {
-      css.write("/*\n")
-      css.write(` * ${baseName}\n *\n`)
       if (variablesSet.documentation) {
-        css.write(` * ${variablesSet.documentation}\n`)
-      }
-      css.write(" */\n")
+        css.write("/*\n")
+        css.write(` * ${baseName}\n *\n`)
+        if (variablesSet.documentation) {
+          css.write(` * ${variablesSet.documentation}\n`)
+        }
+        css.write(" */\n")
 
-      Object.values(variablesSet.variables).forEach( (melangeVariable) => {
-        css.write(melangeVariable.toCSSProperty())
+        Object.values(variablesSet.variables).forEach( (melangeVariable) => {
+          const property = melangeVariable.toCSSProperty()
+          if (property) {
+            css.write(melangeVariable.toCSSProperty())
+            css.write("\n")
+          }
+        })
         css.write("\n")
-      })
-      css.write("\n")
+      }
     })
     css.write("}\n")
     /* Generate CSS */

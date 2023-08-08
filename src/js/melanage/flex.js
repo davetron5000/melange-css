@@ -61,10 +61,10 @@ const flexDirection = new MetaProperty({
   name: "Flex Direction",
   enumeratedValues: [
     LiteralEnumeratedValue.literalValues({
-      "-column": "column",
-      "-row": "row",
-      "-column-reverse": "column-reverse",
-      "-row-reverse": "row-reverse",
+      "column": "column",
+      "row": "row",
+      "column-reverse": "column-reverse",
+      "row-reverse": "row-reverse",
     })
   ],
   cssClassTemplates: [
@@ -82,15 +82,15 @@ const flexWrap = new MetaProperty({
   ],
   enumeratedValues: [
     LiteralEnumeratedValue.literalValues({
-      "-wrap": "wrap",
-      "-nowrap": "nowrap",
-      "-wrap-reverse": "wrap-reverse",
+      "wrap": "wrap",
+      "nowrap": "nowrap",
+      "wrap-reverse": "wrap-reverse",
     })
   ]
 })
 
 const displayExampleTemplate = new ExampleTemplate({
-  classesRequiredForSelector: "w5 h5 m1 p1",
+  classesRequiredForSelector: "w5 h5 ma1 pa1",
   stylesToAddToMarkup: {
     border: "solid thin black",
   }
@@ -131,10 +131,10 @@ const tableDisplay = new MetaProperty({
     LiteralEnumeratedValue.literalValues({
       "": "table",
       "c": "table-cell",
-      "-row": "table-row",
-      "-row-group": "table-row-group",
-      "-column": "table-column",
-      "-column-group": "table-column-group",
+      "row": "table-row",
+      "row-group": "table-row-group",
+      "column": "table-column",
+      "column-group": "table-column-group",
     })
   ]
 })

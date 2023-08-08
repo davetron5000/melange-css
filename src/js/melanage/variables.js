@@ -1,4 +1,4 @@
-import { MelangeVariable }            from "../lib/MelangeVariable.js"
+import { MelangeVariable, DerivedMelangeVariable }            from "../lib/MelangeVariable.js"
 
 const spacings = MelangeVariable.register(
   "spacing",
@@ -13,19 +13,22 @@ const spacings = MelangeVariable.register(
   ],
   "Spacing scale for margins, paddings, widths, positions, etc.",
 )
-const negativeSpacings = MelangeVariable.register(
-  "negativeSpacing",
-  {
-    "-1": "-0.25rem",
-    "-2": "-0.5rem",
-    "-3": "-1rem",
-    "-4": "-2rem",
-    "-5": "-4rem",
-    "-6": "-8rem",
-    "-7": "-18rem",
-  },
-  "Negative spacing scale for margins, paddings, widths, positions, etc.",
-)
+const negativeSpacings = spacings.map( (variable) => {
+  const propertyTransform = (melangeVariable) => {
+    return `calc(-1 * var(${melangeVariable._variableName()}))`
+  }
+  const stepNameTransform = (stepName) => {
+    return `-${stepName}`
+  }
+  return new DerivedMelangeVariable({
+    baseName: "negativeSpacing",
+    melangeVariable: variable,
+    propertyTransform: propertyTransform,
+    stepNameTransform: stepNameTransform
+  })
+})
+
+MelangeVariable.registerVariables("negativeSpacing", negativeSpacings)
 
 const fontSizes = MelangeVariable.register(
   "fontSize",
@@ -45,11 +48,11 @@ const fontSizes = MelangeVariable.register(
 const fontFamily = MelangeVariable.register(
   "fontFamily",
   {
-    "-sans": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif",
-    "-serif": "Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif",
-    "-mono": "'Nimbus Mono PS', 'Courier New', monospace",
-    "-cursive": "'Snell Roundhand', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive",
-    "-fantasy": "'Party Let', fantasy",
+    "sans": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif",
+    "serif": "Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif",
+    "mono": "'Nimbus Mono PS', 'Courier New', monospace",
+    "cursive": "'Snell Roundhand', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive",
+    "fantasy": "'Party Let', fantasy",
   },
   "Fonts to use for sans, serif, etc.",
 )

@@ -46,8 +46,8 @@ summarization.push("</div>")
 
 const measureScale = new LiteralScale({
   "": "30rem",
-  "-wide": "40rem",
-  "-narrow": "25rem",
+  "wide": "40rem",
+  "narrow": "25rem",
 })
 
 
@@ -72,10 +72,10 @@ const textAlign = new MetaProperty({
   name: "Text Align",
   enumeratedValues: [
     new LiteralScale({
-      "-right": "right",
-      "-center": "center",
-      "-justify": "justify",
-      "-left": "left",
+      "right": "right",
+      "center": "center",
+      "justify": "justify",
+      "left": "left",
     })
   ],
   cssClassTemplates: [
@@ -91,9 +91,9 @@ const leading = new MetaProperty({
   name: "Leading/Line Height",
   enumeratedValues: [
     new LiteralScale({
-      "-solid": "1",
-      "-title": "1.25",
-      "-copy": "1.5",
+      "solid": "1",
+      "title": "1.25",
+      "copy": "1.5",
     })
   ],
   cssClassTemplates: [
@@ -116,9 +116,9 @@ const tracking = new MetaProperty({
   enumeratedValues: [
     new LiteralScale({
       "": "0.1em",
-      "-tight": "-0.05em",
-      "-mega": "0.25em",
-      "-none": "normal",
+      "tight": "-0.05em",
+      "mega": "0.25em",
+      "none": "normal",
     })
   ],
   cssClassTemplates: [
@@ -134,8 +134,8 @@ const fontStyle = new MetaProperty({
   name: "Font Style",
   enumeratedValues: [
     new LiteralScale({
-      "-normal": "normal",
-      "-i": "italic",
+      "normal": "normal",
+      "i": "italic",
     })
   ],
   cssClassTemplates: [
@@ -173,15 +173,15 @@ const textDecoration = new MetaProperty({
   ],
   enumeratedValues: [
     new LiteralScale({
-      "-n": "none",
-      "-u": "underline",
-      "-s": "line-through",
-      "-o": "overline",
-      "-su": "underline line-through",
-      "-ou": "underline overline",
-      "-os": "overline line-through",
-      "-ou": "underline overline",
-      "-osu": "line-through underline overline",
+      "n": "none",
+      "u": "underline",
+      "s": "line-through",
+      "o": "overline",
+      "su": "underline line-through",
+      "ou": "underline overline",
+      "os": "overline line-through",
+      "ou": "underline overline",
+      "osu": "line-through underline overline",
     })
   ],
   cssClassTemplates: [
@@ -197,12 +197,12 @@ const whiteSpace = new MetaProperty({
   name: "White Space",
   enumeratedValues: [
     new LiteralScale({
-      "-normal": "normal",
-      "-nowrap": "nowrap",
-      "-pre": "pre",
-      "-prewrap": "pre-wrap",
-      "-preline": "pre-line",
-      "-breakspaces": "break-spaces",
+      "normal": "normal",
+      "nowrap": "nowrap",
+      "pre": "pre",
+      "prewrap": "pre-wrap",
+      "preline": "pre-line",
+      "breakspaces": "break-spaces",
     })
   ],
   cssClassTemplates: [
@@ -226,8 +226,8 @@ const fontWeight = new MetaProperty({
   name: "Font Weights",
   enumeratedValues: [
     new LiteralScale({
-      "-normal": "normal",
-      "-bold": "bold"
+      "normal": "normal",
+      "bold": "bold"
     }),
     new LiteralScale({
       "1": "100",

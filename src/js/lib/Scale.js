@@ -1,4 +1,4 @@
-import { EnumeratedValue, EnumeratedValues, LiteralEnumeratedValue } from "./EnumeratedValues.js"
+import { EnumeratedValue, EnumeratedValues, LiteralEnumeratedValue, Qualifier } from "./EnumeratedValues.js"
 
 class VariableBasedScaleStep extends EnumeratedValue {
   constructor(melangeVariable) {
@@ -7,7 +7,8 @@ class VariableBasedScaleStep extends EnumeratedValue {
   }
 
   cssValue() {
-    if (this.melangeVariable.constructor.name !== "MelangeVariable") {
+    if ( (this.melangeVariable.constructor.name !== "MelangeVariable") && 
+         (this.melangeVariable.constructor.name !== "DerivedMelangeVariable") ) {
       throw `WTF is this: ${this.melangeVariable.constructor.name} '${this.melangeVariable}'`
     }
     return this.melangeVariable.toCSSValue()
@@ -43,12 +44,18 @@ class LiteralScale extends EnumeratedValues  {
   /*
    * qualifierToValue - an object that maps the suffix added to the CSS class to the value to use
    */
-  constructor(qualifierToValue) {
+  constructor(qualifierToValue, options={}) {
     super()
     this.qualifierToValue = qualifierToValue;
+    this.options = options || {}
+    if ( (this.options.dashPrefix !== false) &&
+         (this.options.dashPrefix !== true) ) {
+      this.options.dashPrefix = true
+    }
   }
   eachValue(f) {
-    Object.entries(this.qualifierToValue).forEach( ([qualifier, value]) => {
+    Object.entries(this.qualifierToValue).forEach( ([qualifierString, value]) => {
+      const qualifier = new Qualifier(qualifierString, this.options.dashPrefix)
       f(new LiteralEnumeratedValue({ qualifier: qualifier, value: value }))
     })
   }

@@ -2,18 +2,22 @@ import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
 import { CSSClassTemplate }                   from "../lib/CSSClass.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
 import { LiteralScale }                       from "../lib/Scale.js"
-import { spacingFixedScale,
-  negativeSpacingFixedScale }                  from "./scales.js"
+import { spacingFixedScale, negativeSpacingFixedScale } from "./scales.js"
 
 const positions = new MetaProperty({
   name: "Position",
   enumeratedValues: [
-    new LiteralScale({
-      "static": "static",
-      "relative": "relative",
-      "absolute": "absolute",
-      "fixed": "fixed",
-    })
+    new LiteralScale(
+      {
+        "static": "static",
+        "relative": "relative",
+        "absolute": "absolute",
+        "fixed": "fixed",
+      },
+      {
+        dashPrefix: false
+      }
+    )
   ],
   cssClassTemplates: [
     new CSSClassTemplate("", "position"),

@@ -27,7 +27,7 @@ const paddingMetaProperty = new MetaProperty({
     spacingFixedScale
   ],
   cssClassTemplates: [
-    new CSSClassTemplate("p", "padding", { exampleTemplate: paddingExampleTemplate }),
+    new CSSClassTemplate("pa", "padding", { exampleTemplate: paddingExampleTemplate }),
     new CSSClassTemplate("pl", "padding-left", { exampleTemplate: paddingExampleTemplate }),
     new CSSClassTemplate("pr", "padding-right", { exampleTemplate: paddingExampleTemplate }),
     new CSSClassTemplate("pt", "padding-top", { exampleTemplate: paddingExampleTemplate }),
@@ -45,7 +45,7 @@ const marginMetaProperty = new MetaProperty({
     spacingFixedScale
   ],
   cssClassTemplates: [
-    new CSSClassTemplate("m", "margin", { exampleTemplate: marginExampleTemplate }),
+    new CSSClassTemplate("ma", "margin", { exampleTemplate: marginExampleTemplate }),
     new CSSClassTemplate("ml", "margin-left", { exampleTemplate: marginExampleTemplate }),
     new CSSClassTemplate("mr", "margin-right", { exampleTemplate: marginExampleTemplate }),
     new CSSClassTemplate("mt", "margin-top", { exampleTemplate: marginExampleTemplate }),

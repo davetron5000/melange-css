@@ -12,9 +12,6 @@ const pseudoSelectors = [
 ]
 
 class ColorExampleTemplate extends ExampleTemplate {
-  _htmlForDocs(selector, _content) {
-    return `<div class=\"${selector}\">\n  This is text using ${selector}\n</div>`
-  }
   _markupForRendering(htmlForDocs) {
     const spaced = htmlForDocs.replace("<div ","<div style=\"width: 20rem; border: dotted thin #888; padding: 1rem; background-color: COLOR\" ")
     const black = spaced.replace("COLOR","#000")
@@ -49,11 +46,11 @@ ${black}${white}
 
 class ColorTints {
   static DEFAULT_TINTNAMES = [
-    "-lightest",
-    "-light",
+    "lightest",
+    "light",
     "",
-    "-dark",
-    "-darkest",
+    "dark",
+    "darkest",
   ]
   constructor(tintNames) {
     this.tintNames = tintNames || ColorTints.DEFAULT_TINTNAMES
