@@ -34,13 +34,13 @@ export default class CSSClass {
    * for how the class' name is derived.
    */
   toCSS() {
-    const props = Array.from(Object.entries(this.propertiesAndValues)).map( ([property,value]) => {
+    const properties = Array.from(Object.entries(this.propertiesAndValues)).map( ([property,value]) => {
       if (value.toString() == "[object Object]") {
         throw `WTAF? Got ${JSON.stringify(value)}`
       }
       return `  ${property}: ${value};` 
     }).join("\n")
-    return `.${this.fullSelector()} {\n${props}\n}`
+    return `.${this.fullSelector()} {\n${properties}\n}`
   }
 
   example() {

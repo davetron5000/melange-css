@@ -63,11 +63,15 @@ export default class CSSClassTemplate {
     const cssClass = new CSSClass({
       selector: step.selector(this.classNameBase),
       exampleTemplate: this.exampleTemplate,
-      propertiesAndValues: Object.fromEntries(this.cssProperties.map( (property) => {
-        return [ property, step.cssValue() ]
-      }))
+      propertiesAndValues: this._propertiesAndValues(step),
     })
     return this._hackCSSClass(cssClass)
+  }
+
+  _propertiesAndValues(step) {
+    return Object.fromEntries(this.cssProperties.map( (property) => {
+      return [ property, step.cssValue() ]
+    }))
   }
 
   _hackCSSClass(cssClass) {

@@ -9,6 +9,7 @@ import widths      from "./groups/widths.js"
 import colors      from "./groups/colors.js"
 import debugging   from "./groups/debugging.js"
 import position    from "./groups/position.js"
+import borders     from "./groups/borders.js"
 
 
 const breakpoints = [
@@ -27,6 +28,7 @@ const metaTheme = new MetaTheme({
     display,
     colors,
     debugging,
+    borders,
   ],
   breakpoints: breakpoints,
 })

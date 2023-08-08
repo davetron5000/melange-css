@@ -74,6 +74,19 @@ const fontFamilyVariables = VariableRegistry.register(
 
 const fontFamilies = new VariableBasedScale(fontFamilyVariables)
 
+const borderWidthVariables = VariableRegistry.register(
+  "borderWidth",
+  [
+    "0.125rem",
+    "0.25rem",
+    "0.5rem",
+    "1rem",
+    "2rem",
+  ],
+  "Border widths",
+)
+const borderWidthScale = new VariableBasedScaleWithZero(borderWidthVariables)
+
 /** Now, we have literal scales that don't make sense to have as variables,
  * but that we nevertheless want to define as a scale */
 
@@ -97,6 +110,7 @@ const thirdsScale = new Scale({
 
 export {
   spacingScale,
+  borderWidthScale,
   negativeSpacingScale,
   fontScale,
   percentageScale,
