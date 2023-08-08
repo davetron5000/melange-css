@@ -12,7 +12,7 @@ import {
 
 const widthsMetaProperty = new MetaProperty({
   name: "width",
-  enumeratedValues: [
+  scales: [
     spacingScale,
     percentageScale,
     thirdsScale,

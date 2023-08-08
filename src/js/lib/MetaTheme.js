@@ -1,9 +1,17 @@
+/*
+ * This is not the design system that Melange provides for you.  This is a thing that produces
+ * design systems.  It turns a list of MetaPropertyGrouping instances and a list of Breakpoint instances insto
+ * the design system.
+ */
 export default class MetaTheme {
   constructor({metaPropertyGroupings, breakpoints}) {
     this.metaPropertyGroupings = metaPropertyGroupings
     this.breakpoints           = breakpoints
   }
 
+  /*
+   * Ensures that there are no duplicate class names
+   */
   checkForDupes() {
     const dupes = {}
     this.eachCSSClass( { onCSSClass: (cssClass) => {
@@ -61,6 +69,21 @@ export default class MetaTheme {
     return canonical
   }
 
+  /*
+   * Allows for fine-level iteration over each class that is produced, with callbacks for each breakpoint, grouping,
+   * property, class template, and class.
+   *
+   * Each of the following callbacks can either be a single function or an object with the keys start and end.
+   *
+   * start is called for each part of the model before iteration of sub models.  end is called after.  If
+   * the callback is a function, it will be called for start only.
+   *
+   * onBreakpoint - called around the given breakpoint. Passed a Breakpoint instance
+   * onMetaPropertyGrouping - around the given MetaPropertyGrouping. Passed a MetaPropertyGrouping instance
+   * onMetaProperty - around the given MetaProperty. Passed a MetaProperty instance
+   * onCSSClassTemplate - around the given CSSClassTemplate. Passed a CSSClassTemplate instance
+   * onCSSClass - around the given CSSClass. Passed a CSSClass instance
+   */
   eachCSSClass({
     onBreakpoint,
     onMetaPropertyGrouping,
@@ -82,10 +105,10 @@ export default class MetaTheme {
           onMetaProperty.start(metaProperty)
           metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
             onCSSClassTemplate.start(cssClassTemplate)
-            metaProperty.enumeratedValues().forEach( (enumeratedValues) => {
+            metaProperty.scales().forEach( (scale) => {
               metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
-                enumeratedValues.eachStep( (enumeratedValue) => {
-                  const cssClass = cssClassTemplate.toCSSClass(enumeratedValue).forSelector(pseudoSelector).atBreakpoint(breakpoint)
+                scale.eachStep( (step) => {
+                  const cssClass = cssClassTemplate.toCSSClass(step).forSelector(pseudoSelector).atBreakpoint(breakpoint)
                   onCSSClass.start(cssClass, cssClassTemplate)
                   onCSSClass.end(cssClass, cssClassTemplate)
                 })

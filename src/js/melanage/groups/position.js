@@ -10,7 +10,7 @@ import {
 
 const positions = new MetaProperty({
   name: "Position",
-  enumeratedValues: [
+  scales: [
     new Scale(
       {
         "static": "static",
@@ -33,7 +33,7 @@ const locations = new MetaProperty({
   docs: [
     "The properties can be used with the position values to place things explicitly.  Note that in addition to the positive values like <code>left4</code> or <code>top2</code>, there are <strong>negative</strong> values as well, like <code>left-4</code> and <code>top-2</code>.",
   ],
-  enumeratedValues: [
+  scales: [
     spacingScale,
     negativeSpacingScale,
   ],

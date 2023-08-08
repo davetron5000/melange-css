@@ -49,7 +49,7 @@ const flexNone = MetaProperty.literal({
 
 const flexDirection = new MetaProperty({
   name: "Flex Direction",
-  enumeratedValues: [
+  scales: [
     Scale.forLiteralValues({
       "column": "column",
       "row": "row",
@@ -70,7 +70,7 @@ const flexWrap = new MetaProperty({
       exampleTemplate: flexExampleTemplate,
     })
   ],
-  enumeratedValues: [
+  scales: [
     Scale.forLiteralValues({
       "wrap": "wrap",
       "nowrap": "nowrap",
@@ -98,7 +98,7 @@ const displays = new MetaProperty({
       exampleTemplate: displayExampleTemplate
     })
   ],
-  enumeratedValues: [
+  scales: [
     Scale.forLiteralValues(
       {
         "b": "block",
@@ -121,7 +121,7 @@ const tableDisplay = new MetaProperty({
   cssClassTemplates: [
     new CSSClassTemplate("dt", "display", { })
   ],
-  enumeratedValues: [
+  scales: [
     Scale.forLiteralValues({
       "": "table",
       "c": "table-cell",

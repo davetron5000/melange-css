@@ -80,11 +80,8 @@ export default class DocBuilder {
     }
 
     const documentClass = (cssClass, cssClassTemplate) => {
-      let example
-      if (cssClassTemplate.hasExample()) {
-        example = cssClassTemplate.example(cssClass)
-      }
-      else {
+      let example = cssClass.example()
+      if (!example) {
         example = new Example({ htmlForDocs: `<div class=\"${cssClass.className()}\"></div>` })
       }
       doc.push(`<tr><td style="padding: 0.5rem; border: solid thin gray"><code><pre>${example.escapedHtml()}</pre></code>`)

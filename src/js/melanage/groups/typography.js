@@ -20,7 +20,7 @@ const exampleTemplate = (selector) => {
 
 const fontSizes = new MetaProperty({
   name: "Font Scale",
-  enumeratedValues: [
+  scales: [
     fontScale,
   ],
   cssClassTemplates: [
@@ -35,9 +35,9 @@ const fontSizes = new MetaProperty({
 const summarization = []
 summarization.push(`<div style=\"display: flex; align-items: baseline; margin-bottom: 1rem;\"><h3 style="width: 8rem;"><a style=\"color: black; text-decoration: underline;\" href=\"#${fontSizes.name}\">${fontSizes.name}</a></h3>`)
 fontSizes.cssClassTemplates.forEach( (cssClassTemplate) => {
-  fontSizes.enumeratedValues().forEach( (enumeratedValues) => {
-    enumeratedValues.eachStep( (enumeratedValue) => {
-      const cssClass = cssClassTemplate.toCSSClass(enumeratedValue)
+  fontSizes.scales().forEach( (scale) => {
+    scale.eachStep( (step) => {
+      const cssClass = cssClassTemplate.toCSSClass(step)
       if (cssClass.propertiesAndValues['font-size']) {
         summarization.push(`<div>
   <div style=\"margin-right: 1rem; padding: 1rem;">
@@ -60,7 +60,7 @@ const measureScale = new Scale({
 const measure = new MetaProperty({
   name: "Measure",
   docs: "Measure allows styling maximum widths when text is involved, to ensure the text wraps properly for good reading",
-  enumeratedValues: [ measureScale ],
+  scales: [ measureScale ],
   cssClassTemplates: [
     new CSSClassTemplate("measure", "max-width", {
       exampleTemplate: ExampleTemplate.divWithSelector(`Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
@@ -73,7 +73,7 @@ const measure = new MetaProperty({
 })
 const textAlign = new MetaProperty({
   name: "Text Align",
-  enumeratedValues: [
+  scales: [
     new Scale({
       "right": "right",
       "center": "center",
@@ -91,7 +91,7 @@ const textAlign = new MetaProperty({
 })
 const leading = new MetaProperty({
   name: "Leading/Line Height",
-  enumeratedValues: [
+  scales: [
     new Scale({
       "solid": "1",
       "title": "1.25",
@@ -111,7 +111,7 @@ const leading = new MetaProperty({
 
 const tracking = new MetaProperty({
   name: "Tracking",
-  enumeratedValues: [
+  scales: [
     new Scale({
       "": "0.1em",
       "tight": "-0.05em",
@@ -128,7 +128,7 @@ const tracking = new MetaProperty({
 
 const fontStyle = new MetaProperty({
   name: "Font Style",
-  enumeratedValues: [
+  scales: [
     new Scale({
       "normal": "normal",
       "i": "italic",
@@ -143,7 +143,7 @@ const fontStyle = new MetaProperty({
 
 const textTransform = new MetaProperty({
   name: "Text Tranform",
-  enumeratedValues: [
+  scales: [
     new Scale({
       "n": "none",
       "u": "uppercase",
@@ -163,7 +163,7 @@ const textDecoration = new MetaProperty({
   docs: [
     "Text decoration adds lines to the text. You can combine the single letter values together by putting the letters in alphabetical order, for example <code>su</code> combines <code>s</code> and <code>u</code>",
   ],
-  enumeratedValues: [
+  scales: [
     new Scale({
       "n": "none",
       "u": "underline",
@@ -185,7 +185,7 @@ const textDecoration = new MetaProperty({
 
 const whiteSpace = new MetaProperty({
   name: "White Space",
-  enumeratedValues: [
+  scales: [
     new Scale({
       "normal": "normal",
       "nowrap": "nowrap",
@@ -217,7 +217,7 @@ Trust me.
 
 const fontWeight = new MetaProperty({
   name: "Font Weights",
-  enumeratedValues: [
+  scales: [
     new Scale({
       "normal": "normal",
       "bold": "bold"
@@ -243,7 +243,7 @@ const fontWeight = new MetaProperty({
 
 const fontFamily = new MetaProperty({
   name: "Font Families",
-  enumeratedValues: [
+  scales: [
     fontFamilies,
   ],
   cssClassTemplates: [

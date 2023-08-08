@@ -23,7 +23,7 @@ const debugExampleTemplate = (fullSelector) => {
 const debugClassTemplate = new CSSClassTemplate("debug", "outline", {
   exampleTemplate: debugExampleTemplate,
 })
-debugClassTemplate._tweakCSSClass = (cssClass) => {
+debugClassTemplate._hackCSSClass = (cssClass) => {
   cssClass.postSelectorSelector = "*"
   return cssClass
 }
@@ -32,7 +32,7 @@ const debug = new MetaProperty({
   cssClassTemplates: [
     debugClassTemplate,
   ],
-  enumeratedValues: [
+  scales: [
     Scale.forLiteralValues({
       "": "1px solid gold",
       "red": "1px solid red",
@@ -48,7 +48,7 @@ const debugGrid = new MetaProperty({
       exampleTemplate: debugExampleTemplate,
     })
   ],
-  enumeratedValues: [
+  scales: [
     Scale.forLiteralValues({
       "": "transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAFElEQVR4AWPAC97/9x0eCsAEPgwAVLshdpENIxcAAAAASUVORK5CYII=) repeat top left",
       "16": "transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMklEQVR4AWOgCLz/b0epAa6UGuBOqQHOQHLUgFEDnAbcBZ4UGwDOkiCnkIhdgNgNxAYAiYlD+8sEuo8AAAAASUVORK5CYII=) repeat top left",

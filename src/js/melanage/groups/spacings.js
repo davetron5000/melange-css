@@ -24,7 +24,7 @@ const paddingMetaProperty = new MetaProperty({
   docs: [
     "Padding is space internal to the box and can be controlled in all four directions, horizontally, vertically, or each individually",
   ],
-  enumeratedValues: [
+  scales: [
     spacingScale
   ],
   cssClassTemplates: [
@@ -42,7 +42,7 @@ const marginMetaProperty = new MetaProperty({
   docs: [
     "Margin is space outside the box and can be controlled in all four directions, horizontally, vertically, or each individually",
   ],
-  enumeratedValues: [
+  scales: [
     spacingScale
   ],
   cssClassTemplates: [
@@ -73,7 +73,7 @@ const floatExampleTemplate = (selector) => {
 
 const floats = new MetaProperty({
   name: "Floats",
-  enumeratedValues: [
+  scales: [
     Scale.forLiteralValues({
       "l": "left",
       "r": "right",
