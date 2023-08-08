@@ -1,4 +1,4 @@
-import { DefaultPseudoSelector } from "./PseudoSelector.js"
+import DefaultPseudoSelector from "./DefaultPseudoSelector.js"
 import DefaultBreakpoint from "./breakpoints/DefaultBreakpoint.js"
 
 class CSSClass {

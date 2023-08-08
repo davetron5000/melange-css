@@ -1,23 +1,15 @@
-import { DefaultPseudoSelector }                    from "./PseudoSelector.js"
+import DefaultPseudoSelector                    from "./DefaultPseudoSelector.js"
 import CSSClassTemplate                         from "./CSSClassTemplate.js"
 import Scale from "./scales/Scale.js"
 import Step from "./scales/Step.js"
+import DocStrings from "./DocStrings.js"
 
-
-class DocStrings {
-  constructor(docs) {
-    this.paragraphs = Array(docs || []).flat()
-  }
-  forEach(f) {
-    this.paragraphs.forEach(f)
-  }
-}
 /*
  * A Meta Property is the combination of one or more related CSS classes, a list
  * of enumerated values per class and pseudo selectors.  It is the combination
  * of these three axes on which a series of CSS classes is produced.
  */
-class MetaProperty {
+export default class MetaProperty {
   /*
    * name - a human-readable name for this meta property.  Not used to create CSS, but just for documentation
    * enumeratedValues - a list of Scale instances (themselves a list of Step instances) that
@@ -59,25 +51,4 @@ class MetaProperty {
       enumeratedValues: [ Scale.forLiteralValues({ "": value }) ],
     })
   }
-}
-
-
-/*
- * A grouping of MetaProperties for the purposes of organization or documentation.
- */
-class MetaPropertyGrouping {
-  constructor({name, metaProperties, docs, summarization}) {
-    this.name           = name
-    this.slug           = name.replaceAll(/[\s\*\.\"\']/g,"-").toLowerCase()
-    this.metaProperties = metaProperties
-    this.docs           = new DocStrings(docs)
-    this.summarization  = summarization
-  }
-  static singleton(metaProperty) {
-    return new MetaPropertyGrouping({ name: metaProperty.name, metaProperties: [ metaProperty ]})
-  }
-}
-export {
-  MetaProperty,
-  MetaPropertyGrouping
 }

@@ -2,14 +2,14 @@ import Scale from "./Scale.js"
 import VariableBasedStep from "./VariableBasedStep.js"
 
 export default class VariableBasedScale extends Scale {
-  constructor(melangeVariables) {
+  constructor(variables) {
     super()
-    this.melangeVariables = melangeVariables
+    this.variables = variables
   }
 
   eachStep(f) {
-    this.melangeVariables.forEach( (melangeVariable) => {
-      f(new VariableBasedStep(melangeVariable))
+    this.variables.forEach( (variable) => {
+      f(new VariableBasedStep(variable))
     })
   }
 }

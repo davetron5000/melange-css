@@ -1,4 +1,5 @@
-import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
+import MetaProperty from "../lib/MetaProperty.js"
+import MetaPropertyGrouping    from "../lib/MetaPropertyGrouping.js"
 import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
 import { spacingFixedScale }                  from "./scales.js"

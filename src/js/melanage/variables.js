@@ -1,6 +1,7 @@
-import { MelangeVariable, DerivedMelangeVariable }            from "../lib/MelangeVariable.js"
+import DerivedVariable from "../lib/DerivedVariable.js"
+import VariableRegistry from "../lib/VariableRegistry.js"
 
-const spacings = MelangeVariable.register(
+const spacings = VariableRegistry.register(
   "spacing",
   [
     "0.25rem",
@@ -14,23 +15,23 @@ const spacings = MelangeVariable.register(
   "Spacing scale for margins, paddings, widths, positions, etc.",
 )
 const negativeSpacings = spacings.map( (variable) => {
-  const propertyTransform = (melangeVariable) => {
-    return `calc(-1 * var(${melangeVariable._variableName()}))`
+  const propertyTransform = (variable) => {
+    return `calc(-1 * var(${variable._variableName()}))`
   }
   const stepNameTransform = (stepName) => {
     return `-${stepName}`
   }
-  return new DerivedMelangeVariable({
+  return new DerivedVariable({
     baseName: "negativeSpacing",
-    melangeVariable: variable,
+    variable: variable,
     propertyTransform: propertyTransform,
     stepNameTransform: stepNameTransform
   })
 })
 
-MelangeVariable.registerVariables("negativeSpacing", negativeSpacings)
+VariableRegistry.registerVariables("negativeSpacing", negativeSpacings)
 
-const fontSizes = MelangeVariable.register(
+const fontSizes = VariableRegistry.register(
   "fontSize",
   [
     "0.875rem",
@@ -45,7 +46,7 @@ const fontSizes = MelangeVariable.register(
   "Font scale, with size 2 being the body font size"
 )
 
-const fontFamily = MelangeVariable.register(
+const fontFamily = VariableRegistry.register(
   "fontFamily",
   {
     "sans": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif",

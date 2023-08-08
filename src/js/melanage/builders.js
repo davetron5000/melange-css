@@ -1,5 +1,5 @@
 import fs                  from "node:fs"
-import { MelangeVariable } from "../lib/MelangeVariable.js"
+import VariableRegistry from "../lib/VariableRegistry.js"
 import { Example }         from "../lib/ExampleTemplate.js"
 
 class CSSBuilder {
@@ -20,7 +20,7 @@ class CSSBuilder {
     }
     const css = fs.createWriteStream("melange.css")
     css.write(":root {\n")
-    MelangeVariable.eachSetOfVariables( (baseName,variablesSet) => {
+    VariableRegistry.eachSetOfVariables( (baseName,variablesSet) => {
       if (variablesSet.documentation) {
         css.write("/*\n")
         css.write(` * ${baseName}\n *\n`)

@@ -1,4 +1,5 @@
-import { MetaProperty, MetaPropertyGrouping } from "../lib/MetaProperty.js"
+import MetaProperty from "../lib/MetaProperty.js"
+import MetaPropertyGrouping    from "../lib/MetaPropertyGrouping.js"
 import CSSClassTemplate                   from "../lib/CSSClassTemplate.js"
 import Scale from "../lib/scales/Scale.js"
 import { ExampleTemplate }                    from "../lib/ExampleTemplate.js"
@@ -101,7 +102,7 @@ displayExampleTemplate._htmlForDocs = (selector, content) => {
 }
 
 
-const display = new MetaProperty({
+const displays = new MetaProperty({
   name: "Display",
   cssClassTemplates: [
     new CSSClassTemplate("d", "display", {
@@ -138,9 +139,9 @@ const tableDisplay = new MetaProperty({
   ]
 })
 
-const flex = new MetaPropertyGrouping({name: "Display and Flexbox",
+const display = new MetaPropertyGrouping({name: "Display and Flexbox",
   metaProperties: [
-    display,
+    displays,
     tableDisplay,
     flexMetaProperty,
     inlineFlex,
@@ -150,5 +151,5 @@ const flex = new MetaPropertyGrouping({name: "Display and Flexbox",
   ]
 })
 export {
-  flex,
+  display,
 }

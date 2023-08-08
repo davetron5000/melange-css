@@ -1,10 +1,4 @@
-class DefaultPseudoSelector {
-  forSelector(selector) {
-    return selector
-  }
-  isDefault() { return true }
-}
-class PseudoSelector {
+export default class PseudoSelector {
   constructor({variableNameQualifier, selector}) {
     this.variableNameQualifier = variableNameQualifier
     this.selector = selector
@@ -14,9 +8,4 @@ class PseudoSelector {
     return `${selector}:${this.selector}`
   }
   isDefault() { return false }
-}
-
-export {
-  DefaultPseudoSelector,
-  PseudoSelector,
 }

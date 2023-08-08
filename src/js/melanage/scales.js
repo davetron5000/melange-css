@@ -1,4 +1,3 @@
-import { MelangeVariable }            from "../lib/MelangeVariable.js"
 import VariableBasedScale from "../lib/scales/VariableBasedScale.js"
 import VariableBasedScaleWithZero from "../lib/scales/VariableBasedScaleWithZero.js"
 import Scale from "../lib/scales/Scale.js"

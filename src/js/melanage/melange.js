@@ -2,7 +2,7 @@ import { MetaTheme }   from "../lib/MetaTheme.js"
 import { breakpoints } from "./breakpoints.js"
 import { spacings }    from "./spacings.js"
 import { typography }  from "./typography.js"
-import { flex }        from "./flex.js"
+import { display }     from "./display.js"
 import { widths }      from "./widths.js"
 import { colors }      from "./colors.js"
 import { debugging }   from "./debugging.js"
@@ -14,7 +14,7 @@ const metaTheme = new MetaTheme({
     widths,
     position,
     typography,
-    flex,
+    display,
     colors,
     debugging,
   ],

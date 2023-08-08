@@ -2,10 +2,12 @@ import CSSClassTemplate                          from "./CSSClassTemplate.js"
 import Step                    from "./scales/Step.js"
 import Scale                    from "./scales/Scale.js"
 import VariableBasedScale              from "./scales/VariableBasedScale.js"
-import { DefaultPseudoSelector, PseudoSelector } from "./PseudoSelector.js"
+import DefaultPseudoSelector from "./DefaultPseudoSelector.js"
+  import PseudoSelector from "./PseudoSelector.js"
 import { ExampleTemplate }                       from "./ExampleTemplate.js"
-import { MelangeVariable }                       from "./MelangeVariable.js"
-import { MetaProperty, MetaPropertyGrouping }    from "./MetaProperty.js"
+import VariableRegistry                       from "./VariableRegistry.js"
+import MetaProperty from "./MetaProperty.js"
+import MetaPropertyGrouping    from "./MetaPropertyGrouping.js"
 
 const pseudoSelectors = [
   new DefaultPseudoSelector(),
@@ -69,7 +71,7 @@ export default class ColorTints {
     const stepNamesAndDefaultValues = Object.fromEntries(tints.map( (tint, index) => {
       return [ this.tintNames[index], tint ]
     }))
-    const variables = MelangeVariable.register(colorName,stepNamesAndDefaultValues,`Tints/Shades for ${colorName}`)
+    const variables = VariableRegistry.register(colorName,stepNamesAndDefaultValues,`Tints/Shades for ${colorName}`)
     this.colorScale[colorName] = {
       variables: variables,
       tints: tints
