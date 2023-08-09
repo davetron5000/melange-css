@@ -19,8 +19,28 @@ const flexExampleTemplate = (selector) => {
 </div>`
   const markupForRendering = "<div style=\"width: 60%\">" + 
     htmlForDocs.
-    replace("<div ","<div style=\"gap: 0.25rem;\" ").
+    replace("<div ","<div style=\"width: 100%; border: thin dashed black; padding: 1rem; gap: 0.25rem;\" ").
     replaceAll("<div>","<div style=\"padding: 0.25rem; border: solid thin black;\">") + "</div>"
+  return new Example({
+    htmlForDocs: htmlForDocs,
+    markupForRendering: markupForRendering,
+  })
+}
+
+const flexJustifyExampleTemplate = (selector) => {
+  let fullSelector = `flex ${selector}`
+  if ( (selector == "flex") || (selector == "inline-flex") ) {
+    fullSelector = selector
+  }
+  const htmlForDocs = `<div class="${fullSelector}">
+  <div>Lynch Dune</div>
+  <div>Sci-Fi Dune</div>
+  <div>DUNC</div>
+</div>`
+  const markupForRendering = "<div style=\"width: 60%\">" + 
+    htmlForDocs.
+    replace("<div ","<div style=\"width: 32rem; border: thin dashed black; padding: 1rem; gap: 0.25rem;\" ").
+    replaceAll("<div>","<div style=\"padding: 0.25rem; white-space: nowrap; border: solid thin black;\">") + "</div>"
   return new Example({
     htmlForDocs: htmlForDocs,
     markupForRendering: markupForRendering,
@@ -75,6 +95,49 @@ const flexWrap = new MetaProperty({
       "wrap": "wrap",
       "nowrap": "nowrap",
       "wrap-reverse": "wrap-reverse",
+    })
+  ]
+})
+
+const flexAlignItems = new MetaProperty({
+  name: "Flex Alignment",
+  cssClassTemplates: [
+    new CSSClassTemplate("items", "align-items", {
+      exampleTemplate: flexExampleTemplate,
+    }),
+    new CSSClassTemplate("self", "align-self", {
+      exampleTemplate: flexExampleTemplate,
+    }),
+  ],
+  scales: [
+    Scale.forLiteralValues({
+      "start": "flex-start",
+      "end": "flex-end",
+      "center": "center",
+      "baseline": "baseline",
+      "stretch": "stretch",
+    })
+  ]
+})
+
+const flexJustifyItems = new MetaProperty({
+  name: "Flex Content",
+  cssClassTemplates: [
+    new CSSClassTemplate("justify", "justify-content", {
+      exampleTemplate: flexJustifyExampleTemplate,
+    }),
+    new CSSClassTemplate("content", "aligh-content", {
+      exampleTemplate: flexJustifyExampleTemplate,
+    }),
+  ],
+  scales: [
+    Scale.forLiteralValues({
+      "start": "start",
+      "end": "end",
+      "center": "center",
+      "between": "space-between",
+      "around": "space-around",
+      "stretch": "stretch",
     })
   ]
 })
@@ -142,6 +205,8 @@ const display = new MetaPropertyGrouping({name: "Display and Flexbox",
     flexNone,
     flexDirection,
     flexWrap,
+    flexAlignItems,
+    flexJustifyItems,
   ]
 })
 export default display

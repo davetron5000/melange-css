@@ -55,6 +55,30 @@ export default class DocBuilder {
       },
       end: (metaProperty) => { doc.push("    </section>\n") }
     }
+    /*
+            <h3 class="f5"><code>f-l</code></h3>
+        <article style="margin-left: 1rem; align-items: start; justify-items: between;" class="flex-ns items-start justify-between db">
+          <div>
+            <h4 class="f4 ma-0">Example</h4>
+            <code style="overflow-x: scroll" class="mw-100 db pa-2 br-3 bg-black-ish blue-lightest"><pre style="margin: 0">&lt;div&gt;
+  &lt;div class="f-l"&gt;.f-l&lt;/div&gt;
+  &lt;div&gt;Greetings, programs! Remember to fight for the users!&lt;/div&gt;
+&lt;/div&gt;</pre></code>
+          </div>
+          <div class="ml-3-ns mt-3 mt-0-ns">
+            <h4 class="f4 ma-0">Demo</h4>
+           <div style="border: dashed thin black; "><div style="padding-left: 1rem; padding-right: 1rem; border: solid thin black" class="f-l">.f-l</div><div style="padding-left: 1rem; padding-right: 1rem; background-color: #ddd;" >Greetings, programs! Remember to fight for the users!</div></div>
+          </div>
+          </article>
+          <details style="margin-top: 1rem; margin-bottom: 1rem; margin-left: 1rem;">
+            <summary>Show CSS</summary>
+            <code style="overflow-x: scroll"; class="mw-100 db pa-2 br-3 bg-black-ish blue-lightest"><pre style="margin: 0">.f-l {
+  float: left;
+}</pre></code>
+          </details>
+        </div>
+
+  */
     const documentTemplate = {
       start: (cssClassTemplate) => {
         doc.push("      <section>\n")
