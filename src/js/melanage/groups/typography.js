@@ -42,7 +42,7 @@ const measureScale = new Scale({
 
 const measure = new MetaProperty({
   name: "Measure",
-  docs: "Measure allows styling maximum widths when text is involved, to ensure the text wraps properly for good reading",
+  docs: "Measure is a convienience for setting max widths appropriater for reading text",
   scales: [ measureScale ],
   cssClassTemplates: [
     new CSSClassTemplate("measure", "max-width", {

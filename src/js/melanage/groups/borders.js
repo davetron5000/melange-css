@@ -30,7 +30,7 @@ const bordersMetaProperty = new MetaProperty({
         "border-style": "solid",
         "border-width": "1px", 
       },
-      { exampleTemplate: borderExampleTemplate }
+      { exampleTemplate: borderExampleTemplate, summary: "all" }
     ),
     new ScaleAgnosticCSSClassTemplate(
       "bl",
@@ -38,7 +38,7 @@ const bordersMetaProperty = new MetaProperty({
         "border-left-style": "solid",
         "border-left-width": "1px", 
       },
-      { exampleTemplate: borderExampleTemplate }
+      { exampleTemplate: borderExampleTemplate, summary: "left" }
     ),
     new ScaleAgnosticCSSClassTemplate(
       "br",
@@ -46,7 +46,7 @@ const bordersMetaProperty = new MetaProperty({
         "border-right-style": "solid",
         "border-right-width": "1px", 
       },
-      { exampleTemplate: borderExampleTemplate }
+      { exampleTemplate: borderExampleTemplate, summary: "right" }
     ),
     new ScaleAgnosticCSSClassTemplate(
       "bt",
@@ -54,7 +54,7 @@ const bordersMetaProperty = new MetaProperty({
         "border-top-style": "solid",
         "border-top-width": "1px", 
       },
-      { exampleTemplate: borderExampleTemplate }
+      { exampleTemplate: borderExampleTemplate, summary: "top" }
     ),
     new ScaleAgnosticCSSClassTemplate(
       "bb",
@@ -62,7 +62,7 @@ const bordersMetaProperty = new MetaProperty({
         "border-bottom-style": "solid",
         "border-bottom-width": "1px", 
       },
-      { exampleTemplate: borderExampleTemplate }
+      { exampleTemplate: borderExampleTemplate, summary: "bottom" }
     ),
     new ScaleAgnosticCSSClassTemplate(
       "bn",
@@ -70,7 +70,7 @@ const bordersMetaProperty = new MetaProperty({
         "border-style": "none",
         "border-width": "0", 
       },
-      { exampleTemplate: borderExampleTemplate }
+      { exampleTemplate: borderExampleTemplate, summary: "none" }
     ),
   ]
 })
@@ -86,11 +86,11 @@ const borderStyleMetaProperty = new MetaProperty({
     }),
   ],
   cssClassTemplates: [
-    new CSSClassTemplate("b-", "border-style", { exampleTemplate: borderExampleTemplate }),
-    new CSSClassTemplate("bl-", "border-left-style", { exampleTemplate: borderExampleTemplate }),
-    new CSSClassTemplate("br-", "border-right-style", { exampleTemplate: borderExampleTemplate }),
-    new CSSClassTemplate("bt-", "border-top-style", { exampleTemplate: borderExampleTemplate }),
-    new CSSClassTemplate("bb-", "border-bottom-style", { exampleTemplate: borderExampleTemplate }),
+    new CSSClassTemplate("b-", "border-style", { exampleTemplate: borderExampleTemplate, summary: "all" }),
+    new CSSClassTemplate("bl-", "border-left-style", { exampleTemplate: borderExampleTemplate, summary: "left" }),
+    new CSSClassTemplate("br-", "border-right-style", { exampleTemplate: borderExampleTemplate, summary: "right" }),
+    new CSSClassTemplate("bt-", "border-top-style", { exampleTemplate: borderExampleTemplate, summary: "top" }),
+    new CSSClassTemplate("bb-", "border-bottom-style", { exampleTemplate: borderExampleTemplate, summary: "bottom" }),
   ]
 })
 
@@ -98,11 +98,11 @@ const borderWidthMetaProperty = new MetaProperty({
   name: "Border Widths",
   scales: [ borderWidthScale ],
   cssClassTemplates: [
-    new CSSClassTemplate("bw", "border-width", { exampleTemplate: borderWidthExampleTemplate }),
-    new CSSClassTemplate("blw", "border-left-width", { exampleTemplate: borderWidthExampleTemplate }),
-    new CSSClassTemplate("brw", "border-right-width", { exampleTemplate: borderWidthExampleTemplate }),
-    new CSSClassTemplate("btw", "border-top-width", { exampleTemplate: borderWidthExampleTemplate }),
-    new CSSClassTemplate("bbw", "border-bottom-width", { exampleTemplate: borderWidthExampleTemplate }),
+    new CSSClassTemplate("bw", "border-width", { exampleTemplate: borderWidthExampleTemplate, summary: "all" }),
+    new CSSClassTemplate("blw", "border-left-width", { exampleTemplate: borderWidthExampleTemplate, summary: "left" }),
+    new CSSClassTemplate("brw", "border-right-width", { exampleTemplate: borderWidthExampleTemplate, summary: "right" }),
+    new CSSClassTemplate("btw", "border-top-width", { exampleTemplate: borderWidthExampleTemplate, summary: "top" }),
+    new CSSClassTemplate("bbw", "border-bottom-width", { exampleTemplate: borderWidthExampleTemplate, summary: "bottom" }),
   ]
 })
 
@@ -114,11 +114,11 @@ const borderRadiusMetaProperty = new MetaProperty({
   name: "Border Radius",
   scales: [ borderWidthScale, borderRadiusAdditions ],
   cssClassTemplates: [
-    new CSSClassTemplate("br", "border-radius", { exampleTemplate: borderWidthExampleTemplate }),
-    new CSSClassTemplate("br-bottom", "border-bottom-left-radius", "border-bottom-right-radius", { exampleTemplate: borderWidthExampleTemplate }),
-    new CSSClassTemplate("br-top", "border-top-left-radius", "border-top-right-radius", { exampleTemplate: borderWidthExampleTemplate }),
-    new CSSClassTemplate("br-left", "border-bottom-left-radius", "border-top-left-radius", { exampleTemplate: borderWidthExampleTemplate }),
-    new CSSClassTemplate("br-right", "border-bottom-right-radius", "border-top-right-radius", { exampleTemplate: borderWidthExampleTemplate }),
+    new CSSClassTemplate("br", "border-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "all" }),
+    new CSSClassTemplate("br-bottom", "border-bottom-left-radius", "border-bottom-right-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "bottom" }),
+    new CSSClassTemplate("br-top", "border-top-left-radius", "border-top-right-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "top" }),
+    new CSSClassTemplate("br-left", "border-bottom-left-radius", "border-top-left-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "left" }),
+    new CSSClassTemplate("br-right", "border-bottom-right-radius", "border-top-right-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "right" }),
   ]
 })
 

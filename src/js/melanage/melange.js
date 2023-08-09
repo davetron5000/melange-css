@@ -5,6 +5,7 @@ import Breakpoint        from "../lib/breakpoints/Breakpoint.js"
 import spacings    from "./groups/spacings.js"
 import typography  from "./groups/typography.js"
 import display     from "./groups/display.js"
+import flex        from "./groups/flex.js"
 import widths      from "./groups/widths.js"
 import colors      from "./groups/colors.js"
 import debugging   from "./groups/debugging.js"
@@ -26,6 +27,7 @@ const metaTheme = new MetaTheme({
     position,
     typography,
     display,
+    flex,
     colors,
     debugging,
     borders,

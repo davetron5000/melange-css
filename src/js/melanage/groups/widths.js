@@ -28,17 +28,44 @@ const widthsMetaProperty = new MetaProperty({
 </div>`,
         })
       },
+      summary: "Width",
     }),
     new CSSClassTemplate("mw", "max-width", {
-      docs: "Sets the max width of the element to either a step in the scale or a given percentage",
+      summary: "Max Width",
+    }),
+  ]
+})
+const heightsMetaProperty = new MetaProperty({
+  name: "height",
+  scales: [
+    spacingScale,
+    percentageScale,
+    thirdsScale,
+    Scale.forLiteralValues({ "auto": "auto" }),
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("h", "height", {
+      exampleTemplate: (selector) => {
+        return new Example({
+          markupForRendering: `<div class="${selector}"
+     style="white-space: nowrap; border: solid thin black; background-color: #ddd; color: #222; padding: 0.5rem;">
+  .${selector}
+</div>`,
+        })
+      },
+      summary: "Height",
+    }),
+    new CSSClassTemplate("max-height", "max-height", {
+      summary: "Max Height",
     }),
   ]
 })
 
 const widths = new MetaPropertyGrouping({
-  name: "Widths",
+  name: "Widths and Heights",
   metaProperties: [
     widthsMetaProperty,
+    heightsMetaProperty,
   ]
 })
 export default widths

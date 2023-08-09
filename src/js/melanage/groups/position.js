@@ -1,7 +1,8 @@
-import MetaProperty         from "../../lib/MetaProperty.js"
-import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
-import CSSClassTemplate     from "../../lib/CSSClassTemplate.js"
-import Scale                from "../../lib/scales/Scale.js"
+import MetaProperty                  from "../../lib/MetaProperty.js"
+import MetaPropertyGrouping          from "../../lib/MetaPropertyGrouping.js"
+import CSSClassTemplate              from "../../lib/CSSClassTemplate.js"
+import ScaleAgnosticCSSClassTemplate from "../../lib/ScaleAgnosticCSSClassTemplate.js"
+import Scale                         from "../../lib/scales/Scale.js"
 
 import {
   spacingScale,
@@ -10,22 +11,13 @@ import {
 
 const positions = new MetaProperty({
   name: "Position",
-  scales: [
-    new Scale(
-      {
-        "static": "static",
-        "relative": "relative",
-        "absolute": "absolute",
-        "fixed": "fixed",
-      },
-      {
-        dashPrefix: false
-      }
-    )
-  ],
+  scales: [ Scale.forLiteralValues({ "": "" }) ],
   cssClassTemplates: [
-    new CSSClassTemplate("", "position"),
-  ]
+    new ScaleAgnosticCSSClassTemplate("static", { "position": "static" }),
+    new ScaleAgnosticCSSClassTemplate("relative", { "position": "relative" }),
+    new ScaleAgnosticCSSClassTemplate("absolute", { "position": "absolute" }),
+    new ScaleAgnosticCSSClassTemplate("fixed", { "position": "fixed" }),
+  ],
 })
 
 const locations = new MetaProperty({

@@ -10,12 +10,12 @@ import {
 
 const paddingExampleTemplate = (selector) => {
   return new Example({
-    markupForRendering: `<div style="display: inline-block; border: solid thin; background-color: #ddd; color: #222" class="${selector}">.${selector}</div>`
+    markupForRendering: `<div class="dib ba bg-gray-light gray-darkest ${selector}"><div class="bg-white ws-nowrap">.${selector}</div></div>`
   })
 }
 const marginExampleTemplate = (selector) => {
   return new Example({
-    markupForRendering: `<div style=\"display: inline-block; border: dashed thin black;\"><div style="display: inline-block; border: solid thin; background-color: #ddd; color: #222" class="${selector}">.${selector}</div></div>`
+    markupForRendering: `<div class="dib ba b--dashed"><div class="dib ba bg-gray-light gray-darkest ws-nowrap ${selector}">.${selector}</div></div>`
   })
 }
 
@@ -60,9 +60,9 @@ const marginMetaProperty = new MetaProperty({
 const floatExampleTemplate = (selector) => {
   const html = `<div>
   <div class="${selector}">.${selector}</div>
-  <div>Greetings, programs! Remember to fight for the users!</div>
+  <div>The spice must flow! Without it, space travel is impossible.</div>
 </div>`
-  const innerMarkup =  `<div style="border: dashed thin black; "><div style="padding-left: 1rem; padding-right: 1rem; border: solid thin black" class="${selector}">.${selector}</div><div style="padding-left: 1rem; padding-right: 1rem; background-color: #ddd;" >Greetings, programs! Remember to fight for the users!</div></div>`
+  const innerMarkup =  `<div style="border: dashed thin black; "><div style="padding-left: 1rem; padding-right: 1rem; border: solid thin black" class="${selector}">.${selector}</div><div style="padding-left: 1rem; padding-right: 1rem; background-color: #ddd;" >The spice must flow! Without it, space travel is impossible.</div></div>`
   return new Example({
     htmlForDocs: html,
     markupForRendering: innerMarkup,

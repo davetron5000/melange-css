@@ -89,7 +89,7 @@ export default class DocBuilder {
       </nav>`)
         }
         metaProperty.docs.forEach( (docParagraph) => {
-          doc.push(`      <p class="measure f-2">${docParagraph}</p>\n`)
+          doc.push(`      <p class="measure lh-copy f-2">${docParagraph}</p>\n`)
         })
       },
       end: (metaProperty) => { doc.push("    </section>\n") }

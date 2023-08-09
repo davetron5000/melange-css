@@ -1,178 +1,19 @@
-import MetaProperty         from "../../lib/MetaProperty.js"
-import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
-import CSSClassTemplate     from "../../lib/CSSClassTemplate.js"
-import Scale                from "../../lib/scales/Scale.js"
-import Example              from "../../lib/Example.js"
-
-const flexExampleTemplate = (selector) => {
-  let fullSelector = `flex ${selector}`
-  if ( (selector == "flex") || (selector == "inline-flex") ) {
-    fullSelector = selector
-  }
-  const htmlForDocs = `<div class="${fullSelector}">
-  <div>Dune</div>
-  <div>Dune: Messiah</div>
-  <div>Children of Dune</div>
-  <div>God Emperor of Dune</div>
-  <div>Heretics of Dune</div>
-  <div>Chapterhouse: Dune</div>
-</div>`
-  const markupForRendering = "<div>" + 
-    htmlForDocs.
-    replace("<div ","<div style=\"width: auto; border: thin dashed black; padding: 1rem; gap: 0.25rem;\" ").
-    replaceAll("<div>","<div style=\"padding: 0.25rem; border: solid thin black;\">") + "</div>"
-  return new Example({
-    htmlForDocs: htmlForDocs,
-    markupForRendering: markupForRendering,
-  })
-}
-
-const flexJustifyExampleTemplate = (selector) => {
-  let fullSelector = `flex ${selector}`
-  if ( (selector == "flex") || (selector == "inline-flex") ) {
-    fullSelector = selector
-  }
-  const htmlForDocs = `<div class="${fullSelector}">
-  <div>Lynch Dune</div>
-  <div>Sci-Fi Dune</div>
-  <div>DUNC</div>
-</div>`
-  const markupForRendering = "<div>" +
-    htmlForDocs.
-    replace("<div ","<div style=\"width: auto; border: thin dashed black; padding: 1rem; gap: 0.25rem;\" ").
-    replaceAll("<div>","<div style=\"padding: 0.25rem; white-space: nowrap; border: solid thin black;\">") + "</div>"
-  return new Example({
-    htmlForDocs: htmlForDocs,
-    markupForRendering: markupForRendering,
-  })
-}
-
-const flexMetaProperty = MetaProperty.literal({
-  name: "Flexbox",
-  className: "flex",
-  property: "display",
-  value: "flex",
-  exampleTemplate: flexExampleTemplate,
-})
-
-const inlineFlex = MetaProperty.literal({
-  name: "Inline Flex",
-  className: "inline-flex",
-  property: "display", 
-  value: "inline-flex",
-  exampleTemplate: flexExampleTemplate,
-})
-
-const flexNone = MetaProperty.literal({
-  name: "Flex None",
-  className: "flex-none",
-  property: "flex",
-  value: "none",
-})
-
-const flexDirection = new MetaProperty({
-  name: "Flex Direction",
-  scales: [
-    Scale.forLiteralValues({
-      "column": "column",
-      "row": "row",
-      "column-reverse": "column-reverse",
-      "row-reverse": "row-reverse",
-    })
-  ],
-  cssClassTemplates: [
-    new CSSClassTemplate("flex", "flex-direction", {
-      exampleTemplate: flexExampleTemplate,
-    }),
-  ],
-})
-const flexWrap = new MetaProperty({
-  name: "Flex Wrap",
-  cssClassTemplates: [
-    new CSSClassTemplate("flex", "flex-wrap", {
-      exampleTemplate: flexExampleTemplate,
-    })
-  ],
-  scales: [
-    Scale.forLiteralValues({
-      "wrap": "wrap",
-      "nowrap": "nowrap",
-      "wrap-reverse": "wrap-reverse",
-    })
-  ]
-})
-
-const flexAlignItems = new MetaProperty({
-  name: "Flex Alignment",
-  cssClassTemplates: [
-    new CSSClassTemplate("items", "align-items", {
-      exampleTemplate: flexExampleTemplate,
-    }),
-    new CSSClassTemplate("self", "align-self", {
-      exampleTemplate: flexExampleTemplate,
-    }),
-  ],
-  scales: [
-    Scale.forLiteralValues({
-      "start": "flex-start",
-      "end": "flex-end",
-      "center": "center",
-      "baseline": "baseline",
-      "stretch": "stretch",
-    })
-  ]
-})
-
-const flexJustifyItems = new MetaProperty({
-  name: "Flex Content",
-  cssClassTemplates: [
-    new CSSClassTemplate("justify", "justify-content", {
-      exampleTemplate: flexJustifyExampleTemplate,
-    }),
-    new CSSClassTemplate("content", "align-content", {
-      exampleTemplate: flexJustifyExampleTemplate,
-    }),
-  ],
-  scales: [
-    Scale.forLiteralValues({
-      "start": "start",
-      "end": "end",
-      "center": "center",
-      "between": "space-between",
-      "around": "space-around",
-      "stretch": "stretch",
-    })
-  ]
-})
-
-const flexGrowAndShrink = new MetaProperty({
-  name: "Flex Grow/Shrink",
-  cssClassTemplates: [
-    new CSSClassTemplate("flex-grow", "flex-grow", {
-    }),
-    new CSSClassTemplate("flex-shrink", "flex-shrink", {
-    }),
-  ],
-  scales: [
-    Scale.forLiteralValues({
-      "0": "0",
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-    })
-  ]
-})
+import MetaProperty                  from "../../lib/MetaProperty.js"
+import MetaPropertyGrouping          from "../../lib/MetaPropertyGrouping.js"
+import CSSClassTemplate              from "../../lib/CSSClassTemplate.js"
+import ScaleAgnosticCSSClassTemplate from "../../lib/ScaleAgnosticCSSClassTemplate.js"
+import Scale                         from "../../lib/scales/Scale.js"
+import Example                       from "../../lib/Example.js"
 
 const displayExampleTemplate = (selector) => {
-  const oneDiv = `<div style="background-color: #ddd; width: 4rem; height: 4rem; margin: 1rem; padding: 1rem; white-space: nowrap" class="${selector}">${selector}</div>`
+  const oneDiv = `<div class="bg-gray-lightest ma-2 ws-nowrap pa-1 w-5 h-5 ${selector}">${selector}</div>`
   const markupForRendering = [
     oneDiv,
     oneDiv,
     oneDiv,
   ].join("\n")
   return new Example({
+    htmlForDocs: `<div class="w-5 h-5 ${selector}">\n  .${selector}\n</div>`,
     markupForRendering: markupForRendering
   })
 }
@@ -180,57 +21,43 @@ const displayExampleTemplate = (selector) => {
 const displays = new MetaProperty({
   name: "Display",
   cssClassTemplates: [
-    new CSSClassTemplate("d", "display", {
-      exampleTemplate: displayExampleTemplate
-    })
+    new ScaleAgnosticCSSClassTemplate(
+      "db", { "display": "block", },
+      { exampleTemplate: displayExampleTemplate, summary: "Block" }
+    ),
+    new ScaleAgnosticCSSClassTemplate(
+      "di", { "display": "inline", },
+      { exampleTemplate: displayExampleTemplate, summary: "Inline" }
+    ),
+    new ScaleAgnosticCSSClassTemplate(
+      "dib", { "display": "inline-block", },
+      { exampleTemplate: displayExampleTemplate, summary: "Inline Block" }
+    ),
+    new ScaleAgnosticCSSClassTemplate(
+      "dn", { "display": "none", },
+      { exampleTemplate: displayExampleTemplate, summary: "None" }
+    ),
   ],
-  scales: [
-    Scale.forLiteralValues(
-      {
-        "b": "block",
-        "i": "inline",
-        "ib": "inline-block",
-        "n": "none",
-      },
-      {
-        dashPrefix: false
-      }
-    )
-  ]
+  scales: [ Scale.forLiteralValues({ "": "" }) ],
 })
 
 const tableDisplay = new MetaProperty({
   name: "Table Display",
-  docs: [
-    "Table-related display values can also be set",
-  ],
   cssClassTemplates: [
-    new CSSClassTemplate("dt", "display", { })
+    new ScaleAgnosticCSSClassTemplate( "dt",             { "display": "table", },      { summary: "Table" }),
+    new ScaleAgnosticCSSClassTemplate( "dtc",            { "display": "table-cell", }, { summary: "Cell" }),
+    new ScaleAgnosticCSSClassTemplate( "dtrow",          { "display": "table-row", },  { summary: "Row" }),
+    new ScaleAgnosticCSSClassTemplate( "dtrow-group",    { "display": "table-row-group", },  { summary: "Row Group" }),
+    new ScaleAgnosticCSSClassTemplate( "dtcolumn",       { "display": "table-column", },  { summary: "Column" }),
+    new ScaleAgnosticCSSClassTemplate( "dtcolumn-group", { "display": "table-column-group", },  { summary: "Column Group" }),
   ],
-  scales: [
-    Scale.forLiteralValues({
-      "": "table",
-      "c": "table-cell",
-      "row": "table-row",
-      "row-group": "table-row-group",
-      "column": "table-column",
-      "column-group": "table-column-group",
-    })
-  ]
+  scales: [ Scale.forLiteralValues({ "": "" }) ],
 })
 
-const display = new MetaPropertyGrouping({name: "Display and Flexbox",
+const display = new MetaPropertyGrouping({name: "Display",
   metaProperties: [
     displays,
     tableDisplay,
-    flexMetaProperty,
-    inlineFlex,
-    flexNone,
-    flexDirection,
-    flexWrap,
-    flexAlignItems,
-    flexJustifyItems,
-    flexGrowAndShrink,
   ]
 })
 export default display
