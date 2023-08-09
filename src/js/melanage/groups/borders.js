@@ -1,7 +1,6 @@
 import MetaProperty                  from "../../lib/MetaProperty.js"
 import MetaPropertyGrouping          from "../../lib/MetaPropertyGrouping.js"
 import CSSClassTemplate              from "../../lib/CSSClassTemplate.js"
-import ScaleAgnosticCSSClassTemplate from "../../lib/ScaleAgnosticCSSClassTemplate.js"
 import Example                       from "../../lib/Example.js"
 import Scale                         from "../../lib/scales/Scale.js"
 import Step                          from "../../lib/scales/Step.js"
@@ -22,57 +21,50 @@ const borderWidthExampleTemplate = (selector) => {
 
 const bordersMetaProperty = new MetaProperty({
   name: "Borders",
-  scales: [ Scale.forLiteralValues({ "": "" }) ],
-  cssClassTemplates: [
-    new ScaleAgnosticCSSClassTemplate(
-      "ba",
-      {
+  literalClasses: {
+    "ba": {
+      properties: {
         "border-style": "solid",
         "border-width": "1px", 
       },
-      { exampleTemplate: borderExampleTemplate, summary: "all" }
-    ),
-    new ScaleAgnosticCSSClassTemplate(
-      "bl",
-      {
+      options: { exampleTemplate: borderExampleTemplate, summary: "all" }
+    },
+    "bl": {
+      properties: {
         "border-left-style": "solid",
         "border-left-width": "1px", 
       },
-      { exampleTemplate: borderExampleTemplate, summary: "left" }
-    ),
-    new ScaleAgnosticCSSClassTemplate(
-      "br",
-      {
+      options: { exampleTemplate: borderExampleTemplate, summary: "left" }
+    },
+    "br": {
+      properties: {
         "border-right-style": "solid",
         "border-right-width": "1px", 
       },
-      { exampleTemplate: borderExampleTemplate, summary: "right" }
-    ),
-    new ScaleAgnosticCSSClassTemplate(
-      "bt",
-      {
+      options: { exampleTemplate: borderExampleTemplate, summary: "right" }
+    },
+    "bt": {
+      properties: {
         "border-top-style": "solid",
         "border-top-width": "1px", 
       },
-      { exampleTemplate: borderExampleTemplate, summary: "top" }
-    ),
-    new ScaleAgnosticCSSClassTemplate(
-      "bb",
-      {
+      options: { exampleTemplate: borderExampleTemplate, summary: "top" }
+    },
+    "bb": {
+      properties: {
         "border-bottom-style": "solid",
         "border-bottom-width": "1px", 
       },
-      { exampleTemplate: borderExampleTemplate, summary: "bottom" }
-    ),
-    new ScaleAgnosticCSSClassTemplate(
-      "bn",
-      {
+      options: { exampleTemplate: borderExampleTemplate, summary: "bottom" }
+    },
+    "bn": {
+      properties: {
         "border-style": "none",
         "border-width": "0", 
       },
-      { exampleTemplate: borderExampleTemplate, summary: "none" }
-    ),
-  ]
+      options: { exampleTemplate: borderExampleTemplate, summary: "none" }
+    },
+  }
 })
 
 const borderStyleMetaProperty = new MetaProperty({

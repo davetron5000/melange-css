@@ -11,11 +11,6 @@ import VariableBasedScale    from "./scales/VariableBasedScale.js"
 import VariableRegistry      from "./VariableRegistry.js"
 import Anchor                from "./Anchor.js"
 
-const pseudoSelectors = [
-  new DefaultPseudoSelector(),
-  new PseudoSelector({ name: "Hover", variableNameQualifier: "hover",selector: "hover"}),
-]
-
 const colorExampleTemplate = (selector) => {
   const onBlack = `<div class="${selector} bg-black ba b--black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
   const onWhite = `<div class="${selector} bg-white ba b--black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
@@ -61,11 +56,13 @@ export default class ColorTints {
   /*
    * Create a ColorTints helper with the given scale of tint names.
    *
-   * tintNames: An array of tint names.  They can be from lightest to darkest or vice versa.  One name
+   * tintNames - An array of tint names.  They can be from lightest to darkest or vice versa.  One name
    * can be blank, to provide e.g. a class like "purple".
+   * pseudoSelectors - an array of PseudoSelector instances
    */
-  constructor(tintNames) {
+  constructor(tintNames, pseudoSelectors) {
     this.tintNames = tintNames
+    this.pseudoSelectors = pseudoSelectors
     this.colorScale = {}
     this.customColors = []
   }
@@ -116,7 +113,7 @@ export default class ColorTints {
     const metaProperty = new MetaProperty({
       name: colorName,
       scales: [ Scale.forLiteralValues(tintNamesAndValues) ],
-      pseudoSelectors: pseudoSelectors,
+      pseudoSelectors: this.pseudoSelectors,
       cssClassTemplates: [
         new CSSClassTemplate(colorName, "color",{
           exampleTemplate: colorExampleTemplate,
@@ -144,7 +141,7 @@ export default class ColorTints {
       return new MetaProperty({
         name: colorName,
         scales: [ new VariableBasedScale(variables) ],
-        pseudoSelectors: pseudoSelectors,
+        pseudoSelectors: this.pseudoSelectors,
         cssClassTemplates: [
           new CSSClassTemplate(colorName, "color",{
             exampleTemplate: colorExampleTemplate,

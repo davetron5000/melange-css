@@ -1,7 +1,6 @@
 import MetaProperty                  from "../../lib/MetaProperty.js"
 import MetaPropertyGrouping          from "../../lib/MetaPropertyGrouping.js"
 import CSSClassTemplate              from "../../lib/CSSClassTemplate.js"
-import ScaleAgnosticCSSClassTemplate from "../../lib/ScaleAgnosticCSSClassTemplate.js"
 import Scale                         from "../../lib/scales/Scale.js"
 
 import {
@@ -11,13 +10,12 @@ import {
 
 const positions = new MetaProperty({
   name: "Position",
-  scales: [ Scale.forLiteralValues({ "": "" }) ],
-  cssClassTemplates: [
-    new ScaleAgnosticCSSClassTemplate("static", { "position": "static" }),
-    new ScaleAgnosticCSSClassTemplate("relative", { "position": "relative" }),
-    new ScaleAgnosticCSSClassTemplate("absolute", { "position": "absolute" }),
-    new ScaleAgnosticCSSClassTemplate("fixed", { "position": "fixed" }),
-  ],
+  literalClasses: {
+    static:   { properties: { "position": "static" }},
+    relative: { properties: { "position": "relative" }},
+    absolute: { properties: { "position": "absolute" }},
+    fixed:    { properties: { "position": "fixed" }},
+  },
 })
 
 const locations = new MetaProperty({

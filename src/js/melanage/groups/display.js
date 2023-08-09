@@ -1,7 +1,6 @@
 import MetaProperty                  from "../../lib/MetaProperty.js"
 import MetaPropertyGrouping          from "../../lib/MetaPropertyGrouping.js"
 import CSSClassTemplate              from "../../lib/CSSClassTemplate.js"
-import ScaleAgnosticCSSClassTemplate from "../../lib/ScaleAgnosticCSSClassTemplate.js"
 import Scale                         from "../../lib/scales/Scale.js"
 import Example                       from "../../lib/Example.js"
 
@@ -20,38 +19,24 @@ const displayExampleTemplate = (selector) => {
 
 const displays = new MetaProperty({
   name: "Display",
-  cssClassTemplates: [
-    new ScaleAgnosticCSSClassTemplate(
-      "db", { "display": "block", },
-      { exampleTemplate: displayExampleTemplate, summary: "Block" }
-    ),
-    new ScaleAgnosticCSSClassTemplate(
-      "di", { "display": "inline", },
-      { exampleTemplate: displayExampleTemplate, summary: "Inline" }
-    ),
-    new ScaleAgnosticCSSClassTemplate(
-      "dib", { "display": "inline-block", },
-      { exampleTemplate: displayExampleTemplate, summary: "Inline Block" }
-    ),
-    new ScaleAgnosticCSSClassTemplate(
-      "dn", { "display": "none", },
-      { exampleTemplate: displayExampleTemplate, summary: "None" }
-    ),
-  ],
-  scales: [ Scale.forLiteralValues({ "": "" }) ],
+  literalClasses: {
+    db: { properties: { "display": "block" }, options: { exampleTemplate: displayExampleTemplate, summary: "Block" } },
+    di: { properties: { "display": "inline" }, options: { exampleTemplate: displayExampleTemplate, summary: "Inline" } },
+    dib: { properties: { "display": "inline-block" }, options: { exampleTemplate: displayExampleTemplate, summary: "Inline Block" } },
+    dn: { properties: { "display": "none" }, options: { exampleTemplate: displayExampleTemplate, summary: "None" } },
+  },
 })
 
 const tableDisplay = new MetaProperty({
   name: "Table Display",
-  cssClassTemplates: [
-    new ScaleAgnosticCSSClassTemplate( "dt",             { "display": "table", },      { summary: "Table" }),
-    new ScaleAgnosticCSSClassTemplate( "dtc",            { "display": "table-cell", }, { summary: "Cell" }),
-    new ScaleAgnosticCSSClassTemplate( "dtrow",          { "display": "table-row", },  { summary: "Row" }),
-    new ScaleAgnosticCSSClassTemplate( "dtrow-group",    { "display": "table-row-group", },  { summary: "Row Group" }),
-    new ScaleAgnosticCSSClassTemplate( "dtcolumn",       { "display": "table-column", },  { summary: "Column" }),
-    new ScaleAgnosticCSSClassTemplate( "dtcolumn-group", { "display": "table-column-group", },  { summary: "Column Group" }),
-  ],
-  scales: [ Scale.forLiteralValues({ "": "" }) ],
+  literalClasses: {
+    "dt":             { properties: { "display": "table" }              , options: { summary: "Table" }},
+    "dtc":            { properties: { "display": "table-cell" }         , options: { summary: "Cell" }},
+    "dtrow":          { properties: { "display": "table-row" }          , options: { summary: "Row" }},
+    "dtrow-group":    { properties: { "display": "table-row-group" }    , options: { summary: "Row Group" }},
+    "dtcolumn":       { properties: { "display": "table-column" }       , options: { summary: "Column" }},
+    "dtcolumn-group": { properties: { "display": "table-column-group" } , options: { summary: "Column Group" }},
+  },
 })
 
 const display = new MetaPropertyGrouping({name: "Display",

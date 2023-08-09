@@ -1,12 +1,19 @@
 import ColorTints from "../../lib/ColorTints.js"
+import pseudoSelectors from "../pseudoSelectors.js"
 
-const colorTints = new ColorTints([
-  "lightest",
-  "light",
-  "",
-  "dark",
-  "darkest",
-])
+const colorTints = new ColorTints(
+  [
+    "lightest",
+    "light",
+    "",
+    "dark",
+    "darkest",
+  ],
+  [
+    pseudoSelectors.default,
+    pseudoSelectors.hover,
+  ]
+)
 colorTints.register("gray",   [ "#F5F5F5", "#ADADAD", "#999999", "#5C5C5C", "#1F1F1F" ])
 colorTints.register("red",    [ "#FFDFDF", "#FF8D86", "#FF4136", "#E7040F", "#80211b" ])
 colorTints.register("orange", [ "#FFE0CC", "#FFA166", "#FF6300", "#CC4F00", "#803200" ])

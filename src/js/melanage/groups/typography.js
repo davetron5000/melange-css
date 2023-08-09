@@ -5,6 +5,8 @@ import MetaProperty         from "../../lib/MetaProperty.js"
 import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
 import Scale                from "../../lib/scales/Scale.js"
 
+import pseudoSelectors from "../pseudoSelectors.js"
+
 import {
   fontScale,
   fontFamilies
@@ -168,6 +170,10 @@ const textDecoration = new MetaProperty({
     new CSSClassTemplate("td", "text-decoration", {
       exampleTemplate: ExampleTemplate.divWithSelector("The spice must flow!"),
     }),
+  ],
+  pseudoSelectors: [
+    pseudoSelectors.default,
+    pseudoSelectors.hover,
   ]
 })
 

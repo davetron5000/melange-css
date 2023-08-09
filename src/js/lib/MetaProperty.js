@@ -1,8 +1,9 @@
-import DefaultPseudoSelector                    from "./DefaultPseudoSelector.js"
-import CSSClassTemplate                         from "./CSSClassTemplate.js"
-import Scale from "./scales/Scale.js"
-import Step from "./scales/Step.js"
-import DocStrings from "./DocStrings.js"
+import DefaultPseudoSelector         from "./DefaultPseudoSelector.js"
+import CSSClassTemplate              from "./CSSClassTemplate.js"
+import ScaleAgnosticCSSClassTemplate from "./ScaleAgnosticCSSClassTemplate.js"
+import Scale                         from "./scales/Scale.js"
+import Step                          from "./scales/Step.js"
+import DocStrings                    from "./DocStrings.js"
 
 /*
  * A Meta Property is the combination of one or more related CSS classes, a list
@@ -18,14 +19,47 @@ export default class MetaProperty {
    *                   created, for example, you may want background colors, but also background colors only on hover.
    * cssClassTemplates - a list of CSSClassTemplate instances that describe a CSS class to be created for each
    *                     Step and PseudoSelector, along with what CSS properties should be given the values from 
-   *                     the Step
+   *                     the Step. Required if literalClasses is omitted and may not be specified if it is not.
+   * literalClasses - as a convienience to using ScaleAgnosticCSSClassTemplate directly, you can pass in
+   *                  an object that create literal classes that can still be combined
+   *                  with pseudo selectors and breakpoints.  The format is:
+   *                  {
+   *                    "classBase": {
+   *                      "properites: " {
+   *                        "css-property": "css-value",
+   *                        "css-property": "css-value",
+   *                        etc,
+   *                      },
+   *                      options: options as you would give to CSSClassTemplate
+   *                    },
+   *                    etc.
+   *                  }
    */
-  constructor({name, docs, scales, pseudoSelectors, cssClassTemplates}) {
+  constructor({name, docs, scales, pseudoSelectors, cssClassTemplates, literalClasses}) {
     this.name              = name
-    this._scales = scales
+    this._scales           = scales || [ Scale.forLiteralValues({ "": "" }) ]
     this.pseudoSelectors   = pseudoSelectors || [ new DefaultPseudoSelector() ]
-    this.cssClassTemplates = cssClassTemplates
     this.docs              = new DocStrings(docs)
+    if (cssClassTemplates) {
+      if (literalClasses) {
+        throw "You may not provide both cssClassTemplates and literalClasses"
+      }
+      this.cssClassTemplates = cssClassTemplates
+    }
+    else {
+      if (!literalClasses) {
+        throw "You must provide either cssClassTemplates or literalClasses"
+      }
+      this.cssClassTemplates = Object.entries(literalClasses).map( ([name,literalClass]) => {
+        if ( (literalClass.properties) && Object.keys(literalClass.properties).length > 0) {
+          return new ScaleAgnosticCSSClassTemplate(name, literalClass.properties, literalClass.options)
+        }
+        else {
+          throw `${name} has no properties while trying to create MetaProperty ${this.name}`
+        }
+
+      })
+    }
   }
   scales() {
     return this._scales
