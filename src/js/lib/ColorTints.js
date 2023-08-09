@@ -9,47 +9,36 @@ import Scale                 from "./scales/Scale.js"
 import Step                  from "./scales/Step.js"
 import VariableBasedScale    from "./scales/VariableBasedScale.js"
 import VariableRegistry      from "./VariableRegistry.js"
+import Anchor                from "./Anchor.js"
 
 const pseudoSelectors = [
   new DefaultPseudoSelector(),
-  new PseudoSelector({ variableNameQualifier: "hover",selector: "hover"}),
+  new PseudoSelector({ name: "Hover", variableNameQualifier: "hover",selector: "hover"}),
 ]
 
 const colorExampleTemplate = (selector) => {
-  const oneDiv = `<div class="${selector}"
-     style="width: 20rem; border: dotted thin #888; padding: 1rem; background-color: COLOR">
-  .${selector}
-</div>`
-  const onBlack = oneDiv.replace("COLOR","#000")
-  const onWhite = oneDiv.replace("COLOR","#fff")
+  const onBlack = `<div class="${selector} bg-black ba b--black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onWhite = `<div class="${selector} bg-white ba b--black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
   return new Example({
-    markupForRendering: `<div style="display:flex; gap: 0.25rem;">
+    markupForRendering: `<div class="flex items-baseline justify-between">
   ${onBlack}${onWhite}
 </div>`
   })
 }
 const backgroundColorExampleTemplate = (selector) => {
-  const oneDiv = `<div class="${selector}"
-     style="width: 20rem; border: dotted thin #888; padding: 1rem; color: COLOR">
-  .${selector}
-</div>`
-  const onBlack = oneDiv.replace("COLOR","#000")
-  const onWhite = oneDiv.replace("COLOR","#fff")
+  const onBlack = `<div class="${selector} black ba b--black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onWhite = `<div class="${selector} white ba b--black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
   return new Example({
-    markupForRendering: `<div style="display:flex; gap: 0.25rem;">
+    markupForRendering: `<div class="flex items-baseline justify-between">
   ${onBlack}${onWhite}
 </div>`
   })
 }
 const borderColorExampleTemplate = (selector) => {
-  const oneDiv = `<div class="${selector}"
-     style="width: 20rem; padding: 1rem; border-style: solid; border-thickness: thick; color: COLOR; background-color: BG_COLOR">
-  .${selector}
-</div>`
-  const onBlack = oneDiv.replace("COLOR","#fff").replace("BG_COLOR","#000")
-  const onWhite = oneDiv.replace("COLOR","#000").replace("BG_COLOR","#fff")
+  const onBlack = `<div class="${selector} bg-black white ba bw-2 flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onWhite = `<div class="${selector} bg-white black ba bw-2 flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
   return new Example({
-    markupForRendering: `<div style="display:flex; gap: 0.25rem;">
+    markupForRendering: `<div class="flex items-baseline justify-between">
   ${onBlack}${onWhite}
 </div>`
   })
@@ -131,12 +120,15 @@ export default class ColorTints {
       cssClassTemplates: [
         new CSSClassTemplate(colorName, "color",{
           exampleTemplate: colorExampleTemplate,
+          summary: "Text",
         }),
         new CSSClassTemplate(`bg-${colorName}`, "background-color", {
           exampleTemplate: backgroundColorExampleTemplate,
+          summary: "Background",
         }),
         new CSSClassTemplate(`b--${colorName}`, "border-color", {
           exampleTemplate: borderColorExampleTemplate,
+          summary: "Border",
         }),
       ]
     })
@@ -156,12 +148,15 @@ export default class ColorTints {
         cssClassTemplates: [
           new CSSClassTemplate(colorName, "color",{
             exampleTemplate: colorExampleTemplate,
+            summary: "Text",
           }),
           new CSSClassTemplate(`bg-${colorName}`, "background-color", {
             exampleTemplate: backgroundColorExampleTemplate,
+            summary: "Background",
           }),
           new CSSClassTemplate(`b--${colorName}`, "border-color", {
             exampleTemplate: borderColorExampleTemplate,
+          summary: "Border",
           }),
         ]
       })
@@ -169,17 +164,21 @@ export default class ColorTints {
 
     const summarization = []
     metaProperties.forEach( (metaProperty) => {
-      summarization.push(`<div style=\"display: flex; align-items: stretch; justify-content: start; margin-bottom: 1rem;\"><h3 style="width: 8rem;"><a style=\"color: black; text-decoration: underline;\" href=\"#${metaProperty.name}\">${metaProperty.name}</a></h3>`)
+      summarization.push(`<h3 class="w-auto f-3 mv-2"><a class="white-ish" href="#${new Anchor(metaProperty.name)}">${metaProperty.name}</a></h3>`)
+      summarization.push(`<div class="flex items-stretch justify-start mb-2">`)
       metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
         metaProperty.scales().forEach( (scale) => {
           scale.eachStep( (step) => {
             const cssClass = cssClassTemplate.toCSSClass(step)
             if (cssClass.propertiesAndValues.color) {
-              summarization.push(`<div>
-  <div style=\"width: 8rem; height: 4rem; background-color: ${cssClass.propertiesAndValues.color}\">
+              summarization.push(`<div style="width: 0; flex-basis: 0" class="flex-grow-1 flex-shrink-1">
+  <div style="height: 2rem; background-color: ${cssClass.propertiesAndValues.color}">
   &nbsp;
   </div>
-  <div><code>${cssClass.selector}</code></div>
+  <div class="dn db-ns tr"><code class="f-1 fw-b ph-2 ws-nowrap">`)
+              summarization.push(`${step.qualifier == "" ? cssClass.selector : step.qualifier}`)
+              summarization.push(`
+        </code></div>
 </div>`)
             }
           })

@@ -27,6 +27,7 @@ export default class CSSClassTemplate {
    *                            is straightforward.
    *           docs: An array of strings that provides more free-form documentation about
    *                 these classes.
+   *           summary: A word or very short phrase to contextualize this class inside the general meta property.
    */
   constructor(classNameBase, ...cssProperties) {
     this.classNameBase = classNameBase
@@ -44,6 +45,7 @@ export default class CSSClassTemplate {
         }
       }
       this.docs = Array(options.docs || []).flat()
+      this.summary = options.summary
     }
     else {
       this.cssProperties = cssProperties

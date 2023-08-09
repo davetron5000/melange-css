@@ -42,13 +42,13 @@ export default class MetaProperty {
    * pseudoSelectors - the PseudoSelector instances to use to derive more classes
    * exampleTemplate - An ExampleTemplate or function as described in CSSClassTemplate 
    */
-  static literal( { className, property, value, pseudoSelectors, exampleTemplate }) {
+  static literal( { name, className, property, value, pseudoSelectors, exampleTemplate }) {
     const cssClassTemplateOptions = {}
     if (exampleTemplate) {
       cssClassTemplateOptions.exampleTemplate = exampleTemplate
     }
     return new MetaProperty({
-      name: className,
+      name: name || className,
       cssClassTemplates: [
         new CSSClassTemplate(
           className,

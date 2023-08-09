@@ -28,13 +28,13 @@ const paddingMetaProperty = new MetaProperty({
     spacingScale
   ],
   cssClassTemplates: [
-    new CSSClassTemplate("pa", "padding", { exampleTemplate: paddingExampleTemplate }),
-    new CSSClassTemplate("pl", "padding-left", { exampleTemplate: paddingExampleTemplate }),
-    new CSSClassTemplate("pr", "padding-right", { exampleTemplate: paddingExampleTemplate }),
-    new CSSClassTemplate("pt", "padding-top", { exampleTemplate: paddingExampleTemplate }),
-    new CSSClassTemplate("pb", "padding-bottom", { exampleTemplate: paddingExampleTemplate }),
-    new CSSClassTemplate("ph", "padding-left", "padding-right", { exampleTemplate: paddingExampleTemplate }),
-    new CSSClassTemplate("pv", "padding-top", "padding-bottom", { exampleTemplate: paddingExampleTemplate }),
+    new CSSClassTemplate("pa", "padding", { exampleTemplate: paddingExampleTemplate, summary: "all" }),
+    new CSSClassTemplate("pl", "padding-left", { exampleTemplate: paddingExampleTemplate, summary: "left" }),
+    new CSSClassTemplate("pr", "padding-right", { exampleTemplate: paddingExampleTemplate, summary: "right" }),
+    new CSSClassTemplate("pt", "padding-top", { exampleTemplate: paddingExampleTemplate, summary: "top" }),
+    new CSSClassTemplate("pb", "padding-bottom", { exampleTemplate: paddingExampleTemplate, summary: "bottom" }),
+    new CSSClassTemplate("ph", "padding-left", "padding-right", { exampleTemplate: paddingExampleTemplate, summary: "horizontal" }),
+    new CSSClassTemplate("pv", "padding-top", "padding-bottom", { exampleTemplate: paddingExampleTemplate, summary: "vertical" }),
   ]
 })
 const marginMetaProperty = new MetaProperty({
@@ -43,16 +43,17 @@ const marginMetaProperty = new MetaProperty({
     "Margin is space outside the box and can be controlled in all four directions, horizontally, vertically, or each individually",
   ],
   scales: [
-    spacingScale
+    spacingScale,
+    Scale.forLiteralValues({ "auto": "auto" }),
   ],
   cssClassTemplates: [
-    new CSSClassTemplate("ma", "margin", { exampleTemplate: marginExampleTemplate }),
-    new CSSClassTemplate("ml", "margin-left", { exampleTemplate: marginExampleTemplate }),
-    new CSSClassTemplate("mr", "margin-right", { exampleTemplate: marginExampleTemplate }),
-    new CSSClassTemplate("mt", "margin-top", { exampleTemplate: marginExampleTemplate }),
-    new CSSClassTemplate("mb", "margin-bottom", { exampleTemplate: marginExampleTemplate }),
-    new CSSClassTemplate("mh", "margin-left", "margin-right", { exampleTemplate: marginExampleTemplate }),
-    new CSSClassTemplate("mv", "margin-top", "margin-bottom", { exampleTemplate: marginExampleTemplate }),
+    new CSSClassTemplate("ma", "margin", { exampleTemplate: marginExampleTemplate, summary: "all" }),
+    new CSSClassTemplate("ml", "margin-left", { exampleTemplate: marginExampleTemplate, summary: "left" }),
+    new CSSClassTemplate("mr", "margin-right", { exampleTemplate: marginExampleTemplate, summary: "right" }),
+    new CSSClassTemplate("mt", "margin-top", { exampleTemplate: marginExampleTemplate, summary: "top" }),
+    new CSSClassTemplate("mb", "margin-bottom", { exampleTemplate: marginExampleTemplate, summary: "bottom" }),
+    new CSSClassTemplate("mh", "margin-left", "margin-right", { exampleTemplate: marginExampleTemplate, summary: "horizontal" }),
+    new CSSClassTemplate("mv", "margin-top", "margin-bottom", { exampleTemplate: marginExampleTemplate, summary: "vertical" }),
   ]
 })
 

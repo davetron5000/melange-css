@@ -82,6 +82,7 @@ export default class MetaTheme {
    * onMetaPropertyGrouping - around the given MetaPropertyGrouping. Passed a MetaPropertyGrouping instance
    * onMetaProperty - around the given MetaProperty. Passed a MetaProperty instance
    * onCSSClassTemplate - around the given CSSClassTemplate. Passed a CSSClassTemplate instance
+   * onPsuedoSelector - around the given PsuedoSelector. Passed a PsuedoSelector instance
    * onCSSClass - around the given CSSClass. Passed a CSSClass instance
    */
   eachCSSClass({
@@ -89,36 +90,40 @@ export default class MetaTheme {
     onMetaPropertyGrouping,
     onMetaProperty,
     onCSSClassTemplate,
+    onPsuedoSelector,
     onCSSClass,
   }) {
     onBreakpoint           = this._convertCBToCanonical("onBreakpoint"           , onBreakpoint)
     onMetaPropertyGrouping = this._convertCBToCanonical("onMetaPropertyGrouping" , onMetaPropertyGrouping)
     onMetaProperty         = this._convertCBToCanonical("onMetaProperty"         , onMetaProperty)
     onCSSClassTemplate     = this._convertCBToCanonical("onCSSClassTemplate"     , onCSSClassTemplate)
+    onPsuedoSelector       = this._convertCBToCanonical("onPsuedoSelector"       , onPsuedoSelector)
     onCSSClass             = this._convertCBToCanonical("onCSSClass"             , onCSSClass)
 
     this.breakpoints.forEach( (breakpoint) => {
       onBreakpoint.start(breakpoint)
       this.metaPropertyGroupings.forEach( (metaPropertyGrouping) => {
-        onMetaPropertyGrouping.start(metaPropertyGrouping)
+        onMetaPropertyGrouping.start(metaPropertyGrouping, breakpoint, this.breakpoints)
         metaPropertyGrouping.metaProperties.forEach( (metaProperty) => {
-          onMetaProperty.start(metaProperty)
+          onMetaProperty.start(metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
           metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
-            onCSSClassTemplate.start(cssClassTemplate)
+            onCSSClassTemplate.start(cssClassTemplate, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
             metaProperty.scales().forEach( (scale) => {
               metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
+                onPsuedoSelector.start(pseudoSelector, cssClassTemplate, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
                 scale.eachStep( (step) => {
                   const cssClass = cssClassTemplate.toCSSClass(step).forSelector(pseudoSelector).atBreakpoint(breakpoint)
-                  onCSSClass.start(cssClass, cssClassTemplate)
-                  onCSSClass.end(cssClass, cssClassTemplate)
+                  onCSSClass.start(cssClass, pseudoSelector, cssClassTemplate, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
+                  onCSSClass.end(cssClass, cssClassTemplate, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
                 })
+                onPsuedoSelector.end(pseudoSelector, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
               })
             })
-            onCSSClassTemplate.end(cssClassTemplate)
+            onCSSClassTemplate.end(cssClassTemplate, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
           })
-          onMetaProperty.end(metaProperty)
+          onMetaProperty.end(metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
         })
-        onMetaPropertyGrouping.end(metaPropertyGrouping)
+        onMetaPropertyGrouping.end(metaPropertyGrouping, breakpoint, this.breakpoints)
       })
       onBreakpoint.end(breakpoint)
     })

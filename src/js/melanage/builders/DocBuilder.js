@@ -1,5 +1,6 @@
 import fs      from "node:fs"
 import Example from "../../lib/Example.js"
+import Anchor  from "../../lib/Anchor.js"
 
 export default class DocBuilder {
   writeDocs(metaTheme) {  
@@ -19,19 +20,36 @@ export default class DocBuilder {
   <title>Melange - Reference - ${metaPropertyGrouping.name}</title>
   <link href="melange.css" rel="stylesheet">
   </head>
-  <body class="font-sans">
-    <h1 class="f5">${metaPropertyGrouping.name}</h1>\n`)
+  <body class="font-sans pa0 ma0">
+  <header class="bg-black-ish white-ish">
+    <div class="pa-1 w-auto w-60-l w-80-m mh-auto">
+    <h1 class="f-5">${metaPropertyGrouping.name}</h1>\n`)
 
         metaPropertyGrouping.docs.forEach( (docParagraph) => {
-          doc.push(`    <p class="measure f2">${docParagraph}</p>\n`)
+          doc.push(`    <p class="measure f-2">${docParagraph}</p>\n`)
         })
 
         if (metaPropertyGrouping.summarization) {
           doc.push(`    ${metaPropertyGrouping.summarization}`)
         }
+        else {
 
+          doc.push(`    <nav class="flex flex-wrap items-start pb-3">`)
+          metaPropertyGrouping.metaProperties.forEach( (metaProperty) => {
+            doc.push(`    <div class="flex flex-column items-start mr-3">`)
+            doc.push(`    <a class="mb-2 f-3 fw-5 white-ish ws-nowrap" href="#${new Anchor(metaProperty.name)}">`)
+            doc.push(`      ${metaProperty.name}`)
+            doc.push(`    </a>`)
+            doc.push(`    </div>`)
+          })
+          doc.push(`    </nav>`)
+          doc.push(`    </div>`)
+        }
+        doc.push(`    </header>`)
+        doc.push(`    <main class="pa-1 w-auto w-60-l w-80-m mh-auto">`)
       },
       end: (metaPropertyGrouping) => {
+        doc.push("</main>")
         doc.push("</body>")
         doc.push("</html>")
         if (breakpoint.isDefault()) {
@@ -46,77 +64,106 @@ export default class DocBuilder {
     const documentMetaProperty = {
       start: (metaProperty) => {
         doc.push(`    <section>
-      <a name=\"${metaProperty.name}\"></a>
-      <h2 class="f4">${metaProperty.name}</h2>
+      <a name=\"${new Anchor(metaProperty.name)}\"></a>
+      <h2 class="f-3">
+        ${metaProperty.name}
+      </h2>
 `)
+        if (metaProperty.cssClassTemplates.length > 1) {
+          doc.push(`
+      <nav class="flex flex-wrap">`)
+          const linkHTML = metaProperty.cssClassTemplates.map( (cssClassTemplate) => {
+            const links = [ `<a class="lh-copy black" href="#${new Anchor(cssClassTemplate.classNameBase)}">${cssClassTemplate.summary || cssClassTemplate.classNameBase}</a>` ]
+            if (metaProperty.pseudoSelectors.length > 1) {
+              metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
+                if (!pseudoSelector.isDefault()) {
+                  const pseudoAnchor = new Anchor(cssClassTemplate.classNameBase + '-' + pseudoSelector.selector)
+                  links.push(`<a class="lh-copy black" href="#${pseudoAnchor}">${cssClassTemplate.summary || cssClassTemplate.classNameBase} - ${pseudoSelector.name}</a>`)
+                }
+              })
+            }
+            return links
+          }).flat().join("<span role=\"none\" class=\"mh-2\">&middot;</span>")
+          doc.push(linkHTML)
+          doc.push(`
+      </nav>`)
+        }
         metaProperty.docs.forEach( (docParagraph) => {
-          doc.push(`      <p class="measure f2">${docParagraph}</p>\n`)
+          doc.push(`      <p class="measure f-2">${docParagraph}</p>\n`)
         })
       },
       end: (metaProperty) => { doc.push("    </section>\n") }
     }
-    /*
-            <h3 class="f5"><code>f-l</code></h3>
-        <article style="margin-left: 1rem; align-items: start; justify-items: between;" class="flex-ns items-start justify-between db">
-          <div>
-            <h4 class="f4 ma-0">Example</h4>
-            <code style="overflow-x: scroll" class="mw-100 db pa-2 br-3 bg-black-ish blue-lightest"><pre style="margin: 0">&lt;div&gt;
-  &lt;div class="f-l"&gt;.f-l&lt;/div&gt;
-  &lt;div&gt;Greetings, programs! Remember to fight for the users!&lt;/div&gt;
-&lt;/div&gt;</pre></code>
-          </div>
-          <div class="ml-3-ns mt-3 mt-0-ns">
-            <h4 class="f4 ma-0">Demo</h4>
-           <div style="border: dashed thin black; "><div style="padding-left: 1rem; padding-right: 1rem; border: solid thin black" class="f-l">.f-l</div><div style="padding-left: 1rem; padding-right: 1rem; background-color: #ddd;" >Greetings, programs! Remember to fight for the users!</div></div>
-          </div>
-          </article>
-          <details style="margin-top: 1rem; margin-bottom: 1rem; margin-left: 1rem;">
-            <summary>Show CSS</summary>
-            <code style="overflow-x: scroll"; class="mw-100 db pa-2 br-3 bg-black-ish blue-lightest"><pre style="margin: 0">.f-l {
-  float: left;
-}</pre></code>
-          </details>
-        </div>
-
-  */
-    const documentTemplate = {
-      start: (cssClassTemplate) => {
+    const onCSSClassTemplate = {
+      start: (cssClassTemplate, metaProperty) => {
         doc.push("      <section>\n")
-        doc.push(`        <h3 class=\"f3\">${cssClassTemplate.classNameBase}</h3>\n`)
+        doc.push(`        <a name="${new Anchor(cssClassTemplate.classNameBase)}"></a>`)
+        doc.push(`        <h3 class="f-3">`)
+        doc.push(`          <code class="f-4">${cssClassTemplate.classNameBase}*</code>`)
+        if (cssClassTemplate.summary) {
+          const capitalizedName = metaProperty.name.charAt(0).toUpperCase() + metaProperty.name.slice(1)
+          doc.push(`          <span class="f-3 ml-2"> - ${capitalizedName} ${cssClassTemplate.summary}</span>`)
+        }
+        doc.push(`        </h3>\n`)
         if (cssClassTemplate.docs) {
           cssClassTemplate.docs.forEach( (docParagraph) => {
-            doc.push(`         <p class="measure f2">${docParagraph}</p>\n`)
+            doc.push(`         <p class="measure f-2">${docParagraph}</p>\n`)
           })
         }
-        doc.push(`
-<table>
-<thead>
-<tr>
-<th style=\"text-align: left\">Example</th>
-<th style=\"text-align: left\">Demo</th>
-</thead>
-<tbody>
-        `)
+        doc.push("<section>")
       },
       end: (cssClassTemplate) => {
-        doc.push("        </tbody></table>\n      </section>\n")
+        doc.push("</section>")
+      }
+    }
+    const onPsuedoSelector = {
+      start: (pseudoSelector, cssClassTemplate) => {
+        if (pseudoSelector.isDefault()) {
+          return
+        }
+        doc.push(`<a name="${new Anchor(cssClassTemplate.classNameBase + '-' + pseudoSelector.selector)}"></a>`)
+        doc.push(`<h3 class="f-4 mt-4">${cssClassTemplate.summary || cssClassTemplate.classNameBase} - ${pseudoSelector.name}</a></h3>`)
+      },
+      end: (pseudoSelector) => {
+        if (pseudoSelector.isDefault()) {
+          return
+        }
       }
     }
 
-    const documentClass = (cssClass, cssClassTemplate) => {
+    const onCSSClass = (cssClass, _pseudoSelector, cssClassTemplate, _metaProperty, _metaPropertyGrouping, _breakpoint, allBreakpoints) => {
       let example = cssClass.example()
+      const className = cssClass.className()
       if (!example) {
-        example = new Example({ htmlForDocs: `<div class=\"${cssClass.className()}\"></div>` })
+        example = new Example({ htmlForDocs: `<div class=\"${className}\">.${className}</div>` })
       }
-      doc.push(`<tr><td style="padding: 0.5rem; border: solid thin gray"><code><pre>${example.escapedHtml()}</pre></code>`)
-      doc.push(`<div style=\"max-width: 500px; overflow-x: scroll; padding: 0.25rem; border: solid thin black; background-color: #111111; color: #F4F4F4; border-radius: 0.25rem;\"><code><pre>${cssClass.toCSS()}</pre></code></div><div>CSS</div></td>`)
+      const nonMobileBreakpoints = allBreakpoints.filter( (breakpoint) => {
+        return !breakpoint.isDefault();
+      }).map( (breakpoint) => {
+        return `<code class="db di-ns f-2 fw-normal ws-nowrap lh-copy">${cssClass.atBreakpoint(breakpoint).className()}</code>`
+      }).join("<span class=\"dn di-ns f-3 fw-normal\"> / </span>")
+      doc.push(`
+        <h4 class="f-3 mt-3 mb-2"><code class="db di-ns">${className}</code><span class="dn di-ns f-3 fw-normal"> / </span>${ nonMobileBreakpoints }</h4>
+`)
+      doc.push(`
+          <article class="ml-4-ns ml-0 db flex-ns items-start justify-between">
+          <div class="w-50-ns w-auto mw-90">
+            <h5 class="f-2 fw-b ma-0 mb-2">Example</h5>
+            <code style="overflow-x: scroll" class="mw-auto db pa-2 br-3 bg-black green-light"><pre class="ma-0">${example.escapedHtml()}</pre></code>
+          </div>`)
       if (example.hasMarkup()) {
-        doc.push(`<td style="padding: 0.5rem; border: solid thin gray">${example.markup()}</td>`)
+        doc.push(`
+          <div class="ml-3-ns mt-3 mt-0-ns flex-grow-1-ns">
+            <h5 class="f-2 fw-b ma-0 mb-2">Demo</h5>
+            <div>${example.markup()}</div>
+          </div>`)
       }
-      else {
-        doc.push("<td>&nbsp;</td>")
-      }
-      doc.push("</tr>")
+      doc.push(`
+          </article>
+          <details class="ml-2 mv-2">
+            <summary class="f-2 tt-l fw-2">Show CSS</summary>
+            <code style="overflow-x: scroll"; class="mw-auto db pa-2 br-3 f-1 fw-5 bg-black blue-light"><pre class="ma0">${ cssClass.toCSS()}</pre></code>
+          </details>`)
     }
 
     /* Generate Docs */
@@ -126,8 +173,9 @@ export default class DocBuilder {
       },
       onMetaPropertyGrouping: writeDocFile,
       onMetaProperty: documentMetaProperty,
-      onCSSClassTemplate: documentTemplate,
-      onCSSClass: documentClass,
+      onCSSClassTemplate: onCSSClassTemplate,
+      onPsuedoSelector: onPsuedoSelector,
+      onCSSClass: onCSSClass,
     })
 
   }

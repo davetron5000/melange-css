@@ -32,23 +32,6 @@ const fontSizes = new MetaProperty({
     }),
   ]
 })
-const summarization = []
-summarization.push(`<div style=\"display: flex; align-items: baseline; margin-bottom: 1rem;\"><h3 style="width: 8rem;"><a style=\"color: black; text-decoration: underline;\" href=\"#${fontSizes.name}\">${fontSizes.name}</a></h3>`)
-fontSizes.cssClassTemplates.forEach( (cssClassTemplate) => {
-  fontSizes.scales().forEach( (scale) => {
-    scale.eachStep( (step) => {
-      const cssClass = cssClassTemplate.toCSSClass(step)
-      if (cssClass.propertiesAndValues['font-size']) {
-        summarization.push(`<div>
-  <div style=\"margin-right: 1rem; padding: 1rem;">
-    <span style=\"font-size: ${cssClass.propertiesAndValues['font-size']}\">Aa</span>
-  </div>
-</div>`)
-      }
-    })
-  })
-})
-summarization.push("</div>")
 
 const measureScale = new Scale({
   "": "30rem",
@@ -74,15 +57,20 @@ const measure = new MetaProperty({
 const textAlign = new MetaProperty({
   name: "Text Align",
   scales: [
-    new Scale({
-      "right": "right",
-      "center": "center",
-      "justify": "justify",
-      "left": "left",
-    })
+    new Scale(
+      {
+        "r": "right",
+        "c": "center",
+        "j": "justify",
+        "l": "left",
+      },
+      {
+        dashPrefix: false,
+      }
+    )
   ],
   cssClassTemplates: [
-    new CSSClassTemplate("text", "text-align", {
+    new CSSClassTemplate("t", "text-align", {
       exampleTemplate: (selector) => {
         return `<div class="w-6 ${selector}">\nThe spice must flow!\n</div>`
       }
@@ -260,7 +248,6 @@ const fontFamily = new MetaProperty({
 const typography = new MetaPropertyGrouping({
   name: "Typography",
   metaProperties: [ fontFamily, fontSizes, fontWeight, fontStyle, textAlign, textTransform, textDecoration, whiteSpace, leading, tracking, measure ],
-  summarization: summarization.join("\n")
 })
 
 export default typography

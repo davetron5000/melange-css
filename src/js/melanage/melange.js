@@ -14,9 +14,9 @@ import borders     from "./groups/borders.js"
 
 const breakpoints = [
   new DefaultBreakpoint(),
-  new Breakpoint({variableNameQualifier: "ns", minWidth: "30em"}),
-  new Breakpoint({variableNameQualifier: "m",  minWidth: "30em", maxWidth: "60em"}),
-  new Breakpoint({variableNameQualifier: "l",  minWidth: "60em"}),
+  new Breakpoint({name: "Not Small", variableNameQualifier: "ns", minWidth: "30em"}),
+  new Breakpoint({name: "Medium", variableNameQualifier: "m",  minWidth: "30em", maxWidth: "60em"}),
+  new Breakpoint({name: "Large", variableNameQualifier: "l",  minWidth: "60em"}),
 ]
 
 const metaTheme = new MetaTheme({

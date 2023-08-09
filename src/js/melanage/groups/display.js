@@ -17,9 +17,9 @@ const flexExampleTemplate = (selector) => {
   <div>Heretics of Dune</div>
   <div>Chapterhouse: Dune</div>
 </div>`
-  const markupForRendering = "<div style=\"width: 60%\">" + 
+  const markupForRendering = "<div>" + 
     htmlForDocs.
-    replace("<div ","<div style=\"width: 100%; border: thin dashed black; padding: 1rem; gap: 0.25rem;\" ").
+    replace("<div ","<div style=\"width: auto; border: thin dashed black; padding: 1rem; gap: 0.25rem;\" ").
     replaceAll("<div>","<div style=\"padding: 0.25rem; border: solid thin black;\">") + "</div>"
   return new Example({
     htmlForDocs: htmlForDocs,
@@ -37,9 +37,9 @@ const flexJustifyExampleTemplate = (selector) => {
   <div>Sci-Fi Dune</div>
   <div>DUNC</div>
 </div>`
-  const markupForRendering = "<div style=\"width: 60%\">" + 
+  const markupForRendering = "<div>" +
     htmlForDocs.
-    replace("<div ","<div style=\"width: 32rem; border: thin dashed black; padding: 1rem; gap: 0.25rem;\" ").
+    replace("<div ","<div style=\"width: auto; border: thin dashed black; padding: 1rem; gap: 0.25rem;\" ").
     replaceAll("<div>","<div style=\"padding: 0.25rem; white-space: nowrap; border: solid thin black;\">") + "</div>"
   return new Example({
     htmlForDocs: htmlForDocs,
@@ -48,6 +48,7 @@ const flexJustifyExampleTemplate = (selector) => {
 }
 
 const flexMetaProperty = MetaProperty.literal({
+  name: "Flexbox",
   className: "flex",
   property: "display",
   value: "flex",
@@ -55,6 +56,7 @@ const flexMetaProperty = MetaProperty.literal({
 })
 
 const inlineFlex = MetaProperty.literal({
+  name: "Inline Flex",
   className: "inline-flex",
   property: "display", 
   value: "inline-flex",
@@ -62,6 +64,7 @@ const inlineFlex = MetaProperty.literal({
 })
 
 const flexNone = MetaProperty.literal({
+  name: "Flex None",
   className: "flex-none",
   property: "flex",
   value: "none",
@@ -126,7 +129,7 @@ const flexJustifyItems = new MetaProperty({
     new CSSClassTemplate("justify", "justify-content", {
       exampleTemplate: flexJustifyExampleTemplate,
     }),
-    new CSSClassTemplate("content", "aligh-content", {
+    new CSSClassTemplate("content", "align-content", {
       exampleTemplate: flexJustifyExampleTemplate,
     }),
   ],
@@ -138,6 +141,26 @@ const flexJustifyItems = new MetaProperty({
       "between": "space-between",
       "around": "space-around",
       "stretch": "stretch",
+    })
+  ]
+})
+
+const flexGrowAndShrink = new MetaProperty({
+  name: "Flex Grow/Shrink",
+  cssClassTemplates: [
+    new CSSClassTemplate("flex-grow", "flex-grow", {
+    }),
+    new CSSClassTemplate("flex-shrink", "flex-shrink", {
+    }),
+  ],
+  scales: [
+    Scale.forLiteralValues({
+      "0": "0",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
     })
   ]
 })
@@ -207,6 +230,7 @@ const display = new MetaPropertyGrouping({name: "Display and Flexbox",
     flexWrap,
     flexAlignItems,
     flexJustifyItems,
+    flexGrowAndShrink,
   ]
 })
 export default display

@@ -1,5 +1,6 @@
 export default class Breakpoint {
-  constructor({variableNameQualifier, minWidth, maxWidth}) {
+  constructor({variableNameQualifier, minWidth, maxWidth, name}) {
+    this.name = name
     this.variableNameQualifier = variableNameQualifier
     this.minWidth = minWidth
     this.maxWidth = maxWidth
