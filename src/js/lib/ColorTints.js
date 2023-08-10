@@ -184,7 +184,7 @@ export default class ColorTints {
       summarization.push("</div>")
     })
     return new MetaPropertyGrouping({
-      name: "colors",
+      name: "Colors",
       metaProperties: metaProperties,
       docs: [
         "All colors can be used for text, borders, or backgrounds by using the color name and tint on its own (for text), with <code>b--</code> (for borders), or <code>bg-</code> (for backgrounds).  Hover styles are available by prefixing <code>hover-</code> in front of the class",

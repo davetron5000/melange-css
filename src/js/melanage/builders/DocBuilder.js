@@ -5,11 +5,47 @@ import HumanizedString from "../../lib/HumanizedString.js"
 
 export default class DocBuilder {
   writeDocs(metaTheme) {  
+    let index
     let doc = []
     let breakpoint
 
-    const rememberBreakpoint = (bp) => {
-      breakpoint = bp
+    const onBreakpoint = {
+      start: (bp) => {
+        breakpoint = bp
+        index = {}
+      },
+      end: (bp) => {
+        if (!breakpoint.isDefault()) {
+          return
+        }
+        const indexDoc = []
+        indexDoc.push(`<html>
+  <head>
+  <meta charSet="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Melange - Reference</title>
+  <link href="melange.css" rel="stylesheet">
+  </head>
+  <body class="font-serif pa0 ma0 bg-orange-lightest black-ish">
+  <header class="bg-black-ish orange-lightest pa-3 pt-4">
+    <h1 class="tc tl-ns f-6 ma-0 mb-3">MelangeCSS Reference</h1>
+  </header>
+  <main>
+    <nav class="flex flex-wrap items-start justify-between pa-3">
+          `)
+        console.log(index)
+        Object.entries(index).forEach( ([name, {metaPropertyGrouping, filename}]) => {
+          indexDoc.push(`<div class="tc tl-ns w-100 w-third-ns ms-third-ns flex flex-column mb-3"><a class="f-4 gray-darkest fw-6 lh-copy" href="${filename}">${name}</a>`)
+          metaPropertyGrouping.metaProperties.forEach( (metaProperty) => {
+            indexDoc.push(`    <a class="indent-1 mb-2 f-3 fw-normal gray-darkest ws-nowrap" href="${filename}#${new Anchor(metaProperty.name)}">`)
+            indexDoc.push(`      ${new HumanizedString(metaProperty.name)}`)
+            indexDoc.push(`    </a>`)
+          })
+          indexDoc.push(`</div>`)
+        })
+        indexDoc.push(`</main></body></html>`)
+        fs.writeFileSync(`index.html`, indexDoc.join("\n"))
+      }
     }
     const writeDocFile = {
       start: (metaPropertyGrouping) => {
@@ -50,11 +86,13 @@ export default class DocBuilder {
         doc.push(`    <main class="pa-1 w-auto w-60-l w-80-m mh-auto">`)
       },
       end: (metaPropertyGrouping) => {
+        const filename = `${metaPropertyGrouping.slug}.doc.html`
+        index[metaPropertyGrouping.name] = { metaPropertyGrouping: metaPropertyGrouping, filename: filename }
         doc.push("</main>")
         doc.push("</body>")
         doc.push("</html>")
         if (breakpoint.isDefault()) {
-          fs.writeFileSync(`${metaPropertyGrouping.slug}.doc.html`, doc.join("\n"))
+          fs.writeFileSync(filename, doc.join("\n"))
         }
         else {
           console.log(`Ignoring breakpoint ${breakpoint.variableNameQualifier}`)
@@ -170,9 +208,7 @@ export default class DocBuilder {
 
     /* Generate Docs */
     metaTheme.eachCSSClass({
-      onBreakpoint: {
-        start: rememberBreakpoint,
-      },
+      onBreakpoint: onBreakpoint,
       onMetaPropertyGrouping: writeDocFile,
       onMetaProperty: documentMetaProperty,
       onCSSClassTemplate: onCSSClassTemplate,
