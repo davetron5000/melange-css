@@ -3,7 +3,6 @@ import MetaPropertyGrouping          from "../../lib/MetaPropertyGrouping.js"
 import CSSClassTemplate              from "../../lib/CSSClassTemplate.js"
 import Example                       from "../../lib/Example.js"
 import Scale                         from "../../lib/scales/Scale.js"
-import Step                          from "../../lib/scales/Step.js"
 
 const overflowExampleTemplate = (selector) => {
   return new Example({
