@@ -13,6 +13,8 @@ import position    from "./groups/position.js"
 import borders     from "./groups/borders.js"
 import overflow    from "./groups/overflow.js"
 import lists       from "./groups/lists.js"
+import visuals     from "./groups/visuals.js"
+import background  from "./groups/background.js"
 
 
 const breakpoints = [
@@ -35,6 +37,8 @@ const metaTheme = new MetaTheme({
     borders,
     overflow,
     lists,
+    visuals,
+    background,
   ],
   breakpoints: breakpoints,
 })
