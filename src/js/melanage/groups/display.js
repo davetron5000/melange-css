@@ -20,22 +20,22 @@ const displayExampleTemplate = (selector) => {
 const displays = new MetaProperty({
   name: "Display",
   literalClasses: {
-    db: { properties: { "display": "block" }, options: { exampleTemplate: displayExampleTemplate, summary: "Block" } },
-    di: { properties: { "display": "inline" }, options: { exampleTemplate: displayExampleTemplate, summary: "Inline" } },
-    dib: { properties: { "display": "inline-block" }, options: { exampleTemplate: displayExampleTemplate, summary: "Inline Block" } },
-    dn: { properties: { "display": "none" }, options: { exampleTemplate: displayExampleTemplate, summary: "None" } },
+    db: { properties: { "display": "block" }, exampleTemplate: displayExampleTemplate, summary: "Block" },
+    di: { properties: { "display": "inline" }, exampleTemplate: displayExampleTemplate, summary: "Inline" },
+    dib: { properties: { "display": "inline-block" }, exampleTemplate: displayExampleTemplate, summary: "Inline Block" },
+    dn: { properties: { "display": "none" }, exampleTemplate: displayExampleTemplate, summary: "None" },
   },
 })
 
 const tableDisplay = new MetaProperty({
   name: "Table Display",
   literalClasses: {
-    "dt":             { properties: { "display": "table" }              , options: { summary: "Table" }},
-    "dtc":            { properties: { "display": "table-cell" }         , options: { summary: "Cell" }},
-    "dtrow":          { properties: { "display": "table-row" }          , options: { summary: "Row" }},
-    "dtrow-group":    { properties: { "display": "table-row-group" }    , options: { summary: "Row Group" }},
-    "dtcolumn":       { properties: { "display": "table-column" }       , options: { summary: "Column" }},
-    "dtcolumn-group": { properties: { "display": "table-column-group" } , options: { summary: "Column Group" }},
+    "dt":             { properties: { "display": "table" }              , summary: "Table" },
+    "dtc":            { properties: { "display": "table-cell" }         , summary: "Cell" },
+    "dtrow":          { properties: { "display": "table-row" }          , summary: "Row" },
+    "dtrow-group":    { properties: { "display": "table-row-group" }    , summary: "Row Group" },
+    "dtcolumn":       { properties: { "display": "table-column" }       , summary: "Column" },
+    "dtcolumn-group": { properties: { "display": "table-column-group" } , summary: "Column Group" },
   },
 })
 

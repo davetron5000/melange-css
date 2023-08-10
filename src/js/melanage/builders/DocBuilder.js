@@ -1,6 +1,7 @@
-import fs      from "node:fs"
-import Example from "../../lib/Example.js"
-import Anchor  from "../../lib/Anchor.js"
+import fs              from "node:fs"
+import Example         from "../../lib/Example.js"
+import Anchor          from "../../lib/Anchor.js"
+import HumanizedString from "../../lib/HumanizedString.js"
 
 export default class DocBuilder {
   writeDocs(metaTheme) {  
@@ -38,7 +39,7 @@ export default class DocBuilder {
           metaPropertyGrouping.metaProperties.forEach( (metaProperty) => {
             doc.push(`    <div class="flex flex-column items-start mr-3">`)
             doc.push(`    <a class="mb-2 f-3 fw-5 white-ish ws-nowrap" href="#${new Anchor(metaProperty.name)}">`)
-            doc.push(`      ${metaProperty.name}`)
+            doc.push(`      ${new HumanizedString(metaProperty.name)}`)
             doc.push(`    </a>`)
             doc.push(`    </div>`)
           })
@@ -73,12 +74,12 @@ export default class DocBuilder {
           doc.push(`
       <nav class="flex flex-wrap">`)
           const linkHTML = metaProperty.cssClassTemplates.map( (cssClassTemplate) => {
-            const links = [ `<a class="lh-copy black" href="#${new Anchor(cssClassTemplate.classNameBase)}">${cssClassTemplate.summary || cssClassTemplate.classNameBase}</a>` ]
+            const links = [ `<a class="lh-copy black" href="#${new Anchor(cssClassTemplate.classNameBase)}">${cssClassTemplate.summary || new HumanizedString(cssClassTemplate.classNameBase)}</a>` ]
             if (metaProperty.pseudoSelectors.length > 1) {
               metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
                 if (!pseudoSelector.isDefault()) {
                   const pseudoAnchor = new Anchor(cssClassTemplate.classNameBase + '-' + pseudoSelector.selector)
-                  links.push(`<a class="lh-copy black" href="#${pseudoAnchor}">${cssClassTemplate.summary || cssClassTemplate.classNameBase} - ${pseudoSelector.name}</a>`)
+                  links.push(`<a class="lh-copy black" href="#${pseudoAnchor}">${cssClassTemplate.summary || new HumanizedString(cssClassTemplate.classNameBase)} - ${pseudoSelector.name}</a>`)
                 }
               })
             }
@@ -98,13 +99,16 @@ export default class DocBuilder {
       start: (cssClassTemplate, metaProperty) => {
         doc.push("      <section>\n")
         doc.push(`        <a name="${new Anchor(cssClassTemplate.classNameBase)}"></a>`)
-        doc.push(`        <h3 class="f-3">`)
-        doc.push(`          <code class="f-4">${cssClassTemplate.classNameBase}*</code>`)
-        if (cssClassTemplate.summary) {
-          const capitalizedName = metaProperty.name.charAt(0).toUpperCase() + metaProperty.name.slice(1)
-          doc.push(`          <span class="f-3 ml-2"> - ${capitalizedName} ${cssClassTemplate.summary}</span>`)
+        if (metaProperty.totalSteps() <= 1) {
         }
-        doc.push(`        </h3>\n`)
+        else {
+          doc.push(`        <h3 class="f-3">`)
+          doc.push(`          <code class="f-4">${cssClassTemplate.classNameBase}*</code>`)
+          if (cssClassTemplate.summary) {
+            doc.push(`          <span class="f-3 ml-2"> - ${new HumanizedString(metaProperty.name)} ${cssClassTemplate.summary}</span>`)
+          }
+          doc.push(`        </h3>\n`)
+        }
         if (cssClassTemplate.docs) {
           cssClassTemplate.docs.forEach( (docParagraph) => {
             doc.push(`         <p class="measure f-2">${docParagraph}</p>\n`)
@@ -117,18 +121,16 @@ export default class DocBuilder {
       }
     }
     const onPsuedoSelector = {
-      start: (pseudoSelector, cssClassTemplate) => {
+      start: (pseudoSelector, cssClassTemplate, metaProperty) => {
         if (pseudoSelector.isDefault()) {
+          return
+        }
+        if (metaProperty.totalSteps() <= 1) {
           return
         }
         doc.push(`<a name="${new Anchor(cssClassTemplate.classNameBase + '-' + pseudoSelector.selector)}"></a>`)
         doc.push(`<h3 class="f-4 mt-4">${cssClassTemplate.summary || cssClassTemplate.classNameBase} - ${pseudoSelector.name}</a></h3>`)
       },
-      end: (pseudoSelector) => {
-        if (pseudoSelector.isDefault()) {
-          return
-        }
-      }
     }
 
     const onCSSClass = (cssClass, _pseudoSelector, cssClassTemplate, _metaProperty, _metaPropertyGrouping, _breakpoint, allBreakpoints) => {

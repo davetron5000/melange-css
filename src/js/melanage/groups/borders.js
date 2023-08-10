@@ -27,42 +27,42 @@ const bordersMetaProperty = new MetaProperty({
         "border-style": "solid",
         "border-width": "1px", 
       },
-      options: { exampleTemplate: borderExampleTemplate, summary: "all" }
+      exampleTemplate: borderExampleTemplate, summary: "all",
     },
     "bl": {
       properties: {
         "border-left-style": "solid",
         "border-left-width": "1px", 
       },
-      options: { exampleTemplate: borderExampleTemplate, summary: "left" }
+      exampleTemplate: borderExampleTemplate, summary: "left",
     },
     "br": {
       properties: {
         "border-right-style": "solid",
         "border-right-width": "1px", 
       },
-      options: { exampleTemplate: borderExampleTemplate, summary: "right" }
+      exampleTemplate: borderExampleTemplate, summary: "right",
     },
     "bt": {
       properties: {
         "border-top-style": "solid",
         "border-top-width": "1px", 
       },
-      options: { exampleTemplate: borderExampleTemplate, summary: "top" }
+      exampleTemplate: borderExampleTemplate, summary: "top",
     },
     "bb": {
       properties: {
         "border-bottom-style": "solid",
         "border-bottom-width": "1px", 
       },
-      options: { exampleTemplate: borderExampleTemplate, summary: "bottom" }
+      exampleTemplate: borderExampleTemplate, summary: "bottom",
     },
     "bn": {
       properties: {
         "border-style": "none",
         "border-width": "0", 
       },
-      options: { exampleTemplate: borderExampleTemplate, summary: "none" }
+      exampleTemplate: borderExampleTemplate, summary: "none",
     },
   }
 })
@@ -111,6 +111,10 @@ const borderRadiusMetaProperty = new MetaProperty({
     new CSSClassTemplate("br-top", "border-top-left-radius", "border-top-right-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "top" }),
     new CSSClassTemplate("br-left", "border-bottom-left-radius", "border-top-left-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "left" }),
     new CSSClassTemplate("br-right", "border-bottom-right-radius", "border-top-right-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "right" }),
+    new CSSClassTemplate("br-tr", "border-top-right-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "top right" }),
+    new CSSClassTemplate("br-br", "border-bottom-right-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "bottom right" }),
+    new CSSClassTemplate("br-tl", "border-top-left-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "top left" }),
+    new CSSClassTemplate("br-bl", "border-bottom-left-radius", { exampleTemplate: borderWidthExampleTemplate, summary: "bottom left" }),
   ]
 })
 

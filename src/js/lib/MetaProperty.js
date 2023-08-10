@@ -30,7 +30,8 @@ export default class MetaProperty {
    *                        "css-property": "css-value",
    *                        etc,
    *                      },
-   *                      options: options as you would give to CSSClassTemplate
+   *                      any: other,
+   *                      options: arePassedToCSSClassTemplate,
    *                    },
    *                    etc.
    *                  }
@@ -52,7 +53,8 @@ export default class MetaProperty {
       }
       this.cssClassTemplates = Object.entries(literalClasses).map( ([name,literalClass]) => {
         if ( (literalClass.properties) && Object.keys(literalClass.properties).length > 0) {
-          return new ScaleAgnosticCSSClassTemplate(name, literalClass.properties, literalClass.options)
+          const { properties: properties, ...options } = literalClass
+          return new ScaleAgnosticCSSClassTemplate(name, properties, options)
         }
         else {
           throw `${name} has no properties while trying to create MetaProperty ${this.name}`
@@ -61,8 +63,15 @@ export default class MetaProperty {
       })
     }
   }
+
   scales() {
     return this._scales
+  }
+
+  totalSteps() {
+    return this._scales.reduce( (accumulator, scale) => {
+      return accumulator + scale.numSteps()
+    }, 0)
   }
 
   /*

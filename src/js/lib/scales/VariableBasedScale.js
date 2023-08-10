@@ -7,6 +7,8 @@ export default class VariableBasedScale extends Scale {
     this.variables = variables
   }
 
+  numSteps() { return this.variables.length }
+
   eachStep(f) {
     this.variables.forEach( (variable) => {
       f(new VariableBasedStep(variable))

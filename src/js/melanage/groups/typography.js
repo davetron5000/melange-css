@@ -12,6 +12,8 @@ import {
   fontFamilies
 } from "../scales.js"
 
+const basicExample = ExampleTemplate.divWithSelector("The spice must flow!")
+
 const exampleTemplate = (selector) => {
   const html = `<div class=\"${selector}\">\nThe spice must flow!\n</div>`
   return new Example({
@@ -58,26 +60,12 @@ const measure = new MetaProperty({
 })
 const textAlign = new MetaProperty({
   name: "Text Align",
-  scales: [
-    new Scale(
-      {
-        "r": "right",
-        "c": "center",
-        "j": "justify",
-        "l": "left",
-      },
-      {
-        dashPrefix: false,
-      }
-    )
-  ],
-  cssClassTemplates: [
-    new CSSClassTemplate("t", "text-align", {
-      exampleTemplate: (selector) => {
-        return `<div class="w-6 ${selector}">\nThe spice must flow!\n</div>`
-      }
-    }),
-  ]
+  literalClasses: {
+    "tr": { properties: { "text-align": "right" }, exampleTemplate: basicExample, summary: "Right" },
+    "tc": { properties: { "text-align": "center" }, exampleTemplate: basicExample, summary: "Center" },
+    "tl": { properties: { "text-align": "left" }, exampleTemplate: basicExample, summary: "Left" },
+    "tj": { properties: { "text-align": "justify" }, exampleTemplate: basicExample, summary: "Justify" },
+  }
 })
 const leading = new MetaProperty({
   name: "Leading/Line Height",
@@ -111,41 +99,34 @@ const tracking = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("tracked", "letter-spacing", {
-      exampleTemplate: ExampleTemplate.divWithSelector("The spice must flow!"),
+      exampleTemplate: basicExample,
     }),
   ]
 })
 
 const fontStyle = new MetaProperty({
   name: "Font Style",
-  scales: [
-    new Scale({
-      "normal": "normal",
-      "i": "italic",
-    })
-  ],
-  cssClassTemplates: [
-    new CSSClassTemplate("fs", "font-style", {
-      exampleTemplate: ExampleTemplate.divWithSelector("The spice must flow!"),
-    }),
-  ]
+  literalClasses: {
+    "normal": { properties: { "font-style": "normal" }, exampleTemplate: basicExample },
+    "i": { properties: { "font-style": "italic" }, exampleTemplate: basicExample, summary: "Italic" },
+  }
+})
+
+const fontVariant = new MetaProperty({
+  name: "Font Variant",
+  literalClasses: {
+    "small-caps": { properties: { "font-variant": "small-caps" }, exampleTemplate: basicExample, summary: "Small Caps" },
+  }
 })
 
 const textTransform = new MetaProperty({
   name: "Text Tranform",
-  scales: [
-    new Scale({
-      "n": "none",
-      "u": "uppercase",
-      "l": "lowercase",
-      "c": "capitalize",
-    })
-  ],
-  cssClassTemplates: [
-    new CSSClassTemplate("tt", "text-transform", {
-      exampleTemplate: ExampleTemplate.divWithSelector("The spice must flow!"),
-    }),
-  ]
+  literalClasses: {
+    "ttn": { properties: { "text-transform": "none" }, exampleTemplate: basicExample, summary: "None" },
+    "ttu": { properties: { "text-transform": "uppercase" }, exampleTemplate: basicExample, summary: "Uppercase" },
+    "ttl": { properties: { "text-transform": "lowercase" }, exampleTemplate: basicExample, summary: "Lowercase" },
+    "ttc": { properties: { "text-transform": "capitalize" }, exampleTemplate: basicExample, summary: "Capitalize" },
+  }
 })
 
 const textDecoration = new MetaProperty({
@@ -153,46 +134,70 @@ const textDecoration = new MetaProperty({
   docs: [
     "Text decoration adds lines to the text. You can combine the single letter values together by putting the letters in alphabetical order, for example <code>su</code> combines <code>s</code> and <code>u</code>",
   ],
-  scales: [
-    new Scale({
-      "n": "none",
-      "u": "underline",
-      "s": "line-through",
-      "o": "overline",
-      "su": "underline line-through",
-      "ou": "underline overline",
-      "os": "overline line-through",
-      "ou": "underline overline",
-      "osu": "line-through underline overline",
-    })
-  ],
-  cssClassTemplates: [
-    new CSSClassTemplate("td", "text-decoration", {
-      exampleTemplate: ExampleTemplate.divWithSelector("The spice must flow!"),
-    }),
-  ],
+  literalClasses: {
+    "tdn":   { properties: { "text-decoration": "none" },
+             exampleTemplate: basicExample, summary: "None" },
+    "tdu":   { properties: { "text-decoration": "underline"},
+             exampleTemplate: basicExample, summary: "Underline" },
+    "u":     { properties: { "text-decoration": "underline"},
+             exampleTemplate: basicExample, summary: "Underline" },
+    "tds":   { properties: { "text-decoration": "line-through"},
+             exampleTemplate: basicExample, summary: "Strike" },
+    "tdo":   { properties: { "text-decoration": "overline"},
+             exampleTemplate: basicExample, summary: "Overline" },
+    "tdsu":  { properties: { "text-decoration": "underline line-through"},
+             exampleTemplate: basicExample, summary: "Underline and Strike" },
+    "tdou":  { properties: { "text-decoration": "underline overline"},
+             exampleTemplate: basicExample, summary: "Underline and Overline" },
+    "tdos":  { properties: { "text-decoration": "overline line-through"},
+             exampleTemplate: basicExample, summary: "Overline and Strike" },
+    "tdou":  { properties: { "text-decoration": "underline overline"},
+             exampleTemplate: basicExample, summary: "Underline and Overline" },
+    "tdosu": { properties: { "text-decoration": "line-through underline overline"},
+             exampleTemplate: basicExample, summary: "Underline, Overline, and Strike" },
+  },
   pseudoSelectors: [
     pseudoSelectors.default,
     pseudoSelectors.hover,
   ]
 })
 
-const whiteSpace = new MetaProperty({
-  name: "White Space",
+const indentExample = (selector) => {
+  const copy = `Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
+started by the original six books, you will get a perfectly fine reading 
+experience from the originals.`
+  return new Example({
+    htmlForDocs: `<div class="measure lh-copy ${selector}">
+  ${copy}
+</div>`,
+    markupForRendering: `<div style="padding: 0.5em 2.5em;" class="ba b--dashed bg-gray-lightest"><div class="bg-white measure lh-copy ${selector}">
+  ${copy}
+</div></div>`,
+  })
+}
+
+const textIndent = new MetaProperty({
+  name: "Indent",
   scales: [
     new Scale({
-      "normal": "normal",
-      "nowrap": "nowrap",
-      "pre": "pre",
-      "prewrap": "pre-wrap",
-      "preline": "pre-line",
-      "breakspaces": "break-spaces",
+      "0": "0",
+      "1": "1em",
+      "2": "1.5em",
+      "3": "2em",
+      "-1": "-1em",
+      "-2": "-1.5em",
+      "-3": "-2em",
     })
   ],
   cssClassTemplates: [
-    new CSSClassTemplate("ws", "white-space", {
-      exampleTemplate: (selector) => {
-        return `<div class="measure-narrow ${selector}">
+    new CSSClassTemplate("indent", "text-indent", {
+      exampleTemplate: indentExample,
+    }),
+  ]
+})
+
+const whiteSpaceExample = (selector) => {
+  return `<div class="measure-narrow ${selector}">
   Although “Hunters of Dune” and 
            “Sandworms of Dune” carry on the story 
      started by the original six books, you will
@@ -205,8 +210,17 @@ const whiteSpace = new MetaProperty({
 
 Trust me.
 </div>`}
-    }),
-  ]
+
+const whiteSpace = new MetaProperty({
+  name: "White Space",
+  literalClasses: {
+    "ws-normal":      { properties: { "white-space": "normal" }, exampleTemplate: whiteSpaceExample, summary: "Normal" },
+    "ws-nowrap":      { properties: { "white-space": "nowrap" }, exampleTemplate: whiteSpaceExample, summary: "No Wrap" },
+    "ws-pre":         { properties: { "white-space": "pre" }, exampleTemplate: whiteSpaceExample, summary: "Pre" },
+    "ws-prewrap":     { properties: { "white-space": "pre-wrap" }, exampleTemplate: whiteSpaceExample, summary: "Pre Wrap" },
+    "ws-preline":     { properties: { "white-space": "pre-line" }, exampleTemplate: whiteSpaceExample, summary: "Pre Line" },
+    "ws-breakspaces": { properties: { "white-space": "break-spaces" }, exampleTemplate: whiteSpaceExample, summary: "Break Spaces" },
+  }
 })
 
 const fontWeight = new MetaProperty({
@@ -251,9 +265,24 @@ const fontFamily = new MetaProperty({
   ]
 })
 
+
 const typography = new MetaPropertyGrouping({
   name: "Typography",
-  metaProperties: [ fontFamily, fontSizes, fontWeight, fontStyle, textAlign, textTransform, textDecoration, whiteSpace, leading, tracking, measure ],
+  metaProperties: [
+    fontFamily,
+    fontSizes,
+    fontWeight,
+    fontStyle,
+    fontVariant,
+    textAlign,
+    textTransform,
+    textDecoration,
+    textIndent,
+    whiteSpace,
+    leading,
+    tracking,
+    measure
+  ],
 })
 
 export default typography
