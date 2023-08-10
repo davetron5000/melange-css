@@ -7,7 +7,9 @@ import Scale                from "../../lib/scales/Scale.js"
 import {
   spacingScale,
   percentageScale,
-  thirdsScale
+  thirdsScale,
+  viewportHeightScale,
+  viewportWidthScale,
 } from "../scales.js"
 
 const widthsMetaProperty = new MetaProperty({
@@ -15,6 +17,7 @@ const widthsMetaProperty = new MetaProperty({
   scales: [
     spacingScale,
     percentageScale,
+    viewportHeightScale,
     thirdsScale,
     Scale.forLiteralValues({ "auto": "auto" }),
   ],
@@ -40,6 +43,7 @@ const heightsMetaProperty = new MetaProperty({
   scales: [
     spacingScale,
     percentageScale,
+    viewportHeightScale,
     thirdsScale,
     Scale.forLiteralValues({ "auto": "auto" }),
   ],
