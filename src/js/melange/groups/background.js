@@ -11,9 +11,8 @@ import { percentageScale }           from "../scales.js"
 const backgroundPositionExampleTemplate = (selector) => {
   return new Example({
     htmlForDocs: `<div class="${selector}></div>`,
-    markupForRendering: `<div class="${selector} w-6 h-6 ba"
-     style="background-image: url(image.png);
-            background-repeat: no-repeat;">
+    markupForRendering: `<div class="${selector} w-6 h-6 ba with-background-image"
+     style="background-repeat: no-repeat;">
   </div>`
   })
 }
@@ -44,8 +43,8 @@ const backgroundPosition = new MetaProperty({
 const backgroundRepeatExampleTemplate = (selector) => {
   return new Example({
     htmlForDocs: `<div class="${selector}></div>`,
-    markupForRendering: `<div class="${selector} ba"
-     style="background-image: url(image.png); width: 10rem; height: 10rem;">
+    markupForRendering: `<div class="${selector} ba with-background-image"
+     style="width: 10rem; height: 10rem;">
   </div>`
   })
 }

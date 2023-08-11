@@ -42,6 +42,6 @@ export default class Variable {
   }
 
   _variableName() {
-    return `--melange-${this.baseName}${this.stepName}`
+    return `--mg-${this.baseName}${this.stepName}`
   }
 }

@@ -9,7 +9,7 @@ import VariableRegistry           from "../lib/VariableRegistry.js"
  * them without having to use the Melange code directly. */
 
 const spacingVariables = VariableRegistry.register(
-  "spacing",
+  "sp",
   [
     "0.25rem",
     "0.5rem",
@@ -35,17 +35,17 @@ const negativeSpacingVariables = spacingVariables.map( (variable) => {
     return `-${stepName}`
   }
   return new DerivedVariable({
-    baseName: "negativeSpacing",
+    baseName: "nsp",
     variable: variable,
     propertyTransform: propertyTransform,
     stepNameTransform: stepNameTransform
   })
 })
-VariableRegistry.registerVariables("negativeSpacing", negativeSpacingVariables)
+VariableRegistry.registerVariables("nsp", negativeSpacingVariables)
 const negativeSpacingScale = new VariableBasedScale(negativeSpacingVariables)
 
 const fontSizeVariables = VariableRegistry.register(
-  "fontSize",
+  "fs",
   [
     "0.875rem",
     "1rem",
@@ -61,7 +61,7 @@ const fontSizeVariables = VariableRegistry.register(
 const fontScale = new VariableBasedScale(fontSizeVariables)
 
 const fontFamilyVariables = VariableRegistry.register(
-  "fontFamily",
+  "ff",
   {
     "sans": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif",
     "serif": "Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif",
@@ -75,7 +75,7 @@ const fontFamilyVariables = VariableRegistry.register(
 const fontFamilies = new VariableBasedScale(fontFamilyVariables)
 
 const borderWidthVariables = VariableRegistry.register(
-  "borderWidth",
+  "bw",
   [
     "0.125rem",
     "0.25rem",

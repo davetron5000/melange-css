@@ -3,3 +3,12 @@
 
 # Generated CSS file
 melange.css
+
+# Generated stuff
+dist
+
+# FUCK this directory with every fiber of my being
+node_modules
+
+# FUCK this FILE wiht every fiber of my being
+package-lock.json
