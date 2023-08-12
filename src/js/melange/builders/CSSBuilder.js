@@ -20,13 +20,17 @@ export default class CSSBuilder {
       css.write(cssClass.toCSS())
       css.write("\n")
     }
-    const startBreakpoint = (breakpoint) => {
-      if (breakpoint.toMediaQuery() !== "") {
-        css.write(`${breakpoint.toMediaQuery()} {\n`)
+    const startMediaQuery = (mediaQuery) => {
+      if (mediaQuery.toMediaQuery() !== "") {
+        css.write(`/*
+ * ${mediaQuery.description()}
+ */
+`)
+        css.write(`${mediaQuery.toMediaQuery()} {\n`)
       }
     }
-    const endBreakpoint = (breakpoint) => {
-      if (breakpoint.toMediaQuery() !== "") {
+    const endMediaQuery = (mediaQuery) => {
+      if (mediaQuery.toMediaQuery() !== "") {
         css.write("}\n")
       }
     }
@@ -62,9 +66,9 @@ export default class CSSBuilder {
       /* Generate CSS */
       metaTheme.eachCSSClass({
         onCSSClass: writeCSSClass,
-        onBreakpoint: {
-          start: startBreakpoint,
-          end:  endBreakpoint,
+        onMediaQuery: {
+          start: startMediaQuery,
+          end:  endMediaQuery,
         },
       })
     }

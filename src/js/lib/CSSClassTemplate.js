@@ -59,7 +59,7 @@ export default class CSSClassTemplate {
   }
 
   /*
-   * Given the step, returns the specific CSS class to use without pseudo and at the default breakpoint
+   * Given the step, returns the specific CSS class to use without pseudo and at the default media query
    */
   toCSSClass(step) {
     const cssClass = new CSSClass({

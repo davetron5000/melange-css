@@ -1,12 +1,12 @@
 /*
  * This is not the design system that Melange provides for you.  This is a thing that produces
- * design systems.  It turns a list of MetaPropertyGrouping instances and a list of Breakpoint instances insto
+ * design systems.  It turns a list of MetaPropertyGrouping instances and a list of MediaQuery instances insto
  * the design system.
  */
 export default class MetaTheme {
-  constructor({metaPropertyGroupings, breakpoints}) {
+  constructor({metaPropertyGroupings, mediaQueries}) {
     this.metaPropertyGroupings = metaPropertyGroupings
-    this.breakpoints           = breakpoints
+    this.mediaQueries           = mediaQueries
   }
 
   /*
@@ -70,7 +70,7 @@ export default class MetaTheme {
   }
 
   /*
-   * Allows for fine-level iteration over each class that is produced, with callbacks for each breakpoint, grouping,
+   * Allows for fine-level iteration over each class that is produced, with callbacks for each mediaQuery, grouping,
    * property, class template, and class.
    *
    * Each of the following callbacks can either be a single function or an object with the keys start and end.
@@ -78,7 +78,7 @@ export default class MetaTheme {
    * start is called for each part of the model before iteration of sub models.  end is called after.  If
    * the callback is a function, it will be called for start only.
    *
-   * onBreakpoint - called around the given breakpoint. Passed a Breakpoint instance
+   * onMediaQuery - called around the given mediaQuery. Passed a MediaQuery instance
    * onMetaPropertyGrouping - around the given MetaPropertyGrouping. Passed a MetaPropertyGrouping instance
    * onMetaProperty - around the given MetaProperty. Passed a MetaProperty instance
    * onCSSClassTemplate - around the given CSSClassTemplate. Passed a CSSClassTemplate instance
@@ -86,46 +86,46 @@ export default class MetaTheme {
    * onCSSClass - around the given CSSClass. Passed a CSSClass instance
    */
   eachCSSClass({
-    onBreakpoint,
+    onMediaQuery,
     onMetaPropertyGrouping,
     onMetaProperty,
     onCSSClassTemplate,
     onPsuedoSelector,
     onCSSClass,
   }) {
-    onBreakpoint           = this._convertCBToCanonical("onBreakpoint"           , onBreakpoint)
+    onMediaQuery           = this._convertCBToCanonical("onMediaQuery"           , onMediaQuery)
     onMetaPropertyGrouping = this._convertCBToCanonical("onMetaPropertyGrouping" , onMetaPropertyGrouping)
     onMetaProperty         = this._convertCBToCanonical("onMetaProperty"         , onMetaProperty)
     onCSSClassTemplate     = this._convertCBToCanonical("onCSSClassTemplate"     , onCSSClassTemplate)
     onPsuedoSelector       = this._convertCBToCanonical("onPsuedoSelector"       , onPsuedoSelector)
     onCSSClass             = this._convertCBToCanonical("onCSSClass"             , onCSSClass)
 
-    this.breakpoints.forEach( (breakpoint) => {
-      onBreakpoint.start(breakpoint)
+    this.mediaQueries.forEach( (mediaQuery) => {
+      onMediaQuery.start(mediaQuery)
       this.metaPropertyGroupings.forEach( (metaPropertyGrouping) => {
-        onMetaPropertyGrouping.start(metaPropertyGrouping, breakpoint, this.breakpoints)
+        onMetaPropertyGrouping.start(metaPropertyGrouping, mediaQuery, this.mediaQueries)
         metaPropertyGrouping.metaProperties.forEach( (metaProperty) => {
-          onMetaProperty.start(metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
+          onMetaProperty.start(metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
           metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
-            onCSSClassTemplate.start(cssClassTemplate, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
+            onCSSClassTemplate.start(cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
             metaProperty.scales().forEach( (scale) => {
               metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
-                onPsuedoSelector.start(pseudoSelector, cssClassTemplate, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
+                onPsuedoSelector.start(pseudoSelector, cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
                 scale.eachStep( (step) => {
-                  const cssClass = cssClassTemplate.toCSSClass(step).forSelector(pseudoSelector).atBreakpoint(breakpoint)
-                  onCSSClass.start(cssClass, pseudoSelector, cssClassTemplate, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
-                  onCSSClass.end(cssClass, cssClassTemplate, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
+                  const cssClass = cssClassTemplate.toCSSClass(step).forSelector(pseudoSelector).atMediaQuery(mediaQuery)
+                  onCSSClass.start(cssClass, pseudoSelector, cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
+                  onCSSClass.end(cssClass, cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
                 })
-                onPsuedoSelector.end(pseudoSelector, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
+                onPsuedoSelector.end(pseudoSelector, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
               })
             })
-            onCSSClassTemplate.end(cssClassTemplate, metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
+            onCSSClassTemplate.end(cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
           })
-          onMetaProperty.end(metaProperty, metaPropertyGrouping, breakpoint, this.breakpoints)
+          onMetaProperty.end(metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
         })
-        onMetaPropertyGrouping.end(metaPropertyGrouping, breakpoint, this.breakpoints)
+        onMetaPropertyGrouping.end(metaPropertyGrouping, mediaQuery, this.mediaQueries)
       })
-      onBreakpoint.end(breakpoint)
+      onMediaQuery.end(mediaQuery)
     })
   }
 }

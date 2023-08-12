@@ -1,6 +1,6 @@
 import MetaTheme         from "../lib/MetaTheme.js"
-import DefaultBreakpoint from "../lib/breakpoints/DefaultBreakpoint.js"
-import Breakpoint        from "../lib/breakpoints/Breakpoint.js"
+import DefaultMediaQuery from "../lib/mediaqueries/DefaultMediaQuery.js"
+import Breakpoint        from "../lib/mediaqueries/Breakpoint.js"
 
 import spacings    from "./groups/spacings.js"
 import typography  from "./groups/typography.js"
@@ -17,11 +17,11 @@ import visuals     from "./groups/visuals.js"
 import background  from "./groups/background.js"
 
 
-const breakpoints = [
-  new DefaultBreakpoint(),
-  new Breakpoint({name: "Not Small", variableNameQualifier: "ns", minWidth: "30em"}),
-  new Breakpoint({name: "Medium", variableNameQualifier: "m",  minWidth: "30em", maxWidth: "60em"}),
-  new Breakpoint({name: "Large", variableNameQualifier: "l",  minWidth: "60em"}),
+const mediaQueries = [
+  new DefaultMediaQuery(),
+  new Breakpoint({name: "Not Small", variableNameQualifier: "ns", minWidth: "30em", description: "Screens that are larger than mobile sized"}),
+  new Breakpoint({name: "Medium", variableNameQualifier: "m",  minWidth: "30em", maxWidth: "60em", description: "Screens larger than the mobile size but smaller than what is considered large"}),
+  new Breakpoint({name: "Large", variableNameQualifier: "l",  minWidth: "60em", description: "Screens larger than both the mobile size and the medium size"}),
 ]
 
 const metaTheme = new MetaTheme({
@@ -40,7 +40,7 @@ const metaTheme = new MetaTheme({
     visuals,
     background,
   ],
-  breakpoints: breakpoints,
+  mediaQueries: mediaQueries,
 })
 
 export default metaTheme

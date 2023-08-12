@@ -22,7 +22,7 @@ export default class MetaProperty {
    *                     the Step. Required if literalClasses is omitted and may not be specified if it is not.
    * literalClasses - as a convienience to using ScaleAgnosticCSSClassTemplate directly, you can pass in
    *                  an object that create literal classes that can still be combined
-   *                  with pseudo selectors and breakpoints.  The format is:
+   *                  with pseudo selectors and media queries.  The format is:
    *                  {
    *                    "classBase": {
    *                      "properites: " {
@@ -76,10 +76,10 @@ export default class MetaProperty {
 
   /*
    * Used to create a simple MetaProperty that has no scales, but where you still want
-   * to have deireved classes for breakpoints and pseudo selectors.
+   * to have derieved classes for media queries and pseudo selectors.
    *
    *
-   * className - the classname you want to use for the default breakpoint with no pseudo selectors.
+   * className - the classname you want to use for the default media query with no pseudo selectors.
    * property - the CSS property to set
    * value - the value to set in the CSS
    * pseudoSelectors - the PseudoSelector instances to use to derive more classes

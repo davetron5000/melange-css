@@ -10,15 +10,15 @@ export default class DocBuilder {
   build(metaTheme) {  
     let index
     let doc = []
-    let breakpoint
+    let mediaQuery
 
-    const onBreakpoint = {
-      start: (bp) => {
-        breakpoint = bp
+    const onMediaQuery = {
+      start: (mq) => {
+        mediaQuery = mq
         index = {}
       },
-      end: (bp) => {
-        if (!breakpoint.isDefault()) {
+      end: (mq) => {
+        if (!mediaQuery.isDefault()) {
           return
         }
         const indexDoc = []
@@ -100,7 +100,7 @@ background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAA
         doc.push("</main>")
         doc.push("</body>")
         doc.push("</html>")
-        if (breakpoint.isDefault()) {
+        if (mediaQuery.isDefault()) {
           fs.writeFileSync(this.dir + "/" + filename, doc.join("\n"))
         }
       }
@@ -177,19 +177,19 @@ background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAA
       },
     }
 
-    const onCSSClass = (cssClass, _pseudoSelector, cssClassTemplate, _metaProperty, _metaPropertyGrouping, _breakpoint, allBreakpoints) => {
+    const onCSSClass = (cssClass, _pseudoSelector, cssClassTemplate, _metaProperty, _metaPropertyGrouping, _mediaQuery, allMediaQueries) => {
       let example = cssClass.example()
       const className = cssClass.className()
       if (!example) {
         example = new Example({ htmlForDocs: `<div class=\"${className}\">.${className}</div>` })
       }
-      const nonMobileBreakpoints = allBreakpoints.filter( (breakpoint) => {
-        return !breakpoint.isDefault();
-      }).map( (breakpoint) => {
-        return `<code class="db di-ns f-2 fw-normal ws-nowrap lh-copy">${cssClass.atBreakpoint(breakpoint).className()}</code>`
+      const nonMobileMediaQueries = allMediaQueries.filter( (mediaQuery) => {
+        return !mediaQuery.isDefault();
+      }).map( (mediaQuery) => {
+        return `<code class="db di-ns f-2 fw-normal ws-nowrap lh-copy">${cssClass.atMediaQuery(mediaQuery).className()}</code>`
       }).join("<span class=\"dn di-ns f-3 fw-normal\"> / </span>")
       doc.push(`
-        <h4 class="f-3 mt-3 mb-2"><code class="db di-ns">${className}</code><span class="dn di-ns f-3 fw-normal"> / </span>${ nonMobileBreakpoints }</h4>
+        <h4 class="f-3 mt-3 mb-2"><code class="db di-ns">${className}</code><span class="dn di-ns f-3 fw-normal"> / </span>${ nonMobileMediaQueries }</h4>
 `)
       doc.push(`
           <article class="ml-4-ns ml-0 db flex-ns items-start justify-between">
@@ -214,7 +214,7 @@ background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAA
 
     /* Generate Docs */
     metaTheme.eachCSSClass({
-      onBreakpoint: onBreakpoint,
+      onMediaQuery: onMediaQuery,
       onMetaPropertyGrouping: writeDocFile,
       onMetaProperty: documentMetaProperty,
       onCSSClassTemplate: onCSSClassTemplate,
