@@ -12,3 +12,6 @@ node_modules
 
 # FUCK this FILE wiht every fiber of my being
 package-lock.json
+
+# Use this sometimes to test docs
+docs
