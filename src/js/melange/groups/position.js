@@ -7,6 +7,7 @@ import {
   spacingScale,
   negativeSpacingScale
 } from "../scales.js"
+import mediaQueries from "../MediaQueries.js"
 
 const positions = new MetaProperty({
   name: "Position",
@@ -42,6 +43,7 @@ const position = new MetaPropertyGrouping({
     positions,
     locations,
   ],
+  mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 
 

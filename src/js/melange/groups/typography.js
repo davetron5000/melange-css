@@ -5,12 +5,12 @@ import MetaProperty         from "../../lib/MetaProperty.js"
 import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
 import Scale                from "../../lib/scales/Scale.js"
 
-import pseudoSelectors from "../pseudoSelectors.js"
-
 import {
   fontScale,
   fontFamilies
 } from "../scales.js"
+import pseudoSelectors from "../pseudoSelectors.js"
+import mediaQueries    from "../MediaQueries.js"
 
 const basicExample = ExampleTemplate.divWithSelector("The spice must flow!")
 
@@ -283,6 +283,7 @@ const typography = new MetaPropertyGrouping({
     tracking,
     measure
   ],
+  mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 
 export default typography

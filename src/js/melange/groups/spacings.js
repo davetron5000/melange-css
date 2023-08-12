@@ -7,6 +7,7 @@ import Scale                from "../../lib/scales/Scale.js"
 import {
   spacingScale
 } from "../scales.js"
+import mediaQueries from "../MediaQueries.js"
 
 const paddingExampleTemplate = (selector) => {
   return new Example({
@@ -93,6 +94,7 @@ const spacings = new MetaPropertyGrouping({
     paddingMetaProperty,
     marginMetaProperty,
   ],
+  mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 
 export default spacings

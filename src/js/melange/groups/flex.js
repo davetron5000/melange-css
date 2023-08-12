@@ -1,8 +1,9 @@
-import MetaProperty                  from "../../lib/MetaProperty.js"
-import MetaPropertyGrouping          from "../../lib/MetaPropertyGrouping.js"
-import CSSClassTemplate              from "../../lib/CSSClassTemplate.js"
-import Scale                         from "../../lib/scales/Scale.js"
-import Example                       from "../../lib/Example.js"
+import MetaProperty         from "../../lib/MetaProperty.js"
+import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
+import CSSClassTemplate     from "../../lib/CSSClassTemplate.js"
+import Scale                from "../../lib/scales/Scale.js"
+import Example              from "../../lib/Example.js"
+import mediaQueries         from "../MediaQueries.js"
 
 const flexExampleTemplate = (selector) => {
   let fullSelector = `flex ${selector}`
@@ -192,6 +193,7 @@ const flex = new MetaPropertyGrouping({name: "Flexbox",
     flexJustifyItems,
     flexGrowAndShrink,
     flexBasis,
-  ]
+  ],
+  mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 export default flex

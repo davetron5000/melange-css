@@ -103,6 +103,9 @@ export default class MetaTheme {
     this.mediaQueries.forEach( (mediaQuery) => {
       onMediaQuery.start(mediaQuery)
       this.metaPropertyGroupings.forEach( (metaPropertyGrouping) => {
+        if (!metaPropertyGrouping.supportsMediaQuery(mediaQuery)) {
+          return
+        }
         onMetaPropertyGrouping.start(metaPropertyGrouping, mediaQuery, this.mediaQueries)
         metaPropertyGrouping.metaProperties.forEach( (metaProperty) => {
           onMetaProperty.start(metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)

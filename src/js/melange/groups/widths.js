@@ -11,6 +11,7 @@ import {
   viewportHeightScale,
   viewportWidthScale,
 } from "../scales.js"
+import mediaQueries from "../MediaQueries.js"
 
 const widthsMetaProperty = new MetaProperty({
   name: "width",
@@ -70,6 +71,7 @@ const widths = new MetaPropertyGrouping({
   metaProperties: [
     widthsMetaProperty,
     heightsMetaProperty,
-  ]
+  ],
+  mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 export default widths

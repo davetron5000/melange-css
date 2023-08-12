@@ -1,12 +1,13 @@
-import MetaProperty                  from "../../lib/MetaProperty.js"
-import MetaPropertyGrouping          from "../../lib/MetaPropertyGrouping.js"
-import CSSClassTemplate              from "../../lib/CSSClassTemplate.js"
-import Example                       from "../../lib/Example.js"
-import ExampleTemplate               from "../../lib/ExampleTemplate.js"
-import Scale                         from "../../lib/scales/Scale.js"
-import Step                          from "../../lib/scales/Step.js"
+import MetaProperty         from "../../lib/MetaProperty.js"
+import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
+import CSSClassTemplate     from "../../lib/CSSClassTemplate.js"
+import Example              from "../../lib/Example.js"
+import ExampleTemplate      from "../../lib/ExampleTemplate.js"
+import Scale                from "../../lib/scales/Scale.js"
+import Step                 from "../../lib/scales/Step.js"
 
-import { percentageScale }           from "../scales.js"
+import { percentageScale } from "../scales.js"
+import mediaQueries        from "../MediaQueries.js"
 
 const opacityExampleTemplate = (selector) => {
   return new Example({
@@ -90,6 +91,7 @@ const visuals = new MetaPropertyGrouping({
     cursors,
     zIndex,
   ],
+  mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 
 export default visuals

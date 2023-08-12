@@ -177,19 +177,19 @@ background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAA
       },
     }
 
-    const onCSSClass = (cssClass, _pseudoSelector, cssClassTemplate, _metaProperty, _metaPropertyGrouping, _mediaQuery, allMediaQueries) => {
+    const onCSSClass = (cssClass, _pseudoSelector, cssClassTemplate, _metaProperty, metaPropertyGrouping, _mediaQuery, allMediaQueries) => {
       let example = cssClass.example()
       const className = cssClass.className()
       if (!example) {
         example = new Example({ htmlForDocs: `<div class=\"${className}\">.${className}</div>` })
       }
-      const nonMobileMediaQueries = allMediaQueries.filter( (mediaQuery) => {
-        return !mediaQuery.isDefault();
+      const supportedMediaQueries = allMediaQueries.filter( (mediaQuery) => {
+        return !mediaQuery.isDefault() && metaPropertyGrouping.supportsMediaQuery(mediaQuery)
       }).map( (mediaQuery) => {
         return `<code class="db di-ns f-2 fw-normal ws-nowrap lh-copy">${cssClass.atMediaQuery(mediaQuery).className()}</code>`
       }).join("<span class=\"dn di-ns f-3 fw-normal\"> / </span>")
       doc.push(`
-        <h4 class="f-3 mt-3 mb-2"><code class="db di-ns">${className}</code><span class="dn di-ns f-3 fw-normal"> / </span>${ nonMobileMediaQueries }</h4>
+        <h4 class="f-3 mt-3 mb-2"><code class="db di-ns">${className}</code><span class="dn di-ns f-3 fw-normal"> / </span>${ supportedMediaQueries }</h4>
 `)
       doc.push(`
           <article class="ml-4-ns ml-0 db flex-ns items-start justify-between">

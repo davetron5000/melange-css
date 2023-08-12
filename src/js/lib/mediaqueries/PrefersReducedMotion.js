@@ -4,5 +4,5 @@ export default class PrefersReducedMotion extends MediaQuery {
     return "@media (prefers-reduced-motion: reduce)"
   }
   variableNameQualifier() { return "rm" }
-  description() { "Prefers reduced motion (full/regular motion considered default)" }
+  description() { return "Prefers reduced motion (full/regular motion considered default)" }
 }

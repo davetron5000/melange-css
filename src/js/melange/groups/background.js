@@ -6,7 +6,8 @@ import ExampleTemplate               from "../../lib/ExampleTemplate.js"
 import Scale                         from "../../lib/scales/Scale.js"
 import Step                          from "../../lib/scales/Step.js"
 
-import { percentageScale }           from "../scales.js"
+import { percentageScale } from "../scales.js"
+import mediaQueries        from "../MediaQueries.js"
 
 const backgroundPositionExampleTemplate = (selector) => {
   return new Example({
@@ -68,6 +69,7 @@ const background = new MetaPropertyGrouping({
     backgroundPosition,
     backgroundRepeat,
   ],
+  mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 
 export default background

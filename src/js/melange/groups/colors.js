@@ -1,5 +1,6 @@
-import ColorTints from "../../lib/ColorTints.js"
+import ColorTints      from "../../lib/ColorTints.js"
 import pseudoSelectors from "../pseudoSelectors.js"
+import mediaQueries    from "../MediaQueries.js"
 
 const colorTints = new ColorTints(
   [
@@ -12,7 +13,11 @@ const colorTints = new ColorTints(
   [
     pseudoSelectors.default,
     pseudoSelectors.hover,
-  ]
+  ],
+  [
+    ...mediaQueries.onlyBreakpoints(),
+    mediaQueries.darkMode,
+  ],
 )
 colorTints.register("gray",   [ "#F5F5F5", "#ADADAD", "#999999", "#5C5C5C", "#1F1F1F" ])
 colorTints.register("red",    [ "#FFDFDF", "#FF8D86", "#FF4136", "#E7040F", "#80211b" ])

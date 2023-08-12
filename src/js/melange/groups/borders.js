@@ -6,6 +6,7 @@ import Scale                         from "../../lib/scales/Scale.js"
 import Step                          from "../../lib/scales/Step.js"
 
 import { borderWidthScale } from "../scales.js"
+import mediaQueries         from "../MediaQueries.js"
 
 const borderExampleTemplate = (selector) => {
   return new Example({
@@ -127,6 +128,7 @@ const borders = new MetaPropertyGrouping({
     borderStyleMetaProperty,
     borderWidthMetaProperty,
   ],
+  mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 
 export default borders

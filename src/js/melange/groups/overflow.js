@@ -1,8 +1,9 @@
-import MetaProperty                  from "../../lib/MetaProperty.js"
-import MetaPropertyGrouping          from "../../lib/MetaPropertyGrouping.js"
-import CSSClassTemplate              from "../../lib/CSSClassTemplate.js"
-import Example                       from "../../lib/Example.js"
-import Scale                         from "../../lib/scales/Scale.js"
+import MetaProperty         from "../../lib/MetaProperty.js"
+import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
+import CSSClassTemplate     from "../../lib/CSSClassTemplate.js"
+import Example              from "../../lib/Example.js"
+import Scale                from "../../lib/scales/Scale.js"
+import mediaQueries         from "../MediaQueries.js"
 
 const overflowExampleTemplate = (selector) => {
   return new Example({
@@ -65,6 +66,7 @@ const overflow = new MetaPropertyGrouping({
     overflowMetaProperty,
     truncate,
   ],
+  mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 
 export default overflow

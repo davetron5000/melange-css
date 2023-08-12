@@ -60,9 +60,10 @@ export default class ColorTints {
    * can be blank, to provide e.g. a class like "purple".
    * pseudoSelectors - an array of PseudoSelector instances
    */
-  constructor(tintNames, pseudoSelectors) {
+  constructor(tintNames, pseudoSelectors, supportedMediaQueries) {
     this.tintNames = tintNames
     this.pseudoSelectors = pseudoSelectors
+    this.supportedMediaQueries = supportedMediaQueries
     this.colorScale = {}
     this.customColors = []
   }
@@ -186,6 +187,7 @@ export default class ColorTints {
     return new MetaPropertyGrouping({
       name: "Colors",
       metaProperties: metaProperties,
+      mediaQueries: this.supportedMediaQueries,
       docs: [
         "All colors can be used for text, borders, or backgrounds by using the color name and tint on its own (for text), with <code>b--</code> (for borders), or <code>bg-</code> (for backgrounds).  Hover styles are available by prefixing <code>hover-</code> in front of the class",
       ],

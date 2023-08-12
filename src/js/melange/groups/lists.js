@@ -1,9 +1,10 @@
-import MetaProperty                  from "../../lib/MetaProperty.js"
-import MetaPropertyGrouping          from "../../lib/MetaPropertyGrouping.js"
-import CSSClassTemplate              from "../../lib/CSSClassTemplate.js"
-import Example                       from "../../lib/Example.js"
-import Scale                         from "../../lib/scales/Scale.js"
-import Step                          from "../../lib/scales/Step.js"
+import MetaProperty         from "../../lib/MetaProperty.js"
+import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
+import CSSClassTemplate     from "../../lib/CSSClassTemplate.js"
+import Example              from "../../lib/Example.js"
+import Scale                from "../../lib/scales/Scale.js"
+import Step                 from "../../lib/scales/Step.js"
+import mediaQueries         from "../MediaQueries.js"
 
 const listExampleTemplate = (selector) => {
   const html = `<p class="lh-copy">
@@ -51,6 +52,7 @@ const lists = new MetaPropertyGrouping({
     listStyleType,
     listStylePosition,
   ],
+  mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 
 export default lists

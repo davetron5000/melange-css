@@ -2,6 +2,7 @@ import MetaProperty         from "../../lib/MetaProperty.js"
 import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
 import CSSClassTemplate     from "../../lib/CSSClassTemplate.js"
 import Scale                from "../../lib/scales/Scale.js"
+import mediaQueries         from "../MediaQueries.js"
 
 const debugExampleTemplate = (fullSelector) => {
   return `<article class="${fullSelector}">
@@ -63,6 +64,7 @@ const debugging = new MetaPropertyGrouping({name: "Debuging",
   metaProperties: [
     debug,
     debugGrid,
-  ]
+  ],
+  mediaQueries: [ mediaQueries.default ],
 })
 export default debugging
