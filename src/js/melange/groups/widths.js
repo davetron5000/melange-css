@@ -73,5 +73,8 @@ const widths = new MetaPropertyGrouping({
     heightsMetaProperty,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
+  docs: [
+    "Along with the spacings group, widths and heights allow control over sizes using the built-in spacing scale.  The widths and heights here are identical to the value used in the spacings group, so your design should have visual harmony and consistency.",
+  ]
 })
 export default widths

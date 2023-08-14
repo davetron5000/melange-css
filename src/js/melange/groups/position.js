@@ -44,6 +44,9 @@ const position = new MetaPropertyGrouping({
     locations,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
+  docs: [
+    "Position provides classes for fixed, absolute, or static positioning, along with some classes for basic position top, left, right, and bottom.",
+  ]
 })
 
 

@@ -46,5 +46,9 @@ const display = new MetaPropertyGrouping({name: "Display",
     tableDisplay,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
+  docs: [
+    "Handles basic dispaly properties other than Flexbox.  Flexbox is part of the Flexbox grouping.",
+  ],
+
 })
 export default display

@@ -13,7 +13,8 @@ SRC_LIB_FILES=$(shell find src/js/lib -name '*.js')
 SRC_META_THEME_FILES=$(shell find src/js/melange -name '*.js')
 SRC_CLI_FILES=$(shell find src/js/cli -name '*.js')
 SRC_FILES=$(SRC_LIB_FILES) $(SRC_META_THEME_FILES) $(SRC_CLI_FILES)
-
+SRC_HTML_DIR=src/html
+SRC_HTML_FILES=$(shell find src/html -name '*.html')
 # Outputs
 #
 ## Distro
@@ -54,8 +55,8 @@ $(SPLIT_VARS_ONLY_CSS) $(SPLIT_STYLES_ONLY_CSS): $(DIST_DIR) $(SRC_FILES)
 local-docs: $(DOCS_DIR)
 .PHONY: local-docs
 
-$(DOCS_DIR): $(SRC_FILES)
-	@node src/js/cli/melange.js docs --dir $(@) --force
+$(DOCS_DIR): $(SRC_FILES) $(SRC_HTML_FILES)
+	@node src/js/cli/melange.js docs --templates $(SRC_HTML_DIR)/reference --dir $(@) --force
 	@node src/js/cli/melange.js css --css $(@)/melange.css
 
 clean:

@@ -195,5 +195,8 @@ const flex = new MetaPropertyGrouping({name: "Flexbox",
     flexBasis,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
+  docs: [
+    "Provides flexible single-dimension layout options, including the ability to achieve the Holy Grail of centering a div vertically.  Note that some flex properties set <code>display</code>, so could override styles used from the display grouping.",
+  ]
 })
 export default flex

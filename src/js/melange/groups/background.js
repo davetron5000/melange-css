@@ -70,6 +70,9 @@ const background = new MetaPropertyGrouping({
     backgroundRepeat,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
+  docs: [
+    "Background positions and repeats are provided.  Background colors are part of the Colors group.  Other background properties are highly use-case specific or esoteric, so are not provided by default",
+  ]
 })
 
 export default background

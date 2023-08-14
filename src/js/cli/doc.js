@@ -1,8 +1,9 @@
-import DocBuilder from "../melange/builders/DocBuilder.js"
-import fs from "node:fs";
+import DocBuilder    from "../melange/builders/DocBuilder.js"
+import fs            from "node:fs";
 import { parseArgs } from "node:util";
-import process from "node:process";
-import melange    from "../melange/melange.js"
+import process       from "node:process";
+import path          from "node:path";
+import melange       from "../melange/melange.js"
 
 export default class Doc {
   summary() { return "Generate reference documentation" }
@@ -14,6 +15,9 @@ export default class Doc {
       args: args,
       options: {
         dir: {
+          type: "string",
+        },
+        templates: {
           type: "string",
         },
         force: {
@@ -32,9 +36,10 @@ export default class Doc {
       console.log()
       console.log("OPTIONS")
       console.log()
-      console.log("  --dir DIR - where the doc .html files should be written")
-      console.log("  --force   - If set, will remove existing directory before building")
-      console.log("  --help    - show this message")
+      console.log("  --dir DIR       - where the doc .html files should be written")
+      console.log("  --templates DIR - where the .html templates are")
+      console.log("  --force         - If set, will remove existing directory before building")
+      console.log("  --help          - show this message")
       console.log()
     }
     else {
@@ -42,6 +47,18 @@ export default class Doc {
         console.log("missing --dir")
         process.exit(1)
       } 
+      if (!values.templates) {
+        console.log("missing --templates")
+        process.exit(1)
+      } 
+      const templates = {
+      }
+      fs.readdirSync(values.templates).forEach((file) => {
+        if (file.match(/\.html$/)) {
+          const basename = path.basename(file, ".html")
+          templates[basename] = path.resolve(values.templates + "/" + file)
+        }
+      })
 
       if (fs.existsSync(values.dir)) {
         if (values.force) {
@@ -55,7 +72,7 @@ export default class Doc {
       }
       fs.mkdirSync(values.dir, {recursive: true})
 
-      const builder = new DocBuilder({dir: values.dir})
+      const builder = new DocBuilder({dir: values.dir, templates: templates})
       melange.checkForDupes()
       builder.build(melange)
     }

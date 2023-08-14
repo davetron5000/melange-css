@@ -52,6 +52,9 @@ const lists = new MetaPropertyGrouping({
     listStyleType,
     listStylePosition,
   ],
+  docs: [
+    "Lists are a commonly-used semantic element that are thankfully short on special properties and configuration.",
+  ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
 })
 

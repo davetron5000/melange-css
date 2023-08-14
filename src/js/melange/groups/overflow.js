@@ -67,6 +67,9 @@ const overflow = new MetaPropertyGrouping({
     truncate,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
+  docs: [
+    "Setting overflow and trunaction behavior is a key technique in producing defensive designs, especially when small-screened devices require support",
+  ]
 })
 
 export default overflow

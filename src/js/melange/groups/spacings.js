@@ -95,6 +95,9 @@ const spacings = new MetaPropertyGrouping({
     marginMetaProperty,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
+  docs: [
+    "Spacings provides a stepped scale for margins and padding, which form the basis of any grid-based design and power the underlyingn design system.  Instead of allowing for inifinite, pixel-perfect spacings, the scale provided by this module gives you the ability to adjust elements along a few useful values that should cover 95% of your needs.",
+  ],
 })
 
 export default spacings

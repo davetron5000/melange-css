@@ -92,6 +92,9 @@ const visuals = new MetaPropertyGrouping({
     zIndex,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
+  docs: [
+    "A grab bag of classes that adjust more decorative aspects of a page, such as box shadows, opacity, z-index, and cursors."
+  ],
 })
 
 export default visuals
