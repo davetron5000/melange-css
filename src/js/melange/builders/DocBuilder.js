@@ -10,11 +10,13 @@ export default class DocBuilder {
   build(metaTheme) {  
     let index
     let doc = []
+    let mediaQueries = []
     let mediaQuery
 
     const onMediaQuery = {
       start: (mq) => {
         mediaQuery = mq
+        mediaQueries.push(mq)
         index = {}
       },
       end: (mq) => {
@@ -68,7 +70,7 @@ background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAA
   </head>
   <body class="font-sans pa0 ma0">
   <header class="bg-black-ish white-ish">
-    <div class="pa-1 w-auto w-60-l w-80-m mh-auto">
+    <div class="pa-1 w-auto w-80-ns mh-auto">
     <h1 class="f-5">${metaPropertyGrouping.name}</h1>\n`)
 
         metaPropertyGrouping.docs.forEach( (docParagraph) => {
@@ -92,7 +94,7 @@ background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAA
           doc.push(`    </div>`)
         }
         doc.push(`    </header>`)
-        doc.push(`    <main class="pa-1 w-auto w-60-l w-80-m mh-auto">`)
+        doc.push(`    <main class="pa-1 w-auto w-80-ns mh-auto">`)
       },
       end: (metaPropertyGrouping) => {
         const filename = `${metaPropertyGrouping.slug}.doc.html`
@@ -186,7 +188,7 @@ background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAA
       const supportedMediaQueries = allMediaQueries.filter( (mediaQuery) => {
         return !mediaQuery.isDefault() && metaPropertyGrouping.supportsMediaQuery(mediaQuery)
       }).map( (mediaQuery) => {
-        return `<code class="db di-ns f-2 fw-normal ws-nowrap lh-copy">${cssClass.atMediaQuery(mediaQuery).className()}</code>`
+        return `<code class="db di-ns f-2 fw-normal ws-nowrap lh-copy"><a class="link underline black" href="/media-queries.html#${new Anchor(mediaQuery.name())}">${cssClass.atMediaQuery(mediaQuery).className()}</a></code>`
       }).join("<span class=\"dn di-ns f-3 fw-normal\"> / </span>")
       doc.push(`
         <h4 class="f-3 mt-3 mb-2"><code class="db di-ns">${className}</code><span class="dn di-ns f-3 fw-normal"> / </span>${ supportedMediaQueries }</h4>
@@ -222,5 +224,41 @@ background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAA
       onCSSClass: onCSSClass,
     })
 
+
+        const mqDocs = []
+        mqDocs.push(`<html>
+  <head>
+  <meta charSet="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Melange - Reference</title>
+  <link href="melange.css" rel="stylesheet">
+  <style>
+  </style>
+  </head>
+  <body class="font-serif pa0 ma0 bg-orange-lightest black-ish">
+  <header class="bg-black-ish orange-lightest pa-3 pt-4">
+    <h1 class="tc tl-ns f-6 ma-0 mb-3">MelangeCSS Media Queries Reference</h1>
+  </header>
+  <main class="pa-3 w-50-ns w-90 mh-auto">
+  <p class="measure lh-copy">
+  Melange is designed so that each class applies to the page when there is no media query in effect.  This means any screen size, light (or no selected) color mode, and no explicit setting for reduced motion.  You can then customize your page's styling when a media query <strong>is</strong> in affect by adding additional classes that have a suffix for that media query.  For example, <code>purple-darkest</code> would apply to all situations by default, whereas <code>purple-darkest-dm</code> would apply only when the “prefers dark mode” media query applies.
+  </p>
+  <p class="measure lh-copy">
+  Each melange class includes a list of the media query variants that are available.  For example, colors may have variants for dark mode, but spacings would not.  Here are all the known media queries, their definitions, and their naming conventions.
+  </p>`)
+        mediaQueries.forEach( (mediaQuery) => {
+          if (!mediaQuery.isDefault()) {
+            mqDocs.push(`<section><a name="${new Anchor(mediaQuery.name())}"></a><h2>${mediaQuery.name()}</h2>
+            <p class="measure lh-copy">${mediaQuery.description()}</p>
+            <ul>
+            <li class="lh-copy">Naming convention: <code>*-${mediaQuery.variableNameQualifier()}</code></li>
+            <li class="lh-copy">Example: <code>purple-darkest-${mediaQuery.variableNameQualifier()}</code></li>
+            <li class="lh-copy">Definition:
+            <code class="db w-auto overflow-x-scroll pv-1 ph-2 bg-black blue-light br-2"><pre class="ma-0">${mediaQuery.toMediaQuery()}</pre></code></li>
+            </ul></section>`)
+          }
+        })
+        mqDocs.push("</main></body></html>")
+        fs.writeFileSync(`${this.dir}/media-queries.html`, mqDocs.join("\n"))
   }
 }

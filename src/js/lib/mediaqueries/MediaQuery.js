@@ -1,12 +1,7 @@
 export default class MediaQuery {
-  toMediaQuery() {
-    throw "Subclass must implement"
-  }
-  variableNameQualifier() {
-    throw "Subclass must implement"
-  }
-  description() {
-    return "Subclass must implement"
-  }
-  isDefault() { return false }
+  name()                  { throw "Subclass must implement" }
+  toMediaQuery()          { throw "Subclass must implement" }
+  variableNameQualifier() { throw "Subclass must implement" }
+  description()           { throw "Subclass must implement" }
+  isDefault()             { return false }
 }

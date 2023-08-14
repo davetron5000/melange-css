@@ -28,7 +28,7 @@ export default class Doc {
     })
 
     if (values.help) {
-      console.log("Usage: melange css [options]")
+      console.log("Usage: melange docs [options]")
       console.log()
       console.log("OPTIONS")
       console.log()

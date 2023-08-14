@@ -1,10 +1,12 @@
 import process from "node:process";
 import CSS from "./css.js"
 import Doc from "./doc.js"
+import DocServer from "./doc-server.js"
 
 const commands = {
   css: new CSS(),
   docs: new Doc(),
+  "doc-server": new DocServer(),
 }
 
 const showHelp = () => {
@@ -32,10 +34,11 @@ if ( !commandName             ||
 
 const command = commands[commandName]
 
-if ( !command) {
+if (!command) {
   console.log(`unknown command: ${commandName}`)
   console.log()
   showHelp()
+  process.exit(1)
 }
 
 const args = process.argv.slice(3)

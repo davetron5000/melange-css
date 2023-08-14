@@ -3,7 +3,7 @@ import MediaQuery from "./MediaQuery.js"
 export default class Breakpoint extends MediaQuery {
   constructor({variableNameQualifier, minWidth, maxWidth, name, description}) {
     super()
-    this.name = name
+    this._name = name
     this._variableNameQualifier = variableNameQualifier
     this._description = description
     this.minWidth = minWidth
@@ -13,8 +13,9 @@ export default class Breakpoint extends MediaQuery {
     }
   }
 
+  name()                  { return this._name }
   variableNameQualifier() { return this._variableNameQualifier }
-  description() { return this._description }
+  description()           { return this._description }
 
   toMediaQuery() {
     if (this.minWidth) {
