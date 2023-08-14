@@ -1,9 +1,14 @@
 {
-  "name": "melange",
+  "name": "melange-css",
   "version": "1.0.0",
   "description": "Functional CSS for Full Stack Developers",
   "type": "module",
   "devDependencies": {
     "css-minify": "^2.0.0"
+  },
+  "author": "David Copeland",
+  "license": "MIT",
+  "scripts": {
+    "local-docs": "make local-docs && node src/js/cli/melange.js doc-server --dir=docs"
   }
 }
