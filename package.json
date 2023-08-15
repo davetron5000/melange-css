@@ -4,7 +4,8 @@
   "description": "Functional CSS for Full Stack Developers",
   "type": "module",
   "devDependencies": {
-    "css-minify": "^2.0.0"
+    "css-minify": "^2.0.0",
+    "ejs": "^3.1.9"
   },
   "author": "David Copeland",
   "license": "MIT",

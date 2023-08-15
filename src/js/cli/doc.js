@@ -59,6 +59,10 @@ export default class Doc {
           templates[basename] = path.resolve(values.templates + "/" + file)
         }
       })
+      if (templates["ROOT"]) {
+        throw `You cannot have a file named 'ROOT.html'`
+      }
+      templates["ROOT"] = path.resolve(values.templates)
 
       if (fs.existsSync(values.dir)) {
         if (values.force) {

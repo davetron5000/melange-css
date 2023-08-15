@@ -1,112 +1,31 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charSet="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Melange - Reference</title>
-    <link href="melange.css" rel="stylesheet" />
-    <script>
-      class MetaPropertyLink extends HTMLElement {
-        constructor() {
-          super()
-          const template = document.getElementById("MetaPropertyLink")
-          const content = template.content
-
-          const root = this.attachShadow({ mode: "open" })
-          root.innerHTML = `<link href="melange.css" rel="stylesheet" />`
-          const copy = content.cloneNode(true)
-          this.anchor = copy.getElementById("MetaPropertyLink-href")
-          root.appendChild(copy)
-        }
-
-        connectedCallback() {
-          this.anchor.href = this.getAttribute("href")
-        }
-      }
-      customElements.define("meta-property-link", MetaPropertyLink)
-      class MetaPropertyLinks extends HTMLElement {
-        constructor() {
-          super()
-          const template = document.getElementById("MetaPropertyLinks")
-          const content = template.content
-
-          const root = this.attachShadow({ mode: "open" })
-          root.innerHTML = `<link href="melange.css" rel="stylesheet" />`
-          const copy = content.cloneNode(true)
-          root.appendChild(copy)
-        }
-      }
-      customElements.define("meta-property-links", MetaPropertyLinks)
-      class MetaPropertyGroup extends HTMLElement {
-        constructor() {
-          super()
-          const template = document.getElementById("MetaPropertyGroup")
-          const content = template.content
-
-          const root = this.attachShadow({ mode: "open" })
-          root.innerHTML = `<link href="melange.css" rel="stylesheet" />`
-          const copy = content.cloneNode(true)
-          this.anchor = copy.getElementById("MetaPropertyGroup-href")
-          root.appendChild(copy)
-        }
-
-        connectedCallback() {
-          this.anchor.href = this.getAttribute("href")
-        }
-      }
-      customElements.define("meta-property-group", MetaPropertyGroup)
-
-    </script>
-    <template id="MetaPropertyGroup">
+<%- include( "_header.html") %>
+  <ul class="lst-none">
+    <% Object.keys(metaPropertyGroupingsByName).toSorted().forEach( (name) => {
+      const { metaPropertyGrouping, filename } = metaPropertyGroupingsByName[name]
+    %>
       <li class="mb-4">
         <h3 class="di f-4">
-          <a class="black" id="MetaPropertyGroup-href">
-            <slot name="name"></slot>
+          <a class="black" href="<%= filename %>">
+            <%= new HumanizedString(name) %>
           </a>
         </h3>
-        <div class="ml-4">
-          <slot name="docs"></slot>
+        <div class="ml-3 ml-4-ns">
+          <% metaPropertyGrouping.docs.forEach( (paragraph) => { %>
+            <p class="measure lh-copy f-2 i">
+              <%- paragraph %>
+            </p>
+          <% }) %>
         </div>
-        <slot name="meta-property-links"></slot>
+        <ul class="ma-0 ml-3 ml-4-ns pa-0 flex flex-wrap flex-reverse lh-copy measure">
+          <% metaPropertyGrouping.metaProperties.sort( (a,b) => { return a.name.localeCompare(b.name) }).forEach( (metaProperty) => { %>
+           <li class="mr-2 lst-none">
+             <a class="orange-darkest hover-blue-dark" href="<%= filename %>#<%= new Anchor(metaProperty.name) %>">
+               <%= new HumanizedString(metaProperty.name) %>
+             </a>
+           </li>
+          <% }) %>
+        </ul>
       </li>
-    </template>
-    <template id="MetaPropertyLinks">
-      <ul class="ma-0 ml-4 pa-0 flex flex-wrap flex-reverse lh-copy measure">
-        <slot name="meta-property-link"></slot>
-      </ul>
-    </template>
-    <template id="MetaPropertyLink">
-      <li class="mr-2 lst-none">
-        <a class="orange-darkest hover-blue-dark" id="MetaPropertyLink-href">
-          <slot name="name"></slot>
-        </a>
-      </li>
-    </template>
-  </head>
-  <body class="font-serif pa0 ma0 bg-orange-lightest black-ish">
-    <header class="bg-black-ish orange-lightest pa-3 pt-4">
-      <div class="w-50-ns w-90 mh-auto">
-        <h1 class="tc tl-ns f-6 ma-0 mb-3"><a href="index.html" class="orange-lightest tdn">MelangeCSS Reference</a></h1>
-        <nav>
-          <div class="flex flex-wrap items-baseline justify-start">
-            <a href="mediaQueries.html" class="orange-lightest f-3">Media Queries</a>
-            <span role="none" class="mh-2 fw-1 f-1">&bull;</span>
-            <a href="mediaQueries.html" class="orange-lightest f-3">Index of Classes</a>
-          </div>
-          <div class="flex flex-wrap items-baseline justify-start mt-3">
-            <a href="/" class="orange-lightest f-2">Homepage</a>
-            <span role="none" class="mh-2 fw-1 f-1">&bull;</span>
-            <a href="/" class="orange-lightest f-2">Getting Started</a>
-            <span role="none" class="mh-2 fw-1 f-1">&bull;</span>
-            <a href="/" class="orange-lightest f-2">Guides</a>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <main class="pa-3 w-50-ns w-90 mh-auto">
-      <ul class="lst-none">
-        <div data-main></div>
-      </ul>
-    </main>
-  </body>
-</html>
+    <% }) %>
+  </ul>
+<%- include( "_footer.html") %>
