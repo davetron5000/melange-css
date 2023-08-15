@@ -25,8 +25,6 @@ export default class CSSClassTemplate {
    *                            that function will be sent to the ExampleTemplate constructor.  This
    *                            is what you'd use if the example documentation for these classes
    *                            is straightforward.
-   *           docs: An array of strings that provides more free-form documentation about
-   *                 these classes.
    *           summary: A word or very short phrase to contextualize this class inside the general meta property.
    */
   constructor(classNameBase, ...cssProperties) {
@@ -44,7 +42,6 @@ export default class CSSClassTemplate {
           this.exampleTemplate = exampleTemplate
         }
       }
-      this.docs = Array(options.docs || []).flat()
       this.summary = options.summary
     }
     else {

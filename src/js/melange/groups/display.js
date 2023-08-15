@@ -37,6 +37,7 @@ const tableDisplay = new MetaProperty({
     "dtrow-group":    { properties: { "display": "table-row-group" }    , summary: "Row Group" },
     "dtcolumn":       { properties: { "display": "table-column" }       , summary: "Column" },
     "dtcolumn-group": { properties: { "display": "table-column-group" } , summary: "Column Group" },
+    "collapse":       { properties: { "border-collapse": "collapse", "border-spacing": 0 }  , summary: "Border Collapse" },
   },
 })
 

@@ -29,9 +29,6 @@ const fontSizes = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("f", "font-size", {
-      docs: [
-        "Font size is the basic underpinning of any design system. These sizes should provide an adequate array of sizes for any occasion.  Append a number to <code>f</code> to generate the size you need",
-      ],
       exampleTemplate: exampleTemplate,
     }),
   ]
@@ -65,6 +62,18 @@ const textAlign = new MetaProperty({
     "tc": { properties: { "text-align": "center" }, exampleTemplate: basicExample, summary: "Center" },
     "tl": { properties: { "text-align": "left" }, exampleTemplate: basicExample, summary: "Left" },
     "tj": { properties: { "text-align": "justify" }, exampleTemplate: basicExample, summary: "Justify" },
+  }
+})
+const verticalAlign = new MetaProperty({
+  name: "Vertical Align",
+  docs: [
+    "While vertical alignemnt can be specified in artbirary lengbths and percentages, baseline, top, middle, and bottom are sufficient for most use-cases."
+  ],
+  literalClasses: {
+    "va-baseline": { properties: { "vertical-align": "baseline" }, exampleTemplate: basicExample, summary: "Baseline" },
+    "va-middle":   { properties: { "vertical-align": "middle" }, exampleTemplate: basicExample, summary: "Middle" },
+    "va-top":      { properties: { "vertical-align": "top" }, exampleTemplate: basicExample, summary: "Top" },
+    "va-bottom":   { properties: { "vertical-align": "bottom" }, exampleTemplate: basicExample, summary: "Bottom" },
   }
 })
 const leading = new MetaProperty({
@@ -275,15 +284,19 @@ const typography = new MetaPropertyGrouping({
     fontStyle,
     fontVariant,
     textAlign,
+    verticalAlign,
     textTransform,
     textDecoration,
     textIndent,
     whiteSpace,
     leading,
     tracking,
-    measure
+    measure,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
+  docs: [
+    "Text rendering can be tricky, however the use of a fixed font scale and a limited number of other tranformations for letter spacing and leading can provide myriad combinations to meet most needs without having to endlessly tweak precise values.  The result of the fixed set up typographic features is general consistency and harmony regardless of the styles chosen.",
+  ]
 })
 
 export default typography

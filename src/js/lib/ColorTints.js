@@ -162,7 +162,7 @@ export default class ColorTints {
 
     const summarization = []
     metaProperties.forEach( (metaProperty) => {
-      summarization.push(`<h3 class="w-auto f-3 mv-2"><a class="white-ish" href="#${new Anchor(metaProperty.name)}">${metaProperty.name}</a></h3>`)
+      summarization.push(`<h3 class="w-auto f-3 mt-4 mb-3"><a class="black-ish" href="#${new Anchor(metaProperty.name)}">${metaProperty.name}</a></h3>`)
       summarization.push(`<div class="flex items-stretch justify-start mb-2">`)
       metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
         metaProperty.scales().forEach( (scale) => {
