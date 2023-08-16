@@ -21,7 +21,7 @@ const spacingVariables = VariableRegistry.register(
   ],
   "Spacing scale for margins, paddings, widths, positions, etc.",
 )
-const spacingScale = new VariableBasedScaleWithZero(spacingVariables)
+const spacingScale = new VariableBasedScaleWithZero(spacingVariables, { name: "Steps" })
 
 /** We want negative spacings to be relfective of the chosen scale for
  * spacings, so if we change the scale above, this one will automatically be
@@ -58,7 +58,7 @@ const fontSizeVariables = VariableRegistry.register(
   ],
   "Font scale, with size 2 being the body font size"
 )
-const fontScale = new VariableBasedScale(fontSizeVariables)
+const fontScale = new VariableBasedScale(fontSizeVariables, { name: "Modular Scale" })
 
 const fontFamilyVariables = VariableRegistry.register(
   "ff",
@@ -94,14 +94,16 @@ const percentageScale = new Scale({
   "10": "10%",
   "20": "20%",
   "30": "30%",
+  "third": "calc(100% / 3)",
   "40": "40%",
   "50": "50%",
   "60": "60%",
+  "two-thirds": "calc(100% / 1.5)",
   "70": "70%",
   "80": "80%",
   "90": "90%",
   "100": "100%",
-})
+}, { name: "Percentages" })
 
 const viewportHeightScale = new Scale({
   "10vh": "10vh",
@@ -114,7 +116,7 @@ const viewportHeightScale = new Scale({
   "80vh": "80vh",
   "90vh": "90vh",
   "100vh": "100vh",
-})
+}, { name: "Percentages of View Height" })
 const viewportWidthScale = new Scale({
   "10vw": "10vw",
   "20vw": "20vw",
@@ -126,12 +128,7 @@ const viewportWidthScale = new Scale({
   "80vw": "80vw",
   "90vw": "90vw",
   "100vw": "100vw",
-})
-
-const thirdsScale = new Scale({
-  "third": "calc(100% / 3)",
-  "two-thirds": "calc(100% / 1.5)",
-})
+}, { name: "Percentages of View Width" })
 
 export {
   spacingScale,
@@ -139,7 +136,6 @@ export {
   negativeSpacingScale,
   fontScale,
   percentageScale,
-  thirdsScale,
   fontFamilies,
   viewportWidthScale,
   viewportHeightScale,

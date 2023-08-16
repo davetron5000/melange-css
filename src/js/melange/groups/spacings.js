@@ -63,13 +63,10 @@ const floatExampleTemplate = (selector) => {
   <div class="${selector}">.${selector}</div>
   <div>The spice must flow! Without it, space travel is impossible.</div>
 </div>`
-  const innerMarkup =  `<div style="border: dashed thin black; "><div style="padding-left: 1rem; padding-right: 1rem; border: solid thin black" class="${selector}">.${selector}</div><div style="padding-left: 1rem; padding-right: 1rem; background-color: #ddd;" >The spice must flow! Without it, space travel is impossible.</div></div>`
+  const innerMarkup =  `<div class="ba b--dashed"><div class="ph-2 ba b--solid ${selector}">.${selector}</div><div class="ph-2 bg-gray-lightest" >The spice must flow! Without it, space travel is impossible.</div></div>`
   return new Example({
     htmlForDocs: html,
     markupForRendering: innerMarkup,
-    blah: `<div style=\"width: 8rem; display: inline-block; border: dashed thin black\">
-  <div style=\"border: solid thin black; display: inline; padding-left: 1rem; padding-right: 1rem; background-color: #ddd; color: #222;\" class=\"${selector}\">.${selector}</div>
-    </div>`
   })
 }
 

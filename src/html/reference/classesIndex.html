@@ -1,0 +1,17 @@
+<%- include( "_header.html") %>
+    <% Object.keys(cssClassesForIndex).sort().forEach( (cssClassName) => { %>
+    <div class="flex-ns items-center justify-center mv-2">
+      <div class="w-40-ns mb-2 mb-0-ns">
+        <code class="db ws-nowrap f-1">
+          <%= cssClassName %>
+        </code>
+        <a href="<%= cssClassesForIndex[cssClassName].docFilename %>" class="db f-1 hover-blue-dark-ns tdn-ns hover-tdu-ns tdu blue-darkest">
+          <%= new HumanizedString(cssClassesForIndex[cssClassName].metaPropertyGrouping.name) %>
+        </a>
+      </div>
+      <code class="db w-60-ns overflow-x-scroll db pa-2 br-2 bg-black-ish blue-light f-1">
+        <pre class="ma-0"><%= cssClassesForIndex[cssClassName].cssClass.toCSS() %></pre>
+      </code>
+    </div>
+    <% }) %>
+<%- include( "_footer.html") %>

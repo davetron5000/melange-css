@@ -2,8 +2,8 @@ import Scale from "./Scale.js"
 import VariableBasedStep from "./VariableBasedStep.js"
 
 export default class VariableBasedScale extends Scale {
-  constructor(variables) {
-    super()
+  constructor(variables, options={}) {
+    super(undefined, options)
     this.variables = variables
   }
 

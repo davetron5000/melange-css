@@ -7,7 +7,6 @@ import Scale                from "../../lib/scales/Scale.js"
 import {
   spacingScale,
   percentageScale,
-  thirdsScale,
   viewportHeightScale,
   viewportWidthScale,
 } from "../scales.js"
@@ -19,15 +18,13 @@ const widthsMetaProperty = new MetaProperty({
     spacingScale,
     percentageScale,
     viewportHeightScale,
-    thirdsScale,
     Scale.forLiteralValues({ "auto": "auto" }),
   ],
   cssClassTemplates: [
     new CSSClassTemplate("w", "width", {
       exampleTemplate: (selector) => {
         return new Example({
-          markupForRendering: `<div class="${selector}"
-     style="white-space: nowrap; border: solid thin black; background-color: #ddd; color: #222; padding: 0.5rem;">
+          markupForRendering: `<div class="${selector} ws-nowrap ba b--solid bg-gray-lightest gray-darkest pa-1">
   .${selector}
 </div>`,
         })
@@ -45,15 +42,13 @@ const heightsMetaProperty = new MetaProperty({
     spacingScale,
     percentageScale,
     viewportHeightScale,
-    thirdsScale,
     Scale.forLiteralValues({ "auto": "auto" }),
   ],
   cssClassTemplates: [
     new CSSClassTemplate("h", "height", {
       exampleTemplate: (selector) => {
         return new Example({
-          markupForRendering: `<div class="${selector}"
-     style="white-space: nowrap; border: solid thin black; background-color: #ddd; color: #222; padding: 0.5rem;">
+          markupForRendering: `<div class="${selector} ws-nowrap ba b--solid bg-gray-lightest gray-darkest pa-1">
   .${selector}
 </div>`,
         })

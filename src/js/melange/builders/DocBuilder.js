@@ -9,6 +9,20 @@ import Example         from "../../lib/Example.js"
 import Anchor          from "../../lib/Anchor.js"
 import HumanizedString from "../../lib/HumanizedString.js"
 
+class DocFilename {
+  constructor(metaPropertyGrouping, mediaQuery, cssClassTemplate) {
+    let extension = "doc.html"
+    if (mediaQuery.variableNameQualifier() != "") {
+      extension = `${mediaQuery.variableNameQualifier()}.doc.html`
+    }
+    this.filename = `${metaPropertyGrouping.slug}.${extension}`
+    if (cssClassTemplate) {
+      this.filename = this.filename + `#${new Anchor(cssClassTemplate.classNameBase)}`
+    }
+  }
+
+  toString() { return this.filename }
+}
 export default class DocBuilder {
   constructor({dir, templates}) {
     this.dir = dir
@@ -19,6 +33,7 @@ export default class DocBuilder {
     if (!this.templates.mediaQueries) { throw `There is no mediaQueries template` }
     if (!this.templates.index) { throw `There is no index template` }
     if (!this.templates.grouping) { throw `There is no grouping template` }
+    if (!this.templates.classesIndex) { throw `There is no classesIndex template` }
   }
 
   build(metaTheme) {  
@@ -27,6 +42,7 @@ export default class DocBuilder {
     let mediaQueries = []
     let currentMediaQuery
     let currentMetaPropertyGroupingAdditional
+    let cssClassesForIndex = {}
 
     const onMediaQuery = {
       start: (mq) => {
@@ -36,23 +52,16 @@ export default class DocBuilder {
       end: (mq) => {
       }
     }
+
     const onMetaPropertyGrouping = {
       start: (metaPropertyGrouping) => {
-        let extension = "doc.html"
-        if (currentMediaQuery.variableNameQualifier() != "") {
-          extension = `${currentMediaQuery.variableNameQualifier()}.doc.html`
-        }
-        const filename = `${metaPropertyGrouping.slug}.${extension}`
+        const filename = new DocFilename(metaPropertyGrouping, currentMediaQuery)
+
         currentMetaPropertyGroupingAdditional = {
           metaPropertyGrouping: metaPropertyGrouping,
           filename: filename,
           mediaQueryFilenames: Object.fromEntries(metaPropertyGrouping.mediaQueries.map( (mq) => {
-            let mqExtension = "doc.html"
-            if (mq.variableNameQualifier() != "") {
-              mqExtension = `${mq.variableNameQualifier()}.doc.html`
-            }
-
-            return [ mq.isDefault() ? "default" : mq.name(), `${metaPropertyGrouping.slug}.${mqExtension}` ]
+            return [ mq.isDefault() ? "default" : mq.name(), new DocFilename(metaPropertyGrouping, mq) ]
           }))
         }
         if (currentMediaQuery.isDefault()) {
@@ -63,37 +72,25 @@ export default class DocBuilder {
         }
       },
       end: (metaPropertyGrouping) => {
-        ejs.renderFile(
-          this.templates.grouping,
-          {
-            metaPropertyGrouping: metaPropertyGrouping,
-            HumanizedString: HumanizedString,
-            Anchor: Anchor,
-            title: new HumanizedString(metaPropertyGrouping.name),
-            showTitleInNav: false,
-            mediaQuery: currentMediaQuery,
-            mediaQueryFilenames: currentMetaPropertyGroupingAdditional.mediaQueryFilenames,
-          },
-          { 
-            root: this.templates["ROOT"],
-          },
-          (err, str) => {
-            if (err)  {
-              throw err
-            }
-            const fd = fs.openSync(`${this.dir}/${currentMetaPropertyGroupingAdditional.filename}`, "w")
-            fs.writeFileSync(fd, str)
-            fs.closeSync(fd)
-          }
-        )
+        this._renderGrouping(metaPropertyGrouping, currentMediaQuery, currentMetaPropertyGroupingAdditional)
       }
     }
 
+    const onCSSClass = (cssClass, _pseudoSelector, cssClassTemplate, _metaProperty, metaPropertyGrouping, mediaQuery) => {
+      cssClassesForIndex[cssClass.className()] = {
+        cssClass: cssClass,
+        cssClassTemplate: cssClassTemplate,
+        metaPropertyGrouping: metaPropertyGrouping,
+        mediaQuery: mediaQuery,
+        docFilename: new DocFilename(metaPropertyGrouping, mediaQuery, cssClassTemplate),
+      }
+    }
 
     /* Generate Docs */
     metaTheme.eachCSSClass({
       onMediaQuery: onMediaQuery,
       onMetaPropertyGrouping: onMetaPropertyGrouping,
+      onCSSClass: onCSSClass,
     })
 
     this._renderMediaQueries(
@@ -113,7 +110,39 @@ export default class DocBuilder {
       }
     )
 
+    this._renderClassIndex(
+      {
+        template: this.templates.classesIndex,
+        templatesRoot: this.templates["ROOT"],
+        dir: this.dir,
+        cssClassesForIndex: cssClassesForIndex,
+      }
+    )
   }
+
+  _renderClassIndex({ template, templatesRoot, dir, cssClassesForIndex }) {
+    ejs.renderFile(
+      template,
+      {
+        cssClassesForIndex: cssClassesForIndex,
+        HumanizedString: HumanizedString,
+        Anchor: Anchor,
+        title: "Index of CSS Classes",
+      },
+      { 
+        root: templatesRoot,
+      },
+      (err, str) => {
+        if (err)  {
+          throw err
+        }
+        const fd = fs.openSync(`${dir}/classesIndex.html`, "w")
+        fs.writeFileSync(fd, str)
+        fs.closeSync(fd)
+      }
+    )
+  }
+
   _renderIndex( {
     template,
     templatesRoot,
@@ -158,6 +187,32 @@ export default class DocBuilder {
           return
         }
         const fd = fs.openSync(`${dir}/mediaQueries.html`, "w")
+        fs.writeFileSync(fd, str)
+        fs.closeSync(fd)
+      }
+    )
+  }
+
+  _renderGrouping(metaPropertyGrouping, currentMediaQuery, currentMetaPropertyGroupingAdditional) {
+    ejs.renderFile(
+      this.templates.grouping,
+      {
+        metaPropertyGrouping: metaPropertyGrouping,
+        HumanizedString: HumanizedString,
+        Anchor: Anchor,
+        title: new HumanizedString(metaPropertyGrouping.name),
+        showTitleInNav: false,
+        mediaQuery: currentMediaQuery,
+        mediaQueryFilenames: currentMetaPropertyGroupingAdditional.mediaQueryFilenames,
+      },
+      { 
+        root: this.templates["ROOT"],
+      },
+      (err, str) => {
+        if (err)  {
+          throw err
+        }
+        const fd = fs.openSync(`${this.dir}/${currentMetaPropertyGroupingAdditional.filename}`, "w")
         fs.writeFileSync(fd, str)
         fs.closeSync(fd)
       }

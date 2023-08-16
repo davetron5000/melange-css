@@ -10,11 +10,14 @@
   </small>
   <% } %>
 </h2>
-<nav class="blue-darkest bb b--blue-dark pb-2 mh-3">
+  <% metaPropertyGrouping.docs.forEach( (paragraph) => { %>
+    <p class="measure f-2 lh-copy"><%- paragraph %></p>
+  <% }) %>
+<nav class="blue-darkest bb bt b--blue-dark pv-2 i">
   <div class="dib f-2 blue-darkest mb-2 mh-1 fw-bold">
     Supported Media Queries
   </div>
-  <div class="flex flex-wrap items-center justify-between">
+  <div class="flex flex-wrap items-center justify-start">
     <a href="<%= mediaQueryFilenames['default'] %>" class="ttl blue-dark f-1 mh-1 lh-copy">Default</a>
     <% metaPropertyGrouping.mediaQueries.forEach( (mediaQuery) => { %>
        <% if (!mediaQuery.isDefault()) { %>
@@ -23,14 +26,11 @@
     <% }) %>
   </div>
 </nav>
-  <% metaPropertyGrouping.docs.forEach( (paragraph) => { %>
-    <p class="measure-wide f-2 i"><%- paragraph %></p>
-  <% }) %>
   <% if (metaPropertyGrouping.summarization) { %>
     <%- metaPropertyGrouping.summarization %>
   <% } else { %>
     <h4 class="f-4 mt-4 tc tl-ns mb-3">Properties</h4>
-    <nav class="flex flex-wrap justify-center justify-start-ns items-start pb-3 measure-wide bb b--orange-darkest">
+    <nav class="flex flex-wrap justify-center justify-start-ns items-start pb-3 measure-wide">
       <% metaPropertyGrouping.metaProperties.sort( (a,b) => a.name.localeCompare(b.name) ).forEach( (metaProperty) => { %>
         <a class="db di-ns tc tl-ns lh-copy mr-3-ns w-100 w-auto-ns f-3 fw-normal orange-darkest ws-nowrap" href="#<%= new Anchor(metaProperty.name) %>">
           <%= new HumanizedString(metaProperty.name) %>
@@ -45,7 +45,7 @@
         <%= new HumanizedString(metaProperty.name) %>
       </h5>
       <% metaProperty.docs.forEach( (paragraph) => { %>
-        <p class="measure-wide lh-copy indent-1 i ma-0 mt-2"><%- paragraph %></p>
+        <p class="measure-wide lh-copy / ma-0 mt-2"><%- paragraph %></p>
       <% }) %>
       <% if (metaProperty.cssClassTemplates.length > 1) { %>
         <nav class="flex flex-wrap items-baseline justify-center justify-start-ns mt-3">
@@ -61,9 +61,9 @@
         <tbody>
           <% metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => { %>
             <tr>
+              <a name="<%= new Anchor(cssClassTemplate.classNameBase) %>"></a>
               <% if (metaProperty.totalSteps() > 1) { %>
                 <td class="w-1 ws-nowrap va-middle pr-2">
-                  <a name="<%= new Anchor(cssClassTemplate.classNameBase) %>"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba b--orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
                       <%= cssClassTemplate.classNameBase %>*
@@ -78,6 +78,11 @@
               <% } %>
             </tr>
             <% metaProperty.scales().forEach( (scale) => { %>
+            <% if (scale.name()) { %>
+            <tr>
+              <td colspan="2" class="pt-3 pb-2 fw-bold"><%= scale.name() %></td>
+            </tr>
+            <% } %>
               <% metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
                   scale.eachStep( (step) => {
                   const cssClass = cssClassTemplate.toCSSClass(step).forSelector(pseudoSelector).atMediaQuery(mediaQuery) %>

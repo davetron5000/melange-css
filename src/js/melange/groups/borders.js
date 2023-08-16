@@ -10,13 +10,13 @@ import mediaQueries         from "../MediaQueries.js"
 
 const borderExampleTemplate = (selector) => {
   return new Example({
-    markupForRendering: `<div class="${selector}" style="white-space: nowrap; padding: 2rem; display: flex; align-items: center; justify-content: center; text-align: center; background-color: #f0f0f0;">.${selector}</div>`
+    markupForRendering: `<div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest ${selector}">.${selector}</div>`
   })
 }
 
 const borderWidthExampleTemplate = (selector) => {
   return new Example({
-    markupForRendering: `<div class="${selector}" style="border-style: solid; white-space: nowrap; padding: 2rem; display: flex; align-items: center; justify-content: center; text-align: center; background-color: #f0f0f0;">.${selector}</div>`
+    markupForRendering: `<div class="ws-nowrap ba b--solid pa-3 flex items-center justify-center tc bg-gray-lightest ${selector}">.${selector}</div>`
   })
 }
 

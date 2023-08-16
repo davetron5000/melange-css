@@ -20,8 +20,8 @@ const flexExampleTemplate = (selector) => {
 </div>`
   const markupForRendering = "<div>" + 
     htmlForDocs.
-    replace("<div ","<div style=\"width: auto; border: thin dashed black; padding: 1rem; gap: 0.25rem;\" ").
-    replaceAll("<div>","<div style=\"padding: 0.25rem; border: solid thin black;\">") + "</div>"
+    replace("<div ",`<div class="${fullSelector} w-auto ba b--dashed pa-2" style="gap: 0.25rem;" `).
+    replaceAll("<div>","<div class=\"pa-1 ba b--solid\">") + "</div>"
   return new Example({
     htmlForDocs: htmlForDocs,
     markupForRendering: markupForRendering,
@@ -40,8 +40,8 @@ const flexJustifyExampleTemplate = (selector) => {
 </div>`
   const markupForRendering = "<div>" +
     htmlForDocs.
-    replace("<div ","<div style=\"width: auto; border: thin dashed black; padding: 1rem; gap: 0.25rem;\" ").
-    replaceAll("<div>","<div style=\"padding: 0.25rem; white-space: nowrap; border: solid thin black;\">") + "</div>"
+    replace("<div ",`<div class="${fullSelector} w-auto ba b--dashed pa-2" style="gap: 0.25rem;" `).
+    replaceAll("<div>","<div class=\"pa-1 ws-nowrap ba b--solid\">") + "</div>"
   return new Example({
     htmlForDocs: htmlForDocs,
     markupForRendering: markupForRendering,

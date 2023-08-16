@@ -14,14 +14,6 @@ import mediaQueries    from "../MediaQueries.js"
 
 const basicExample = ExampleTemplate.divWithSelector("The spice must flow!")
 
-const exampleTemplate = (selector) => {
-  const html = `<div class=\"${selector}\">\nThe spice must flow!\n</div>`
-  return new Example({
-    htmlForDocs: html,
-    markupForRendering: html.replace("<div ","<div style=\"max-widtyh: 75%\" "),
-  })
-}
-
 const fontSizes = new MetaProperty({
   name: "Font Scale",
   scales: [
@@ -29,7 +21,7 @@ const fontSizes = new MetaProperty({
   ],
   cssClassTemplates: [
     new CSSClassTemplate("f", "font-size", {
-      exampleTemplate: exampleTemplate,
+      exampleTemplate: basicExample,
     }),
   ]
 })
@@ -179,7 +171,7 @@ experience from the originals.`
     htmlForDocs: `<div class="measure lh-copy ${selector}">
   ${copy}
 </div>`,
-    markupForRendering: `<div style="padding: 0.5em 2.5em;" class="ba b--gray bg-gray-lightest"><div class="bg-white measure lh-copy ba b--dashed ${selector}">
+    markupForRendering: `<div class="ph-4 pv-2 ba b--gray bg-gray-lightest"><div class="bg-white measure lh-copy ba b--dashed ${selector}">
   ${copy}
 </div></div>`,
   })
