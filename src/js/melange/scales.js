@@ -42,7 +42,7 @@ const negativeSpacingVariables = spacingVariables.map( (variable) => {
     stepNameTransform: stepNameTransform
   })
 })
-VariableRegistry.registerVariables("nsp", negativeSpacingVariables, "Negative Spacing", "Negative spacings from the spacing scale")
+VariableRegistry.registerVariables("nsp", negativeSpacingVariables) // no docs means this is a derived set
 const negativeSpacingScale = new VariableBasedScale(negativeSpacingVariables)
 
 const fontSizeVariables = VariableRegistry.register(

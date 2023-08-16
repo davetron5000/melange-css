@@ -17,55 +17,58 @@
   </pre></code>
 </p>
 <p class="measure-wide lh-copy">
-  Numeric steps go from smaller to larger.  Note that numeric steps representing negative values will have a minus sign, so for example <code>--mg-sp-2</code> is the negative-second step of the scale, thus it is two steps below <code>--mg-sp1</code>.
+  Numeric steps go from smaller to larger by default, and you are advised to adhere to this convention.
 </p>
 <nav class="measure-wide mv-2 pt-2 pb-3 bb b--blue-light flex flex-wrap items-baseline">
-<% VariableRegistry.eachSetOfVariables( (baseName, variablesSet) => { 
-%>
-<a class="f-2 mr-3 blue-dark lh-copy" href="#<%= new Anchor(baseName) %>"><%= variablesSet.summary %></a>
+<% VariableRegistry.eachSetOfVariables( (baseName, variablesSet) => { %>
+  <% if (!variablesSet.derived) { %> 
+    <a class="f-2 mr-3 blue-dark lh-copy" href="#<%= new Anchor(baseName) %>"><%= variablesSet.summary %></a>
+  <% } %>
 <% }) %>
 </nav>
 <% VariableRegistry.eachSetOfVariables( (baseName, variablesSet) => { %>
-  <a name="<%= new Anchor(baseName) %>"></a>
-  <h3 class="f-4">
-    <%= variablesSet.summary %>
-  </h3>
-  <% if (variablesSet.documentation) { %>
-    <p class="measure-wide lh-copy">
-      <%= variablesSet.documentation %>
-    </p>
-  <% } %>
-  <table class="w-auto">
-    <thead>
-      <tr>
-        <th class="tl ws-nowrap pa-2">Variable</th>
-        <th class="tl ws-nowrap pa-2">Default Value</th>
-        <th class="tl ws-nowrap pa-2">Current Value</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% Object.values(variablesSet.variables).forEach( (melangeVariable) => { %>
-        <tr data-variable="<%= melangeVariable._variableName() %>">
-          <td class="ws-nowrap pa-2">
-            <code class="ba b--orange-light orange-darkest dib pa-3 br-1 ws-nowrap mr-3-ns">
-              <%= melangeVariable._variableName() %>
-            </code>
-          </td>
-          <% if (melangeVariable.toCSSProperty()) { %>
-            <td class="pa-2"><code><%= melangeVariable.defaultValue %></code></td>
-            <td class="pa-2"><code data-actual-value>Requires JavaScript to calculate</code></td>
-          <% } else { %>
-            <td class="pa-2 ws-nowrap">
-              <code><%= melangeVariable.toCSSValue() %></code>
-            </td>
-            <td class="pa-2 ws-nowrap">
-              <code><%= melangeVariable.toCSSValue() %></code>
-            </td>
-          <% } %>
+  <% if (!variablesSet.derived) { %>
+    <a name="<%= new Anchor(baseName) %>"></a>
+    <h3 class="f-4">
+      <%= variablesSet.summary %>
+    </h3>
+    <% if (variablesSet.documentation) { %>
+      <p class="measure-wide lh-copy">
+        <%= variablesSet.documentation %>
+      </p>
+    <% } %>
+    <table class="w-auto">
+      <thead>
+        <tr>
+          <th class="tl ws-nowrap pa-2">Variable</th>
+          <th class="tl ws-nowrap pa-2">Default Value</th>
+          <th class="tl ws-nowrap pa-2">Current Value</th>
         </tr>
-      <% }) %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% Object.values(variablesSet.variables).forEach( (melangeVariable) => { %>
+          <tr data-variable="<%= melangeVariable._variableName() %>">
+            <td class="ws-nowrap pa-2">
+              <code class="ba b--orange-light orange-darkest dib pa-3 br-1 ws-nowrap mr-3-ns">
+                <%= melangeVariable._variableName() %>
+              </code>
+            </td>
+            <% if (melangeVariable.toCSSProperty()) { %>
+              <td class="pa-2"><code><%= melangeVariable.defaultValue %></code></td>
+              <td class="pa-2"><code data-actual-value>Requires JavaScript to calculate</code></td>
+            <% } else { %>
+              <td class="pa-2 ws-nowrap">
+                <code><%= melangeVariable.toCSSValue() %></code>
+              </td>
+              <td class="pa-2 ws-nowrap">
+                <code><%= melangeVariable.toCSSValue() %></code>
+              </td>
+            <% } %>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
 <% }) %>
 <script>
   window.addEventListener("DOMContentLoaded", () => {

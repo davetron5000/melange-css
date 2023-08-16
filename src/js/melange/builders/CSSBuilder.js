@@ -42,9 +42,9 @@ export default class CSSBuilder {
     if (this.writeVariables) {
       css.write(":root {\n")
       VariableRegistry.eachSetOfVariables( (baseName,variablesSet) => {
-        if (variablesSet.documentation) {
+        if (!variablesSet.derived) {
           css.write("/*\n")
-          css.write(` * ${baseName}\n *\n`)
+          css.write(` * ${variablesSet.summary}\n *\n`)
           if (variablesSet.documentation) {
             css.write(` * ${variablesSet.documentation}\n`)
           }

@@ -47,6 +47,7 @@ class VariableRegistry {
       category: category,
       summary: summary,
       documentation: documentation || summary,
+      derived: !documentation,
       variables: Object.fromEntries(variables.map( (variable) => [ variable.stepName, variable ] )),
     }
   }
@@ -63,7 +64,9 @@ class VariableRegistry {
       const aCategory = a[1].category
       const bCategory = b[1].category
       if (aCategory == bCategory) {
-        return a[1].summary.localeCompare(b[1]).summary
+        const aString = a[1].summary || a[0] || ""
+        const bString = b[1].summary || b[0] || ""
+        return aString.localeCompare(bString)
       }
       else if (aCategory) {
         return 1;
