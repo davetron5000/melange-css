@@ -18,6 +18,19 @@ const displayExampleTemplate = (selector) => {
   })
 }
 
+const clearfixExampleTemplate = (selector) => {
+  return `<div>
+  <div class="dfr ba b--dashed pa-1 mb-2">
+  With <code>display: flow-root</code>, the black box is safe.
+    <div class="dib w-5 h-5 bg-black fl">&nbsp;</div>
+  </div>
+  <div class="ba b--dashed pa-1">
+  Without <code>display: flow-root</code>, the black box contains only pain.
+    <div class="dib w-5 h-5 bg-black fl">&nbsp;</div>
+  </div>
+</div>`
+}
+
 const displays = new MetaProperty({
   name: "Display",
   literalClasses: {
@@ -25,6 +38,7 @@ const displays = new MetaProperty({
     di: { properties: { "display": "inline" }, exampleTemplate: displayExampleTemplate, summary: "Inline" },
     dib: { properties: { "display": "inline-block" }, exampleTemplate: displayExampleTemplate, summary: "Inline Block" },
     dn: { properties: { "display": "none" }, exampleTemplate: displayExampleTemplate, summary: "None" },
+    dfr: { properties: { "display": "flow-root" }, exampleTemplate: clearfixExampleTemplate, summary: "Flow Root / Clearfix" },
   },
 })
 

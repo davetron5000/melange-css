@@ -77,7 +77,12 @@ const floats = new MetaProperty({
       "l": "left",
       "r": "right",
       "n": "none",
+    },{
+      dashPrefix: false,
     })
+  ],
+  docs: [
+    "Note that modern browsers no longer require a cleafix hack. You can use <code class=\"ws-nowrap\">display: flow-root</code> to clear floats via the <code>dfr</code> class.",
   ],
   cssClassTemplates: [
     new CSSClassTemplate("f", "float", { exampleTemplate: floatExampleTemplate })
