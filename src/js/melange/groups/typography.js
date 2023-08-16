@@ -256,7 +256,7 @@ const fontFamily = new MetaProperty({
     fontFamilies,
   ],
   cssClassTemplates: [
-    new CSSClassTemplate("font", "font-family", {
+    new CSSClassTemplate("ff", "font-family", {
       exampleTemplate: (selector) => {
         return `<div class="f-5 ${selector}">
   The spice must flow

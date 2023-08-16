@@ -1,0 +1,84 @@
+<%- include( "_header.html") %>
+<p class="measure-wide lh-copy">
+  Melange's design system uses scales and steps encoded in CSS variables.  By default, these values are provided by Melange, however, you can change these variables to suit your own needs.  Below are all the varaibles, their default values as provided by Melange, and the currently computed value running in your browser right now.
+</p>
+<p class="measure-wide lh-copy">
+  Each variable conforms to a naming scheme, defined as follows:
+</p>
+<p class="measure-wide lh-copy">
+  <code><pre>
+    &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Prefix indicating this is a Melange variable</span>
+    &#9474;
+    &#9474;   &#9484;&#9472;&#9472;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Short code indicating what this variable is for</span>
+    &#9474;   &#9474;
+    &#9474;   &#9474;  &#9484;&#9472;&#9472; <span class="f-1 ff-serif">Step of the scale this variable controls</span>
+    &#9474;   &#9474;  &#9474;
+  --mg-XX-##
+  </pre></code>
+</p>
+<p class="measure-wide lh-copy">
+  Numeric steps go from smaller to larger.  Note that numeric steps representing negative values will have a minus sign, so for example <code>--mg-sp-2</code> is the negative-second step of the scale, thus it is two steps below <code>--mg-sp1</code>.
+</p>
+<nav class="measure-wide mv-2 pt-2 pb-3 bb b--blue-light flex flex-wrap items-baseline">
+<% VariableRegistry.eachSetOfVariables( (baseName, variablesSet) => { 
+%>
+<a class="f-2 mr-3 blue-dark lh-copy" href="#<%= new Anchor(baseName) %>"><%= variablesSet.summary %></a>
+<% }) %>
+</nav>
+<% VariableRegistry.eachSetOfVariables( (baseName, variablesSet) => { %>
+  <a name="<%= new Anchor(baseName) %>"></a>
+  <h3 class="f-4">
+    <%= variablesSet.summary %>
+  </h3>
+  <% if (variablesSet.documentation) { %>
+    <p class="measure-wide lh-copy">
+      <%= variablesSet.documentation %>
+    </p>
+  <% } %>
+  <table class="w-auto">
+    <thead>
+      <tr>
+        <th class="tl ws-nowrap pa-2">Variable</th>
+        <th class="tl ws-nowrap pa-2">Default Value</th>
+        <th class="tl ws-nowrap pa-2">Current Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Object.values(variablesSet.variables).forEach( (melangeVariable) => { %>
+        <tr data-variable="<%= melangeVariable._variableName() %>">
+          <td class="ws-nowrap pa-2">
+            <code class="ba b--orange-light orange-darkest dib pa-3 br-1 ws-nowrap mr-3-ns">
+              <%= melangeVariable._variableName() %>
+            </code>
+          </td>
+          <% if (melangeVariable.toCSSProperty()) { %>
+            <td class="pa-2"><code><%= melangeVariable.defaultValue %></code></td>
+            <td class="pa-2"><code data-actual-value>Requires JavaScript to calculate</code></td>
+          <% } else { %>
+            <td class="pa-2 ws-nowrap">
+              <code><%= melangeVariable.toCSSValue() %></code>
+            </td>
+            <td class="pa-2 ws-nowrap">
+              <code><%= melangeVariable.toCSSValue() %></code>
+            </td>
+          <% } %>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% }) %>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const bodyStyles = window.getComputedStyle(document.body);
+    document.querySelectorAll("[data-variable]").forEach( (element) => {
+      const actualValueElement = element.querySelector("[data-actual-value]")
+      if (actualValueElement) {
+        const variableName = element.dataset["variable"]
+        const value = bodyStyles.getPropertyValue(variableName);
+        actualValueElement.textContent = value;
+      }
+    })
+
+  })
+</script>
+<%- include( "_footer.html") %>

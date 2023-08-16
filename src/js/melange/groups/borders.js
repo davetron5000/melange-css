@@ -16,7 +16,7 @@ const borderExampleTemplate = (selector) => {
 
 const borderWidthExampleTemplate = (selector) => {
   return new Example({
-    markupForRendering: `<div class="ws-nowrap ba b--solid pa-3 flex items-center justify-center tc bg-gray-lightest ${selector}">.${selector}</div>`
+    markupForRendering: `<div class="ws-nowrap ba b--solid pv-4 flex items-center justify-center tc bg-gray-lightest ${selector}">.${selector}</div>`
   })
 }
 

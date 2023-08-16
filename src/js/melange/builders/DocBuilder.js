@@ -5,9 +5,10 @@ import ejs               from "ejs"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-import Example         from "../../lib/Example.js"
-import Anchor          from "../../lib/Anchor.js"
-import HumanizedString from "../../lib/HumanizedString.js"
+import Example          from "../../lib/Example.js"
+import Anchor           from "../../lib/Anchor.js"
+import HumanizedString  from "../../lib/HumanizedString.js"
+import VariableRegistry from "../../lib/VariableRegistry.js"
 
 class DocFilename {
   constructor(metaPropertyGrouping, mediaQuery, cssClassTemplate) {
@@ -34,6 +35,7 @@ export default class DocBuilder {
     if (!this.templates.index) { throw `There is no index template` }
     if (!this.templates.grouping) { throw `There is no grouping template` }
     if (!this.templates.classesIndex) { throw `There is no classesIndex template` }
+    if (!this.templates.variables) { throw `There is no variables template` }
   }
 
   build(metaTheme) {  
@@ -93,6 +95,12 @@ export default class DocBuilder {
       onCSSClass: onCSSClass,
     })
 
+    this._renderVariables({
+      template: this.templates.variables,
+      templatesRoot: this.templates["ROOT"],
+      dir: this.dir,
+    })
+
     this._renderMediaQueries(
       {
         template: this.templates.mediaQueries,
@@ -116,6 +124,28 @@ export default class DocBuilder {
         templatesRoot: this.templates["ROOT"],
         dir: this.dir,
         cssClassesForIndex: cssClassesForIndex,
+      }
+    )
+  }
+
+  _renderVariables({template, templatesRoot, dir}) {
+    ejs.renderFile(
+      template,
+      {
+        title: "Variables",
+        VariableRegistry: VariableRegistry,
+        Anchor: Anchor,
+      },
+      { 
+        root: templatesRoot,
+      },
+      (err, str) => {
+        if (err)  {
+          throw err
+        }
+        const fd = fs.openSync(`${dir}/variables.html`, "w")
+        fs.writeFileSync(fd, str)
+        fs.closeSync(fd)
       }
     )
   }
@@ -171,6 +201,9 @@ export default class DocBuilder {
   }
 
   _renderMediaQueries({ template, templatesRoot, dir, mediaQueries }) {
+    if (!mediaQueries) {
+      throw `wtf`
+    }
     ejs.renderFile(
       template,
       {

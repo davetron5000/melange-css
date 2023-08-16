@@ -18,8 +18,9 @@ class VariableRegistry {
    * stepNamesAndDefaultValues - the names of each step and their default values
    * documentation - A string that documents these varaibles. Required or the variables will
    *                 not be output.
+   * category - if present, categorizes this variable to help organize documentation
    */
-  register(baseName, stepNamesAndDefaultValues, documentation) {
+  register(baseName, stepNamesAndDefaultValues, summary, documentation, category) {
     this._ensureVariablesNotRegistered(baseName)
 
     let variables
@@ -34,16 +35,18 @@ class VariableRegistry {
         return new Variable({ baseName: baseName, stepName: stepName, defaultValue: defaultValue })
       })
     }
-    this.registerVariables(baseName, variables, documentation)
+    this.registerVariables(baseName, variables, summary, documentation, category)
     return variables
   }
 
   /*
    * Register pre-created Variable instances.
    */
-  registerVariables(baseName, variables, documentation) {
+  registerVariables(baseName, variables, summary, documentation, category) {
     this.variables[baseName] = {
-      documentation: documentation,
+      category: category,
+      summary: summary,
+      documentation: documentation || summary,
       variables: Object.fromEntries(variables.map( (variable) => [ variable.stepName, variable ] )),
     }
   }
@@ -56,7 +59,19 @@ class VariableRegistry {
    *     [1] - an Array of Variable instances
    */
   eachSetOfVariables(f) {
-    Object.entries(this.variables).forEach( ([key,value]) => f(key,value) ) 
+    Object.entries(this.variables).sort( (a,b) => {
+      const aCategory = a[1].category
+      const bCategory = b[1].category
+      if (aCategory == bCategory) {
+        return a[1].summary.localeCompare(b[1]).summary
+      }
+      else if (aCategory) {
+        return 1;
+      }
+      else {
+        return -1;
+      }
+    }).forEach( ([key,value]) => f(key,value) ) 
   }
 
   _ensureVariablesNotRegistered(baseName) {

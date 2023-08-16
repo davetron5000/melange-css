@@ -2,6 +2,7 @@ import CSSClassTemplate      from "./CSSClassTemplate.js"
 import DefaultPseudoSelector from "./DefaultPseudoSelector.js"
 import Example               from "./Example.js"
 import ExampleTemplate       from "./ExampleTemplate.js"
+import HumanizedString       from "./HumanizedString.js"
 import MetaProperty          from "./MetaProperty.js"
 import MetaPropertyGrouping  from "./MetaPropertyGrouping.js"
 import PseudoSelector        from "./PseudoSelector.js"
@@ -93,7 +94,11 @@ export default class ColorTints {
     const stepNamesAndDefaultValues = Object.fromEntries(tints.map( (tint, index) => {
       return [ this.tintNames[index], tint ]
     }))
-    const variables = VariableRegistry.register(colorName,stepNamesAndDefaultValues,`Tints/Shades for ${colorName}`)
+    const variables = VariableRegistry.register(colorName,
+                                                stepNamesAndDefaultValues,
+                                                new HumanizedString(colorName).toString(),
+                                                `Tints/Shades for ${colorName}`,
+                                                "Color")
     this.colorScale[colorName] = {
       variables: variables,
       tints: tints

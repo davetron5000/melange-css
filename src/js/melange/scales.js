@@ -19,6 +19,7 @@ const spacingVariables = VariableRegistry.register(
     "8rem",
     "18rem",
   ],
+  "Spacing",
   "Spacing scale for margins, paddings, widths, positions, etc.",
 )
 const spacingScale = new VariableBasedScaleWithZero(spacingVariables, { name: "Steps" })
@@ -41,7 +42,7 @@ const negativeSpacingVariables = spacingVariables.map( (variable) => {
     stepNameTransform: stepNameTransform
   })
 })
-VariableRegistry.registerVariables("nsp", negativeSpacingVariables)
+VariableRegistry.registerVariables("nsp", negativeSpacingVariables, "Negative Spacing", "Negative spacings from the spacing scale")
 const negativeSpacingScale = new VariableBasedScale(negativeSpacingVariables)
 
 const fontSizeVariables = VariableRegistry.register(
@@ -56,7 +57,9 @@ const fontSizeVariables = VariableRegistry.register(
     "5rem",
     "6rem",
   ],
-  "Font scale, with size 2 being the body font size"
+  "Font Scale",
+  "Font scale, with size 2 being the body font size",
+
 )
 const fontScale = new VariableBasedScale(fontSizeVariables, { name: "Modular Scale" })
 
@@ -69,6 +72,7 @@ const fontFamilyVariables = VariableRegistry.register(
     "cursive": "'Snell Roundhand', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive",
     "fantasy": "'Party Let', fantasy",
   },
+  "Fonts",
   "Fonts to use for sans, serif, etc.",
 )
 
