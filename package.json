@@ -1,14 +1,29 @@
 {
   "name": "melange-css",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha1",
   "description": "Functional CSS for Full Stack Developers",
+  "keywords": [ "css" ],
+  "homepage": "https://naildrivin5.com",
+  "bugs": {
+    "url": "https://naildrivin5.com",
+    "email": "davec@naildrivin5.com"
+  },
+  "main": "src/js/index.js",
+  "bin": {
+    "melange-css": "src/js/cli/melange.js"
+  },
+  "repository": "https://github.com/davetron5000/melange-css",
   "type": "module",
   "devDependencies": {
     "css-minify": "^2.0.0",
     "ejs": "^3.1.9"
   },
-  "author": "David Copeland",
-  "license": "MIT",
+  "author": {
+    "name": "David Copeland",
+    "email": "davec@naildrivin5.com",
+    "url": "https://naildrivin5.com"
+  },
+  "license": "Hippocratic-2.1",
   "scripts": {
     "local-docs": "make local-docs && node src/js/cli/melange.js doc-server --dir=docs"
   }
