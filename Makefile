@@ -28,12 +28,14 @@ SPLIT_VARS_ONLY_CSS=$(DIST_DIR)/melange-variables-only.css
 SPLIT_STYLES_ONLY_CSS=$(DIST_DIR)/melange-styles-only.css
 SPLIT_FILES=$(SPLIT_VARS_ONLY_CSS) $(SPLIT_STYLES_ONLY_CSS)
 
+METADATA=$(DIST_DIR)/melange-metadata.json
+
 ## Docs
 
 DOCS_DIR=docs
 
 # Rules
-distro: $(MONLITHIC_FILES) $(SPLIT_FILES)
+distro: $(MONLITHIC_FILES) $(SPLIT_FILES) $(METADATA)
 .PHONY: distro
 
 $(DIST_DIR):
@@ -44,13 +46,13 @@ $(MONLITHIC_MINIFIED_CSS): $(MONLITHIC_CSS)
 	@echo "Minifying $(DIST_DIR)/melange.css"
 	@npx css-minify -o $(DIST_DIR) -f $(DIST_DIR)/melange.css
 
-$(MONLITHIC_CSS): $(DIST_DIR) $(SRC_FILES)
+$(MONLITHIC_CSS) $(METADATA): $(DIST_DIR) $(SRC_FILES)
 	@echo "Building $(@)"
-	@node src/js/cli/melange.js css --css $(@)
+	@node src/js/cli/melange.js css --css $(MONLITHIC_CSS) --meta-data $(METADATA)
 
 $(SPLIT_VARS_ONLY_CSS) $(SPLIT_STYLES_ONLY_CSS): $(DIST_DIR) $(SRC_FILES)
 	@echo "Building $(SPLIT_VARS_ONLY_CSS) and $(SPLIT_STYLES_ONLY_CSS)"
-	@node src/js/cli/melange.js css --css $(SPLIT_STYLES_ONLY_CSS) --variables $(SPLIT_VARS_ONLY_CSS)
+	@node src/js/cli/melange.js css --css $(SPLIT_STYLES_ONLY_CSS) --variables $(SPLIT_VARS_ONLY_CSS) --meta-data $(METADATA)
 
 local-docs: $(DOCS_DIR)
 .PHONY: local-docs

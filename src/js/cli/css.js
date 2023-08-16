@@ -2,6 +2,7 @@ import { parseArgs } from 'node:util';
 import process from 'node:process';
 
 import CSSBuilder        from "../melange/builders/CSSBuilder.js"
+import MetaDataBuilder   from "../melange/builders/MetaDataBuilder.js"
 import melange           from "../melange/melange.js"
 
 export default class CSS {
@@ -19,6 +20,9 @@ export default class CSS {
           type: "string",
         },
         variables: {
+          type: "string",
+        },
+        "meta-data": {
           type: "string",
         },
         "no-reset": {
@@ -39,6 +43,7 @@ export default class CSS {
       console.log()
       console.log("  --css FILENAME                 - name of the .css file to write")
       console.log("  --variables VARIABLES_FILENAME - if specified, write variables to this file instead of the --css file")
+      console.log("  --meta-data MD_FILENAME        - if specified, write some metadata about the design system to the givcen file")
       console.log("  --no-reset                     - if set, omit the reset css in the output .css file")
       console.log("  --help                         - show this message")
       console.log()
@@ -76,6 +81,11 @@ export default class CSS {
           writeVariables: true,
           writeReset: false,
         }))
+        if (values["meta-data"]) {
+          builders.push(new MetaDataBuilder({
+            filename: values["meta-data"]
+          }))
+        }
       }
       else {
         builders.push(new CSSBuilder({
@@ -84,6 +94,11 @@ export default class CSS {
           writeVariables: true,
           writeReset: values["no-reset"] != true
         }))
+        if (values["meta-data"]) {
+          builders.push(new MetaDataBuilder({
+            filename: values["meta-data"]
+          }))
+        }
       }
       melange.checkForDupes()
       builders.forEach( (builder) => {

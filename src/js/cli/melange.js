@@ -3,6 +3,13 @@ import CSS from "./css.js"
 import Doc from "./doc.js"
 import DocServer from "./doc-server.js"
 
+/*
+ * melange new-class class-name-here "property:value" "property:value" --out=filename.css
+ *
+ * To make this work, the breakpoints are needed in a parseable format.
+ */
+
+
 const commands = {
   css: new CSS(),
   docs: new Doc(),

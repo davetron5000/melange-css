@@ -16,6 +16,7 @@ export default class Breakpoint extends MediaQuery {
   name()                  { return this._name }
   variableNameQualifier() { return this._variableNameQualifier }
   description()           { return this._description }
+  isBreakpoint()          { return true }
 
   toMediaQuery() {
     if (this.minWidth) {
