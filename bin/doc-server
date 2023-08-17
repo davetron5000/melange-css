@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+
+make local-docs && node melange-cli/src/js/cli/melange.js doc-server --dir=melange-css/docs

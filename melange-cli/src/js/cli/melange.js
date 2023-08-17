@@ -1,21 +1,16 @@
 #!/usr/bin/env node
 
-import process from "node:process";
-import CSS from "./css.js"
-import Doc from "./doc.js"
-import DocServer from "./doc-server.js"
-
-/*
- * melange new-class class-name-here "property:value" "property:value" --out=filename.css
- *
- * To make this work, the breakpoints are needed in a parseable format.
- */
-
+import process      from "node:process";
+import CSS          from "./css.js"
+import ReferenceDoc from "./reference-doc.js"
+import DocServer    from "./doc-server.js"
+import Website      from "./website.js"
 
 const commands = {
   css: new CSS(),
-  docs: new Doc(),
+  "reference-docs": new ReferenceDoc(),
   "doc-server": new DocServer(),
+  "website": new Website(),
 }
 
 const showHelp = () => {

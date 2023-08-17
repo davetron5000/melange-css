@@ -41,7 +41,7 @@ const listStylePosition = new MetaProperty({
   name: "List Style Position",
   literalClasses: {
     "lsp-inside":  { properties: { "list-style-position": "inside" }, exampleTemplate: listExampleTemplate, summary: "Inside" },
-    "lsp-outside": { properties: { "list-style-position": "outisde" }, exampleTemplate: listExampleTemplate, summary: "Outside" },
+    "lsp-outside": { properties: { "list-style-position": "outside" }, exampleTemplate: listExampleTemplate, summary: "Outside" },
   }
 })
 

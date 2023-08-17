@@ -88,6 +88,7 @@ const borderWidthVariables = VariableRegistry.register(
     "2rem",
   ],
   "Border widths",
+  "Border widths",
 )
 const borderWidthScale = new VariableBasedScaleWithZero(borderWidthVariables)
 

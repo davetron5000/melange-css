@@ -26,19 +26,22 @@ class DocFilename {
 }
 export default class DocBuilder {
   constructor({dir, templates}) {
-    this.dir = dir
+    this.dir       = dir
     this.templates = templates
+
     if (Object.keys(this.templates).length == 0) {
       throw `There are no templates`
     }
+
     if (!this.templates.mediaQueries) { throw `There is no mediaQueries template` }
-    if (!this.templates.index) { throw `There is no index template` }
-    if (!this.templates.grouping) { throw `There is no grouping template` }
+    if (!this.templates.index)        { throw `There is no index template` }
+    if (!this.templates.grouping)     { throw `There is no grouping template` }
     if (!this.templates.classesIndex) { throw `There is no classesIndex template` }
-    if (!this.templates.variables) { throw `There is no variables template` }
+    if (!this.templates.variables)    { throw `There is no variables template` }
   }
 
-  build(metaTheme) {  
+  build(metaTheme) {
+
     let metaPropertyGroupingsByName = {}
     let doc = []
     let mediaQueries = []

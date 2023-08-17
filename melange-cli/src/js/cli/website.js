@@ -1,12 +1,13 @@
-import DocBuilder    from "../melange/builders/DocBuilder.js"
 import fs            from "node:fs";
 import { parseArgs } from "node:util";
 import process       from "node:process";
 import path          from "node:path";
-import melange       from "../melange/melange.js"
+import ejs           from "ejs"
 
-export default class Doc {
-  summary() { return "Generate reference documentation" }
+export default class ReferenceDoc {
+
+  summary() { return "Generate Melange website" }
+
   run(args) {
     const {
       values,
@@ -32,7 +33,7 @@ export default class Doc {
     })
 
     if (values.help) {
-      console.log("Usage: melange docs [options]")
+      console.log("Usage: melange website [options]")
       console.log()
       console.log("OPTIONS")
       console.log()
@@ -51,18 +52,19 @@ export default class Doc {
         console.log("missing --templates")
         process.exit(1)
       } 
+
       const templates = {
       }
-      fs.readdirSync(values.templates).forEach((file) => {
+      const templatesRoot = path.resolve(values.templates)
+
+      fs.readdirSync(templatesRoot).forEach((file) => {
         if (file.match(/\.html$/)) {
           const basename = path.basename(file, ".html")
-          templates[basename] = path.resolve(values.templates + "/" + file)
+          if (!basename.startsWith("_")) {
+            templates[basename] = path.resolve(templatesRoot + "/" + file)
+          }
         }
       })
-      if (templates["ROOT"]) {
-        throw `You cannot have a file named 'ROOT.html'`
-      }
-      templates["ROOT"] = path.resolve(values.templates)
 
       if (fs.existsSync(values.dir)) {
         if (values.force) {
@@ -76,9 +78,24 @@ export default class Doc {
       }
       fs.mkdirSync(values.dir, {recursive: true})
 
-      const builder = new DocBuilder({dir: values.dir, templates: templates})
-      melange.checkForDupes()
-      builder.build(melange)
+      Object.entries(templates).forEach( ([basename, template]) => {
+        ejs.renderFile(
+          template,
+          {
+          },
+          { 
+            root: templatesRoot,
+          },
+          (err, str) => {
+            if (err)  {
+              throw err
+            }
+            const fd = fs.openSync(`${values.dir}/${basename}.html`, "w")
+            fs.writeFileSync(fd, str)
+            fs.closeSync(fd)
+          }
+        )
+      })
     }
   }
 }

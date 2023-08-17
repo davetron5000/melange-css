@@ -60,8 +60,11 @@ local-docs: $(DOCS_DIR)
 .PHONY: local-docs
 
 $(DOCS_DIR): $(SRC_FILES) $(SRC_HTML_FILES)
-	@node $(SRC_JS_DIR)/cli/melange.js docs --templates $(SRC_HTML_DIR)/reference --dir $(@) --force
-	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@)/melange.css
+	@node $(SRC_JS_DIR)/cli/melange.js website --templates $(SRC_HTML_DIR)/ --dir $(DOCS_DIR)/ --force
+	@node $(SRC_JS_DIR)/cli/melange.js reference-docs --templates $(SRC_HTML_DIR)/reference --dir $(DOCS_DIR)/reference --force
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(DOCS_DIR)/melange.css
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(DOCS_DIR)/reference/melange.css
+	@cp $(SRC_HTML_DIR)/*.png $(DOCS_DIR)
 
 clean:
 	@rm -rf $(DIST_DIR)
