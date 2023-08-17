@@ -9,16 +9,18 @@ help:
 .PHONY: help
 
 # Inputs
-SRC_LIB_FILES=$(shell find src/js/lib -name '*.js')
-SRC_META_THEME_FILES=$(shell find src/js/melange -name '*.js')
-SRC_CLI_FILES=$(shell find src/js/cli -name '*.js')
+SRC_DIR=melange-cli/src
+SRC_JS_DIR=$(SRC_DIR)/js
+SRC_LIB_FILES=$(shell find $(SRC_JS_DIR)/lib -name '*.js')
+SRC_META_THEME_FILES=$(shell find $(SRC_JS_DIR)/melange -name '*.js')
+SRC_CLI_FILES=$(shell find $(SRC_JS_DIR)/cli -name '*.js')
 SRC_FILES=$(SRC_LIB_FILES) $(SRC_META_THEME_FILES) $(SRC_CLI_FILES)
-SRC_HTML_DIR=src/html
-SRC_HTML_FILES=$(shell find src/html -name '*.html')
+SRC_HTML_DIR=$(SRC_DIR)/html
+SRC_HTML_FILES=$(shell find $(SRC_HTML_DIR) -name '*.html')
 # Outputs
 #
 ## Distro
-DIST_DIR=dist
+DIST_DIR=melange-css
 
 MONLITHIC_CSS=$(DIST_DIR)/melange.css
 MONLITHIC_MINIFIED_CSS=$(DIST_DIR)/melange.min.css
@@ -32,7 +34,7 @@ METADATA=$(DIST_DIR)/melange-metadata.json
 
 ## Docs
 
-DOCS_DIR=docs
+DOCS_DIR=$(DIST_DIR)/docs
 
 # Rules
 distro: $(MONLITHIC_FILES) $(SPLIT_FILES) $(METADATA)
@@ -44,22 +46,22 @@ $(DIST_DIR):
 
 $(MONLITHIC_MINIFIED_CSS): $(MONLITHIC_CSS)
 	@echo "Minifying $(DIST_DIR)/melange.css"
-	@npx css-minify -o $(DIST_DIR) -f $(DIST_DIR)/melange.css
+	@cd $(DIST_DIR) && npx css-minify -o . -f melange.css ; cd ..
 
 $(MONLITHIC_CSS) $(METADATA): $(DIST_DIR) $(SRC_FILES)
 	@echo "Building $(@)"
-	@node src/js/cli/melange.js css --css $(MONLITHIC_CSS) --meta-data $(METADATA)
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(MONLITHIC_CSS) --meta-data $(METADATA)
 
 $(SPLIT_VARS_ONLY_CSS) $(SPLIT_STYLES_ONLY_CSS): $(DIST_DIR) $(SRC_FILES)
 	@echo "Building $(SPLIT_VARS_ONLY_CSS) and $(SPLIT_STYLES_ONLY_CSS)"
-	@node src/js/cli/melange.js css --css $(SPLIT_STYLES_ONLY_CSS) --variables $(SPLIT_VARS_ONLY_CSS) --meta-data $(METADATA)
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(SPLIT_STYLES_ONLY_CSS) --variables $(SPLIT_VARS_ONLY_CSS) --meta-data $(METADATA)
 
 local-docs: $(DOCS_DIR)
 .PHONY: local-docs
 
 $(DOCS_DIR): $(SRC_FILES) $(SRC_HTML_FILES)
-	@node src/js/cli/melange.js docs --templates $(SRC_HTML_DIR)/reference --dir $(@) --force
-	@node src/js/cli/melange.js css --css $(@)/melange.css
+	@node $(SRC_JS_DIR)/cli/melange.js docs --templates $(SRC_HTML_DIR)/reference --dir $(@) --force
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@)/melange.css
 
 clean:
 	@rm -rf $(DIST_DIR)

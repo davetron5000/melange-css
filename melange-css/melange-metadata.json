@@ -1,0 +1,52 @@
+{
+  "melangeMetaData": {
+  "mediaQueries": {
+      "default---no-query": {
+            "name": "Default / No Query",
+            "isDefault": true,
+            "variableNameQualifier": "",
+            "mediaQuery": ""
+      },
+      "not-small-width": {
+            "name": "Not Small Width",
+            "isDefault": false,
+            "variableNameQualifier": "ns",
+            "mediaQuery": "@media screen and (min-width: 30em)",
+            "breakpoint": {
+                  "minWidth": "30em"
+            }
+      },
+      "medium-width": {
+            "name": "Medium Width",
+            "isDefault": false,
+            "variableNameQualifier": "m",
+            "mediaQuery": "@media screen and (min-width: 30em) and (max-width: 60em)",
+            "breakpoint": {
+                  "minWidth": "30em",
+                  "maxWidth": "60em"
+            }
+      },
+      "large-width": {
+            "name": "Large Width",
+            "isDefault": false,
+            "variableNameQualifier": "l",
+            "mediaQuery": "@media screen and (min-width: 60em)",
+            "breakpoint": {
+                  "minWidth": "60em"
+            }
+      },
+      "dark-mode": {
+            "name": "Dark Mode",
+            "isDefault": false,
+            "variableNameQualifier": "dm",
+            "mediaQuery": "@media (prefers-color-scheme: dark)"
+      },
+      "reduced-motion": {
+            "name": "Reduced Motion",
+            "isDefault": false,
+            "variableNameQualifier": "rm",
+            "mediaQuery": "@media (prefers-reduced-motion: reduce)"
+      }
+}
+  }
+}

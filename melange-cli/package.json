@@ -1,0 +1,26 @@
+{
+  "name": "melange-cli",
+  "version": "1.0.0-alpha1",
+  "description": "CLI for Melange CSS",
+  "keywords": [ "css" ],
+  "homepage": "https://naildrivin5.com",
+  "bugs": {
+    "url": "https://naildrivin5.com",
+    "email": "davec@naildrivin5.com"
+  },
+  "main": "src/js/index.js",
+  "bin": {
+    "melange-css": "src/js/cli/melange.js"
+  },
+  "repository": "https://github.com/davetron5000/melange-css",
+  "type": "module",
+  "dependencies": {
+    "ejs": "^3.1.9"
+  },
+  "author": {
+    "name": "David Copeland",
+    "email": "davec@naildrivin5.com",
+    "url": "https://naildrivin5.com"
+  },
+  "license": "Hippocratic-2.1"
+}
