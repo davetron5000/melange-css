@@ -8,6 +8,9 @@
       <% if (title) { %>
         - <%= title %>
       <% } %>
+      <% if ( (typeof subtitle !== "undefined") && subtitle) { %>
+        - <%= subtitle %>
+      <% } %>
     </title>
     <link href="melange.css" rel="stylesheet" />
   </head>
@@ -21,7 +24,12 @@
             </a>
           </h1>
           <% if (title && ( typeof showTitleInNav === "undefined" || showTitleInNav)) { %>
-          <h2 class="tc tl-ns f-4 f-5-ns ma-0 mb-3"><%= title %></h2>
+          <h2 class="tc tl-ns f-4 f-5-ns ma-0 mb-3">
+            <%= title %>
+            <% if ( (typeof subtitle !== "undefined") && subtitle) { %>
+            - <%= subtitle %>
+            <% } %>
+          </h2>
           <% } %>
         </div>
       </div>

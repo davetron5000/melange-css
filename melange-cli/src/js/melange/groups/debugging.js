@@ -11,7 +11,7 @@ const debugExampleTemplate = (fullSelector) => {
     <li class="ma-3"><p class="measure">
       The spice must flow.
     </p></li>
-    <li class="b-a br-2 b--purple><p class="measure">
+    <li class="b-a br-2 bc-purple><p class="measure">
       History is written on the sands of Arrakis.
     </p></li>
     <li class="pa-3"><p class="measure">

@@ -18,7 +18,7 @@ const listExampleTemplate = (selector) => {
 `
   return new Example({
     htmlForDocs: html,
-    markupForRendering: `<div class="ba b--dashed b--gray pa-3">${html}</div>`
+    markupForRendering: `<div class="ba bs-dashed bc-gray pa-3">${html}</div>`
   })
 }
 const listStyleType = new MetaProperty({

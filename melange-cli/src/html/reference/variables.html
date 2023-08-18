@@ -19,7 +19,7 @@
 <p class="measure-wide lh-copy">
   Numeric steps go from smaller to larger by default, and you are advised to adhere to this convention.
 </p>
-<nav class="measure-wide mv-2 pt-2 pb-3 bb b--blue-light flex flex-wrap items-baseline">
+<nav class="measure-wide mv-2 pt-2 pb-3 bb bc-blue-light flex flex-wrap items-baseline">
 <% VariableRegistry.eachSetOfVariables( (baseName, variablesSet) => { %>
   <% if (!variablesSet.derived) { %> 
     <a class="f-2 mr-3 blue-dark lh-copy" href="#<%= new Anchor(baseName) %>"><%= variablesSet.summary %></a>
@@ -49,7 +49,7 @@
         <% Object.values(variablesSet.variables).forEach( (melangeVariable) => { %>
           <tr data-variable="<%= melangeVariable._variableName() %>">
             <td class="ws-nowrap pa-2">
-              <code class="ba b--orange-light orange-darkest dib pa-3 br-1 ws-nowrap mr-3-ns">
+              <code class="ba bc-orange-light orange-darkest dib pa-3 br-1 ws-nowrap mr-3-ns">
                 <%= melangeVariable._variableName() %>
               </code>
             </td>

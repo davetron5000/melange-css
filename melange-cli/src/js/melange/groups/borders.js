@@ -16,7 +16,7 @@ const borderExampleTemplate = (selector) => {
 
 const borderWidthExampleTemplate = (selector) => {
   return new Example({
-    markupForRendering: `<div class="ws-nowrap ba b--solid pv-4 flex items-center justify-center tc bg-gray-lightest ${selector}">.${selector}</div>`
+    markupForRendering: `<div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest ${selector}">.${selector}</div>`
   })
 }
 
@@ -79,11 +79,11 @@ const borderStyleMetaProperty = new MetaProperty({
     }),
   ],
   cssClassTemplates: [
-    new CSSClassTemplate("b-", "border-style", { exampleTemplate: borderExampleTemplate, summary: "all" }),
-    new CSSClassTemplate("bl-", "border-left-style", { exampleTemplate: borderExampleTemplate, summary: "left" }),
-    new CSSClassTemplate("br-", "border-right-style", { exampleTemplate: borderExampleTemplate, summary: "right" }),
-    new CSSClassTemplate("bt-", "border-top-style", { exampleTemplate: borderExampleTemplate, summary: "top" }),
-    new CSSClassTemplate("bb-", "border-bottom-style", { exampleTemplate: borderExampleTemplate, summary: "bottom" }),
+    new CSSClassTemplate("bs", "border-style", { exampleTemplate: borderExampleTemplate, summary: "all" }),
+    new CSSClassTemplate("bls", "border-left-style", { exampleTemplate: borderExampleTemplate, summary: "left" }),
+    new CSSClassTemplate("brs", "border-right-style", { exampleTemplate: borderExampleTemplate, summary: "right" }),
+    new CSSClassTemplate("bts", "border-top-style", { exampleTemplate: borderExampleTemplate, summary: "top" }),
+    new CSSClassTemplate("bbs", "border-bottom-style", { exampleTemplate: borderExampleTemplate, summary: "bottom" }),
   ]
 })
 

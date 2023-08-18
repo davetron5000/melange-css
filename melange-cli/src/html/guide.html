@@ -1,393 +1,60 @@
 <%- include( "/_header.html", { title: "Guide" } ) %>
 <section class="pa-1 w-90 w-60-ns mh-auto">
-  <h3 class="f-5 mb-0 tc">Tenets</h3>
-  <ul class="ma-0 mt-2 pa-0 lsp-inside lst-none tc">
-    <li class="f-3 measure-wide lh-copy mb-2 fw-bold mh-auto">
+  <h3 class="f-5 mb-0 mt-2">Tenets</h3>
+  <ul class="ma-0 mt-2 pa-0 lsp-inside lst-none">
+    <li class="f-3 measure-wide lh-copy mb-2 fw-bold">
       Use semantic markup
     </li>
-    <li class="f-3 measure-wide lh-copy mb-2 fw-bold mh-auto">
+    <li class="f-3 measure-wide lh-copy mb-2 fw-bold">
       Design for all screens; customize for larger screens.
     </li>
-    <li class="f-3 measure-wide lh-copy mb-2 fw-bold mh-auto">
+    <li class="f-3 measure-wide lh-copy mb-2 fw-bold">
       CSS is <strong class="fw-normal">not</strong> the unit of component re-use.
     </li>
-    <li class="f-3 measure-wide lh-copy mb-2 fw-bold mh-auto">
+    <li class="f-3 measure-wide lh-copy mb-2 fw-bold">
       A limited set of sizes can solve most design problems.
     </li>
   </ul>
-  <p class="measure-wide lh-copy mh-auto tc">
+  <p class="measure-wide lh-copy">
     See <a href="why.html" class="blue-dark">“But Why?”</a> for justification and background on these tenets.
   </p>
 </section>
-<section class="bg-blue-darkest blue-lightest pa-3">
-  <nav class="f-3 mh-auto tc mv-4 flex flex-wrap items-baseline justify-center">
-    <a class="white dib mh-2" href="#overview">Step-by-Step Overview</a>
-    <a class="white dib mh-2" href="#media-queries">Using Media Queries &amp; Breakpoints</a>
-    <a class="white dib mh-2" href="#reuse">Re-using Duplicate Classes</a>
-    <a class="white dib mh-2" href="#customizing">Customzing</a>
+<section class="bg-blue-lightest blue-darkest">
+  <nav class="w-90 w-60-ns mh-auto ph-1 pv-3">
+    <h3 class="f-5 mv-2">Guides</h3>
+    <ul class="pa-0 ma-0 lst-none mh-auto">
+      <li>
+        <a class="f-4 black-ish dib" href="guide-intro.html">Step-by-Step Overview</a>
+        <p class="measure lh-copy">
+          Learn how to style a component one step at a time, by using Melagne's classes.
+        </p>
+      </li>
+      <li>
+        <a class="f-4 black-ish dib" href="guide-naming-conventions.html">Class Naming Conventions</a>
+        <p class="measure lh-copy">
+          Melange's class names are terse, but they following straightforward conventions.
+        </p>
+      </li>
+      <li>
+        <a class="f-4 black-ish dib" href="guide-media-queries.html">Using Media Queries &amp; Breakpoints</a>
+        <p class="measure lh-copy">
+          Melange allows you to use the same markup, but apply different styles for different media queries to make sure your app looks good on mobile and desktop.
+        </p>
+      </li>
+      <li>
+        <a class="f-4 black-ish dib" href="guide-duplication.html">Re-using Duplicate Classes</a>
+        <p class="measure lh-copy">
+          Because you don't write CSS when using Melange, you'll use your web app's templating system for re-use.
+        </p>
+      </li>
+      <li>
+        <a class="f-4 black-ish dib" href="guide-customizing.html">Customzing Melange</a>
+        <p class="measure lh-copy">
+          Melange can  be customized to your needs, from changing fonts and colors, to creating an entirely different grid and scale.
+        </p>
+      </li>
+    </ul>
   </nav>
-</section>
-<section class="pa-3 bg-blue-lightest blue-darkest">
-  <div class="pa-1 w-90 w-60-ns mh-auto">
-    <a name="overview"></a>
-    <h3 class="f-4">A beginning is a very delicate time</h3>
-    <p class="measure-wide lh-copy">
-      Let's style something with Melange.  We'll make the so-called “media component” that looks like this:
-    </p>
-    <div class="bg-white debug-grid pa-3">
-      <div class="ba ma-2 br-2">
-        <div class="flex items-center justify-start pa-2">
-          <img src="/muad-dib.png" class="db w-5 h-5 ba br-3 mr-2" />
-          <div class="w-auto ml-2">
-            <div class="f-4">Paul Muad'Dib</div>
-          </div>
-        </div>
-        <div class="pa-2 bg-black white">
-          <div class="f-3 i lh-copy">Emperor of the Known Universe</div>
-          <div><a href="https://arrakis.planet" class="f-1 blue-lightest">arrakis.planet</a></div>
-        </div>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      If you do not know how to create these using CSS, Melange will not be able to help you do that.  But, if you do, Melange should make it easier.
-    </p>
-    <p class="measure-wide lh-copy">
-      First, let's get some markup going and try to use semantic tags where we can:
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;img src="/muad-dib.png" width="150" height="150" /&gt;
-&lt;h4&gt;Paul Muad'Dib&lt;/h4&gt;
-&lt;h5&gt;Emperor of the Known Universe&lt;/h5&gt;
-&lt;a href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;</code>
-    <div class="bg-white debug-grid pa-3">
-      <img src="/muad-dib.png" width="150" height="150" />
-      <h4>Paul Muad'Dib</h4>
-      <h5>Emperor of the Known Universe</h5>
-      <a href="https://arrakis.planet">arrakis.planet</a>
-    </div>
-    <p class="measure-wide lh-copy">
-      Let's place things where they should go.  There are a lot of ways to achieve this, but we'll use flexbox.  We'll put a <code>div</code> around the image and name and have those align themselves along the center.  We'll also put the entire thing in a <code>div</code> since we know we need a border later.
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div&gt;
-  &lt;div class="<span class="tdu fw-bold">flex items-center</span>"&gt;
-    &lt;img src="/muad-dib.png" width="150" height="150" /&gt;
-    &lt;h4&gt;Paul Muad'Dib&lt;/h4&gt;
-  &lt;/div&gt;
-  &lt;h5&gt;Emperor of the Known Universe&lt;/h5&gt;
-  &lt;a href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
-&lt;/div&gt;</code>
-    <div class="bg-white debug-grid pa-3">
-      <div>
-        <div class="flex items-center">
-          <img src="/muad-dib.png" width="150" height="150" />
-          <h4>Paul Muad'Dib</h4>
-        </div>
-        <h5>Emperor of the Known Universe</h5>
-        <a href="https://arrakis.planet">arrakis.planet</a>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      The font sizes are all wrong, now.  Let's fix that.  Note that unlike normal CSS or TailwindCSS, Melange only provides a few sizes for text.  Size 1 is the smallest, 2 is the body font size, and 7 is the largest.  Let's try changing the sizes. The title also needs to be in italics.
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div&gt;
-  &lt;div class="flex items-center"&gt;
-    &lt;img src="/muad-dib.png" width="150" height="150" /&gt;
-    &lt;h4 class="<span class="tdu fw-bold">f-5</span>"&gt;Paul Muad'Dib&lt;/h4&gt;
-  &lt;/div&gt;
-  &lt;h5 class="<span class="tdu fw-bold">f-3 i</span>"&gt;Emperor of the Known Universe&lt;/h5&gt;
-  &lt;a href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
-&lt;/div&gt;</code>
-    <div class="bg-white debug-grid pa-3">
-      <div>
-        <div class="flex items-center">
-          <img src="/muad-dib.png" width="150" height="150" />
-          <h4 class="f-5">Paul Muad'Dib</h4>
-        </div>
-        <h5 class="f-3 i">Emperor of the Known Universe</h5>
-        <a href="https://arrakis.planet">arrakis.planet</a>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      The name is too large, let's change that to <code>f-4</code>.  While we're at it, let's fix the image size and the spacing between it and the name.  Melange provides a size scale from 1 (smallest) to 7 (largest).  For the image, let's try the fourth step for its dimensions.  We'll use the second step for space between, using the left margin to create that space.
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div&gt;
-  &lt;div class="flex items-center"&gt;
-    &lt;img src="/muad-dib.png" class="<span class="tdu fw-bold">w-4 h-4</span>" /&gt;
-    &lt;h4 class="<span class="tdu fw-bold">f-4 ml-2</span>"&gt;Paul Muad'Dib&lt;/h4&gt;
-  &lt;/div&gt;
-  &lt;h5 class="<span class="tdu fw-bold">f-3 i</span>"&gt;Emperor of the Known Universe&lt;/h5&gt;
-  &lt;a href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
-&lt;/div&gt;</code>
-    <div class="bg-white debug-grid pa-3">
-      <div>
-        <div class="flex items-center">
-          <img src="/muad-dib.png" class="w-4 h-4" />
-          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
-        </div>
-        <h5 class="f-3 i">Emperor of the Known Universe</h5>
-        <a href="https://arrakis.planet">arrakis.planet</a>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      The image is now too small, so let's try the fifth step of the scale.  We'll also add the border radius. There is a scale for that, too, so we'll try the third one.
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div&gt;
-  &lt;div class="flex items-center"&gt;
-    &lt;img src="/muad-dib.png" class="<span class="tdu fw-bold">w-5 h-5 br-3</span>" /&gt;
-    &lt;h4 class="f-4 ml-2"&gt;Paul Muad'Dib&lt;/h4&gt;
-  &lt;/div&gt;
-  &lt;h5 class="<span class="tdu fw-bold">f-3 i</span>"&gt;Emperor of the Known Universe&lt;/h5&gt;
-  &lt;a href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
-&lt;/div&gt;</code>
-    <div class="bg-white debug-grid pa-3">
-      <div>
-        <div class="flex items-center">
-          <img src="/muad-dib.png" class="w-5 h-5 br-3" />
-          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
-        </div>
-        <h5 class="f-3 i">Emperor of the Known Universe</h5>
-        <a href="https://arrakis.planet">arrakis.planet</a>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      Hopefully, you can see how this works.  Let's fix a few more things.  We need to make the title and link on black background, and the text needs to be closer together.
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div&gt;
-  &lt;div class="flex items-center"&gt;
-    &lt;img src="/muad-dib.png" class="<span class="tdu fw-bold">w-5 h-5 br-3</span>" /&gt;
-    &lt;h4 class="f-4 ml-2"&gt;Paul Muad'Dib&lt;/h4&gt;
-  &lt;/div&gt;
-  <span class="tdu fw-bold">&lt;div class="bg-black white pa-2"&gt;</span>
-    &lt;h5 class="<span class="tdu fw-bold">f-3 i mv-2</span>"&gt;Emperor of the Known Universe&lt;/h5&gt;
-    &lt;a class="<span class="tdu fw-bold">blue-light</span>" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code>
-    <div class="bg-white debug-grid pa-3">
-      <div>
-        <div class="flex items-center">
-          <img src="/muad-dib.png" class="w-5 h-5 br-3" />
-          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
-        </div>
-        <div class="bg-black white pa-2">
-          <h5 class="f-3 i mv-2">Emperor of the Known Universe</h5>
-          <a class="blue-light" href="https://arrakis.planet">arrakis.planet</a>
-        </div>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      Now, let's surround the entire thing with a border and use the same radius we used for the image.
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div class="<span class="tdu fw-bold">ba br-3</span>"&gt;
-  &lt;div class="flex items-center"&gt;
-    &lt;img src="/muad-dib.png" class="w-5 h-5 br-3" /&gt;
-    &lt;h4 class="f-4 ml-2"&gt;Paul Muad'Dib&lt;/h4&gt;
-  &lt;/div&gt;
-  &lt;div class="bg-black white pa-2"&gt;
-    &lt;h5 class="f-3 i mv-2"&gt;Emperor of the Known Universe&lt;/h5&gt;
-    &lt;a class="blue-light" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code>
-    <div class="bg-white debug-grid pa-3">
-      <div class="ba br-3">
-        <div class="flex items-center">
-          <img src="/muad-dib.png" class="w-5 h-5 br-3" />
-          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
-        </div>
-        <div class="bg-black white pa-2">
-          <h5 class="f-3 i mv-2">Emperor of the Known Universe</h5>
-          <a class="blue-light" href="https://arrakis.planet">arrakis.planet</a>
-        </div>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      We can clean this up with some additional border radius and margins.
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
-  &lt;div class="flex items-center"&gt;
-    &lt;img src="/muad-dib.png" class="<span class="tdu fw-bold">ml-2</span> w-5 h-5 br-3" /&gt;
-    &lt;h4 class="f-4 ml-2"&gt;Paul Muad'Dib&lt;/h4&gt;
-  &lt;/div&gt;
-  &lt;div class="bg-black white pa-2 <span class="tdu fw-bold">br-bottom-3</span>"&gt;
-    &lt;h5 class="f-3 i mv-2"&gt;Emperor of the Known Universe&lt;/h5&gt;
-    &lt;a class="blue-light" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code>
-    <div class="bg-white debug-grid pa-3">
-      <div class="ba br-3">
-        <div class="flex items-center">
-          <img src="/muad-dib.png" class="ml-2 w-5 h-5 br-3" />
-          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
-        </div>
-        <div class="bg-black white pa-2 br-bottom-3">
-          <h5 class="f-3 i mv-2">Emperor of the Known Universe</h5>
-          <a class="blue-light" href="https://arrakis.planet">arrakis.planet</a>
-        </div>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      This looks pretty close.  If you were following along, change some of the spacings. You'll notice that everything still looks relatively cohesive.  This is the advantage of the grid-based design system.
-    </p>
-  </div>
-  <div class="pa-1 w-90 w-60-ns mh-auto">
-    <a name="media-queries"></a>
-    <h3 class="f-4">Using Media Queries &amp; Breakpoints</h3>
-    <p class="measure-wide lh-copy">
-      Melange's classes apply to all screens, which implies any design using those classes affects mobile devices. If a design cannot work on both small and large screens, you can use suffixed classes to target largest screens, thus achieving a mobile-first design.
-    </p>
-    <p class="measure-wide lh-copy">
-      Suppose we wish the following component to appear like so on desktop:
-    </p>
-    <div class="bg-white debug-grid pa-3">
-      <div class="ba br-3">
-        <div class="flex items-center">
-          <img src="/muad-dib.png" class="ml-2 w-5 h-5 br-3" />
-          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
-        </div>
-        <div class="bg-black white pa-2 br-bottom-3">
-          <h5 class="f-3 i mv-2">Emperor of the Known Universe</h5>
-          <a class="blue-light" href="https://arrakis.planet">arrakis.planet</a>
-        </div>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      and like so on mobile:
-    </p>
-    <div class="bg-white debug-grid pa-3">
-      <div class="ba br-3">
-        <div class="flex flex-column items-center">
-          <img src="/muad-dib.png" class="mt-2 w-5 h-5 br-3" />
-          <h4 class="f-4 mb-2 mt-1">Paul Muad'Dib</h4>
-        </div>
-        <div class="bg-black white pa-2 br-bottom-3">
-          <h5 class="tc f-3 i mv-2">Emperor of the Known Universe</h5>
-          <a class="db tc blue-light" href="https://arrakis.planet">arrakis.planet</a>
-        </div>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      Ideally, this can be achieved with the same markup.  Start by making it work for mobile screens:
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
-  &lt;div class="flex flex-column items-center"&gt;
-    &lt;img src="/muad-dib.png" class="mt-2 w-5 h-5 br-3" /&gt;
-    &lt;h4 class="f-4 mb-2 mt-1"&gt;Paul Muad'Dib&lt;/h4&gt;
-  &lt;/div&gt;
-  &lt;div class="bg-black white pa-2 br-bottom-3"&gt;
-    &lt;h5 class="tc f-3 i mv-2"&gt;Emperor of the Known Universe&lt;/h5&gt;
-    &lt;a class="db tc blue-light" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code>
-    <p class="measure-wide lh-copy">
-      To change the design for larger screens, we must: 1) arrange the image and name horizontally, with appropriate padding for that layout, and 2) align the title and link left.  To do this, you can use Melange's classes suffixed with <code>-ns</code> for “not small”, meaning any screen whose width is not considered small (thus, mobile).
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
-  &lt;div class="flex flex-column items-center <span class="tdu fw-bold">flex-row-ns mv-3-ns</span>"&gt;
-    &lt;img src="/muad-dib.png" class="mt-2 w-5 h-5 br-3 <span class="tdu fw-bold">mt-0-ns ml-2-ns</span>" /&gt;
-    &lt;h4 class="f-4 mb-2 mt-1"&gt;Paul Muad'Dib&lt;/h4&gt;
-  &lt;/div&gt;
-  &lt;div class="bg-black white pa-2 br-bottom-3"&gt;
-  &lt;h5 class="tc f-3 i mv-2 <span class="tdu fw-bold">tl-ns</span>"&gt;Emperor of the Known Universe&lt;/h5&gt;
-  &lt;a class="db tc blue-light <span class="tdu fw-bold">tl-ns</span>" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code>
-    <div class="bg-white debug-grid pa-3">
-      <div class="ba br-3">
-        <div class="flex flex-column items-center flex-row-ns mv-3-ns">
-          <img src="/muad-dib.png" class="mt-2 w-5 h-5 br-3 mt-0-ns ml-2-ns" />
-          <h4 class="f-4 mb-2 mt-1 ma0-ns ml-2-ns">Paul Muad'Dib</h4>
-        </div>
-        <div class="bg-black white pa-2 br-bottom-3">
-          <h5 class="tc f-3 i mv-2 tl-ns">Emperor of the Known Universe</h5>
-          <a class="db tc blue-light tl-ns" href="https://arrakis.planet">arrakis.planet</a>
-        </div>
-      </div>
-    </div>
-    <p class="measure-wide lh-copy">
-      If you view this page on a mobile device (or using the responsive mode of your browser), you'll see that the styling changes as desired.
-    </p>
-  </div>
-  <div class="pa-1 w-90 w-60-ns mh-auto">
-    <a name="reuse"></a>
-    <h3 class="f-4">Re-using Duplicate Classes</h3>
-    <p class="measure-wide lh-copy">
-      You can certainly imagine that on any reasonable app, you will be repeating strings of classes and this can lead to issues with managing change, or simply re-using commonly-grouped styles.  For example, you may standardize on buttons with a horizontal padding of 3 and a vertical padding of 2 and centered text, with a border radius of 4.
-    </p>
-    <p class="measure-wide lh-copy">
-      If you are building a site by hand-editing HTML and CSS, abstracting these classes would very well be difficult to achieve.  One way to use CSS is by creating a name for such styling and re-using that name everywhere.  But most people aren't writing HTML files, they are building web apps, and web apps invariable have a templating system.
-    </p>
-    <p class="measure-wide lh-copy">
-      Melange assumes you can use that templating system to abstract any combination of markup and classes you need to re-use.  Consider button styling with a few options: a small or a large button, and a primary and a secondary button:
-    </p>
-    <div class="flex items-center justify-center">
-      <button class="ph-4 pv-3 f-4 tc br-4 ba fw-bold bg-blue-darkest white ma-2">Big Primary</button>
-      <button class="ph-3 pv-2 f-3 tc br-3 ba fw-bold bg-blue-darkest white ma-2">Small Primary</button>
-    </div>
-    <div class="flex items-center justify-center">
-      <button class="ph-4 pv-3 f-4 tc br-4 ba fw-3 bg-blue-darkest black ma-2">Big Secondary</button>
-      <button class="ph-3 pv-2 f-3 tc br-3 ba fw-3 bg-blue-darkest black ma-2">Small Secondary</button>
-    </div>
-    <p class="measure-wide lh-copy">
-      Your templating system, including front-end frameworks like React, should be able to provide a way to generate this markup based on parameters or properties.  For example:
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">
-function Button({size,type,label}) {
-  const dimensions = size == "big"     ? "ph-4 pv-3 br-4 f-4"
-                                       : "ph-3 pv-2 br-3 f-3"
-  const colors     = type == "primary" ? "bg-blue-darkest white"
-                                       : "bg-white blue-darkest"
-  const cssClasses = `${dimensions} ${colors} ba tc`
-  return (
-    &lt;button className={cssClasses}&gt;
-      { label }
-    &lt;/button&gt;
-  )
-}
-    </code>
-    <p class="measure-wide lh-copy">
-    Or, in Rails:
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">
-def styled_button(size, type, label)
-  dimensions = size == "big"     ? "ph-4 pv-3 br-4 f-4"
-                                 : "ph-3 pv-2 br-3 f-3"
-  colors     = type == "primary" ? "bg-blue-darkest white"
-                                 : "bg-white blue-darkest"
-  const cssClasses = `${dimensions} ${colors} ba tc`
-  content_tag(:button, class: "#{dimensions} #{colors} ba tc") do
-    label
-  end
-end
-    </code>
-    <p class="measure-wide lh-copy">
-      These are just examples.  You can do it however you want.  And, because Melange is just a CSS file with variables, you could certainly create your own CSS if you like:
-    </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">.button {
-  border: solid;
-  text-align: center;
-}
-.button.primary {
-  color: #fff;
-  background-color: var(--mg-bluedarkest);
-}
-.button.primary {
-  color: var(--mg-bluedarkest);
-  background-color: #fff;
-}
-.button.big {
-  border-radius: var(--mg-bw4);
-  padding: var(--mg-sp3) var(--mg-sp4);
-  font-size: var(--mg-fs4);
-}
-.button.small {
-  border-radius: var(--mg-bw3);
-  padding: var(--mg-sp2) var(--mg-sp3);
-  font-size: var(--mg-fs3);
-}</code>
-  </div>
-  <div class="pa-1 w-90 w-60-ns mh-auto">
-    <a name="customizing"></a>
-    <h3 class="f-4">Customizing</h3>
-    TODO
-  </div>
 </section>
 <article class="pa-3 bg-blue-darkest blue-lightest mh-auto pv-4">
   <a href="/reference/index.html" class="db f-4 tc blue-lightest lh-copy">Read the Reference</a>

@@ -24,7 +24,7 @@ const widthsMetaProperty = new MetaProperty({
     new CSSClassTemplate("w", "width", {
       exampleTemplate: (selector) => {
         return new Example({
-          markupForRendering: `<div class="${selector} ws-nowrap ba b--solid bg-gray-lightest gray-darkest pa-1">
+          markupForRendering: `<div class="${selector} ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
   .${selector}
 </div>`,
         })
@@ -48,7 +48,7 @@ const heightsMetaProperty = new MetaProperty({
     new CSSClassTemplate("h", "height", {
       exampleTemplate: (selector) => {
         return new Example({
-          markupForRendering: `<div class="${selector} ws-nowrap ba b--solid bg-gray-lightest gray-darkest pa-1">
+          markupForRendering: `<div class="${selector} ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
   .${selector}
 </div>`,
         })

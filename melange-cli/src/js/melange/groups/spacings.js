@@ -16,7 +16,7 @@ const paddingExampleTemplate = (selector) => {
 }
 const marginExampleTemplate = (selector) => {
   return new Example({
-    markupForRendering: `<div class="dib ba b--dashed"><div class="dib ba bg-gray-light gray-darkest ws-nowrap ${selector}">.${selector}</div></div>`
+    markupForRendering: `<div class="dib ba bs-dashed"><div class="dib ba bg-gray-light gray-darkest ws-nowrap ${selector}">.${selector}</div></div>`
   })
 }
 
@@ -63,7 +63,7 @@ const floatExampleTemplate = (selector) => {
   <div class="${selector}">.${selector}</div>
   <div>The spice must flow! Without it, space travel is impossible.</div>
 </div>`
-  const innerMarkup =  `<div class="ba b--dashed"><div class="ph-2 ba b--solid ${selector}">.${selector}</div><div class="ph-2 bg-gray-lightest" >The spice must flow! Without it, space travel is impossible.</div></div>`
+  const innerMarkup =  `<div class="ba bs-dashed"><div class="ph-2 ba bs-solid ${selector}">.${selector}</div><div class="ph-2 bg-gray-lightest" >The spice must flow! Without it, space travel is impossible.</div></div>`
   return new Example({
     htmlForDocs: html,
     markupForRendering: innerMarkup,
@@ -77,8 +77,6 @@ const floats = new MetaProperty({
       "l": "left",
       "r": "right",
       "n": "none",
-    },{
-      dashPrefix: false,
     })
   ],
   docs: [

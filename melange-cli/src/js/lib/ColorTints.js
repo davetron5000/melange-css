@@ -13,8 +13,8 @@ import VariableRegistry      from "./VariableRegistry.js"
 import Anchor                from "./Anchor.js"
 
 const colorExampleTemplate = (selector) => {
-  const onBlack = `<div class="${selector} bg-black ba b--black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
-  const onWhite = `<div class="${selector} bg-white ba b--black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onBlack = `<div class="${selector} bg-black ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onWhite = `<div class="${selector} bg-white ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
   return new Example({
     markupForRendering: `<div class="flex items-baseline justify-between">
   ${onBlack}${onWhite}
@@ -22,8 +22,8 @@ const colorExampleTemplate = (selector) => {
   })
 }
 const backgroundColorExampleTemplate = (selector) => {
-  const onBlack = `<div class="${selector} black ba b--black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
-  const onWhite = `<div class="${selector} white ba b--black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onBlack = `<div class="${selector} black ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onWhite = `<div class="${selector} white ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
   return new Example({
     markupForRendering: `<div class="flex items-baseline justify-between">
   ${onBlack}${onWhite}
@@ -129,7 +129,7 @@ export default class ColorTints {
           exampleTemplate: backgroundColorExampleTemplate,
           summary: "Background",
         }),
-        new CSSClassTemplate(`b--${colorName}`, "border-color", {
+        new CSSClassTemplate(`bc-${colorName}`, "border-color", {
           exampleTemplate: borderColorExampleTemplate,
           summary: "Border",
         }),
@@ -157,9 +157,9 @@ export default class ColorTints {
             exampleTemplate: backgroundColorExampleTemplate,
             summary: "Background",
           }),
-          new CSSClassTemplate(`b--${colorName}`, "border-color", {
+          new CSSClassTemplate(`bc-${colorName}`, "border-color", {
             exampleTemplate: borderColorExampleTemplate,
-          summary: "Border",
+            summary: "Border",
           }),
         ]
       })
@@ -194,7 +194,7 @@ export default class ColorTints {
       metaProperties: metaProperties,
       mediaQueries: this.supportedMediaQueries,
       docs: [
-        "All colors can be used for text, borders, or backgrounds by using the color name and tint on its own (for text), with <code>b--</code> (for borders), or <code>bg-</code> (for backgrounds).  Hover styles are available by prefixing <code>hover-</code> in front of the class",
+        "All colors can be used for text, borders, or backgrounds by using the color name and tint on its own (for text), with <code>bc-</code> (for borders), or <code>bg-</code> (for backgrounds).  Hover styles are available by prefixing <code>hover-</code> in front of the class",
       ],
       summarization: summarization.join("\n")
     })

@@ -89,7 +89,7 @@ const leading = new MetaProperty({
 })
 
 const tracking = new MetaProperty({
-  name: "Tracking",
+  name: "Tracking / Letter Spacing",
   scales: [
     new Scale({
       "": "0.1em",
@@ -171,7 +171,7 @@ experience from the originals.`
     htmlForDocs: `<div class="measure lh-copy ${selector}">
   ${copy}
 </div>`,
-    markupForRendering: `<div class="ph-4 pv-2 ba b--gray bg-gray-lightest"><div class="bg-white measure lh-copy ba b--dashed ${selector}">
+    markupForRendering: `<div class="ph-4 pv-2 ba bc-gray bg-gray-lightest"><div class="bg-white measure lh-copy ba bs-dashed ${selector}">
   ${copy}
 </div></div>`,
   })

@@ -20,11 +20,11 @@ const displayExampleTemplate = (selector) => {
 
 const clearfixExampleTemplate = (selector) => {
   return `<div>
-  <div class="dfr ba b--dashed pa-1 mb-2">
+  <div class="dfr ba bs-dashed pa-1 mb-2">
   With <code>display: flow-root</code>, the black box is safe.
     <div class="dib w-5 h-5 bg-black fl">&nbsp;</div>
   </div>
-  <div class="ba b--dashed pa-1">
+  <div class="ba bs-dashed pa-1">
   Without <code>display: flow-root</code>, the black box contains only pain.
     <div class="dib w-5 h-5 bg-black fl">&nbsp;</div>
   </div>

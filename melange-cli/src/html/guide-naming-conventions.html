@@ -1,0 +1,68 @@
+<%- include( "/_header.html", { title: "Guide", subtitle: "Class Naming Conventions" } ) %>
+<article class="pa-1 w-90 w-60-ns mh-auto pb-4">
+  <a name="naming-convention"></a>
+  <h3 class="f-4">Class Naming Convention</h3>
+  <p class="measure-wide lh-copy">
+    Most Melange classes follow a few naming conventions, so when you learn one specific class, you can usually intuit other classes that are related.
+  </p>
+  <p class="measure-wide lh-copy">
+    <code><pre>
+     &#9484;&#9472;&#9472;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Short mnemonic or initialism for the CSS property</span>
+     &#9474;
+     &#9474; &#9484;&#9472;&#9472; <span class="f-1 ff-serif">Step of the scale or value for the property</span>
+     &#9474; &#9474;
+    bw-3-ns
+          &#9474;
+          &#9492;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Optional breakpoint suffix</span>
+    </pre></code>
+  </p>
+  <p class="measure-wide lh-copy">
+    There are some exceptions to this convention, namely for properties that are commonly needed and have a limited number of values. <code>display</code> and <code>border</code> are examples.
+  </p>
+  <p class="measure-wide lh-copy">
+    <code><pre>
+    &#9484;&#9472;&#9472;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Short mnemonic or initialism for the CSS property</span>
+    &#9474;
+    &#9474;&#9484;&#9472;&#9472; <span class="f-1 ff-serif">Step of the scale or value for the property</span>
+    &#9474;&#9474;
+    ba-ns
+        &#9474;
+        &#9492;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Optional breakpoint suffix</span>
+    </pre></code>
+  </p>
+  <h4 class="f-3">Colors</h4>
+  <p class="measure-wide lh-copy">
+    Melange provides 5 tints for each color and provides classes to control <code>color</code>, <code>background-color</code>, and <code>border-color</code>, along with hover-only variants of each.
+  </p>
+  <p class="measure-wide lh-copy">
+    <code><pre>
+     &#9484;&#9472;&#9472;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Optional prefix for hover states</span>
+     &#9474;
+     &#9474;     &#9484;&#9472;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Mnemonic for property, omitted for <code>color</code></span>
+     &#9474;     &#9474;
+     &#9474;     &#9474;   &#9484;&#9472;&#9472; <span class="f-1 ff-serif">Name of the color</span>
+     &#9474;     &#9474;   &#9474;
+    hover-bg-purple-dark-ns
+                      &#9474;   &#9474;
+                      &#9474;   &#9492;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Optional breakpoint suffix</span>
+                      &#9474;
+                      &#9492;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Tint of color (or omitted for the middle tint)</span>
+    </pre></code>
+  </p>
+  <p class="measure-wide lh-copy">
+    Since there's no need for several shades of black or white, Melange provides two classes for each: <code>black</code>, <code>black-ish</code>, <code>white</code>, and <code>white-ish</code>.
+  </p>
+  <h4 class="f-3">Irregular Classes</h4>
+  <p class="measure-wide lh-copy">
+    On rare occasions, Melange provides classes that don't conform to the naming conventions.  These are done for either readability or in preference to alternative terms.  Examples:
+  </p>
+  <ul class="ma-0 pa-0 lsp-inside">
+    <li class="measure lh-copy">
+      <code>measure</code>, which provides three values for <code>max-width</code> specifically for reading text.
+    </li>
+    <li class="measure lh-copy">
+      <code>tracked</code>, which provides several values for <code>letter-spacing</code>, which is more commonly known as <em>tracking</em>.
+    </li>
+  </ul>
+</article>
+<%- include( "/_footer.html") %>

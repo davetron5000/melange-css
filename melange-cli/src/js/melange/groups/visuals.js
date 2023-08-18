@@ -12,7 +12,7 @@ import mediaQueries        from "../MediaQueries.js"
 const opacityExampleTemplate = (selector) => {
   return new Example({
     htmlForDocs: `<div class="bg-black white ${selector}">\n.${selector}\n</div>`,
-    markupForRendering: `<div class="ba b--gray debug-grid"><div class="bg-black white pa-3 tc ${selector}">.${selector}</div></div>`,
+    markupForRendering: `<div class="ba bs-gray debug-grid"><div class="bg-black white pa-3 tc ${selector}">.${selector}</div></div>`,
   })
 }
 const opacity = new MetaProperty({
@@ -34,11 +34,12 @@ const cursors = new MetaProperty({
     "There are many possibly cursor values, but for brevity, esoteric ones have been omitted.",
   ],
   literalClasses: {
-    "default": { properties: { cursor: "default" }, exampleTemplate: basicTemplate, summary: "Default" },
-    "pointer": { properties: { cursor: "pointer" }, exampleTemplate: basicTemplate, summary: "Pointer" },
-    "progress": { properties: { cursor: "progress" }, exampleTemplate: basicTemplate, summary: "Progress" },
-    "move": { properties: { cursor: "move" }, exampleTemplate: basicTemplate, summary: "Move" },
-    "grab": { properties: { cursor: "grab" }, exampleTemplate: basicTemplate, summary: "Grab" }
+    "cursor-default":  { properties: { cursor: "default" }, exampleTemplate: basicTemplate, summary: "Default" },
+    "pointer":         { properties: { cursor: "pointer" }, exampleTemplate: basicTemplate, summary: "Pointer" },
+    "cursor-pointer":  { properties: { cursor: "pointer" }, exampleTemplate: basicTemplate, summary: "Pointer" },
+    "cursor-progress": { properties: { cursor: "progress" }, exampleTemplate: basicTemplate, summary: "Progress" },
+    "cursor-move":     { properties: { cursor: "move" }, exampleTemplate: basicTemplate, summary: "Move" },
+    "cursor-grab":     { properties: { cursor: "grab" }, exampleTemplate: basicTemplate, summary: "Grab" }
   }
 })
 

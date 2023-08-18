@@ -1,0 +1,93 @@
+<%- include( "/_header.html", { title: "Guide", subtitle: "Media Queries" } ) %>
+  <article class="pa-1 w-90 w-60-ns mh-auto">
+    <a name="media-queries"></a>
+    <blockquote class="f-4 i tr tracked lh-copy"><span class="f-6">“</span>
+      There’s no secret to balance. You just have to feel the waves.
+    </blockquote>
+    <p class="measure-wide lh-copy">
+      Melange's classes apply to all screens, which implies any design using those classes affects mobile devices. If a design cannot work on both small and large screens, you can use suffixed classes to target largest screens, thus achieving a mobile-first design.
+    </p>
+    <p class="measure-wide lh-copy">
+      Suppose we wish the following component to appear like so on desktop:
+    </p>
+    <div class="bg-white debug-grid pa-3">
+      <div class="ba br-3">
+        <div class="flex items-center">
+          <img src="/muad-dib.png" class="ml-2 w-5 h-5 br-3" />
+          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
+        </div>
+        <div class="bg-black white pa-2 br-bottom-3">
+          <h5 class="f-3 i mv-2">Emperor of the Known Universe</h5>
+          <a class="blue-light" href="https://arrakis.planet">arrakis.planet</a>
+        </div>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      and like so on mobile:
+    </p>
+    <div class="bg-white debug-grid pa-3 w-50 mh-auto">
+      <div class="ba br-3">
+        <div class="flex flex-column items-center">
+          <img src="/muad-dib.png" class="mt-2 w-5 h-5 br-3" />
+          <h4 class="f-4 mb-2 mt-1">Paul Muad'Dib</h4>
+        </div>
+        <div class="bg-black white pa-2 br-bottom-3">
+          <h5 class="tc f-3 i mv-2">Emperor of the Known Universe</h5>
+          <a class="db tc blue-light" href="https://arrakis.planet">arrakis.planet</a>
+        </div>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      Ideally, this can be achieved with the same markup.  Start by making it work for mobile screens:
+    </p>
+    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
+  &lt;div class="flex flex-column items-center"&gt;
+    &lt;img src="/muad-dib.png" class="mt-2 w-5 h-5 br-3" /&gt;
+    &lt;h4 class="f-4 mb-2 mt-1"&gt;Paul Muad'Dib&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="bg-black white pa-2 br-bottom-3"&gt;
+    &lt;h5 class="tc f-3 i mv-2"&gt;Emperor of the Known Universe&lt;/h5&gt;
+    &lt;a class="db tc blue-light" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+    <p class="measure-wide lh-copy">
+      To change the design for larger screens, we must:
+    </p>
+    <ul class="ma-0 pa-0 lsp-inside">
+      <li class="measure-wide lh-copy">
+        arrange the image and name horizontally, with appropriate padding for that layout.
+      </li>
+      <li class="measure-wide lh-copy">
+      align the title and link left.
+      </li>
+    </p>
+    <p class="measure-wide lh-copy">
+      To do this, you can use Melange's classes suffixed with <code>-ns</code> for “not small”, meaning any screen whose width is not considered small (thus, mobile).
+    </p>
+    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
+  &lt;div class="flex flex-column items-center <span class="ba dib pa-1 tdu fw-bold">flex-row-ns mv-3-ns</span>"&gt;
+    &lt;img src="/muad-dib.png" class="mt-2 w-5 h-5 br-3 <span class="ba dib pa-1 tdu fw-bold">mt-0-ns ml-2-ns</span>" /&gt;
+    &lt;h4 class="f-4 mb-2 mt-1"&gt;Paul Muad'Dib&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="bg-black white pa-2 br-bottom-3"&gt;
+  &lt;h5 class="tc f-3 i mv-2 <span class="ba dib pa-1 tdu fw-bold">tl-ns</span>"&gt;Emperor of the Known Universe&lt;/h5&gt;
+  &lt;a class="db tc blue-light <span class="ba dib pa-1 tdu fw-bold">tl-ns</span>" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+    <div class="bg-white debug-grid pa-3">
+      <div class="ba br-3">
+        <div class="flex flex-column items-center flex-row-ns mv-3-ns">
+          <img src="/muad-dib.png" class="mt-2 w-5 h-5 br-3 mt-0-ns ml-2-ns" />
+          <h4 class="f-4 mb-2 mt-1 ma0-ns ml-2-ns">Paul Muad'Dib</h4>
+        </div>
+        <div class="bg-black white pa-2 br-bottom-3">
+          <h5 class="tc f-3 i mv-2 tl-ns">Emperor of the Known Universe</h5>
+          <a class="db tc blue-light tl-ns" href="https://arrakis.planet">arrakis.planet</a>
+        </div>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      If you view this page on a mobile device (or using the responsive mode of your browser), you'll see that the styling changes as desired.
+    </p>
+  </article>
+<%- include( "/_footer.html") %>

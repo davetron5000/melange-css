@@ -12,10 +12,10 @@ import mediaQueries from "../MediaQueries.js"
 const positions = new MetaProperty({
   name: "Position",
   literalClasses: {
-    static:   { properties: { "position": "static" }},
-    relative: { properties: { "position": "relative" }},
-    absolute: { properties: { "position": "absolute" }},
-    fixed:    { properties: { "position": "fixed" }},
+    "pos-static":   { properties: { "position": "static" }},
+    "pos-relative": { properties: { "position": "relative" }},
+    "pos-absolute": { properties: { "position": "absolute" }},
+    "pos-fixed":    { properties: { "position": "fixed" }},
   },
 })
 
