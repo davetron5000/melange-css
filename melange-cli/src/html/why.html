@@ -1,3 +1,56 @@
 <%- include( "/_header.html", { title: "But…Why?" } ) %>
-<h2 class="tc f-5">TODO</h2>
+<section class="pa-1 w-90 w-60-ns mh-auto pb-4">
+  <nav class="flex flex-wrap items-baseline pv-3 bb bc-orange-light">
+    <a href="#utility" class="f-2 fw-bold blue-dark mh-2">Why Utility Classes?</a>
+    <span role="none">&bull;</span>
+    <a href="#tailwind" class="f-2 fw-bold blue-dark mh-2">Why not Tailwind?</a>
+  </nav>
+  <article>
+    <a name="utility"></a>
+    <h3 class="f-4">Why Utility Classes?</h3>
+    <p class="measure-wide lh-copy">
+      If you have never used a CSS library like this, it probably seems ridiculous.  It seems that we are mixing content and presentation, that we are avoiding using CSS as it was intended, creating unsematic markup, or otherwise making a soup of characters that no one could possibly manage. You may also think this is just a short-hand for inline styles.
+    </p>
+    <p class="measure-wide lh-copy">
+      Let's take these one at a time.
+    </p>
+    <p class="indent--1 ml-3 measure-wide lh-copy">
+      <strong>Mixing content and presentation.</strong> There's no denying that placing a class like <code>bg-purple</code> inside HTML is putting visual instructions into the markup.  It's worth understanding why this feels like a problem.  If the same markup is intended to produce many different visual representations then, yes, mixing presentation instructions into the markup makes it hard to manage.  When we build web applications, however, we are rarely doing this.
+    </p>
+    <p class="ml-3 measure-wide lh-copy">
+      Most web applications deliver a specific user experience, usually with some slight modifications on different screen sizes.  This is not the “CSS Zen Garden” approach and very few web apps need that.  If they do, Melange is not for them.  But for most apps, it turns out that putting styling instructions in the markup makes some things easier.
+    </p>
+    <p class="ml-3 measure-wide lh-copy">
+      When you open an HTML file and see <code>&lt;a href="/" class="blue-dark f-3"&gt;link&lt;/a&gt;</code>, you can see that the link is rendered in the third sized font in the dark blue color.  If, instead, the value for <code>class</code> was something more abstract like <code>primary-link</code> it would be harder to figure out how that link renders in a browser.  Depending on what CSS is included on the page, it could be extremely hard.
+    </p>
+    <p class="indent--1 ml-3 measure-wide lh-copy">
+      <strong>These classes are not semantic.</strong> The <code>class</code> attribute is ignored by most screen readers.  Users who are not viewing your app in a traditional web browser will get semantic information from the tags used.  The app can make use of ARIA roles to further clarify. The <code>class</code> attribute is irrelevant.  There is no reason or benefit to making its value have semantic meaning.  It is entirely a hook for styling.
+    </p>
+    <p class="indent--1 ml-3 measure-wide lh-copy">
+      <strong>The terse names are an unmanageable, nonsensical mess of characters.</strong>  Any verbose code in any programming language can be abstracted or simplified through the use of functional decomposition. <a href="guide-duplication.html" class="blue-dark">Your web app is no different</a>.  You can use its templating system to extract re-usable code, when you want, not before.
+    </p>
+    <p class="ml-3 measure-wide lh-copy">
+      The terse class names can be hard to learn at first, because a class like <code>fw-4</code> doesn't seem immediately obvious.  But, if you know CSS, understand <a href="guide-naming-conventions.html" class="blue-dark">the naming conventions</a>, and use Melange for just a small amount of time, you will learn these class names. <strong>And</strong> you will start to go much faster, because you won't rely on autocomplete or flipping back to the documentation.
+    </p>
+    <p class="indent--1 ml-3 measure-wide lh-copy">
+      <strong>Why not just use inline styles, then?</strong>  Melange has four differences from inline styles. First, the class names are far shorter than their analogous CSS properties and values. Second, inline styles cannot target breakpoints to allow for responsive design.  Third, inline styles have a higher specificity, so they can still use used in a pinch. Lastly, and most importantly, <strong>Melange includes a grid-based design system</strong>.
+    </p>
+    <p class="ml-3 measure-wide lh-copy">
+      Being able to design and style by selecting from a small set of values vastly increases the speed at which you can produce styled views.  You can quickly iterate through all possible spacings, font sizes, or widths and choose the one that works.  Yes, you lose the flexibilty of using any of the infinite possible sizes, but you usually don't need that many.
+    </p>
+  </article>
+  <article>
+    <a name="tailwind"></a>
+    <h3 class="f-4">Doesn't TailwindCSS Already Exist?</h3>
+    <p class="measure-wide lh-copy">
+      TailwindCSS is a popular utitlity-based framework, but it is fundamentally different from Melange.  Tailwind allows you to set just about any property and value directly in your HTML.  It achieves this by <strong>not</strong> having a design system <strong>and</strong> by requiring a development-time build step to produce CSS based on classnames like <code>bg-[4477FF]</code>.  This build step must be run on every change of every file that could possibly contain a Tailwind class.
+    </p>
+    <p class="measure-wide lh-copy">
+      Because Tailwind has no design system, it is a very large library.  The build step additionally strips out any classes that aren't used.  This is a nice feature, however it's fragile and slow, especially compared to having no build step at all.
+    </p>
+    <p class="measure-wide lh-copy">
+      This doesn't mean Tailwind is bad, it's just making a different set of tradeoffs.  Melange wants to provide a static set of CSS you can use for most situations and with a few dependencies as possible.
+    </p>
+  </article>
+</section>
 <%- include( "/_footer.html") %>
