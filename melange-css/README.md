@@ -56,70 +56,9 @@ Those terse, seemingly unreadable classes do the following:
 
 Perhaps you can tell which class achieves which?
 
-Melange also provides classes to target specific media queries.  By default, Melange classes assume to apply to any
-device, in particular a mobile device.  Melange requires that you adopt a mobile-first design philosophy, because
-overrides only apply at larger screen sizes.
-
-For example, suppose that our button needed a different font size on mobile than desktop.  You'd achieve this by setting
-the font-size for mobile, then overriding it for "not small" screens:
-
-```html
-<a href="#" class="f-2 f-3-ns ba br-3 ph-3 pv-2 tc">Click Me!</a>
-```
-
-Melange's classes are chosen based on two guiding principles:
-
-* You do not need an infinite number of sizes of things
-* The class names should themselves be designed aroudn consistency, intuitiveness, and brevity
-
-### You Do Not Need Infinite Sizes
-
-Designers have long employed grid-based designs, which means that elements placement and size woudl conform to a grid.
-For example, an element might be 10px wide or 5px wide, but never 7px wide.  Grid-based design allows the designer to
-eliminate huge amounts of possible designs and focus on a relatively small number they can audition to find the right
-one.
-
-Melange, like Tachyons before it, embraces this.  While some CSS properties, like the aforementioned `display` only have
-so many values, other properties, like `padding` or `font-size` have an infinite number of possible values.  Melange
-provides classes to set these properties to only a few values, assuming that these will be sufficient for most tasks.
-
-For example, `ph-3` sets the horizontal padding of an element to the third step of the scale.  An element using `ph-2`
-would have very obviously smaller horizontal padding, and `ph-4` would similarly have very obviously larger padding.
-This grid-based design system works well for the web, because pixel-perfect designs are rarely achievable given the wide
-variety of screen sizes and display orientations.
-
-The specific values of the second or third steps of the scale can be anything, and Melange provides you with a solid
-default. You can change it easily.
-
-Of note, for those familiar with TailwindCSS, this aspect of Melange (and Tachyons) is a fundamental difference.  Whereas
-Tailwind provides over 100 values for padding, Melange provides 7.  7 is enough for most needs and this creates other
-benefits to be discussed (notable: no build step to eliminate unused classes).
-
-## Class names should be designed around consistency, intuitiveness, and brevity
-
-`ph-3` is not friendly to newcomers, nor is `dib` or `f4`.  These classnames do, however, reward those that learn them,
-as well as the underlying naming convention on which they are based.  And they are not as hard to learn as you might
-think, especially if you know CSS. If you do not know CSS well, you should be using Bootstrap or Bulma.
-
-Consider `display`.  It has some common values: `none`, `block`, `inline`, and `inline-block`.  An initialism of the
-property and these values yields `dn`, `db`, `di`, and `dib`.  If you had merely memorized that `db` was `display:
-block`, you could guess that `display: none` could be achieved with `dn` and you would be right.
-
-The more you learn the class required to set a specific value for a specific property, the more likely you are to guess
-the class name required to set that property to another value, and the less you will need to examine the documentation as
-you work.
-
-*Only through a grid-based design system and a consistent, terse naming convention can you achieve the best of a
-utilitiy-based CSS library*
-
 See [the reference docs](#) or the [component gallery](#) to get started.
 
-You may have a few questions:
+## About this Folder
 
-* [Why would I use this style of CSS?](#)
-* [Why would I not just use Tailwind?](#)
-* [How do I manage the duplication that would occur?](#)
-* [How do I configure or change things?](#)
-
-
-
+This folder's contents are almost entirely generated from the `melange-cli` folder.  Generally avoid editing files in
+here.
