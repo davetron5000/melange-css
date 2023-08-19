@@ -1,5 +1,16 @@
 :root {
 /*
+ * Border widths
+ *
+ * Border widths
+ */
+--mg-bw1: 0.125rem;
+--mg-bw2: 0.25rem;
+--mg-bw3: 0.5rem;
+--mg-bw4: 1rem;
+--mg-bw5: 2rem;
+
+/*
  * Font Scale
  *
  * Font scale, with size 2 being the body font size

@@ -7,7 +7,8 @@ MelangeCSS is a utility-style CSS framework to allow you to start styling pages 
 Include this in your `.html` files' `<head>` section:
 
 ```
-CDN LINK
+<link rel="stylesheet"
+      href="https://unpkg.com/melange-css@1.0.0-alpha2/melange.min.css"/>
 ```
 
 `melange-css` is available as an NPM module, so installing it will bring the `.css` file into your `node_modules`
