@@ -1282,14 +1282,17 @@ template { display: none; }
 .fw-9 {
   font-weight: 900;
 }
-.normal {
+.fs-normal {
   font-style: normal;
 }
 .i {
   font-style: italic;
 }
-.small-caps {
+.fv-sc {
   font-variant: small-caps;
+}
+.fv-normal {
+  font-variant: normal;
 }
 .tr {
   text-align: right;
@@ -4053,14 +4056,17 @@ template { display: none; }
 .fw-9-ns {
   font-weight: 900;
 }
-.normal-ns {
+.fs-normal-ns {
   font-style: normal;
 }
 .i-ns {
   font-style: italic;
 }
-.small-caps-ns {
+.fv-sc-ns {
   font-variant: small-caps;
+}
+.fv-normal-ns {
+  font-variant: normal;
 }
 .tr-ns {
   text-align: right;
@@ -6807,14 +6813,17 @@ template { display: none; }
 .fw-9-m {
   font-weight: 900;
 }
-.normal-m {
+.fs-normal-m {
   font-style: normal;
 }
 .i-m {
   font-style: italic;
 }
-.small-caps-m {
+.fv-sc-m {
   font-variant: small-caps;
+}
+.fv-normal-m {
+  font-variant: normal;
 }
 .tr-m {
   text-align: right;
@@ -9561,14 +9570,17 @@ template { display: none; }
 .fw-9-l {
   font-weight: 900;
 }
-.normal-l {
+.fs-normal-l {
   font-style: normal;
 }
 .i-l {
   font-style: italic;
 }
-.small-caps-l {
+.fv-sc-l {
   font-variant: small-caps;
+}
+.fv-normal-l {
+  font-variant: normal;
 }
 .tr-l {
   text-align: right;

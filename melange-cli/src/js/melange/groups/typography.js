@@ -108,7 +108,7 @@ const tracking = new MetaProperty({
 const fontStyle = new MetaProperty({
   name: "Font Style",
   literalClasses: {
-    "normal": { properties: { "font-style": "normal" }, exampleTemplate: basicExample },
+    "fs-normal": { properties: { "font-style": "normal" }, exampleTemplate: basicExample },
     "i": { properties: { "font-style": "italic" }, exampleTemplate: basicExample, summary: "Italic" },
   }
 })
@@ -116,7 +116,8 @@ const fontStyle = new MetaProperty({
 const fontVariant = new MetaProperty({
   name: "Font Variant",
   literalClasses: {
-    "small-caps": { properties: { "font-variant": "small-caps" }, exampleTemplate: basicExample, summary: "Small Caps" },
+    "fv-sc": { properties: { "font-variant": "small-caps" }, exampleTemplate: basicExample, summary: "Small Caps" },
+    "fv-normal": { properties: { "font-variant": "normal" }, exampleTemplate: basicExample, summary: "Normal" },
   }
 })
 
