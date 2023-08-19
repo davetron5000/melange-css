@@ -48,7 +48,7 @@ export default class DocServer {
         values.portNumber = 9999
       }
       if (!fs.existsSync(values.dir)) {
-        console.log(`${dir} does not exist`)
+        console.log(`${values.dir} does not exist`)
         process.exit(1)
       }
     }
