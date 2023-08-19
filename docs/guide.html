@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>
+      MelangeCSS
+      
+        - Guide
+      
+      
+    </title>
+    <link href="melange.css" rel="stylesheet" />
+  </head>
+  <body class="ff-serif pa0 ma0 bg-orange-lightest black-ish">
+    <header>
+      <div class="bg-black-ish orange-lightest pa-3 pt-4">
+        <div class="w-60-ns w-90 mh-auto">
+          <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-3">
+            <a href="/" class="tdn orange-lightest">
+              MelangeCSS
+            </a>
+          </h1>
+          
+          <h2 class="tc tl-ns f-4 f-5-ns ma-0 mb-3">
+            Guide
+            
+          </h2>
+          
+        </div>
+      </div>
+      <div class="bg-orange-darkest orange-lightest pa-3">
+        <nav class="w-60-ns w-90 mh-auto">
+          <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
+            <a href="index.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Homepage</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="get-started.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Getting Started</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="/guide.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Guide</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="/reference/index.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Reference</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="components.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Component Gallery</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="why.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">But Why?</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+
+<section class="pa-1 w-90 w-60-ns mh-auto">
+  <h3 class="f-5 mb-0 mt-2">Tenets</h3>
+  <ul class="ma-0 mt-2 pa-0 lsp-inside lst-none">
+    <li class="f-3 measure-wide lh-copy mb-2 fw-bold">
+      Use semantic markup
+    </li>
+    <li class="f-3 measure-wide lh-copy mb-2 fw-bold">
+      Design for all screens; customize for larger screens.
+    </li>
+    <li class="f-3 measure-wide lh-copy mb-2 fw-bold">
+      CSS is <strong class="fw-normal">not</strong> the unit of component re-use.
+    </li>
+    <li class="f-3 measure-wide lh-copy mb-2 fw-bold">
+      A limited set of sizes can solve most design problems.
+    </li>
+  </ul>
+  <p class="measure-wide lh-copy">
+    See <a href="why.html" class="blue-dark">“But Why?”</a> for justification and background on these tenets.
+  </p>
+</section>
+<section class="bg-blue-lightest blue-darkest">
+  <nav class="w-90 w-60-ns mh-auto ph-1 pv-3">
+    <h3 class="f-5 mv-2">Guides</h3>
+    <ul class="pa-0 ma-0 lst-none mh-auto">
+      <li>
+        <a class="f-4 black-ish dib" href="guide-intro.html">Step-by-Step Overview</a>
+        <p class="measure lh-copy">
+          Learn how to style a component one step at a time, by using Melagne's classes.
+        </p>
+      </li>
+      <li>
+        <a class="f-4 black-ish dib" href="guide-naming-conventions.html">Class Naming Conventions</a>
+        <p class="measure lh-copy">
+          Melange's class names are terse, but they following straightforward conventions.
+        </p>
+      </li>
+      <li>
+        <a class="f-4 black-ish dib" href="guide-media-queries.html">Using Media Queries &amp; Breakpoints</a>
+        <p class="measure lh-copy">
+          Melange allows you to use the same markup, but apply different styles for different media queries to make sure your app looks good on mobile and desktop.
+        </p>
+      </li>
+      <li>
+        <a class="f-4 black-ish dib" href="guide-duplication.html">Re-using Duplicate Classes</a>
+        <p class="measure lh-copy">
+          Because you don't write CSS when using Melange, you'll use your web app's templating system for re-use.
+        </p>
+      </li>
+      <li>
+        <a class="f-4 black-ish dib" href="guide-customizing.html">Customzing Melange</a>
+        <p class="measure lh-copy">
+          Melange can  be customized to your needs, from changing fonts and colors, to creating an entirely different grid and scale.
+        </p>
+      </li>
+    </ul>
+  </nav>
+</section>
+<article class="pa-3 bg-blue-darkest blue-lightest mh-auto pv-4">
+  <a href="/reference/index.html" class="db f-4 tc blue-lightest lh-copy">Read the Reference</a>
+  <a href="/components.html" class="db f-4 tc blue-lightest lh-copy">Peruse the Gallery</a>
+</article>
+    </main>
+    <footer class="pv-5 bg-white black-ish">
+      <p class="tc">
+        Melange CSS is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-dark">Hippcratic License, v2.1</a>.
+      </p>
+    </footer>
+  </body>
+</html>
+

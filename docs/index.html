@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>
+      MelangeCSS
+      
+      
+    </title>
+    <link href="melange.css" rel="stylesheet" />
+  </head>
+  <body class="ff-serif pa0 ma0 bg-orange-lightest black-ish">
+    <header>
+      <div class="bg-black-ish orange-lightest pa-3 pt-4">
+        <div class="w-60-ns w-90 mh-auto">
+          <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-3">
+            <a href="/" class="tdn orange-lightest">
+              MelangeCSS
+            </a>
+          </h1>
+          
+        </div>
+      </div>
+      <div class="bg-orange-darkest orange-lightest pa-3">
+        <nav class="w-60-ns w-90 mh-auto">
+          <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
+            <a href="index.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Homepage</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="get-started.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Getting Started</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="/guide.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Guide</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="/reference/index.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Reference</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="components.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Component Gallery</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="why.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">But Why?</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+
+<h2 class="mb-0 tc f-5 ttu tracked">Utility CSS for Developers</h2>
+<p class="lh-copy measure mh-auto mv-3 f-3 fw-5">
+  <span class="small-caps tracked">MelangeCSS</span> provides single-purpose utility classes, but not too many. Style your HTML <strong>from</strong> your HTML, capitalizing on a grid-base design system you control. No build step, no pre-processing.  With an intuitive yet terse naming convention, you can design views quickly, with minimal dependencies.
+</p>
+<article class="pa-3 bg-white mh-auto">
+  <div class="w-auto mv-4 dn dn-m flex-l items-center justify-center">
+    <code class="f-1 dib ws-pre pa-3 br-2 bg-black orange-light lh-copy">&lt;button class="dib ph-4 pv-3 tc f-3 ba br-3 bg-blue-lightest blue-darkest"&gt;
+    Click Me
+&lt;/button&gt;</code>
+  </div>
+  <div class="w-auto mv-4 flex dn-l items-center justify-center">
+    <code class="dib ws-pre pa-3 br-2 bg-black orange-light lh-copy">&lt;button class="dib
+               ph-4
+               pv-3
+               tc
+               f-3
+               ba
+               br-3
+               bg-blue-lightest
+               blue-darkest"&gt;
+  Click Me
+&lt;/button&gt;</code>
+  </div>
+  <div class="mh-auto tc">
+    <button class="dib ph-4 pv-3 tc f-3 ba br-3 bg-blue-lightest blue-darkest bc-blue-darkest">Click Me</button>
+  </div>
+</article>
+<article class="pa-3 bg-orange-darkest orange-lightest mh-auto">
+  <h3 class="lh-title f-4 tc">No Build System or Pre-Processing</h3>
+  <p class="measure lh-copy mh-auto">
+    <span class="small-caps tracked">MelangeCSS</span> can be deployed as a single <code>.css</code> file that is under 200K (25K compressed).  It doesn't use any pre-processing and doesn't require any build steps in your app. Installing it does not require <strong>any</strong> dependencies at runtime <strong>or</strong> development time.
+  </p>
+  <h3 class="lh-title f-4 tc">Grid-based Design System</h3>
+  <p class="measure lh-copy mh-auto">
+    For 90% of the use cases of 90% of apps, you don't need infinite margins, paddings, widths, or font sizes.  A few distinct sizes will cover you. <span class="small-caps tracked">MelangeCSS</span> provides a modular scale that means all your elements will have visual rhythm, and provide you enough flexibilty for most situations. Quickly audit every single size to find the right one.
+  </p>
+  <h3 class="lh-title f-4 tc">Terse but Intuitive Class Names</h3>
+  <p class="measure lh-copy mh-auto">
+    You know CSS, so when you learn that <code>fw-3</code> sets <code>font-weight</code> to <code>300</code>, you'll have a good guess as to what <code>fw-6</code> and <code>fw-bold</code> do.  This means fast designing in the browser without the need for autocomplete and fewer trips to the documentation.
+  </p>
+  <h3 class="lh-title f-4 tc">Mobile-First Design <span class="db">with Common Breakpoints</span></h3>
+  <p class="measure lh-copy mh-auto">
+    Each class <span class="small-caps tracked">MelangeCSS</span> provides includes variants for non-small screens, medium screens, and large screens. You can use these to create a responsive design without writing any CSS or media queries.
+  </p>
+  <h3 class="lh-title f-4 tc">Gradual Customization</h3>
+  <p class="measure lh-copy mh-auto">
+    <span class="small-caps tracked">MelangeCSS</span> ships as a single <code>.css</code> file, but you can install a version with only CSS classes and provide your own values for the grid-based design system's variables (using the defaults as a starting point).  Customize fonts, modular scales, and colors using only CSS—on build or compilation step for most cases.
+  </p>
+  <p class="measure lh-copy mh-auto">
+    <strong>However</strong>, if you have more needs, Melange does provide tooling at <em>development</em> time to allow you to add your own classes that conform to Melange's naming convention, or even create your own nuance design system.  If you need it.
+  </p>
+</article>
+<article class="pa-3 bg-blue-lightest blue-darkest mh-auto">
+  <h3 class="lh-title f-4 tc">Melange Isn't For Everyone</h3>
+  <p class="f-3 measure lh-copy mh-auto">
+    <span class="small-caps tracked">MelangeCSS</span> works great when…
+  </p>
+  <ul class="ma-0 pa-0 lst-none">
+    <li class="measure lh-copy mh-auto mb-2">
+      …you are building a web application.
+    </li>
+    <li class="measure lh-copy mh-auto mb-2">
+      …your team knows CSS and builds the complete solution from front-end to back-end.
+    </li>
+    <li class="measure lh-copy mh-auto mb-2">
+      …your designers dont' hand you screenshots of apps, but visual treatments you can use to create defensively designed components and screens.
+    </li>
+    <li class="measure lh-copy mh-auto mb-2">
+      …you are designing, styling, and building as you go, and you want to go fast.
+    </li>
+  </ul>
+  <p class="f-3 measure lh-copy mh-auto">
+    <span class="small-caps tracked">MelangeCSS</span> isn't right for you if…
+  </p>
+  <ul class="ma-0 pa-0 lst-none">
+    <li class="measure lh-copy mh-auto mb-2">
+      …your designers hand you screenshots for you to produce with pixel-perfect fidelity.
+    </li>
+    <li class="measure lh-copy mh-auto mb-2">
+      …you have a dedicated front-end team that styles semantic markup produced by others.
+    </li>
+    <li class="measure lh-copy mh-auto mb-2">
+      …you can't control the markup.
+    </li>
+    <li class="measure lh-copy mh-auto mb-2">
+      …you are writing HTML directly with no templating system.
+    </li>
+  </ul>
+</article>
+<article class="pa-3 bg-blue-darkest blue-lightest mh-auto pv-4">
+  <a href="get-started.html" class="db f-4 tc blue-lightest">Get Started</a>
+</article>
+    </main>
+    <footer class="pv-5 bg-white black-ish">
+      <p class="tc">
+        Melange CSS is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-dark">Hippcratic License, v2.1</a>.
+      </p>
+    </footer>
+  </body>
+</html>
+

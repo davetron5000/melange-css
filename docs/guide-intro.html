@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>
+      MelangeCSS
+      
+        - Guide
+      
+      
+        - Intro
+      
+    </title>
+    <link href="melange.css" rel="stylesheet" />
+  </head>
+  <body class="ff-serif pa0 ma0 bg-orange-lightest black-ish">
+    <header>
+      <div class="bg-black-ish orange-lightest pa-3 pt-4">
+        <div class="w-60-ns w-90 mh-auto">
+          <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-3">
+            <a href="/" class="tdn orange-lightest">
+              MelangeCSS
+            </a>
+          </h1>
+          
+          <h2 class="tc tl-ns f-4 f-5-ns ma-0 mb-3">
+            Guide
+            
+            - Intro
+            
+          </h2>
+          
+        </div>
+      </div>
+      <div class="bg-orange-darkest orange-lightest pa-3">
+        <nav class="w-60-ns w-90 mh-auto">
+          <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
+            <a href="index.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Homepage</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="get-started.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Getting Started</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="/guide.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Guide</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="/reference/index.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Reference</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="components.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Component Gallery</a>
+            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="why.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">But Why?</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+
+  <article class="pa-1 w-90 w-60-ns mh-auto">
+    <a name="overview"></a>
+    <blockquote class="f-4 i tr tracked lh-copy"><span class="f-6">“</span> A beginning is a very delicate time</blockquote>
+    <p class="measure-wide lh-copy">
+      Let's style something with Melange.  We'll make the so-called “media component” that looks like this:
+    </p>
+    <div class="bg-white debug-grid pa-3">
+      <div class="ba ma-2 br-2">
+        <div class="flex items-center justify-start pa-2">
+          <img src="/muad-dib.png" class="db w-5 h-5 ba br-3 mr-2" />
+          <div class="w-auto ml-2">
+            <div class="f-4">Paul Muad'Dib</div>
+          </div>
+        </div>
+        <div class="pa-2 bg-black white">
+          <div class="f-3 i lh-copy">Emperor of the Known Universe</div>
+          <div><a href="https://arrakis.planet" class="f-1 blue-lightest">arrakis.planet</a></div>
+        </div>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      If you do not know how to create these using CSS, Melange will not be able to help you do that.  But, if you do, Melange should make it easier.
+    </p>
+    <p class="measure-wide lh-copy">
+      First, let's get some markup going and try to use semantic tags where we can (we'll assume there are some other <code>h1</code>, <code>h2</code>, and <code>h3</code> tags on the page):
+    </p>
+    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;img src="/muad-dib.png" width="150" height="150" /&gt;
+&lt;h4&gt;Paul Muad'Dib&lt;/h4&gt;
+&lt;h5&gt;Emperor of the Known Universe&lt;/h5&gt;
+&lt;a href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;</code>
+    <div class="bg-white debug-grid pa-3">
+      <img src="/muad-dib.png" width="150" height="150" />
+      <h4>Paul Muad'Dib</h4>
+      <h5>Emperor of the Known Universe</h5>
+      <a href="https://arrakis.planet">arrakis.planet</a>
+    </div>
+    <p class="measure-wide lh-copy">
+      Let's place things where they should go.  There are a lot of ways to achieve this, but we'll use flexbox.  We'll put a <code>div</code> around the image and name and have those align themselves along the center.  We'll also put the entire thing in a <code>div</code> since we know we need a border later.
+    </p>
+    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div&gt;
+  &lt;div class="<span class="ba dib pa-1 ba dib pa-1 tdu fw-bold">flex items-center</span>"&gt;
+    &lt;img src="/muad-dib.png" width="150" height="150" /&gt;
+    &lt;h4&gt;Paul Muad'Dib&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;h5&gt;Emperor of the Known Universe&lt;/h5&gt;
+  &lt;a href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+&lt;/div&gt;</code>
+    <div class="bg-white debug-grid pa-3">
+      <div>
+        <div class="flex items-center">
+          <img src="/muad-dib.png" width="150" height="150" />
+          <h4>Paul Muad'Dib</h4>
+        </div>
+        <h5>Emperor of the Known Universe</h5>
+        <a href="https://arrakis.planet">arrakis.planet</a>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      The font sizes are all wrong, now.  Let's fix that.  Note that unlike normal CSS or TailwindCSS, Melange only provides a few sizes for text.  Size 1 is the smallest, 2 is the body font size, and 7 is the largest.  Let's try changing the sizes. The title also needs to be in italics.
+    </p>
+    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div&gt;
+  &lt;div class="flex items-center"&gt;
+    &lt;img src="/muad-dib.png" width="150" height="150" /&gt;
+    &lt;h4 class="<span class="ba dib pa-1 tdu fw-bold">f-5</span>"&gt;Paul Muad'Dib&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;h5 class="<span class="ba dib pa-1 tdu fw-bold">f-3 i</span>"&gt;Emperor of the Known Universe&lt;/h5&gt;
+  &lt;a href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+&lt;/div&gt;</code>
+    <div class="bg-white debug-grid pa-3">
+      <div>
+        <div class="flex items-center">
+          <img src="/muad-dib.png" width="150" height="150" />
+          <h4 class="f-5">Paul Muad'Dib</h4>
+        </div>
+        <h5 class="f-3 i">Emperor of the Known Universe</h5>
+        <a href="https://arrakis.planet">arrakis.planet</a>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      The name is too large, let's change that to <code>f-4</code>.  While we're at it, let's fix the image size and the spacing between it and the name.  Melange provides a size scale from 1 (smallest) to 7 (largest).  For the image, let's try the fourth step for its dimensions.  We'll use the second step for space between, using the left margin to create that space.
+    </p>
+    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div&gt;
+  &lt;div class="flex items-center"&gt;
+    &lt;img src="/muad-dib.png" class="<span class="ba dib pa-1 tdu fw-bold">w-4 h-4</span>" /&gt;
+    &lt;h4 class="<span class="ba dib pa-1 tdu fw-bold">f-4 ml-2</span>"&gt;Paul Muad'Dib&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;h5 class="f-3 i"&gt;Emperor of the Known Universe&lt;/h5&gt;
+  &lt;a href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+&lt;/div&gt;</code>
+    <div class="bg-white debug-grid pa-3">
+      <div>
+        <div class="flex items-center">
+          <img src="/muad-dib.png" class="w-4 h-4" />
+          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
+        </div>
+        <h5 class="f-3 i">Emperor of the Known Universe</h5>
+        <a href="https://arrakis.planet">arrakis.planet</a>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      The image is now too small, so let's try the fifth step of the scale.  We'll also add the border radius. There is a scale for that, too, so we'll try the third one.
+    </p>
+    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div&gt;
+  &lt;div class="flex items-center"&gt;
+    &lt;img src="/muad-dib.png" class="<span class="ba dib pa-1 tdu fw-bold">w-5 h-5 br-3</span>" /&gt;
+    &lt;h4 class="f-4 ml-2"&gt;Paul Muad'Dib&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;h5 class="f-3 i"&gt;Emperor of the Known Universe&lt;/h5&gt;
+  &lt;a href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+&lt;/div&gt;</code>
+    <div class="bg-white debug-grid pa-3">
+      <div>
+        <div class="flex items-center">
+          <img src="/muad-dib.png" class="w-5 h-5 br-3" />
+          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
+        </div>
+        <h5 class="f-3 i">Emperor of the Known Universe</h5>
+        <a href="https://arrakis.planet">arrakis.planet</a>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      Hopefully, you can see how this works.  Let's fix a few more things.  We need to make the title and link on black background, and the text needs to be closer together. We'll use margins for that.
+    </p>
+    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div&gt;
+  &lt;div class="flex items-center"&gt;
+    &lt;img src="/muad-dib.png" class="w-5 h-5 br-3" /&gt;
+    &lt;h4 class="f-4 ml-2"&gt;Paul Muad'Dib&lt;/h4&gt;
+  &lt;/div&gt;
+  <span class="ba dib pa-1 tdu fw-bold">&lt;div class="bg-black white pa-2"&gt;</span>
+    &lt;h5 class="<span class="ba dib pa-1 tdu fw-bold">f-3 i mv-2</span>"&gt;Emperor of the Known Universe&lt;/h5&gt;
+    &lt;a class="<span class="ba dib pa-1 tdu fw-bold">blue-light</span>" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+    <div class="bg-white debug-grid pa-3">
+      <div>
+        <div class="flex items-center">
+          <img src="/muad-dib.png" class="w-5 h-5 br-3" />
+          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
+        </div>
+        <div class="bg-black white pa-2">
+          <h5 class="f-3 i mv-2">Emperor of the Known Universe</h5>
+          <a class="blue-light" href="https://arrakis.planet">arrakis.planet</a>
+        </div>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      Now, let's surround the entire thing with a border and use the same radius we used for the image.
+    </p>
+    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div class="<span class="ba dib pa-1 tdu fw-bold">ba br-3</span>"&gt;
+  &lt;div class="flex items-center"&gt;
+    &lt;img src="/muad-dib.png" class="w-5 h-5 br-3" /&gt;
+    &lt;h4 class="f-4 ml-2"&gt;Paul Muad'Dib&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="bg-black white pa-2"&gt;
+    &lt;h5 class="f-3 i mv-2"&gt;Emperor of the Known Universe&lt;/h5&gt;
+    &lt;a class="blue-light" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+    <div class="bg-white debug-grid pa-3">
+      <div class="ba br-3">
+        <div class="flex items-center">
+          <img src="/muad-dib.png" class="w-5 h-5 br-3" />
+          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
+        </div>
+        <div class="bg-black white pa-2">
+          <h5 class="f-3 i mv-2">Emperor of the Known Universe</h5>
+          <a class="blue-light" href="https://arrakis.planet">arrakis.planet</a>
+        </div>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      We can clean this up with some additional border radius and margins.
+    </p>
+    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
+  &lt;div class="flex items-center"&gt;
+    &lt;img src="/muad-dib.png" class="<span class="ba dib pa-1 tdu fw-bold">ml-2</span> w-5 h-5 br-3" /&gt;
+    &lt;h4 class="f-4 ml-2"&gt;Paul Muad'Dib&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="bg-black white pa-2 <span class="ba dib pa-1 tdu fw-bold">br-bottom-3</span>"&gt;
+    &lt;h5 class="f-3 i mv-2"&gt;Emperor of the Known Universe&lt;/h5&gt;
+    &lt;a class="blue-light" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+    <div class="bg-white debug-grid pa-3">
+      <div class="ba br-3">
+        <div class="flex items-center">
+          <img src="/muad-dib.png" class="ml-2 w-5 h-5 br-3" />
+          <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
+        </div>
+        <div class="bg-black white pa-2 br-bottom-3">
+          <h5 class="f-3 i mv-2">Emperor of the Known Universe</h5>
+          <a class="blue-light" href="https://arrakis.planet">arrakis.planet</a>
+        </div>
+      </div>
+    </div>
+    <p class="measure-wide lh-copy">
+      This looks pretty close.  If you were following along, change some of the spacings. You'll notice that everything still looks relatively cohesive.  This is the advantage of the grid-based design system.
+    </p>
+    <p class="measure-wide lh-copy">
+      Also note that there are a lot of ways to achieve this design—Melange doesn't prescribe any particular way.  But do note that we didn't write any CSS nor did we have to leave our HTML <strong>and</strong> you can reliably predict how the elements will be styled by just looking at them. There's no need to refer to another file or files.
+    </p>
+
+  </article>
+    </main>
+    <footer class="pv-5 bg-white black-ish">
+      <p class="tc">
+        Melange CSS is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-dark">Hippcratic License, v2.1</a>.
+      </p>
+    </footer>
+  </body>
+</html>
+

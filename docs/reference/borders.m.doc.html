@@ -1,0 +1,2401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>
+      MelangeCSS - Reference
+      
+        - Borders
+      
+    </title>
+    <link href="melange.css" rel="stylesheet" />
+      <style>
+        .with-background-image {
+      background-image: url("data:image/png;base64,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");
+      }
+    </style>
+  </head>
+  <body class="ff-serif pa0 ma0 bg-orange-lightest black-ish">
+    <header>
+      <div class="bg-orange-darkest orange-lightest pa-3 pt-4">
+        <div class="w-60-ns w-90 mh-auto">
+          <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-3">
+            <a href="index.html" class="tdn orange-lightest">
+              MelangeCSS Reference
+            </a>
+          </h1>
+          
+        </div>
+      </div>
+      <div class="bg-black-ish orange-lightest pa-3">
+        <nav class="w-60-ns w-90 mh-auto">
+          <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
+            <a href="index.html" class="db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Classes by Group</a>
+            <span role="none" class="di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="mediaQueries.html" class="db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Media Queries</a>
+            <span role="none" class="di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="variables.html" class="db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Variables</a>
+            <span role="none" class="di-ns dn mh-2 fw-1 f-1">&bull;</span>
+            <a href="classesIndex.html" class="db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">Index of Classes</a>
+          </div>
+          <div class="flex flex-wrap items-baseline justify-start-ns justify-center mt-3">
+            <a href="/" class="db w-100 w-auto-ns tc tl-ns di-ns orange-lightest f-2 lh-copy mh-2 ml-0-ns mr-3-ns">Homepage</a>
+            <a href="/get-started.html" class="db w-100 w-auto-ns tc tl-ns di-ns orange-lightest f-2 lh-copy mh-2 ml-0-ns mr-3-ns">Getting Started</a>
+            <a href="/guide.html" class="db w-100 w-auto-ns tc tl-ns di-ns orange-lightest f-2 lh-copy mh-2 ml-0-ns">Guide</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="pa-3 w-60-ns w-90 mh-auto">
+
+<a name="top"></a>
+<h2 class="tc tl-ns f-4 f-5-ns ma-0 mb-3">
+  Borders
+  
+  <small class="f-2 fw-5">
+    (
+    <a href="mediaQueries.html#medium-width" class="blue-darkest">Medium Width</a>
+    )<sup><a class="fw-bold blue-dark hover-underline" href="#media-query-note">&dagger;</a></sup>
+  </small>
+  
+</h2>
+  
+    <p class="measure f-2 lh-copy">Like the spacing group, borders can benefit from a stepped scale of sizes.  These sizes don't relate to the spacings, but are internally consistent. Border widths and radiuses should produce harmonic designs for most of your needs.</p>
+  
+<nav class="blue-darkest bb bt bc-blue-dark pv-2 i">
+  <div class="dib f-2 blue-darkest mb-2 mh-1 fw-bold">
+    Supported Media Queries
+  </div>
+  <div class="flex flex-wrap items-center justify-start">
+    <a href="borders.doc.html" class="ttl blue-dark f-1 mh-1 lh-copy">Default</a>
+    
+       
+    
+       
+       <a href="borders.ns.doc.html" class="ttl blue-dark f-1 mh-1 lh-copy">Not Small Width</a>
+       
+    
+       
+       <a href="borders.m.doc.html" class="ttl blue-dark f-1 mh-1 lh-copy">Medium Width</a>
+       
+    
+       
+       <a href="borders.l.doc.html" class="ttl blue-dark f-1 mh-1 lh-copy">Large Width</a>
+       
+    
+  </div>
+</nav>
+  
+    <h4 class="f-4 mt-4 tc tl-ns mb-3">Properties</h4>
+    <nav class="flex flex-wrap justify-center justify-start-ns items-start pb-3 measure-wide">
+      
+        <a class="db di-ns tc tl-ns lh-copy mr-3-ns w-100 w-auto-ns f-3 fw-normal orange-darkest ws-nowrap" href="#border-radius">
+          Border Radius
+        </a>
+      
+        <a class="db di-ns tc tl-ns lh-copy mr-3-ns w-100 w-auto-ns f-3 fw-normal orange-darkest ws-nowrap" href="#border-styles">
+          Border Styles
+        </a>
+      
+        <a class="db di-ns tc tl-ns lh-copy mr-3-ns w-100 w-auto-ns f-3 fw-normal orange-darkest ws-nowrap" href="#border-widths">
+          Border Widths
+        </a>
+      
+        <a class="db di-ns tc tl-ns lh-copy mr-3-ns w-100 w-auto-ns f-3 fw-normal orange-darkest ws-nowrap" href="#borders">
+          Borders
+        </a>
+      
+    </nav>
+  
+  <section>
+    
+      <a name="border-radius"></a>
+      <h5 class="tc tl-ns f-3 mb-0">
+        Border Radius
+      </h5>
+      
+      
+        <nav class="flex flex-wrap items-baseline justify-center justify-start-ns mt-3">
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#br">
+                all
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#br-bottom">
+                bottom
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#br-top">
+                top
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#br-left">
+                left
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#br-right">
+                right
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#br-tr">
+                top right
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#br-br">
+                bottom right
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#br-tl">
+                top left
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#br-bl">
+                bottom left
+            </a>
+          
+        </nav>
+      
+      <table class="w-100 mt-3 collapse">
+        <tbody>
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="br"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      br*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Radius all</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-0-m">.br-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-1-m">.br-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-2-m">.br-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-3-m">.br-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-4-m">.br-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-5-m">.br-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-100-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-100-m">.br-100-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-pill-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-pill-m">.br-pill-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="br-bottom"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      br-bottom*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Radius bottom</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bottom-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-0-m">.br-bottom-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bottom-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-1-m">.br-bottom-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bottom-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-2-m">.br-bottom-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bottom-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-3-m">.br-bottom-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bottom-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-4-m">.br-bottom-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bottom-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-5-m">.br-bottom-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bottom-100-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-100-m">.br-bottom-100-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bottom-pill-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-pill-m">.br-bottom-pill-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="br-top"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      br-top*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Radius top</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-top-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-0-m">.br-top-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-top-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-1-m">.br-top-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-top-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-2-m">.br-top-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-top-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-3-m">.br-top-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-top-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-4-m">.br-top-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-top-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-5-m">.br-top-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-top-100-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-100-m">.br-top-100-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-top-pill-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-pill-m">.br-top-pill-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="br-left"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      br-left*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Radius left</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-left-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-0-m">.br-left-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-left-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-1-m">.br-left-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-left-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-2-m">.br-left-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-left-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-3-m">.br-left-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-left-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-4-m">.br-left-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-left-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-5-m">.br-left-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-left-100-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-100-m">.br-left-100-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-left-pill-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-pill-m">.br-left-pill-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="br-right"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      br-right*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Radius right</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-right-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-0-m">.br-right-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-right-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-1-m">.br-right-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-right-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-2-m">.br-right-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-right-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-3-m">.br-right-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-right-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-4-m">.br-right-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-right-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-5-m">.br-right-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-right-100-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-100-m">.br-right-100-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-right-pill-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-pill-m">.br-right-pill-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="br-tr"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      br-tr*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Radius top right</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tr-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-0-m">.br-tr-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tr-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-1-m">.br-tr-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tr-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-2-m">.br-tr-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tr-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-3-m">.br-tr-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tr-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-4-m">.br-tr-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tr-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-5-m">.br-tr-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tr-100-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-100-m">.br-tr-100-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tr-pill-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-pill-m">.br-tr-pill-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="br-br"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      br-br*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Radius bottom right</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-br-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-0-m">.br-br-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-br-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-1-m">.br-br-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-br-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-2-m">.br-br-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-br-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-3-m">.br-br-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-br-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-4-m">.br-br-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-br-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-5-m">.br-br-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-br-100-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-100-m">.br-br-100-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-br-pill-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-pill-m">.br-br-pill-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="br-tl"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      br-tl*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Radius top left</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tl-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-0-m">.br-tl-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tl-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-1-m">.br-tl-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tl-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-2-m">.br-tl-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tl-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-3-m">.br-tl-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tl-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-4-m">.br-tl-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tl-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-5-m">.br-tl-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tl-100-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-100-m">.br-tl-100-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-tl-pill-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-pill-m">.br-tl-pill-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="br-bl"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      br-bl*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Radius bottom left</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bl-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-0-m">.br-bl-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bl-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-1-m">.br-bl-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bl-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-2-m">.br-bl-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bl-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-3-m">.br-bl-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bl-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-4-m">.br-bl-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bl-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-5-m">.br-bl-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bl-100-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-100-m">.br-bl-100-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-bl-pill-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-pill-m">.br-bl-pill-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+        </tbody>
+      </table>
+    
+      <a name="border-styles"></a>
+      <h5 class="tc tl-ns f-3 mb-0">
+        Border Styles
+      </h5>
+      
+      
+        <nav class="flex flex-wrap items-baseline justify-center justify-start-ns mt-3">
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#bs">
+                all
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#bls">
+                left
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#brs">
+                right
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#bts">
+                top
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#bbs">
+                bottom
+            </a>
+          
+        </nav>
+      
+      <table class="w-100 mt-3 collapse">
+        <tbody>
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="bs"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      bs*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Styles all</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bs-dotted-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bs-dotted-m">.bs-dotted-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bs-dashed-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bs-dashed-m">.bs-dashed-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bs-solid-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bs-solid-m">.bs-solid-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bs-none-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bs-none-m">.bs-none-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="bls"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      bls*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Styles left</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bls-dotted-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bls-dotted-m">.bls-dotted-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bls-dashed-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bls-dashed-m">.bls-dashed-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bls-solid-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bls-solid-m">.bls-solid-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bls-none-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bls-none-m">.bls-none-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="brs"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      brs*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Styles right</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>brs-dotted-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest brs-dotted-m">.brs-dotted-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>brs-dashed-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest brs-dashed-m">.brs-dashed-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>brs-solid-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest brs-solid-m">.brs-solid-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>brs-none-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest brs-none-m">.brs-none-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="bts"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      bts*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Styles top</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bts-dotted-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bts-dotted-m">.bts-dotted-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bts-dashed-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bts-dashed-m">.bts-dashed-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bts-solid-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bts-solid-m">.bts-solid-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bts-none-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bts-none-m">.bts-none-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="bbs"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      bbs*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Styles bottom</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bbs-dotted-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bbs-dotted-m">.bbs-dotted-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bbs-dashed-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bbs-dashed-m">.bbs-dashed-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bbs-solid-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bbs-solid-m">.bbs-solid-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bbs-none-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bbs-none-m">.bbs-none-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+        </tbody>
+      </table>
+    
+      <a name="border-widths"></a>
+      <h5 class="tc tl-ns f-3 mb-0">
+        Border Widths
+      </h5>
+      
+      
+        <nav class="flex flex-wrap items-baseline justify-center justify-start-ns mt-3">
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#bw">
+                all
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#blw">
+                left
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#brw">
+                right
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#btw">
+                top
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#bbw">
+                bottom
+            </a>
+          
+        </nav>
+      
+      <table class="w-100 mt-3 collapse">
+        <tbody>
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="bw"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      bw*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Widths all</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bw-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-0-m">.bw-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bw-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-1-m">.bw-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bw-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-2-m">.bw-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bw-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-3-m">.bw-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bw-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-4-m">.bw-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bw-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-5-m">.bw-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="blw"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      blw*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Widths left</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>blw-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-0-m">.blw-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>blw-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-1-m">.blw-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>blw-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-2-m">.blw-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>blw-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-3-m">.blw-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>blw-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-4-m">.blw-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>blw-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-5-m">.blw-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="brw"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      brw*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Widths right</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>brw-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-0-m">.brw-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>brw-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-1-m">.brw-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>brw-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-2-m">.brw-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>brw-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-3-m">.brw-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>brw-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-4-m">.brw-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>brw-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-5-m">.brw-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="btw"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      btw*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Widths top</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>btw-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-0-m">.btw-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>btw-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-1-m">.btw-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>btw-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-2-m">.btw-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>btw-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-3-m">.btw-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>btw-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-4-m">.btw-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>btw-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-5-m">.btw-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+                <td class="w-1 ws-nowrap va-middle pr-2">
+                  <a name="bbw"></a>
+                  <h6 class="f-3 ma-0">
+                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                      bbw*
+                    </code>
+                  </h6>
+                </td>
+                <td class="va-middle">
+                  
+                    <div class="f-1 fw-3">Border Widths bottom</div>
+                  
+                </td>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bbw-0-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-0-m">.bbw-0-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bbw-1-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-1-m">.bbw-1-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bbw-2-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-2-m">.bbw-2-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bbw-3-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-3-m">.bbw-3-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bbw-4-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-4-m">.bbw-4-m</div>
+                      </td>
+                    
+                  </tr>
+                
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bbw-5-m</code>
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-5-m">.bbw-5-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+        </tbody>
+      </table>
+    
+      <a name="borders"></a>
+      <h5 class="tc tl-ns f-3 mb-0">
+        Borders
+      </h5>
+      
+      
+        <nav class="flex flex-wrap items-baseline justify-center justify-start-ns mt-3">
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#ba">
+                all
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#bl">
+                left
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#br">
+                right
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#bt">
+                top
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#bb">
+                bottom
+            </a>
+          
+            <a class="lh-copy orange-darkest mr-2"
+               href="#bn">
+                none
+            </a>
+          
+        </nav>
+      
+      <table class="w-100 mt-3 collapse">
+        <tbody>
+          
+            <tr>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>ba-m</code>
+                      
+                        
+                        <div class="f-1 fw-3 mt-0 mb-1 i">Borders all</div>
+                        
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest ba-m">.ba-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bl-m</code>
+                      
+                        
+                        <div class="f-1 fw-3 mt-0 mb-1 i">Borders left</div>
+                        
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bl-m">.bl-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>br-m</code>
+                      
+                        
+                        <div class="f-1 fw-3 mt-0 mb-1 i">Borders right</div>
+                        
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest br-m">.br-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bt-m</code>
+                      
+                        
+                        <div class="f-1 fw-3 mt-0 mb-1 i">Borders top</div>
+                        
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bt-m">.bt-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bb-m</code>
+                      
+                        
+                        <div class="f-1 fw-3 mt-0 mb-1 i">Borders bottom</div>
+                        
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bb-m">.bb-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+            <tr>
+              
+            </tr>
+            
+            
+              
+                  <tr>
+                    <td class="ws-nowrap f-2 pr-2 va-middle">
+                      <code>bn-m</code>
+                      
+                        
+                        <div class="f-1 fw-3 mt-0 mb-1 i">Borders none</div>
+                        
+                      
+                    </td>
+                    
+                      <td class="pv-1 va-middle pa-2">
+                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bn-m">.bn-m</div>
+                      </td>
+                    
+                  </tr>
+                
+              
+            
+          
+        </tbody>
+      </table>
+    
+  </section>
+
+<a name="media-query-note"></a>
+<aside class="pa-2 mv-4 br-3 bg-white gray-darkest w-auto">
+<p class="f-1 i measure lh-copy mh-auto">
+  <strong>Note:</strong> Examples on this page may not work properly if your system or browser is not configured to pass the media query. <a class="underline blue-dark" href="#top">&larr; back</a>
+</p>
+</aside>
+
+    </main>
+  </body>
+</html>
+

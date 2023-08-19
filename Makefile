@@ -34,7 +34,7 @@ METADATA=$(DIST_DIR)/melange-metadata.json
 
 ## Docs
 
-DOCS_DIR=$(DIST_DIR)/docs
+DOCS_DIR=docs
 
 # Rules
 distro: $(MONLITHIC_FILES) $(SPLIT_FILES) $(METADATA)
