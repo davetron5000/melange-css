@@ -11,20 +11,20 @@ Add this to the `<head>` section of your HTML:
 
 ```
 <link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-alpha2/melange.min.css"/>
+      href="https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css"/>
 ```
 
 To customize things, download the variables to your project with something like `curl`:
 
 ```
-curl https://unpkg.com/melange-css@1.0.0-alpha2/melange-variables-only.css > melange-variables.css
+curl https://unpkg.com/melange-css@1.0.0-alpha3/melange-variables-only.css > melange-variables.css
 ```
 
 You can change this file how you like to adjust the design system.  Then, includ the styles-only version in your project:
 
 ```
 <link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-alpha2/melange-styles-only.css"/>
+      href="https://unpkg.com/melange-css@1.0.0-alpha3/melange-styles-only.css"/>
 ```
 
 ### Download to Your Project
@@ -32,7 +32,7 @@ You can change this file how you like to adjust the design system.  Then, includ
 Use something like `curl` to download the file and save it to your project:
 
 ```
-curl https://unpkg.com/melange-css@1.0.0-alpha2/melange.css > melange.css
+curl https://unpkg.com/melange-css@1.0.0-alpha3/melange.css > melange.css
 ```
 
 ### Use NPM

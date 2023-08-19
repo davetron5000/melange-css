@@ -8,7 +8,7 @@ Include this in your `.html` files' `<head>` section:
 
 ```
 <link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-alpha2/melange.min.css"/>
+      href="https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css"/>
 ```
 
 `melange-css` is available as an NPM module, so installing it will bring the `.css` file into your `node_modules`
