@@ -57,75 +57,90 @@
 
 <section class="pa-1 w-90 w-60-ns mh-auto">
 <p class="f-3 measure-wide lh-copy">
-  <span class="fv-sc tracked">MelangeCSS</span> can be installed in a few ways, depending on your needs:
+  <span class="fv-sc tracked">MelangeCSS</span> can be installed in a few ways, depending on your needs.
 </p>
 <ul class="ma-0 pa-0 lsp-inside bb bc-orange-darkest pb-3">
-  <li><a href="#cdn" class="blue-darkest">CDN or Direct Download</a></li>
-  <li><a href="#custom" class="blue-darkest">Customize CSS Variables</a></li>
-  <li><a href="#npm" class="blue-darkest">NPM</a></li>
+  <li><a href="#no-custom" class="blue-darkest">No Customizations</a></li>
+  <li><a href="#split" class="blue-darkest">Customize Existing Varables (Split Install)</a></li>
+  <li><a href="#advanced" class="blue-darkest">Advanced Customization</a></li>
 </ul>
 <ul class="lst-none ma-0 pa-0">
   <li>
-    <a name="cdn"></a>
-    <h3 class="f-3 fw-bold tc tl-ns">CDN / Download</h3>
+    <a name="no-custom"></a>
+    <h3 class="f-4 fw-bold tc tl-ns">No Customizations</h3>
     <p class="measure-wide lh-copy">
-      You can use <code>melange.css</code> directly from the CDN by adding this line to the <code>&lt;head&gt;</code> section of any HTML file:
+      If you are happy with the spacings, colors, fonts, and other aspects of <span class="fv-sc tracked">MelangeCSS</span>, you can use it by adding <code>melange.css</code> to your project:
     </p>
-    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy">
-&lt;link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css"/&gt;
-    </code>
-    <p class="measure-wide lh-copy">
-      You can avoid the runtime dependency on <code>unpkg.com</code> by downloading the file to your project via <code>curl</code>:
-    </p>
-    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy">
-curl https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css &gt; \
-     your/project/css/melange.css
-    </code>
-    <p class="measure-wide lh-copy">
-      This is the quickest way to get started and works create if you are satisfied with the default fonts, colors, and spacings.
-    </p>
+    <ul class="ma-0 pa-0">
+      <li class="measure-wide lh-copy mb-2">
+        <h4 class="f-3 fw-bold di">CDN.</h4> Add this to the <code>&lt;head&gt;</code> section of any HTML where you want to use <span class="fv-sc tracked">MelangeCSS</span>:
+        <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;link rel="stylesheet"
+      href="https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css"/&gt;</code>
+      </li>
+      <li class="measure-wide lh-copy mb-2">
+        <h4 class="f-3 fw-bold di">Download.</h4> To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code>melange.css</code> with a command-line tool like <code>curl</code>:
+    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css &gt; \
+     your/project/css/melange.css</code>
+      </li>
+      <li class="measure-wide lh-copy mb-2">
+        <h4 class="f-3 fw-bold di">NPM.</h4> <span class="fv-sc tracked">MelangeCSS</span> is available as a Node Module, which you can install thusly:
+        <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
+        The CSS will be in <code>node_modules/melange-css/melange.css</code>.  How you get that into your app highly depends on how your app is built.
+      </li>
+    </ul>
   </li>
   <li>
-    <a name="custom"></a>
-    <h3 class="f-3 fw-bold tc tl-ns">Customize with CSS Variables</h3>
+    <a name="split"></a>
+    <h3 class="f-4 fw-bold tc tl-ns">Customize Variables (Split Install)</h3>
     <p class="measure-wide lh-copy">
-      If you want to change fonts, sizes, or colors, first download the default set of CSS variables to your project with <code>curl</code>:
+      <span class="fv-sc tracked">MelangeCSS</span>'s classes are all based on CSS custom properties (AKA variables).  The best way to install <span class="fv-sc tracked">MelangeCSS</span> to allow changing these variables is to use the <em>split install</em> method, where you download a copy of the CSS with the variables, and then include only the styles from <span class="fv-sc tracked">MelangeCSS</span>
     </p>
-    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy">
-curl https://unpkg.com/melange-css@1.0.0-alpha3/melange-variables-only.css &gt; \
-     your/project/css/melange-variables.css
-    </code>
-    <p class="measure-wide lh-copy">
-      Next, add the “styles only” version to your project either via CDN or direct download:
-    </p>
-    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy">
-&lt;link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-alpha3/melange-styles-only.css"/&gt;
-    </code>
-    <p class="measure-wide lh-copy tc tl-ns">
-      or
-    </p>
-    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy">
-curl https://unpkg.com/melange-css@1.0.0-alpha3/melange-styles-only.css &gt; \
-     your/project/css/melange-styles-only.css
-    </code>
-    <p class="measure-wide lh-copy">
-      Then, include both files in your HTML. Modify <code>melange-variables.css</code> to meet your needs.
-    </p>
+    <ol class="ma-0 pa-0">
+      <li class="measure-wide lh-copy mb-2">
+        <h4 class="f-3 fw-bold di">Download a Copy of the Variables.</h4>
+        It's easiest to start with the variables that ship with <span class="fv-sc tracked">MelangeCSS</span> by copying it into your project.
+        <ul class="ma-0 pa-0 lsp-inside">
+          <li class="measure-wide lh-copy mb-2">
+            <h5 class="f-2 fw-bold di">Download.</h5> Using a command-line tool like <code>curl</code>, download <code>melange-variables-only.css</code> to your project:
+        <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@1.0.0-alpha3/melange-variables-only.css &gt; \
+         your/project/css/melange-variables-only.css</code>
+          </li>
+          <li class="measure-wide lh-copy mb-2">
+            <h5 class="f-2 fw-bold di">NPM.</h5> <span class="fv-sc tracked">MelangeCSS</span> is available as a Node Module, which you can install thusly:
+            <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
+            Copy <code>node_modules/melange-css/melange-variables-only.css</code> into your project.
+          </li>
+        </ul>
+      </li>
+      <li class="measure-wide lh-copy mb-2">
+        <h4 class="f-3 fw-bold di">Install the Styles-only CSS File.</h4>
+        <ul class="ma-0 pa-0 lsp-inside">
+          <li class="measure-wide lh-copy mb-2">
+            <h5 class="f-2 fw-bold di">CDN.</h5> Add this to the <code>&lt;head&gt;</code> section of any HTML <strong>after</strong> wherever you include your downloaded copy of <code>melange-variables-only.css</code>:
+            <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;link rel="stylesheet"
+          href="https://unpkg.com/melange-css@1.0.0-alpha3/melange-styles-only.css"/&gt;</code>
+          </li>
+          <li class="measure-wide lh-copy mb-2">
+            <h5 class="f-2 fw-bold di">Download.</h5> To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code>melange.css</code> with a command-line tool like <code>curl</code>:
+        <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@1.0.0-alpha3/melange-styles-only.css &gt; \
+         your/project/css/melange-styles-only.css</code>
+          </li>
+          <li class="measure-wide lh-copy mb-2">
+            <h5 class="f-2 fw-bold di">NPM.</h5> <span class="fv-sc tracked">MelangeCSS</span> is available as a Node Module, which you can install thusly:
+            <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
+            The CSS will be in <code>node_modules/melange-css/melange-styles-only.css</code>.  How you get that into your app highly depends on how your app is built.
+          </li>
+        </ul>
+      </li>
+      <li class="measure-wide lh-copy mb-2">
+        <h4 class="f-3 fw-bold di">Modify Your Copy Of <code>melange-variables-only.css</code>.</h4> See <a href="guide-customizing.html#variables" class="blue-darkest">the customization guide</a> for how to do this.
+      </li>
+    </ol>
   </li>
   <li>
-    <a name="npm"></a>
-    <h3 class="f-3 fw-bold tc tl-ns">Use NPM</h3>
-    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy">
-npm install --save melange-css
-    </code>
-    <p class="measure-wide lh-copy">
-      This will put the files in your <code>node_modules</code> folder, and you can use your app's asset pipeline to bring in the files you want.  Either bring in <code>melange.css</code> to use the defaults, or copy <code>melange-variables-only.css</code> to your app (and customize it) and bring in <code>melange-styles-only.css</code> to your app.
-    </p>
-    <p class="measure-wide lh-copy">
-      How you do this depends on how you are managing CSS.
-    </p>
+    <a name="advanced"></a>
+    <h3 class="f-4 fw-bold tc tl-ns">Advanced</h3>
+    TBD
   </li>
 </ul>
 </section>

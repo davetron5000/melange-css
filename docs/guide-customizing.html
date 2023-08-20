@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <meta content="Website for Melange CSS">
 
-    <meta content="Melange CSS Guide - Intro" name="og:title">
+    <meta content="Melange CSS Guide - Customizing" name="og:title">
     <meta content="website" name="og:type">
 
     <title>
@@ -15,7 +15,7 @@
         - Guide
       
       
-        - Intro
+        - Customizing
       
     </title>
     <link href="melange.css" rel="stylesheet" />
@@ -33,7 +33,7 @@
           <h2 class="tc tl-ns f-4 f-5-ns ma-0 mb-3">
             Guide
             
-            - Intro
+            - Customizing
             
           </h2>
           
@@ -59,10 +59,88 @@
     </header>
     <main>
 
-  <article class="pa-1 w-90 w-60-ns mh-auto">
-    TODO
-
-  </article>
+  <section class="pa-1 w-90 w-60-ns mh-auto">
+    <h3 class="f-5 mb-0 mt-2">Customizing &amp; Extending</h3>
+    <nav>
+    <p class="measure-wide lh-copy">
+      There are several ways to customize or extend <span class="fv-sc tracked">MelangeCSS</span> for your needs:
+    </p>
+    <ul class="ma-0 pa-0 lsp-inside">
+      <li class="measure-wide lh-copy mb-2">
+        <a href="#variables" class="blue-dark">Changing the Variables</a> - this is the simplest mechanism and is suitable if you want to change the fonts, colors, or use a different scale for spacing and font sizes.
+      </li>
+      <li class="measure-wide lh-copy mb-2">
+        <a href="#augmenting" class="blue-dark">Adding Your Own Classes</a> - this is useful when you need additional classes, but want to capitalize on the naming conventions, media queries, etc.
+      </li>
+      <li class="measure-wide lh-copy mb-2">
+        <a href="#radical" class="blue-dark">Adding More Steps or Making More Radical Changes</a> - if you need to change the number of steps in the various scales, alter the naming conventions, or otherwise make a more radical change, <span class="fv-sc tracked">MelangeCSS</span> can allow this by the use of the JavaScript code that generates it.
+      </li>
+    </ul>
+    </nav>
+    <article>
+      <a name="variables"></a>
+      <h4 class="f-4">Changing the Variables</h4>
+      <p class="measure-wide lh-copy">
+        Where possible, <span class="fv-sc tracked">MelangeCSS</span> uses <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" class="blue-darkest">CSS custom propertiews AKA variables</a>.  If you examine the top of <code>melange.css</code>, you can see these variables, and each one is documented <a class="blue-darkest" href="reference/variables.html">in the reference</a>.
+      </p>
+      <p class="measure-wide lh-copy">
+        To change these values, for example to use different colors or fonts, you will need to install <span class="fv-sc tracked">MelangeCSS</span> using the <a href="get-started.html#split">split install method</a> where you copy <code>melange-variables-only.css</code> into your project and make changes to that file, and include <code>melange-styles-only.css</code> from a <span class="fv-sc tracked">MelangeCSS</span> package.
+      </p>
+      <h4 class="f-3">Changing the Fonts</h4>
+      <p class="measure-wide lh-copy">
+        <span class="fv-sc tracked">MelangeCSS</span> supports a serif, sans-serif, monospace, cursive, and fantasy font setting, available via <a href="reference/typography.doc.html#font-families" class="blue-darkest"><code>ff-serif</code>, <code>ff-sans</code>, <code>ff-mono</code>, <code>ff-cursive</code>, and <code>ff-fantasy</code></a>, respectively.
+      </p>
+      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">
+--mg-ffsans: «your sans font stack here»
+--mg-ffserif: «your serif font stack here»
+--mg-ffmono: «your mono font stack here»
+--mg-ffcursive: «your cursive font stack here»
+--mg-fffantasy: «your fantasy font stack here»
+      </code>
+      <p class="measure-wide lh-copy">
+        Since this file is plain CSS, you can include any web font instructions before these variables are defined.
+      </p>
+      <h4 class="f-3">Changing the Colors</h4>
+      <p class="measure-wide lh-copy">
+        <span class="fv-sc tracked">MelangeCSS</span>'s builtin colors are fine for most generic applications, but there's often a need for branded colors.  If possible, replace one of the existing color ranges with your branded color.  For example, if your greens need to be a bit more blue for brand purposes, focused on <span class="dib w-5 br-2" style="background-color: #008182;">&nbsp;</span>, you could do this:
+      </p>
+      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">
+--mg-greenlightest: #cce6e6;
+--mg-greenlight: #66b3b4;
+--mg-green: #008182;
+--mg-greendark: #005a5b;
+--mg-greendarkest: #003434;
+      </code>
+      <p class="measure-wide lh-copy">
+        Since this file is plain CSS, you can include any web font instructions before these variables are defined.
+      </p>
+      <h4 class="f-3">Changing Spacings</h4>
+      <p class="measure-wide lh-copy">
+        <span class="fv-sc tracked">MelangeCSS</span> uses the same scale for margins, paddings, widths, and heights.  It uses a different scale for border radiuses and a third one for border widths.  Change those as needed the same way you'd change the fonts or colors.  Note that you are encouraged to make sure each step of the scale is distinct and that the values go from small to large.
+      </p>
+    </article>
+    <article>
+      <a name="augmenting"></a>
+      <h4 class="f-4">Adding Your Own Classes</h4>
+      <p class="measure-wide lh-copy">
+        While you can create any classes you like referencing the <span class="fv-sc tracked">MelangeCSS</span> variables, you may want to take advantage of the naming scheme for media queries and pseudo-selectors.  To do this, you'll need to install the <code>melange-cli</code> NPM package:
+      </p>
+      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --saveDev melange-cli</code>
+      <p class="measure-wide lh-copy">
+        TBD as this isn't built yet
+      </p>
+    </article>
+    <article>
+      <a name="radical"></a>
+      <h4 class="f-4">Making More Radical Changes</h4>
+      <p class="measure-wide lh-copy">
+        At it's core, <span class="fv-sc tracked">MelangeCSS</span> is a set of JavaScript classes that allow you to define a meta theme, then use that to generate a CSS library.  The main reason to do this would be if you want to change the number of steps in any of the scales, or use a different set of media queries.
+      </p>
+      <p class="measure-wide lh-copy">
+        TBD as this isn't built yet
+      </p>
+    </article>
+  </section>
     </main>
     <footer class="pv-5 bg-white black-ish">
       <p class="tc">
