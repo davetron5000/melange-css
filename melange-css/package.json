@@ -1,9 +1,9 @@
 {
   "name": "melange-css",
-  "version": "1.0.0-alpha4",
+  "version": "1.0.0-alpha5",
   "description": "Functional CSS for Full Stack Developers",
   "keywords": [ "css" ],
-  "homepage": "https://davetron5000.github.io/melange-css/index.html",
+  "homepage": "https://melangecss.com",
   "bugs": {
     "url": "https://github.com/davetron5000/melange-css/issues",
     "email": "davec@naildrivin5.com"

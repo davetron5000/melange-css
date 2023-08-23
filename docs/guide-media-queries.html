@@ -9,6 +9,9 @@
     <meta content="Melange CSS Guide - Media Queries" name="og:title">
     <meta content="website" name="og:type">
 
+    <meta itemprop="ai-content-declaration:version" content="1.0.0-alpha1">
+    <meta itemprop="ai-content-declaration:level" content="none">
+
     <title>
       MelangeCSS
       
@@ -19,16 +22,23 @@
       
     </title>
     <link href="melange.css" rel="stylesheet" />
+    <style>
+.green-terminal {
+  color: #66ff22;
+  text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
+}
+    </style>
   </head>
   <body class="ff-serif pa0 ma0 bg-orange-lightest black-ish">
     <header>
       <div class="bg-black-ish orange-lightest pa-3 pt-4">
         <div class="w-60-ns w-90 mh-auto">
-          <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-3">
+          <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-1">
             <a href="index.html" class="tdn orange-lightest hover-tdu-ns">
         <span class="fv-sc tracked">MelangeCSS</span>
             </a>
           </h1>
+          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-alpha5</span></p>
           
           <h2 class="tc tl-ns f-4 f-5-ns ma-0 mb-3">
             Guide
@@ -42,17 +52,14 @@
       <div class="bg-orange-darkest orange-lightest pa-3">
         <nav class="w-60-ns w-90 mh-auto">
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
-            <a href="get-started.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Getting Started</a>
-            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
-            <a href="guide.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Guide</a>
-            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
-            <a href="reference/index.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Reference</a>
-            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
-            <a href="https://github.com/davetron5000/melange-css" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Source Code</a>
-            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
-            <a href="gallery.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Gallery</a>
-            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
-            <a href="why.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">But Why?</a>
+
+            <a href="get-started.html"     class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Getting Started</a>
+            <a href="guide.html"           class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Guide</a>
+            <a href="reference/index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Reference</a>
+            <a href="https://github.com/davetron5000/melange-css"    class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Source Code</a>
+            <a href="gallery.html"         class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Gallery</a>
+            <a href="why.html"             class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">But Why?</a>
+
           </div>
         </nav>
       </div>
@@ -152,9 +159,12 @@
   </article>
     </main>
     <footer class="pv-5 bg-white black-ish">
-      <p class="tc">
+      <p class="measure mh-auto tc lh-copy">
         <span class="fv-sc tracked">MelangeCSS</span>
         is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-dark">Hippocratic License, v2.1</a>.
+      </p>
+      <p class="measure mh-auto tc lh-copy f-1 i">
+        This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot.
       </p>
     </footer>
   </body>

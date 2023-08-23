@@ -9,49 +9,58 @@
     <meta content="Melange CSS " name="og:title">
     <meta content="website" name="og:type">
 
+    <meta itemprop="ai-content-declaration:version" content="1.0.0-alpha1">
+    <meta itemprop="ai-content-declaration:level" content="none">
+
     <title>
       MelangeCSS
       
       
     </title>
     <link href="melange.css" rel="stylesheet" />
+    <style>
+.green-terminal {
+  color: #66ff22;
+  text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
+}
+    </style>
   </head>
   <body class="ff-serif pa0 ma0 bg-orange-lightest black-ish">
     <header>
       <div class="bg-black-ish orange-lightest pa-3 pt-4">
         <div class="w-60-ns w-90 mh-auto">
-          <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-3">
+          <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-1">
             <a href="index.html" class="tdn orange-lightest hover-tdu-ns">
         <span class="fv-sc tracked">MelangeCSS</span>
             </a>
           </h1>
+          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-alpha5</span></p>
           
         </div>
       </div>
       <div class="bg-orange-darkest orange-lightest pa-3">
         <nav class="w-60-ns w-90 mh-auto">
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
-            <a href="get-started.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Getting Started</a>
-            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
-            <a href="guide.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Guide</a>
-            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
-            <a href="reference/index.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Reference</a>
-            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
-            <a href="https://github.com/davetron5000/melange-css" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Source Code</a>
-            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
-            <a href="gallery.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Gallery</a>
-            <span role="none" class="lh-copy di-ns dn mh-2 fw-1 f-1">&bull;</span>
-            <a href="why.html" class="lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">But Why?</a>
+
+            <a href="get-started.html"     class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Getting Started</a>
+            <a href="guide.html"           class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Guide</a>
+            <a href="reference/index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Reference</a>
+            <a href="https://github.com/davetron5000/melange-css"    class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Source Code</a>
+            <a href="gallery.html"         class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Gallery</a>
+            <a href="why.html"             class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">But Why?</a>
+
           </div>
         </nav>
       </div>
     </header>
     <main>
 
-<h2 class="mb-0 tc f-5 ttu tracked">Utility CSS for Developers</h2>
-<p class="lh-copy measure mh-auto mv-3 f-3 fw-5">
-  <span class="fv-sc tracked">MelangeCSS</span> provides single-purpose utility classes, but not too many. Style your HTML <strong>from</strong> your HTML, capitalizing on a grid-base design system you control. No build step, no pre-processing.  With an intuitive yet terse naming convention, you can design views quickly, with minimal dependencies.
-</p>
+<section class="pa-2">
+  <h2 class="mb-0 tc f-5 ttu tracked">Utility CSS for Developers</h2>
+  <p class="lh-copy measure mh-auto mv-3 f-3 fw-5">
+    <span class="fv-sc tracked">MelangeCSS</span> provides single-purpose utility classes, but <strong>not too many</strong>. Style your HTML <strong>from</strong> your HTML, capitalizing on a <strong>grid-based design system</strong> you control. <strong>No build step, no pre-processing</strong>.  With an intuitive yet terse naming convention, you can design views quickly, with <strong>minimal dependencies</strong>. And you'll know how these views will render <strong>just by looking at the markup</strong>.
+  </p>
+</section>
 <article class="pa-3 bg-white mh-auto">
   <div class="w-auto mv-4 dn dn-m flex-l items-center justify-center">
     <code class="f-1 dib ws-pre pa-3 br-2 bg-black orange-light lh-copy">&lt;button class="dib ph-4 pv-3 tc f-3 ba br-3 bg-blue-lightest blue-darkest"&gt;
@@ -75,10 +84,27 @@
     <button class="dib ph-4 pv-3 tc f-3 ba br-3 bg-blue-lightest blue-darkest bc-blue-darkest">Click Me</button>
   </div>
 </article>
+<article class="pa-3 bg-orange-lightest orange-darkest mh-auto">
+  <div class="w-60-ns mh-auto">
+    <h3 class="lh-title f-3 mv-1">Install</h3>
+    <h4 class="lh-title f-2 ttu mv-0">CDN</h4>
+    <code class="f-1 db bg-black green-terminal ph-2 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;link rel="stylesheet"
+      href="https://unpkg.com/melange-css@1.0.0-alpha5/melange.min.css"/&gt;</code>
+    <h4 class="lh-title f-2 ttu mv-0">Download</h4>
+    <code class="f-1 db bg-black green-terminal ph-2 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@1.0.0-alpha5/melange.css \
+     &gt; melange.css</code>
+    <h4 class="lh-title f-2 ttu mv-0">NPM</h4>
+    <code class="f-1 db bg-black green-terminal ph-2 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
+  </div>
+</article>
 <article class="pa-3 bg-orange-darkest orange-lightest mh-auto">
   <h3 class="lh-title f-4 tc">No Build System or Pre-Processing</h3>
   <p class="measure lh-copy mh-auto">
     <span class="fv-sc tracked">MelangeCSS</span> can be deployed as a single <code>.css</code> file that is under 200K (25K compressed).  It doesn't use any pre-processing and doesn't require any build steps in your app. Installing it does not require <strong>any</strong> dependencies at runtime <strong>or</strong> development time.
+  </p>
+  <h3 class="lh-title f-4 tc">Behavior-Revealing Design</h3>
+  <p class="measure lh-copy mh-auto">
+    HTML that uses <span class="fv-sc tracked">MelangeCSS</span> results in HTML whose presentation you can easily and correctly predict, just by looking at the HTML.  No more chasing down tons of files and classes just to try to figure out what the browser is going to do when the page is rendered.
   </p>
   <h3 class="lh-title f-4 tc">Grid-based Design System</h3>
   <p class="measure lh-copy mh-auto">
@@ -142,9 +168,12 @@
 </article>
     </main>
     <footer class="pv-5 bg-white black-ish">
-      <p class="tc">
+      <p class="measure mh-auto tc lh-copy">
         <span class="fv-sc tracked">MelangeCSS</span>
         is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-dark">Hippocratic License, v2.1</a>.
+      </p>
+      <p class="measure mh-auto tc lh-copy f-1 i">
+        This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot.
       </p>
     </footer>
   </body>

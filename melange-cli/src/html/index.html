@@ -1,8 +1,10 @@
 <%- include( "/_header.html", { title: "" } ) %>
-<h2 class="mb-0 tc f-5 ttu tracked">Utility CSS for Developers</h2>
-<p class="lh-copy measure mh-auto mv-3 f-3 fw-5">
-  <span class="fv-sc tracked">MelangeCSS</span> provides single-purpose utility classes, but not too many. Style your HTML <strong>from</strong> your HTML, capitalizing on a grid-base design system you control. No build step, no pre-processing.  With an intuitive yet terse naming convention, you can design views quickly, with minimal dependencies.
-</p>
+<section class="pa-2">
+  <h2 class="mb-0 tc f-5 ttu tracked">Utility CSS for Developers</h2>
+  <p class="lh-copy measure mh-auto mv-3 f-3 fw-5">
+    <span class="fv-sc tracked">MelangeCSS</span> provides single-purpose utility classes, but <strong>not too many</strong>. Style your HTML <strong>from</strong> your HTML, capitalizing on a <strong>grid-based design system</strong> you control. <strong>No build step, no pre-processing</strong>.  With an intuitive yet terse naming convention, you can design views quickly, with <strong>minimal dependencies</strong>. And you'll know how these views will render <strong>just by looking at the markup</strong>.
+  </p>
+</section>
 <article class="pa-3 bg-white mh-auto">
   <div class="w-auto mv-4 dn dn-m flex-l items-center justify-center">
     <code class="f-1 dib ws-pre pa-3 br-2 bg-black orange-light lh-copy">&lt;button class="dib ph-4 pv-3 tc f-3 ba br-3 bg-blue-lightest blue-darkest"&gt;
@@ -26,10 +28,27 @@
     <button class="dib ph-4 pv-3 tc f-3 ba br-3 bg-blue-lightest blue-darkest bc-blue-darkest">Click Me</button>
   </div>
 </article>
+<article class="pa-3 bg-orange-lightest orange-darkest mh-auto">
+  <div class="w-60-ns mh-auto">
+    <h3 class="lh-title f-3 mv-1">Install</h3>
+    <h4 class="lh-title f-2 ttu mv-0">CDN</h4>
+    <code class="f-1 db bg-black green-terminal ph-2 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;link rel="stylesheet"
+      href="https://unpkg.com/melange-css@<%= version %>/melange.min.css"/&gt;</code>
+    <h4 class="lh-title f-2 ttu mv-0">Download</h4>
+    <code class="f-1 db bg-black green-terminal ph-2 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@<%= version %>/melange.css \
+     &gt; melange.css</code>
+    <h4 class="lh-title f-2 ttu mv-0">NPM</h4>
+    <code class="f-1 db bg-black green-terminal ph-2 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
+  </div>
+</article>
 <article class="pa-3 bg-orange-darkest orange-lightest mh-auto">
   <h3 class="lh-title f-4 tc">No Build System or Pre-Processing</h3>
   <p class="measure lh-copy mh-auto">
     <span class="fv-sc tracked">MelangeCSS</span> can be deployed as a single <code>.css</code> file that is under 200K (25K compressed).  It doesn't use any pre-processing and doesn't require any build steps in your app. Installing it does not require <strong>any</strong> dependencies at runtime <strong>or</strong> development time.
+  </p>
+  <h3 class="lh-title f-4 tc">Behavior-Revealing Design</h3>
+  <p class="measure lh-copy mh-auto">
+    HTML that uses <span class="fv-sc tracked">MelangeCSS</span> results in HTML whose presentation you can easily and correctly predict, just by looking at the HTML.  No more chasing down tons of files and classes just to try to figure out what the browser is going to do when the page is rendered.
   </p>
   <h3 class="lh-title f-4 tc">Grid-based Design System</h3>
   <p class="measure lh-copy mh-auto">

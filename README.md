@@ -11,20 +11,7 @@ Add this to the `<head>` section of your HTML:
 
 ```
 <link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css"/>
-```
-
-To customize things, download the variables to your project with something like `curl`:
-
-```
-curl https://unpkg.com/melange-css@1.0.0-alpha3/melange-variables-only.css > melange-variables.css
-```
-
-You can change this file how you like to adjust the design system.  Then, includ the styles-only version in your project:
-
-```
-<link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-alpha3/melange-styles-only.css"/>
+      href="https://unpkg.com/melange-css@1.0.0-alpha6/melange.min.css"/>
 ```
 
 ### Download to Your Project
@@ -32,7 +19,7 @@ You can change this file how you like to adjust the design system.  Then, includ
 Use something like `curl` to download the file and save it to your project:
 
 ```
-curl https://unpkg.com/melange-css@1.0.0-alpha3/melange.css > melange.css
+curl https://unpkg.com/melange-css@1.0.0-alpha6/melange.css > melange.css
 ```
 
 ### Use NPM
@@ -40,12 +27,6 @@ curl https://unpkg.com/melange-css@1.0.0-alpha3/melange.css > melange.css
 ```
 npm install --save melange-css
 ```
-
-The `melange-css` package provides two ways to use it:
-
-* Use `melange.css` which contains everything
-* Copy `melange-variables-only.css` into your project and use that copy plus `melange-styles-only.css` from this package.
-You can modify `melange-variables-only.css` based on the needs of your design system.
 
 ## Use
 
@@ -59,4 +40,11 @@ vertical, and a rounded border.  Here's one way to do that:
 
 Melange provides styles for many CSS properties, however it does not provide an infinite number of *values* for those
 properties. As such, there is no build step like TailwindCSS has.
+
+## Generative AI Declaration
+
+* All writing, including this README and the HTML content in `melange-cli/src/html` and `docs`, was created [without
+assistance from a generative AI](https://declare-ai.org/1.0.0-alpha1/none.html)
+* Some aspects of the source code in `melange-cli/src/js` had [non-creative assistance](https://declare-ai.org/1.0.0-alpha1/non-creative.html) from GitHub CoPilot.  Primarily, it auto-complete certain patterns that I then edited.  It was not used to produce more than one line at a time.
+
 
