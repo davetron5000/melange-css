@@ -7,7 +7,10 @@ import Scale                from "../../lib/scales/Scale.js"
 
 import {
   fontScale,
-  fontFamilies
+  fontFamilies,
+  leadingScale,
+  trackingScale,
+  indentScale,
 } from "../scales.js"
 import pseudoSelectors from "../pseudoSelectors.js"
 import mediaQueries    from "../MediaQueries.js"
@@ -70,13 +73,7 @@ const verticalAlign = new MetaProperty({
 })
 const leading = new MetaProperty({
   name: "Leading/Line Height",
-  scales: [
-    new Scale({
-      "solid": "1",
-      "title": "1.25",
-      "copy": "1.5",
-    })
-  ],
+  scales: leadingScale,
   cssClassTemplates: [
     new CSSClassTemplate("lh", "line-height", {
       exampleTemplate: ExampleTemplate.divWithSelector(`Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
@@ -90,14 +87,7 @@ const leading = new MetaProperty({
 
 const tracking = new MetaProperty({
   name: "Tracking / Letter Spacing",
-  scales: [
-    new Scale({
-      "": "0.1em",
-      "tight": "-0.05em",
-      "mega": "0.25em",
-      "none": "normal",
-    })
-  ],
+  scales: trackingScale,
   cssClassTemplates: [
     new CSSClassTemplate("tracked", "letter-spacing", {
       exampleTemplate: basicExample,
@@ -180,17 +170,7 @@ experience from the originals.`
 
 const textIndent = new MetaProperty({
   name: "Indent",
-  scales: [
-    new Scale({
-      "0": "0",
-      "1": "1em",
-      "2": "1.5em",
-      "3": "2em",
-      "-1": "-1em",
-      "-2": "-1.5em",
-      "-3": "-2em",
-    })
-  ],
+  scales: indentScale,
   cssClassTemplates: [
     new CSSClassTemplate("indent", "text-indent", {
       exampleTemplate: indentExample,

@@ -38,7 +38,10 @@ export default class MetaProperty {
    */
   constructor({name, docs, scales, pseudoSelectors, cssClassTemplates, literalClasses}) {
     this.name              = name
-    this._scales           = scales || [ Scale.forLiteralValues({ "": "" }) ]
+    this._scales           = scales || Scale.forLiteralValues({ "": "" })
+    if (!Array.isArray(this._scales)) {
+      this._scales = [ this._scales ]
+    }
     this.pseudoSelectors   = pseudoSelectors || [ new DefaultPseudoSelector() ]
     this.docs              = new DocStrings(docs)
     if (cssClassTemplates) {

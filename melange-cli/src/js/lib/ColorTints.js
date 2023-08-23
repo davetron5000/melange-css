@@ -112,13 +112,12 @@ export default class ColorTints {
    * for any one-off color, and you will get all the variations defined.
    *
    * colorName - name of the color
-   * tintNamesAndValues - an Object where the key is the step name and the value is a CSS color. You can 
-   *                      use a blank string.
+   * variables - Array of Variable instances
    */
-  registerCustom(colorName, tintNamesAndValues) {
+  registerCustom(colorName, variables) {
     const metaProperty = new MetaProperty({
       name: colorName,
-      scales: [ Scale.forLiteralValues(tintNamesAndValues) ],
+      scales: new VariableBasedScale(variables),
       pseudoSelectors: this.pseudoSelectors,
       cssClassTemplates: [
         new CSSClassTemplate(colorName, "color",{

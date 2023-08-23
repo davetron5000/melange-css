@@ -25,9 +25,11 @@ class DocFilename {
   toString() { return this.filename }
 }
 export default class DocBuilder {
-  constructor({dir, templates}) {
-    this.dir       = dir
-    this.templates = templates
+  constructor({dir, templates, version, repository}) {
+    this.dir        = dir
+    this.templates  = templates
+    this.version    = version
+    this.repository = repository
 
     if (Object.keys(this.templates).length == 0) {
       throw `There are no templates`
@@ -138,6 +140,8 @@ export default class DocBuilder {
         title: "Variables",
         VariableRegistry: VariableRegistry,
         Anchor: Anchor,
+        version: this.version,
+        repository: this.repository,
       },
       { 
         root: templatesRoot,
@@ -161,6 +165,8 @@ export default class DocBuilder {
         HumanizedString: HumanizedString,
         Anchor: Anchor,
         title: "Index of CSS Classes",
+        version: this.version,
+        repository: this.repository,
       },
       { 
         root: templatesRoot,
@@ -188,6 +194,8 @@ export default class DocBuilder {
         HumanizedString: HumanizedString,
         Anchor: Anchor,
         title: null,
+        version: this.version,
+        repository: this.repository,
       },
       { 
         root: templatesRoot,
@@ -213,6 +221,8 @@ export default class DocBuilder {
         mediaQueries: mediaQueries,
         Anchor: Anchor,
         title: "Media Queries",
+        version: this.version,
+        repository: this.repository,
       },
       { 
         root: templatesRoot,
@@ -240,6 +250,8 @@ export default class DocBuilder {
         showTitleInNav: false,
         mediaQuery: currentMediaQuery,
         mediaQueryFilenames: currentMetaPropertyGroupingAdditional.mediaQueryFilenames,
+        version: this.version,
+        repository: this.repository,
       },
       { 
         root: this.templates["ROOT"],

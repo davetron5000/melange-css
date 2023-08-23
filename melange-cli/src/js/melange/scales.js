@@ -92,6 +92,50 @@ const borderWidthVariables = VariableRegistry.register(
 )
 const borderWidthScale = new VariableBasedScaleWithZero(borderWidthVariables)
 
+const leadingVariables = VariableRegistry.register(
+  "lh",
+  {
+    "solid": "1",
+    "title": "1.25",
+    "copy": "1.5",
+  },
+  "Leading",
+  "Leading or line-heights"
+)
+
+const leadingScale = new VariableBasedScale(leadingVariables)
+
+const trackingVariables = VariableRegistry.register(
+  "ls",
+  {
+    "": "0.1em",
+    "tight": "-0.05em",
+    "mega": "0.25em",
+    "none": "normal",
+  },
+  "Tracking",
+  "Tracking or letter-spacing"
+)
+
+const trackingScale = new VariableBasedScale(trackingVariables)
+
+const indentVariables = VariableRegistry.register(
+  "ident",
+  {
+    "1": "1em",
+    "2": "1.5em",
+    "3": "2em",
+    "-1": "-1em",
+    "-2": "-1.5em",
+    "-3": "-2em",
+  },
+  "Indent",
+  "Indent"
+)
+
+const indentScale = new VariableBasedScaleWithZero(indentVariables)
+
+
 /** Now, we have literal scales that don't make sense to have as variables,
  * but that we nevertheless want to define as a scale */
 
@@ -144,4 +188,7 @@ export {
   fontFamilies,
   viewportWidthScale,
   viewportHeightScale,
+  leadingScale,
+  trackingScale,
+  indentScale,
 }

@@ -25,6 +25,9 @@ export default class ReferenceDoc {
         force: {
           type: "boolean",
         },
+        packagejson: {
+          type: "string",
+        },
         help : {
           type: "boolean",
           short: "h",
@@ -38,10 +41,11 @@ export default class ReferenceDoc {
       console.log()
       console.log("OPTIONS")
       console.log()
-      console.log("  --dir DIR       - where the doc .html files should be written")
-      console.log("  --templates DIR - where the .html templates are")
-      console.log("  --force         - If set, will remove existing directory before building")
-      console.log("  --help          - show this message")
+      console.log("  --dir DIR          - where the doc .html files should be written")
+      console.log("  --templates DIR    - where the .html templates are")
+      console.log("  --packagejson FILE - where the package.json file is, used to parse current version")
+      console.log("  --force            - If set, will remove existing directory before building")
+      console.log("  --help             - show this message")
       console.log()
     }
     else {
@@ -53,8 +57,24 @@ export default class ReferenceDoc {
         console.log("missing --templates")
         process.exit(1)
       } 
+      if (!values.packagejson) {
+        console.log("missing --templates")
+        process.exit(1)
+      } 
       const templates = {
       }
+      const parsedPackgeJSON = JSON.parse(fs.readFileSync(values.packagejson))
+
+      if (!parsedPackgeJSON.version) {
+        throw `${values.packagejson} has no version key!`
+      }
+      if (!parsedPackgeJSON.repository) {
+        throw `${values.packagejson} has no repository key!`
+      }
+      const version = parsedPackgeJSON.version
+      const repository = parsedPackgeJSON.repository
+
+
       fs.readdirSync(values.templates).forEach((file) => {
         if (file.match(/\.html$/)) {
           const basename = path.basename(file, ".html")
@@ -78,7 +98,7 @@ export default class ReferenceDoc {
       }
       fs.mkdirSync(values.dir, {recursive: true})
 
-      const builder = new DocBuilder({dir: values.dir, templates: templates})
+      const builder = new DocBuilder({dir: values.dir, templates: templates, version: version, repository: repository})
       melange.checkForDupes()
       builder.build(melange)
     }

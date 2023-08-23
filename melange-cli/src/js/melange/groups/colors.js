@@ -1,6 +1,7 @@
-import ColorTints      from "../../lib/ColorTints.js"
-import pseudoSelectors from "../pseudoSelectors.js"
-import mediaQueries    from "../MediaQueries.js"
+import ColorTints       from "../../lib/ColorTints.js"
+import pseudoSelectors  from "../pseudoSelectors.js"
+import mediaQueries     from "../MediaQueries.js"
+import VariableRegistry from "../../lib/VariableRegistry.js"
 
 const colorTints = new ColorTints(
   [
@@ -26,8 +27,25 @@ colorTints.register("yellow", [ "#FFFBE6", "#FFE766", "#FFD700", "#B39700", "#66
 colorTints.register("green",  [ "#E8F6F1", "#75CBAC", "#19A974", "#0F6546", "#073323" ])
 colorTints.register("blue",   [ "#EBF2FC", "#86B2EB", "#357EDD", "#204C85", "#102642" ])
 colorTints.register("purple", [ "#EFEAF6", "#8E6BC0", "#5E2CA5", "#421F73", "#261242" ])
-colorTints.registerCustom("black", {"": "#000000", "ish": "#111111"})
-colorTints.registerCustom("white", {"": "#FFFFFF", "ish": "#F4F4F4"})
+
+const blacks = VariableRegistry.register("black",
+  {
+    "": "#000000",
+    "ish": "#151515",
+  },
+  "Black",
+  "Blacks",
+  "Color")
+const whites = VariableRegistry.register("white",
+  {
+    "": "#FFFFFF",
+    "ish": "#F0F0F0",
+  },
+  "White",
+  "Whites",
+  "Color")
+colorTints.registerCustom("black", blacks)
+colorTints.registerCustom("white", whites)
 
 const colors = colorTints.asMetaPropertyGrouping()
 

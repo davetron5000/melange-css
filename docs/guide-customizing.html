@@ -84,39 +84,27 @@
         Where possible, <span class="fv-sc tracked">MelangeCSS</span> uses <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" class="blue-darkest">CSS custom propertiews AKA variables</a>.  If you examine the top of <code>melange.css</code>, you can see these variables, and each one is documented <a class="blue-darkest" href="reference/variables.html">in the reference</a>.
       </p>
       <p class="measure-wide lh-copy">
-        To change these values, for example to use different colors or fonts, you will need to install <span class="fv-sc tracked">MelangeCSS</span> using the <a href="get-started.html#split">split install method</a> where you copy <code>melange-variables-only.css</code> into your project and make changes to that file, and include <code>melange-styles-only.css</code> from a <span class="fv-sc tracked">MelangeCSS</span> package.
+        To change these values, you can modify their values in CSS <strong>after</strong> where you have included <span class="fv-sc tracked">MelangeCSS</span>.  Here is an example of how you might do that using the <a class="blue-darkest" href="get-started.html#cdn">CDN install method</a>:
       </p>
-      <h4 class="f-3">Changing the Fonts</h4>
+      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;head&gt;
+
+  &lt;!-- your head existing section --&gt;
+
+  &lt;link rel="stylesheet"
+        href="https://unpkg.com/melange-css@1.0.0-alpha3/melange.min.css"/&gt;
+  &lt;style&gt;
+    :root {
+      --mg-ff-sans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+      --mg-green-lightest: #e6ffe6;
+      --mg-green-light: #99ff99;
+      --mg-green: #009900;
+      --mg-green-dark: #006600;
+      --mg-green-darkest: #003300;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;</code>
       <p class="measure-wide lh-copy">
-        <span class="fv-sc tracked">MelangeCSS</span> supports a serif, sans-serif, monospace, cursive, and fantasy font setting, available via <a href="reference/typography.doc.html#font-families" class="blue-darkest"><code>ff-serif</code>, <code>ff-sans</code>, <code>ff-mono</code>, <code>ff-cursive</code>, and <code>ff-fantasy</code></a>, respectively.
-      </p>
-      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">
---mg-ffsans: «your sans font stack here»
---mg-ffserif: «your serif font stack here»
---mg-ffmono: «your mono font stack here»
---mg-ffcursive: «your cursive font stack here»
---mg-fffantasy: «your fantasy font stack here»
-      </code>
-      <p class="measure-wide lh-copy">
-        Since this file is plain CSS, you can include any web font instructions before these variables are defined.
-      </p>
-      <h4 class="f-3">Changing the Colors</h4>
-      <p class="measure-wide lh-copy">
-        <span class="fv-sc tracked">MelangeCSS</span>'s builtin colors are fine for most generic applications, but there's often a need for branded colors.  If possible, replace one of the existing color ranges with your branded color.  For example, if your greens need to be a bit more blue for brand purposes, focused on <span class="dib w-5 br-2" style="background-color: #008182;">&nbsp;</span>, you could do this:
-      </p>
-      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">
---mg-greenlightest: #cce6e6;
---mg-greenlight: #66b3b4;
---mg-green: #008182;
---mg-greendark: #005a5b;
---mg-greendarkest: #003434;
-      </code>
-      <p class="measure-wide lh-copy">
-        Since this file is plain CSS, you can include any web font instructions before these variables are defined.
-      </p>
-      <h4 class="f-3">Changing Spacings</h4>
-      <p class="measure-wide lh-copy">
-        <span class="fv-sc tracked">MelangeCSS</span> uses the same scale for margins, paddings, widths, and heights.  It uses a different scale for border radiuses and a third one for border widths.  Change those as needed the same way you'd change the fonts or colors.  Note that you are encouraged to make sure each step of the scale is distinct and that the values go from small to large.
+        As long as you re-assign the varaibles after includingn <span class="fv-sc tracked">MelangeCSS</span>, it will override the defaults.
       </p>
     </article>
     <article>

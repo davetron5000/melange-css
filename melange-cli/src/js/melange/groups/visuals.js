@@ -17,10 +17,7 @@ const opacityExampleTemplate = (selector) => {
 }
 const opacity = new MetaProperty({
   name: "Opacity",
-  scales: [
-    new Scale({ "0": "0", "0-5": "5%" }),
-    percentageScale,
-  ],
+  scales: percentageScale,
   cssClassTemplates: [
     new CSSClassTemplate("o", "opacity", { exampleTemplate: opacityExampleTemplate })
   ]

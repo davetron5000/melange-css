@@ -9,7 +9,8 @@ help:
 .PHONY: help
 
 # Inputs
-SRC_DIR=melange-cli/src
+CLI_ROOT=melange-cli
+SRC_DIR=$(CLI_ROOT)/src
 SRC_JS_DIR=$(SRC_DIR)/js
 SRC_LIB_FILES=$(shell find $(SRC_JS_DIR)/lib -name '*.js')
 SRC_META_THEME_FILES=$(shell find $(SRC_JS_DIR)/melange -name '*.js')
@@ -60,8 +61,8 @@ local-docs: $(DOCS_DIR)
 .PHONY: local-docs
 
 $(DOCS_DIR): $(SRC_FILES) $(SRC_HTML_FILES)
-	@node $(SRC_JS_DIR)/cli/melange.js website --templates $(SRC_HTML_DIR)/ --dir $(DOCS_DIR)/ --force
-	@node $(SRC_JS_DIR)/cli/melange.js reference-docs --templates $(SRC_HTML_DIR)/reference --dir $(DOCS_DIR)/reference --force
+	@node $(SRC_JS_DIR)/cli/melange.js website --templates $(SRC_HTML_DIR)/ --dir $(DOCS_DIR)/ --force --packagejson $(CLI_ROOT)/package.json
+	@node $(SRC_JS_DIR)/cli/melange.js reference-docs --templates $(SRC_HTML_DIR)/reference --dir $(DOCS_DIR)/reference --force --packagejson $(CLI_ROOT)/package.json
 	@node $(SRC_JS_DIR)/cli/melange.js css --css $(DOCS_DIR)/melange.css
 	@node $(SRC_JS_DIR)/cli/melange.js css --css $(DOCS_DIR)/reference/melange.css
 	@cp $(SRC_HTML_DIR)/*.png $(DOCS_DIR)

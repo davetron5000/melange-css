@@ -14,7 +14,7 @@ export default class Variable {
    * For example, the variable `new Variable("fontSize", "big", "10rem")` would produce:
    *
    * ```css
-   * --melange-fontSize-big: 10rem;
+   * --mg-fontSize-big: 10rem;
    * ```
    */
   constructor({baseName, stepName, defaultValue}) {
@@ -42,6 +42,11 @@ export default class Variable {
   }
 
   _variableName() {
-    return `--mg-${this.baseName}${this.stepName}`
+    if (this.stepName && this.stepName != "") {
+      return `--mg-${this.baseName}-${this.stepName}`
+    }
+    else {
+      return `--mg-${this.baseName}`
+    }
   }
 }
