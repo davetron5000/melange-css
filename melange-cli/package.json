@@ -1,11 +1,11 @@
 {
   "name": "melange-cli",
-  "version": "1.0.0-alpha3",
+  "version": "1.0.0-alpha4",
   "description": "CLI for Melange CSS",
   "keywords": [ "css" ],
-  "homepage": "https://naildrivin5.com",
+  "homepage": "https://davetron5000.github.io/melange-css/index.html",
   "bugs": {
-    "url": "https://naildrivin5.com",
+    "url": "https://github.com/davetron5000/melange-css/issues",
     "email": "davec@naildrivin5.com"
   },
   "main": "src/js/index.js",

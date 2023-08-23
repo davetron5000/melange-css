@@ -3,8 +3,8 @@ help:
 	@echo
 	@echo "Targets:"
 	@echo
-	@echo "  distro     - Builds all distributable files."
-	@echo "  local-docs - Builds docs locally"
+	@echo "  distro        - Builds all distributable files."
+	@echo "  documentation - Builds docs only
 
 .PHONY: help
 
@@ -25,11 +25,7 @@ DIST_DIR=melange-css
 
 MONLITHIC_CSS=$(DIST_DIR)/melange.css
 MONLITHIC_MINIFIED_CSS=$(DIST_DIR)/melange.min.css
-MONLITHIC_FILES= $(MONLITHIC_CSS) $(MONLITHIC_MINIFIED_CSS)
-
-SPLIT_VARS_ONLY_CSS=$(DIST_DIR)/melange-variables-only.css
-SPLIT_STYLES_ONLY_CSS=$(DIST_DIR)/melange-styles-only.css
-SPLIT_FILES=$(SPLIT_VARS_ONLY_CSS) $(SPLIT_STYLES_ONLY_CSS)
+MONLITHIC_FILES=$(MONLITHIC_CSS) $(MONLITHIC_MINIFIED_CSS)
 
 METADATA=$(DIST_DIR)/melange-metadata.json
 
@@ -38,7 +34,7 @@ METADATA=$(DIST_DIR)/melange-metadata.json
 DOCS_DIR=docs
 
 # Rules
-distro: $(MONLITHIC_FILES) $(SPLIT_FILES) $(METADATA)
+distro: $(MONLITHIC_FILES) $(METADATA) documentation
 .PHONY: distro
 
 $(DIST_DIR):
@@ -53,23 +49,24 @@ $(MONLITHIC_CSS) $(METADATA): $(DIST_DIR) $(SRC_FILES)
 	@echo "Building $(@)"
 	@node $(SRC_JS_DIR)/cli/melange.js css --css $(MONLITHIC_CSS) --meta-data $(METADATA)
 
-$(SPLIT_VARS_ONLY_CSS) $(SPLIT_STYLES_ONLY_CSS): $(DIST_DIR) $(SRC_FILES)
-	@echo "Building $(SPLIT_VARS_ONLY_CSS) and $(SPLIT_STYLES_ONLY_CSS)"
-	@node $(SRC_JS_DIR)/cli/melange.js css --css $(SPLIT_STYLES_ONLY_CSS) --variables $(SPLIT_VARS_ONLY_CSS) --meta-data $(METADATA)
+$(DOCS_DIR):
+	@mkdir -p $(DOCS_DIR)
 
-local-docs: $(DOCS_DIR)
-.PHONY: local-docs
-
-$(DOCS_DIR): $(SRC_FILES) $(SRC_HTML_FILES)
+documentation: $(DOCS_DIR) $(SRC_FILES) $(SRC_HTML_FILES)
 	@node $(SRC_JS_DIR)/cli/melange.js website --templates $(SRC_HTML_DIR)/ --dir $(DOCS_DIR)/ --force --packagejson $(CLI_ROOT)/package.json
 	@node $(SRC_JS_DIR)/cli/melange.js reference-docs --templates $(SRC_HTML_DIR)/reference --dir $(DOCS_DIR)/reference --force --packagejson $(CLI_ROOT)/package.json
 	@node $(SRC_JS_DIR)/cli/melange.js css --css $(DOCS_DIR)/melange.css
 	@node $(SRC_JS_DIR)/cli/melange.js css --css $(DOCS_DIR)/reference/melange.css
 	@cp $(SRC_HTML_DIR)/*.png $(DOCS_DIR)
+.PHONY: documentation
 
 clean:
-	@rm -rf $(DIST_DIR)
-	@rm -rf $(DOCS_DIR)
+	@rm -rf $(MONLITHIC_FILES)
+	@rm -rf $(METADATA)
+	@rm -rf $(DOCS_DIR)/*.html
+	@rm -rf $(DOCS_DIR)/*.css
+	@rm -rf $(DOCS_DIR)/*.png
+	@rm -rf $(DOCS_DIR)/reference
 .PHONY: clean
 
 debug:
