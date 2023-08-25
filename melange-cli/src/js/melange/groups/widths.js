@@ -61,11 +61,24 @@ const heightsMetaProperty = new MetaProperty({
   ]
 })
 
+const boxSizing = new MetaProperty({
+  name: "Box Sizing",
+  docs: [
+    "Box sizing controls how the width and height are calculated. <span class=\"fv-sc tracked\">MelangeCSS</span> sets the default to <code>border-box</code> (which is not the browser default) as this avoids some issues with predicting and controlling sizing",
+  ],
+  literalClasses: {
+    "content-box": { properties: { "box-sizing": "content-box" } },
+    "border-box": { properties: { "box-sizing": "border-box" } },
+  }
+})
+
+
 const widths = new MetaPropertyGrouping({
   name: "Widths and Heights",
   metaProperties: [
     widthsMetaProperty,
     heightsMetaProperty,
+    boxSizing,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
   docs: [

@@ -58,6 +58,7 @@ documentation: $(DOCS_DIR) $(SRC_FILES) $(SRC_HTML_FILES)
 	@node $(SRC_JS_DIR)/cli/melange.js css --css $(DOCS_DIR)/melange.css
 	@node $(SRC_JS_DIR)/cli/melange.js css --css $(DOCS_DIR)/reference/melange.css
 	@cp $(SRC_HTML_DIR)/*.png $(DOCS_DIR)
+	@cp $(SRC_DIR)/CNAME $(DOCS_DIR)
 .PHONY: documentation
 
 clean:
