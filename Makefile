@@ -4,7 +4,7 @@ help:
 	@echo "Targets:"
 	@echo
 	@echo "  distro        - Builds all distributable files."
-	@echo "  documentation - Builds docs only
+	@echo "  documentation - Builds docs only"
 
 .PHONY: help
 
