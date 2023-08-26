@@ -2,17 +2,17 @@
   <section class="pa-1 w-90 w-60-ns mh-auto">
     <h3 class="f-5 mb-0 mt-2">Customizing &amp; Extending</h3>
     <nav>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       There are several ways to customize or extend <span class="fv-sc tracked">MelangeCSS</span> for your needs:
     </p>
     <ul class="ma-0 pa-0 lsp-inside">
-      <li class="measure-wide lh-copy mb-2">
+      <li class="measure lh-copy mb-2">
         <a href="#variables" class="blue-dark">Changing the Variables</a> - this is the simplest mechanism and is suitable if you want to change the fonts, colors, or use a different scale for spacing and font sizes.
       </li>
-      <li class="measure-wide lh-copy mb-2">
+      <li class="measure lh-copy mb-2">
         <a href="#augmenting" class="blue-dark">Adding Your Own Classes</a> - this is useful when you need additional classes, but want to capitalize on the naming conventions, media queries, etc.
       </li>
-      <li class="measure-wide lh-copy mb-2">
+      <li class="measure lh-copy mb-2">
         <a href="#radical" class="blue-dark">Adding More Steps or Making More Radical Changes</a> - if you need to change the number of steps in the various scales, alter the naming conventions, or otherwise make a more radical change, <span class="fv-sc tracked">MelangeCSS</span> can allow this by the use of the JavaScript code that generates it.
       </li>
     </ul>
@@ -20,10 +20,10 @@
     <article>
       <a name="variables"></a>
       <h4 class="f-4">Changing the Variables</h4>
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Where possible, <span class="fv-sc tracked">MelangeCSS</span> uses <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" class="blue-darkest">CSS custom properties AKA variables</a>.  If you examine the top of <code>melange.css</code>, you can see these variables, and each one is documented <a class="blue-darkest" href="reference/variables.html">in the reference</a>.
       </p>
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         To change these values, you can modify their values in CSS <strong>after</strong> where you have included <span class="fv-sc tracked">MelangeCSS</span>.  Here is an example of how you might do that using the <a class="blue-darkest" href="get-started.html#cdn">CDN install method</a>:
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;head&gt;
@@ -43,28 +43,28 @@
     }
   &lt;/style&gt;
 &lt;/head&gt;</code>
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         As long as you re-assign the varaibles after includingn <span class="fv-sc tracked">MelangeCSS</span>, it will override the defaults.
       </p>
     </article>
     <article>
       <a name="augmenting"></a>
       <h4 class="f-4">Adding Your Own Classes</h4>
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         While you can create any classes you like referencing the <span class="fv-sc tracked">MelangeCSS</span> variables, you may want to take advantage of the naming scheme for media queries and pseudo-selectors.  To do this, you'll need to install the <code>melange-cli</code> NPM package:
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --saveDev melange-cli</code>
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         TBD as this isn't built yet
       </p>
     </article>
     <article>
       <a name="radical"></a>
       <h4 class="f-4">Making More Radical Changes</h4>
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         At it's core, <span class="fv-sc tracked">MelangeCSS</span> is a set of JavaScript classes that allow you to define a meta theme, then use that to generate a CSS library.  The main reason to do this would be if you want to change the number of steps in any of the scales, or use a different set of media queries.
       </p>
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         TBD as this isn't built yet
       </p>
     </article>

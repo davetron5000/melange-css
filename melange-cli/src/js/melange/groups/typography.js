@@ -11,6 +11,7 @@ import {
   leadingScale,
   trackingScale,
   indentScale,
+  measureScale,
 } from "../scales.js"
 import pseudoSelectors from "../pseudoSelectors.js"
 import mediaQueries    from "../MediaQueries.js"
@@ -29,16 +30,9 @@ const fontSizes = new MetaProperty({
   ]
 })
 
-const measureScale = new Scale({
-  "": "30rem",
-  "wide": "40rem",
-  "narrow": "25rem",
-})
-
-
 const measure = new MetaProperty({
   name: "Measure",
-  docs: "Measure is a convienience for setting max widths appropriater for reading text",
+  docs: "Measure is a convienience for setting max widths appropriate for reading text, and works regardless of font size. It uses <code>ch</code> units to achieve this.",
   scales: [ measureScale ],
   cssClassTemplates: [
     new CSSClassTemplate("measure", "max-width", {

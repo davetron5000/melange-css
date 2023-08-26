@@ -13,7 +13,7 @@
   <% metaPropertyGrouping.docs.forEach( (paragraph) => { %>
     <p class="measure f-2 lh-copy"><%- paragraph %></p>
   <% }) %>
-<nav class="blue-darkest bb bt bc-blue-dark pv-2 i">
+<nav class="blue-darkest bg-blue-lightest w-auto w-60-ns pa-2 br-2 i">
   <div class="dib f-2 blue-darkest mb-2 mh-1 fw-bold">
     Supported Media Queries
   </div>
@@ -45,7 +45,7 @@
         <%= new HumanizedString(metaProperty.name) %>
       </h5>
       <% metaProperty.docs.forEach( (paragraph) => { %>
-        <p class="measure-wide lh-copy / ma-0 mt-2"><%- paragraph %></p>
+        <p class="measure lh-copy / ma-0 mt-2"><%- paragraph %></p>
       <% }) %>
       <% if (metaProperty.cssClassTemplates.length > 1) { %>
         <nav class="flex flex-wrap items-baseline justify-center justify-start-ns mt-3">
@@ -112,7 +112,7 @@
 <% if (!mediaQuery.isDefault()) { %>
 <a name="media-query-note"></a>
 <aside class="pa-2 mv-4 br-3 bg-white gray-darkest w-auto">
-<p class="f-1 i measure lh-copy mh-auto">
+<p class="f-1 i measure mh-auto lh-copy mh-auto">
   <strong>Note:</strong> Examples on this page may not work properly if your system or browser is not configured to pass the media query. <a class="underline blue-dark" href="#top">&larr; back</a>
 </p>
 </aside>

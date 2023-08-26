@@ -1,11 +1,11 @@
 <%- include( "_header.html") %>
-<p class="measure-wide lh-copy">
+<p class="measure lh-copy">
   <span class="fv-sc tracked">MelangeCSS</span>'s design system uses scales and steps encoded in CSS variables.  By default, these values are provided by Melange, however, you can change these variables to suit your own needs.  Below are all the varaibles, their default values as provided by Melange, and the currently computed value running in your browser right now.
 </p>
-<p class="measure-wide lh-copy">
+<p class="measure lh-copy">
   Each variable conforms to a naming scheme, defined as follows:
 </p>
-<p class="measure-wide lh-copy">
+<p class="measure lh-copy">
   <code><pre>
     &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Prefix indicating this is a <span class="fv-sc tracked">MelangeCSS</span> variable</span>
     &#9474;
@@ -16,10 +16,10 @@
   --mg-XX-##
   </pre></code>
 </p>
-<p class="measure-wide lh-copy">
+<p class="measure lh-copy">
   Numeric steps go from smaller to larger by default, and you are advised to adhere to this convention.
 </p>
-<nav class="measure-wide mv-2 pt-2 pb-3 bb bc-blue-light flex flex-wrap items-baseline">
+<nav class="measure mv-2 pt-2 pb-3 bb bc-blue-light flex flex-wrap items-baseline">
 <% VariableRegistry.eachSetOfVariables( (baseName, variablesSet) => { %>
   <% if (!variablesSet.derived) { %> 
     <a class="f-2 mr-3 blue-dark lh-copy" href="#<%= new Anchor(baseName) %>"><%= variablesSet.summary %></a>
@@ -33,7 +33,7 @@
       <%= variablesSet.summary %>
     </h3>
     <% if (variablesSet.documentation) { %>
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         <%= variablesSet.documentation %>
       </p>
     <% } %>

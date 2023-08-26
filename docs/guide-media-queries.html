@@ -71,10 +71,10 @@
     <blockquote class="f-4 i tr tracked lh-copy"><span class="f-6">“</span>
       There’s no secret to balance. You just have to feel the waves.
     </blockquote>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       <span class="fv-sc tracked">MelangeCSS</span>'s classes apply to all screens, which implies any design using those classes affects mobile devices. If a design cannot work on both small and large screens, you can use suffixed classes to target largest screens, thus achieving a mobile-first design.
     </p>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       Suppose we wish the following component to appear like so on desktop:
     </p>
     <div class="bg-white debug-grid pa-3">
@@ -89,7 +89,7 @@
         </div>
       </div>
     </div>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       and like so on mobile:
     </p>
     <div class="bg-white debug-grid pa-3 w-50 mh-auto">
@@ -104,7 +104,7 @@
         </div>
       </div>
     </div>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       Ideally, this can be achieved with the same markup.  Start by making it work for mobile screens:
     </p>
     <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
@@ -117,18 +117,18 @@
     &lt;a class="db tc blue-light" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       To change the design for larger screens, we must:
     </p>
     <ul class="ma-0 pa-0 lsp-inside">
-      <li class="measure-wide lh-copy">
+      <li class="measure lh-copy">
         arrange the image and name horizontally, with appropriate padding for that layout.
       </li>
-      <li class="measure-wide lh-copy">
+      <li class="measure lh-copy">
       align the title and link left.
       </li>
     </p>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       To do this, you can use <span class="fv-sc tracked">MelangeCSS</span>'s classes suffixed with <code>-ns</code> for “not small”, meaning any screen whose width is not considered small (thus, mobile).
     </p>
     <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
@@ -153,19 +153,21 @@
         </div>
       </div>
     </div>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       If you view this page on a mobile device (or using the responsive mode of your browser), you'll see that the styling changes as desired.
     </p>
   </article>
     </main>
-    <footer class="pv-5 bg-white black-ish">
-      <p class="measure mh-auto tc lh-copy">
-        <span class="fv-sc tracked">MelangeCSS</span>
-        is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-dark">Hippocratic License, v2.1</a>.
-      </p>
-      <p class="measure mh-auto tc lh-copy f-1 i">
-        This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot.
-      </p>
+    <footer class="pv-4 bg-white black-ish">
+      <div class="w-90 w-60-ns mh-auto">
+        <p class="measure xmh-auto tc tl-ns lh-copy">
+          <span class="fv-sc tracked">MelangeCSS</span>
+          is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-dark">Hippocratic License, v2.1</a>.
+        </p>
+        <p class="measure xmh-auto tc tl-ns lh-copy f-1 i">
+          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot.
+        </p>
+      </div>
     </footer>
   </body>
 </html>

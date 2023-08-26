@@ -1,6 +1,6 @@
 <%- include( "_header.html") %>
 <article>
-  <ul class="lst-none">
+  <ul class="lst-none pl-0">
     <% Object.keys(metaPropertyGroupingsByName).toSorted().forEach( (name) => {
       const { metaPropertyGrouping, filename } = metaPropertyGroupingsByName[name]
     %>
@@ -10,14 +10,7 @@
             <%= new HumanizedString(name) %>
           </a>
         </h3>
-        <div class="ml-3 ml-4-ns">
-          <% metaPropertyGrouping.docs.forEach( (paragraph) => { %>
-            <p class="measure lh-copy f-2 i">
-              <%- paragraph %>
-            </p>
-          <% }) %>
-        </div>
-        <ul class="ma-0 ml-3 ml-4-ns pa-0 flex flex-wrap flex-reverse lh-copy measure">
+        <ul class="ma-0 pa-0 flex flex-wrap flex-reverse lh-copy measure">
           <% metaPropertyGrouping.metaProperties.sort( (a,b) => { return a.name.localeCompare(b.name) }).forEach( (metaProperty) => { %>
            <li class="mr-2 lst-none">
              <a class="orange-darkest hover-blue-dark" href="<%= filename %>#<%= new Anchor(metaProperty.name) %>">

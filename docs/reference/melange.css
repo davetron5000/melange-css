@@ -184,6 +184,15 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 --mg-lh-copy: 1.5;
 
 /*
+ * Measure
+ *
+ * Width for reading text
+ */
+--mg-tw: 60ch;
+--mg-tw-wide: 75ch;
+--mg-tw-narrow: 50ch;
+
+/*
  * Spacing
  *
  * Spacing scale for margins, paddings, widths, positions, etc.
@@ -1505,13 +1514,13 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
   letter-spacing: var(--mg-ls-none);
 }
 .measure {
-  max-width: 30rem;
+  max-width: var(--mg-tw);
 }
 .measure-wide {
-  max-width: 40rem;
+  max-width: var(--mg-tw-wide);
 }
 .measure-narrow {
-  max-width: 25rem;
+  max-width: var(--mg-tw-narrow);
 }
 .db {
   display: block;
@@ -4279,13 +4288,13 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
   letter-spacing: var(--mg-ls-none);
 }
 .measure-ns {
-  max-width: 30rem;
+  max-width: var(--mg-tw);
 }
 .measure-wide-ns {
-  max-width: 40rem;
+  max-width: var(--mg-tw-wide);
 }
 .measure-narrow-ns {
-  max-width: 25rem;
+  max-width: var(--mg-tw-narrow);
 }
 .db-ns {
   display: block;
@@ -7036,13 +7045,13 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
   letter-spacing: var(--mg-ls-none);
 }
 .measure-m {
-  max-width: 30rem;
+  max-width: var(--mg-tw);
 }
 .measure-wide-m {
-  max-width: 40rem;
+  max-width: var(--mg-tw-wide);
 }
 .measure-narrow-m {
-  max-width: 25rem;
+  max-width: var(--mg-tw-narrow);
 }
 .db-m {
   display: block;
@@ -9793,13 +9802,13 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
   letter-spacing: var(--mg-ls-none);
 }
 .measure-l {
-  max-width: 30rem;
+  max-width: var(--mg-tw);
 }
 .measure-wide-l {
-  max-width: 40rem;
+  max-width: var(--mg-tw-wide);
 }
 .measure-narrow-l {
-  max-width: 25rem;
+  max-width: var(--mg-tw-narrow);
 }
 .db-l {
   display: block;

@@ -60,7 +60,7 @@
   
     <p class="measure f-2 lh-copy">Text rendering can be tricky, however the use of a fixed font scale and a limited number of other tranformations for letter spacing and leading can provide myriad combinations to meet most needs without having to endlessly tweak precise values.  The result of the fixed set up typographic features is general consistency and harmony regardless of the styles chosen.</p>
   
-<nav class="blue-darkest bb bt bc-blue-dark pv-2 i">
+<nav class="blue-darkest bg-blue-lightest w-auto w-60-ns pa-2 br-2 i">
   <div class="dib f-2 blue-darkest mb-2 mh-1 fw-bold">
     Supported Media Queries
   </div>
@@ -985,7 +985,7 @@ experience from the originals.
         Measure
       </h5>
       
-        <p class="measure-wide lh-copy / ma-0 mt-2">Measure is a convienience for setting max widths appropriater for reading text</p>
+        <p class="measure lh-copy / ma-0 mt-2">Measure is a convienience for setting max widths appropriate for reading text, and works regardless of font size. It uses <code>ch</code> units to achieve this.</p>
       
       
       <table class="w-100 mt-3 collapse">
@@ -1218,7 +1218,7 @@ experience from the originals.
         Text Decoration
       </h5>
       
-        <p class="measure-wide lh-copy / ma-0 mt-2">Text decoration adds lines to the text. You can combine the single letter values together by putting the letters in alphabetical order, for example <code>su</code> combines <code>s</code> and <code>u</code></p>
+        <p class="measure lh-copy / ma-0 mt-2">Text decoration adds lines to the text. You can combine the single letter values together by putting the letters in alphabetical order, for example <code>su</code> combines <code>s</code> and <code>u</code></p>
       
       
         <nav class="flex flex-wrap items-baseline justify-center justify-start-ns mt-3">
@@ -1928,7 +1928,7 @@ experience from the originals.
         Vertical Align
       </h5>
       
-        <p class="measure-wide lh-copy / ma-0 mt-2">While vertical alignemnt can be specified in artbirary lengbths and percentages, baseline, top, middle, and bottom are sufficient for most use-cases.</p>
+        <p class="measure lh-copy / ma-0 mt-2">While vertical alignemnt can be specified in artbirary lengbths and percentages, baseline, top, middle, and bottom are sufficient for most use-cases.</p>
       
       
         <nav class="flex flex-wrap items-baseline justify-center justify-start-ns mt-3">
@@ -2342,9 +2342,11 @@ Trust me.
     </main>
   </body>
     <footer class="pv-5 bg-white black-ish">
-      <p class="measure mh-auto tc lh-copy f-1 i">
-        This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot.
-      </p>
+      <div class="w-90 w-60-ns mh-auto">
+        <p class="measure tc tl-ns lh-copy f-1 i">
+          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot.
+        </p>
+      </div>
     </footer>
 </html>
 

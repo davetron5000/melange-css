@@ -4,24 +4,28 @@
     <blockquote class="f-4 i tr tracked lh-copy"><span class="f-6">“</span>
       Truth suffers from too much analysis.
     </blockquote>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       It's not hard to imagine your HTML becoming littered with the same set of single-use classes and that this duplication can make it hard to sustain development of your app.  And, while <span class="fv-sc tracked">MelangeCSS</span> includes a grid-based foundation for a design system, you may wish to cultivate more involved re-usable components.
     </p>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       Indeed, building a site directly in HTML and CSS with <span class="fv-sc tracked">MelangeCSS</span> would result in this. But, if you are building a web app, you almost certainly have a templating system that allows for extraction of re-usable bits of code.  That is how Melange intends for you to manage duplication.
     </p>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       Consider a button component that has four different versions: a large primary, large secondary, small primary, and small secondary like so:
     </p>
-    <div class="flex items-center justify-start">
-      <button class="ph-4 pv-3 f-4 tc br-4 ba fw-bold bg-blue-darkest white ma-2">Big Primary</button>
-      <button class="ph-3 pv-2 f-3 tc br-3 ba fw-bold bg-blue-darkest white ma-2">Small Primary</button>
+    <div class="pa-3 bg-white">
+      <div class="debug-grid">
+        <div class="flex items-center justify-start">
+          <button class="ph-4 pv-3 f-4 tc br-4 ba fw-bold bg-blue-darkest white ma-2">Big Primary</button>
+          <button class="ph-3 pv-2 f-3 tc br-3 ba fw-bold bg-blue-darkest white ma-2">Small Primary</button>
+        </div>
+        <div class="flex items-center justify-start">
+          <button class="ph-4 pv-3 f-4 tc br-4 ba fw-3 blue-darkest bg-white ma-2">Big Secondary</button>
+          <button class="ph-3 pv-2 f-3 tc br-3 ba fw-3 blue-darkest bg-white ma-2">Small Secondary</button>
+        </div>
+      </div>
     </div>
-    <div class="flex items-center justify-start">
-      <button class="ph-4 pv-3 f-4 tc br-4 ba fw-3 blue-darkest bg-white ma-2">Big Secondary</button>
-      <button class="ph-3 pv-2 f-3 tc br-3 ba fw-3 blue-darkest bg-white ma-2">Small Secondary</button>
-    </div>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       Your templating system, including front-end frameworks like React, should be able to provide a way to generate this markup based on parameters or properties.  For example:
     </p>
     <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">function Button({size,type,label}) {
@@ -37,7 +41,7 @@
     &lt;/button&gt;
   )
 }</code>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
     Or, in Rails:
     </p>
     <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">def styled_button(size, type, label)
@@ -50,7 +54,7 @@
     label
   end
 end</code>
-    <p class="measure-wide lh-copy">
+    <p class="measure lh-copy">
       These are only examples.  You can do it however you want.  And, because <span class="fv-sc tracked">MelangeCSS</span> is only a CSS file with variables, you could certainly create your own CSS if you like:
     </p>
     <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">.button {
@@ -75,7 +79,7 @@ end</code>
   padding: var(--mg-sp2) var(--mg-sp3);
   font-size: var(--mg-fs3);
 }</code>
-  <p class="measure-wide lh-copy">
+  <p class="measure lh-copy">
     The key thing to remember is that your web app's components are not just CSS classes - they are markup, styling, JavaScript, and even back-end support.  By treating them this way, you manage them with your web app's templating system as opposed to a CSS class, since a CSS class is rarely sufficient to truly create a re-usable component.
   </p>
   </article>

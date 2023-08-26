@@ -54,13 +54,13 @@
     </header>
     <main class="pa-3 w-60-ns w-90 mh-auto">
 
-<p class="measure-wide lh-copy">
+<p class="measure lh-copy">
   <span class="fv-sc tracked">MelangeCSS</span>'s design system uses scales and steps encoded in CSS variables.  By default, these values are provided by Melange, however, you can change these variables to suit your own needs.  Below are all the varaibles, their default values as provided by Melange, and the currently computed value running in your browser right now.
 </p>
-<p class="measure-wide lh-copy">
+<p class="measure lh-copy">
   Each variable conforms to a naming scheme, defined as follows:
 </p>
-<p class="measure-wide lh-copy">
+<p class="measure lh-copy">
   <code><pre>
     &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; <span class="f-1 ff-serif">Prefix indicating this is a <span class="fv-sc tracked">MelangeCSS</span> variable</span>
     &#9474;
@@ -71,10 +71,10 @@
   --mg-XX-##
   </pre></code>
 </p>
-<p class="measure-wide lh-copy">
+<p class="measure lh-copy">
   Numeric steps go from smaller to larger by default, and you are advised to adhere to this convention.
 </p>
-<nav class="measure-wide mv-2 pt-2 pb-3 bb bc-blue-light flex flex-wrap items-baseline">
+<nav class="measure mv-2 pt-2 pb-3 bb bc-blue-light flex flex-wrap items-baseline">
 
    
     <a class="f-2 mr-3 blue-dark lh-copy" href="#bw">Border widths</a>
@@ -94,6 +94,10 @@
 
    
     <a class="f-2 mr-3 blue-dark lh-copy" href="#lh">Leading</a>
+  
+
+   
+    <a class="f-2 mr-3 blue-dark lh-copy" href="#tw">Measure</a>
   
 
   
@@ -150,7 +154,7 @@
       Border widths
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Border widths
       </p>
     
@@ -234,7 +238,7 @@
       Font Scale
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Font scale, with size 2 being the body font size
       </p>
     
@@ -354,7 +358,7 @@
       Fonts
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Fonts to use for sans, serif, etc.
       </p>
     
@@ -438,7 +442,7 @@
       Indent
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Indent
       </p>
     
@@ -534,7 +538,7 @@
       Leading
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Leading or line-heights
       </p>
     
@@ -589,6 +593,66 @@
   
 
   
+    <a name="tw"></a>
+    <h3 class="f-4">
+      Measure
+    </h3>
+    
+      <p class="measure lh-copy">
+        Width for reading text
+      </p>
+    
+    <table class="w-auto">
+      <thead>
+        <tr>
+          <th class="tl ws-nowrap pa-2">Variable</th>
+          <th class="tl ws-nowrap pa-2">Default Value</th>
+          <th class="tl ws-nowrap pa-2">Current Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr data-variable="--mg-tw">
+            <td class="ws-nowrap pa-2">
+              <code class="ba bc-orange-light orange-darkest dib pa-3 br-1 ws-nowrap mr-3-ns">
+                --mg-tw
+              </code>
+            </td>
+            
+              <td class="pa-2"><code>60ch</code></td>
+              <td class="pa-2"><code data-actual-value>Requires JavaScript to calculate</code></td>
+            
+          </tr>
+        
+          <tr data-variable="--mg-tw-wide">
+            <td class="ws-nowrap pa-2">
+              <code class="ba bc-orange-light orange-darkest dib pa-3 br-1 ws-nowrap mr-3-ns">
+                --mg-tw-wide
+              </code>
+            </td>
+            
+              <td class="pa-2"><code>75ch</code></td>
+              <td class="pa-2"><code data-actual-value>Requires JavaScript to calculate</code></td>
+            
+          </tr>
+        
+          <tr data-variable="--mg-tw-narrow">
+            <td class="ws-nowrap pa-2">
+              <code class="ba bc-orange-light orange-darkest dib pa-3 br-1 ws-nowrap mr-3-ns">
+                --mg-tw-narrow
+              </code>
+            </td>
+            
+              <td class="pa-2"><code>50ch</code></td>
+              <td class="pa-2"><code data-actual-value>Requires JavaScript to calculate</code></td>
+            
+          </tr>
+        
+      </tbody>
+    </table>
+  
+
+  
 
   
     <a name="sp"></a>
@@ -596,7 +660,7 @@
       Spacing
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Spacing scale for margins, paddings, widths, positions, etc.
       </p>
     
@@ -704,7 +768,7 @@
       Tracking
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Tracking or letter-spacing
       </p>
     
@@ -776,7 +840,7 @@
       Black
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Blacks
       </p>
     
@@ -824,7 +888,7 @@
       Blue
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Tints/Shades for blue
       </p>
     
@@ -908,7 +972,7 @@
       Gray
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Tints/Shades for gray
       </p>
     
@@ -992,7 +1056,7 @@
       Green
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Tints/Shades for green
       </p>
     
@@ -1076,7 +1140,7 @@
       Orange
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Tints/Shades for orange
       </p>
     
@@ -1160,7 +1224,7 @@
       Purple
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Tints/Shades for purple
       </p>
     
@@ -1244,7 +1308,7 @@
       Red
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Tints/Shades for red
       </p>
     
@@ -1328,7 +1392,7 @@
       White
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Whites
       </p>
     
@@ -1376,7 +1440,7 @@
       Yellow
     </h3>
     
-      <p class="measure-wide lh-copy">
+      <p class="measure lh-copy">
         Tints/Shades for yellow
       </p>
     
@@ -1471,9 +1535,11 @@
     </main>
   </body>
     <footer class="pv-5 bg-white black-ish">
-      <p class="measure mh-auto tc lh-copy f-1 i">
-        This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot.
-      </p>
+      <div class="w-90 w-60-ns mh-auto">
+        <p class="measure tc tl-ns lh-copy f-1 i">
+          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot.
+        </p>
+      </div>
     </footer>
 </html>
 

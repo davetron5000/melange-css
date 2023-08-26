@@ -135,6 +135,18 @@ const indentVariables = VariableRegistry.register(
 
 const indentScale = new VariableBasedScaleWithZero(indentVariables)
 
+const measureVariables = VariableRegistry.register(
+  "tw",
+  {
+    "": "60ch",
+    "wide": "75ch",
+    "narrow": "50ch",
+  },
+  "Measure",
+  "Width for reading text"
+)
+
+const measureScale = new VariableBasedScale(measureVariables)
 
 /** Now, we have literal scales that don't make sense to have as variables,
  * but that we nevertheless want to define as a scale */
@@ -191,4 +203,5 @@ export {
   leadingScale,
   trackingScale,
   indentScale,
+  measureScale,
 }

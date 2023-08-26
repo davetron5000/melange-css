@@ -1,12 +1,10 @@
 <%- include( "_header.html") %>
-<p class="measure-wide lh-copy">
+<p class="measure lh-copy">
   <span class="fv-sc tracked">MelangeCSS</span> is designed so that each class applies to the page when there is no media query in effect.  This means any screen size, light (or no selected) color mode, and no explicit setting for reduced motion.  You can then customize your page's styling when a media query <strong>is</strong> in affect by adding additional classes that have a suffix for that media query.  For example, <code>purple-darkest</code> would apply to all situations by default, whereas <code>purple-darkest-dm</code> would apply only when the “prefers dark mode” media query applies.
 </p>
-<p class="measure-wide lh-copy">
+<p class="measure lh-copy">
   Each melange class includes a list of the media query variants that are available.  For example, colors may have variants for dark mode, but spacings would not.  Here are all the known media queries, their definitions, and their naming conventions.
 </p>
-<table>
-  <tbody>
 <% mediaQueries.forEach( (mediaQuery) => { %>
   <% if (!mediaQuery.isDefault()) { %>
   <section class="mb-4">
@@ -23,13 +21,15 @@
       <code class="ba bc-orange-light orange-darkest dib pa-3 br-1 ws-nowrap mr-3-ns">
         *-<%= mediaQuery.variableNameQualifier() %>
       </code>
-      <div class="w-100 mt-3 mt-0-ns">
+      <div class="mt-3 mt-0-ns">
         <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-light bg-black br-2"><pre class="ma-0">&lt;div class="purple-dark-<%= mediaQuery.variableNameQualifier() %>"&gt;
   .purple-darkest-<%= mediaQuery.variableNameQualifier() %>
 &lt;/div&gt;</pre></code>
       </div>
     </div>
-    <code class="db f-1 w-auto overflow-x-scroll pv-2 ph-3 bg-black yellow-light br-2"><pre class="ma-0"><%= mediaQuery.toMediaQuery() %></pre></code>
+    <div>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-light br-2"><pre class="ma-0"><%= mediaQuery.toMediaQuery() %></pre></code>
+    </div>
   </section>
   <% } %>
 <% }) %>
