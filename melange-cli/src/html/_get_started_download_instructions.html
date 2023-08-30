@@ -1,10 +1,26 @@
-<article class="<%= bg %> pa-3">
+<article class="<%= bg %> pa-3-ns pa-1">
+<div class="w-90 w-60-ns mh-auto">
   <a name="<%= anchor %>"></a>
-  <h3 class="f-4 fw-bold ttu tc"><%= title %></h3>
+  <h3 class="f-4 fw-bold tc">
+    <% if (dark_mode) { %>
+    Dark Mode;
+    <% } else { %>
+    No Dark Mode;
+    <% } %>
+    <% if (breakpoints == "all") { %>
+      All Breakpoints
+    <% } else if (breakpoints == "two") { %>
+    <a class="<%= dark_mode ? 'white' : 'black' %>" href="/reference/mediaQueries.html#not-small-width">Desktop Breakpoint Only</a>
+    <% } else { %>
+    No Breakpoints
+    <% } %>
+  </h3>
   <ul class="lst-none ma-0 pa-0">
     <li>
+      <% if (anchor == "everything" ) { %>
       <a name="cdn"></a>
-      <h4 class="f-4 fw-5 tc tl-ns">CDN</h4>
+      <% } %>
+      <h4 class="f-4 fw-5 ttu tc tl-ns">CDN</h4>
       <p class="measure lh-copy">
         You can bring <span class="fv-sc tracked">MelangeCSS</span> into any webpage using the <code>unpkg.com</code> CDN provided for all NPM packages.  Place this somewhere in your <code>&lt;head&gt;</code> section:
       </p>
@@ -17,8 +33,10 @@
       <% } %>
     </li>
     <li>
+      <% if (anchor == "everything" ) { %>
       <a name="download">
-        <h4 class="f-4 fw-5 tc tl-ns">Download</h4>
+      <% } %>
+        <h4 class="f-4 fw-5 ttu tc tl-ns">Download</h4>
         <p class="measure lh-copy">
           To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code><%= file %>.css</code> with a command-line tool like <code>curl</code>:
         </p>
@@ -31,21 +49,24 @@
         <% } %>
     </li>
     <li>
+      <% if (anchor == "everything" ) { %>
       <a name="npm"></a>
-      <h4 class="f-4 fw-5 tc tl-ns">NPM</h4>
+      <% } %>
+      <h4 class="f-4 fw-5 ttu tc tl-ns">NPM</h4>
       <p class="measure lh-copy">
         <span class="fv-sc tracked">MelangeCSS</span> is available as a Node Module, which you can install thusly:
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
       <p class="measure lh-copy">
-        The CSS will be in <code>node_modules/melange-css/<%= file %>.css</code>.  How you get that into your app highly depends on how your app is built.  If you have a build system that supports <a class="blue-darkest" href="http://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>, you can bring <span class="fv-sc tracked">MelangeCSS</span> in by adding this to a <code>.css</code> file your build system processes:
+        The CSS will be in <code>node_modules/melange-css/<%= file %>.css</code>.  How you get that into your app highly depends on how your app is built.  If you have a build system that supports <a class="<%= dark_mode ? 'blue-lightest' : 'blue-darkest' %>" href="http://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>, you can bring <span class="fv-sc tracked">MelangeCSS</span> in by adding this to a <code>.css</code> file your build system processes:
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">@import "melange-css/<%= file %>.css";</code>
       <% if (verbose) { %>
       <p class="measure lh-copy">
-        If you use this method, you are encouraged to monitor the releases.  <span class="fv-sc tracked">MelangeCSS</span> uses <a class="blue-darkest" href="https://docs.npmjs.com/about-semantic-versioning">Semantic Versioning</a>, so you should not experience breaking changes outside of a major release.
+        If you use this method, you are encouraged to monitor the releases.  <span class="fv-sc tracked">MelangeCSS</span> uses <a class="<%= dark_mode ? 'blue-lightest' : 'blue-darkest' %>" href="https://docs.npmjs.com/about-semantic-versioning">Semantic Versioning</a>, so you should not experience breaking changes outside of a major release.
       </p>
       <% } %>
     </li>
   </ul>
+</div>
 </article>
