@@ -23,9 +23,34 @@ SRC_HTML_FILES=$(shell find $(SRC_HTML_DIR) -name '*.html')
 ## Distro
 DIST_DIR=melange-css
 
-MONLITHIC_CSS=$(DIST_DIR)/melange.css
-MONLITHIC_MINIFIED_CSS=$(DIST_DIR)/melange.min.css
-MONLITHIC_FILES=$(MONLITHIC_CSS) $(MONLITHIC_MINIFIED_CSS)
+DISTRO_CSS=$(DIST_DIR)/melange.css
+DISTRO_MINIFIED_CSS=$(DIST_DIR)/melange.min.css
+
+#dm | ns | l/m | NAME
+#Y    Y     Y  | melange.css
+#
+#N    Y     Y  | melange-no_dark_mode.css
+#Y    Y     N  | melange-breakpoint_ns_only.css
+#N    Y     N  | melange-no_dark_mode-breakpoint_ns_only.css
+#Y    N     N  | melange-no_breakpoints.css
+#N    N     N  | melange-no_dark_mode-no_breakpoints.css
+
+DISTRO_NO_DARK_MODE_CSS=$(DIST_DIR)/melange-no_dark_mode.css
+DISTRO_NO_DARK_MODE_MINIFIED_CSS=$(DIST_DIR)/melange-no_dark_mode.min.css
+
+DISTRO_BREAKPOINT_NS_ONLY_CSS=$(DIST_DIR)/melange-breakpoint_ns_only.css
+DISTRO_BREAKPOINT_NS_ONLY_MINIFIED_CSS=$(DIST_DIR)/melange-breakpoint_ns_only.min.css
+
+DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_CSS=$(DIST_DIR)/melange-no_dark_mode-breakpoint_ns_only.css
+DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_MINIFIED_CSS=$(DIST_DIR)/melange-no_dark_mode-breakpoint_ns_only.min.css
+
+DISTRO_NO_BREAKPOINTS_CSS=$(DIST_DIR)/melange-no_breakpoints.css
+DISTRO_NO_BREAKPOINTS_MINIFIED_CSS=$(DIST_DIR)/melange-no_breakpoints.min.css
+
+DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_CSS=$(DIST_DIR)/melange-no_dark_mode-no_breakpoints.css
+DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_MINIFIED_CSS=$(DIST_DIR)/melange-no_dark_mode-no_breakpoints.min.css
+
+DISTRO_FILES=$(DISTRO_MINIFIED_CSS) $(DISTRO_NO_DARK_MODE_MINIFIED_CSS) $(DISTRO_BREAKPOINT_NS_ONLY_MINIFIED_CSS) $(DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_MINIFIED_CSS) $(DISTRO_NO_BREAKPOINTS_MINIFIED_CSS) $(DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_MINIFIED_CSS)
 
 METADATA=$(DIST_DIR)/melange-metadata.json
 
@@ -34,20 +59,60 @@ METADATA=$(DIST_DIR)/melange-metadata.json
 DOCS_DIR=docs
 
 # Rules
-distro: $(MONLITHIC_FILES) $(METADATA) documentation
+distro: $(DISTRO_FILES) $(METADATA) documentation
 .PHONY: distro
 
 $(DIST_DIR):
 	@echo "Creating $(@)"
 	@mkdir -p $(@)
 
-$(MONLITHIC_MINIFIED_CSS): $(MONLITHIC_CSS)
-	@echo "Minifying $(DIST_DIR)/melange.css"
+$(DISTRO_MINIFIED_CSS): $(DISTRO_CSS)
+	@echo "Minifying $(DISTRO_CSS)"
 	@cd $(DIST_DIR) && npx css-minify -o . -f melange.css ; cd ..
 
-$(MONLITHIC_CSS) $(METADATA): $(DIST_DIR) $(SRC_FILES)
+$(DISTRO_NO_DARK_MODE_MINIFIED_CSS): $(DISTRO_NO_DARK_MODE_CSS)
+	@echo "Minifying $(DISTRO_NO_DARK_MODE_CSS)"
+	@cd $(DIST_DIR) && npx css-minify -o . -f /melange-no_dark_mode.css ; cd ..
+
+$(DISTRO_BREAKPOINT_NS_ONLY_MINIFIED_CSS): $(DISTRO_BREAKPOINT_NS_ONLY_CSS)
+	@echo "Minifying $(DISTRO_BREAKPOINT_NS_ONLY_CSS)"
+	@cd $(DIST_DIR) && npx css-minify -o . -f /melange-breakpoint_ns_only.css ; cd ..
+
+$(DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_MINIFIED_CSS): $(DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_CSS)
+	@echo "Minifying $(DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_CSS)"
+	@cd $(DIST_DIR) && npx css-minify -o . -f /melange-no_dark_mode-breakpoint_ns_only.css ; cd ..
+
+$(DISTRO_NO_BREAKPOINTS_MINIFIED_CSS): $(DISTRO_NO_BREAKPOINTS_CSS)
+	@echo "Minifying $(DISTRO_NO_BREAKPOINTS_CSS)"
+	@cd $(DIST_DIR) && npx css-minify -o . -f /melange-no_breakpoints.css ; cd ..
+
+$(DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_MINIFIED_CSS): $(DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_CSS)
+	@echo "Minifying $(DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_CSS)"
+	@cd $(DIST_DIR) && npx css-minify -o . -f /melange-no_dark_mode-no_breakpoints.css ; cd ..
+
+$(DISTRO_CSS) $(METADATA): $(DIST_DIR) $(SRC_FILES)
 	@echo "Building $(@)"
-	@node $(SRC_JS_DIR)/cli/melange.js css --css $(MONLITHIC_CSS) --meta-data $(METADATA)
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --meta-data $(METADATA)
+
+$(DISTRO_NO_DARK_MODE_CSS) : $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --no-media-queries="dm"
+
+$(DISTRO_BREAKPOINT_NS_ONLY_CSS) : $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --no-media-queries="l,m"
+
+$(DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_CSS) : $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --no-media-queries="dm,l,m"
+
+$(DISTRO_NO_BREAKPOINTS_CSS) : $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --no-media-queries="ns,l,m"
+
+$(DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_CSS) : $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --no-media-queries="dm,ns,l,m"
 
 $(DOCS_DIR):
 	@mkdir -p $(DOCS_DIR)
@@ -62,7 +127,7 @@ documentation: $(DOCS_DIR) $(SRC_FILES) $(SRC_HTML_FILES)
 .PHONY: documentation
 
 clean:
-	@rm -rf $(MONLITHIC_FILES)
+	@rm -rf $(DISTRO_FILES)
 	@rm -rf $(METADATA)
 	@rm -rf $(DOCS_DIR)/*.html
 	@rm -rf $(DOCS_DIR)/*.css

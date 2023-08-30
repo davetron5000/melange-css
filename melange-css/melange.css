@@ -228,66 +228,66 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
  *
  * Tints/Shades for blue
  */
---mg-blue-lightest: #EBF2FC;
---mg-blue-light: #86B2EB;
---mg-blue: #357EDD;
---mg-blue-dark: #204C85;
---mg-blue-darkest: #102642;
+--mg-blue-lightest: #EFF8FC;
+--mg-blue-light: #B1DBEF;
+--mg-blue: #0077B2;
+--mg-blue-dark: #004E74;
+--mg-blue-darkest: #002D43;
 
 /*
  * Gray
  *
  * Tints/Shades for gray
  */
---mg-gray-lightest: #F5F5F5;
---mg-gray-light: #ADADAD;
---mg-gray: #999999;
---mg-gray-dark: #5C5C5C;
---mg-gray-darkest: #1F1F1F;
+--mg-gray-lightest: #F6F6F6;
+--mg-gray-light: #D5D5D5;
+--mg-gray: #717171;
+--mg-gray-dark: #494949;
+--mg-gray-darkest: #2A2A2A;
 
 /*
  * Green
  *
  * Tints/Shades for green
  */
---mg-green-lightest: #E8F6F1;
---mg-green-light: #75CBAC;
---mg-green: #19A974;
---mg-green-dark: #0F6546;
---mg-green-darkest: #073323;
+--mg-green-lightest: #ECFAED;
+--mg-green-light: #9FE582;
+--mg-green: #409D44;
+--mg-green-dark: #225324;
+--mg-green-darkest: #143015;
 
 /*
  * Orange
  *
  * Tints/Shades for orange
  */
---mg-orange-lightest: #FFEFE6;
---mg-orange-light: #FFA166;
---mg-orange: #FF6300;
---mg-orange-dark: #CC4F00;
---mg-orange-darkest: #803200;
+--mg-orange-lightest: #FFF5EE;
+--mg-orange-light: #FFCAA8;
+--mg-orange: #ED5C00;
+--mg-orange-dark: #7E3100;
+--mg-orange-darkest: #4A1D00;
 
 /*
  * Purple
  *
  * Tints/Shades for purple
  */
---mg-purple-lightest: #EFEAF6;
---mg-purple-light: #8E6BC0;
---mg-purple: #5E2CA5;
---mg-purple-dark: #421F73;
---mg-purple-darkest: #261242;
+--mg-purple-lightest: #F4F6FE;
+--mg-purple-light: #D0D2F7;
+--mg-purple: #6167C9;
+--mg-purple-dark: #46427C;
+--mg-purple-darkest: #2B2643;
 
 /*
  * Red
  *
  * Tints/Shades for red
  */
---mg-red-lightest: #FFDFDF;
---mg-red-light: #FF8D86;
---mg-red: #FF4136;
---mg-red-dark: #E7040F;
---mg-red-darkest: #80211b;
+--mg-red-lightest: #FFF4F4;
+--mg-red-light: #FFC7C7;
+--mg-red: #DE1E1E;
+--mg-red-dark: #921313;
+--mg-red-darkest: #570C0C;
 
 /*
  * White
@@ -295,18 +295,18 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
  * Whites
  */
 --mg-white: #FFFFFF;
---mg-white-ish: #F0F0F0;
+--mg-white-ish: #F8F8F8;
 
 /*
  * Yellow
  *
  * Tints/Shades for yellow
  */
---mg-yellow-lightest: #FFFBE6;
---mg-yellow-light: #FFE766;
---mg-yellow: #FFD700;
---mg-yellow-dark: #B39700;
---mg-yellow-darkest: #665600;
+--mg-yellow-lightest: #FeF6DD;
+--mg-yellow-light: #FECF49;
+--mg-yellow: #AA8630;
+--mg-yellow-dark: #5C4619;
+--mg-yellow-darkest: #35280F;
 
 }
 .f-l {

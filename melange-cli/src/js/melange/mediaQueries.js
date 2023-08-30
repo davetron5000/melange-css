@@ -15,19 +15,31 @@ class MediaQueries {
     this.reducedMotion = new PrefersReducedMotion()
   }
 
-  onlyBreakpoints() {
-    return [
-      this.default,
-      ...this.breakpoints,
-    ]
+  onlyBreakpoints(includeDefault=true) {
+    if (includeDefault) {
+      return [
+        this.default,
+        ...this.breakpoints,
+      ]
+    }
+    else {
+      return this.breakpoints
+    }
   }
 
-  toArray() {
+  toArray(includeDefault=true) {
     return [
-      ...this.onlyBreakpoints(),
+      ...this.onlyBreakpoints(includeDefault),
       this.darkMode,
       this.reducedMotion,
     ]
+  }
+
+  find(idOrVariableNameQualifier) {
+    return this.toArray().find( (mediaQuery) => {
+      return (mediaQuery.id()                    == idOrVariableNameQualifier) ||
+             (mediaQuery.variableNameQualifier() == idOrVariableNameQualifier)
+    })
   }
 }
 

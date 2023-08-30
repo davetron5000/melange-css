@@ -6,21 +6,31 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default class CSSBuilder {
-  constructor({filename, writeVariables, writeCSS, writeReset}) {
-    this.filename       = filename
-    this.writeVariables = writeVariables
-    this.writeCSS       = writeCSS
-    this.writeReset     = writeReset
+  constructor({filename, writeVariables, writeCSS, writeReset, omitMediaQueries}) {
+    this.filename         = filename
+    this.writeVariables   = writeVariables
+    this.writeCSS         = writeCSS
+    this.writeReset       = writeReset
+    this.omitMediaQueries = omitMediaQueries || []
   }
 
   build(metaTheme) {
     const css = fs.createWriteStream(this.filename)
+    let skippingThisMediaQuery = false
 
     const writeCSSClass = (cssClass) => {
+      if (skippingThisMediaQuery) {
+        return
+      }
       css.write(cssClass.toCSS())
       css.write("\n")
     }
     const startMediaQuery = (mediaQuery) => {
+      if (this._skipMediaQuery(mediaQuery)) {
+        skippingThisMediaQuery = true
+        return
+      }
+      skippingThisMediaQuery = false
       if (mediaQuery.toMediaQuery() !== "") {
         css.write(`/*
  * ${mediaQuery.description()}
@@ -30,6 +40,10 @@ export default class CSSBuilder {
       }
     }
     const endMediaQuery = (mediaQuery) => {
+      if (skippingThisMediaQuery) {
+        skippingThisMediaQuery = true
+        return
+      }
       if (mediaQuery.toMediaQuery() !== "") {
         css.write("}\n")
       }
@@ -77,6 +91,10 @@ export default class CSSBuilder {
 
   _reset() {
     return fs.readFileSync(`${__dirname}/../../../css/necolas-normalize.css`).toString()
+  }
+
+  _skipMediaQuery(mediaQuery) {
+    return !!this.omitMediaQueries.find( (mq) => mq.id() == mediaQuery.id() )
   }
 }
 

@@ -1,0 +1,51 @@
+<article class="<%= bg %> pa-3">
+  <a name="<%= anchor %>"></a>
+  <h3 class="f-4 fw-bold ttu tc"><%= title %></h3>
+  <ul class="lst-none ma-0 pa-0">
+    <li>
+      <a name="cdn"></a>
+      <h4 class="f-4 fw-5 tc tl-ns">CDN</h4>
+      <p class="measure lh-copy">
+        You can bring <span class="fv-sc tracked">MelangeCSS</span> into any webpage using the <code>unpkg.com</code> CDN provided for all NPM packages.  Place this somewhere in your <code>&lt;head&gt;</code> section:
+      </p>
+      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;link rel="stylesheet"
+        href="https://unpkg.com/melange-css@<%= version %>/<%= file %>.min.css"/&gt;</code>
+      <% if (verbose) { %>
+      <p class="measure lh-copy">
+        Using the CDN, you can get started right awway. For production use, we recommend you avoid this method as it creates a runtime dependency on <code>unpkg.com</code>, which is not desirable.
+      </p>
+      <% } %>
+    </li>
+    <li>
+      <a name="download">
+        <h4 class="f-4 fw-5 tc tl-ns">Download</h4>
+        <p class="measure lh-copy">
+          To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code><%= file %>.css</code> with a command-line tool like <code>curl</code>:
+        </p>
+        <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@<%= version %>/<%= file %>.min.css &gt; \
+          your/project/css/<%= file %>.css</code>
+        <% if (verbose) { %>
+        <p class="measure lh-copy">
+          This method is most stable, because you have a copy of <span class="fv-sc tracked">MelangeCSS</span> in your app and that copy won't be changed in any way without you explicitly changing it.  The downside is that you don't have a way to easily update it when there are changes.  To do that, use NPM.
+        </p>
+        <% } %>
+    </li>
+    <li>
+      <a name="npm"></a>
+      <h4 class="f-4 fw-5 tc tl-ns">NPM</h4>
+      <p class="measure lh-copy">
+        <span class="fv-sc tracked">MelangeCSS</span> is available as a Node Module, which you can install thusly:
+      </p>
+      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
+      <p class="measure lh-copy">
+        The CSS will be in <code>node_modules/melange-css/<%= file %>.css</code>.  How you get that into your app highly depends on how your app is built.  If you have a build system that supports <a class="blue-darkest" href="http://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>, you can bring <span class="fv-sc tracked">MelangeCSS</span> in by adding this to a <code>.css</code> file your build system processes:
+      </p>
+      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">@import "melange-css/<%= file %>.css";</code>
+      <% if (verbose) { %>
+      <p class="measure lh-copy">
+        If you use this method, you are encouraged to monitor the releases.  <span class="fv-sc tracked">MelangeCSS</span> uses <a class="blue-darkest" href="https://docs.npmjs.com/about-semantic-versioning">Semantic Versioning</a>, so you should not experience breaking changes outside of a major release.
+      </p>
+      <% } %>
+    </li>
+  </ul>
+</article>

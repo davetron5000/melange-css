@@ -1,54 +1,76 @@
 <%- include( "/_header.html", { title: "Get Started" } ) %>
 <section class="pa-1 w-90 w-60-ns mh-auto">
 <p class="f-3 measure lh-copy">
-  <span class="fv-sc tracked">MelangeCSS</span> can be installed in a few ways, depending on your needs.
+  <span class="fv-sc tracked">MelangeCSS</span> can be installed in a few ways, depending on your needs. To get started now, choose which method:
 </p>
 <ul class="ma-0 pa-0 lsp-inside bb bc-orange-darkest pb-3">
   <li><a href="#cdn" class="blue-darkest">CDN</a> (quickest to get started)</li>
   <li><a href="#download" class="blue-darkest">Download</a> (most stable)</li>
   <li><a href="#npm" class="blue-darkest">NPM</a> (most compatible with web frameworks)</li>
 </ul>
-<ul class="lst-none ma-0 pa-0">
-  <li>
-    <a name="cdn"></a>
-    <h3 class="f-4 fw-bold tc tl-ns">CDN</h3>
-    <p class="measure lh-copy">
-      You can bring <span class="fv-sc tracked">MelangeCSS</span> into any webpage using the <code>unpkg.com</code> CDN provided for all NPM packages.  Place this somewhere in your <code>&lt;head&gt;</code> section:
-    </p>
-    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;link rel="stylesheet"
-      href="https://unpkg.com/melange-css@<%= version %>/melange.min.css"/&gt;</code>
-    <p class="measure lh-copy">
-      Using the CDN, you can get started right awway. For production use, we recommend you avoid this method as it creates a runtime dependency on <code>unpkg.com</code>, which is not desirable.
-    </p>
-  </li>
-  <li>
-    <a name="download">
-    <h3 class="f-4 fw-bold tc tl-ns">Download</h3>
-    <p class="measure lh-copy">
-      To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code>melange.css</code> with a command-line tool like <code>curl</code>:
-    </p>
-    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@<%= version %>/melange.min.css &gt; \
-     your/project/css/melange.css</code>
-    <p class="measure lh-copy">
-      This method is most stable, because you have a copy of <span class="fv-sc tracked">MelangeCSS</span> in your app and that copy won't be changed in any way without you explicitly changing it.  The downside is that you don't have a way to easily update it when there are changes.  To do that, use NPM.
-    </p>
-  </li>
-  <li>
-    <a name="npm"></a>
-    <h3 class="f-4 fw-bold tc tl-ns">NPM</h3>
-    <p class="measure lh-copy">
-      <span class="fv-sc tracked">MelangeCSS</span> is available as a Node Module, which you can install thusly:
-    </p>
-    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
-    <p class="measure lh-copy">
-      The CSS will be in <code>node_modules/melange-css/melange.css</code>.  How you get that into your app highly depends on how your app is built.  If you have a build system that supports <a class="blue-darkest" href="http://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>, you can bring <span class="fv-sc tracked">MelangeCSS</span> in by adding this to a <code>.css</code> file your build system processes:
-    </p>
-    <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">@import "melange-css/melange.css";</code>
-    <p class="measure lh-copy">
-      If you use this method, you are encouraged to monitor the releases.  <span class="fv-sc tracked">MelangeCSS</span> uses <a class="blue-darkest" href="https://docs.npmjs.com/about-semantic-versioning">Semantic Versioning</a>, so you should not experience breaking changes outside of a major release.
+<p class="f-3 measure lh-copy">
+  <span class="fv-sc tracked">MelangeCSS</span> also ships with different variants, depending on your needs:
+</p>
+<ul class="ma-0 pa-0 lsp-inside bb bc-orange-darkest pb-3">
+  <li class="lh-copy">
+    Do you need Dark Mode support?
+    <ul class="pl-3">
+      <li>
+        <strong>Yes.</strong> Do you need any breakpoints?
+        <ul class="pl-4 lsp-outside">
+          <%- include( "_get_started_decision.html", { title: "Yes, all four.", anchor: "everything", file: "melange.css", blurb: "Most flexible." } ) %>
+          <%- include( "_get_started_decision.html", { title: "Only mobile and desktop.", anchor: "breakpoint_ns_only", file: "melange-breakpoint_ns_only.css", blurb: "Saves space." } ) %>
+          <%- include( "_get_started_decision.html", { title: "No.", anchor: "no_breakpoints", file: "melange-no_breakpoints.css", blurb: "Good for single screen size designs." } ) %>
+        </ul>
+      </li>
+      <li>
+        <strong>No.</strong> Do you need any breakpoints?
+        <ul class="lsp-outside">
+          <%- include( "_get_started_decision.html", { title: "Yes, all four.", anchor: "no_dark_mode", file: "melange-no_dark_mode.css", blurb: "Saves some space when dark mode isn't needed." } ) %>
+          <%- include( "_get_started_decision.html", { title: "Only mobile and desktop.", anchor: "no_dark_mode-breakpoint_ns_only", file: "melange-no_dark_mode-breakpoint_ns_only.css", blurb: "Saves more space, less flexible." } ) %>
+          <%- include( "_get_started_decision.html", { title: "No.", anchor: "no_dark_mode-no_breakpoints", file: "melange-no_dark_mode-no_breakpoints.css", blurb: "Good for simple internal apps aimed at desktop screens." } ) %>
+        </ul>
+      </li>
+    </ul>
   </li>
 </ul>
 </section>
+<%- include("_get_started_download_instructions.html", {
+            title: "Dark Mode, Four Breakpoints",
+            anchor: "everything",
+            bg: "bg-blue-lightest",
+            verbose: true,
+            file: "melange" }) %>
+<%- include("_get_started_download_instructions.html", {
+            title: "Dark Mode, Only Mobile and Desktop Breakpoints",
+            anchor: "breakpoint_ns_only",
+            bg: "bg-white",
+            verbose: false,
+            file: "melange-breakpoint_ns_only" }) %>
+<%- include("_get_started_download_instructions.html", {
+            title: "Dark Mode, No Breakpoints",
+            anchor: "no_breakpoints",
+            bg: "bg-orange-lightest",
+            verbose: false,
+            file: "melange-no_breakpoints" }) %>
+<%- include("_get_started_download_instructions.html", {
+            title: "No Dark Mode, Four Breakpoints",
+            anchor: "no_dark_mode",
+            bg: "bg-blue-lightest",
+            verbose: false,
+            file: "melange-no_dark_mode" }) %>
+<%- include("_get_started_download_instructions.html", {
+            title: "No Dark Mode, Only Mobile and Desktop Breakpoints",
+            anchor: "no_dark_mode-breakpoint_ns_only",
+            bg: "bg-white",
+            verbose: false,
+            file: "melange-no_dark_mode-breakpoint_ns_only" }) %>
+<%- include("_get_started_download_instructions.html", {
+            title: "No Dark Mode, No Breakpoints",
+            anchor: "no_dark_mode-no_breakpoints",
+            bg: "bg-orange-lightest",
+            verbose: false,
+            file: "melange-no_dark_mode-no_breakpoints" }) %>
 <article class="pa-3 bg-blue-darkest blue-lightest mh-auto pv-4">
   <a href="guide.html" class="db w-90 w-60-ns mh-auto f-4 tc tl-ns blue-lightest">Check out the Guide</a>
 </article>

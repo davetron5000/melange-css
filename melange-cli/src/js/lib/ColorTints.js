@@ -164,10 +164,16 @@ export default class ColorTints {
       })
     }).concat(this.customColors)
 
-    const summarization = []
+    const summarization = [
+      "<div class=\"ph-3 pv-2 bg-white mt-3 br-4 shadow-1\">",
+    ]
     metaProperties.forEach( (metaProperty) => {
-      summarization.push(`<h3 class="w-auto f-3 mt-4 mb-3"><a class="black-ish" href="#${new Anchor(metaProperty.name)}">${metaProperty.name}</a></h3>`)
-      summarization.push(`<div class="flex items-stretch justify-start mb-2">`)
+      summarization.push(`<h3 class="w-auto f-3 mt-3 mb-3"><a class="black-ish" href="#${new Anchor(metaProperty.name)}">${metaProperty.name}</a></h3>`)
+      let extraCSS = ""
+      if (metaProperty.name == "white") {
+        extraCSS = "bg-black white pa-2 br-2"
+      }
+      summarization.push(`<div class="flex items-stretch justify-start mb-2 ${extraCSS}">`)
       metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
         metaProperty.scales().forEach( (scale) => {
           scale.eachStep( (step) => {
@@ -188,12 +194,14 @@ export default class ColorTints {
       })
       summarization.push("</div>")
     })
+    summarization.push("</div>")
     return new MetaPropertyGrouping({
       name: "Colors",
       metaProperties: metaProperties,
       mediaQueries: this.supportedMediaQueries,
       docs: [
-        "All colors can be used for text, borders, or backgrounds by using the color name and tint on its own (for text), with <code>bc-</code> (for borders), or <code>bg-</code> (for backgrounds).  Hover styles are available by prefixing <code>hover-</code> in front of the class",
+        "All colors can be used for text, borders, or backgrounds by using the color name and tint on its own (for text), with <code>bc-</code> (for borders), or <code>bg-</code> (for backgrounds).  Hover styles are available by prefixing <code>hover-</code> in front of the class.",
+        "You are encouraged to use colors with maximum accessible combinations.  You can use the <a class=\"blue-darkest\" href=\"https://accessiblepalette.com\">Accessible Palette Generator</a> to help. The default colors use a subset of <a class=\"blue-darkest\" href=\"https://accessiblepalette.com/?lightness=97,93.95,85.1,76.5,67.65,57.8,47.6,40.4,31,17&FF2222=0,0&FF6300=0,0&f8d147=0,-10&56d25b=0,0&0088cb=0,0&387AE6=1,15&808080=0,0\">this one</a>.",
       ],
       summarization: summarization.join("\n")
     })
