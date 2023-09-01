@@ -4,6 +4,7 @@ import ExampleTemplate      from "../../lib/ExampleTemplate.js"
 import MetaProperty         from "../../lib/MetaProperty.js"
 import MetaPropertyGrouping from "../../lib/MetaPropertyGrouping.js"
 import Scale                from "../../lib/scales/Scale.js"
+import ScaleAgnosticCSSClassTemplate from "../../lib/ScaleAgnosticCSSClassTemplate.js"
 
 import {
   fontScale,
@@ -50,7 +51,6 @@ const textAlign = new MetaProperty({
     "tr": { properties: { "text-align": "right" }, exampleTemplate: basicExample, summary: "Right" },
     "tc": { properties: { "text-align": "center" }, exampleTemplate: basicExample, summary: "Center" },
     "tl": { properties: { "text-align": "left" }, exampleTemplate: basicExample, summary: "Left" },
-    "tj": { properties: { "text-align": "justify" }, exampleTemplate: basicExample, summary: "Justify" },
   }
 })
 const verticalAlign = new MetaProperty({
@@ -93,14 +93,27 @@ const fontStyle = new MetaProperty({
   name: "Font Style",
   literalClasses: {
     "fs-normal": { properties: { "font-style": "normal" }, exampleTemplate: basicExample },
-    "i": { properties: { "font-style": "italic" }, exampleTemplate: basicExample, summary: "Italic" },
+    "fs-italic": { properties: { "font-style": "italic" }, exampleTemplate: basicExample, summary: "Italic" },
   }
+})
+
+const aliases = new MetaProperty({
+  name: "Aliases",
+  literalClasses: {
+    "b": { properties: { "font-weight": "bold" }, exampleTemplate: basicExample, summary: "Bold" },
+    "i": { properties: { "font-style": "italic" }, exampleTemplate: basicExample, summary: "Italic" },
+    "sc":{ properties: { "font-variant": "small-caps" }, exampleTemplate: basicExample, summary: "Small Caps" },
+    "u": { properties: { "text-decoration": "underline"}, exampleTemplate: basicExample, summary: "Underline" },
+  },
+  docs: [
+    "These violate the naming conventions, but are convienient as aliases for more commonly-used needs.",
+  ]
 })
 
 const fontVariant = new MetaProperty({
   name: "Font Variant",
   literalClasses: {
-    "fv-sc": { properties: { "font-variant": "small-caps" }, exampleTemplate: basicExample, summary: "Small Caps" },
+    "fv-sc":     { properties: { "font-variant": "small-caps" }, exampleTemplate: basicExample, summary: "Small Caps" },
     "fv-normal": { properties: { "font-variant": "normal" }, exampleTemplate: basicExample, summary: "Normal" },
   }
 })
@@ -117,30 +130,15 @@ const textTransform = new MetaProperty({
 
 const textDecoration = new MetaProperty({
   name: "Text Decoration",
-  docs: [
-    "Text decoration adds lines to the text. You can combine the single letter values together by putting the letters in alphabetical order, for example <code>su</code> combines <code>s</code> and <code>u</code>",
-  ],
   literalClasses: {
     "tdn":   { properties: { "text-decoration": "none" },
              exampleTemplate: basicExample, summary: "None" },
     "tdu":   { properties: { "text-decoration": "underline"},
              exampleTemplate: basicExample, summary: "Underline" },
-    "u":     { properties: { "text-decoration": "underline"},
-             exampleTemplate: basicExample, summary: "Underline" },
     "tds":   { properties: { "text-decoration": "line-through"},
              exampleTemplate: basicExample, summary: "Strike" },
     "tdo":   { properties: { "text-decoration": "overline"},
              exampleTemplate: basicExample, summary: "Overline" },
-    "tdsu":  { properties: { "text-decoration": "underline line-through"},
-             exampleTemplate: basicExample, summary: "Underline and Strike" },
-    "tdou":  { properties: { "text-decoration": "underline overline"},
-             exampleTemplate: basicExample, summary: "Underline and Overline" },
-    "tdos":  { properties: { "text-decoration": "overline line-through"},
-             exampleTemplate: basicExample, summary: "Overline and Strike" },
-    "tdou":  { properties: { "text-decoration": "underline overline"},
-             exampleTemplate: basicExample, summary: "Underline and Overline" },
-    "tdosu": { properties: { "text-decoration": "line-through underline overline"},
-             exampleTemplate: basicExample, summary: "Underline, Overline, and Strike" },
   },
   pseudoSelectors: [
     pseudoSelectors.default,
@@ -193,9 +191,6 @@ const whiteSpace = new MetaProperty({
     "ws-normal":      { properties: { "white-space": "normal" }, exampleTemplate: whiteSpaceExample, summary: "Normal" },
     "ws-nowrap":      { properties: { "white-space": "nowrap" }, exampleTemplate: whiteSpaceExample, summary: "No Wrap" },
     "ws-pre":         { properties: { "white-space": "pre" }, exampleTemplate: whiteSpaceExample, summary: "Pre" },
-    "ws-prewrap":     { properties: { "white-space": "pre-wrap" }, exampleTemplate: whiteSpaceExample, summary: "Pre Wrap" },
-    "ws-preline":     { properties: { "white-space": "pre-line" }, exampleTemplate: whiteSpaceExample, summary: "Pre Line" },
-    "ws-breakspaces": { properties: { "white-space": "break-spaces" }, exampleTemplate: whiteSpaceExample, summary: "Break Spaces" },
   }
 })
 
@@ -259,6 +254,7 @@ const typography = new MetaPropertyGrouping({
     leading,
     tracking,
     measure,
+    aliases,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
   docs: [

@@ -1354,7 +1354,7 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .fs-normal {
   font-style: normal;
 }
-.i {
+.fs-italic {
   font-style: italic;
 }
 .fv-sc {
@@ -1371,9 +1371,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .tl {
   text-align: left;
-}
-.tj {
-  text-align: justify;
 }
 .va-baseline {
   vertical-align: baseline;
@@ -1411,12 +1408,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .hover-tdu:hover {
   text-decoration: underline;
 }
-.u {
-  text-decoration: underline;
-}
-.hover-u:hover {
-  text-decoration: underline;
-}
 .tds {
   text-decoration: line-through;
 }
@@ -1428,30 +1419,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .hover-tdo:hover {
   text-decoration: overline;
-}
-.tdsu {
-  text-decoration: underline line-through;
-}
-.hover-tdsu:hover {
-  text-decoration: underline line-through;
-}
-.tdou {
-  text-decoration: underline overline;
-}
-.hover-tdou:hover {
-  text-decoration: underline overline;
-}
-.tdos {
-  text-decoration: overline line-through;
-}
-.hover-tdos:hover {
-  text-decoration: overline line-through;
-}
-.tdosu {
-  text-decoration: line-through underline overline;
-}
-.hover-tdosu:hover {
-  text-decoration: line-through underline overline;
 }
 .indent-0 {
   text-indent: 0;
@@ -1483,15 +1450,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .ws-pre {
   white-space: pre;
 }
-.ws-prewrap {
-  white-space: pre-wrap;
-}
-.ws-preline {
-  white-space: pre-line;
-}
-.ws-breakspaces {
-  white-space: break-spaces;
-}
 .lh-solid {
   line-height: var(--mg-lh-solid);
 }
@@ -1521,6 +1479,18 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .measure-narrow {
   max-width: var(--mg-tw-narrow);
+}
+.b {
+  font-weight: bold;
+}
+.i {
+  font-style: italic;
+}
+.sc {
+  font-variant: small-caps;
+}
+.u {
+  text-decoration: underline;
 }
 .db {
   display: block;
@@ -1574,20 +1544,11 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .flex-row {
   flex-direction: row;
 }
-.flex-column-reverse {
-  flex-direction: column-reverse;
-}
-.flex-row-reverse {
-  flex-direction: row-reverse;
-}
 .flex-wrap {
   flex-wrap: wrap;
 }
 .flex-nowrap {
   flex-wrap: nowrap;
-}
-.flex-wrap-reverse {
-  flex-wrap: wrap-reverse;
 }
 .items-start {
   align-items: flex-start;
@@ -4128,7 +4089,7 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .fs-normal-ns {
   font-style: normal;
 }
-.i-ns {
+.fs-italic-ns {
   font-style: italic;
 }
 .fv-sc-ns {
@@ -4145,9 +4106,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .tl-ns {
   text-align: left;
-}
-.tj-ns {
-  text-align: justify;
 }
 .va-baseline-ns {
   vertical-align: baseline;
@@ -4185,12 +4143,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .hover-tdu-ns:hover {
   text-decoration: underline;
 }
-.u-ns {
-  text-decoration: underline;
-}
-.hover-u-ns:hover {
-  text-decoration: underline;
-}
 .tds-ns {
   text-decoration: line-through;
 }
@@ -4202,30 +4154,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .hover-tdo-ns:hover {
   text-decoration: overline;
-}
-.tdsu-ns {
-  text-decoration: underline line-through;
-}
-.hover-tdsu-ns:hover {
-  text-decoration: underline line-through;
-}
-.tdou-ns {
-  text-decoration: underline overline;
-}
-.hover-tdou-ns:hover {
-  text-decoration: underline overline;
-}
-.tdos-ns {
-  text-decoration: overline line-through;
-}
-.hover-tdos-ns:hover {
-  text-decoration: overline line-through;
-}
-.tdosu-ns {
-  text-decoration: line-through underline overline;
-}
-.hover-tdosu-ns:hover {
-  text-decoration: line-through underline overline;
 }
 .indent-0-ns {
   text-indent: 0;
@@ -4257,15 +4185,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .ws-pre-ns {
   white-space: pre;
 }
-.ws-prewrap-ns {
-  white-space: pre-wrap;
-}
-.ws-preline-ns {
-  white-space: pre-line;
-}
-.ws-breakspaces-ns {
-  white-space: break-spaces;
-}
 .lh-solid-ns {
   line-height: var(--mg-lh-solid);
 }
@@ -4295,6 +4214,18 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .measure-narrow-ns {
   max-width: var(--mg-tw-narrow);
+}
+.b-ns {
+  font-weight: bold;
+}
+.i-ns {
+  font-style: italic;
+}
+.sc-ns {
+  font-variant: small-caps;
+}
+.u-ns {
+  text-decoration: underline;
 }
 .db-ns {
   display: block;
@@ -4348,20 +4279,11 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .flex-row-ns {
   flex-direction: row;
 }
-.flex-column-reverse-ns {
-  flex-direction: column-reverse;
-}
-.flex-row-reverse-ns {
-  flex-direction: row-reverse;
-}
 .flex-wrap-ns {
   flex-wrap: wrap;
 }
 .flex-nowrap-ns {
   flex-wrap: nowrap;
-}
-.flex-wrap-reverse-ns {
-  flex-wrap: wrap-reverse;
 }
 .items-start-ns {
   align-items: flex-start;
@@ -6885,7 +6807,7 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .fs-normal-m {
   font-style: normal;
 }
-.i-m {
+.fs-italic-m {
   font-style: italic;
 }
 .fv-sc-m {
@@ -6902,9 +6824,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .tl-m {
   text-align: left;
-}
-.tj-m {
-  text-align: justify;
 }
 .va-baseline-m {
   vertical-align: baseline;
@@ -6942,12 +6861,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .hover-tdu-m:hover {
   text-decoration: underline;
 }
-.u-m {
-  text-decoration: underline;
-}
-.hover-u-m:hover {
-  text-decoration: underline;
-}
 .tds-m {
   text-decoration: line-through;
 }
@@ -6959,30 +6872,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .hover-tdo-m:hover {
   text-decoration: overline;
-}
-.tdsu-m {
-  text-decoration: underline line-through;
-}
-.hover-tdsu-m:hover {
-  text-decoration: underline line-through;
-}
-.tdou-m {
-  text-decoration: underline overline;
-}
-.hover-tdou-m:hover {
-  text-decoration: underline overline;
-}
-.tdos-m {
-  text-decoration: overline line-through;
-}
-.hover-tdos-m:hover {
-  text-decoration: overline line-through;
-}
-.tdosu-m {
-  text-decoration: line-through underline overline;
-}
-.hover-tdosu-m:hover {
-  text-decoration: line-through underline overline;
 }
 .indent-0-m {
   text-indent: 0;
@@ -7014,15 +6903,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .ws-pre-m {
   white-space: pre;
 }
-.ws-prewrap-m {
-  white-space: pre-wrap;
-}
-.ws-preline-m {
-  white-space: pre-line;
-}
-.ws-breakspaces-m {
-  white-space: break-spaces;
-}
 .lh-solid-m {
   line-height: var(--mg-lh-solid);
 }
@@ -7052,6 +6932,18 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .measure-narrow-m {
   max-width: var(--mg-tw-narrow);
+}
+.b-m {
+  font-weight: bold;
+}
+.i-m {
+  font-style: italic;
+}
+.sc-m {
+  font-variant: small-caps;
+}
+.u-m {
+  text-decoration: underline;
 }
 .db-m {
   display: block;
@@ -7105,20 +6997,11 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .flex-row-m {
   flex-direction: row;
 }
-.flex-column-reverse-m {
-  flex-direction: column-reverse;
-}
-.flex-row-reverse-m {
-  flex-direction: row-reverse;
-}
 .flex-wrap-m {
   flex-wrap: wrap;
 }
 .flex-nowrap-m {
   flex-wrap: nowrap;
-}
-.flex-wrap-reverse-m {
-  flex-wrap: wrap-reverse;
 }
 .items-start-m {
   align-items: flex-start;
@@ -9642,7 +9525,7 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .fs-normal-l {
   font-style: normal;
 }
-.i-l {
+.fs-italic-l {
   font-style: italic;
 }
 .fv-sc-l {
@@ -9659,9 +9542,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .tl-l {
   text-align: left;
-}
-.tj-l {
-  text-align: justify;
 }
 .va-baseline-l {
   vertical-align: baseline;
@@ -9699,12 +9579,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .hover-tdu-l:hover {
   text-decoration: underline;
 }
-.u-l {
-  text-decoration: underline;
-}
-.hover-u-l:hover {
-  text-decoration: underline;
-}
 .tds-l {
   text-decoration: line-through;
 }
@@ -9716,30 +9590,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .hover-tdo-l:hover {
   text-decoration: overline;
-}
-.tdsu-l {
-  text-decoration: underline line-through;
-}
-.hover-tdsu-l:hover {
-  text-decoration: underline line-through;
-}
-.tdou-l {
-  text-decoration: underline overline;
-}
-.hover-tdou-l:hover {
-  text-decoration: underline overline;
-}
-.tdos-l {
-  text-decoration: overline line-through;
-}
-.hover-tdos-l:hover {
-  text-decoration: overline line-through;
-}
-.tdosu-l {
-  text-decoration: line-through underline overline;
-}
-.hover-tdosu-l:hover {
-  text-decoration: line-through underline overline;
 }
 .indent-0-l {
   text-indent: 0;
@@ -9771,15 +9621,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .ws-pre-l {
   white-space: pre;
 }
-.ws-prewrap-l {
-  white-space: pre-wrap;
-}
-.ws-preline-l {
-  white-space: pre-line;
-}
-.ws-breakspaces-l {
-  white-space: break-spaces;
-}
 .lh-solid-l {
   line-height: var(--mg-lh-solid);
 }
@@ -9809,6 +9650,18 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .measure-narrow-l {
   max-width: var(--mg-tw-narrow);
+}
+.b-l {
+  font-weight: bold;
+}
+.i-l {
+  font-style: italic;
+}
+.sc-l {
+  font-variant: small-caps;
+}
+.u-l {
+  text-decoration: underline;
 }
 .db-l {
   display: block;
@@ -9862,20 +9715,11 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .flex-row-l {
   flex-direction: row;
 }
-.flex-column-reverse-l {
-  flex-direction: column-reverse;
-}
-.flex-row-reverse-l {
-  flex-direction: row-reverse;
-}
 .flex-wrap-l {
   flex-wrap: wrap;
 }
 .flex-nowrap-l {
   flex-wrap: nowrap;
-}
-.flex-wrap-reverse-l {
-  flex-wrap: wrap-reverse;
 }
 .items-start-l {
   align-items: flex-start;

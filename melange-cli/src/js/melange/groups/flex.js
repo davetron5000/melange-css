@@ -77,8 +77,6 @@ const flexDirection = new MetaProperty({
     Scale.forLiteralValues({
       "column": "column",
       "row": "row",
-      "column-reverse": "column-reverse",
-      "row-reverse": "row-reverse",
     })
   ],
   cssClassTemplates: [
@@ -98,7 +96,6 @@ const flexWrap = new MetaProperty({
     Scale.forLiteralValues({
       "wrap": "wrap",
       "nowrap": "nowrap",
-      "wrap-reverse": "wrap-reverse",
     })
   ]
 })

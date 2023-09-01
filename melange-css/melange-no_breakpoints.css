@@ -1354,7 +1354,7 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .fs-normal {
   font-style: normal;
 }
-.i {
+.fs-italic {
   font-style: italic;
 }
 .fv-sc {
@@ -1371,9 +1371,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .tl {
   text-align: left;
-}
-.tj {
-  text-align: justify;
 }
 .va-baseline {
   vertical-align: baseline;
@@ -1411,12 +1408,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .hover-tdu:hover {
   text-decoration: underline;
 }
-.u {
-  text-decoration: underline;
-}
-.hover-u:hover {
-  text-decoration: underline;
-}
 .tds {
   text-decoration: line-through;
 }
@@ -1428,30 +1419,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .hover-tdo:hover {
   text-decoration: overline;
-}
-.tdsu {
-  text-decoration: underline line-through;
-}
-.hover-tdsu:hover {
-  text-decoration: underline line-through;
-}
-.tdou {
-  text-decoration: underline overline;
-}
-.hover-tdou:hover {
-  text-decoration: underline overline;
-}
-.tdos {
-  text-decoration: overline line-through;
-}
-.hover-tdos:hover {
-  text-decoration: overline line-through;
-}
-.tdosu {
-  text-decoration: line-through underline overline;
-}
-.hover-tdosu:hover {
-  text-decoration: line-through underline overline;
 }
 .indent-0 {
   text-indent: 0;
@@ -1483,15 +1450,6 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .ws-pre {
   white-space: pre;
 }
-.ws-prewrap {
-  white-space: pre-wrap;
-}
-.ws-preline {
-  white-space: pre-line;
-}
-.ws-breakspaces {
-  white-space: break-spaces;
-}
 .lh-solid {
   line-height: var(--mg-lh-solid);
 }
@@ -1521,6 +1479,18 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 }
 .measure-narrow {
   max-width: var(--mg-tw-narrow);
+}
+.b {
+  font-weight: bold;
+}
+.i {
+  font-style: italic;
+}
+.sc {
+  font-variant: small-caps;
+}
+.u {
+  text-decoration: underline;
 }
 .db {
   display: block;
@@ -1574,20 +1544,11 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
 .flex-row {
   flex-direction: row;
 }
-.flex-column-reverse {
-  flex-direction: column-reverse;
-}
-.flex-row-reverse {
-  flex-direction: row-reverse;
-}
 .flex-wrap {
   flex-wrap: wrap;
 }
 .flex-nowrap {
   flex-wrap: nowrap;
-}
-.flex-wrap-reverse {
-  flex-wrap: wrap-reverse;
 }
 .items-start {
   align-items: flex-start;
