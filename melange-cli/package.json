@@ -1,6 +1,6 @@
 {
   "name": "melange-cli",
-  "version": "1.0.0-alpha9",
+  "version": "1.0.0-beta1",
   "description": "CLI for Melange CSS",
   "keywords": [ "css" ],
   "homepage": "https://melangecss.com",

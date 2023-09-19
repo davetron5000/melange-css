@@ -32,7 +32,7 @@
     <h4 class="f-4 mt-4 tc tl-ns mb-3">Properties</h4>
     <nav class="flex flex-wrap justify-center justify-start-ns items-start pb-3 measure-wide">
       <% metaPropertyGrouping.metaProperties.sort( (a,b) => a.name.localeCompare(b.name) ).forEach( (metaProperty) => { %>
-        <a class="db di-ns tc tl-ns lh-copy mr-3-ns w-100 w-auto-ns f-3 fw-normal orange-darkest ws-nowrap" href="#<%= new Anchor(metaProperty.name) %>">
+        <a class="db di-ns tc tl-ns lh-copy mr-3-ns w-100 w-auto-ns f-3 fw-normal orange-darker ws-nowrap" href="#<%= new Anchor(metaProperty.name) %>">
           <%= new HumanizedString(metaProperty.name) %>
         </a>
       <% }) %>
@@ -50,7 +50,7 @@
       <% if (metaProperty.cssClassTemplates.length > 1) { %>
         <nav class="flex flex-wrap items-baseline justify-center justify-start-ns mt-3">
           <% metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => { %>
-            <a class="lh-copy orange-darkest mr-2"
+            <a class="lh-copy orange-darker mr-2"
                href="#<%= new Anchor(cssClassTemplate.classNameBase) %>">
                 <%= cssClassTemplate.summary || new HumanizedString(cssClassTemplate.classNameBase) %>
             </a>
@@ -65,7 +65,7 @@
                 <td class="w-1 ws-nowrap va-middle pr-2">
                   <a name="<%= new Anchor(cssClassTemplate.classNameBase) %>"></a>
                   <h6 class="f-3 ma-0">
-                    <code class="ba bc-orange-light orange-darkest dib pa-2 br-1 ws-nowrap">
+                    <code class="ba bc-orange-light orange-darker dib pa-2 br-1 ws-nowrap">
                       <%= cssClassTemplate.classNameBase %>*
                     </code>
                   </h6>

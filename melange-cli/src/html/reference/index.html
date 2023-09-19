@@ -13,7 +13,7 @@
         <ul class="ma-0 pa-0 flex flex-wrap flex-reverse lh-copy measure">
           <% metaPropertyGrouping.metaProperties.sort( (a,b) => { return a.name.localeCompare(b.name) }).forEach( (metaProperty) => { %>
            <li class="mr-2 lst-none">
-             <a class="orange-darkest hover-blue-dark" href="<%= filename %>#<%= new Anchor(metaProperty.name) %>">
+             <a class="orange-darker hover-blue-dark" href="<%= filename %>#<%= new Anchor(metaProperty.name) %>">
                <%= new HumanizedString(metaProperty.name) %>
              </a>
            </li>
