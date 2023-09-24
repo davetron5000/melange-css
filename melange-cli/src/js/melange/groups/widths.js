@@ -6,6 +6,7 @@ import Scale                from "../../lib/scales/Scale.js"
 
 import {
   spacingScale,
+  doubleSpacingScale,
   percentageScale,
   viewportHeightScale,
   viewportWidthScale,
@@ -15,7 +16,7 @@ import mediaQueries from "../MediaQueries.js"
 const widthsMetaProperty = new MetaProperty({
   name: "width",
   scales: [
-    spacingScale,
+    doubleSpacingScale,
     percentageScale,
     viewportHeightScale,
     Scale.forLiteralValues({ "auto": "auto" }),
@@ -39,7 +40,7 @@ const widthsMetaProperty = new MetaProperty({
 const heightsMetaProperty = new MetaProperty({
   name: "height",
   scales: [
-    spacingScale,
+    doubleSpacingScale,
     percentageScale,
     viewportHeightScale,
     Scale.forLiteralValues({ "auto": "auto" }),

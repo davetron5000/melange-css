@@ -22,7 +22,7 @@ const positions = new MetaProperty({
 const locations = new MetaProperty({
   name: "Location",
   docs: [
-    "The properties can be used with the position values to place things explicitly.  Note that in addition to the positive values like <code>left4</code> or <code>top2</code>, there are <strong>negative</strong> values as well, like <code>left-4</code> and <code>top-2</code>.",
+    "The properties can be used with the position values to place things explicitly.  Note that in addition to the positive values like <code>left-4</code> or <code>top-2</code>, there are <strong>negative</strong> values as well, like <code>left--4</code> and <code>top--2</code>.",
   ],
   scales: [
     spacingScale,

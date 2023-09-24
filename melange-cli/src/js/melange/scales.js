@@ -10,14 +10,15 @@ import VariableRegistry           from "../lib/VariableRegistry.js"
 
 const spacingVariables = VariableRegistry.register(
   "sp",
-  [
+  [ // Based on Tachyons
     "0.25rem",
     "0.5rem",
     "1rem",
     "2rem",
     "4rem",
     "8rem",
-    "18rem",
+    "12rem", // not in Tachyons
+    "16rem", // Tachyons has 18
   ],
   "Spacing",
   "Spacing scale for margins, paddings, widths, positions, etc.",
@@ -45,15 +46,33 @@ const negativeSpacingVariables = spacingVariables.map( (variable) => {
 VariableRegistry.registerVariables("nsp", negativeSpacingVariables) // no docs means this is a derived set
 const negativeSpacingScale = new VariableBasedScale(negativeSpacingVariables)
 
+const doubleSpacingVariables = spacingVariables.map( (variable) => {
+  const propertyTransform = (variable) => {
+    return `calc(2 * var(${variable._variableName()}))`
+  }
+  const stepNameTransform = (stepName) => {
+    return `${stepName}`
+  }
+  return new DerivedVariable({
+    baseName: "nsp",
+    variable: variable,
+    propertyTransform: propertyTransform,
+    stepNameTransform: stepNameTransform
+  })
+})
+VariableRegistry.registerVariables("2xsp", doubleSpacingVariables) // no docs means this is a derived set
+const doubleSpacingScale = new VariableBasedScale(doubleSpacingVariables)
+
 const fontSizeVariables = VariableRegistry.register(
   "fs",
-  [
+  [ // based on Tachyons'
     "0.875rem",
     "1rem",
     "1.25rem",
     "1.5rem",
     "2.25rem",
     "3rem",
+    "4.25rem", // not in Tachyons
     "5rem",
     "6rem",
   ],
@@ -154,6 +173,7 @@ const measureScale = new VariableBasedScale(measureVariables)
 const percentageScale = new Scale({
   "10": "10%",
   "20": "20%",
+  "25": "25%",
   "30": "30%",
   "third": "calc(100% / 3)",
   "40": "40%",
@@ -161,6 +181,7 @@ const percentageScale = new Scale({
   "60": "60%",
   "two-thirds": "calc(100% / 1.5)",
   "70": "70%",
+  "75": "75%",
   "80": "80%",
   "90": "90%",
   "100": "100%",
@@ -195,6 +216,7 @@ export {
   spacingScale,
   borderWidthScale,
   negativeSpacingScale,
+  doubleSpacingScale,
   fontScale,
   percentageScale,
   fontFamilies,
