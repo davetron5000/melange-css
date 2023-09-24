@@ -11,7 +11,7 @@ Add this to the `<head>` section of your HTML:
 
 ```
 <link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-beta2/melange.min.css"/>
+      href="https://unpkg.com/melange-css@1.0.0-beta3/melange.min.css"/>
 ```
 
 ### Download to Your Project
@@ -19,7 +19,7 @@ Add this to the `<head>` section of your HTML:
 Use something like `curl` to download the file and save it to your project:
 
 ```
-curl https://unpkg.com/melange-css@1.0.0-beta2/melange.css > melange.css
+curl https://unpkg.com/melange-css@1.0.0-beta3/melange.css > melange.css
 ```
 
 ### Use NPM
@@ -47,4 +47,11 @@ properties. As such, there is no build step like TailwindCSS has.
 assistance from a generative AI](https://declare-ai.org/1.0.0-alpha1/none.html)
 * Some aspects of the source code in `melange-cli/src/js` had [non-creative assistance](https://declare-ai.org/1.0.0-alpha1/non-creative.html) from GitHub CoPilot.  Primarily, it auto-complete certain patterns that I then edited.  It was not used to produce more than one line at a time.
 
+## Releasing Melange
 
+* Update versions in `*/package.json`
+* Update version here
+* `bin/build`
+* `make distro`
+* commit it all
+* `npm publish` it all
