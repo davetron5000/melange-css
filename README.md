@@ -11,7 +11,7 @@ Add this to the `<head>` section of your HTML:
 
 ```
 <link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-beta3/melange.min.css"/>
+      href="https://unpkg.com/melange-css@1.0.0-beta4/melange.min.css"/>
 ```
 
 ### Download to Your Project
@@ -19,7 +19,7 @@ Add this to the `<head>` section of your HTML:
 Use something like `curl` to download the file and save it to your project:
 
 ```
-curl https://unpkg.com/melange-css@1.0.0-beta3/melange.css > melange.css
+curl https://unpkg.com/melange-css@1.0.0-beta4/melange.css > melange.css
 ```
 
 ### Use NPM
@@ -52,6 +52,5 @@ assistance from a generative AI](https://declare-ai.org/1.0.0-alpha1/none.html)
 * Update versions in `*/package.json`
 * Update version here
 * `bin/build`
-* `make distro`
 * commit it all
 * `npm publish` it all

@@ -2,4 +2,8 @@
 
 set -e
 
-make documentation
+if [ -z "$1" ]; then
+  make distro
+else
+  make documentation
+fi

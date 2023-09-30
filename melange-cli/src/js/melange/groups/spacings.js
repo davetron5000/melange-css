@@ -20,6 +20,28 @@ const marginExampleTemplate = (selector) => {
   })
 }
 
+const gapExampleTemplate = (selector) => {
+  return new Example({
+    markupForRendering: `<div class="ba bc-black bs-dashed flex flex-column ${selector}">
+      <div class="ba bc-black flex flex-row ${selector}">
+        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-red">Top Left</div>
+        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-green">Top Middle</div>
+        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-blue">Top Right</div>
+      </div>
+      <div class="ba bc-black flex flex-row ${selector}">
+        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-red">Middle Left</div>
+        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-green">Middle Middle</div>
+        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-blue">Middle Right</div>
+      </div>
+      <div class="ba bc-black flex flex-row ${selector}">
+        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-red">Bottom Left</div>
+        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-green">Bottom Middle</div>
+        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-blue">Bottom Right</div>
+      </div>
+    </div>`
+  })
+}
+
 const paddingMetaProperty = new MetaProperty({
   name: "Padding",
   docs: [
@@ -55,6 +77,20 @@ const marginMetaProperty = new MetaProperty({
     new CSSClassTemplate("mb", "margin-bottom", { exampleTemplate: marginExampleTemplate, summary: "bottom" }),
     new CSSClassTemplate("mh", "margin-left", "margin-right", { exampleTemplate: marginExampleTemplate, summary: "horizontal" }),
     new CSSClassTemplate("mv", "margin-top", "margin-bottom", { exampleTemplate: marginExampleTemplate, summary: "vertical" }),
+  ]
+})
+const gapMetaProperty = new MetaProperty({
+  name: "Gap",
+  docs: [
+    "Gap is space between grids, flexboxes, and columns."
+  ],
+  scales: [
+    spacingScale,
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("gap", "gap", { exampleTemplate: gapExampleTemplate, summary: "both" }),
+    new CSSClassTemplate("row-gap", "row-gap", { exampleTemplate: gapExampleTemplate, summary: "row" }),
+    new CSSClassTemplate("col-gap", "column-gap", { exampleTemplate: gapExampleTemplate, summary: "column" }),
   ]
 })
 
@@ -93,6 +129,7 @@ const spacings = new MetaPropertyGrouping({
     floats,
     paddingMetaProperty,
     marginMetaProperty,
+    gapMetaProperty,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
   docs: [

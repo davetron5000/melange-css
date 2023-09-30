@@ -54,11 +54,40 @@ const tableDisplay = new MetaProperty({
     "collapse":       { properties: { "border-collapse": "collapse", "border-spacing": 0 }  , summary: "Border Collapse" },
   },
 })
+const screenReaders = new MetaProperty({
+  name: "Screen Readers",
+  literalClasses: {
+    "sr-only": { 
+      properties: { "position":"absolute",
+                    "left":"-10000px",
+                    "top":"auto",
+                    "width":"1px",
+                    "height":"1px",
+                    "overflow":"hidden", },
+      summary: "Hide in browser UI",
+    },
+    "undo-sr-only": { 
+      properties: { "position":"static",
+                    "padding": "0",
+                    "margin": "0",
+                    "clip": "auto",
+                    "white-space": "normal",
+                    "width":"auto",
+                    "height":"auto",
+                    "overflow":"visible", },
+      summary: "Undo sr-only, e.g. at a different breakpoint",
+    },
+  },
+  docs: [
+    "For helping with markup needed for screen readers that you may not want shown to users using visual browsers",
+  ]
+})
 
 const display = new MetaPropertyGrouping({name: "Display",
   metaProperties: [
     displays,
     tableDisplay,
+    screenReaders,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),
   docs: [

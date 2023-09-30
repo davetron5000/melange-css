@@ -1,0 +1,15 @@
+{
+  "name": "melange-css-dev",
+  "version": "1.0.0",
+  "description": "Dev Environment for MelangeCSS",
+  "author": {
+    "name": "David Copeland",
+    "email": "davec@naildrivin5.com",
+    "url": "https://naildrivin5.com"
+  },
+  "license": "Hippocratic-2.1",
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "http-server": "^14.1.1"
+  }
+}

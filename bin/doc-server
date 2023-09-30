@@ -1,5 +1,0 @@
-#!/bin/sh
-
-set -e
-
-node melange-cli/src/js/cli/melange.js doc-server --dir=docs

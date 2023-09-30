@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+set -e
+
+trap killgroup SIGINT
+
+killgroup() {
+  echo "Killing everything..."
+  kill 0
+}
+SHELL=/usr/bin/bash npx chokidar --polling \
+  "melange-cli/src/**/*" \
+  --command "bin/build docs" &
+bin/run &
+wait

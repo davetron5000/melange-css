@@ -3,13 +3,11 @@
 import process      from "node:process";
 import CSS          from "./css.js"
 import ReferenceDoc from "./reference-doc.js"
-import DocServer    from "./doc-server.js"
 import Website      from "./website.js"
 
 const commands = {
   css: new CSS(),
   "reference-docs": new ReferenceDoc(),
-  "doc-server": new DocServer(),
   "website": new Website(),
 }
 
