@@ -1,39 +1,264 @@
 <%- include( "/_header.html", { title: "Get Started" } ) %>
 <section class="pa-1 w-90 w-60-ns mh-auto">
-<p class="f-3 measure lh-copy">
-  <span class="fv-sc tracked">MelangeCSS</span> can be installed in a few ways, depending on your needs. To get started now, choose which method:
-</p>
-<ul class="ma-0 pa-0 lsp-inside bb bc-orange-darker pb-3">
-  <li><a href="#cdn" class="blue-darkest">CDN</a> (quickest to get started)</li>
-  <li><a href="#download" class="blue-darkest">Download</a> (most stable)</li>
-  <li><a href="#npm" class="blue-darkest">NPM</a> (most compatible with web frameworks)</li>
-</ul>
-<p class="f-3 measure lh-copy">
-  <span class="fv-sc tracked">MelangeCSS</span> also ships with different variants, depending on your needs:
-</p>
-<ul class="ma-0 pa-0 lsp-inside pb-3">
-  <li class="lh-copy">
-    Do you need Dark Mode support?
-    <ul class="pl-3">
-      <li>
-        <strong>Yes.</strong> Do you need any breakpoints?
-        <ul class="pl-4 lsp-outside">
-          <%- include( "_get_started_decision.html", { title: "Yes, all four.", anchor: "everything", file: "melange.css", blurb: "Most flexible." } ) %>
-          <%- include( "_get_started_decision.html", { title: "Only mobile and desktop.", anchor: "breakpoint_ns_only", file: "melange-breakpoint_ns_only.css", blurb: "Saves space." } ) %>
-          <%- include( "_get_started_decision.html", { title: "No.", anchor: "no_breakpoints", file: "melange-no_breakpoints.css", blurb: "Good for single screen size designs." } ) %>
-        </ul>
-      </li>
-      <li>
-        <strong>No.</strong> Do you need any breakpoints?
-        <ul class="lsp-outside">
-          <%- include( "_get_started_decision.html", { title: "Yes, all four.", anchor: "no_dark_mode", file: "melange-no_dark_mode.css", blurb: "Saves some space when dark mode isn't needed." } ) %>
-          <%- include( "_get_started_decision.html", { title: "Only mobile and desktop.", anchor: "no_dark_mode-breakpoint_ns_only", file: "melange-no_dark_mode-breakpoint_ns_only.css", blurb: "Saves more space, less flexible." } ) %>
-          <%- include( "_get_started_decision.html", { title: "No.", anchor: "no_dark_mode-no_breakpoints", file: "melange-no_dark_mode-no_breakpoints.css", blurb: "Good for simple internal apps aimed at desktop screens." } ) %>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
+  <p class="f-3 measure lh-copy">
+    <span class="fv-sc tracked">MelangeCSS</span> can be installed in a few ways, depending on your needs. To get started now, choose which method:
+  </p>
+  <ul class="ma-0 pa-0 lsp-inside bb bc-orange-darker pb-3">
+    <li><a href="#cdn" class="blue-darkest">CDN</a> (quickest to get started)</li>
+    <li><a href="#download" class="blue-darkest">Download</a> (most stable)</li>
+    <li><a href="#npm" class="blue-darkest">NPM</a> (most compatible with web frameworks)</li>
+  </ul>
+  <p class="f-3 measure lh-copy">
+    <span class="fv-sc tracked">MelangeCSS</span> also ships with different variants, depending on your needs:
+  </p>
+  <table class="collapse w-auto dn db-ns mv-3">
+    <thead>
+      <tr>
+        <th rowspan="2" class="tl pa-2 va-bottom bb"><code>.css</code> file</th>
+        <th colspan="4" class="tc pa-2 bl br"><a href="/reference/mediaQueries.html">Breakpoints<a></th>
+        <th rowspan="2" class="tl pa-2 va-bottom bb">Dark Mode</th>
+      </tr>
+      <tr>
+        <th class="tc pa-2 va-bottom bb bl">Mobile <span class="db">(default)<span></th>
+        <th class="tc pa-2 va-bottom bb">Medium</th>
+        <th class="tc pa-2 va-bottom bb">Large</th>
+        <th class="tc pa-2 va-bottom bb br">Not-small</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="pa-2"><a class="blue-dark" href="#everything"><code>melange.css</code></a>
+        </td>
+        <td class="pa-2 tc bl">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+        <td class="pa-2 tc br">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="pa-2"><a class="blue-dark" href="#breakpoint_ns_only"><code>melange-breakpoint_ns_only.css</code></a></td>
+        <td class="pa-2 tc bl">
+          <span role="img" aria-label="Checkmark">✅</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+        <td class="pa-2 tc br">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="pa-2"><a class="blue-dark" href="#no_breakpoints"><code>melange-no_breakpoints.css</code></a></td>
+        <td class="pa-2 tc bl">
+          <span role="img" aria-label="Checkmark">✅</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+        <td class="pa-2 tc br">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="pa-2"><a class="blue-dark" href="#no_dark_mode"><code>melange-no_dark_mode.css</code></a></td>
+        <td class="pa-2 tc bl">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+        <td class="pa-2 tc br">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="pa-2"><a class="blue-dark" href="#no_dark_mode-breakpoint_ns_only"><code>melange-no_dark_mode-breakpoint_ns_only.css</code></a></td>
+        <td class="pa-2 tc bl">
+          <span role="img" aria-label="Checkmark">✅</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+        <td class="pa-2 tc br">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="pa-2"><a class="blue-dark" href="#no_dark_mode-no_breakpoints"><code>melange-no_dark_mode-no_breakpoints.css</code></a></td>
+        <td class="pa-2 tc bl">
+          <span role="img" aria-label="Checkmark">✅</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+        <td class="pa-2 tc br">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+        <td class="pa-2 tc">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ul class="db dn-ns">
+    <li>
+      <a class="ue-dark" href="#everything"><code>melange.css</code></a>:
+      <ul class="mv-2">
+        <li class="lh-copy ">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Mobile (default) breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Medium breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Large breakpoint
+        </li>
+        <li class="lh-copy ">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Non-small breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Dark mode
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="ue-dark" href="#brbreakpoint_ns_only"><code>melange-breakpoint_ns_only.css</code></a>:
+      <ul class="mv-2">
+        <li class="lh-copy ">
+          <span role="img" aria-label="Checkmark">✅</span> Mobile (default) breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Medium breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Large breakpoint
+        </li>
+        <li class="lh-copy ">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Non-small breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Dark mode
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="ue-dark" href="#no_brbreakpoints"><code>melange-no_breakpoints.css</code></a>:
+      <ul class="mv-2">
+        <li class="lh-copy ">
+          <span role="img" aria-label="Checkmark">✅</span> Mobile (default) breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Medium breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Large breakpoint
+        </li>
+        <li class="lh-copy ">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Non-small breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Dark mode
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="ue-dark" href="#no_dark_mode"><code>melange-no_dark_mode.css</code></a>:
+      <ul class="mv-2">
+        <li class="lh-copy ">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Mobile (default) breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Medium breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Large breakpoint
+        </li>
+        <li class="lh-copy ">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Non-small breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Dark mode
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="ue-dark" href="#no_dark_mode-brbreakpoint_ns_only"><code>melange-no_dark_mode-breakpoint_ns_only.css</code></a>:
+      <ul class="mv-2">
+        <li class="lh-copy ">
+          <span role="img" aria-label="Checkmark">✅</span> Mobile (default) breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Medium breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Large breakpoint
+        </li>
+        <li class="lh-copy ">
+          <span role="img" aria-label="Checkmark">✅</span><span class="sr-only">Yes</span> Non-small breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Dark mode
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="ue-dark" href="#no_dark_mode-no_brbreakpoints"><code>melange-no_dark_mode-no_breakpoints.css</code></a>:
+      <ul class="mv-2">
+        <li class="lh-copy ">
+          <span role="img" aria-label="Checkmark">✅</span> Mobile (default) breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Medium breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Large breakpoint
+        </li>
+        <li class="lh-copy ">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Non-small breakpoint
+        </li>
+        <li class="lh-copy">
+          <span role="img" aria-label="Red X">❌</span><span class="sr-only">No</span> Dark mode
+        </li>
+      </ul>
+    </li>
+  </ul>
 </section>
 <%- include("_get_started_download_instructions.html", {
             anchor: "everything",
