@@ -17,6 +17,9 @@ const displayExampleTemplate = (selector) => {
     markupForRendering: markupForRendering
   })
 }
+const appearanceTemplate = (selector) => {
+  return `<button class="${selector}"> ${selector} </button>`
+}
 
 const clearfixExampleTemplate = (selector) => {
   return `<div>
@@ -83,10 +86,22 @@ const screenReaders = new MetaProperty({
   ]
 })
 
+const appearances = new MetaProperty({
+  name: "Appearance",
+  docs: [
+    "Setting appearance to 'none' is useful to create accessible but visually pleasing form elements.",
+  ],
+  literalClasses: {
+    "appearance-none": { properties: { "appearance": "none" }, exampleTemplate: appearanceTemplate, summary: "None" },
+    "appearance-auto": { properties: { "appearance": "auto" }, exampleTemplate: appearanceTemplate, summary: "Auto" },
+  },
+})
+
 const display = new MetaPropertyGrouping({name: "Display",
   metaProperties: [
     displays,
     tableDisplay,
+    appearances,
     screenReaders,
   ],
   mediaQueries: mediaQueries.onlyBreakpoints(),

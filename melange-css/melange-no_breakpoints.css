@@ -1727,6 +1727,12 @@ input[type="tel"], input[type="text"], input[type="url"] { box-sizing: border-bo
   border-collapse: collapse;
   border-spacing: 0;
 }
+.appearance-none {
+  appearance: none;
+}
+.appearance-auto {
+  appearance: auto;
+}
 .sr-only {
   position: absolute;
   left: -10000px;
