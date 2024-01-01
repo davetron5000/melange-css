@@ -39,90 +39,98 @@ colorTints.register("blue",   [ "#EFF8FC", "#B1DBEF", "#0077B2", "#004E74", "#00
 colorTints.register("purple", [ "#F4F6FE", "#D0D2F7", "#6167C9", "#46427C", "#2B2643" ])
 */
 
-// http://127.0.0.1:8888/?numColors=6&colorHex=%23ff4013&secondaryColorHex=%237b219f&numShades=7&scaleModel=FixedHSLHandCrafted&colorWheel=NuancedHueBased&showColorDetails=true&showContrastInfo=true&bigSwatches=true&secondaryColorChecked=true
+
 
 colorTints.register(
   "red",
   [
-    "#fff7f5",
-    "#ffc1b3",
-    "#ff8366",
-    "#ff3100",
-    "#661300",
-    "#3d0c00",
-    "#290800",
+    "#FEF8F8",
+    "#FAD6D4",
+    "#F07D77",
+    "#E30D00",
+    "#790700",
+    "#2D0300",
+    "#060000",
   ]
 )
+
+
 colorTints.register(
   "orange",
   [
-    "#fefaf6",
-    "#f8d8b9",
-    "#f2b273",
-    "#e97e16",
-    "#5d3209",
-    "#381e05",
-    "#251404",
+    "#FEFBF8",
+    "#FBE6D4",
+    "#F4B077",
+    "#EA6C00",
+    "#7D3A00",
+    "#2E1500",
+    "#070300",
   ]
 )
+
 colorTints.register(
   "yellow",
   [
-    "#fefdf6",
-    "#f8f3b9",
-    "#f2e773",
-    "#e9d816",
-    "#5d5609",
-    "#383405",
-    "#252204",
+    "#FFFFF9",
+    "#FDFDDC",
+    "#F9F991",
+    "#F3F331",
+    "#82821A",
+    "#30300A",
+    "#070701",
   ]
 )
+
 colorTints.register(
   "green",
   [
-    "#f6fef6",
-    "#bef8b9",
-    "#7df273",
-    "#26e916",
-    "#0f5d09",
-    "#093805",
-    "#062504",
+    "#F9FDFA",
+    "#DAF2E1",
+    "#89D6A0",
+    "#22B34D",
+    "#126029",
+    "#07230F",
+    "#010502",
   ]
 )
+
 colorTints.register(
   "blue",
   [
-    "#f6fafe",
-    "#b9dbf8",
-    "#73b7f2",
-    "#1687e9",
-    "#09365d",
-    "#052038",
-    "#041625",
+    "#F9FAFD",
+    "#DADFF2",
+    "#8999D6",
+    "#2240B3",
+    "#122260",
+    "#070D23",
+    "#010205",
   ]
 )
+
 colorTints.register(
   "purple",
   [
-    "#fbf7fd",
-    "#e4c0f2",
-    "#c880e5",
-    "#a32cd3",
-    "#411254",
-    "#270b33",
-    "#1a0722",
+    "#FAF9FD",
+    "#E1DAF2",
+    "#A089D6",
+    "#4D22B3",
+    "#291260",
+    "#0F0723",
+    "#020105",
   ]
 )
+
+
 colorTints.register(
   "gray",
   [
-    "#fafafa",
-    "#d9d9d9",
-    "#b3b3b3",
-    "#808080",
-    "#333333",
-    "#1f1f1f",
-    "#141414",
+    "#FBFBFB",
+    "#E8E8E9",
+    "#B5B5B8",
+    "#74747B",
+    "#3E3E42",
+    "#171718",
+    "#030303",
   ]
 )
 
