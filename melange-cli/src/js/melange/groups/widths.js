@@ -18,7 +18,7 @@ const widthsMetaProperty = new MetaProperty({
   scales: [
     doubleSpacingScale,
     percentageScale,
-    viewportHeightScale,
+    viewportWidthScale,
     Scale.forLiteralValues({ "auto": "auto" }),
   ],
   cssClassTemplates: [
