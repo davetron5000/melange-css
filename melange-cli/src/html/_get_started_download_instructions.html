@@ -1,6 +1,5 @@
-<article class="<%= bg %> pa-3-ns pa-1">
+<article class="<%= bg %> pa-3-ns pa-1" id="<%= anchor %>">
 <div class="w-90 w-60-ns mh-auto">
-  <a name="<%= anchor %>"></a>
   <h3 class="f-4 fw-bold tc">
     <% if (dark_mode) { %>
     Dark Mode;
@@ -16,10 +15,7 @@
     <% } %>
   </h3>
   <ul class="lst-none ma-0 pa-0">
-    <li>
-      <% if (anchor == "everything" ) { %>
-      <a name="cdn"></a>
-      <% } %>
+    <li id="<%= anchor %>-cdn">
       <h4 class="f-4 fw-5 ttu tc tl-ns">CDN</h4>
       <p class="measure lh-copy">
         You can bring <span class="fv-sc tracked">MelangeCSS</span> into any webpage using the <code>unpkg.com</code> CDN provided for all NPM packages.  Place this somewhere in your <code>&lt;head&gt;</code> section:
@@ -32,41 +28,68 @@
       </p>
       <% } %>
     </li>
-    <li>
-      <% if (anchor == "everything" ) { %>
-      <a name="download">
+    <li id="<%= anchor %>-download">
+      <h4 class="f-4 fw-5 ttu tc tl-ns">Download</h4>
+      <p class="measure lh-copy">
+        To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code><%= file %>.css</code> with a command-line tool like <code>curl</code>:
+      </p>
+      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@<%= version %>/<%= file %>.min.css &gt; \
+        your/project/css/<%= file %>.css</code>
+      <% if (verbose) { %>
+      <p class="measure lh-copy">
+        This method is most stable, because you have a copy of <span class="fv-sc tracked">MelangeCSS</span> in your app and that copy won't be changed in any way without you explicitly changing it.  The downside is that you don't have a way to easily update it when there are changes.  To do that, use NPM.
+      </p>
       <% } %>
-        <h4 class="f-4 fw-5 ttu tc tl-ns">Download</h4>
-        <p class="measure lh-copy">
-          To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code><%= file %>.css</code> with a command-line tool like <code>curl</code>:
-        </p>
-        <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@<%= version %>/<%= file %>.min.css &gt; \
-          your/project/css/<%= file %>.css</code>
-        <% if (verbose) { %>
-        <p class="measure lh-copy">
-          This method is most stable, because you have a copy of <span class="fv-sc tracked">MelangeCSS</span> in your app and that copy won't be changed in any way without you explicitly changing it.  The downside is that you don't have a way to easily update it when there are changes.  To do that, use NPM.
-        </p>
-        <% } %>
     </li>
     <li>
-      <% if (anchor == "everything" ) { %>
-      <a name="npm"></a>
-      <% } %>
+    <li id="<%= anchor %>-npm">
       <h4 class="f-4 fw-5 ttu tc tl-ns">NPM</h4>
       <p class="measure lh-copy">
         <span class="fv-sc tracked">MelangeCSS</span> is available as a Node Module, which you can install thusly:
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
+      <% if (verbose) { %>
+      <aside class="ph-3 pv-2 br-3 bg-blue-lighter orange-darker flex items-start gap-3 measure-wide">
+        <span role="img" aria-description="info symbol" class="mt-1 w-3 h-3 flex items-center justify-center bc-blue-dark bg-blue-darker blue-light br-100 ba">&#8505;</span>
+      <p class="ma-0 measure lh-copy f-1 i fw-7">
+        If you use this method, you are encouraged to monitor the releases.  <span class="fv-sc tracked">MelangeCSS</span> uses <a class="blue-darkest" href="https://docs.npmjs.com/about-semantic-versioning">Semantic Versioning</a>, so you should not experience breaking changes outside of a major release.
+      </p>
+      </aside>
+      <% } %>
       <p class="measure lh-copy">
         The CSS will be in <code>node_modules/melange-css/<%= file %>.css</code>.  How you get that into your app highly depends on how your app is built.  If you have a build system that supports <a class="<%= dark_mode ? 'blue-lightest' : 'blue-darkest' %>" href="http://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>, you can bring <span class="fv-sc tracked">MelangeCSS</span> in by adding this to a <code>.css</code> file your build system processes:
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">@import "melange-css/<%= file %>.css";</code>
-      <% if (verbose) { %>
-      <p class="measure lh-copy">
-        If you use this method, you are encouraged to monitor the releases.  <span class="fv-sc tracked">MelangeCSS</span> uses <a class="<%= dark_mode ? 'blue-lightest' : 'blue-darkest' %>" href="https://docs.npmjs.com/about-semantic-versioning">Semantic Versioning</a>, so you should not experience breaking changes outside of a major release.
+      <h5 class="f-3 fw-5 tc tl-ns">Ruby on Rails</h5>
+      <p class="p">
+        <a class="<%= dark_mode ? 'blue-lightest' : 'blue-darkest' %>" href="https://rubyonrails.org">Ruby on Rails</a> requires a few bits of configuration to use CSS files brought in through NPM. <strong>You do not need to—and should—use the CSS Bundling gem to manage <span class="fv-sc tracked">MelangeCSS</span></strong>. It is still preferable to do this, and I don't currently plan on creating a Ruby gem.  Here is how to set it up:
       </p>
-      <% } %>
+      <ol>
+        <li class="p">
+          Install using the command above. This will add <code>melange-css</code> to your app's <code>package.json</code> file.
+        </li>
+        <li class="lh-copy measure-wide">
+          Add <code>node_modules</code> to the asset path in <code>config/initializers/assets.rb</code>:
+        <code class="f-1 db <%= dark_mode ? 'bg-white green-darker' : 'bg-black green-lighter' %> ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2"># config/initializers/assets.rb
+
+# ...
+
+Rails.application.config.assets.paths &lt;&lt; (Rails.root / "node_modules")
+
+# ...</code>
+        </li>
+        <li class="lh-copy measure-wide">
+          Add <code>melange.css</code> to your <code>app/assets/stylesheets.css</code> (note that you want to <code>require</code> it before your CSS so you can customize by settinb custom properties):
+          <code class="f-1 db <%= dark_mode ? 'bg-white green-darker' : 'bg-black green-lighter' %> ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">/* app/assets/stylesheets.css */
+/*
+ * «giant comment from Rails omitted»
+ *
+ *= require "melange-css/<%= file %>.css"
+ *= require_tree .
+ *= require_self
+ */</code>
     </li>
+    <li class="p">Restart your server</li>
   </ul>
 </div>
 </article>
