@@ -27,12 +27,12 @@
 }
     </style>
   </head>
-  <body class="ff-serif pa0 ma0 bg-orange-lightest black-ish">
+  <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
     <header>
-      <div class="bg-black-ish orange-lightest pa-3 pt-4">
+      <div class="bg-black-ish orange-900 pa-3 pt-4">
         <div class="w-60-ns w-90 mh-auto">
           <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-1">
-            <a href="index.html" class="tdn orange-lightest hover-tdu-ns">
+            <a href="index.html" class="tdn orange-900 hover-tdu-ns">
         <span class="fv-sc tracked">MelangeCSS</span>
             </a>
           </h1>
@@ -45,16 +45,16 @@
           
         </div>
       </div>
-      <div class="bg-orange-darker orange-lightest pa-3">
+      <div class="bg-orange-300 orange-900 pa-3">
         <nav class="w-60-ns w-90 mh-auto">
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
 
-            <a href="get-started.html"     class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Getting Started</a>
-            <a href="guide.html"           class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Guide</a>
-            <a href="reference/index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Reference</a>
-            <a href="https://github.com/davetron5000/melange-css"    class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Source Code</a>
-            <a href="gallery.html"         class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Gallery</a>
-            <a href="why.html"             class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">But Why?</a>
+            <a href="get-started.html"     class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Getting Started</a>
+            <a href="guide.html"           class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Guide</a>
+            <a href="reference/index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Reference</a>
+            <a href="https://github.com/davetron5000/melange-css"    class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Source Code</a>
+            <a href="gallery.html"         class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Gallery</a>
+            <a href="why.html"             class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3">But Why?</a>
 
           </div>
         </nav>
@@ -63,14 +63,14 @@
     <main>
 
 <section class="pa-1 w-90 w-60-ns mh-auto pb-4">
-  <nav class="flex flex-wrap items-baseline pv-3 bb bc-orange-light">
-    <a href="#utility" class="f-2 fw-bold blue-dark mh-2">Why Utility Classes?</a>
+  <nav class="flex flex-wrap items-baseline pv-3 bb bc-orange-600">
+    <a href="#utility" class="f-2 fw-bold blue-400 mh-2">Why Utility Classes?</a>
     <span role="none">&bull;</span>
-    <a href="#design" class="f-2 fw-bold blue-dark mh-2">Why Only So Many Values?</a>
+    <a href="#design" class="f-2 fw-bold blue-400 mh-2">Why Only So Many Values?</a>
     <span role="none">&bull;</span>
-    <a href="#tailwind" class="f-2 fw-bold blue-dark mh-2">Why not Tailwind?</a>
+    <a href="#tailwind" class="f-2 fw-bold blue-400 mh-2">Why not Tailwind?</a>
     <span role="none">&bull;</span>
-    <a href="#tachyons" class="f-2 fw-bold blue-dark mh-2">Why not Tachyons?</a>
+    <a href="#tachyons" class="f-2 fw-bold blue-400 mh-2">Why not Tachyons?</a>
   </nav>
   <article>
     <a name="utility"></a>
@@ -88,16 +88,16 @@
       Most web applications deliver a specific user experience, usually with some slight modifications on different screen sizes.  This is not the “CSS Zen Garden” approach and very few web apps need that.  If they do, <span class="fv-sc tracked">MelangeCSS</span> is not for them.  But for most apps, it turns out that putting styling instructions in the markup makes some things easier.
     </p>
     <p class="ml-3 measure lh-copy">
-      When you open an HTML file and see <code>&lt;a href="/" class="blue-dark f-3"&gt;link&lt;/a&gt;</code>, you can see that the link is rendered in the third sized font in the dark blue color.  If, instead, the value for <code>class</code> was something more abstract like <code>primary-link</code> it would be harder to figure out how that link renders in a browser.  Depending on what CSS is included on the page, it could be extremely hard.
+      When you open an HTML file and see <code>&lt;a href="/" class="blue-400 f-3"&gt;link&lt;/a&gt;</code>, you can see that the link is rendered in the third sized font in the dark blue color.  If, instead, the value for <code>class</code> was something more abstract like <code>primary-link</code> it would be harder to figure out how that link renders in a browser.  Depending on what CSS is included on the page, it could be extremely hard.
     </p>
     <p class="indent--1 ml-3 measure lh-copy">
       <strong>These classes are not semantic.</strong> The <code>class</code> attribute is ignored by most screen readers.  Users who are not viewing your app in a traditional web browser will get semantic information from the tags used.  The app can make use of ARIA roles to further clarify. The <code>class</code> attribute is irrelevant.  There is no reason or benefit to making its value have semantic meaning.  It is entirely a hook for styling.
     </p>
     <p class="indent--1 ml-3 measure lh-copy">
-      <strong>The terse names are an unmanageable, nonsensical mess of characters.</strong>  Any verbose code in any programming language can be abstracted or simplified through the use of functional decomposition. <a href="guide-duplication.html" class="blue-dark">Your web app is no different</a>.  You can use its templating system to extract re-usable code, when you want, not before.
+      <strong>The terse names are an unmanageable, nonsensical mess of characters.</strong>  Any verbose code in any programming language can be abstracted or simplified through the use of functional decomposition. <a href="guide-duplication.html" class="blue-400">Your web app is no different</a>.  You can use its templating system to extract re-usable code, when you want, not before.
     </p>
     <p class="ml-3 measure lh-copy">
-      The terse class names can be hard to learn at first, because a class like <code>fw-4</code> doesn't seem immediately obvious.  But, if you know CSS, understand <a href="guide-naming-conventions.html" class="blue-dark">the naming conventions</a>, and use <span class="fv-sc tracked">MelangeCSS</span> for just a small amount of time, you will learn these class names. <strong>And</strong> you will start to go much faster, because you won't rely on autocomplete or flipping back to the documentation.
+      The terse class names can be hard to learn at first, because a class like <code>fw-4</code> doesn't seem immediately obvious.  But, if you know CSS, understand <a href="guide-naming-conventions.html" class="blue-400">the naming conventions</a>, and use <span class="fv-sc tracked">MelangeCSS</span> for just a small amount of time, you will learn these class names. <strong>And</strong> you will start to go much faster, because you won't rely on autocomplete or flipping back to the documentation.
     </p>
     <p class="indent--1 ml-3 measure lh-copy">
       <strong>Why not just use inline styles, then?</strong>  <span class="fv-sc tracked">MelangeCSS</span> has four differences from inline styles. First, the class names are far shorter than their analogous CSS properties and values. Second, inline styles cannot target breakpoints to allow for responsive design.  Third, inline styles have a higher specificity, so they can still use used in a pinch. Lastly, and most importantly, <strong>Melange includes a grid-based design system</strong>.
@@ -139,7 +139,7 @@
     <a name="tachyons"></a>
     <h3 class="f-4">Isn't this Just Tachyons But Slightly Different?</h3>
     <p class="measure lh-copy">
-      I am a heavy <a href="https://tachyons.io" class="blue-dark">Tachyons</a> user. I love it, but in real projects there are a few things that are difficult:
+      I am a heavy <a href="https://tachyons.io" class="blue-400">Tachyons</a> user. I love it, but in real projects there are a few things that are difficult:
     </p>
     <ul class="pa-0 ma-0 lsp-inside">
       <li class="measure lh-copy">
@@ -165,10 +165,10 @@
       <div class="w-90 w-50-ns mh-auto">
         <p class="measure xmh-auto tc tl-ns lh-copy">
           <span class="fv-sc tracked">MelangeCSS</span>
-          is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-dark">Hippocratic License, v2.1</a>.
+          is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-400">Hippocratic License, v2.1</a>.
         </p>
         <p class="measure xmh-auto tc tl-ns lh-copy f-1 i">
-          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot. The image of Paul Maud'Dib was <a href="https://declare-ai.org/1.0.0-alpha1/creative.html" class="blue-dark">created by a generative AI</a> and modified slightly to give him the Eyes of Ibad.
+          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot. The image of Paul Maud'Dib was <a href="https://declare-ai.org/1.0.0-alpha1/creative.html" class="blue-400">created by a generative AI</a> and modified slightly to give him the Eyes of Ibad.
         </p>
       </div>
     </footer>

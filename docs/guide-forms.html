@@ -29,12 +29,12 @@
 }
     </style>
   </head>
-  <body class="ff-serif pa0 ma0 bg-orange-lightest black-ish">
+  <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
     <header>
-      <div class="bg-black-ish orange-lightest pa-3 pt-4">
+      <div class="bg-black-ish orange-900 pa-3 pt-4">
         <div class="w-60-ns w-90 mh-auto">
           <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-1">
-            <a href="index.html" class="tdn orange-lightest hover-tdu-ns">
+            <a href="index.html" class="tdn orange-900 hover-tdu-ns">
         <span class="fv-sc tracked">MelangeCSS</span>
             </a>
           </h1>
@@ -49,16 +49,16 @@
           
         </div>
       </div>
-      <div class="bg-orange-darker orange-lightest pa-3">
+      <div class="bg-orange-300 orange-900 pa-3">
         <nav class="w-60-ns w-90 mh-auto">
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
 
-            <a href="get-started.html"     class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Getting Started</a>
-            <a href="guide.html"           class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Guide</a>
-            <a href="reference/index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Reference</a>
-            <a href="https://github.com/davetron5000/melange-css"    class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Source Code</a>
-            <a href="gallery.html"         class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Gallery</a>
-            <a href="why.html"             class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">But Why?</a>
+            <a href="get-started.html"     class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Getting Started</a>
+            <a href="guide.html"           class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Guide</a>
+            <a href="reference/index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Reference</a>
+            <a href="https://github.com/davetron5000/melange-css"    class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Source Code</a>
+            <a href="gallery.html"         class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Gallery</a>
+            <a href="why.html"             class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3">But Why?</a>
 
           </div>
         </nav>
@@ -87,7 +87,7 @@
     <p class="p">
       Here is the HTML, with all styling possible by <span class="sc tracked">MelangeCSS</span> specified as classes:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;label class="f-3 fw-bold lh-copy flex gap-2 items-center mv-2"&gt;
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">&lt;label class="f-3 fw-bold lh-copy flex gap-2 items-center mv-2"&gt;
   &lt;input type="checkbox" name="checkbox"
          class="ma0 w-2 h-2 ba bw-1 br-1
                 flex items-center justify-center
@@ -105,11 +105,11 @@
       We then write some CSS following Stephanie's guidelines, but using <span class="sc tracked">MelangeCSS</span> variables where possible.
     </p>
 
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">input[type="checkbox"]::before {
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">input[type="checkbox"]::before {
   content: "";
   width: var(--mg-sp-2);                   /* spacing for w-2 */
   height: var(--mg-sp-2);                  /* spacing for h-2 */
-  background-color: var(--mg-purple-dark); /* referencing any color we want to use */
+  background-color: var(--mg-purple-400); /* referencing any color we want to use */
   transform: scale(0);                     /* unchecked styling has this pseudo-element
                                               scaled down to 0 */
 }
@@ -125,7 +125,7 @@ input[type="checkbox"]:checked::before {
       content: "";
       width: var(--mg-sp-2);                   /* spacing for w-2 */
       height: var(--mg-sp-2);                  /* spacing for h-2 */
-      background-color: var(--mg-purple-dark); /* referencing any color we want to use */
+      background-color: var(--mg-purple-400); /* referencing any color we want to use */
       transform: scale(0);                     /* unchecked styling has this pseudo-element
                                                   scaled down to 0 */
     }
@@ -134,7 +134,7 @@ input[type="checkbox"]:checked::before {
       transform: scale(1); /* When selected, scale to normal size */
     }
     </style>
-    <div class="pa-3 br-2 ba bc-purple-darkest bg-white-ish">
+    <div class="pa-3 br-2 ba bc-purple-100 bg-white-ish">
       <label class="f-3 fw-bold lh-copy flex gap-2 items-center mv-2">
         <input type="checkbox" name="checkbox"
                                class="ma0 w-2 h-2 ba bw-1 br-1
@@ -157,15 +157,15 @@ input[type="checkbox"]:checked::before {
     <p class="p">
       Styling active states for buttons can be extremely helpful for accessibility, especially if a button cannot be guaranteed to perform its function within a few hundred milliseconds.  First, let's take the button from the home page:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;button class="dib ph-4 pv-3 tc f-3 ba br-3
-               bg-blue-lightest blue-darkest
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">&lt;button class="dib ph-4 pv-3 tc f-3 ba br-3
+               bg-blue-900 blue-100
                pointer"&gt;
     Click Me
 &lt;/button&gt;</code>
     <p class="p">
       We'd like this button to show an inverse color scheme when active.  We can do this using a <code>filter</code>:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">button:active {
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">button:active {
   filter: invert(1);
 }</code>
     <style>
@@ -176,8 +176,8 @@ input[type="checkbox"]:checked::before {
     <p class="p">
       This works:
     </p>
-    <div class="pa-3 br-2 ba bc-purple-darkest bg-white-ish">
-        <button class="dib pointer ph-4 pv-3 tc f-3 ba br-3 bg-blue-lightest blue-darkest bc-blue-darkest">Click Me</button>
+    <div class="pa-3 br-2 ba bc-purple-100 bg-white-ish">
+        <button class="dib pointer ph-4 pv-3 tc f-3 ba br-3 bg-blue-900 blue-100 bc-blue-100">Click Me</button>
     </div>
     <p class="p">
       Again, we can drop into CSS when needed.  This is the balance struck by <span class="sc tracked">MelangeCSS</span>.  To allow even basic needs for styling active buttons using just classes would require <strong>many</strong> more classes, most of which would never be used.  This would mean either having much larger-than-needed CSS or having a build step.  Neither of this options is acceptable.
@@ -188,10 +188,10 @@ input[type="checkbox"]:checked::before {
       <div class="w-90 w-50-ns mh-auto">
         <p class="measure xmh-auto tc tl-ns lh-copy">
           <span class="fv-sc tracked">MelangeCSS</span>
-          is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-dark">Hippocratic License, v2.1</a>.
+          is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-400">Hippocratic License, v2.1</a>.
         </p>
         <p class="measure xmh-auto tc tl-ns lh-copy f-1 i">
-          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot. The image of Paul Maud'Dib was <a href="https://declare-ai.org/1.0.0-alpha1/creative.html" class="blue-dark">created by a generative AI</a> and modified slightly to give him the Eyes of Ibad.
+          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot. The image of Paul Maud'Dib was <a href="https://declare-ai.org/1.0.0-alpha1/creative.html" class="blue-400">created by a generative AI</a> and modified slightly to give him the Eyes of Ibad.
         </p>
       </div>
     </footer>

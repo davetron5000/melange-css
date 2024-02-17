@@ -13,13 +13,13 @@
     </p>
     <ul class="ma-0 pa-0 lsp-inside">
       <li class="measure lh-copy mb-2">
-        <a href="#variables" class="blue-dark">Changing the Variables</a> - this is the simplest mechanism and is suitable if you want to change the fonts, colors, or use a different scale for spacing and font sizes.
+        <a href="#variables" class="blue-400">Changing the Variables</a> - this is the simplest mechanism and is suitable if you want to change the fonts, colors, or use a different scale for spacing and font sizes.
       </li>
       <li class="measure lh-copy mb-2">
-        <a href="#augmenting" class="blue-dark">Adding Your Own Classes</a> - this is useful when you need additional classes, but want to capitalize on the naming conventions, media queries, etc.
+        <a href="#augmenting" class="blue-400">Adding Your Own Classes</a> - this is useful when you need additional classes, but want to capitalize on the naming conventions, media queries, etc.
       </li>
       <li class="measure lh-copy mb-2">
-        <a href="#radical" class="blue-dark">Adding More Steps or Making More Radical Changes</a> - if you need to change the number of steps in the various scales, alter the naming conventions, or otherwise make a more radical change, <span class="fv-sc tracked">MelangeCSS</span> can allow this by the use of the JavaScript code that generates it.
+        <a href="#radical" class="blue-400">Adding More Steps or Making More Radical Changes</a> - if you need to change the number of steps in the various scales, alter the naming conventions, or otherwise make a more radical change, <span class="fv-sc tracked">MelangeCSS</span> can allow this by the use of the JavaScript code that generates it.
       </li>
     </ul>
     </nav>
@@ -27,10 +27,10 @@
       <a name="variables"></a>
       <h4 class="f-4">Changing the Variables</h4>
       <p class="measure lh-copy">
-        Where possible, <span class="fv-sc tracked">MelangeCSS</span> uses <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" class="blue-darkest">CSS custom properties AKA variables</a>.  If you examine the top of <code>melange.css</code>, you can see these variables, and each one is documented <a class="blue-darkest" href="reference/variables.html">in the reference</a>.
+        Where possible, <span class="fv-sc tracked">MelangeCSS</span> uses <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" class="blue-100">CSS custom properties AKA variables</a>.  If you examine the top of <code>melange.css</code>, you can see these variables, and each one is documented <a class="blue-100" href="reference/variables.html">in the reference</a>.
       </p>
       <p class="measure lh-copy">
-        To change these values, you can modify their values in CSS <strong>after</strong> where you have included <span class="fv-sc tracked">MelangeCSS</span>.  Here is an example of how you might do that using the <a class="blue-darkest" href="get-started.html#cdn">CDN install method</a>:
+        To change these values, you can modify their values in CSS <strong>after</strong> where you have included <span class="fv-sc tracked">MelangeCSS</span>.  Here is an example of how you might do that using the <a class="blue-100" href="get-started.html#cdn">CDN install method</a>:
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;head&gt;
 
@@ -41,11 +41,11 @@
   &lt;style&gt;
     :root {
       --mg-ff-sans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
-      --mg-green-lightest: #e6ffe6;
-      --mg-green-light: #99ff99;
+      --mg-green-900: #e6ffe6;
+      --mg-green-600: #99ff99;
       --mg-green: #009900;
-      --mg-green-dark: #006600;
-      --mg-green-darkest: #003300;
+      --mg-green-400: #006600;
+      --mg-green-100: #003300;
     }
   &lt;/style&gt;
 &lt;/head&gt;</code>

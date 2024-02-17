@@ -5,11 +5,11 @@
         <code class="db ws-nowrap f-1">
           <%= cssClassName %>
         </code>
-        <a href="<%= cssClassesForIndex[cssClassName].docFilename %>" class="db f-1 hover-blue-dark-ns tdn-ns hover-tdu-ns tdu blue-darkest">
+        <a href="<%= cssClassesForIndex[cssClassName].docFilename %>" class="db f-1 hover-blue-400-ns tdn-ns hover-tdu-ns tdu blue-100">
           <%= new HumanizedString(cssClassesForIndex[cssClassName].metaPropertyGrouping.name) %>
         </a>
       </div>
-      <code class="db w-60-ns overflow-x-scroll db pa-2 br-2 bg-black-ish blue-light f-1">
+      <code class="db w-60-ns overflow-x-scroll db pa-2 br-2 bg-black-ish blue-600 f-1">
         <pre class="ma-0"><%= cssClassesForIndex[cssClassName].cssClass.toCSS() %></pre>
       </code>
     </div>

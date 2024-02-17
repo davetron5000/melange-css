@@ -20,12 +20,12 @@
       }
     </style>
   </head>
-  <body class="ff-serif pa0 ma0 bg-orange-lightest black-ish">
+  <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
     <header>
-      <div class="bg-orange-darker orange-lightest pa-3 pt-4">
+      <div class="bg-orange-300 orange-900 pa-3 pt-4">
         <div class="w-60-ns w-90 mh-auto">
           <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-1">
-            <a href="index.html" class="tdn orange-lightest">
+            <a href="index.html" class="tdn orange-900">
               <span class="fv-sc tracked">MelangeCSS</span> Reference
             </a>
           </h1>
@@ -35,19 +35,19 @@
           
         </div>
       </div>
-      <div class="bg-black-ish orange-lightest pa-3">
+      <div class="bg-black-ish orange-900 pa-3">
         <nav class="w-60-ns w-90 mh-auto">
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
-            <a href="index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Classes by Group</a>
-            <a href="mediaQueries.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Media Queries</a>
-            <a href="variables.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-3 mb-0-ns">Variables</a>
-            <a href="classesIndex.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">Index of Classes</a>
+            <a href="index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-3 mb-0-ns">Classes by Group</a>
+            <a href="mediaQueries.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-3 mb-0-ns">Media Queries</a>
+            <a href="variables.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-3 mb-0-ns">Variables</a>
+            <a href="classesIndex.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3">Index of Classes</a>
           </div>
           <div class="tc db dn-ns mt-3">&sect;</div>
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center mt-3">
-            <a href="../index.html" class="ph-2 lh-copy db w-100 w-auto-ns tc tl-ns di-ns orange-lightest f-2 lh-copy mh-2 ml-0-ns mr-3-ns">Homepage</a>
-            <a href="../get-started.html" class="ph-2 lh-copy db w-100 w-auto-ns tc tl-ns di-ns orange-lightest f-2 lh-copy mh-2 ml-0-ns mr-3-ns">Getting Started</a>
-            <a href="../guide.html" class="ph-2 lh-copy db w-100 w-auto-ns tc tl-ns di-ns orange-lightest f-2 lh-copy mh-2 ml-0-ns">Guide</a>
+            <a href="../index.html" class="ph-2 lh-copy db w-100 w-auto-ns tc tl-ns di-ns orange-900 f-2 lh-copy mh-2 ml-0-ns mr-3-ns">Homepage</a>
+            <a href="../get-started.html" class="ph-2 lh-copy db w-100 w-auto-ns tc tl-ns di-ns orange-900 f-2 lh-copy mh-2 ml-0-ns mr-3-ns">Getting Started</a>
+            <a href="../guide.html" class="ph-2 lh-copy db w-100 w-auto-ns tc tl-ns di-ns orange-900 f-2 lh-copy mh-2 ml-0-ns">Guide</a>
           </div>
         </nav>
       </div>
@@ -55,7 +55,7 @@
     <main class="pa-3 w-60-ns w-90 mh-auto">
 
 <p class="measure lh-copy">
-  <span class="fv-sc tracked">MelangeCSS</span> is designed so that each class applies to the page when there is no media query in effect.  This means any screen size, light (or no selected) color mode, and no explicit setting for reduced motion.  You can then customize your page's styling when a media query <strong>is</strong> in affect by adding additional classes that have a suffix for that media query.  For example, <code>purple-darkest</code> would apply to all situations by default, whereas <code>purple-darkest-dm</code> would apply only when the “prefers dark mode” media query applies.
+  <span class="fv-sc tracked">MelangeCSS</span> is designed so that each class applies to the page when there is no media query in effect.  This means any screen size, light (or no selected) color mode, and no explicit setting for reduced motion.  You can then customize your page's styling when a media query <strong>is</strong> in affect by adding additional classes that have a suffix for that media query.  For example, <code>purple-100</code> would apply to all situations by default, whereas <code>purple-100-dm</code> would apply only when the “prefers dark mode” media query applies.
 </p>
 <p class="measure lh-copy">
   Each melange class includes a list of the media query variants that are available.  For example, colors may have variants for dark mode, but spacings would not.  Here are all the known media queries, their definitions, and their naming conventions.
@@ -75,17 +75,17 @@
       </p>
     </div>
     <div class="flex-ns db items-start mb-3">
-      <code class="ba bc-orange-light orange-darker dib pa-3 br-1 ws-nowrap mr-3-ns">
+      <code class="ba bc-orange-600 orange-300 dib pa-3 br-1 ws-nowrap mr-3-ns">
         *-ns
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-light bg-black br-2"><pre class="ma-0">&lt;div class="purple-dark-ns"&gt;
-  .purple-darkest-ns
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-ns"&gt;
+  .purple-100-ns
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-light br-2"><pre class="ma-0">@media screen and (min-width: 30em)</pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0">@media screen and (min-width: 30em)</pre></code>
     </div>
   </section>
   
@@ -102,17 +102,17 @@
       </p>
     </div>
     <div class="flex-ns db items-start mb-3">
-      <code class="ba bc-orange-light orange-darker dib pa-3 br-1 ws-nowrap mr-3-ns">
+      <code class="ba bc-orange-600 orange-300 dib pa-3 br-1 ws-nowrap mr-3-ns">
         *-m
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-light bg-black br-2"><pre class="ma-0">&lt;div class="purple-dark-m"&gt;
-  .purple-darkest-m
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-m"&gt;
+  .purple-100-m
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-light br-2"><pre class="ma-0">@media screen and (min-width: 30em) and (max-width: 60em)</pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0">@media screen and (min-width: 30em) and (max-width: 60em)</pre></code>
     </div>
   </section>
   
@@ -129,17 +129,17 @@
       </p>
     </div>
     <div class="flex-ns db items-start mb-3">
-      <code class="ba bc-orange-light orange-darker dib pa-3 br-1 ws-nowrap mr-3-ns">
+      <code class="ba bc-orange-600 orange-300 dib pa-3 br-1 ws-nowrap mr-3-ns">
         *-l
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-light bg-black br-2"><pre class="ma-0">&lt;div class="purple-dark-l"&gt;
-  .purple-darkest-l
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-l"&gt;
+  .purple-100-l
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-light br-2"><pre class="ma-0">@media screen and (min-width: 60em)</pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0">@media screen and (min-width: 60em)</pre></code>
     </div>
   </section>
   
@@ -156,17 +156,17 @@
       </p>
     </div>
     <div class="flex-ns db items-start mb-3">
-      <code class="ba bc-orange-light orange-darker dib pa-3 br-1 ws-nowrap mr-3-ns">
+      <code class="ba bc-orange-600 orange-300 dib pa-3 br-1 ws-nowrap mr-3-ns">
         *-dm
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-light bg-black br-2"><pre class="ma-0">&lt;div class="purple-dark-dm"&gt;
-  .purple-darkest-dm
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-dm"&gt;
+  .purple-100-dm
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-light br-2"><pre class="ma-0">@media (prefers-color-scheme: dark)</pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0">@media (prefers-color-scheme: dark)</pre></code>
     </div>
   </section>
   
@@ -183,17 +183,17 @@
       </p>
     </div>
     <div class="flex-ns db items-start mb-3">
-      <code class="ba bc-orange-light orange-darker dib pa-3 br-1 ws-nowrap mr-3-ns">
+      <code class="ba bc-orange-600 orange-300 dib pa-3 br-1 ws-nowrap mr-3-ns">
         *-rm
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-light bg-black br-2"><pre class="ma-0">&lt;div class="purple-dark-rm"&gt;
-  .purple-darkest-rm
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-rm"&gt;
+  .purple-100-rm
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-light br-2"><pre class="ma-0">@media (prefers-reduced-motion: reduce)</pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0">@media (prefers-reduced-motion: reduce)</pre></code>
     </div>
   </section>
   
@@ -203,7 +203,7 @@
     <footer class="pv-5 bg-white black-ish">
       <div class="w-90 w-60-ns mh-auto">
         <p class="measure tc tl-ns lh-copy f-1 i">
-          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot.
+          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot.
         </p>
       </div>
     </footer>

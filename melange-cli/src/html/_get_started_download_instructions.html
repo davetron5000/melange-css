@@ -49,20 +49,20 @@
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
       <% if (verbose) { %>
-      <aside class="ph-3 pv-2 br-3 bg-blue-lighter orange-darker flex items-start gap-3 measure-wide">
-        <span role="img" aria-description="info symbol" class="mt-1 w-3 h-3 flex items-center justify-center bc-blue-dark bg-blue-darker blue-light br-100 ba">&#8505;</span>
+      <aside class="ph-3 pv-2 br-3 bg-blue-700 orange-300 flex items-start gap-3 measure-wide">
+        <span role="img" aria-description="info symbol" class="mt-1 w-3 h-3 flex items-center justify-center bc-blue-400 bg-blue-300 blue-600 br-100 ba">&#8505;</span>
       <p class="ma-0 measure lh-copy f-1 i fw-7">
-        If you use this method, you are encouraged to monitor the releases.  <span class="fv-sc tracked">MelangeCSS</span> uses <a class="blue-darkest" href="https://docs.npmjs.com/about-semantic-versioning">Semantic Versioning</a>, so you should not experience breaking changes outside of a major release.
+        If you use this method, you are encouraged to monitor the releases.  <span class="fv-sc tracked">MelangeCSS</span> uses <a class="blue-100" href="https://docs.npmjs.com/about-semantic-versioning">Semantic Versioning</a>, so you should not experience breaking changes outside of a major release.
       </p>
       </aside>
       <% } %>
       <p class="measure lh-copy">
-        The CSS will be in <code>node_modules/melange-css/<%= file %>.css</code>.  How you get that into your app highly depends on how your app is built.  If you have a build system that supports <a class="<%= dark_mode ? 'blue-lightest' : 'blue-darkest' %>" href="http://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>, you can bring <span class="fv-sc tracked">MelangeCSS</span> in by adding this to a <code>.css</code> file your build system processes:
+        The CSS will be in <code>node_modules/melange-css/<%= file %>.css</code>.  How you get that into your app highly depends on how your app is built.  If you have a build system that supports <a class="<%= dark_mode ? 'blue-900' : 'blue-100' %>" href="http://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>, you can bring <span class="fv-sc tracked">MelangeCSS</span> in by adding this to a <code>.css</code> file your build system processes:
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">@import "melange-css/<%= file %>.css";</code>
       <h5 class="f-3 fw-5 tc tl-ns">Ruby on Rails</h5>
       <p class="p">
-        <a class="<%= dark_mode ? 'blue-lightest' : 'blue-darkest' %>" href="https://rubyonrails.org">Ruby on Rails</a> requires a few bits of configuration to use CSS files brought in through NPM. <strong>You do not need to—and should—use the CSS Bundling gem to manage <span class="fv-sc tracked">MelangeCSS</span></strong>. It is still preferable to do this, and I don't currently plan on creating a Ruby gem.  Here is how to set it up:
+        <a class="<%= dark_mode ? 'blue-900' : 'blue-100' %>" href="https://rubyonrails.org">Ruby on Rails</a> requires a few bits of configuration to use CSS files brought in through NPM. <strong>You do not need to—and should—use the CSS Bundling gem to manage <span class="fv-sc tracked">MelangeCSS</span></strong>. It is still preferable to do this, and I don't currently plan on creating a Ruby gem.  Here is how to set it up:
       </p>
       <ol>
         <li class="p">
@@ -70,7 +70,7 @@
         </li>
         <li class="lh-copy measure-wide">
           Add <code>node_modules</code> to the asset path in <code>config/initializers/assets.rb</code>:
-        <code class="f-1 db <%= dark_mode ? 'bg-white green-darker' : 'bg-black green-lighter' %> ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2"># config/initializers/assets.rb
+        <code class="f-1 db <%= dark_mode ? 'bg-white green-300' : 'bg-black green-700' %> ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2"># config/initializers/assets.rb
 
 # ...
 
@@ -80,7 +80,7 @@ Rails.application.config.assets.paths &lt;&lt; (Rails.root / "node_modules")
         </li>
         <li class="lh-copy measure-wide">
           Add <code>melange.css</code> to your <code>app/assets/stylesheets.css</code> (note that you want to <code>require</code> it before your CSS so you can customize by settinb custom properties):
-          <code class="f-1 db <%= dark_mode ? 'bg-white green-darker' : 'bg-black green-lighter' %> ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">/* app/assets/stylesheets.css */
+          <code class="f-1 db <%= dark_mode ? 'bg-white green-300' : 'bg-black green-700' %> ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">/* app/assets/stylesheets.css */
 /*
  * «giant comment from Rails omitted»
  *

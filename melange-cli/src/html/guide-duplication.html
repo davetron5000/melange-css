@@ -16,23 +16,23 @@
     <div class="pa-3 bg-white">
       <div class="debug-grid">
         <div class="flex items-center justify-start">
-          <button class="ph-4 pv-3 f-4 tc br-4 ba fw-bold bg-blue-darkest white ma-2">Big Primary</button>
-          <button class="ph-3 pv-2 f-3 tc br-3 ba fw-bold bg-blue-darkest white ma-2">Small Primary</button>
+          <button class="ph-4 pv-3 f-4 tc br-4 ba fw-bold bg-blue-100 white ma-2">Big Primary</button>
+          <button class="ph-3 pv-2 f-3 tc br-3 ba fw-bold bg-blue-100 white ma-2">Small Primary</button>
         </div>
         <div class="flex items-center justify-start">
-          <button class="ph-4 pv-3 f-4 tc br-4 ba fw-3 blue-darkest bg-white ma-2">Big Secondary</button>
-          <button class="ph-3 pv-2 f-3 tc br-3 ba fw-3 blue-darkest bg-white ma-2">Small Secondary</button>
+          <button class="ph-4 pv-3 f-4 tc br-4 ba fw-3 blue-100 bg-white ma-2">Big Secondary</button>
+          <button class="ph-3 pv-2 f-3 tc br-3 ba fw-3 blue-100 bg-white ma-2">Small Secondary</button>
         </div>
       </div>
     </div>
     <p class="measure lh-copy">
       Your templating system, including front-end frameworks like React, should be able to provide a way to generate this markup based on parameters or properties.  For example:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">function Button({size,type,label}) {
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">function Button({size,type,label}) {
   const dimensions = size == "big"     ? "ph-4 pv-3 br-4 f-4"
                                        : "ph-3 pv-2 br-3 f-3"
-  const colors     = type == "primary" ? "bg-blue-darkest white"
-                                       : "bg-white blue-darkest"
+  const colors     = type == "primary" ? "bg-blue-100 white"
+                                       : "bg-white blue-100"
   const cssClasses = `${dimensions} ${colors} ba tc`
 
   return (
@@ -44,11 +44,11 @@
     <p class="measure lh-copy">
     Or, in Rails:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">def styled_button(size, type, label)
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">def styled_button(size, type, label)
   dimensions = size == "big"     ? "ph-4 pv-3 br-4 f-4"
                                  : "ph-3 pv-2 br-3 f-3"
-  colors     = type == "primary" ? "bg-blue-darkest white"
-                                 : "bg-white blue-darkest"
+  colors     = type == "primary" ? "bg-blue-100 white"
+                                 : "bg-white blue-100"
   const cssClasses = `${dimensions} ${colors} ba tc`
   content_tag(:button, class: "#{dimensions} #{colors} ba tc") do
     label
@@ -57,16 +57,16 @@ end</code>
     <p class="measure lh-copy">
       These are only examples.  You can do it however you want.  And, because <span class="fv-sc tracked">MelangeCSS</span> is only a CSS file with variables, you could certainly create your own CSS if you like:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">.button {
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">.button {
   border: solid;
   text-align: center;
 }
 .button.primary {
   color: #fff;
-  background-color: var(--mg-bluedarkest);
+  background-color: var(--mg-blue-200);
 }
 .button.primary {
-  color: var(--mg-bluedarkest);
+  color: var(--mg-blue-200);
   background-color: #fff;
 }
 .button.big {

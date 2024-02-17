@@ -5,13 +5,15 @@ import VariableRegistry from "../../lib/VariableRegistry.js"
 
 const colorTints = new ColorTints(
   [
-    "lightest",
-    "lighter",
-    "light",
-    "",
-    "dark",
-    "darker",
-    "darkest",
+    "900",
+    "800",
+    "700",
+    "600",
+    "500",
+    "400",
+    "300",
+    "200",
+    "100",
   ],
   [
     pseudoSelectors.default,
@@ -22,115 +24,112 @@ const colorTints = new ColorTints(
     mediaQueries.darkMode,
   ],
 )
-/*
-colorTints.register("gray",   [ "#F5F5F5", "#ADADAD", "#999999", "#5C5C5C", "#1F1F1F" ])
-colorTints.register("red",    [ "#FFDFDF", "#FF8D86", "#FF4136", "#E7040F", "#80211b" ])
-colorTints.register("orange", [ "#FFEFE6", "#FFA166", "#FF6300", "#CC4F00", "#803200" ])
-colorTints.register("yellow", [ "#FFFBE6", "#FFE766", "#FFD700", "#B39700", "#665600" ])
-colorTints.register("green",  [ "#E8F6F1", "#75CBAC", "#19A974", "#0F6546", "#073323" ])
-colorTints.register("blue",   [ "#EBF2FC", "#86B2EB", "#357EDD", "#204C85", "#102642" ])
-colorTints.register("purple", [ "#EFEAF6", "#8E6BC0", "#5E2CA5", "#421F73", "#261242" ])
-colorTints.register("gray",   [ "#F6F6F6", "#D5D5D5", "#717171", "#494949", "#2A2A2A" ])
-colorTints.register("red",    [ "#FFF4F4", "#FFC7C7", "#DE1E1E", "#921313", "#570C0C" ])
-colorTints.register("orange", [ "#FFF5EE", "#FFCAA8", "#ED5C00", "#7E3100", "#4A1D00" ])
-colorTints.register("yellow", [ "#FeF6DD", "#FECF49", "#AA8630", "#5C4619", "#35280F" ])
-colorTints.register("green",  [ "#ECFAED", "#9FE582", "#409D44", "#225324", "#143015" ])
-colorTints.register("blue",   [ "#EFF8FC", "#B1DBEF", "#0077B2", "#004E74", "#002D43" ])
-colorTints.register("purple", [ "#F4F6FE", "#D0D2F7", "#6167C9", "#46427C", "#2B2643" ])
-*/
 
-
+// https://ghola.dev/?otherColors=triad-lower%2C%230069d5%2C%23F3F331%2C%23EA6C00%2C%2374747B%3AGray%2C%23E30D00&primaryColor=%236937cb%3APurple&compact=false#
 
 colorTints.register(
   "red",
   [
-    "#FEF8F8",
-    "#FAD6D4",
-    "#F07D77",
+    "#FFFAF9",
+    "#FFE7E6",
+    "#FFB2AD",
+    "#FF6258",
     "#E30D00",
-    "#790700",
-    "#2D0300",
-    "#060000",
+    "#A80A00",
+    "#640600",
+    "#320300",
+    "#1E0200",
   ]
 )
-
 
 colorTints.register(
   "orange",
   [
-    "#FEFBF8",
-    "#FBE6D4",
-    "#F4B077",
+    "#FFFCF9",
+    "#FFF2E6",
+    "#FFD4AF",
+    "#FFA75C",
     "#EA6C00",
-    "#7D3A00",
-    "#2E1500",
-    "#070300",
+    "#AD5000",
+    "#673000",
+    "#331800",
+    "#1E0E00",
   ]
 )
+
 
 colorTints.register(
   "yellow",
   [
-    "#FFFFF9",
-    "#FDFDDC",
-    "#F9F991",
+    "#FFFFFB",
+    "#FEFEEC",
+    "#FCFCC3",
+    "#F8F885",
     "#F3F331",
-    "#82821A",
-    "#30300A",
-    "#070701",
+    "#CCCC0C",
+    "#797907",
+    "#3D3D04",
+    "#242402",
   ]
 )
+
 
 colorTints.register(
   "green",
   [
-    "#F9FDFA",
-    "#DAF2E1",
-    "#89D6A0",
-    "#22B34D",
-    "#126029",
-    "#07230F",
-    "#010502",
+    "#FBFEFC",
+    "#EDFAF2",
+    "#C5F0D4",
+    "#89E0A6",
+    "#37CB69",
+    "#27984D",
+    "#175A2E",
+    "#0C2D17",
+    "#071B0E",
   ]
 )
 
 colorTints.register(
   "blue",
   [
-    "#F9FAFD",
-    "#DADFF2",
-    "#8999D6",
-    "#2240B3",
-    "#122260",
-    "#070D23",
-    "#010205",
+    "#F9FCFF",
+    "#E4F1FF",
+    "#A9D3FF",
+    "#50A6FF",
+    "#0069d5",
+    "#004E9E",
+    "#002E5E",
+    "#00172F",
+    "#000E1C",
   ]
 )
 
 colorTints.register(
   "purple",
   [
-    "#FAF9FD",
-    "#E1DAF2",
-    "#A089D6",
-    "#4D22B3",
-    "#291260",
-    "#0F0723",
-    "#020105",
+    "#FCFBFE",
+    "#F2EDFA",
+    "#D4C5F0",
+    "#A689E0",
+    "#6937cb",
+    "#4D2798",
+    "#2E175A",
+    "#170C2D",
+    "#0E071B",
   ]
 )
-
-
 colorTints.register(
   "gray",
   [
-    "#FBFBFB",
-    "#E8E8E9",
-    "#B5B5B8",
+    "#FCFCFC",
+    "#F2F2F3",
+    "#D7D7D9",
+    "#ADADB1",
     "#74747B",
-    "#3E3E42",
-    "#171718",
-    "#030303",
+    "#56565B",
+    "#333336",
+    "#1A1A1B",
+    "#0F0F10",
   ]
 )
 

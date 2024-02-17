@@ -20,7 +20,7 @@
     <p class="p">
       Here is the HTML, with all styling possible by <span class="sc tracked">MelangeCSS</span> specified as classes:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;label class="f-3 fw-bold lh-copy flex gap-2 items-center mv-2"&gt;
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">&lt;label class="f-3 fw-bold lh-copy flex gap-2 items-center mv-2"&gt;
   &lt;input type="checkbox" name="checkbox"
          class="ma0 w-2 h-2 ba bw-1 br-1
                 flex items-center justify-center
@@ -38,11 +38,11 @@
       We then write some CSS following Stephanie's guidelines, but using <span class="sc tracked">MelangeCSS</span> variables where possible.
     </p>
 
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">input[type="checkbox"]::before {
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">input[type="checkbox"]::before {
   content: "";
   width: var(--mg-sp-2);                   /* spacing for w-2 */
   height: var(--mg-sp-2);                  /* spacing for h-2 */
-  background-color: var(--mg-purple-dark); /* referencing any color we want to use */
+  background-color: var(--mg-purple-400); /* referencing any color we want to use */
   transform: scale(0);                     /* unchecked styling has this pseudo-element
                                               scaled down to 0 */
 }
@@ -58,7 +58,7 @@ input[type="checkbox"]:checked::before {
       content: "";
       width: var(--mg-sp-2);                   /* spacing for w-2 */
       height: var(--mg-sp-2);                  /* spacing for h-2 */
-      background-color: var(--mg-purple-dark); /* referencing any color we want to use */
+      background-color: var(--mg-purple-400); /* referencing any color we want to use */
       transform: scale(0);                     /* unchecked styling has this pseudo-element
                                                   scaled down to 0 */
     }
@@ -67,7 +67,7 @@ input[type="checkbox"]:checked::before {
       transform: scale(1); /* When selected, scale to normal size */
     }
     </style>
-    <div class="pa-3 br-2 ba bc-purple-darkest bg-white-ish">
+    <div class="pa-3 br-2 ba bc-purple-100 bg-white-ish">
       <label class="f-3 fw-bold lh-copy flex gap-2 items-center mv-2">
         <input type="checkbox" name="checkbox"
                                class="ma0 w-2 h-2 ba bw-1 br-1
@@ -90,15 +90,15 @@ input[type="checkbox"]:checked::before {
     <p class="p">
       Styling active states for buttons can be extremely helpful for accessibility, especially if a button cannot be guaranteed to perform its function within a few hundred milliseconds.  First, let's take the button from the home page:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">&lt;button class="dib ph-4 pv-3 tc f-3 ba br-3
-               bg-blue-lightest blue-darkest
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">&lt;button class="dib ph-4 pv-3 tc f-3 ba br-3
+               bg-blue-900 blue-100
                pointer"&gt;
     Click Me
 &lt;/button&gt;</code>
     <p class="p">
       We'd like this button to show an inverse color scheme when active.  We can do this using a <code>filter</code>:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">button:active {
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">button:active {
   filter: invert(1);
 }</code>
     <style>
@@ -109,8 +109,8 @@ input[type="checkbox"]:checked::before {
     <p class="p">
       This works:
     </p>
-    <div class="pa-3 br-2 ba bc-purple-darkest bg-white-ish">
-        <button class="dib pointer ph-4 pv-3 tc f-3 ba br-3 bg-blue-lightest blue-darkest bc-blue-darkest">Click Me</button>
+    <div class="pa-3 br-2 ba bc-purple-100 bg-white-ish">
+        <button class="dib pointer ph-4 pv-3 tc f-3 ba br-3 bg-blue-900 blue-100 bc-blue-100">Click Me</button>
     </div>
     <p class="p">
       Again, we can drop into CSS when needed.  This is the balance struck by <span class="sc tracked">MelangeCSS</span>.  To allow even basic needs for styling active buttons using just classes would require <strong>many</strong> more classes, most of which would never be used.  This would mean either having much larger-than-needed CSS or having a build step.  Neither of this options is acceptable.

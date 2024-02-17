@@ -29,12 +29,12 @@
 }
     </style>
   </head>
-  <body class="ff-serif pa0 ma0 bg-orange-lightest black-ish">
+  <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
     <header>
-      <div class="bg-black-ish orange-lightest pa-3 pt-4">
+      <div class="bg-black-ish orange-900 pa-3 pt-4">
         <div class="w-60-ns w-90 mh-auto">
           <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-1">
-            <a href="index.html" class="tdn orange-lightest hover-tdu-ns">
+            <a href="index.html" class="tdn orange-900 hover-tdu-ns">
         <span class="fv-sc tracked">MelangeCSS</span>
             </a>
           </h1>
@@ -49,16 +49,16 @@
           
         </div>
       </div>
-      <div class="bg-orange-darker orange-lightest pa-3">
+      <div class="bg-orange-300 orange-900 pa-3">
         <nav class="w-60-ns w-90 mh-auto">
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
 
-            <a href="get-started.html"     class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Getting Started</a>
-            <a href="guide.html"           class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Guide</a>
-            <a href="reference/index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Reference</a>
-            <a href="https://github.com/davetron5000/melange-css"    class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Source Code</a>
-            <a href="gallery.html"         class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3 mb-2 mb-0-ns">Gallery</a>
-            <a href="why.html"             class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-lightest f-3">But Why?</a>
+            <a href="get-started.html"     class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Getting Started</a>
+            <a href="guide.html"           class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Guide</a>
+            <a href="reference/index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Reference</a>
+            <a href="https://github.com/davetron5000/melange-css"    class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Source Code</a>
+            <a href="gallery.html"         class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-2 mb-0-ns">Gallery</a>
+            <a href="why.html"             class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3">But Why?</a>
 
           </div>
         </nav>
@@ -83,23 +83,23 @@
     <div class="pa-3 bg-white">
       <div class="debug-grid">
         <div class="flex items-center justify-start">
-          <button class="ph-4 pv-3 f-4 tc br-4 ba fw-bold bg-blue-darkest white ma-2">Big Primary</button>
-          <button class="ph-3 pv-2 f-3 tc br-3 ba fw-bold bg-blue-darkest white ma-2">Small Primary</button>
+          <button class="ph-4 pv-3 f-4 tc br-4 ba fw-bold bg-blue-100 white ma-2">Big Primary</button>
+          <button class="ph-3 pv-2 f-3 tc br-3 ba fw-bold bg-blue-100 white ma-2">Small Primary</button>
         </div>
         <div class="flex items-center justify-start">
-          <button class="ph-4 pv-3 f-4 tc br-4 ba fw-3 blue-darkest bg-white ma-2">Big Secondary</button>
-          <button class="ph-3 pv-2 f-3 tc br-3 ba fw-3 blue-darkest bg-white ma-2">Small Secondary</button>
+          <button class="ph-4 pv-3 f-4 tc br-4 ba fw-3 blue-100 bg-white ma-2">Big Secondary</button>
+          <button class="ph-3 pv-2 f-3 tc br-3 ba fw-3 blue-100 bg-white ma-2">Small Secondary</button>
         </div>
       </div>
     </div>
     <p class="measure lh-copy">
       Your templating system, including front-end frameworks like React, should be able to provide a way to generate this markup based on parameters or properties.  For example:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">function Button({size,type,label}) {
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">function Button({size,type,label}) {
   const dimensions = size == "big"     ? "ph-4 pv-3 br-4 f-4"
                                        : "ph-3 pv-2 br-3 f-3"
-  const colors     = type == "primary" ? "bg-blue-darkest white"
-                                       : "bg-white blue-darkest"
+  const colors     = type == "primary" ? "bg-blue-100 white"
+                                       : "bg-white blue-100"
   const cssClasses = `${dimensions} ${colors} ba tc`
 
   return (
@@ -111,11 +111,11 @@
     <p class="measure lh-copy">
     Or, in Rails:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">def styled_button(size, type, label)
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">def styled_button(size, type, label)
   dimensions = size == "big"     ? "ph-4 pv-3 br-4 f-4"
                                  : "ph-3 pv-2 br-3 f-3"
-  colors     = type == "primary" ? "bg-blue-darkest white"
-                                 : "bg-white blue-darkest"
+  colors     = type == "primary" ? "bg-blue-100 white"
+                                 : "bg-white blue-100"
   const cssClasses = `${dimensions} ${colors} ba tc`
   content_tag(:button, class: "#{dimensions} #{colors} ba tc") do
     label
@@ -124,16 +124,16 @@ end</code>
     <p class="measure lh-copy">
       These are only examples.  You can do it however you want.  And, because <span class="fv-sc tracked">MelangeCSS</span> is only a CSS file with variables, you could certainly create your own CSS if you like:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-lightest lh-copy ws-pre mh-auto">.button {
+    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">.button {
   border: solid;
   text-align: center;
 }
 .button.primary {
   color: #fff;
-  background-color: var(--mg-bluedarkest);
+  background-color: var(--mg-blue-200);
 }
 .button.primary {
-  color: var(--mg-bluedarkest);
+  color: var(--mg-blue-200);
   background-color: #fff;
 }
 .button.big {
@@ -155,10 +155,10 @@ end</code>
       <div class="w-90 w-50-ns mh-auto">
         <p class="measure xmh-auto tc tl-ns lh-copy">
           <span class="fv-sc tracked">MelangeCSS</span>
-          is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-dark">Hippocratic License, v2.1</a>.
+          is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-400">Hippocratic License, v2.1</a>.
         </p>
         <p class="measure xmh-auto tc tl-ns lh-copy f-1 i">
-          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-dark">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-dark">non-creative assistance</a> from GitHub CoPilot. The image of Paul Maud'Dib was <a href="https://declare-ai.org/1.0.0-alpha1/creative.html" class="blue-dark">created by a generative AI</a> and modified slightly to give him the Eyes of Ibad.
+          This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot. The image of Paul Maud'Dib was <a href="https://declare-ai.org/1.0.0-alpha1/creative.html" class="blue-400">created by a generative AI</a> and modified slightly to give him the Eyes of Ibad.
         </p>
       </div>
     </footer>
