@@ -11,12 +11,12 @@ import mediaQueries from "../MediaQueries.js"
 
 const paddingExampleTemplate = (selector) => {
   return new Example({
-    markupForRendering: `<div class="dib ba bg-gray-light gray-darkest ${selector}"><div class="bg-white ws-nowrap">.${selector}</div></div>`
+    markupForRendering: `<div class="dib ba bg-gray-600 gray-100 ${selector}"><div class="bg-white ws-nowrap">.${selector}</div></div>`
   })
 }
 const marginExampleTemplate = (selector) => {
   return new Example({
-    markupForRendering: `<div class="dib ba bs-dashed"><div class="dib ba bg-gray-light gray-darkest ws-nowrap ${selector}">.${selector}</div></div>`
+    markupForRendering: `<div class="dib ba bs-dashed"><div class="dib ba bg-gray-600 gray-100 ws-nowrap ${selector}">.${selector}</div></div>`
   })
 }
 
@@ -24,19 +24,19 @@ const gapExampleTemplate = (selector) => {
   return new Example({
     markupForRendering: `<div class="ba bc-black bs-dashed flex flex-column ${selector}">
       <div class="ba bc-black flex flex-row ${selector}">
-        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-red">Top Left</div>
-        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-green">Top Middle</div>
-        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-blue">Top Right</div>
+        <div class="pa-2 f-1 bg-gray-700 gray-100 ba bc-red">Top Left</div>
+        <div class="pa-2 f-1 bg-gray-700 gray-100 ba bc-green">Top Middle</div>
+        <div class="pa-2 f-1 bg-gray-700 gray-100 ba bc-blue">Top Right</div>
       </div>
       <div class="ba bc-black flex flex-row ${selector}">
-        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-red">Middle Left</div>
-        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-green">Middle Middle</div>
-        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-blue">Middle Right</div>
+        <div class="pa-2 f-1 bg-gray-700 gray-100 ba bc-red">Middle Left</div>
+        <div class="pa-2 f-1 bg-gray-700 gray-100 ba bc-green">Middle Middle</div>
+        <div class="pa-2 f-1 bg-gray-700 gray-100 ba bc-blue">Middle Right</div>
       </div>
       <div class="ba bc-black flex flex-row ${selector}">
-        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-red">Bottom Left</div>
-        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-green">Bottom Middle</div>
-        <div class="pa-2 f-1 bg-gray-lighter gray-darkest ba bc-blue">Bottom Right</div>
+        <div class="pa-2 f-1 bg-gray-700 gray-100 ba bc-red">Bottom Left</div>
+        <div class="pa-2 f-1 bg-gray-700 gray-100 ba bc-green">Bottom Middle</div>
+        <div class="pa-2 f-1 bg-gray-700 gray-100 ba bc-blue">Bottom Right</div>
       </div>
     </div>`
   })
@@ -99,7 +99,7 @@ const floatExampleTemplate = (selector) => {
   <div class="${selector}">.${selector}</div>
   <div>The spice must flow! Without it, space travel is impossible.</div>
 </div>`
-  const innerMarkup =  `<div class="ba bs-dashed"><div class="ph-2 ba bs-solid ${selector}">.${selector}</div><div class="ph-2 bg-gray-lightest" >The spice must flow! Without it, space travel is impossible.</div></div>`
+  const innerMarkup =  `<div class="ba bs-dashed"><div class="ph-2 ba bs-solid ${selector}">.${selector}</div><div class="ph-2 bg-gray-800" >The spice must flow! Without it, space travel is impossible.</div></div>`
   return new Example({
     htmlForDocs: html,
     markupForRendering: innerMarkup,

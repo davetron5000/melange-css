@@ -6,7 +6,7 @@ import Example              from "../../lib/Example.js"
 import mediaQueries         from "../MediaQueries.js"
 
 const displayExampleTemplate = (selector) => {
-  const oneDiv = `<div class="bg-gray-lightest ma-2 ws-nowrap pa-1 w-5 h-5 ${selector}">${selector}</div>`
+  const oneDiv = `<div class="bg-gray-800 ma-2 ws-nowrap pa-1 w-5 h-5 ${selector}">${selector}</div>`
   const markupForRendering = [
     oneDiv,
     oneDiv,

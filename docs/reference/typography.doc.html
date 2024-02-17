@@ -22,18 +22,18 @@
   </head>
   <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
     <header>
-      <div class="bg-orange-300 orange-900 pa-3 pt-4">
+      <div class="bg-orange-200 orange-900 pa-3 pt-4">
         <div class="w-60-ns w-90 mh-auto">
           <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-1">
             <a href="index.html" class="tdn orange-900">
               <span class="fv-sc tracked">MelangeCSS</span> Reference
             </a>
           </h1>
-          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-beta8</span></p>
+          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-RC1</span></p>
           
         </div>
       </div>
-      <div class="bg-black-ish orange-900 pa-3">
+      <div class="bg-blue-100 orange-900 pa-3">
         <nav class="w-60-ns w-90 mh-auto">
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
             <a href="index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-3 mb-0-ns">Classes by Group</a>
@@ -60,7 +60,7 @@
   
     <p class="measure f-2 lh-copy">Text rendering can be tricky, however the use of a fixed font scale and a limited number of other tranformations for letter spacing and leading can provide myriad combinations to meet most needs without having to endlessly tweak precise values.  The result of the fixed set up typographic features is general consistency and harmony regardless of the styles chosen.</p>
   
-<nav class="blue-100 bg-blue-900 w-auto w-60-ns pa-2 br-2 i">
+<nav class="blue-100 bg-blue-800 w-auto w-60-ns pa-2 br-2 i">
   <div class="dib f-2 blue-100 mb-2 mh-1 fw-bold">
     Supported Media Queries
   </div>
@@ -198,21 +198,28 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>b</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>b</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Aliases Bold</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="b">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.b {
+  font-weight: bold;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="b">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -225,21 +232,28 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>i</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>i</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Aliases Italic</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="i">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.i {
+  font-style: italic;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="i">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -252,21 +266,28 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>sc</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>sc</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Aliases Small Caps</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="sc">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.sc {
+  font-variant: small-caps;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="sc">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -279,21 +300,28 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>u</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>u</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Aliases Underline</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="u">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.u {
+  text-decoration: underline;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="u">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -306,21 +334,29 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>p</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>p</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Aliases Content paragraph with measure and lh-copy</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="p">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.p {
+  max-width: var(--mg-tw);
+  line-height: var(--mg-lh-copy);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="p">
   “God Emperor of Dune” is often considered the best of the series, however the first book—“Dune”—is the safer bet if you intended to read only one.
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -340,7 +376,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="ff"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -357,73 +393,108 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ff-sans</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ff-sans</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-5 ff-sans">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ff-sans {
+  font-family: var(--mg-ff-sans);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-5 ff-sans">
   The spice must flow
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ff-serif</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ff-serif</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-5 ff-serif">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ff-serif {
+  font-family: var(--mg-ff-serif);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-5 ff-serif">
   The spice must flow
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ff-mono</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ff-mono</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-5 ff-mono">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ff-mono {
+  font-family: var(--mg-ff-mono);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-5 ff-mono">
   The spice must flow
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ff-cursive</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ff-cursive</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-5 ff-cursive">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ff-cursive {
+  font-family: var(--mg-ff-cursive);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-5 ff-cursive">
   The spice must flow
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ff-fantasy</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ff-fantasy</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-5 ff-fantasy">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ff-fantasy {
+  font-family: var(--mg-ff-fantasy);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-5 ff-fantasy">
   The spice must flow
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -443,7 +514,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="f"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -464,129 +535,192 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>f-1</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>f-1</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.f-1 {
+  font-size: var(--mg-fs-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-1">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>f-2</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>f-2</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-2">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.f-2 {
+  font-size: var(--mg-fs-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-2">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>f-3</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>f-3</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-3">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.f-3 {
+  font-size: var(--mg-fs-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-3">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>f-4</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>f-4</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-4">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.f-4 {
+  font-size: var(--mg-fs-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-4">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>f-5</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>f-5</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-5">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.f-5 {
+  font-size: var(--mg-fs-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-5">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>f-6</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>f-6</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-6">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.f-6 {
+  font-size: var(--mg-fs-6);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-6">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>f-7</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>f-7</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-7">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.f-7 {
+  font-size: var(--mg-fs-7);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-7">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>f-8</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>f-8</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-8">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.f-8 {
+  font-size: var(--mg-fs-8);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-8">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>f-9</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>f-9</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="f-9">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.f-9 {
+  font-size: var(--mg-fs-9);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="f-9">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -625,19 +759,26 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fs-normal</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fs-normal</code>
                       
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fs-normal">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fs-normal {
+  font-style: normal;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fs-normal">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -650,21 +791,28 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fs-italic</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fs-italic</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Font Style Italic</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fs-italic">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fs-italic {
+  font-style: italic;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fs-italic">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -703,21 +851,28 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fv-sc</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fv-sc</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Font Variant Small Caps</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fv-sc">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fv-sc {
+  font-variant: small-caps;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fv-sc">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -730,21 +885,28 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fv-normal</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fv-normal</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Font Variant Normal</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fv-normal">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fv-normal {
+  font-variant: normal;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fv-normal">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -764,7 +926,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="fw"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -781,31 +943,45 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-normal</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-normal</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-normal">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-normal {
+  font-weight: normal;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-normal">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-bold</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-bold</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-bold">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-bold {
+  font-weight: bold;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-bold">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -813,129 +989,192 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-1</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-1</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-1 {
+  font-weight: 100;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-1">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-2</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-2</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-2">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-2 {
+  font-weight: 200;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-2">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-3</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-3</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-3">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-3 {
+  font-weight: 300;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-3">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-4</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-4</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-4">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-4 {
+  font-weight: 400;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-4">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-5</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-5</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-5">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-5 {
+  font-weight: 500;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-5">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-6</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-6</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-6">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-6 {
+  font-weight: 600;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-6">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-7</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-7</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-7">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-7 {
+  font-weight: 700;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-7">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-8</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-8</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-8">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-8 {
+  font-weight: 800;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-8">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>fw-9</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>fw-9</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="fw-9">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.fw-9 {
+  font-weight: 900;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="fw-9">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -955,7 +1194,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="indent"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -972,115 +1211,164 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>indent-0</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>indent-0</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ph-4 pv-2 ba bc-gray bg-gray-lightest"><div class="bg-white measure lh-copy ba bs-dashed indent-0">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.indent-0 {
+  text-indent: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ph-4 pv-2 ba bc-gray bg-gray-800"><div class="bg-white measure lh-copy ba bs-dashed indent-0">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
 started by the original six books, you will get a perfectly fine reading 
 experience from the originals.
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>indent-1</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>indent-1</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ph-4 pv-2 ba bc-gray bg-gray-lightest"><div class="bg-white measure lh-copy ba bs-dashed indent-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.indent-1 {
+  text-indent: var(--mg-ident-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ph-4 pv-2 ba bc-gray bg-gray-800"><div class="bg-white measure lh-copy ba bs-dashed indent-1">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
 started by the original six books, you will get a perfectly fine reading 
 experience from the originals.
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>indent-2</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>indent-2</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ph-4 pv-2 ba bc-gray bg-gray-lightest"><div class="bg-white measure lh-copy ba bs-dashed indent-2">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.indent-2 {
+  text-indent: var(--mg-ident-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ph-4 pv-2 ba bc-gray bg-gray-800"><div class="bg-white measure lh-copy ba bs-dashed indent-2">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
 started by the original six books, you will get a perfectly fine reading 
 experience from the originals.
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>indent-3</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>indent-3</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ph-4 pv-2 ba bc-gray bg-gray-lightest"><div class="bg-white measure lh-copy ba bs-dashed indent-3">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.indent-3 {
+  text-indent: var(--mg-ident-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ph-4 pv-2 ba bc-gray bg-gray-800"><div class="bg-white measure lh-copy ba bs-dashed indent-3">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
 started by the original six books, you will get a perfectly fine reading 
 experience from the originals.
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>indent--1</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>indent--1</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ph-4 pv-2 ba bc-gray bg-gray-lightest"><div class="bg-white measure lh-copy ba bs-dashed indent--1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.indent--1 {
+  text-indent: var(--mg-ident--1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ph-4 pv-2 ba bc-gray bg-gray-800"><div class="bg-white measure lh-copy ba bs-dashed indent--1">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
 started by the original six books, you will get a perfectly fine reading 
 experience from the originals.
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>indent--2</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>indent--2</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ph-4 pv-2 ba bc-gray bg-gray-lightest"><div class="bg-white measure lh-copy ba bs-dashed indent--2">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.indent--2 {
+  text-indent: var(--mg-ident--2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ph-4 pv-2 ba bc-gray bg-gray-800"><div class="bg-white measure lh-copy ba bs-dashed indent--2">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
 started by the original six books, you will get a perfectly fine reading 
 experience from the originals.
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>indent--3</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>indent--3</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ph-4 pv-2 ba bc-gray bg-gray-lightest"><div class="bg-white measure lh-copy ba bs-dashed indent--3">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.indent--3 {
+  text-indent: var(--mg-ident--3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ph-4 pv-2 ba bc-gray bg-gray-800"><div class="bg-white measure lh-copy ba bs-dashed indent--3">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
 started by the original six books, you will get a perfectly fine reading 
 experience from the originals.
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1100,7 +1388,7 @@ experience from the originals.
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="lh"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1117,57 +1405,78 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>lh-solid</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>lh-solid</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="lh-solid">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.lh-solid {
+  line-height: var(--mg-lh-solid);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="lh-solid">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
   started by the original six books, you will get a perfectly fine reading 
   experience by reading only “Dune”, “Dune Messiah”, “Children of Dune”, “God 
   Emperor of Dune”, “Heretics of Dune”, and finishing with “Chapterhouse 
   Dune”. Trust me.
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>lh-title</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>lh-title</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="lh-title">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.lh-title {
+  line-height: var(--mg-lh-title);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="lh-title">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
   started by the original six books, you will get a perfectly fine reading 
   experience by reading only “Dune”, “Dune Messiah”, “Children of Dune”, “God 
   Emperor of Dune”, “Heretics of Dune”, and finishing with “Chapterhouse 
   Dune”. Trust me.
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>lh-copy</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>lh-copy</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="lh-copy">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.lh-copy {
+  line-height: var(--mg-lh-copy);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="lh-copy">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
   started by the original six books, you will get a perfectly fine reading 
   experience by reading only “Dune”, “Dune Messiah”, “Children of Dune”, “God 
   Emperor of Dune”, “Heretics of Dune”, and finishing with “Chapterhouse 
   Dune”. Trust me.
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1189,7 +1498,7 @@ experience from the originals.
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="measure"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1206,57 +1515,78 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>measure</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>measure</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="measure">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.measure {
+  max-width: var(--mg-tw);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="measure">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
   started by the original six books, you will get a perfectly fine reading 
   experience by reading only “Dune”, “Dune Messiah”, “Children of Dune”, “God 
   Emperor of Dune”, “Heretics of Dune”, and finishing with “Chapterhouse 
   Dune”. Trust me.
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>measure-wide</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>measure-wide</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="measure-wide">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.measure-wide {
+  max-width: var(--mg-tw-wide);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="measure-wide">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
   started by the original six books, you will get a perfectly fine reading 
   experience by reading only “Dune”, “Dune Messiah”, “Children of Dune”, “God 
   Emperor of Dune”, “Heretics of Dune”, and finishing with “Chapterhouse 
   Dune”. Trust me.
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>measure-narrow</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>measure-narrow</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="measure-narrow">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.measure-narrow {
+  max-width: var(--mg-tw-narrow);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="measure-narrow">
   Although “Hunters of Dune” and “Sandworms of Dune” carry on the story 
   started by the original six books, you will get a perfectly fine reading 
   experience by reading only “Dune”, “Dune Messiah”, “Children of Dune”, “God 
   Emperor of Dune”, “Heretics of Dune”, and finishing with “Chapterhouse 
   Dune”. Trust me.
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1300,21 +1630,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tr</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tr</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Align Right</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tr">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tr {
+  text-align: right;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tr">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1327,21 +1664,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tc</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tc</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Align Center</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tc">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tc {
+  text-align: center;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tc">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1354,21 +1698,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tl</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tl</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Align Left</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tl">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tl {
+  text-align: left;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tl">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1417,40 +1768,54 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tdn</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tdn</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Decoration None</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tdn">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tdn {
+  text-decoration: none;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tdn">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>hover-tdn</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>hover-tdn</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Decoration None</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="hover-tdn">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.hover-tdn:hover {
+  text-decoration: none;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="hover-tdn">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1463,40 +1828,54 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tdu</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tdu</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Decoration Underline</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tdu">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tdu {
+  text-decoration: underline;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tdu">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>hover-tdu</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>hover-tdu</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Decoration Underline</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="hover-tdu">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.hover-tdu:hover {
+  text-decoration: underline;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="hover-tdu">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1509,40 +1888,54 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tds</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tds</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Decoration Strike</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tds">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tds {
+  text-decoration: line-through;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tds">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>hover-tds</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>hover-tds</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Decoration Strike</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="hover-tds">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.hover-tds:hover {
+  text-decoration: line-through;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="hover-tds">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1555,40 +1948,54 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tdo</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tdo</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Decoration Overline</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tdo">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tdo {
+  text-decoration: overline;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tdo">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>hover-tdo</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>hover-tdo</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Decoration Overline</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="hover-tdo">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.hover-tdo:hover {
+  text-decoration: overline;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="hover-tdo">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1637,21 +2044,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ttn</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ttn</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Tranform None</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ttn">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ttn {
+  text-transform: none;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ttn">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1664,21 +2078,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ttu</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ttu</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Tranform Uppercase</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ttu">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ttu {
+  text-transform: uppercase;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ttu">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1691,21 +2112,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ttl</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ttl</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Tranform Lowercase</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ttl">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ttl {
+  text-transform: lowercase;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ttl">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1718,21 +2146,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ttc</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ttc</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Text Tranform Capitalize</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ttc">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ttc {
+  text-transform: capitalize;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ttc">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1752,7 +2187,7 @@ experience from the originals.
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="tracked"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1769,59 +2204,87 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tracked</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tracked</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tracked">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tracked {
+  letter-spacing: var(--mg-ls);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tracked">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tracked-tight</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tracked-tight</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tracked-tight">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tracked-tight {
+  letter-spacing: var(--mg-ls-tight);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tracked-tight">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tracked-mega</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tracked-mega</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tracked-mega">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tracked-mega {
+  letter-spacing: var(--mg-ls-mega);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tracked-mega">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>tracked-none</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>tracked-none</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="tracked-none">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.tracked-none {
+  letter-spacing: var(--mg-ls-none);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="tracked-none">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1872,21 +2335,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>va-baseline</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>va-baseline</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Vertical Align Baseline</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="va-baseline">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.va-baseline {
+  vertical-align: baseline;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="va-baseline">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1899,21 +2369,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>va-middle</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>va-middle</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Vertical Align Middle</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="va-middle">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.va-middle {
+  vertical-align: middle;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="va-middle">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1926,21 +2403,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>va-top</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>va-top</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Vertical Align Top</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="va-top">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.va-top {
+  vertical-align: top;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="va-top">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1953,21 +2437,28 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>va-bottom</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>va-bottom</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Vertical Align Bottom</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="va-bottom">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.va-bottom {
+  vertical-align: bottom;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="va-bottom">
   The spice must flow!
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -2011,17 +2502,24 @@ experience from the originals.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ws-normal</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ws-normal</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">White Space Normal</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="measure-narrow ws-normal">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ws-normal {
+  white-space: normal;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="measure-narrow ws-normal">
   Although “Hunters of Dune” and 
            “Sandworms of Dune” carry on the story 
      started by the original six books, you will
@@ -2034,8 +2532,8 @@ experience from the originals.
 
 Trust me.
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -2048,17 +2546,24 @@ Trust me.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ws-nowrap</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ws-nowrap</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">White Space No Wrap</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="measure-narrow ws-nowrap">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ws-nowrap {
+  white-space: nowrap;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="measure-narrow ws-nowrap">
   Although “Hunters of Dune” and 
            “Sandworms of Dune” carry on the story 
      started by the original six books, you will
@@ -2071,8 +2576,8 @@ Trust me.
 
 Trust me.
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -2085,17 +2590,24 @@ Trust me.
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ws-pre</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ws-pre</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">White Space Pre</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="measure-narrow ws-pre">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ws-pre {
+  white-space: pre;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="measure-narrow ws-pre">
   Although “Hunters of Dune” and 
            “Sandworms of Dune” carry on the story 
      started by the original six books, you will
@@ -2108,8 +2620,8 @@ Trust me.
 
 Trust me.
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -2122,7 +2634,7 @@ Trust me.
 
     </main>
   </body>
-    <footer class="pv-5 bg-white black-ish">
+    <footer class="pv-5 bg-blue-900 black-ish">
       <div class="w-90 w-60-ns mh-auto">
         <p class="measure tc tl-ns lh-copy f-1 i">
           This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot.

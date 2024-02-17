@@ -13,7 +13,7 @@ const overflowExampleTemplate = (selector) => {
     lost to the sands of Arrakis.
     This cannot be allowed.
 </div>`,
-    markupForRendering: `<div class="pa4"><div class="${selector} w-6 h-5 ba bc-gray-dark bg-gray-lightest black">
+    markupForRendering: `<div class="pa4"><div class="${selector} w-6 h-5 ba bc-gray-400 bg-gray-800 black">
     While the spice must flow, if it were to overflow, <span class="ws-nowrap">it would be
     lost to the sands of Arrakis. This</span> cannot be allowed.
 </div></div>`,
@@ -42,7 +42,7 @@ const truncateExampleTemplate = (selector) => {
     htmlForDocs: `<div class="${selector}">
     The spice must flow!
 </div>`,
-    markupForRendering: `<div class="pa4"><div class="${selector} overflow-hidden ws-nowrap w-6 ba bc-gray-dark bg-gray-lightest black">
+    markupForRendering: `<div class="pa4"><div class="${selector} overflow-hidden ws-nowrap w-6 ba bc-gray-400 bg-gray-800 black">
     The spice must flow!
 </div></div>`,
   })

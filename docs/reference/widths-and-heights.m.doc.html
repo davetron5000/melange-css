@@ -22,18 +22,18 @@
   </head>
   <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
     <header>
-      <div class="bg-orange-300 orange-900 pa-3 pt-4">
+      <div class="bg-orange-200 orange-900 pa-3 pt-4">
         <div class="w-60-ns w-90 mh-auto">
           <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-1">
             <a href="index.html" class="tdn orange-900">
               <span class="fv-sc tracked">MelangeCSS</span> Reference
             </a>
           </h1>
-          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-beta8</span></p>
+          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-RC1</span></p>
           
         </div>
       </div>
-      <div class="bg-black-ish orange-900 pa-3">
+      <div class="bg-blue-100 orange-900 pa-3">
         <nav class="w-60-ns w-90 mh-auto">
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
             <a href="index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-3 mb-0-ns">Classes by Group</a>
@@ -66,7 +66,7 @@
   
     <p class="measure f-2 lh-copy">Along with the spacings group, widths and heights allow control over sizes using the built-in spacing scale.  The widths and heights here are identical to the value used in the spacings group, so your design should have visual harmony and consistency.</p>
   
-<nav class="blue-100 bg-blue-900 w-auto w-60-ns pa-2 br-2 i">
+<nav class="blue-100 bg-blue-800 w-auto w-60-ns pa-2 br-2 i">
   <div class="dib f-2 blue-100 mb-2 mh-1 fw-bold">
     Supported Media Queries
   </div>
@@ -141,13 +141,22 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>content-box-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>content-box-m</code>
                       
                         
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.content-box-m {
+  box-sizing: content-box;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -160,13 +169,22 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>border-box-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>border-box-m</code>
                       
                         
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.border-box-m {
+  box-sizing: border-box;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -200,7 +218,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="h"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -219,115 +237,171 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-1-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-1-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-1-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-1-m {
+  height: calc(2 * var(--mg-sp-1));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-1-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-1-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-2-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-2-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-2-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-2-m {
+  height: calc(2 * var(--mg-sp-2));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-2-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-2-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-3-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-3-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-3-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-3-m {
+  height: calc(2 * var(--mg-sp-3));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-3-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-3-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-4-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-4-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-4-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-4-m {
+  height: calc(2 * var(--mg-sp-4));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-4-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-4-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-5-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-5-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-5-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-5-m {
+  height: calc(2 * var(--mg-sp-5));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-5-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-5-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-6-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-6-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-6-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-6-m {
+  height: calc(2 * var(--mg-sp-6));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-6-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-6-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-7-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-7-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-7-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-7-m {
+  height: calc(2 * var(--mg-sp-7));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-7-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-7-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-8-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-8-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-8-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-8-m {
+  height: calc(2 * var(--mg-sp-8));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-8-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-8-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -339,199 +413,297 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-10-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-10-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-10-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-10-m {
+  height: 10%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-10-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-10-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-20-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-20-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-20-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-20-m {
+  height: 20%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-20-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-20-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-25-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-25-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-25-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-25-m {
+  height: 25%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-25-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-25-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-30-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-30-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-30-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-30-m {
+  height: 30%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-30-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-30-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-40-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-40-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-40-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-40-m {
+  height: 40%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-40-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-40-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-50-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-50-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-50-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-50-m {
+  height: 50%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-50-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-50-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-60-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-60-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-60-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-60-m {
+  height: 60%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-60-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-60-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-70-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-70-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-70-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-70-m {
+  height: 70%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-70-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-70-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-75-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-75-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-75-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-75-m {
+  height: 75%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-75-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-75-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-80-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-80-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-80-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-80-m {
+  height: 80%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-80-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-80-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-90-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-90-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-90-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-90-m {
+  height: 90%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-90-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-90-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-100-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-100-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-100-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-100-m {
+  height: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-100-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-100-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-third-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-third-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-third-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-third-m {
+  height: calc(100% / 3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-third-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-third-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-two-thirds-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-two-thirds-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-two-thirds-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-two-thirds-m {
+  height: calc(100% / 1.5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-two-thirds-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-two-thirds-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -543,143 +715,213 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-10vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-10vh-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-10vh-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-10vh-m {
+  height: 10vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-10vh-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-10vh-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-20vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-20vh-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-20vh-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-20vh-m {
+  height: 20vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-20vh-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-20vh-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-30vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-30vh-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-30vh-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-30vh-m {
+  height: 30vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-30vh-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-30vh-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-40vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-40vh-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-40vh-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-40vh-m {
+  height: 40vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-40vh-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-40vh-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-50vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-50vh-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-50vh-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-50vh-m {
+  height: 50vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-50vh-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-50vh-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-60vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-60vh-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-60vh-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-60vh-m {
+  height: 60vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-60vh-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-60vh-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-70vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-70vh-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-70vh-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-70vh-m {
+  height: 70vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-70vh-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-70vh-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-80vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-80vh-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-80vh-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-80vh-m {
+  height: 80vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-80vh-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-80vh-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-90vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-90vh-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-90vh-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-90vh-m {
+  height: 90vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-90vh-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-90vh-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-100vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-100vh-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-100vh-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-100vh-m {
+  height: 100vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-100vh-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-100vh-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -687,17 +929,24 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>h-auto-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>h-auto-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="h-auto-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.h-auto-m {
+  height: auto;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="h-auto-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .h-auto-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -705,7 +954,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="max-height"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -724,67 +973,139 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-1-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-1-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-1-m {
+  max-height: calc(2 * var(--mg-sp-1));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-2-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-2-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-2-m {
+  max-height: calc(2 * var(--mg-sp-2));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-3-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-3-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-3-m {
+  max-height: calc(2 * var(--mg-sp-3));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-4-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-4-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-4-m {
+  max-height: calc(2 * var(--mg-sp-4));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-5-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-5-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-5-m {
+  max-height: calc(2 * var(--mg-sp-5));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-6-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-6-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-6-m {
+  max-height: calc(2 * var(--mg-sp-6));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-7-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-7-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-7-m {
+  max-height: calc(2 * var(--mg-sp-7));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-8-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-8-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-8-m {
+  max-height: calc(2 * var(--mg-sp-8));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -796,115 +1117,241 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-10-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-10-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-10-m {
+  max-height: 10%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-20-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-20-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-20-m {
+  max-height: 20%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-25-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-25-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-25-m {
+  max-height: 25%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-30-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-30-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-30-m {
+  max-height: 30%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-40-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-40-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-40-m {
+  max-height: 40%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-50-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-50-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-50-m {
+  max-height: 50%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-60-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-60-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-60-m {
+  max-height: 60%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-70-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-70-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-70-m {
+  max-height: 70%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-75-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-75-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-75-m {
+  max-height: 75%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-80-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-80-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-80-m {
+  max-height: 80%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-90-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-90-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-90-m {
+  max-height: 90%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-100-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-100-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-100-m {
+  max-height: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-third-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-third-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-third-m {
+  max-height: calc(100% / 3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-two-thirds-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-two-thirds-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-two-thirds-m {
+  max-height: calc(100% / 1.5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -916,83 +1363,173 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-10vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-10vh-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-10vh-m {
+  max-height: 10vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-20vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-20vh-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-20vh-m {
+  max-height: 20vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-30vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-30vh-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-30vh-m {
+  max-height: 30vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-40vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-40vh-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-40vh-m {
+  max-height: 40vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-50vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-50vh-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-50vh-m {
+  max-height: 50vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-60vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-60vh-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-60vh-m {
+  max-height: 60vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-70vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-70vh-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-70vh-m {
+  max-height: 70vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-80vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-80vh-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-80vh-m {
+  max-height: 80vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-90vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-90vh-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-90vh-m {
+  max-height: 90vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-100vh-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-100vh-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-100vh-m {
+  max-height: 100vh;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -1000,11 +1537,20 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>max-height-auto-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>max-height-auto-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.max-height-auto-m {
+  max-height: auto;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -1038,7 +1584,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="w"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1057,115 +1603,171 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-1-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-1-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-1-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-1-m {
+  width: calc(2 * var(--mg-sp-1));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-1-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-1-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-2-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-2-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-2-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-2-m {
+  width: calc(2 * var(--mg-sp-2));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-2-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-2-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-3-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-3-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-3-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-3-m {
+  width: calc(2 * var(--mg-sp-3));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-3-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-3-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-4-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-4-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-4-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-4-m {
+  width: calc(2 * var(--mg-sp-4));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-4-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-4-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-5-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-5-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-5-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-5-m {
+  width: calc(2 * var(--mg-sp-5));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-5-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-5-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-6-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-6-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-6-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-6-m {
+  width: calc(2 * var(--mg-sp-6));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-6-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-6-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-7-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-7-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-7-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-7-m {
+  width: calc(2 * var(--mg-sp-7));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-7-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-7-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-8-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-8-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-8-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-8-m {
+  width: calc(2 * var(--mg-sp-8));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-8-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-8-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1177,199 +1779,297 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-10-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-10-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-10-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-10-m {
+  width: 10%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-10-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-10-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-20-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-20-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-20-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-20-m {
+  width: 20%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-20-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-20-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-25-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-25-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-25-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-25-m {
+  width: 25%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-25-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-25-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-30-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-30-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-30-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-30-m {
+  width: 30%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-30-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-30-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-40-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-40-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-40-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-40-m {
+  width: 40%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-40-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-40-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-50-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-50-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-50-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-50-m {
+  width: 50%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-50-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-50-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-60-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-60-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-60-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-60-m {
+  width: 60%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-60-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-60-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-70-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-70-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-70-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-70-m {
+  width: 70%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-70-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-70-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-75-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-75-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-75-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-75-m {
+  width: 75%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-75-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-75-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-80-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-80-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-80-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-80-m {
+  width: 80%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-80-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-80-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-90-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-90-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-90-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-90-m {
+  width: 90%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-90-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-90-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-100-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-100-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-100-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-100-m {
+  width: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-100-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-100-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-third-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-third-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-third-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-third-m {
+  width: calc(100% / 3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-third-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-third-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-two-thirds-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-two-thirds-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-two-thirds-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-two-thirds-m {
+  width: calc(100% / 1.5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-two-thirds-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-two-thirds-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1381,143 +2081,213 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-10vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-10vw-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-10vw-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-10vw-m {
+  width: 10vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-10vw-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-10vw-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-20vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-20vw-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-20vw-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-20vw-m {
+  width: 20vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-20vw-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-20vw-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-30vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-30vw-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-30vw-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-30vw-m {
+  width: 30vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-30vw-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-30vw-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-40vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-40vw-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-40vw-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-40vw-m {
+  width: 40vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-40vw-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-40vw-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-50vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-50vw-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-50vw-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-50vw-m {
+  width: 50vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-50vw-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-50vw-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-60vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-60vw-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-60vw-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-60vw-m {
+  width: 60vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-60vw-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-60vw-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-70vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-70vw-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-70vw-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-70vw-m {
+  width: 70vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-70vw-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-70vw-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-80vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-80vw-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-80vw-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-80vw-m {
+  width: 80vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-80vw-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-80vw-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-90vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-90vw-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-90vw-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-90vw-m {
+  width: 90vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-90vw-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-90vw-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-100vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-100vw-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-100vw-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-100vw-m {
+  width: 100vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-100vw-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-100vw-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1525,17 +2295,24 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>w-auto-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>w-auto-m</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="w-auto-m ws-nowrap ba bs-solid bg-gray-lightest gray-darkest pa-1">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.w-auto-m {
+  width: auto;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="w-auto-m ws-nowrap ba bs-solid bg-gray-800 gray-100 pa-1">
   .w-auto-m
 </div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1543,7 +2320,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="mw"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1562,67 +2339,139 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-1-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-1-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-1-m {
+  max-width: calc(2 * var(--mg-sp-1));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-2-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-2-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-2-m {
+  max-width: calc(2 * var(--mg-sp-2));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-3-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-3-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-3-m {
+  max-width: calc(2 * var(--mg-sp-3));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-4-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-4-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-4-m {
+  max-width: calc(2 * var(--mg-sp-4));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-5-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-5-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-5-m {
+  max-width: calc(2 * var(--mg-sp-5));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-6-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-6-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-6-m {
+  max-width: calc(2 * var(--mg-sp-6));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-7-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-7-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-7-m {
+  max-width: calc(2 * var(--mg-sp-7));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-8-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-8-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-8-m {
+  max-width: calc(2 * var(--mg-sp-8));
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -1634,115 +2483,241 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-10-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-10-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-10-m {
+  max-width: 10%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-20-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-20-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-20-m {
+  max-width: 20%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-25-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-25-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-25-m {
+  max-width: 25%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-30-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-30-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-30-m {
+  max-width: 30%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-40-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-40-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-40-m {
+  max-width: 40%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-50-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-50-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-50-m {
+  max-width: 50%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-60-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-60-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-60-m {
+  max-width: 60%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-70-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-70-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-70-m {
+  max-width: 70%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-75-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-75-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-75-m {
+  max-width: 75%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-80-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-80-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-80-m {
+  max-width: 80%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-90-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-90-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-90-m {
+  max-width: 90%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-100-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-100-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-100-m {
+  max-width: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-third-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-third-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-third-m {
+  max-width: calc(100% / 3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-two-thirds-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-two-thirds-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-two-thirds-m {
+  max-width: calc(100% / 1.5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -1754,83 +2729,173 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-10vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-10vw-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-10vw-m {
+  max-width: 10vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-20vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-20vw-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-20vw-m {
+  max-width: 20vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-30vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-30vw-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-30vw-m {
+  max-width: 30vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-40vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-40vw-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-40vw-m {
+  max-width: 40vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-50vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-50vw-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-50vw-m {
+  max-width: 50vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-60vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-60vw-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-60vw-m {
+  max-width: 60vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-70vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-70vw-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-70vw-m {
+  max-width: 70vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-80vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-80vw-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-80vw-m {
+  max-width: 80vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-90vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-90vw-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-90vw-m {
+  max-width: 90vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-100vw-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-100vw-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-100vw-m {
+  max-width: 100vw;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -1838,11 +2903,20 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>mw-auto-m</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>mw-auto-m</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.mw-auto-m {
+  max-width: auto;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -1862,7 +2936,7 @@
 
     </main>
   </body>
-    <footer class="pv-5 bg-white black-ish">
+    <footer class="pv-5 bg-blue-900 black-ish">
       <div class="w-90 w-60-ns mh-auto">
         <p class="measure tc tl-ns lh-copy f-1 i">
           This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot.

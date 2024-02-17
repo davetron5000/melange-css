@@ -13,7 +13,7 @@
   <% metaPropertyGrouping.docs.forEach( (paragraph) => { %>
     <p class="measure f-2 lh-copy"><%- paragraph %></p>
   <% }) %>
-<nav class="blue-100 bg-blue-900 w-auto w-60-ns pa-2 br-2 i">
+<nav class="blue-100 bg-blue-800 w-auto w-60-ns pa-2 br-2 i">
   <div class="dib f-2 blue-100 mb-2 mh-1 fw-bold">
     Supported Media Queries
   </div>
@@ -62,7 +62,7 @@
           <% metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => { %>
             <tr>
               <% if (metaProperty.totalSteps() > 1) { %>
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="<%= new Anchor(cssClassTemplate.classNameBase) %>"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -87,19 +87,24 @@
                   scale.eachStep( (step) => {
                   const cssClass = cssClassTemplate.toCSSClass(step).forSelector(pseudoSelector).atMediaQuery(mediaQuery) %>
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code><%= cssClass.className() %></code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code><%= cssClass.className() %></code>
                       <% if (metaProperty.totalSteps() == 1) { %>
                         <% if (cssClassTemplate.summary) { %>
                         <div class="f-1 fw-3 mt-0 mb-1 i"><%= new HumanizedString(metaProperty.name) %> <%= cssClassTemplate.summary %></div>
                         <% } %>
                       <% } %>
                     </td>
-                    <% if (cssClass.example()) { %>
-                      <td class="pv-1 va-middle pa-2">
-                        <%- cssClass.example().markupForRendering %>
-                      </td>
-                    <% } %>
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0"><%= cssClass.toCSS() %></pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      <% if (cssClass.example()) { %>
+                          <%- cssClass.example().markupForRendering %>
+                      <% } %>
+                    </td>
                   </tr>
                 <% }) %>
               <% }) %>

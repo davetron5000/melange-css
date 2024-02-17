@@ -43,7 +43,7 @@ const cursors = new MetaProperty({
 const boxShadowExampleTemplate = (selector) => {
   return new Example({
     htmlForDocs: `<div class="${selector}">\n.${selector}\n</div>`,
-    markupForRendering: `<div class="${selector} bg-blue-lightest pa-4">${selector}</div>`,
+    markupForRendering: `<div class="${selector} bg-blue-900 pa-4">${selector}</div>`,
   })
 }
 const boxShadow = new MetaProperty({

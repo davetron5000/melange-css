@@ -22,18 +22,18 @@
   </head>
   <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
     <header>
-      <div class="bg-orange-300 orange-900 pa-3 pt-4">
+      <div class="bg-orange-200 orange-900 pa-3 pt-4">
         <div class="w-60-ns w-90 mh-auto">
           <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-1">
             <a href="index.html" class="tdn orange-900">
               <span class="fv-sc tracked">MelangeCSS</span> Reference
             </a>
           </h1>
-          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-beta8</span></p>
+          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-RC1</span></p>
           
         </div>
       </div>
-      <div class="bg-black-ish orange-900 pa-3">
+      <div class="bg-blue-100 orange-900 pa-3">
         <nav class="w-60-ns w-90 mh-auto">
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
             <a href="index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-3 mb-0-ns">Classes by Group</a>
@@ -66,7 +66,7 @@
   
     <p class="measure f-2 lh-copy">Like the spacing group, borders can benefit from a stepped scale of sizes.  These sizes don't relate to the spacings, but are internally consistent. Border widths and radiuses should produce harmonic designs for most of your needs.</p>
   
-<nav class="blue-100 bg-blue-900 w-auto w-60-ns pa-2 br-2 i">
+<nav class="blue-100 bg-blue-800 w-auto w-60-ns pa-2 br-2 i">
   <div class="dib f-2 blue-100 mb-2 mh-1 fw-bold">
     Supported Media Queries
   </div>
@@ -173,7 +173,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="br"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -192,75 +192,117 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-0-ns">.br-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-0-ns {
+  border-radius: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-0-ns">.br-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-1-ns">.br-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-1-ns {
+  border-radius: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-1-ns">.br-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-2-ns">.br-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-2-ns {
+  border-radius: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-2-ns">.br-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-3-ns">.br-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-3-ns {
+  border-radius: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-3-ns">.br-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-4-ns">.br-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-4-ns {
+  border-radius: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-4-ns">.br-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-5-ns">.br-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-5-ns {
+  border-radius: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-5-ns">.br-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -268,27 +310,41 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-100-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-100-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-100-ns">.br-100-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-100-ns {
+  border-radius: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-100-ns">.br-100-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-pill-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-pill-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-pill-ns">.br-pill-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-pill-ns {
+  border-radius: 999px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-pill-ns">.br-pill-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -296,7 +352,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="br-bottom"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -315,75 +371,123 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bottom-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bottom-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-0-ns">.br-bottom-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bottom-0-ns {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bottom-0-ns">.br-bottom-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bottom-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bottom-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-1-ns">.br-bottom-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bottom-1-ns {
+  border-bottom-left-radius: var(--mg-bw-1);
+  border-bottom-right-radius: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bottom-1-ns">.br-bottom-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bottom-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bottom-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-2-ns">.br-bottom-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bottom-2-ns {
+  border-bottom-left-radius: var(--mg-bw-2);
+  border-bottom-right-radius: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bottom-2-ns">.br-bottom-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bottom-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bottom-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-3-ns">.br-bottom-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bottom-3-ns {
+  border-bottom-left-radius: var(--mg-bw-3);
+  border-bottom-right-radius: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bottom-3-ns">.br-bottom-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bottom-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bottom-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-4-ns">.br-bottom-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bottom-4-ns {
+  border-bottom-left-radius: var(--mg-bw-4);
+  border-bottom-right-radius: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bottom-4-ns">.br-bottom-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bottom-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bottom-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-5-ns">.br-bottom-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bottom-5-ns {
+  border-bottom-left-radius: var(--mg-bw-5);
+  border-bottom-right-radius: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bottom-5-ns">.br-bottom-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -391,27 +495,43 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bottom-100-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bottom-100-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-100-ns">.br-bottom-100-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bottom-100-ns {
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bottom-100-ns">.br-bottom-100-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bottom-pill-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bottom-pill-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bottom-pill-ns">.br-bottom-pill-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bottom-pill-ns {
+  border-bottom-left-radius: 999px;
+  border-bottom-right-radius: 999px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bottom-pill-ns">.br-bottom-pill-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -419,7 +539,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="br-top"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -438,75 +558,123 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-top-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-top-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-0-ns">.br-top-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-top-0-ns {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-top-0-ns">.br-top-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-top-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-top-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-1-ns">.br-top-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-top-1-ns {
+  border-top-left-radius: var(--mg-bw-1);
+  border-top-right-radius: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-top-1-ns">.br-top-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-top-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-top-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-2-ns">.br-top-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-top-2-ns {
+  border-top-left-radius: var(--mg-bw-2);
+  border-top-right-radius: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-top-2-ns">.br-top-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-top-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-top-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-3-ns">.br-top-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-top-3-ns {
+  border-top-left-radius: var(--mg-bw-3);
+  border-top-right-radius: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-top-3-ns">.br-top-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-top-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-top-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-4-ns">.br-top-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-top-4-ns {
+  border-top-left-radius: var(--mg-bw-4);
+  border-top-right-radius: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-top-4-ns">.br-top-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-top-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-top-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-5-ns">.br-top-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-top-5-ns {
+  border-top-left-radius: var(--mg-bw-5);
+  border-top-right-radius: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-top-5-ns">.br-top-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -514,27 +682,43 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-top-100-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-top-100-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-100-ns">.br-top-100-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-top-100-ns {
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-top-100-ns">.br-top-100-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-top-pill-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-top-pill-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-top-pill-ns">.br-top-pill-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-top-pill-ns {
+  border-top-left-radius: 999px;
+  border-top-right-radius: 999px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-top-pill-ns">.br-top-pill-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -542,7 +726,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="br-left"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -561,75 +745,123 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-left-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-left-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-0-ns">.br-left-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-left-0-ns {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-left-0-ns">.br-left-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-left-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-left-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-1-ns">.br-left-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-left-1-ns {
+  border-bottom-left-radius: var(--mg-bw-1);
+  border-top-left-radius: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-left-1-ns">.br-left-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-left-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-left-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-2-ns">.br-left-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-left-2-ns {
+  border-bottom-left-radius: var(--mg-bw-2);
+  border-top-left-radius: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-left-2-ns">.br-left-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-left-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-left-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-3-ns">.br-left-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-left-3-ns {
+  border-bottom-left-radius: var(--mg-bw-3);
+  border-top-left-radius: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-left-3-ns">.br-left-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-left-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-left-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-4-ns">.br-left-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-left-4-ns {
+  border-bottom-left-radius: var(--mg-bw-4);
+  border-top-left-radius: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-left-4-ns">.br-left-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-left-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-left-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-5-ns">.br-left-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-left-5-ns {
+  border-bottom-left-radius: var(--mg-bw-5);
+  border-top-left-radius: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-left-5-ns">.br-left-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -637,27 +869,43 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-left-100-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-left-100-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-100-ns">.br-left-100-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-left-100-ns {
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-left-100-ns">.br-left-100-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-left-pill-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-left-pill-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-left-pill-ns">.br-left-pill-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-left-pill-ns {
+  border-bottom-left-radius: 999px;
+  border-top-left-radius: 999px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-left-pill-ns">.br-left-pill-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -665,7 +913,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="br-right"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -684,75 +932,123 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-right-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-right-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-0-ns">.br-right-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-right-0-ns {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-right-0-ns">.br-right-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-right-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-right-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-1-ns">.br-right-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-right-1-ns {
+  border-bottom-right-radius: var(--mg-bw-1);
+  border-top-right-radius: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-right-1-ns">.br-right-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-right-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-right-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-2-ns">.br-right-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-right-2-ns {
+  border-bottom-right-radius: var(--mg-bw-2);
+  border-top-right-radius: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-right-2-ns">.br-right-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-right-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-right-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-3-ns">.br-right-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-right-3-ns {
+  border-bottom-right-radius: var(--mg-bw-3);
+  border-top-right-radius: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-right-3-ns">.br-right-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-right-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-right-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-4-ns">.br-right-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-right-4-ns {
+  border-bottom-right-radius: var(--mg-bw-4);
+  border-top-right-radius: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-right-4-ns">.br-right-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-right-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-right-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-5-ns">.br-right-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-right-5-ns {
+  border-bottom-right-radius: var(--mg-bw-5);
+  border-top-right-radius: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-right-5-ns">.br-right-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -760,27 +1056,43 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-right-100-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-right-100-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-100-ns">.br-right-100-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-right-100-ns {
+  border-bottom-right-radius: 100%;
+  border-top-right-radius: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-right-100-ns">.br-right-100-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-right-pill-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-right-pill-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-right-pill-ns">.br-right-pill-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-right-pill-ns {
+  border-bottom-right-radius: 999px;
+  border-top-right-radius: 999px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-right-pill-ns">.br-right-pill-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -788,7 +1100,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="br-tr"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -807,75 +1119,117 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tr-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tr-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-0-ns">.br-tr-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tr-0-ns {
+  border-top-right-radius: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tr-0-ns">.br-tr-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tr-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tr-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-1-ns">.br-tr-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tr-1-ns {
+  border-top-right-radius: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tr-1-ns">.br-tr-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tr-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tr-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-2-ns">.br-tr-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tr-2-ns {
+  border-top-right-radius: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tr-2-ns">.br-tr-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tr-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tr-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-3-ns">.br-tr-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tr-3-ns {
+  border-top-right-radius: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tr-3-ns">.br-tr-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tr-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tr-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-4-ns">.br-tr-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tr-4-ns {
+  border-top-right-radius: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tr-4-ns">.br-tr-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tr-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tr-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-5-ns">.br-tr-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tr-5-ns {
+  border-top-right-radius: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tr-5-ns">.br-tr-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -883,27 +1237,41 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tr-100-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tr-100-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-100-ns">.br-tr-100-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tr-100-ns {
+  border-top-right-radius: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tr-100-ns">.br-tr-100-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tr-pill-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tr-pill-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tr-pill-ns">.br-tr-pill-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tr-pill-ns {
+  border-top-right-radius: 999px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tr-pill-ns">.br-tr-pill-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -911,7 +1279,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="br-br"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -930,75 +1298,117 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-br-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-br-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-0-ns">.br-br-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-br-0-ns {
+  border-bottom-right-radius: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-br-0-ns">.br-br-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-br-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-br-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-1-ns">.br-br-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-br-1-ns {
+  border-bottom-right-radius: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-br-1-ns">.br-br-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-br-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-br-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-2-ns">.br-br-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-br-2-ns {
+  border-bottom-right-radius: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-br-2-ns">.br-br-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-br-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-br-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-3-ns">.br-br-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-br-3-ns {
+  border-bottom-right-radius: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-br-3-ns">.br-br-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-br-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-br-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-4-ns">.br-br-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-br-4-ns {
+  border-bottom-right-radius: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-br-4-ns">.br-br-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-br-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-br-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-5-ns">.br-br-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-br-5-ns {
+  border-bottom-right-radius: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-br-5-ns">.br-br-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1006,27 +1416,41 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-br-100-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-br-100-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-100-ns">.br-br-100-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-br-100-ns {
+  border-bottom-right-radius: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-br-100-ns">.br-br-100-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-br-pill-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-br-pill-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-br-pill-ns">.br-br-pill-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-br-pill-ns {
+  border-bottom-right-radius: 999px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-br-pill-ns">.br-br-pill-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1034,7 +1458,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="br-tl"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1053,75 +1477,117 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tl-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tl-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-0-ns">.br-tl-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tl-0-ns {
+  border-top-left-radius: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tl-0-ns">.br-tl-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tl-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tl-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-1-ns">.br-tl-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tl-1-ns {
+  border-top-left-radius: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tl-1-ns">.br-tl-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tl-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tl-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-2-ns">.br-tl-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tl-2-ns {
+  border-top-left-radius: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tl-2-ns">.br-tl-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tl-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tl-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-3-ns">.br-tl-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tl-3-ns {
+  border-top-left-radius: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tl-3-ns">.br-tl-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tl-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tl-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-4-ns">.br-tl-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tl-4-ns {
+  border-top-left-radius: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tl-4-ns">.br-tl-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tl-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tl-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-5-ns">.br-tl-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tl-5-ns {
+  border-top-left-radius: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tl-5-ns">.br-tl-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1129,27 +1595,41 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tl-100-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tl-100-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-100-ns">.br-tl-100-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tl-100-ns {
+  border-top-left-radius: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tl-100-ns">.br-tl-100-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-tl-pill-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-tl-pill-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-tl-pill-ns">.br-tl-pill-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-tl-pill-ns {
+  border-top-left-radius: 999px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-tl-pill-ns">.br-tl-pill-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1157,7 +1637,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="br-bl"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1176,75 +1656,117 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bl-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bl-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-0-ns">.br-bl-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bl-0-ns {
+  border-bottom-left-radius: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bl-0-ns">.br-bl-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bl-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bl-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-1-ns">.br-bl-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bl-1-ns {
+  border-bottom-left-radius: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bl-1-ns">.br-bl-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bl-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bl-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-2-ns">.br-bl-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bl-2-ns {
+  border-bottom-left-radius: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bl-2-ns">.br-bl-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bl-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bl-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-3-ns">.br-bl-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bl-3-ns {
+  border-bottom-left-radius: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bl-3-ns">.br-bl-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bl-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bl-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-4-ns">.br-bl-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bl-4-ns {
+  border-bottom-left-radius: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bl-4-ns">.br-bl-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bl-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bl-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-5-ns">.br-bl-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bl-5-ns {
+  border-bottom-left-radius: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bl-5-ns">.br-bl-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1252,27 +1774,41 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bl-100-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bl-100-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-100-ns">.br-bl-100-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bl-100-ns {
+  border-bottom-left-radius: 100%;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bl-100-ns">.br-bl-100-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-bl-pill-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-bl-pill-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest br-bl-pill-ns">.br-bl-pill-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-bl-pill-ns {
+  border-bottom-left-radius: 999px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 br-bl-pill-ns">.br-bl-pill-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1321,7 +1857,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="bs"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1340,51 +1876,79 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bs-dotted-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bs-dotted-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bs-dotted-ns">.bs-dotted-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bs-dotted-ns {
+  border-style: dotted;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bs-dotted-ns">.bs-dotted-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bs-dashed-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bs-dashed-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bs-dashed-ns">.bs-dashed-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bs-dashed-ns {
+  border-style: dashed;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bs-dashed-ns">.bs-dashed-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bs-solid-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bs-solid-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bs-solid-ns">.bs-solid-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bs-solid-ns {
+  border-style: solid;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bs-solid-ns">.bs-solid-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bs-none-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bs-none-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bs-none-ns">.bs-none-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bs-none-ns {
+  border-style: none;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bs-none-ns">.bs-none-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1392,7 +1956,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="bls"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1411,51 +1975,79 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bls-dotted-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bls-dotted-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bls-dotted-ns">.bls-dotted-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bls-dotted-ns {
+  border-left-style: dotted;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bls-dotted-ns">.bls-dotted-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bls-dashed-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bls-dashed-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bls-dashed-ns">.bls-dashed-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bls-dashed-ns {
+  border-left-style: dashed;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bls-dashed-ns">.bls-dashed-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bls-solid-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bls-solid-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bls-solid-ns">.bls-solid-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bls-solid-ns {
+  border-left-style: solid;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bls-solid-ns">.bls-solid-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bls-none-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bls-none-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bls-none-ns">.bls-none-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bls-none-ns {
+  border-left-style: none;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bls-none-ns">.bls-none-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1463,7 +2055,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="brs"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1482,51 +2074,79 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>brs-dotted-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>brs-dotted-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest brs-dotted-ns">.brs-dotted-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.brs-dotted-ns {
+  border-right-style: dotted;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 brs-dotted-ns">.brs-dotted-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>brs-dashed-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>brs-dashed-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest brs-dashed-ns">.brs-dashed-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.brs-dashed-ns {
+  border-right-style: dashed;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 brs-dashed-ns">.brs-dashed-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>brs-solid-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>brs-solid-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest brs-solid-ns">.brs-solid-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.brs-solid-ns {
+  border-right-style: solid;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 brs-solid-ns">.brs-solid-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>brs-none-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>brs-none-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest brs-none-ns">.brs-none-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.brs-none-ns {
+  border-right-style: none;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 brs-none-ns">.brs-none-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1534,7 +2154,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="bts"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1553,51 +2173,79 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bts-dotted-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bts-dotted-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bts-dotted-ns">.bts-dotted-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bts-dotted-ns {
+  border-top-style: dotted;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bts-dotted-ns">.bts-dotted-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bts-dashed-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bts-dashed-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bts-dashed-ns">.bts-dashed-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bts-dashed-ns {
+  border-top-style: dashed;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bts-dashed-ns">.bts-dashed-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bts-solid-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bts-solid-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bts-solid-ns">.bts-solid-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bts-solid-ns {
+  border-top-style: solid;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bts-solid-ns">.bts-solid-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bts-none-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bts-none-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bts-none-ns">.bts-none-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bts-none-ns {
+  border-top-style: none;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bts-none-ns">.bts-none-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1605,7 +2253,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="bbs"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1624,51 +2272,79 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bbs-dotted-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bbs-dotted-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bbs-dotted-ns">.bbs-dotted-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bbs-dotted-ns {
+  border-bottom-style: dotted;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bbs-dotted-ns">.bbs-dotted-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bbs-dashed-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bbs-dashed-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bbs-dashed-ns">.bbs-dashed-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bbs-dashed-ns {
+  border-bottom-style: dashed;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bbs-dashed-ns">.bbs-dashed-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bbs-solid-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bbs-solid-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bbs-solid-ns">.bbs-solid-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bbs-solid-ns {
+  border-bottom-style: solid;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bbs-solid-ns">.bbs-solid-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bbs-none-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bbs-none-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bbs-none-ns">.bbs-none-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bbs-none-ns {
+  border-bottom-style: none;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bbs-none-ns">.bbs-none-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1717,7 +2393,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="bw"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1736,75 +2412,117 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bw-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bw-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-0-ns">.bw-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bw-0-ns {
+  border-width: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bw-0-ns">.bw-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bw-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bw-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-1-ns">.bw-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bw-1-ns {
+  border-width: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bw-1-ns">.bw-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bw-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bw-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-2-ns">.bw-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bw-2-ns {
+  border-width: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bw-2-ns">.bw-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bw-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bw-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-3-ns">.bw-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bw-3-ns {
+  border-width: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bw-3-ns">.bw-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bw-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bw-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-4-ns">.bw-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bw-4-ns {
+  border-width: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bw-4-ns">.bw-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bw-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bw-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bw-5-ns">.bw-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bw-5-ns {
+  border-width: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bw-5-ns">.bw-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1812,7 +2530,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="blw"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1831,75 +2549,117 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>blw-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>blw-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-0-ns">.blw-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.blw-0-ns {
+  border-left-width: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 blw-0-ns">.blw-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>blw-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>blw-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-1-ns">.blw-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.blw-1-ns {
+  border-left-width: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 blw-1-ns">.blw-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>blw-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>blw-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-2-ns">.blw-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.blw-2-ns {
+  border-left-width: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 blw-2-ns">.blw-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>blw-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>blw-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-3-ns">.blw-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.blw-3-ns {
+  border-left-width: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 blw-3-ns">.blw-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>blw-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>blw-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-4-ns">.blw-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.blw-4-ns {
+  border-left-width: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 blw-4-ns">.blw-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>blw-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>blw-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest blw-5-ns">.blw-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.blw-5-ns {
+  border-left-width: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 blw-5-ns">.blw-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -1907,7 +2667,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="brw"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1926,75 +2686,117 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>brw-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>brw-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-0-ns">.brw-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.brw-0-ns {
+  border-right-width: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 brw-0-ns">.brw-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>brw-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>brw-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-1-ns">.brw-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.brw-1-ns {
+  border-right-width: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 brw-1-ns">.brw-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>brw-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>brw-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-2-ns">.brw-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.brw-2-ns {
+  border-right-width: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 brw-2-ns">.brw-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>brw-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>brw-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-3-ns">.brw-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.brw-3-ns {
+  border-right-width: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 brw-3-ns">.brw-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>brw-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>brw-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-4-ns">.brw-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.brw-4-ns {
+  border-right-width: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 brw-4-ns">.brw-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>brw-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>brw-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest brw-5-ns">.brw-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.brw-5-ns {
+  border-right-width: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 brw-5-ns">.brw-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -2002,7 +2804,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="btw"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -2021,75 +2823,117 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>btw-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>btw-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-0-ns">.btw-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.btw-0-ns {
+  border-top-width: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 btw-0-ns">.btw-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>btw-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>btw-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-1-ns">.btw-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.btw-1-ns {
+  border-top-width: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 btw-1-ns">.btw-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>btw-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>btw-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-2-ns">.btw-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.btw-2-ns {
+  border-top-width: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 btw-2-ns">.btw-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>btw-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>btw-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-3-ns">.btw-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.btw-3-ns {
+  border-top-width: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 btw-3-ns">.btw-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>btw-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>btw-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-4-ns">.btw-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.btw-4-ns {
+  border-top-width: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 btw-4-ns">.btw-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>btw-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>btw-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest btw-5-ns">.btw-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.btw-5-ns {
+  border-top-width: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 btw-5-ns">.btw-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -2097,7 +2941,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="bbw"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -2116,75 +2960,117 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bbw-0-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bbw-0-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-0-ns">.bbw-0-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bbw-0-ns {
+  border-bottom-width: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bbw-0-ns">.bbw-0-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bbw-1-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bbw-1-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-1-ns">.bbw-1-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bbw-1-ns {
+  border-bottom-width: var(--mg-bw-1);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bbw-1-ns">.bbw-1-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bbw-2-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bbw-2-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-2-ns">.bbw-2-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bbw-2-ns {
+  border-bottom-width: var(--mg-bw-2);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bbw-2-ns">.bbw-2-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bbw-3-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bbw-3-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-3-ns">.bbw-3-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bbw-3-ns {
+  border-bottom-width: var(--mg-bw-3);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bbw-3-ns">.bbw-3-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bbw-4-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bbw-4-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-4-ns">.bbw-4-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bbw-4-ns {
+  border-bottom-width: var(--mg-bw-4);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bbw-4-ns">.bbw-4-ns</div>
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bbw-5-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bbw-5-ns</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-lightest bbw-5-ns">.bbw-5-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bbw-5-ns {
+  border-bottom-width: var(--mg-bw-5);
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap ba bs-solid pv-4 flex items-center justify-center tc bg-gray-800 bbw-5-ns">.bbw-5-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -2243,19 +3129,27 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>ba-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>ba-ns</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Borders all</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest ba-ns">.ba-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.ba-ns {
+  border-style: solid;
+  border-width: 1px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 ba-ns">.ba-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -2268,19 +3162,27 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bl-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bl-ns</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Borders left</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bl-ns">.bl-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bl-ns {
+  border-left-style: solid;
+  border-left-width: 1px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bl-ns">.bl-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -2293,19 +3195,27 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>br-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>br-ns</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Borders right</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest br-ns">.br-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.br-ns {
+  border-right-style: solid;
+  border-right-width: 1px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 br-ns">.br-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -2318,19 +3228,27 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bt-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bt-ns</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Borders top</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bt-ns">.bt-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bt-ns {
+  border-top-style: solid;
+  border-top-width: 1px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bt-ns">.bt-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -2343,19 +3261,27 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bb-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bb-ns</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Borders bottom</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bb-ns">.bb-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bb-ns {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bb-ns">.bb-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -2368,19 +3294,27 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>bn-ns</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>bn-ns</code>
                       
                         
                         <div class="f-1 fw-3 mt-0 mb-1 i">Borders none</div>
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-lightest bn-ns">.bn-ns</div>
-                      </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.bn-ns {
+  border-style: none;
+  border-width: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div class="ws-nowrap pa-3 flex items-center justify-center tc bg-gray-800 bn-ns">.bn-ns</div>
+                      
+                    </td>
                   </tr>
                 
               
@@ -2400,7 +3334,7 @@
 
     </main>
   </body>
-    <footer class="pv-5 bg-white black-ish">
+    <footer class="pv-5 bg-blue-900 black-ish">
       <div class="w-90 w-60-ns mh-auto">
         <p class="measure tc tl-ns lh-copy f-1 i">
           This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot.

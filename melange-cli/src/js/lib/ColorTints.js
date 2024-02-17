@@ -201,7 +201,7 @@ export default class ColorTints {
       mediaQueries: this.supportedMediaQueries,
       docs: [
         "All colors can be used for text, borders, or backgrounds by using the color name and tint on its own (for text), with <code>bc-</code> (for borders), or <code>bg-</code> (for backgrounds).  Hover styles are available by prefixing <code>hover-</code> in front of the class.",
-        "You are encouraged to use colors with maximum accessible combinations.  I am working on a tool called <a href=\"https://ghola.dev\" class=\"blue-darkest\">Ghola</a> that can help.  This palette can be viewed <a href=\"https://ghola.dev/?otherColors=triad-lower%2Canalogous-lower%2C%23F3F331%2C%23EA6C00%2C%2374747B%3AGray%2C%23E30D00&primaryColor=%234D22B3%3APurple#\">here</a>",
+        "You are encouraged to use colors with maximum accessible combinations.  I have built a tool called <a href=\"https://ghola.dev\" class=\"blue-100\">Ghola</a> that can help.  This palette can be viewed <a href=\"https://ghola.dev/?otherColors=triad-lower%2C%230069d5%2C%23F3F331%2C%23EA6C00%2C%2374747B%3AGray%2C%23E30D00&primaryColor=%236937cb%3APurple&compact=false#\">here</a>",
       ],
       summarization: summarization.join("\n")
     })

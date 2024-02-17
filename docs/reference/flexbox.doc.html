@@ -22,18 +22,18 @@
   </head>
   <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
     <header>
-      <div class="bg-orange-300 orange-900 pa-3 pt-4">
+      <div class="bg-orange-200 orange-900 pa-3 pt-4">
         <div class="w-60-ns w-90 mh-auto">
           <h1 class="tc tl-ns f-5 f-6-ns ma-0 mb-1">
             <a href="index.html" class="tdn orange-900">
               <span class="fv-sc tracked">MelangeCSS</span> Reference
             </a>
           </h1>
-          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-beta8</span></p>
+          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-RC1</span></p>
           
         </div>
       </div>
-      <div class="bg-black-ish orange-900 pa-3">
+      <div class="bg-blue-100 orange-900 pa-3">
         <nav class="w-60-ns w-90 mh-auto">
           <div class="flex flex-wrap items-baseline justify-start-ns justify-center">
             <a href="index.html" class="ph-2 lh-copy db w-100 tc w-auto-ns tl-ns di-ns orange-900 f-3 mb-3 mb-0-ns">Classes by Group</a>
@@ -60,7 +60,7 @@
   
     <p class="measure f-2 lh-copy">Provides flexible single-dimension layout options, including the ability to achieve the Holy Grail of centering a div vertically.  Note that some flex properties set <code>display</code>, so could override styles used from the display grouping.</p>
   
-<nav class="blue-100 bg-blue-900 w-auto w-60-ns pa-2 br-2 i">
+<nav class="blue-100 bg-blue-800 w-auto w-60-ns pa-2 br-2 i">
   <div class="dib f-2 blue-100 mb-2 mh-1 fw-bold">
     Supported Media Queries
   </div>
@@ -152,7 +152,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="items"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -169,13 +169,20 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>items-start</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>items-start</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex items-start w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex items-start">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.items-start {
+  align-items: flex-start;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex items-start w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex items-start">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -183,18 +190,25 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>items-end</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>items-end</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex items-end w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex items-end">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.items-end {
+  align-items: flex-end;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex items-end w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex items-end">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -202,18 +216,25 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>items-center</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>items-center</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex items-center w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex items-center">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.items-center {
+  align-items: center;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex items-center w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex items-center">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -221,18 +242,25 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>items-baseline</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>items-baseline</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex items-baseline w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex items-baseline">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.items-baseline {
+  align-items: baseline;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex items-baseline w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex items-baseline">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -240,18 +268,25 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>items-stretch</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>items-stretch</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex items-stretch w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex items-stretch">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.items-stretch {
+  align-items: stretch;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex items-stretch w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex items-stretch">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -259,8 +294,8 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -268,7 +303,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="self"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -285,13 +320,20 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>self-start</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>self-start</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex self-start w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex self-start">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.self-start {
+  align-self: flex-start;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex self-start w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex self-start">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -299,18 +341,25 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>self-end</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>self-end</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex self-end w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex self-end">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.self-end {
+  align-self: flex-end;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex self-end w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex self-end">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -318,18 +367,25 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>self-center</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>self-center</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex self-center w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex self-center">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.self-center {
+  align-self: center;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex self-center w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex self-center">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -337,18 +393,25 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>self-baseline</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>self-baseline</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex self-baseline w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex self-baseline">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.self-baseline {
+  align-self: baseline;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex self-baseline w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex self-baseline">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -356,18 +419,25 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>self-stretch</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>self-stretch</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex self-stretch w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex self-stretch">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.self-stretch {
+  align-self: stretch;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex self-stretch w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex self-stretch">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -375,8 +445,8 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -396,7 +466,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="flex-basis"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -413,43 +483,88 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-basis-0</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-basis-0</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-basis-0 {
+  flex-basis: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-basis-auto</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-basis-auto</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-basis-auto {
+  flex-basis: auto;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-basis-max</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-basis-max</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-basis-max {
+  flex-basis: max-content;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-basis-min</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-basis-min</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-basis-min {
+  flex-basis: min-content;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-basis-fit</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-basis-fit</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-basis-fit {
+  flex-basis: fit-content;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -483,7 +598,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="justify"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -500,99 +615,141 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>justify-start</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>justify-start</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex justify-start w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-start">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.justify-start {
+  justify-content: start;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex justify-start w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-start">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>justify-end</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>justify-end</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex justify-end w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-end">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.justify-end {
+  justify-content: end;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex justify-end w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-end">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>justify-center</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>justify-center</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex justify-center w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-center">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.justify-center {
+  justify-content: center;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex justify-center w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-center">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>justify-between</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>justify-between</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex justify-between w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-between">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.justify-between {
+  justify-content: space-between;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex justify-between w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-between">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>justify-around</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>justify-around</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex justify-around w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-around">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.justify-around {
+  justify-content: space-around;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex justify-around w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-around">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>justify-stretch</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>justify-stretch</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex justify-stretch w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-stretch">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.justify-stretch {
+  justify-content: stretch;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex justify-stretch w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex justify-stretch">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -600,7 +757,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="content"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -617,99 +774,141 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>content-start</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>content-start</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex content-start w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-start">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.content-start {
+  align-content: start;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex content-start w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-start">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>content-end</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>content-end</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex content-end w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-end">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.content-end {
+  align-content: end;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex content-end w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-end">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>content-center</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>content-center</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex content-center w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-center">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.content-center {
+  align-content: center;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex content-center w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-center">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>content-between</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>content-between</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex content-between w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-between">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.content-between {
+  align-content: space-between;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex content-between w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-between">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>content-around</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>content-around</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex content-around w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-around">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.content-around {
+  align-content: space-around;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex content-around w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-around">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>content-stretch</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>content-stretch</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex content-stretch w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-stretch">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.content-stretch {
+  align-content: stretch;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex content-stretch w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex content-stretch">
   <div class="pa-1 ws-nowrap ba bs-solid">Lynch Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">Sci-Fi Dune</div>
   <div class="pa-1 ws-nowrap ba bs-solid">DUNC</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -729,7 +928,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="flex"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -746,13 +945,20 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-column</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-column</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex flex-column w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex flex-column">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-column {
+  flex-direction: column;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex flex-column w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex flex-column">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -760,18 +966,25 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-row</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-row</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex flex-row w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex flex-row">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-row {
+  flex-direction: row;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex flex-row w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex flex-row">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -779,8 +992,8 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -814,7 +1027,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="flex-grow"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -831,51 +1044,105 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-grow-0</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-grow-0</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-grow-0 {
+  flex-grow: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-grow-1</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-grow-1</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-grow-1 {
+  flex-grow: 1;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-grow-2</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-grow-2</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-grow-2 {
+  flex-grow: 2;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-grow-3</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-grow-3</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-grow-3 {
+  flex-grow: 3;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-grow-4</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-grow-4</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-grow-4 {
+  flex-grow: 4;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-grow-5</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-grow-5</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-grow-5 {
+  flex-grow: 5;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -883,7 +1150,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="flex-shrink"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -900,51 +1167,105 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-shrink-0</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-shrink-0</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-shrink-0 {
+  flex-shrink: 0;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-shrink-1</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-shrink-1</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-shrink-1 {
+  flex-shrink: 1;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-shrink-2</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-shrink-2</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-shrink-2 {
+  flex-shrink: 2;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-shrink-3</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-shrink-3</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-shrink-3 {
+  flex-shrink: 3;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-shrink-4</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-shrink-4</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-shrink-4 {
+  flex-shrink: 4;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-shrink-5</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-shrink-5</code>
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-shrink-5 {
+  flex-shrink: 5;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -969,13 +1290,22 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-none</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-none</code>
                       
                         
                       
                     </td>
-                    
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-none {
+  flex: none;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                    </td>
                   </tr>
                 
               
@@ -995,7 +1325,7 @@
           
             <tr>
               
-                <td class="w-1 ws-nowrap va-middle pr-2">
+                <td class="ws-nowrap va-middle pr-2">
                   <a name="flex"></a>
                   <h6 class="f-3 ma-0">
                     <code class="ba bc-orange-600 orange-300 dib pa-2 br-1 ws-nowrap">
@@ -1012,13 +1342,20 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-wrap</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-wrap</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex flex-wrap w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex flex-wrap">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-wrap {
+  flex-wrap: wrap;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex flex-wrap w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex flex-wrap">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -1026,18 +1363,25 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex-nowrap</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex-nowrap</code>
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex flex-nowrap w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex flex-nowrap">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex-nowrap {
+  flex-wrap: nowrap;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex flex-nowrap w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex flex-nowrap">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -1045,8 +1389,8 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1071,15 +1415,22 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>flex</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>flex</code>
                       
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="flex w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.flex {
+  display: flex;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="flex w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="flex">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -1087,8 +1438,8 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1113,15 +1464,22 @@
             
               
                   <tr>
-                    <td class="ws-nowrap f-2 pr-2 va-middle">
-                      <code>inline-flex</code>
+                    <td class="ws-nowrap f-2 pr-2 va-middle w-20">
+                        <code>inline-flex</code>
                       
                         
                       
                     </td>
-                    
-                      <td class="pv-1 va-middle pa-2">
-                        <div><div class="inline-flex w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="inline-flex">
+                    <td class="pv-1 va-middle pa-2 w-30">
+                      <code class="db overflow-x-scroll pa-2 br-2 bg-black-ish blue-600 f-1">
+                        <pre class="ma-0">.inline-flex {
+  display: inline-flex;
+}</pre>
+                      </code>
+                    </td>
+                    <td class="pv-1 va-middle pa-2">
+                      
+                          <div><div class="inline-flex w-auto ba bs-dashed pa-2" style="gap: 0.25rem;" class="inline-flex">
   <div class="pa-1 ba bs-solid">Dune</div>
   <div class="pa-1 ba bs-solid">Dune: Messiah</div>
   <div class="pa-1 ba bs-solid">Children of Dune</div>
@@ -1129,8 +1487,8 @@
   <div class="pa-1 ba bs-solid">Heretics of Dune</div>
   <div class="pa-1 ba bs-solid">Chapterhouse: Dune</div>
 </div></div>
-                      </td>
-                    
+                      
+                    </td>
                   </tr>
                 
               
@@ -1143,7 +1501,7 @@
 
     </main>
   </body>
-    <footer class="pv-5 bg-white black-ish">
+    <footer class="pv-5 bg-blue-900 black-ish">
       <div class="w-90 w-60-ns mh-auto">
         <p class="measure tc tl-ns lh-copy f-1 i">
           This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot.

@@ -156,7 +156,7 @@ experience from the originals.`
     htmlForDocs: `<div class="measure lh-copy ${selector}">
   ${copy}
 </div>`,
-    markupForRendering: `<div class="ph-4 pv-2 ba bc-gray bg-gray-lightest"><div class="bg-white measure lh-copy ba bs-dashed ${selector}">
+    markupForRendering: `<div class="ph-4 pv-2 ba bc-gray bg-gray-800"><div class="bg-white measure lh-copy ba bs-dashed ${selector}">
   ${copy}
 </div></div>`,
   })

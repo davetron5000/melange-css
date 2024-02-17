@@ -13,7 +13,7 @@ export default class CSSClassTemplate {
    * step of a scale.
    *
    * classNameBase - the base class name to be used. For example, the class fw-4 would have a base name
-   *                 of "fw".  A class named "hover-bg-gray-lightest" would have a basename of "bg-gray"
+   *                 of "fw".  A class named "hover-bg-gray-900" would have a basename of "bg-gray"
    *                 (see CSSClass for naming conventions).
    * cssProperties - This is a list of CSS property names whose value will be based on the steps in the scale.
    *                 In almost all instances, there will be just one CSS property, such as "font-weight".
