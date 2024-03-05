@@ -25,6 +25,10 @@
   color: #66ff22;
   text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
 }
+.amber-terminal {
+  color: #aaaa22;
+  text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
+}
     </style>
   </head>
   <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
@@ -100,8 +104,22 @@
       The terse class names can be hard to learn at first, because a class like <code>fw-4</code> doesn't seem immediately obvious.  But, if you know CSS, understand <a href="guide-naming-conventions.html" class="blue-400">the naming conventions</a>, and use <span class="fv-sc tracked">MelangeCSS</span> for just a small amount of time, you will learn these class names. <strong>And</strong> you will start to go much faster, because you won't rely on autocomplete or flipping back to the documentation.
     </p>
     <p class="indent--1 ml-3 measure lh-copy">
-      <strong>Why not just use inline styles, then?</strong>  <span class="fv-sc tracked">MelangeCSS</span> has four differences from inline styles. First, the class names are far shorter than their analogous CSS properties and values. Second, inline styles cannot target breakpoints to allow for responsive design.  Third, inline styles have a higher specificity, so they can still use used in a pinch. Lastly, and most importantly, <strong>Melange includes a grid-based design system</strong>.
+      <strong>Why not just use inline styles, then?</strong>  <span class="fv-sc tracked">MelangeCSS</span> has four differences from inline styles.
     </p>
+    <ul>
+      <li><p class="measure lh-copy">
+          The class names are far shorter than their analogous CSS properties and values. Even with sophisticated auto-compete, typing out these terse classes is faster.
+      </p></li>
+      <li><p class="measure lh-copy">
+        Inline styles cannot target breakpoints to allow for responsive design.
+      </p></li>
+      <li><p class="measure lh-copy">
+        Inline styles have a higher specificity, so they can still use used in a pinch.
+      </p></li>
+      <li><p class="measure lh-copy">
+          <em>Most importantly</em>, <strong>Melange includes a grid-based design system</strong>.
+      </p></li>
+    </ul>
     <p class="ml-3 measure lh-copy">
       Being able to design and style by selecting from a small set of values vastly increases the speed at which you can produce styled views.  You can quickly iterate through all possible spacings, font sizes, or widths and choose the one that works.  Yes, you lose the flexibilty of using any of the infinite possible sizes, but you usually don't need that many.
     </p>
@@ -119,7 +137,7 @@
       Since you are using CSS, you can certainly create special-purpose classes for situations where the design system isn't sufficient.  You can even leverage <span class="fv-sc tracked">MelangeCSS</span>'s naming conventions if you need to add a new step to a scale.
     </p>
     <p class="measure lh-copy">
-      If the CSS framework instead allowed any value to be specified with a single-purpose class (which is what TailwindCSS does), the CSS becomes quite large and you need a build step to eliminate unused CSS (or generating dynamic CSS).
+      If the CSS framework instead allowed any value to be specified with a single-purpose class (which is what TailwindCSS does), the CSS becomes quite large. You will need to design a language to abstract CSS and implement a build step.  Both of these things slow you down and create carrying costs for your project.
     </p>
   </article>
   <article>
@@ -161,16 +179,16 @@
   </article>
 </section>
     </main>
-    <footer class="pv-4 bg-blue-900 black-ish">
-      <div class="w-90 w-50-ns mh-auto">
-        <p class="measure xmh-auto tc tl-ns lh-copy">
+    <footer class="ph-2 pv-4 bg-blue-900 black-ish">
+        <p class="measure mh-auto tc tl-ns lh-copy">
           <span class="fv-sc tracked">MelangeCSS</span>
-          is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-400">Hippocratic License, v2.1</a>.
+          is licensed under the <a class="ws-nowrap" href="https://firstdonoharm.dev/version/2/1/license/" class="blue-400">Hippocratic License, v2.1</a>.
         </p>
-        <p class="measure xmh-auto tc tl-ns lh-copy f-1 i">
+        <p class="measure mh-auto tc tl-ns lh-copy i">
+          <span class="f-1">
           This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot. The image of Paul Maud'Dib was <a href="https://declare-ai.org/1.0.0-alpha1/creative.html" class="blue-400">created by a generative AI</a> and modified slightly to give him the Eyes of Ibad.
+          </span>
         </p>
-      </div>
     </footer>
   </body>
 </html>

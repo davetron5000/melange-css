@@ -42,7 +42,7 @@
   content: "";
   width: var(--mg-sp-2);                   /* spacing for w-2 */
   height: var(--mg-sp-2);                  /* spacing for h-2 */
-  background-color: var(--mg-purple-400); /* referencing any color we want to use */
+  background-color: var(--mg-purple-400);  /* referencing any color we want to use */
   transform: scale(0);                     /* unchecked styling has this pseudo-element
                                               scaled down to 0 */
 }
@@ -114,6 +114,9 @@ input[type="checkbox"]:checked::before {
     </div>
     <p class="p">
       Again, we can drop into CSS when needed.  This is the balance struck by <span class="sc tracked">MelangeCSS</span>.  To allow even basic needs for styling active buttons using just classes would require <strong>many</strong> more classes, most of which would never be used.  This would mean either having much larger-than-needed CSS or having a build step.  Neither of this options is acceptable.
+    </p>
+    <p class="p">
+      That said, <span class="sc tracked">MelangeCSS</span> provides tools to create your own custom utility classes for when you need to iterate quickly on something not provided by default.
     </p>
   </article>
 <%- include( "/_footer.html") %>

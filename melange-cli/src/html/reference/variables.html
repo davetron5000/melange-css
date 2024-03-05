@@ -42,12 +42,11 @@
         <tr>
           <th class="tl ws-nowrap pa-2">Variable</th>
           <th class="tl ws-nowrap pa-2">Default Value</th>
-          <th class="tl ws-nowrap pa-2">Current Value</th>
         </tr>
       </thead>
       <tbody>
         <% Object.values(variablesSet.variables).forEach( (melangeVariable) => { %>
-          <tr data-variable="<%= melangeVariable._variableName() %>">
+          <tr>
             <td class="ws-nowrap pa-2">
               <code class="ba bc-orange-600 orange-300 dib pa-3 br-1 ws-nowrap mr-3-ns">
                 <%= melangeVariable._variableName() %>
@@ -55,11 +54,7 @@
             </td>
             <% if (melangeVariable.toCSSProperty()) { %>
               <td class="pa-2"><code><%= melangeVariable.defaultValue %></code></td>
-              <td class="pa-2"><code data-actual-value>Requires JavaScript to calculate</code></td>
             <% } else { %>
-              <td class="pa-2 ws-nowrap">
-                <code><%= melangeVariable.toCSSValue() %></code>
-              </td>
               <td class="pa-2 ws-nowrap">
                 <code><%= melangeVariable.toCSSValue() %></code>
               </td>
@@ -70,18 +65,4 @@
     </table>
   <% } %>
 <% }) %>
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const bodyStyles = window.getComputedStyle(document.body);
-    document.querySelectorAll("[data-variable]").forEach( (element) => {
-      const actualValueElement = element.querySelector("[data-actual-value]")
-      if (actualValueElement) {
-        const variableName = element.dataset["variable"]
-        const value = bodyStyles.getPropertyValue(variableName);
-        actualValueElement.textContent = value;
-      }
-    })
-
-  })
-</script>
 <%- include( "_footer.html") %>

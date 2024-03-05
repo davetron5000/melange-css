@@ -1,3 +1,26 @@
 <%- include( "/_header.html", { title: "Component Gallery" } ) %>
-<h2 class="tc f-5">TODO</h2>
+<section class="w-60-ns w-90 mh-auto">
+<h2 class="f-5">Gallery of Examples</h2>
+<p class="p ph-2">
+  Since you know CSS (right?), you should be able to create any component you want using what you already know.  However, you may find inspiration from using <span class="sc tracked">MelangeCSS</span> to create common components.  These examples are intentionally busy to demonstrate that you do not have to create ultra-minimalist designs.
+</p>
+<nav class="flex items-baseline br-pill-l br-0 flex-wrap gap-3 bg-orange-700 orange-300 pv-3 ph-4 mv-4">
+  <a href="#example-button" class="orange-300 hover-blue-400-ns">Button</a>
+  <a href="#example-button-pill" class="orange-300 hover-blue-400-ns">Button (Alternate)</a>
+  <a href="#example-button-icon" class="orange-300 hover-blue-400-ns">Button (with Icon)</a>
+  <a href="#example-alert" class="orange-300 hover-blue-400-ns">Alert (Basic)</a>
+  <a href="#example-alert-complex" class="orange-300 hover-blue-400-ns">Alert (Complex)</a>
+  <a href="#example-card" class="orange-300 hover-blue-400-ns">Card</a>
+  <a href="#example-form" class="orange-300 hover-blue-400-ns">Form</a>
+  <a href="#example-avatar" class="orange-300 hover-blue-400-ns">Avatar</a>
+</nav>
+<%- include("_gallery-example.html", { title: "Button", wide: false, example: "button" }) %>
+<%- include("_gallery-example.html", { title: "Button (Alternate)", wide: false, example: "button-pill" }) %>
+<%- include("_gallery-example.html", { title: "Button (with Icon)", wide: false, example: "button-icon" }) %>
+<%- include("_gallery-example.html", { title: "Alert (Basic)", wide: true, example: "alert" }) %>
+<%- include("_gallery-example.html", { title: "Alert (Complex)", wide: true, example: "alert-complex" }) %>
+<%- include("_gallery-example.html", { title: "Card", wide: true, example: "card" }) %>
+<%- include("_gallery-example.html", { title: "Form", wide: true, example: "form" }) %>
+<%- include("_gallery-example.html", { title: "Avatar", wide: true, example: "avatar" }) %>
+</section>
 <%- include( "/_footer.html") %>

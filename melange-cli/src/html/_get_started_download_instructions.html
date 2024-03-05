@@ -62,7 +62,7 @@
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">@import "melange-css/<%= file %>.css";</code>
       <h5 class="f-3 fw-5 tc tl-ns">Ruby on Rails</h5>
       <p class="p">
-        <a class="<%= dark_mode ? 'blue-900' : 'blue-100' %>" href="https://rubyonrails.org">Ruby on Rails</a> requires a few bits of configuration to use CSS files brought in through NPM. <strong>You do not need to—and should—use the CSS Bundling gem to manage <span class="fv-sc tracked">MelangeCSS</span></strong>. It is still preferable to do this, and I don't currently plan on creating a Ruby gem.  Here is how to set it up:
+        <a class="<%= dark_mode ? 'blue-900' : 'blue-100' %>" href="https://rubyonrails.org">Ruby on Rails</a> requires a few bits of configuration to use CSS files brought in through NPM. <strong>You do not need to—and should not—use the CSS Bundling gem to manage <span class="fv-sc tracked">MelangeCSS</span></strong>. It is still preferable to use the code below, and I don't currently plan on creating a Ruby gem.  Here is how to set it up:
       </p>
       <ol>
         <li class="p">
@@ -79,7 +79,7 @@ Rails.application.config.assets.paths &lt;&lt; (Rails.root / "node_modules")
 # ...</code>
         </li>
         <li class="lh-copy measure-wide">
-          Add <code>melange.css</code> to your <code>app/assets/stylesheets.css</code> (note that you want to <code>require</code> it before your CSS so you can customize by settinb custom properties):
+          Add <code>melange.css</code> to your <code>app/assets/stylesheets.css</code> (note that you want to <code>require</code> it before your CSS so you can customize by setting custom properties):
           <code class="f-1 db <%= dark_mode ? 'bg-white green-300' : 'bg-black green-700' %> ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">/* app/assets/stylesheets.css */
 /*
  * «giant comment from Rails omitted»

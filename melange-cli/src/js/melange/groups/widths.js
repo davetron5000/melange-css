@@ -35,6 +35,9 @@ const widthsMetaProperty = new MetaProperty({
     new CSSClassTemplate("mw", "max-width", {
       summary: "Max Width",
     }),
+    new CSSClassTemplate("minw", "min-width", {
+      summary: "Min Width",
+    }),
   ]
 })
 const heightsMetaProperty = new MetaProperty({

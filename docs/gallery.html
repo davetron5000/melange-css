@@ -25,6 +25,10 @@
   color: #66ff22;
   text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
 }
+.amber-terminal {
+  color: #aaaa22;
+  text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
+}
     </style>
   </head>
   <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
@@ -62,18 +66,293 @@
     </header>
     <main>
 
-<h2 class="tc f-5">TODO</h2>
+<section class="w-60-ns w-90 mh-auto">
+<h2 class="f-5">Gallery of Examples</h2>
+<p class="p ph-2">
+  Since you know CSS (right?), you should be able to create any component you want using what you already know.  However, you may find inspiration from using <span class="sc tracked">MelangeCSS</span> to create common components.  These examples are intentionally busy to demonstrate that you do not have to create ultra-minimalist designs.
+</p>
+<nav class="flex items-baseline br-pill-l br-0 flex-wrap gap-3 bg-orange-700 orange-300 pv-3 ph-4 mv-4">
+  <a href="#example-button" class="orange-300 hover-blue-400-ns">Button</a>
+  <a href="#example-button-pill" class="orange-300 hover-blue-400-ns">Button (Alternate)</a>
+  <a href="#example-button-icon" class="orange-300 hover-blue-400-ns">Button (with Icon)</a>
+  <a href="#example-alert" class="orange-300 hover-blue-400-ns">Alert (Basic)</a>
+  <a href="#example-alert-complex" class="orange-300 hover-blue-400-ns">Alert (Complex)</a>
+  <a href="#example-card" class="orange-300 hover-blue-400-ns">Card</a>
+  <a href="#example-form" class="orange-300 hover-blue-400-ns">Form</a>
+  <a href="#example-avatar" class="orange-300 hover-blue-400-ns">Avatar</a>
+</nav>
+<h3 id="example-button" class="f-4">Button</h3>
+<section class="pa-3">
+  <div class="flex gap-3 xjustify-center flex-column flex-row-ns">
+    <div class="ba bg-white bc-gray-600 br-1 shadow-1  pa-3 flex flex-column justify-center">
+      <button
+ class="dib pointer ph-3 pv-2 tc f-2 ba br-3 bg-gray-900 gray-100 ws-nowrap">
+    Fold Space
+</button>
+
+    </div>
+    <code class="overflow-x-scroll f-1 db ws-pre pa-3 br-2 w-100 w-auto-ns bg-black green-terminal lh-copy">&lt;button
+ class=&#34;dib pointer ph-3 pv-2 tc f-2 ba br-3 bg-gray-900 gray-100 ws-nowrap&#34;&gt;
+    Fold Space
+&lt;/button&gt;
+</code>
+  </div>
+</section>
+
+<h3 id="example-button-pill" class="f-4">Button (Alternate)</h3>
+<section class="pa-3">
+  <div class="flex gap-3 xjustify-center flex-column flex-row-ns">
+    <div class="ba bg-white bc-gray-600 br-1 shadow-1  pa-3 flex flex-column justify-center">
+      <button
+ class="dib pointer ph-3 pv-2 tc bn ttu f-1 br-pill bg-purple-200 purple-800 ws-nowrap">
+    Engage Thumper
+</button>
+
+    </div>
+    <code class="overflow-x-scroll f-1 db ws-pre pa-3 br-2 w-100 w-auto-ns bg-black green-terminal lh-copy">&lt;button
+ class=&#34;dib pointer ph-3 pv-2 tc bn ttu f-1 br-pill bg-purple-200 purple-800 ws-nowrap&#34;&gt;
+    Engage Thumper
+&lt;/button&gt;
+</code>
+  </div>
+</section>
+
+<h3 id="example-button-icon" class="f-4">Button (with Icon)</h3>
+<section class="pa-3">
+  <div class="flex gap-3 xjustify-center flex-column flex-row-ns">
+    <div class="ba bg-white bc-gray-600 br-1 shadow-1  pa-3 flex flex-column justify-center">
+      <button
+ class="dib pointer pa-3 f-2 ba br-3 bg-blue-800 blue-200 flex items-center gap-2">
+  <span role="img" aria-description="water droplet">💧</span>
+  <span class="ws-nowrap">Void Stillsuit</span>
+</button>
+
+    </div>
+    <code class="overflow-x-scroll f-1 db ws-pre pa-3 br-2 w-100 w-auto-ns bg-black green-terminal lh-copy">&lt;button
+ class=&#34;dib pointer pa-3 f-2 ba br-3 bg-blue-800 blue-200 flex items-center gap-2&#34;&gt;
+  &lt;span role=&#34;img&#34; aria-description=&#34;water droplet&#34;&gt;💧&lt;/span&gt;
+  &lt;span class=&#34;ws-nowrap&#34;&gt;Void Stillsuit&lt;/span&gt;
+&lt;/button&gt;
+</code>
+  </div>
+</section>
+
+<h3 id="example-alert" class="f-4">Alert (Basic)</h3>
+<section class="pa-3">
+  <div class="flex gap-3 xjustify-center flex-column ">
+    <div class="ba bg-white bc-gray-600 br-1 shadow-1  pa-3 flex flex-column justify-center">
+      <aside
+ class="pa-3 br-3 ba bc-red-300 red-200 bg-red-800">
+  <p class="lh-copy measure-wide ma-0">
+    <strong class="db f-3">The Spice Has Failed to Flow!</strong>
+    Please check your harvesters and contact the carry-all.
+    Some of your spotters may be out of position.
+  </p>
+</aside>
+
+    </div>
+    <code class="overflow-x-scroll f-1 db ws-pre pa-3 br-2 w-100 w-auto-ns bg-black green-terminal lh-copy">&lt;aside
+ class=&#34;pa-3 br-3 ba bc-red-300 red-200 bg-red-800&#34;&gt;
+  &lt;p class=&#34;lh-copy measure-wide ma-0&#34;&gt;
+    &lt;strong class=&#34;db f-3&#34;&gt;The Spice Has Failed to Flow!&lt;/strong&gt;
+    Please check your harvesters and contact the carry-all.
+    Some of your spotters may be out of position.
+  &lt;/p&gt;
+&lt;/aside&gt;
+</code>
+  </div>
+</section>
+
+<h3 id="example-alert-complex" class="f-4">Alert (Complex)</h3>
+<section class="pa-3">
+  <div class="flex gap-3 xjustify-center flex-column ">
+    <div class="ba bg-white bc-gray-600 br-1 shadow-1  pa-3 flex flex-column justify-center">
+      <aside
+ class="pa-3 br-3 ba bc-red-300 red-200 bg-red-800 pos-relative">
+  <div class="flex items-center gap-3">
+    <span class="f-5" role="img" aria-description="exclamation point">
+      ⚠️
+    </span>
+    <p class="lh-copy measure-wide ma-0">
+      <strong class="db f-3">Shield Controls Not Responding!</strong>
+      The Duke has been notified, however it is recommended
+      that you proceed to the nearest safe room.
+    </p>
+  </div>
+  <button class="f-1 bg-red-300 red-800 pv-1 ph-2 tc bn br-2 pointer ws-nowrap pos-absolute top-1 right-1">
+    &times;<span class="dn di-l"> Close</span>
+  </button>
+</aside>
+
+    </div>
+    <code class="overflow-x-scroll f-1 db ws-pre pa-3 br-2 w-100 w-auto-ns bg-black green-terminal lh-copy">&lt;aside
+ class=&#34;pa-3 br-3 ba bc-red-300 red-200 bg-red-800 pos-relative&#34;&gt;
+  &lt;div class=&#34;flex items-center gap-3&#34;&gt;
+    &lt;span class=&#34;f-5&#34; role=&#34;img&#34; aria-description=&#34;exclamation point&#34;&gt;
+      ⚠️
+    &lt;/span&gt;
+    &lt;p class=&#34;lh-copy measure-wide ma-0&#34;&gt;
+      &lt;strong class=&#34;db f-3&#34;&gt;Shield Controls Not Responding!&lt;/strong&gt;
+      The Duke has been notified, however it is recommended
+      that you proceed to the nearest safe room.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;button class=&#34;f-1 bg-red-300 red-800 pv-1 ph-2 tc bn br-2 pointer ws-nowrap pos-absolute top-1 right-1&#34;&gt;
+    &amp;times;&lt;span class=&#34;dn di-l&#34;&gt; Close&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/aside&gt;
+</code>
+  </div>
+</section>
+
+<h3 id="example-card" class="f-4">Card</h3>
+<section class="pa-3">
+  <div class="flex gap-3 xjustify-center flex-column ">
+    <div class="ba bg-white bc-gray-600 br-1 shadow-1  pa-3 flex flex-column justify-center">
+      <section class="ba bc-black-ish br-2 bg-white-ish measure shadow-3">
+  <h4 class="bg-black-ish white-ish ma-0 ph-3 pv-3 f-3 fw-6">
+    Contents of Fremkit
+  </h4>
+  <div class="ph-3">
+    <ul class="pa-0 f-1 lsp-inside">
+      <li class="p"> Paracompass </li>
+      <li class="p"> Maker hooks </li>
+      <li class="p"> Thumper (charged) </li>
+      <li class="p"> Sandsnorkel </li>
+      <li class="p"> Stilltent </li>
+    </ul>
+    <p class="p">
+      Please double-check the integrity of your Stilltent.
+      Note, there is space for your flask, but one is not included.
+    </p>
+  </div>
+</section>
+
+    </div>
+    <code class="overflow-x-scroll f-1 db ws-pre pa-3 br-2 w-100 w-auto-ns bg-black green-terminal lh-copy">&lt;section class=&#34;ba bc-black-ish br-2 bg-white-ish measure shadow-3&#34;&gt;
+  &lt;h4 class=&#34;bg-black-ish white-ish ma-0 ph-3 pv-3 f-3 fw-6&#34;&gt;
+    Contents of Fremkit
+  &lt;/h4&gt;
+  &lt;div class=&#34;ph-3&#34;&gt;
+    &lt;ul class=&#34;pa-0 f-1 lsp-inside&#34;&gt;
+      &lt;li class=&#34;p&#34;&gt; Paracompass &lt;/li&gt;
+      &lt;li class=&#34;p&#34;&gt; Maker hooks &lt;/li&gt;
+      &lt;li class=&#34;p&#34;&gt; Thumper (charged) &lt;/li&gt;
+      &lt;li class=&#34;p&#34;&gt; Sandsnorkel &lt;/li&gt;
+      &lt;li class=&#34;p&#34;&gt; Stilltent &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p class=&#34;p&#34;&gt;
+      Please double-check the integrity of your Stilltent.
+      Note, there is space for your flask, but one is not included.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code>
+  </div>
+</section>
+
+<h3 id="example-form" class="f-4">Form</h3>
+<section class="pa-3">
+  <div class="flex gap-3 xjustify-center flex-column ">
+    <div class="ba bg-white bc-gray-600 br-1 shadow-1  pa-3 flex flex-column justify-center">
+      <form action="#"
+ class="pa-4 flex flex-column gap-3 bg-white-ish bc-gray-700 ba br-1">
+  <label for="example-email"
+    class="db flex flex-column gap-2">
+    <div class="flex items-center w-100 gap-2">
+      <input id="example-email" type="text"
+                                style="min-width: 0";
+      class="pa-2 f-3 br-2 bg-orange-900 orange-200 ba bc-orange-400 flex-grow-1">
+      <code class="ws-nowrap">@house-atreides.gov</code>
+    </div>
+    <span class="f-1 fw-6">Email</span>
+  </label>
+  <label for="example-password"
+    class="db flex flex-column gap-2">
+    <input id="example-password" type="password"
+     class="pa-2 f-3 br-2 bg-orange-900 orange-200 ba bc-orange-400"
+    >
+    <span
+     class="f-1 fw-6">
+        Password
+    </span>
+  </label>
+  <button
+   class="br-3 bg-blue-300 blue-700 f-3 tc ph-4 pv-3 bn pointer">
+    Log In
+  </button>
+</form>
+
+    </div>
+    <code class="overflow-x-scroll f-1 db ws-pre pa-3 br-2 w-100 w-auto-ns bg-black green-terminal lh-copy">&lt;form action=&#34;#&#34;
+ class=&#34;pa-4 flex flex-column gap-3 bg-white-ish bc-gray-700 ba br-1&#34;&gt;
+  &lt;label for=&#34;example-email&#34;
+    class=&#34;db flex flex-column gap-2&#34;&gt;
+    &lt;div class=&#34;flex items-center w-100 gap-2&#34;&gt;
+      &lt;input id=&#34;example-email&#34; type=&#34;text&#34;
+                                style=&#34;min-width: 0&#34;;
+      class=&#34;pa-2 f-3 br-2 bg-orange-900 orange-200 ba bc-orange-400 flex-grow-1&#34;&gt;
+      &lt;code class=&#34;ws-nowrap&#34;&gt;@house-atreides.gov&lt;/code&gt;
+    &lt;/div&gt;
+    &lt;span class=&#34;f-1 fw-6&#34;&gt;Email&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;label for=&#34;example-password&#34;
+    class=&#34;db flex flex-column gap-2&#34;&gt;
+    &lt;input id=&#34;example-password&#34; type=&#34;password&#34;
+     class=&#34;pa-2 f-3 br-2 bg-orange-900 orange-200 ba bc-orange-400&#34;
+    &gt;
+    &lt;span
+     class=&#34;f-1 fw-6&#34;&gt;
+        Password
+    &lt;/span&gt;
+  &lt;/label&gt;
+  &lt;button
+   class=&#34;br-3 bg-blue-300 blue-700 f-3 tc ph-4 pv-3 bn pointer&#34;&gt;
+    Log In
+  &lt;/button&gt;
+&lt;/form&gt;
+</code>
+  </div>
+</section>
+
+<h3 id="example-avatar" class="f-4">Avatar</h3>
+<section class="pa-3">
+  <div class="flex gap-3 xjustify-center flex-column ">
+    <div class="ba bg-white bc-gray-600 br-1 shadow-1  pa-3 flex flex-column justify-center">
+      <div class="flex">
+<div class="bn br-4 bg-blue-600 pos-relative ph-0 pt-2 pb-3">
+  <img src="muad-dib.png" class="br-100 w-5 h-5 mh-3">
+  <div class="pa-1 bg-white br-left-0 br-right-pill pos-absolute bottom-2 left-0 right-2 tc">
+  Paul Atreides
+  </div>
+</div>
+</div>
+
+    </div>
+    <code class="overflow-x-scroll f-1 db ws-pre pa-3 br-2 w-100 w-auto-ns bg-black green-terminal lh-copy">&lt;div class=&#34;flex&#34;&gt;
+&lt;div class=&#34;bn br-4 bg-blue-600 pos-relative ph-0 pt-2 pb-3&#34;&gt;
+  &lt;img src=&#34;muad-dib.png&#34; class=&#34;br-100 w-5 h-5 mh-3&#34;&gt;
+  &lt;div class=&#34;pa-1 bg-white br-left-0 br-right-pill pos-absolute bottom-2 left-0 right-2 tc&#34;&gt;
+  Paul Atreides
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code>
+  </div>
+</section>
+
+</section>
     </main>
-    <footer class="pv-4 bg-blue-900 black-ish">
-      <div class="w-90 w-50-ns mh-auto">
-        <p class="measure xmh-auto tc tl-ns lh-copy">
+    <footer class="ph-2 pv-4 bg-blue-900 black-ish">
+        <p class="measure mh-auto tc tl-ns lh-copy">
           <span class="fv-sc tracked">MelangeCSS</span>
-          is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-400">Hippocratic License, v2.1</a>.
+          is licensed under the <a class="ws-nowrap" href="https://firstdonoharm.dev/version/2/1/license/" class="blue-400">Hippocratic License, v2.1</a>.
         </p>
-        <p class="measure xmh-auto tc tl-ns lh-copy f-1 i">
+        <p class="measure mh-auto tc tl-ns lh-copy i">
+          <span class="f-1">
           This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot. The image of Paul Maud'Dib was <a href="https://declare-ai.org/1.0.0-alpha1/creative.html" class="blue-400">created by a generative AI</a> and modified slightly to give him the Eyes of Ibad.
+          </span>
         </p>
-      </div>
     </footer>
   </body>
 </html>

@@ -27,6 +27,10 @@
   color: #66ff22;
   text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
 }
+.amber-terminal {
+  color: #aaaa22;
+  text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
+}
     </style>
   </head>
   <body class="ff-serif pa0 ma0 bg-orange-900 black-ish">
@@ -242,11 +246,11 @@
       </div>
     </div>
     <p class="measure lh-copy">
-      We can clean this up with some additional border radius and margins.
+      We can clean this up with some additional border radius and spacing.
     </p>
     <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
-  &lt;div class="flex items-center"&gt;
-    &lt;img src="muad-dib.png" class="<span class="ba dib pa-1 tdu fw-bold">ml-2</span> w-5 h-5 br-3" /&gt;
+    &lt;div class="flex items-center <span class="ba dib pa-1 tdu fw-bold">pa-2</span>"&gt;
+    &lt;img src="muad-dib.png" class="w-5 h-5 br-3" /&gt;
     &lt;h4 class="f-4 ml-2"&gt;Paul Muad'Dib&lt;/h4&gt;
   &lt;/div&gt;
   &lt;div class="bg-black white pa-2 <span class="ba dib pa-1 tdu fw-bold">br-bottom-3</span>"&gt;
@@ -256,8 +260,8 @@
 &lt;/div&gt;</code>
     <div class="bg-white debug-grid pa-3">
       <div class="ba br-3">
-        <div class="flex items-center">
-          <img src="muad-dib.png" class="ml-2 w-5 h-5 br-3" itemref="muad-dib-acd-level muad-dib-acd-version muad-dib-acd-details"/>
+        <div class="flex items-center pa-2">
+          <img src="muad-dib.png" class="w-5 h-5 br-3" itemref="muad-dib-acd-level muad-dib-acd-version muad-dib-acd-details"/>
           <h4 class="f-4 ml-2">Paul Muad'Dib</h4>
         </div>
         <div class="bg-black white pa-2 br-bottom-3">
@@ -275,16 +279,16 @@
 
   </article>
     </main>
-    <footer class="pv-4 bg-blue-900 black-ish">
-      <div class="w-90 w-50-ns mh-auto">
-        <p class="measure xmh-auto tc tl-ns lh-copy">
+    <footer class="ph-2 pv-4 bg-blue-900 black-ish">
+        <p class="measure mh-auto tc tl-ns lh-copy">
           <span class="fv-sc tracked">MelangeCSS</span>
-          is licensed under the <a href="https://firstdonoharm.dev/version/2/1/license/" class="blue-400">Hippocratic License, v2.1</a>.
+          is licensed under the <a class="ws-nowrap" href="https://firstdonoharm.dev/version/2/1/license/" class="blue-400">Hippocratic License, v2.1</a>.
         </p>
-        <p class="measure xmh-auto tc tl-ns lh-copy f-1 i">
+        <p class="measure mh-auto tc tl-ns lh-copy i">
+          <span class="f-1">
           This web page's content was created <a href="https://declare-ai.org/1.0.0-alpha1/none.html" class="blue-400">without any contribution</a> from a generative AI. Some parts of the source code used to produce this site and the <code>.css</code> had  <a href="https://declare-ai.org/1.0.0-alpha1/non-creative.html " class="blue-400">non-creative assistance</a> from GitHub CoPilot. The image of Paul Maud'Dib was <a href="https://declare-ai.org/1.0.0-alpha1/creative.html" class="blue-400">created by a generative AI</a> and modified slightly to give him the Eyes of Ibad.
+          </span>
         </p>
-      </div>
     </footer>
   </body>
 </html>

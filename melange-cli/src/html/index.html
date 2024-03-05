@@ -1,78 +1,95 @@
 <%- include( "/_header.html", { title: "" } ) %>
 <section class="pa-2">
-  <h2 class="mb-0 tc f-5 ttu tracked">Utility CSS for Developers</h2>
-  <p class="lh-copy measure mh-auto mv-3 f-3 fw-5">
-    <span class="fv-sc tracked">MelangeCSS</span> provides single-purpose utility classes, but <strong>not too many</strong>. Style your HTML <strong>from</strong> your HTML, capitalizing on a <strong>grid-based design system</strong> you control. <strong>No build step, no pre-processing</strong>.  With an intuitive yet terse naming convention, you can design views quickly, with <strong>minimal dependencies</strong>. And you'll know how these views will render <strong>just by looking at the markup</strong>.
-  </p>
+  <h2 class="mb-0 tc f-6 ttu tracked">Utility CSS for Developers</h2>
+  <h3 class="mb-0 tc f-5 fw-4 mt-0">Iterate your UI <strong>Quickly</strong> In the Browser with <strong>No Build Step</strong></h3>
+  <%- include("_icon_box.html", {
+      icon: "cluster-data-icon.svg",
+      color: "",
+      bgColor: "bg-blue-800 br-4",
+      content: "Iterate quickly by using terse, single-purpose utility classes <span class='ws-nowrap'>(but <strong class='fw-6'>not too many</strong>).</span>"
+  }) %>
+  <%- include("_icon_box.html", {
+      icon: "interface-layout-rightside-blocks-icon.svg",
+      color: "",
+      bgColor: "bg-gray-800 br-4",
+      content: "Get a usable design faster via the grid-based design system. You don't need 20 font sizes and 48 shades of blue.",
+  }) %>
+  <%- include("_icon_box.html", {
+      icon: "laundry-do-not-iron-icon.svg",
+      color: "",
+      bgColor: "bg-orange-800 br-4",
+      content: "No build step and no dependencies. It's just custom properties and a stylesheet.",
+  }) %>
+  <%- include("_icon_box.html", {
+      icon: "conclusion-icon.svg",
+      color: "",
+      bgColor: "bg-purple-800 br-4",
+      content: "No mini-languges, no DSLs, no nonsense. Classes are based on initialisms and convention, quickly learned."
+  }) %>
+
 </section>
 <article class="pa-3 bg-white mh-auto">
-  <div class="w-auto mv-4 dn dn-m flex-l items-center justify-center">
-    <code class="f-1 dib ws-pre pa-3 br-2 bg-black orange-600 lh-copy">&lt;button class="dib ph-4 pv-3 tc f-3 ba br-3 bg-blue-900 hover-bg-blue-700-ns blue-100 pointer"&gt;
+  <div class="w-auto mv-4 flex flex-column flex-row-ns items-center justify-center gap-2">
+    <code class="f-1 db overflow-x-scroll w-100 w-auto-ns ws-pre pa-3 br-2 bg-black amber-terminal lh-copy">&lt;button
+  style="display: inline-block;
+         padding-left: var(--mg-sp-4); padding-right: var(--mg-sp-4);
+         padding-top: var(--mg-sp-3);  padding-bottom: var(--mg-sp-3);
+         text-align: center;
+         font-size: var(--mg-fs-3);
+         border: all;
+         border-radius: var(--mg-sw-3);
+         background-color: var(--mg-blue-900);
+         color: var(--mg-blue-100);
+         cursor: pointer
+         box-shadow: 1px 1px 2px 1px rgba( 0, 0, 0, 0.2 );
+  "&gt;
+    Click Me
+&lt;/button&gt;</code>
+    <code class="f-1 db ws-pre pa-3 br-2 w-100 w-auto-ns bg-black green-terminal lh-copy">&lt;button
+  class="dib
+         ph-4
+         pv-3
+         tc
+         f-3
+         ba
+         br-3
+         bg-blue-900
+         blue-100
+         pointer
+         shadow-1
+   "&gt;
     Click Me
 &lt;/button&gt;</code>
   </div>
-  <div class="w-auto mv-4 flex dn-l items-center justify-center">
-    <code class="dib ws-pre pa-3 br-2 bg-black orange-600 lh-copy">&lt;button class="dib
-               ph-4
-               pv-3
-               tc
-               f-3
-               ba
-               br-3
-               pointer
-               bg-blue-900
-               hover-bg-blue-700-ns
-               blue-100"&gt;
-  Click Me
-&lt;/button&gt;</code>
-  </div>
   <div class="mh-auto tc">
-    <button class="dib pointer ph-4 pv-3 tc f-3 ba br-3 bg-blue-900 blue-100 hover-bg-blue-700-ns bc-blue-100">Click Me</button>
+    <button class="dib pointer ph-4 pv-3 tc f-3 ba br-3 bg-blue-900 blue-100 bc-blue-100 shadow-1">Click Me</button>
   </div>
 </article>
-<article class="pa-3 bg-orange-900 orange-300 mh-auto">
-  <div class="w-60-ns mh-auto">
-    <h3 class="lh-title f-3 mv-1">Install</h3>
-    <h4 class="lh-title f-2 ttu mv-0">CDN</h4>
-    <code class="f-1 db bg-black green-terminal ph-2 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;link rel="stylesheet"
-      href="https://unpkg.com/melange-css@<%= version %>/melange.min.css"/&gt;</code>
-    <h4 class="lh-title f-2 ttu mv-0">Download</h4>
-    <code class="f-1 db bg-black green-terminal ph-2 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@<%= version %>/melange.css \
-     &gt; melange.css</code>
-    <h4 class="lh-title f-2 ttu mv-0">NPM</h4>
-    <code class="f-1 db bg-black green-terminal ph-2 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
-  </div>
+<article class="pa-3 pv-4 bg-orange-100 orange-900 mh-auto">
+    <h3 class="lh-title tc ttu tracked f-4 mv-1">Install</h3>
+    <h4 class="lh-title tc mt-4 f-2 ttu mb-0">CDN</h4>
+    <code class="f-1 db bg-black green-terminal ba bc-green-500 pa-3 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;link rel="stylesheet" href="https://unpkg.com/melange-css@<%= version %>/melange.min.css"/&gt;</code>
+    <h4 class="lh-title tc f-2 ttu mb-0">Download</h4>
+    <code class="f-1 db bg-black green-terminal ba bc-green-500 pa-3 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@<%= version %>/melange.css &gt; melange.css</code>
+    <h4 class="lh-title tc f-2 ttu mb-0">NPM</h4>
+    <code class="f-1 db bg-black green-terminal ba bc-green-500 pa-3 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
 </article>
-<article class="pa-3 bg-orange-300 orange-900 mh-auto">
-  <h3 class="lh-title f-4 tc">No Build System or Pre-Processing</h3>
-  <p class="measure lh-copy mh-auto">
-    <span class="fv-sc tracked">MelangeCSS</span> can be deployed as a single <code>.css</code> file that is under 200K (25K compressed).  It doesn't use any pre-processing and doesn't require any build steps in your app. Installing it does not require <strong>any</strong> dependencies at runtime <strong>or</strong> development time.
-  </p>
-  <h3 class="lh-title f-4 tc">Behavior-Revealing Design</h3>
-  <p class="measure lh-copy mh-auto">
-    HTML that uses <span class="fv-sc tracked">MelangeCSS</span> results in HTML whose presentation you can easily and correctly predict, just by looking at the HTML.  No more chasing down tons of files and classes just to try to figure out what the browser is going to do when the page is rendered.
-  </p>
-  <h3 class="lh-title f-4 tc">Grid-based Design System</h3>
-  <p class="measure lh-copy mh-auto">
-    For 90% of the use cases of 90% of apps, you don't need infinite margins, paddings, widths, or font sizes.  A few distinct sizes will cover you. <span class="fv-sc tracked">MelangeCSS</span> provides a modular scale that means all your elements will have visual rhythm, and provide you enough flexibilty for most situations. Quickly audit every single size to find the right one.
-  </p>
-  <h3 class="lh-title f-4 tc">Terse but Intuitive Class Names</h3>
-  <p class="measure lh-copy mh-auto">
-    You know CSS, so when you learn that <code>fw-3</code> sets <code>font-weight</code> to <code>300</code>, you'll have a good guess as to what <code>fw-6</code> and <code>fw-bold</code> do.  This means fast designing in the browser without the need for autocomplete and fewer trips to the documentation.
-  </p>
-  <h3 class="lh-title f-4 tc">Mobile-First Design <span class="db">with Common Breakpoints</span></h3>
-  <p class="measure lh-copy mh-auto">
-    Each class <span class="fv-sc tracked">MelangeCSS</span> provides includes variants for non-small screens, medium screens, and large screens. You can use these to create a responsive design without writing any CSS or media queries.
-  </p>
-  <h3 class="lh-title f-4 tc">Gradual Customization</h3>
-  <p class="measure lh-copy mh-auto">
-    <span class="fv-sc tracked">MelangeCSS</span> ships as a single <code>.css</code> file, but you can install a version with only CSS classes and provide your own values for the grid-based design system's variables (using the defaults as a starting point).  Customize fonts, modular scales, and colors using only CSS—on build or compilation step for most cases.
-  </p>
-  <p class="measure lh-copy mh-auto">
-    <strong>However</strong>, if you have more needs, <span class="fv-sc tracked">MelangeCSS</span> does provide tooling at <em>development</em> time to allow you to add your own classes that conform to <span class="fv-sc tracked">MelangeCSS</span>'s naming convention, or even create your own nuance design system.  If you need it.
-  </p>
+<article class="pa-3 bg-blue-900 orange-200 mh-auto">
+  <h3 class="lh-title f-4 tc ttu tracked ">Features</h3>
+  <%- include("_icon_box.html", { icon: "file-line-icon.svg", color: "blue-200", bgColor: "bg-orange-900 shadow-1", 
+      content: "A single <code>.css</code> file with custom variables you can override using regular CSS. <strong>No build step.</strong>"})%>
+  <%- include("_icon_box.html", { icon: "desktop-mobile-icon.svg", color: "blue-200", bgColor: "bg-orange-800 shadow-2", 
+      content: "Three breakpoints allow you to create responsive designs right from your HTML."})%>
+  <%- include("_icon_box.html", { icon: "text-align-left-outline-icon.svg", color: "blue-200", bgColor: "bg-orange-700 shadow-3", 
+      content: "Works with <code>.css</code> you have, and isn't designed to replace it."} ) %>
+  <%- include("_icon_box.html", { icon: "thunder-icon.svg", color: "orange-800", bgColor: "bg-blue-300 shadow-3", 
+      content: "Classnames use a consistent naming convention. It's based on CSS properties and can be quickly internalized. You'll be typing faster than any automcomplete or LLM." }) %>
+  <%- include("_icon_box.html", { icon: "pencil-ruler-icon.svg", color: "orange-800", bgColor: "bg-blue-200 shadow-2", 
+      content: "Everything is based on modular scales for fonts, sizing, and spacing. Quickly find the right one for your UI, and know that everything will work well together." }) %>
+  <%- include("_icon_box.html", { icon: "settings-line-icon.svg", color: "orange-800", bgColor: "bg-blue-100 shadow-1", 
+      content: "Customize anything by setting CSS properties - no special configuration language needed." }) %>
 </article>
-<article class="pa-3 bg-blue-900 blue-100 mh-auto">
+<article class="pa-3 bg-orange-100 blue-800 mh-auto">
   <h3 class="lh-title f-4 tc"><span class="fv-sc tracked">MelangeCSS</span> Isn't For Everyone</h3>
   <p class="f-3 measure lh-copy mh-auto">
     <span class="fv-sc tracked">MelangeCSS</span> works great when…
@@ -105,7 +122,7 @@
       …you can't control the markup.
     </li>
     <li class="measure lh-copy mh-auto mb-2">
-      …you are writing HTML directly with no templating system.
+      …you are writing HTML directly with no templating system or web framework.
     </li>
   </ul>
 </article>

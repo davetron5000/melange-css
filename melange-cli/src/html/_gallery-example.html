@@ -1,0 +1,9 @@
+<h3 id="example-<%= example %>" class="f-4"><%= title %></h3>
+<section class="pa-3">
+  <div class="flex gap-3 xjustify-center flex-column <%= wide ? '' : 'flex-row-ns' %>">
+    <div class="ba bg-white bc-gray-600 br-1 shadow-1  pa-3 flex flex-column justify-center">
+      <%- include("gallery-examples/" + example + ".html") %>
+    </div>
+    <code class="overflow-x-scroll f-1 db ws-pre pa-3 br-2 w-100 w-auto-ns bg-black green-terminal lh-copy"><%= include("gallery-examples/" + example + ".html") %></code>
+  </div>
+</section>
