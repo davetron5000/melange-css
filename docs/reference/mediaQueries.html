@@ -54,10 +54,10 @@
     </header>
     <main class="pa-3 w-60-ns w-90 mh-auto">
 
-<p class="measure lh-copy">
+<p class="p">
   <span class="fv-sc tracked">MelangeCSS</span> is designed so that each class applies to the page when there is no media query in effect.  This means any screen size, light (or no selected) color mode, and no explicit setting for reduced motion.  You can then customize your page's styling when a media query <strong>is</strong> in affect by adding additional classes that have a suffix for that media query.  For example, <code>purple-100</code> would apply to all situations by default, whereas <code>purple-100-dm</code> would apply only when the “prefers dark mode” media query applies.
 </p>
-<p class="measure lh-copy">
+<p class="p">
   Each melange class includes a list of the media query variants that are available.  For example, colors may have variants for dark mode, but spacings would not.  Here are all the known media queries, their definitions, and their naming conventions.
 </p>
 
@@ -70,7 +70,7 @@
       <h3 class="mv-0 f-3 ws-nowrap">
         Not Small Width
       </h3>
-      <p class="measure lh-copy f-1 mt-0">
+      <p class="measure-wide lh-copy f-1 mt-0">
         Screens that are larger than mobile sized
       </p>
     </div>
@@ -79,13 +79,13 @@
         *-ns
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-ns"&gt;
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-700 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-ns"&gt;
   .purple-100-ns
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0">@media screen and (min-width: 30em)</pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-700 br-2"><pre class="ma-0">@media screen and (min-width: 30em)</pre></code>
     </div>
   </section>
   
@@ -97,8 +97,8 @@
       <h3 class="mv-0 f-3 ws-nowrap">
         Medium Width
       </h3>
-      <p class="measure lh-copy f-1 mt-0">
-        Screens larger than the mobile size but smaller than what is considered large
+      <p class="measure-wide lh-copy f-1 mt-0">
+        Screens larger than the mobile size but smaller than what is considered large (e.g. tablets)
       </p>
     </div>
     <div class="flex-ns db items-start mb-3">
@@ -106,13 +106,13 @@
         *-m
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-m"&gt;
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-700 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-m"&gt;
   .purple-100-m
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0">@media screen and (min-width: 30em) and (max-width: 60em)</pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-700 br-2"><pre class="ma-0">@media screen and (min-width: 30em) and (max-width: 60em)</pre></code>
     </div>
   </section>
   
@@ -124,8 +124,8 @@
       <h3 class="mv-0 f-3 ws-nowrap">
         Large Width
       </h3>
-      <p class="measure lh-copy f-1 mt-0">
-        Screens larger than both the mobile size and the medium size
+      <p class="measure-wide lh-copy f-1 mt-0">
+        Screens larger than the medium size (e.g. desktops)
       </p>
     </div>
     <div class="flex-ns db items-start mb-3">
@@ -133,13 +133,13 @@
         *-l
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-l"&gt;
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-700 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-l"&gt;
   .purple-100-l
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0">@media screen and (min-width: 60em)</pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-700 br-2"><pre class="ma-0">@media screen and (min-width: 60em)</pre></code>
     </div>
   </section>
   
@@ -151,7 +151,7 @@
       <h3 class="mv-0 f-3 ws-nowrap">
         Dark Mode
       </h3>
-      <p class="measure lh-copy f-1 mt-0">
+      <p class="measure-wide lh-copy f-1 mt-0">
         Prefers dark mode (light mode considered default)
       </p>
     </div>
@@ -160,13 +160,13 @@
         *-dm
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-dm"&gt;
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-700 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-dm"&gt;
   .purple-100-dm
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0">@media (prefers-color-scheme: dark)</pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-700 br-2"><pre class="ma-0">@media (prefers-color-scheme: dark)</pre></code>
     </div>
   </section>
   
@@ -178,7 +178,7 @@
       <h3 class="mv-0 f-3 ws-nowrap">
         Reduced Motion
       </h3>
-      <p class="measure lh-copy f-1 mt-0">
+      <p class="measure-wide lh-copy f-1 mt-0">
         Prefers reduced motion (full/regular motion considered default)
       </p>
     </div>
@@ -187,13 +187,40 @@
         *-rm
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-rm"&gt;
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-700 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-rm"&gt;
   .purple-100-rm
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0">@media (prefers-reduced-motion: reduce)</pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-700 br-2"><pre class="ma-0">@media (prefers-reduced-motion: reduce)</pre></code>
+    </div>
+  </section>
+  
+
+  
+  <section class="mb-4">
+    <a name="high-contrast"></a>
+    <div>
+      <h3 class="mv-0 f-3 ws-nowrap">
+        High Contrast
+      </h3>
+      <p class="measure-wide lh-copy f-1 mt-0">
+        Prefers more contrast (Browser and HTML-configured contrast is the default)
+      </p>
+    </div>
+    <div class="flex-ns db items-start mb-3">
+      <code class="ba bc-orange-600 orange-300 dib pa-3 br-1 ws-nowrap mr-3-ns">
+        *-hc
+      </code>
+      <div class="mt-3 mt-0-ns">
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-700 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-hc"&gt;
+  .purple-100-hc
+&lt;/div&gt;</pre></code>
+      </div>
+    </div>
+    <div>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-700 br-2"><pre class="ma-0">@media (prefers-contrast: more)</pre></code>
     </div>
   </section>
   

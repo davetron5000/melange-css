@@ -10,6 +10,7 @@
   "license": "Hippocratic-2.1",
   "devDependencies": {
     "chokidar-cli": "^3.0.0",
+    "css-minify": "^2.0.0",
     "http-server": "^14.1.1"
   }
 }

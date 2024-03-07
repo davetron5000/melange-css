@@ -258,7 +258,10 @@ const typography = new MetaPropertyGrouping({
     measure,
     aliases,
   ],
-  mediaQueries: mediaQueries.onlyBreakpoints(),
+  mediaQueries: [
+    ...mediaQueries.onlyBreakpoints(),
+    mediaQueries.moreContrast,
+  ],
   docs: [
     "Text rendering can be tricky, however the use of a fixed font scale and a limited number of other tranformations for letter spacing and leading can provide myriad combinations to meet most needs without having to endlessly tweak precise values.  The result of the fixed set up typographic features is general consistency and harmony regardless of the styles chosen.",
   ]

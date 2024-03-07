@@ -7,9 +7,23 @@
     <blockquote class="f-4 i tr lh-title fw-3"><span class="f-6">“</span>
       There’s no secret to balance. You just have to feel the waves.
     </blockquote>
-    <p class="measure lh-copy">
-      <span class="fv-sc tracked">MelangeCSS</span>'s classes apply to all screens, which implies any design using those classes affects mobile devices. If a design cannot work on both small and large screens, you can use suffixed classes to target largest screens, thus achieving a mobile-first design.
+    <p class="p">
+      <span class="fv-sc tracked">MelangeCSS</span> provides variants of each class that take effect only when certain media queries are true.  For example, any class ending in <code>-ns</code> will affect only those screens that are 60em or larger ("ns" being a mnemonic for "not small").
     </p>
+    <p class="p">
+      The idea is to style your views without the variants in a way that the result will work for small screens (and, ideally, any screen).  You can then use the variants to adjust behavior on larger screens.  For example, if a heading should be centered by default, but aligned left on non-small screens, you could write <code class="ws-nowrap">&lt;h1 class="tc tl-ns"&gt;Heading&lt;/h1&gt;</code>.
+    </p>
+    <p class="p">
+      This same technique works for other media queries, such as dark mode or high contrast.  Perhaps you want dark gray text on a light gray background, but for users who have selected increased contrast, use black and white. You'd write
+      <code class="ws-pre db bg-black green-terminal pa-2">&lt;p class="gray-200    black-hc
+          bg-gray-800 white-hc"&gt;
+  Some text
+&lt;/p&gt;</code>
+    </p>
+    <p class="p">
+      Of course, you may not need to use these media queries.  You can <a href="/get-started.html">adjust which ones you bring in</a> to control the size of your CSS.
+    </p>
+    <h3 class="tc f-4">Example - Breakpoints and Mobile-first Design</h3>
     <p class="measure lh-copy">
       Suppose we wish the following component to appear like so on desktop:
     </p>
@@ -43,14 +57,16 @@
     <p class="measure lh-copy">
       Ideally, this can be achieved with the same markup.  Start by making it work for mobile screens:
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
+    <code class="db br-3 ph-2 pv-3 bg-black green-terminal lh-copy ws-pre mh-auto f-1 overflow-x-scroll">&lt;div class="ba br-3"&gt;
   &lt;div class="flex flex-column items-center"&gt;
     &lt;img src="muad-dib.png" class="mt-2 w-5 h-5 br-3" /&gt;
     &lt;h4 class="f-4 mb-2 mt-1"&gt;Paul Muad'Dib&lt;/h4&gt;
   &lt;/div&gt;
   &lt;div class="bg-black white pa-2 br-bottom-3"&gt;
     &lt;h5 class="tc f-3 i mv-2"&gt;Emperor of the Known Universe&lt;/h5&gt;
-    &lt;a class="db tc blue-600" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+    &lt;a class="db tc blue-600" href="https://arrakis.planet"&gt;
+      arrakis.planet
+    &lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code>
     <p class="measure lh-copy">
@@ -67,14 +83,16 @@
     <p class="measure lh-copy">
       To do this, you can use <span class="fv-sc tracked">MelangeCSS</span>'s classes suffixed with <code>-ns</code> for “not small”, meaning any screen whose width is not considered small (thus, mobile).
     </p>
-    <code class="db br-3 ph-2 pv-3 bg-black orange-900 lh-copy ws-pre mh-auto">&lt;div class="ba br-3"&gt;
-  &lt;div class="flex flex-column items-center <span class="ba dib pa-1 tdu fw-bold">flex-row-ns mv-3-ns</span>"&gt;
-    &lt;img src="muad-dib.png" class="mt-2 w-5 h-5 br-3 <span class="ba dib pa-1 tdu fw-bold">mt-0-ns ml-2-ns</span>" /&gt;
+    <code class="db br-3 ph-2 pv-3 bg-black green-terminal lh-copy ws-pre mh-auto f-1 overflow-x-scroll">&lt;div class="ba br-3"&gt;
+  &lt;div class="flex flex-column items-center <span class="ba dib pa-1 tdu fw-bold amber-terminal">flex-row-ns mv-3-ns</span>"&gt;
+    &lt;img src="muad-dib.png" class="mt-2 w-5 h-5 br-3 <span class="ba dib pa-1 tdu fw-bold amber-terminal">mt-0-ns ml-2-ns</span>" /&gt;
     &lt;h4 class="f-4 mb-2 mt-1"&gt;Paul Muad'Dib&lt;/h4&gt;
   &lt;/div&gt;
   &lt;div class="bg-black white pa-2 br-bottom-3"&gt;
-  &lt;h5 class="tc f-3 i mv-2 <span class="ba dib pa-1 tdu fw-bold">tl-ns</span>"&gt;Emperor of the Known Universe&lt;/h5&gt;
-  &lt;a class="db tc blue-600 <span class="ba dib pa-1 tdu fw-bold">tl-ns</span>" href="https://arrakis.planet"&gt;arrakis.planet&lt;/a&gt;
+  &lt;h5 class="tc f-3 i mv-2 <span class="ba dib pa-1 tdu fw-bold amber-terminal">tl-ns</span>"&gt;Emperor of the Known Universe&lt;/h5&gt;
+  &lt;a class="db tc blue-600 <span class="ba dib pa-1 tdu fw-bold amber-terminal">tl-ns</span>" href="https://arrakis.planet"&gt;
+    arrakis.planet
+  &lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code>
     <div class="bg-white debug-grid pa-3">

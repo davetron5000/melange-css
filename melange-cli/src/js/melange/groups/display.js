@@ -104,7 +104,10 @@ const display = new MetaPropertyGrouping({name: "Display",
     appearances,
     screenReaders,
   ],
-  mediaQueries: mediaQueries.onlyBreakpoints(),
+  mediaQueries: [
+    ...mediaQueries.onlyBreakpoints(),
+    mediaQueries.moreContrast,
+  ],
   docs: [
     "Handles basic dispaly properties other than Flexbox.  Flexbox is part of the Flexbox grouping.",
   ],

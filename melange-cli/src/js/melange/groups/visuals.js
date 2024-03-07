@@ -89,7 +89,10 @@ const visuals = new MetaPropertyGrouping({
     cursors,
     zIndex,
   ],
-  mediaQueries: mediaQueries.onlyBreakpoints(),
+  mediaQueries: [
+    ...mediaQueries.onlyBreakpoints(),
+    mediaQueries.moreContrast,
+  ],
   docs: [
     "A grab bag of classes that adjust more decorative aspects of a page, such as box shadows, opacity, z-index, and cursors."
   ],

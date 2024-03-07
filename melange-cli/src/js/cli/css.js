@@ -20,8 +20,8 @@ export default class CSS {
         css: {
           type: "string",
         },
-        variables: {
-          type: "string",
+        "no-variables": {
+          type: "boolean",
         },
         "meta-data": {
           type: "string",
@@ -30,6 +30,9 @@ export default class CSS {
           type: "boolean",
         },
         "no-media-queries": {
+          type: "string",
+        },
+        "only-media-queries": {
           type: "string",
         },
         help : {
@@ -46,10 +49,11 @@ export default class CSS {
       console.log("OPTIONS")
       console.log()
       console.log("  --css FILENAME                 - name of the .css file to write")
-      console.log("  --variables VARIABLES_FILENAME - if specified, write variables to this file instead of the --css file")
+      console.log("  --no-variables                 - if set, variables are not written")
       console.log("  --meta-data MD_FILENAME        - if specified, write some metadata about the design system to the givcen file")
       console.log("  --no-reset                     - if set, omit the reset css in the output .css file")
       console.log("  --no-media-queries QUERIES     - if set, omit the media queries with the given IDs. Comma-delimited list or ALL for all media queries")
+      console.log("  --only-media-queries QUERIES   - if set, include only the media queries with the given IDs. Comma-delimited list or ALL for all media queries, DEFAULT for the default media query")
       console.log("  --help                         - show this message")
       console.log()
       console.log("CONFIGURED MEDIA QUERIES")
@@ -79,14 +83,19 @@ export default class CSS {
         console.log("missing --css")
         process.exit(1)
       } 
-      let mediaQueriesToOmit = []
-      if ( values["no-media-queries"] ) {
-        if (values["no-media-queries"] == "ALL") {
-          mediaQueriesToOmit = mediaQueries.toArray(false)
+      if ( values["no-media-queries"] && values["only-media-queries"] ) {
+        console.log("You must use --only-media-queries or --no-media-queries, but not both")
+        process.exit(1)
+      }
+      let mediaQueriesInArgs = []
+      let mediaQueryPrefixes = values["no-media-queries"] || values["only-media-queries"]
+      if ( mediaQueryPrefixes ) {
+        if (mediaQueryPrefixes == "ALL") {
+          mediaQueriesInArgs = mediaQueries.toArray(false)
         }
         else {
-          mediaQueriesToOmit = values["no-media-queries"].split(/\s*,\s*/).map( (idOrPrefix) => {
-            const mediaQuery = mediaQueries.find(idOrPrefix)
+          mediaQueriesInArgs = mediaQueryPrefixes.split(/\s*,\s*/).map( (idOrPrefix) => {
+            const mediaQuery = idOrPrefix == "DEFAULT" ? mediaQueries.default : mediaQueries.find(idOrPrefix)
             if (!mediaQuery) {
               console.log(`No such media query '${idOrPrefix}`)
               process.exit(1)
@@ -95,42 +104,29 @@ export default class CSS {
           })
         }
       }
+      let mediaQueriesToOmit = []
+      let mediaQueriesToOnlyInclude = []
 
-      const builders = []
-      if (values.variables) {
-        builders.push(new CSSBuilder({
-          filename: values.css,
-          writeCSS: true,
-          writeVariables: false,
-          writeReset: values["no-reset"] != true,
-          omitMediaQueries: mediaQueriesToOmit,
-        }))
-        builders.push(new CSSBuilder({
-          filename: values.variables,
-          writeCSS: false,
-          writeVariables: true,
-          writeReset: false,
-          omitMediaQueries: mediaQueriesToOmit,
-        }))
-        if (values["meta-data"]) {
-          builders.push(new MetaDataBuilder({
-            filename: values["meta-data"]
-          }))
-        }
+      if (values["no-media-queries"]) {
+        mediaQueriesToOmit = mediaQueriesInArgs
       }
       else {
-        builders.push(new CSSBuilder({
-          filename: values.css,
-          writeCSS: true,
-          writeVariables: true,
-          writeReset: values["no-reset"] != true,
-          omitMediaQueries: mediaQueriesToOmit,
+        mediaQueriesToOnlyInclude = mediaQueriesInArgs
+      }
+
+      const builders = []
+      builders.push(new CSSBuilder({
+        filename: values.css,
+        writeCSS: true,
+        writeVariables: values["no-variables"] != true,
+        writeReset: values["no-reset"] != true,
+        omitMediaQueries: mediaQueriesToOmit,
+        onlyMediaQueries: mediaQueriesToOnlyInclude,
+      }))
+      if (values["meta-data"]) {
+        builders.push(new MetaDataBuilder({
+          filename: values["meta-data"]
         }))
-        if (values["meta-data"]) {
-          builders.push(new MetaDataBuilder({
-            filename: values["meta-data"]
-          }))
-        }
       }
       melange.checkForDupes()
       builders.forEach( (builder) => {

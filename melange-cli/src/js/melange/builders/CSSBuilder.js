@@ -6,12 +6,13 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default class CSSBuilder {
-  constructor({filename, writeVariables, writeCSS, writeReset, omitMediaQueries}) {
+  constructor({filename, writeVariables, writeCSS, writeReset, omitMediaQueries, onlyMediaQueries}) {
     this.filename         = filename
     this.writeVariables   = writeVariables
     this.writeCSS         = writeCSS
     this.writeReset       = writeReset
     this.omitMediaQueries = omitMediaQueries || []
+    this.onlyMediaQueries = onlyMediaQueries || []
   }
 
   build(metaTheme) {
@@ -94,7 +95,15 @@ export default class CSSBuilder {
   }
 
   _skipMediaQuery(mediaQuery) {
-    return !!this.omitMediaQueries.find( (mq) => mq.id() == mediaQuery.id() )
+    if (this.omitMediaQueries.length != 0) {
+      return !!this.omitMediaQueries.find( (mq) => mq.id() == mediaQuery.id() )
+    }
+    else if (this.onlyMediaQueries.length != 0) {
+      return !this.onlyMediaQueries.find( (mq) => mq.id() == mediaQuery.id() )
+    }
+    else {
+      return false
+    }
   }
 }
 

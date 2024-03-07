@@ -22,6 +22,7 @@ const colorTints = new ColorTints(
   [
     ...mediaQueries.onlyBreakpoints(),
     mediaQueries.darkMode,
+    mediaQueries.moreContrast,
   ],
 )
 

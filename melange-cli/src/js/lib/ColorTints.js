@@ -13,8 +13,8 @@ import VariableRegistry      from "./VariableRegistry.js"
 import Anchor                from "./Anchor.js"
 
 const colorExampleTemplate = (selector) => {
-  const onBlack = `<div class="${selector} bg-black ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
-  const onWhite = `<div class="${selector} bg-white ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onBlack = `<div class="${selector} ws-nowrap bg-black ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onWhite = `<div class="${selector} ws-nowrap bg-white ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
   return new Example({
     markupForRendering: `<div class="flex items-baseline justify-between">
   ${onBlack}${onWhite}
@@ -22,8 +22,8 @@ const colorExampleTemplate = (selector) => {
   })
 }
 const backgroundColorExampleTemplate = (selector) => {
-  const onBlack = `<div class="${selector} black ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
-  const onWhite = `<div class="${selector} white ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onBlack = `<div class="${selector} ws-nowrap black ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onWhite = `<div class="${selector} ws-nowrap white ba bc-black flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
   return new Example({
     markupForRendering: `<div class="flex items-baseline justify-between">
   ${onBlack}${onWhite}
@@ -31,8 +31,8 @@ const backgroundColorExampleTemplate = (selector) => {
   })
 }
 const borderColorExampleTemplate = (selector) => {
-  const onBlack = `<div class="${selector} bg-black white ba bw-2 flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
-  const onWhite = `<div class="${selector} bg-white black ba bw-2 flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onBlack = `<div class="${selector} ws-nowrap bg-black white ba bw-2 flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
+  const onWhite = `<div class="${selector} ws-nowrap bg-white black ba bw-2 flex-grow-1 pa-2 f-1 tc">.${selector}</div>`
   return new Example({
     markupForRendering: `<div class="flex items-baseline justify-between">
   ${onBlack}${onWhite}

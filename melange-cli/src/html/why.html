@@ -1,13 +1,13 @@
 <%- include( "/_header.html", { title: "But…Why?" } ) %>
 <section class="pa-1 w-90 w-60-ns mh-auto pb-4">
-  <nav class="flex flex-wrap items-baseline pv-3 bb bc-orange-600">
-    <a href="#utility" class="f-2 fw-bold blue-400 mh-2">Why Utility Classes?</a>
+  <nav class="flex flex-wrap items-baseline gap-2 pv-3 bb bc-orange-700">
+    <a href="#utility" class="f-2 fw-bold blue-400 lh-copy">Why Utility Classes?</a>
     <span role="none">&bull;</span>
-    <a href="#design" class="f-2 fw-bold blue-400 mh-2">Why Only So Many Values?</a>
+    <a href="#design" class="f-2 fw-bold blue-400 lh-copy">Why Only a Few Values?</a>
     <span role="none">&bull;</span>
-    <a href="#tailwind" class="f-2 fw-bold blue-400 mh-2">Why not Tailwind?</a>
+    <a href="#tailwind" class="f-2 fw-bold blue-400 lh-copy">Why not Tailwind?</a>
     <span role="none">&bull;</span>
-    <a href="#tachyons" class="f-2 fw-bold blue-400 mh-2">Why not Tachyons?</a>
+    <a href="#tachyons" class="f-2 fw-bold blue-400 lh-copy">Why not Tachyons?</a>
   </nav>
   <article>
     <a name="utility"></a>
@@ -19,13 +19,13 @@
       Let's take these one at a time.
     </p>
     <p class="indent--1 ml-3 measure lh-copy">
-      <strong>Mixing content and presentation.</strong> There's no denying that placing a class like <code>bg-purple</code> inside HTML is putting visual instructions into the markup.  It's worth understanding why this feels like a problem.  If the same markup is intended to produce many different visual representations then, yes, mixing presentation instructions into the markup makes it hard to manage.  When we build web applications, however, we are rarely doing this.
+      <strong>Mixing content and presentation.</strong> There's no denying that placing a class like <code>bg-purple-500</code> inside HTML is putting visual instructions into the markup.  It's worth understanding why this feels like a problem.  If the same markup is intended to produce many different visual representations then, yes, mixing presentation instructions into the markup makes it hard to manage.  When we build web applications, however, we are rarely doing this.
     </p>
     <p class="ml-3 measure lh-copy">
       Most web applications deliver a specific user experience, usually with some slight modifications on different screen sizes.  This is not the “CSS Zen Garden” approach and very few web apps need that.  If they do, <span class="fv-sc tracked">MelangeCSS</span> is not for them.  But for most apps, it turns out that putting styling instructions in the markup makes some things easier.
     </p>
     <p class="ml-3 measure lh-copy">
-      When you open an HTML file and see <code>&lt;a href="/" class="blue-400 f-3"&gt;link&lt;/a&gt;</code>, you can see that the link is rendered in the third sized font in the dark blue color.  If, instead, the value for <code>class</code> was something more abstract like <code>primary-link</code> it would be harder to figure out how that link renders in a browser.  Depending on what CSS is included on the page, it could be extremely hard.
+      When you open an HTML file and see <code class="ws-nowrap">&lt;a href="/" class="blue-400 f-3"&gt;link&lt;/a&gt;</code>, you can see that the link is rendered in the third sized font in the dark blue color.  If, instead, the value for <code>class</code> was something more abstract like <code>primary-link</code> it would be harder to figure out how that link renders in a browser.  Depending on what CSS is included on the page, it could be extremely hard.
     </p>
     <p class="indent--1 ml-3 measure lh-copy">
       <strong>These classes are not semantic.</strong> The <code>class</code> attribute is ignored by most screen readers.  Users who are not viewing your app in a traditional web browser will get semantic information from the tags used.  The app can make use of ARIA roles to further clarify. The <code>class</code> attribute is irrelevant.  There is no reason or benefit to making its value have semantic meaning.  It is entirely a hook for styling.
@@ -44,18 +44,28 @@
           The class names are far shorter than their analogous CSS properties and values. Even with sophisticated auto-compete, typing out these terse classes is faster.
       </p></li>
       <li><p class="measure lh-copy">
-        Inline styles cannot target breakpoints to allow for responsive design.
+        Inline styles cannot target media queries to allow for responsive design.
       </p></li>
       <li><p class="measure lh-copy">
-        Inline styles have a higher specificity, so they can still use used in a pinch.
+        Inline styles have a higher specificity, so they can still use used alongside classes if needed.
       </p></li>
       <li><p class="measure lh-copy">
-          <em>Most importantly</em>, <strong>Melange includes a grid-based design system</strong>.
+          <em>Most importantly</em>, <strong>Melange includes a grid-based design system</strong>. While you can use custom properties in inline styles, it's far more difficult than using classes based on a design system (based on custom properties).
       </p></li>
     </ul>
     <p class="ml-3 measure lh-copy">
       Being able to design and style by selecting from a small set of values vastly increases the speed at which you can produce styled views.  You can quickly iterate through all possible spacings, font sizes, or widths and choose the one that works.  Yes, you lose the flexibilty of using any of the infinite possible sizes, but you usually don't need that many.
     </p>
+    <p class="ml-3 measure lh-copy">
+      As a demonstration, here are all the buttons you can make with changes to border radius. Surely, one of these will work for you?
+    </p>
+    <div class="flex gap-3 flex-wrap items-center">
+    <% for(let i of [ "1", "2", "3", "4", "5", "100", "pill" ]) { %>
+    <button class="ph-4 pv-3 f-3 fw-6 bg-orange-800 orange-100 ba bc-orange-700 pointer br-<%= i %>">
+      Make Spice Flow
+    </button>
+    <% } %>
+    </div>
   </article>
   <article>
     <a name="design"></a>
@@ -92,7 +102,7 @@
     <p class="measure lh-copy">
       I am a heavy <a href="https://tachyons.io" class="blue-400">Tachyons</a> user. I love it, but in real projects there are a few things that are difficult:
     </p>
-    <ul class="pa-0 ma-0 lsp-inside">
+    <ul class="pa-0 ma-0 lsp-outside">
       <li class="measure lh-copy">
         There's no easy way to override the CSS variables without using the SASS version, and I don't want a build step.
       </li>

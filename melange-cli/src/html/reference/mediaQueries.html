@@ -1,8 +1,8 @@
 <%- include( "_header.html") %>
-<p class="measure lh-copy">
+<p class="p">
   <span class="fv-sc tracked">MelangeCSS</span> is designed so that each class applies to the page when there is no media query in effect.  This means any screen size, light (or no selected) color mode, and no explicit setting for reduced motion.  You can then customize your page's styling when a media query <strong>is</strong> in affect by adding additional classes that have a suffix for that media query.  For example, <code>purple-100</code> would apply to all situations by default, whereas <code>purple-100-dm</code> would apply only when the “prefers dark mode” media query applies.
 </p>
-<p class="measure lh-copy">
+<p class="p">
   Each melange class includes a list of the media query variants that are available.  For example, colors may have variants for dark mode, but spacings would not.  Here are all the known media queries, their definitions, and their naming conventions.
 </p>
 <% mediaQueries.forEach( (mediaQuery) => { %>
@@ -13,7 +13,7 @@
       <h3 class="mv-0 f-3 ws-nowrap">
         <%= mediaQuery.name() %>
       </h3>
-      <p class="measure lh-copy f-1 mt-0">
+      <p class="measure-wide lh-copy f-1 mt-0">
         <%= mediaQuery.description() %>
       </p>
     </div>
@@ -22,13 +22,13 @@
         *-<%= mediaQuery.variableNameQualifier() %>
       </code>
       <div class="mt-3 mt-0-ns">
-        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-600 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-<%= mediaQuery.variableNameQualifier() %>"&gt;
+        <code class="w-auto overflow-x-scroll f-1 f-2-ns db pv-2-ns pv-1 ph-3-ns ph-2 blue-700 bg-black br-2"><pre class="ma-0">&lt;div class="purple-400-<%= mediaQuery.variableNameQualifier() %>"&gt;
   .purple-100-<%= mediaQuery.variableNameQualifier() %>
 &lt;/div&gt;</pre></code>
       </div>
     </div>
     <div>
-    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-600 br-2"><pre class="ma-0"><%= mediaQuery.toMediaQuery() %></pre></code>
+    <code class="db w-auto f-1 overflow-x-scroll pv-2 ph-3 bg-black yellow-700 br-2"><pre class="ma-0"><%= mediaQuery.toMediaQuery() %></pre></code>
     </div>
   </section>
   <% } %>

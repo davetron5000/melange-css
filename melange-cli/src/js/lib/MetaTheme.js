@@ -1,6 +1,6 @@
 /*
  * This is not the design system that Melange provides for you.  This is a thing that produces
- * design systems.  It turns a list of MetaPropertyGrouping instances and a list of MediaQuery instances insto
+ * design systems.  It turns a list of MetaPropertyGrouping instances and a list of MediaQuery instances into
  * the design system.
  */
 export default class MetaTheme {

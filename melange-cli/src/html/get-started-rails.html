@@ -1,0 +1,52 @@
+<%- include( "/_header.html", { title: "Get Started - Ruby on Rails" } ) %>
+<section class="pa-1 w-90 w-60-ns mh-auto">
+  <h3 class="f-4 fw-5 tc">Ruby on Rails</h3>
+  <p class="p measure">
+    <a class="blue-100" href="https://rubyonrails.org">Ruby on Rails</a> requires a few bits of configuration to use CSS files brought in through NPM. <strong>You do not need to—and should not—use the CSS Bundling gem to manage <span class="fv-sc tracked">MelangeCSS</span></strong>. It is still preferable to use the code below, and I don't currently plan on creating a Ruby gem.  Here is how to set it up:
+  </p>
+  <ol class="pa-0 lsp-inside">
+    <li class="mh-auto measure-wide lh-copy">
+      Install using the command above. This will add <code>melange-css</code> to your app's <code>package.json</code> file.
+    </li>
+    <li class="mh-auto measure-wide lh-copy">
+      Add <code>node_modules</code> to the asset path in <code>config/initializers/assets.rb</code>:
+      <code class="f-1 db bg-black green-terminal pa-3 br-2 ws-pre overflow-x-scroll lh-copy mv-2"><span class="amber-terminal"># config/initializers/assets.rb</span>
+
+# ...
+
+Rails.application.config.assets.paths &lt;&lt; (Rails.root / "node_modules")
+
+# ...</code>
+     </li>
+     <li class="mh-auto measure-wide lh-copy">
+          Add <code>melange.css</code> to your <code>app/assets/stylesheets.css</code> (note that you want to <code>require</code> it before your CSS so you can customize by setting custom properties):
+          <code class="f-1 db bg-black green-terminal pa-3 br-2 ws-pre overflow-x-scroll lh-copy mv-2"><span class="amber-terminal">/* app/assets/stylesheets.css */</span>
+
+/*
+ * «giant comment from Rails omitted»
+ *
+ *= require "melange-css/melange.css"
+ *= require_tree .
+ *= require_self
+ */</code>
+    </li>
+     <li class="mh-auto measure-wide lh-copy">
+       If you are using add-ons, `require` them after the base stylesheet but before your code:
+          <code class="f-1 db bg-black green-terminal pa-3 br-2 ws-pre overflow-x-scroll lh-copy mv-2"><span class="amber-terminal">/* app/assets/stylesheets.css */</span>
+
+/*
+ * «giant comment from Rails omitted»
+ *
+ *= require "melange-css/melange-thin.css"
+ *= require "melange-css/melange-not-small-breakpoint.css"
+ *= require "melange-css/melange-dark-mode.css"
+ *= require_tree .
+ *= require_self
+ */</code>
+    </li>
+    <li class="mh-auto measure-wide lh-copy">
+      Remember to restart your dev server after making this change.
+    </li>
+  </ol>
+</section>
+<%- include( "/_footer.html") %>

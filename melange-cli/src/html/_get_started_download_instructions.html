@@ -1,95 +1,83 @@
-<article class="<%= bg %> pa-3-ns pa-1" id="<%= anchor %>">
-<div class="w-90 w-60-ns mh-auto">
-  <h3 class="f-4 fw-bold tc">
-    <% if (dark_mode) { %>
-    Dark Mode;
-    <% } else { %>
-    No Dark Mode;
-    <% } %>
-    <% if (breakpoints == "all") { %>
-      All Breakpoints
-    <% } else if (breakpoints == "two") { %>
-    <a class="<%= dark_mode ? 'white' : 'black' %>" href="/reference/mediaQueries.html#not-small-width">Desktop Breakpoint Only</a>
-    <% } else { %>
-    No Breakpoints
-    <% } %>
+<article id="<%= id %>" class="<%= inverse ? 'bg-blue-800 blue-100' : 'bg-orange-800 orange-100' %> pt-3 <%= addons? '' : 'pb-4' %>">
+  <h3 class="f-4 fw-bold w-90 w-60-ns mh-auto flex items-center gap-2">
+    <%- include("file-line-icon.svg", { width: "w-2" }) %>
+    <code><%= file %>.css</code>
   </h3>
-  <ul class="lst-none ma-0 pa-0">
-    <li id="<%= anchor %>-cdn">
-      <h4 class="f-4 fw-5 ttu tc tl-ns">CDN</h4>
-      <p class="measure lh-copy">
-        You can bring <span class="fv-sc tracked">MelangeCSS</span> into any webpage using the <code>unpkg.com</code> CDN provided for all NPM packages.  Place this somewhere in your <code>&lt;head&gt;</code> section:
-      </p>
-      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&lt;link rel="stylesheet"
-        href="https://unpkg.com/melange-css@<%= version %>/<%= file %>.min.css"/&gt;</code>
-      <% if (verbose) { %>
-      <p class="measure lh-copy">
-        Using the CDN, you can get started right awway. For production use, we recommend you avoid this method as it creates a runtime dependency on <code>unpkg.com</code>, which is not desirable.
-      </p>
-      <% } %>
-    </li>
-    <li id="<%= anchor %>-download">
-      <h4 class="f-4 fw-5 ttu tc tl-ns">Download</h4>
-      <p class="measure lh-copy">
-        To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code><%= file %>.css</code> with a command-line tool like <code>curl</code>:
-      </p>
-      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">curl https://unpkg.com/melange-css@<%= version %>/<%= file %>.min.css &gt; \
-        your/project/css/<%= file %>.css</code>
-      <% if (verbose) { %>
-      <p class="measure lh-copy">
-        This method is most stable, because you have a copy of <span class="fv-sc tracked">MelangeCSS</span> in your app and that copy won't be changed in any way without you explicitly changing it.  The downside is that you don't have a way to easily update it when there are changes.  To do that, use NPM.
-      </p>
-      <% } %>
-    </li>
-    <li>
-    <li id="<%= anchor %>-npm">
-      <h4 class="f-4 fw-5 ttu tc tl-ns">NPM</h4>
-      <p class="measure lh-copy">
-        <span class="fv-sc tracked">MelangeCSS</span> is available as a Node Module, which you can install thusly:
-      </p>
-      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --save melange-css</code>
-      <% if (verbose) { %>
-      <aside class="ph-3 pv-2 br-3 bg-blue-700 orange-300 flex items-start gap-3 measure-wide">
-        <span role="img" aria-description="info symbol" class="mt-1 w-3 h-3 flex items-center justify-center bc-blue-400 bg-blue-300 blue-600 br-100 ba">&#8505;</span>
-      <p class="ma-0 measure lh-copy f-1 i fw-7">
-        If you use this method, you are encouraged to monitor the releases.  <span class="fv-sc tracked">MelangeCSS</span> uses <a class="blue-100" href="https://docs.npmjs.com/about-semantic-versioning">Semantic Versioning</a>, so you should not experience breaking changes outside of a major release.
-      </p>
-      </aside>
-      <% } %>
-      <p class="measure lh-copy">
-        The CSS will be in <code>node_modules/melange-css/<%= file %>.css</code>.  How you get that into your app highly depends on how your app is built.  If you have a build system that supports <a class="<%= dark_mode ? 'blue-900' : 'blue-100' %>" href="http://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>, you can bring <span class="fv-sc tracked">MelangeCSS</span> in by adding this to a <code>.css</code> file your build system processes:
-      </p>
-      <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">@import "melange-css/<%= file %>.css";</code>
-      <h5 class="f-3 fw-5 tc tl-ns">Ruby on Rails</h5>
-      <p class="p">
-        <a class="<%= dark_mode ? 'blue-900' : 'blue-100' %>" href="https://rubyonrails.org">Ruby on Rails</a> requires a few bits of configuration to use CSS files brought in through NPM. <strong>You do not need to—and should not—use the CSS Bundling gem to manage <span class="fv-sc tracked">MelangeCSS</span></strong>. It is still preferable to use the code below, and I don't currently plan on creating a Ruby gem.  Here is how to set it up:
-      </p>
-      <ol>
-        <li class="p">
-          Install using the command above. This will add <code>melange-css</code> to your app's <code>package.json</code> file.
-        </li>
-        <li class="lh-copy measure-wide">
-          Add <code>node_modules</code> to the asset path in <code>config/initializers/assets.rb</code>:
-        <code class="f-1 db <%= dark_mode ? 'bg-white green-300' : 'bg-black green-700' %> ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2"># config/initializers/assets.rb
+  <p class="w-90 w-60-ns lh-copy f-3 mh-auto">
+    <%= description %>
+  </p>
+  <h4 class="w-90 w-60-ns mh-auto f-3 fw-5 ttu tc tl-ns" id="<%= id %>-cdn">CDN</h4>
+  <p class="w-90 w-60-ns lh-copy mh-auto">
+    You can bring <span class="fv-sc tracked">MelangeCSS</span> into any webpage using the <code>unpkg.com</code> CDN provided for all NPM packages.  Place this somewhere in your <code>&lt;head&gt;</code> section:
+  </p>
+  <div class="bg-black pa-3">
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">&lt;link rel="stylesheet" href="https://unpkg.com/melange-css@<%= version %>/<%= file %>.min.css"/&gt;</code>
+  </div>
+  <h4 class="w-90 w-60-ns mh-auto f-4 fw-5 ttu tc tl-ns" id="<%= id %>-download">Download</h4>
+  <p class="w-90 w-60-ns lh-copy mh-auto">
+    To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code><%= file %>.css</code> with a command-line tool like <code>curl</code>:
+  </p>
+  <div class="bg-black pa-3">
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">curl https://unpkg.com/melange-css@<%= version %>/<%= file %>.min.css &gt; your/project/css/<%= file %>.css</code>
+  </div>
+  <h4 class="w-90 w-60-ns mh-auto f-3 fw-5 ttu tc tl-ns" id="<%= id %>-npm">NPM</h4>
+  <p class="w-90 w-60-ns lh-copy mh-auto">
+    <span class="fv-sc tracked">MelangeCSS</span> is available as a Node Module, which you can install thusly:
+  </p>
+  <div class="bg-black pa-3">
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">npm install --save melange-css</code>
+  </div>
+  <p class="w-90 w-60-ns lh-copy mh-auto">
+    The CSS will be in <code>node_modules/melange-css/<%= file %>.css</code>.  How you get that into your app highly depends on how your app is built.  If you have a build system that supports <a class="blue-100" href="http://developer.mozilla.org/en-US/docs/Web/CSS/@import"><code>@import</code></a>, you can bring <span class="fv-sc tracked">MelangeCSS</span> in by adding this to a <code>.css</code> file your build system processes:
+  </p>
+  <div class="bg-black pa-3">
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">@import "melange-css/<%= file %>.css";</code>
+  </div>
+  <p class="w-90 w-60-ns lh-copy mh-auto">
+    If you are using Ruby on Rails <a href="get-started-rails.html" class="blue-100">here are the instructions</a> for using the asset pipeline with the NPM module.
+  </p>
+  <% if (addons) { %>
+  <h4 class="w-90 w-60-ns mh-auto f-2 fw-8 ttu tc tl-ns">Adding Media Queries</h4>
+  <p class="w-90 w-60-ns lh-copy mh-auto">
+    Since this base stylesheet is missing some media queries, you can add the ones you need peacemeal. See <a href="/guide-media-queries.html" class="blue-300">the media queries guide</a> for how to use these styles.
+  </p>
+  <table class="collapse w-auto mv-3 mh-auto">
+    <thead>
+      <tr>
+        <th class="tl f-2 pa-2 bb br ws-nowrap">Stylesheet</th>
+        <th class="tl f-2 pa-2 bb">Media Query</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Object.entries(addons).forEach( ([fileName,description]) => { %>
+      <tr>
+        <td class="f-1 bb pa-2 br">
+          <code class="db ws-nowrap">melange-<%= fileName %>.css</code>
+          <code class="db ws-nowrap">melange-<%= fileName %>.min.css</code>
+          </a>
+        <td class="f-1 bb pa-2 p ma-0"><%= description %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <p class="lh-copy w-90 w-60-ns mh-auto">
+    For example:
+  </p>
+  <div class="bg-black pa-3">
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">&lt;!-- Pure HTML --&gt;
+&lt;link rel="stylesheet"
+      href="https://unpkg.com/melange-css@<%= version %>/<%= file %>.min.css"/&gt;
+&lt;link rel="stylesheet"
+      href="https://unpkg.com/melange-css@<%= version %>/melange-<%= Object.entries(addons)[0][0] %>.min.css"/&gt;
 
-# ...
-
-Rails.application.config.assets.paths &lt;&lt; (Rails.root / "node_modules")
-
-# ...</code>
-        </li>
-        <li class="lh-copy measure-wide">
-          Add <code>melange.css</code> to your <code>app/assets/stylesheets.css</code> (note that you want to <code>require</code> it before your CSS so you can customize by setting custom properties):
-          <code class="f-1 db <%= dark_mode ? 'bg-white green-300' : 'bg-black green-700' %> ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">/* app/assets/stylesheets.css */
-/*
- * «giant comment from Rails omitted»
- *
- *= require "melange-css/<%= file %>.css"
- *= require_tree .
- *= require_self
- */</code>
-    </li>
-    <li class="p">Restart your server</li>
-  </ul>
-</div>
+/* Using a CSS pre-processor */
+@import "melange-css/<%= file %>.css";
+@import "melange-css/melange-<%= Object.entries(addons)[0][0] %>.css";
+</code>
+  </div>
+  <% } else { %>
+  <p class="lh-copy w-90 w-60-ns i mh-auto">
+    This includes all media queries.
+  </p>
+  <% } %>
 </article>

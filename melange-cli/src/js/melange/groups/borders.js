@@ -128,7 +128,10 @@ const borders = new MetaPropertyGrouping({
     borderStyleMetaProperty,
     borderWidthMetaProperty,
   ],
-  mediaQueries: mediaQueries.onlyBreakpoints(),
+  mediaQueries: [
+    ...mediaQueries.onlyBreakpoints(),
+    mediaQueries.moreContrast,
+  ],
   docs: [
     "Like the spacing group, borders can benefit from a stepped scale of sizes.  These sizes don't relate to the spacings, but are internally consistent. Border widths and radiuses should produce harmonic designs for most of your needs.",
   ],

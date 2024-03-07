@@ -26,31 +26,93 @@ DIST_DIR=melange-css
 DISTRO_CSS=$(DIST_DIR)/melange.css
 DISTRO_MINIFIED_CSS=$(DIST_DIR)/melange.min.css
 
-#dm | ns | l/m | NAME
-#Y    Y     Y  | melange.css
-#
-#N    Y     Y  | melange-no_dark_mode.css
-#Y    Y     N  | melange-breakpoint_ns_only.css
-#N    Y     N  | melange-no_dark_mode-breakpoint_ns_only.css
-#Y    N     N  | melange-no_breakpoints.css
-#N    N     N  | melange-no_dark_mode-no_breakpoints.css
+# Following files
+# melange-plus.css      -  breakpoints, dark mode, high contrast
+# melange.css           -  breakpoints
+# melange-thin.css      -  default only
+# melange-plus.min.css  -  breakpoints, dark mode, high contrast, minified
+# melange.min.css       -  breakpoints, minified
+# melange-thin.min.css  -  default only, minified
+# melange-ns.css        -  ns breakpoints
+# melange-l.css         -  l breakpoints
+# melange-m.css         -  m breakpoints
+# melange-dm.css        -  dark mode
+# melange-hc.css        -  high contrast
 
-DISTRO_NO_DARK_MODE_CSS=$(DIST_DIR)/melange-no_dark_mode.css
-DISTRO_NO_DARK_MODE_MINIFIED_CSS=$(DIST_DIR)/melange-no_dark_mode.min.css
 
-DISTRO_BREAKPOINT_NS_ONLY_CSS=$(DIST_DIR)/melange-breakpoint_ns_only.css
-DISTRO_BREAKPOINT_NS_ONLY_MINIFIED_CSS=$(DIST_DIR)/melange-breakpoint_ns_only.min.css
+# Plus-sized - include everything
+DISTRO_PLUS_CSS=$(DIST_DIR)/melange-plus.css
+DISTRO_PLUS_MINIFIED_CSS=$(DIST_DIR)/melange-plus.min.css
 
-DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_CSS=$(DIST_DIR)/melange-no_dark_mode-breakpoint_ns_only.css
-DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_MINIFIED_CSS=$(DIST_DIR)/melange-no_dark_mode-breakpoint_ns_only.min.css
+$(DISTRO_PLUS_CSS): $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --only-media-queries="ALL"
 
-DISTRO_NO_BREAKPOINTS_CSS=$(DIST_DIR)/melange-no_breakpoints.css
-DISTRO_NO_BREAKPOINTS_MINIFIED_CSS=$(DIST_DIR)/melange-no_breakpoints.min.css
 
-DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_CSS=$(DIST_DIR)/melange-no_dark_mode-no_breakpoints.css
-DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_MINIFIED_CSS=$(DIST_DIR)/melange-no_dark_mode-no_breakpoints.min.css
+# Default - include only breakpoints
+DISTRO_DEFAULT_CSS=$(DIST_DIR)/melange.css
+DISTRO_DEFAULT_MINIFIED_CSS=$(DIST_DIR)/melange.min.css
 
-DISTRO_FILES=$(DISTRO_MINIFIED_CSS) $(DISTRO_NO_DARK_MODE_MINIFIED_CSS) $(DISTRO_BREAKPOINT_NS_ONLY_MINIFIED_CSS) $(DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_MINIFIED_CSS) $(DISTRO_NO_BREAKPOINTS_MINIFIED_CSS) $(DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_MINIFIED_CSS)
+$(DISTRO_DEFAULT_CSS): $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --only-media-queries="DEFAULT,ns,m,l"
+
+# Thin - default breakpoints only
+DISTRO_THIN_CSS=$(DIST_DIR)/melange-thin.css
+DISTRO_THIN_MINIFIED_CSS=$(DIST_DIR)/melange-thin.min.css
+
+$(DISTRO_THIN_CSS): $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --only-media-queries="DEFAULT"
+
+# NS - ns- breakpoint only
+DISTRO_NS_CSS=$(DIST_DIR)/melange-not-small-breakpoint.css
+DISTRO_NS_MINIFIED_CSS=$(DIST_DIR)/melange-not-small-breakpoint.min.css
+
+$(DISTRO_NS_CSS): $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --only-media-queries="ns" --no-variables --no-reset
+
+# M - m- breakpoint only
+DISTRO_M_CSS=$(DIST_DIR)/melange-medium-breakpoint.css
+DISTRO_M_MINIFIED_CSS=$(DIST_DIR)/melange-medium-breakpoint.min.css
+
+$(DISTRO_M_CSS): $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --only-media-queries="m" --no-variables --no-reset
+
+# L - l- breakpoint only
+DISTRO_L_CSS=$(DIST_DIR)/melange-large-breakpoint.css
+DISTRO_L_MINIFIED_CSS=$(DIST_DIR)/melange-large-breakpoint.min.css
+
+$(DISTRO_L_CSS): $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --only-media-queries="l" --no-variables --no-reset
+
+# DM - Dark mode breakpoint only
+DISTRO_DM_CSS=$(DIST_DIR)/melange-dark-mode.css
+DISTRO_DM_MINIFIED_CSS=$(DIST_DIR)/melange-dark-mode.min.css
+
+$(DISTRO_DM_CSS): $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --only-media-queries="dm" --no-variables --no-reset
+
+# HC - High contrast breakpoint only
+DISTRO_HC_CSS=$(DIST_DIR)/melange-high-contrast.css
+DISTRO_HC_MINIFIED_CSS=$(DIST_DIR)/melange-high-contrast.min.css
+
+$(DISTRO_HC_CSS): $(DIST_DIR) $(SRC_FILES)
+	@echo "Building $(@)"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --only-media-queries="hc" --no-variables --no-reset
+
+DISTRO_FILES=$(DISTRO_PLUS_MINIFIED_CSS)    \
+						 $(DISTRO_DEFAULT_MINIFIED_CSS) \
+						 $(DISTRO_THIN_MINIFIED_CSS)    \
+						 $(DISTRO_NS_MINIFIED_CSS)      \
+						 $(DISTRO_M_MINIFIED_CSS)       \
+						 $(DISTRO_L_MINIFIED_CSS)       \
+						 $(DISTRO_DM_MINIFIED_CSS)      \
+						 $(DISTRO_HC_MINIFIED_CSS)
 
 METADATA=$(DIST_DIR)/melange-metadata.json
 
@@ -66,53 +128,10 @@ $(DIST_DIR):
 	@echo "Creating $(@)"
 	@mkdir -p $(@)
 
-$(DISTRO_MINIFIED_CSS): $(DISTRO_CSS)
-	@echo "Minifying $(DISTRO_CSS)"
-	@cd $(DIST_DIR) && npx css-minify -o . -f melange.css ; cd ..
-
-$(DISTRO_NO_DARK_MODE_MINIFIED_CSS): $(DISTRO_NO_DARK_MODE_CSS)
-	@echo "Minifying $(DISTRO_NO_DARK_MODE_CSS)"
-	@cd $(DIST_DIR) && npx css-minify -o . -f /melange-no_dark_mode.css ; cd ..
-
-$(DISTRO_BREAKPOINT_NS_ONLY_MINIFIED_CSS): $(DISTRO_BREAKPOINT_NS_ONLY_CSS)
-	@echo "Minifying $(DISTRO_BREAKPOINT_NS_ONLY_CSS)"
-	@cd $(DIST_DIR) && npx css-minify -o . -f /melange-breakpoint_ns_only.css ; cd ..
-
-$(DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_MINIFIED_CSS): $(DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_CSS)
-	@echo "Minifying $(DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_CSS)"
-	@cd $(DIST_DIR) && npx css-minify -o . -f /melange-no_dark_mode-breakpoint_ns_only.css ; cd ..
-
-$(DISTRO_NO_BREAKPOINTS_MINIFIED_CSS): $(DISTRO_NO_BREAKPOINTS_CSS)
-	@echo "Minifying $(DISTRO_NO_BREAKPOINTS_CSS)"
-	@cd $(DIST_DIR) && npx css-minify -o . -f /melange-no_breakpoints.css ; cd ..
-
-$(DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_MINIFIED_CSS): $(DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_CSS)
-	@echo "Minifying $(DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_CSS)"
-	@cd $(DIST_DIR) && npx css-minify -o . -f /melange-no_dark_mode-no_breakpoints.css ; cd ..
-
-$(DISTRO_CSS) $(METADATA): $(DIST_DIR) $(SRC_FILES)
-	@echo "Building $(@)"
-	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --meta-data $(METADATA)
-
-$(DISTRO_NO_DARK_MODE_CSS) : $(DIST_DIR) $(SRC_FILES)
-	@echo "Building $(@)"
-	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --no-media-queries="dm"
-
-$(DISTRO_BREAKPOINT_NS_ONLY_CSS) : $(DIST_DIR) $(SRC_FILES)
-	@echo "Building $(@)"
-	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --no-media-queries="l,m"
-
-$(DISTRO_NO_DARK_MODE_BREAKPOINT_NS_ONLY_CSS) : $(DIST_DIR) $(SRC_FILES)
-	@echo "Building $(@)"
-	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --no-media-queries="dm,l,m"
-
-$(DISTRO_NO_BREAKPOINTS_CSS) : $(DIST_DIR) $(SRC_FILES)
-	@echo "Building $(@)"
-	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --no-media-queries="ns,l,m"
-
-$(DISTRO_NO_DARK_MODE_NO_BREAKPOINTS_CSS) : $(DIST_DIR) $(SRC_FILES)
-	@echo "Building $(@)"
-	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --no-media-queries="dm,ns,l,m"
+# Minify any .css file
+$(DIST_DIR)/%.min.css: $(DIST_DIR)/%.css
+	@echo "Minifying $(<)"
+	@npx css-minify -o . -f $(<) -o $(DIST_DIR)
 
 $(DOCS_DIR):
 	@mkdir -p $(DOCS_DIR)
@@ -136,6 +155,7 @@ clean:
 .PHONY: clean
 
 debug:
-	@echo ${SRC_CLI}
+	@echo $(DISTRO_PLUS_CSS)
+	@echo $(DISTRO_PLUS_MINIFIED_CSS)
 
 .PHONY: debug
