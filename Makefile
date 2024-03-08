@@ -53,9 +53,9 @@ $(DISTRO_PLUS_CSS): $(DIST_DIR) $(SRC_FILES)
 DISTRO_DEFAULT_CSS=$(DIST_DIR)/melange.css
 DISTRO_DEFAULT_MINIFIED_CSS=$(DIST_DIR)/melange.min.css
 
-$(DISTRO_DEFAULT_CSS): $(DIST_DIR) $(SRC_FILES)
+$(DISTRO_DEFAULT_CSS) $(METADATA): $(DIST_DIR) $(SRC_FILES)
 	@echo "Building $(@)"
-	@node $(SRC_JS_DIR)/cli/melange.js css --css $(@) --only-media-queries="DEFAULT,ns,m,l"
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(DISTRO_DEFAULT_CSS) --meta-data $(METADATA) --only-media-queries="DEFAULT,ns,m,l"
 
 # Thin - default breakpoints only
 DISTRO_THIN_CSS=$(DIST_DIR)/melange-thin.css
@@ -135,6 +135,7 @@ $(DIST_DIR)/%.min.css: $(DIST_DIR)/%.css
 
 $(DOCS_DIR):
 	@mkdir -p $(DOCS_DIR)
+	@node $(SRC_JS_DIR)/cli/melange.js css --css $(DOCS_DIR)/melange.css
 
 documentation: $(DOCS_DIR) $(SRC_FILES) $(SRC_HTML_FILES)
 	@node $(SRC_JS_DIR)/cli/melange.js website --templates $(SRC_HTML_DIR)/ --dir $(DOCS_DIR)/ --force --packagejson $(CLI_ROOT)/package.json

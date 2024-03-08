@@ -4,9 +4,15 @@
  * the design system.
  */
 export default class MetaTheme {
-  constructor({metaPropertyGroupings, mediaQueries}) {
+  /*
+   * metaPropertyGroupings - each grouping for all the meta properties
+   * mediaQueries - array of MediaQuery instances
+   * pseudoSelectors - array of PsuedoSelector instances
+   */
+  constructor({metaPropertyGroupings, mediaQueries,pseudoSelectors}) {
     this.metaPropertyGroupings = metaPropertyGroupings
-    this.mediaQueries           = mediaQueries
+    this.mediaQueries          = mediaQueries
+    this.pseudoSelectors       = pseudoSelectors
   }
 
   /*
@@ -112,13 +118,16 @@ export default class MetaTheme {
           metaProperty.cssClassTemplates.forEach( (cssClassTemplate) => {
             onCSSClassTemplate.start(cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
             metaProperty.scales().forEach( (scale) => {
-              metaProperty.pseudoSelectors.forEach( (pseudoSelector) => {
+              this.pseudoSelectors.forEach( (pseudoSelector) => {
+                const supportsPseudoSelector = metaProperty.pseudoSelectors.find( (ps) => ps.selector == pseudoSelector.selector )
                 onPsuedoSelector.start(pseudoSelector, cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
-                scale.eachStep( (step) => {
-                  const cssClass = cssClassTemplate.toCSSClass(step).forSelector(pseudoSelector).atMediaQuery(mediaQuery)
-                  onCSSClass.start(cssClass, pseudoSelector, cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
-                  onCSSClass.end(cssClass, cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
-                })
+                if (supportsPseudoSelector) {
+                  scale.eachStep( (step) => {
+                    const cssClass = cssClassTemplate.toCSSClass(step).forSelector(pseudoSelector).atMediaQuery(mediaQuery)
+                    onCSSClass.start(cssClass, pseudoSelector, cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
+                    onCSSClass.end(cssClass, cssClassTemplate, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
+                  })
+                }
                 onPsuedoSelector.end(pseudoSelector, metaProperty, metaPropertyGrouping, mediaQuery, this.mediaQueries)
               })
             })

@@ -1,52 +1,84 @@
 {
   "melangeMetaData": {
-  "mediaQueries": {
+    "mediaQueries": {
       "default---no-query": {
-            "name": "Default / No Query",
-            "isDefault": true,
-            "variableNameQualifier": "",
-            "mediaQuery": ""
+        "name": "Default / No Query",
+        "isDefault": true,
+        "variableNameQualifier": "",
+        "mediaQuery": ""
       },
       "not-small-width": {
-            "name": "Not Small Width",
-            "isDefault": false,
-            "variableNameQualifier": "ns",
-            "mediaQuery": "@media screen and (min-width: 30em)",
-            "breakpoint": {
-                  "minWidth": "30em"
-            }
+        "name": "Not Small Width",
+        "isDefault": false,
+        "variableNameQualifier": "ns",
+        "mediaQuery": "@media screen and (min-width: 30em)",
+        "breakpoint": {
+          "minWidth": "30em"
+        }
       },
       "medium-width": {
-            "name": "Medium Width",
-            "isDefault": false,
-            "variableNameQualifier": "m",
-            "mediaQuery": "@media screen and (min-width: 30em) and (max-width: 60em)",
-            "breakpoint": {
-                  "minWidth": "30em",
-                  "maxWidth": "60em"
-            }
+        "name": "Medium Width",
+        "isDefault": false,
+        "variableNameQualifier": "m",
+        "mediaQuery": "@media screen and (min-width: 30em) and (max-width: 60em)",
+        "breakpoint": {
+          "minWidth": "30em",
+          "maxWidth": "60em"
+        }
       },
       "large-width": {
-            "name": "Large Width",
-            "isDefault": false,
-            "variableNameQualifier": "l",
-            "mediaQuery": "@media screen and (min-width: 60em)",
-            "breakpoint": {
-                  "minWidth": "60em"
-            }
+        "name": "Large Width",
+        "isDefault": false,
+        "variableNameQualifier": "l",
+        "mediaQuery": "@media screen and (min-width: 60em)",
+        "breakpoint": {
+          "minWidth": "60em"
+        }
       },
       "dark-mode": {
-            "name": "Dark Mode",
-            "isDefault": false,
-            "variableNameQualifier": "dm",
-            "mediaQuery": "@media (prefers-color-scheme: dark)"
+        "name": "Dark Mode",
+        "isDefault": false,
+        "variableNameQualifier": "dm",
+        "mediaQuery": "@media (prefers-color-scheme: dark)"
       },
       "reduced-motion": {
-            "name": "Reduced Motion",
-            "isDefault": false,
-            "variableNameQualifier": "rm",
-            "mediaQuery": "@media (prefers-reduced-motion: reduce)"
+        "name": "Reduced Motion",
+        "isDefault": false,
+        "variableNameQualifier": "rm",
+        "mediaQuery": "@media (prefers-reduced-motion: reduce)"
+      },
+      "high-contrast": {
+        "name": "High Contrast",
+        "isDefault": false,
+        "variableNameQualifier": "hc",
+        "mediaQuery": "@media (prefers-contrast: more)"
       }
-}
+    },
+    "pseudoSelectors": {
+      "hover": {
+        "name": "Hover",
+        "variableNameQualifier": "hover"
+      },
+      "active": {
+        "name": "Active",
+        "variableNameQualifier": "active"
+      },
+      "focus": {
+        "name": "Focus",
+        "variableNameQualifier": "focus"
+      },
+      "disabled": {
+        "name": "Disabled",
+        "variableNameQualifier": "disabled"
+      },
+      "valid": {
+        "name": "Valid",
+        "variableNameQualifier": "valid"
+      },
+      "invalid": {
+        "name": "Invalid",
+        "variableNameQualifier": "invalid"
+      }
+    }
   }
 }

@@ -10,6 +10,7 @@ export default class MetaDataBuilder {
 
   build(metaTheme) {
     const mediaQueries = {}
+    const pseudoSelectors = {}
 
     const collectMediaQuery = (mediaQuery) => {
       mediaQueries[mediaQuery.id()] = {
@@ -25,14 +26,28 @@ export default class MetaDataBuilder {
         }
       }
     }
+    const collectPsuedoSelector = (pseudoSelector) => {
+      if (!pseudoSelector.isDefault()) {
+        pseudoSelectors[pseudoSelector.selector] = {
+          name: pseudoSelector.name,
+          variableNameQualifier: pseudoSelector.variableNameQualifier,
+        }
+      }
+    }
+
     metaTheme.eachCSSClass({
       onMediaQuery: collectMediaQuery,
+      onPsuedoSelector: collectPsuedoSelector,
     })
-    const css = fs.createWriteStream(this.filename)
 
-    css.write(`{\n  "melangeMetaData": {\n`)
-    css.write(`  "mediaQueries": ${JSON.stringify(mediaQueries,null,6)}\n`)
-    css.write("  }\n}")
+    const object = {
+      melangeMetaData: {
+        mediaQueries: mediaQueries,
+        pseudoSelectors: pseudoSelectors,
+      }
+    }
+    const json = fs.createWriteStream(this.filename)
+    json.write(JSON.stringify(object,null,2))
 
   }
 
