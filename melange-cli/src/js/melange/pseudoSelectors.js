@@ -23,6 +23,11 @@ export class PseudoSelectors {
       this.invalid,
     ]
   }
+  find(variableNameQualifier) {
+    return this.toArray().find( (pseudoSelector) => {
+      return (pseudoSelector.variableNameQualifier == variableNameQualifier)
+    })
+  }
 }
 
 const pseudoSelectors = new PseudoSelectors()

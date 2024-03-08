@@ -25,6 +25,12 @@
       bgColor: "bg-purple-800 br-4",
       content: "No mini-languges, no DSLs, no nonsense. Class names are based on initialisms and convention, quickly learned."
   }) %>
+  <%- include("_icon_box.html", {
+      icon: "extension-icon.svg",
+      color: "",
+      bgColor: "bg-green-800 br-4",
+      content: "Simple customization options without a complex toolchain or dependencies.",
+  }) %>
 
 </section>
 <article class="pa-3 bg-white mh-auto">
@@ -87,6 +93,8 @@
       content: "Everything is based on modular scales for fonts, sizing, and spacing. Quickly find the right one for your UI, and know that everything will work well together." }) %>
   <%- include("_icon_box.html", { icon: "settings-line-icon.svg", color: "orange-800", bgColor: "bg-blue-100 shadow-1", 
       content: "Customize anything by setting CSS properties - no special configuration language needed." }) %>
+  <%- include("_icon_box.html", { icon: "extension-icon.svg", color: "gray-900", bgColor: "bg-gray-100", 
+      content: "Add your own classes and have MelangeCSS create versions for each media query or pseudo class." }) %>
 </article>
 <article class="pa-3 bg-orange-100 blue-800 mh-auto">
   <h3 class="lh-title f-4 tc"><span class="fv-sc tracked">MelangeCSS</span> Isn't For Everyone</h3>
