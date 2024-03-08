@@ -1,0 +1,38 @@
+.green-text-glow {
+  color: #66ff22;
+  text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
+}
+
+.green-text-no-glow {
+  color: #88ff88;
+}
+
+.hover-green-text-glow:hover {
+  color: #66ff22;
+  text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
+}
+
+.hover-green-text-no-glow:hover {
+  color: #88ff88;
+}
+
+@media (prefers-contrast: more) {
+  .green-text-glow-hc {
+    color: #66ff22;
+    text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
+  }
+
+  .green-text-no-glow-hc {
+    color: #88ff88;
+  }
+
+  .hover-green-text-glow-hc:hover {
+    color: #66ff22;
+    text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
+  }
+
+  .hover-green-text-no-glow-hc:hover {
+    color: #88ff88;
+  }
+
+}

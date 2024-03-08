@@ -1,0 +1,8 @@
+.green-text-glow {
+  color: #66ff22;
+  text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
+}
+.green-text-no-glow {
+  color: #88ff88;
+}
+

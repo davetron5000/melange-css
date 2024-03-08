@@ -58,10 +58,18 @@
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --saveDev melange-cli</code>
       <p class="p mh-auto">
-        The CLI works by taking an input <code>.css</code> file, and producing another <code>.css</code> file containing the original's classes for each specified media query and pseudo class, all using <span class="fv-sc tracked">MelangeCSS</span>'s naming conventions.
+        Next, create a <code>.css</code> file with the classes you need.  Don't use any suffixes or prefixes—just name the classes however you like.  Use <code>npx melange-css</code> to generate a <code>.css</code> file with all the breakpoints and pseudo classes you want.  For example, this would create classes for all three breakpoints, plus hover, plus, active pseudo classes:
       </p>
+      <code class="db bg-black green-terminal ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npx melange-css --input melange-input.css \
+                --output melange-custom-classes.css \
+                --mediaQuery ns \
+                --mediaQuery m \
+                --mediaQuery l \
+                --pseudoSelector active \
+                --pseudoSelector hover</code>
+      <h5 class="f-3 fw-6 tc">Example</h5>
       <p class="p mh-auto">
-        For example, suppose you wish to create a green text glow style that works just like any other <span class="fv-sc tracked">MelangeCSS</span> class. You also want a style for green text that doesn't glow.  You also want both available for hover states as well, and a way to control it for high-contrast media queries. You'd want these classes:
+        Suppose you wish to create a green text glow style that works just like any other <span class="fv-sc tracked">MelangeCSS</span> class. You also want a style for green text that doesn't glow.  You want both available for hover states and for high-contrast media queries.  Following the naming conventions, you'd want the following classes:
       </p>
       <dl class="mh-auto measure">
         <dt><code>green-text-glow</code></dt>
@@ -102,9 +110,9 @@
   color: #88ff88;
 }</code>
       <p class="p mh-auto">
-        Then, you can use <code>npm melange-css</code> to produce all the needed classes to include in your project:
+        Then, you can use <code>npx melange-css</code> to produce all the needed classes to include in your project:
       </p>
-      <code class="db bg-black green-terminal ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm melange-css --input melange-input.css \
+      <code class="db bg-black green-terminal ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npx melange-css --input melange-input.css \
                 --output melange-custom-classes.css \
                 --mediaQuery hc \
                 --pseudoSelector hover</code>
@@ -152,14 +160,14 @@
       <p class="p mh-auto">
         You can target as many breakpoints and pseudo classes as you like.  For example, if you also wanted the not small breakpoint as well as the focus pseudo-selector, you'd run this:
       </p>
-      <code class="db bg-black green-terminal ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm melange-css --input melange-input.css \
+      <code class="db bg-black green-terminal ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npx melange-css --input melange-input.css \
                 --output melange-custom-classes.css \
                 --mediaQuery hc \
                 --mediaQuery ns \
                 --pseudoSelector focus \
                 --pseudoSelector hover</code>
       <p class="p mh-auto">
-        Run <code>npm melange-css --help</code> to see the complete list of media queries and pseudo selectors you can use.
+        Run <code>npx melange-css --help</code> to see the complete list of media queries and pseudo selectors you can use.
       </p>
     </article>
   </section>
