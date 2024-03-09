@@ -13,7 +13,7 @@
     </p>
     <ul class="ma-0 pa-0 lsp-inside">
       <li class="p mh-auto mb-2">
-        <a href="#variables" class="blue-400">Changing the Variables</a> - this is the simplest mechanism and is suitable if you want to change the fonts, colors, or use a different scale for spacing and font sizes.
+        <a href="#variables" class="blue-400">Overriding Custom Properties</a> - this is the simplest mechanism and is suitable if you want to change the fonts, colors, or use a different scale for spacing and font sizes.
       </li>
       <li class="p mh-auto mb-2">
         <a href="#augmenting" class="blue-400">Adding Your Own Classes</a> - this is useful when you need additional classes, but want to capitalize on the naming conventions, media queries, pseudo classes, etc.
@@ -22,7 +22,7 @@
     </nav>
     <article>
       <a name="variables"></a>
-      <h4 class="f-4 tc">Changing the Variables</h4>
+      <h4 class="f-4 tc">Overriding Custom Properties</h4>
       <p class="p mh-auto">
         Where possible, <span class="fv-sc tracked">MelangeCSS</span> uses <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" class="blue-100">CSS custom properties AKA variables</a>.  If you examine the top of <code>melange.css</code>, you can see these variables, and each one is documented <a class="blue-100" href="reference/variables.html">in the reference</a>.
       </p>
@@ -47,18 +47,21 @@
   &lt;/style&gt;
 &lt;/head&gt;</code>
       <p class="p mh-auto">
-        As long as you re-assign the varaibles after includingn <span class="fv-sc tracked">MelangeCSS</span>, it will override the defaults. Note that this isn't specifical to this library—it's just how CSS and web browsers work.
+        As long as you re-assign the variables after including <span class="fv-sc tracked">MelangeCSS</span>, it will override the defaults. Note that this isn't specific al to this library—it's just how CSS and web browsers work.
       </p>
     </article>
     <article>
       <a name="augmenting"></a>
       <h4 class="f-4 tc">Adding Your Own Classes</h4>
       <p class="p mh-auto">
-        While you can create any classes you like referencing the <span class="fv-sc tracked">MelangeCSS</span> variables, you may want to take advantage of the naming scheme for media queries and pseudo-selectors.  To do this, you'll need to install the <code>melange-cli</code> NPM package:
+        <span class="fv-sc tracked">MelangeCSS</span> doesn't come with every possible class for every possible combination of CSS properties and values.  It comes with a reasonable basis for making most websites and apps, but your needs are different.  If you want to make your own utility classes, and have them available for certain media queries and/or pseudo-selectors, you'd be in for a lot of copy and paste if <span class="fv-sc tracked">MelangeCSS</span> didn't include a command line tool to manage this for you!
+      </p>
+      <p class="p mh-auto">
+        To use the CLI tool, you'll need to install the <code>melange-cli</code> NPM package:
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --saveDev melange-cli</code>
       <p class="p mh-auto">
-        Next, create a <code>.css</code> file with the classes you need.  Don't use any suffixes or prefixes—just name the classes however you like.  Use <code>npx melange-css</code> to generate a <code>.css</code> file with all the breakpoints and pseudo classes you want.  For example, this would create classes for all three breakpoints, plus hover, plus, active pseudo classes:
+        Next, create a <code>.css</code> file with the classes you need.  Don't use any suffixes or prefixes—just name the classes however you like when you'll use them for the default breakpoint/no particular media query.  Use <code>npx melange-css</code> to generate a <code>.css</code> file with all the breakpoints and pseudo classes you want.  For example, this would create classes for all three breakpoints, plus hover, plus, active pseudo classes:
       </p>
       <code class="db bg-black green-terminal ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npx melange-css --input melange-input.css \
                 --output melange-custom-classes.css \
@@ -67,11 +70,71 @@
                 --mediaQuery l \
                 --pseudoSelector active \
                 --pseudoSelector hover</code>
+      <p class="p mh-auto">
+        Use <code>--help</code> to see what media queries and pseudo-classes are avalable:
+      </p>
+      <code class="db bg-black amber-terminal ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">&gt; npx melange-css --help
+usage: npx melange-css [options]
+
+OPTIONS
+
+  -i/--input            - Input .css to process
+  -o/--output           - Output .css (this is what your app will use)
+  -q/--mediaQuery       - Media Queries to target in output (see values below)
+                          [use multiple times for mulitple values]
+  -p/--pseudoSelector   - Pseudo selectors to target in output (see values below)
+                          [use multiple times for mulitple values]
+
+MEDIA QUERIES
+
+   ns - Not Small Width
+        Screens that are larger than mobile sized
+        @media screen and (min-width: 30em)
+
+    m - Medium Width
+        Screens larger than the mobile size but smaller than what is considered large (e.g. tablets)
+        @media screen and (min-width: 30em) and (max-width: 60em)
+
+    l - Large Width
+        Screens larger than the medium size (e.g. desktops)
+        @media screen and (min-width: 60em)
+
+   dm - Dark Mode
+        Prefers dark mode (light mode considered default)
+        @media (prefers-color-scheme: dark)
+
+   rm - Reduced Motion
+        Prefers reduced motion (full/regular motion considered default)
+        @media (prefers-reduced-motion: reduce)
+
+   hc - High Contrast
+        Prefers more contrast (Browser and HTML-configured contrast is the default)
+        @media (prefers-contrast: more)
+
+PSEUDO SELECTORS
+
+       hover - Hover
+               .some-selector:hover { ... }
+
+      active - Active
+               .some-selector:active { ... }
+
+       focus - Focus
+               .some-selector:focus { ... }
+
+    disabled - Disabled
+               .some-selector:disabled { ... }
+
+       valid - Valid
+               .some-selector:valid { ... }
+
+     invalid - Invalid
+               .some-selector:invalid { ... }</code>
       <h5 class="f-3 fw-6 tc">Example</h5>
       <p class="p mh-auto">
         Suppose you wish to create a green text glow style that works just like any other <span class="fv-sc tracked">MelangeCSS</span> class. You also want a style for green text that doesn't glow.  You want both available for hover states and for high-contrast media queries.  Following the naming conventions, you'd want the following classes:
       </p>
-      <dl class="mh-auto measure">
+      <dl class="mh-auto measure gap-2 items-center grid-2-col">
         <dt><code>green-text-glow</code></dt>
         <dd class="p">Applies the green glowing text</dd>
         <dt><code>green-text-no-glow</code></dt>
