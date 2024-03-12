@@ -43,26 +43,50 @@ const cursors = new MetaProperty({
 const boxShadowExampleTemplate = (selector) => {
   return new Example({
     htmlForDocs: `<div class="${selector}">\n.${selector}\n</div>`,
-    markupForRendering: `<div class="${selector} bg-blue-900 pa-4">${selector}</div>`,
+    markupForRendering: `<div class="${selector} br-2 bg-blue-900 pa-4 ma-4 ws-nowrap tc">${selector}</div>`,
   })
 }
+
+
 const boxShadow = new MetaProperty({
   name: "Box Shadows",
   docs: [
-    "There are infinite possibilities for box shadows.  These should provide a few basic options for common needs, however you will likely need to create your own for anything sophisticated",
+    "There are infinite possibilities for box shadows.  These should provide a few basic options for common needs, however you will likely need to create your own for anything sophisticated. You can design your own scale <a class='blue-500' href='https://ghola.dev/shadow.html'>using Ghola</a>",
   ],
   scales: [
     new Scale({
       "none": "none",
-      "1": "1px 1px 2px 1px rgba( 0, 0, 0, 0.2 )",
-      "2": "1px 1px 4px 2px rgba( 0, 0, 0, 0.2 )",
-      "3": "2px 2px 8px 4px rgba( 0, 0, 0, 0.2 )",
-      "4": "2px 2px 16px 8px rgba( 0, 0, 0, 0.2 )",
-      "5": "2px 2px 32px 16px rgba( 0, 0, 0, 0.2 )",
+      "1": "rgb(135, 135, 135) 1px 1px 4px 0px",
+      "2": "rgb(135, 135, 135) 1px 1px 10.64px 0px",
+      "3": "rgb(135, 135, 135) 1px 1px 15.022px 0px",
+      "4": "rgb(135, 135, 135) 1px 1px 22.297px 0px",
+      "5": "rgb(135, 135, 135) 1px 1px 34.373px 0px",
+      "6": "rgb(135, 135, 135) 1px 1px 54.419px 0px",
     }),
   ],
   cssClassTemplates: [
     new CSSClassTemplate("shadow", "box-shadow", { exampleTemplate: boxShadowExampleTemplate, summary: "All" })
+  ],
+})
+const innerBoxShadow = new MetaProperty({
+  name: "Inset Box Shadows",
+  docs: [
+    "There are infinite possibilities for inset box shadows.  These should provide a few basic options for common needs, however you will likely need to create your own for anything sophisticated. You can design your own scale <a class='blue-500' href='https://ghola.dev/shadow.html'>using Ghola</a>",
+  ],
+  scales: [
+    new Scale({
+      "none": "none",
+      "1": "rgb(106, 106, 106) 1px 1px 4px -1px inset",
+      "2": "rgb(106, 106, 106) 1px 1px 5.52px -1.043px inset",
+      "3": "rgb(106, 106, 106) 1px 1px 8.195px -1.193px inset",
+      "4": "rgb(106, 106, 106) 1px 1px 12.903px -1.485px inset",
+      "5": "rgb(106, 106, 106) 1px 1px 21.190px -1.986px inset",
+      "6": "rgb(106, 106, 106) 1px 1px 35.774px -2.802px inset",
+
+    }),
+  ],
+  cssClassTemplates: [
+    new CSSClassTemplate("inset-shadow", "box-shadow", { exampleTemplate: boxShadowExampleTemplate, summary: "All" })
   ],
 })
 
@@ -85,6 +109,7 @@ const visuals = new MetaPropertyGrouping({
   name: "Visuals",
   metaProperties: [  
     boxShadow,
+    innerBoxShadow,
     opacity,
     cursors,
     zIndex,
