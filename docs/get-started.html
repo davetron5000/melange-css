@@ -25,6 +25,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.grid-2-col-thirds {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
 .green-terminal {
   color: #66ff22;
   text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
@@ -54,7 +58,7 @@
         <span class="fv-sc tracked">MelangeCSS</span>
             </a>
           </h1>
-          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-RC3</span></p>
+          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-RC4</span></p>
           
           <h2 class="tc tl-ns f-4 f-5-ns ma-0 mb-3">
             Get Started
@@ -155,14 +159,14 @@
     You can bring <span class="fv-sc tracked">MelangeCSS</span> into any webpage using the <code>unpkg.com</code> CDN provided for all NPM packages.  Place this somewhere in your <code>&lt;head&gt;</code> section:
   </p>
   <div class="bg-black pa-3">
-    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">&lt;link rel="stylesheet" href="https://unpkg.com/melange-css@1.0.0-RC3/melange.min.css"/&gt;</code>
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">&lt;link rel="stylesheet" href="https://unpkg.com/melange-css@1.0.0-RC4/melange.min.css"/&gt;</code>
   </div>
   <h4 class="w-90 w-60-ns mh-auto f-4 fw-5 ttu tc tl-ns" id="default-download">Download</h4>
   <p class="w-90 w-60-ns lh-copy mh-auto">
     To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code>melange.css</code> with a command-line tool like <code>curl</code>:
   </p>
   <div class="bg-black pa-3">
-    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">curl https://unpkg.com/melange-css@1.0.0-RC3/melange.min.css &gt; your/project/css/melange.css</code>
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">curl https://unpkg.com/melange-css@1.0.0-RC4/melange.min.css &gt; your/project/css/melange.css</code>
   </div>
   <h4 class="w-90 w-60-ns mh-auto f-3 fw-5 ttu tc tl-ns" id="default-npm">NPM</h4>
   <p class="w-90 w-60-ns lh-copy mh-auto">
@@ -218,9 +222,9 @@
   <div class="bg-black pa-3">
     <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">&lt;!-- Pure HTML --&gt;
 &lt;link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-RC3/melange.min.css"/&gt;
+      href="https://unpkg.com/melange-css@1.0.0-RC4/melange.min.css"/&gt;
 &lt;link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-RC3/melange-dark-mode.min.css"/&gt;
+      href="https://unpkg.com/melange-css@1.0.0-RC4/melange-dark-mode.min.css"/&gt;
 
 /* Using a CSS pre-processor */
 @import "melange-css/melange.css";
@@ -244,14 +248,14 @@
     You can bring <span class="fv-sc tracked">MelangeCSS</span> into any webpage using the <code>unpkg.com</code> CDN provided for all NPM packages.  Place this somewhere in your <code>&lt;head&gt;</code> section:
   </p>
   <div class="bg-black pa-3">
-    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">&lt;link rel="stylesheet" href="https://unpkg.com/melange-css@1.0.0-RC3/melange-plus.min.css"/&gt;</code>
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">&lt;link rel="stylesheet" href="https://unpkg.com/melange-css@1.0.0-RC4/melange-plus.min.css"/&gt;</code>
   </div>
   <h4 class="w-90 w-60-ns mh-auto f-4 fw-5 ttu tc tl-ns" id="plus-download">Download</h4>
   <p class="w-90 w-60-ns lh-copy mh-auto">
     To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code>melange-plus.css</code> with a command-line tool like <code>curl</code>:
   </p>
   <div class="bg-black pa-3">
-    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">curl https://unpkg.com/melange-css@1.0.0-RC3/melange-plus.min.css &gt; your/project/css/melange-plus.css</code>
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">curl https://unpkg.com/melange-css@1.0.0-RC4/melange-plus.min.css &gt; your/project/css/melange-plus.css</code>
   </div>
   <h4 class="w-90 w-60-ns mh-auto f-3 fw-5 ttu tc tl-ns" id="plus-npm">NPM</h4>
   <p class="w-90 w-60-ns lh-copy mh-auto">
@@ -290,14 +294,14 @@
     You can bring <span class="fv-sc tracked">MelangeCSS</span> into any webpage using the <code>unpkg.com</code> CDN provided for all NPM packages.  Place this somewhere in your <code>&lt;head&gt;</code> section:
   </p>
   <div class="bg-black pa-3">
-    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">&lt;link rel="stylesheet" href="https://unpkg.com/melange-css@1.0.0-RC3/melange-thin.min.css"/&gt;</code>
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">&lt;link rel="stylesheet" href="https://unpkg.com/melange-css@1.0.0-RC4/melange-thin.min.css"/&gt;</code>
   </div>
   <h4 class="w-90 w-60-ns mh-auto f-4 fw-5 ttu tc tl-ns" id="thin-download">Download</h4>
   <p class="w-90 w-60-ns lh-copy mh-auto">
     To avoid a runtime dependency on <code>unpkg.com</code>, you can download <code>melange-thin.css</code> with a command-line tool like <code>curl</code>:
   </p>
   <div class="bg-black pa-3">
-    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">curl https://unpkg.com/melange-css@1.0.0-RC3/melange-thin.min.css &gt; your/project/css/melange-thin.css</code>
+    <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">curl https://unpkg.com/melange-css@1.0.0-RC4/melange-thin.min.css &gt; your/project/css/melange-thin.css</code>
   </div>
   <h4 class="w-90 w-60-ns mh-auto f-3 fw-5 ttu tc tl-ns" id="thin-npm">NPM</h4>
   <p class="w-90 w-60-ns lh-copy mh-auto">
@@ -377,9 +381,9 @@
   <div class="bg-black pa-3">
     <code class="db w-90 w-60-ns mh-auto green-terminal f-1 ws-pre overflow-x-scroll overflow-x-visible-l lh-copy">&lt;!-- Pure HTML --&gt;
 &lt;link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-RC3/melange-thin.min.css"/&gt;
+      href="https://unpkg.com/melange-css@1.0.0-RC4/melange-thin.min.css"/&gt;
 &lt;link rel="stylesheet"
-      href="https://unpkg.com/melange-css@1.0.0-RC3/melange-dark-mode.min.css"/&gt;
+      href="https://unpkg.com/melange-css@1.0.0-RC4/melange-dark-mode.min.css"/&gt;
 
 /* Using a CSS pre-processor */
 @import "melange-css/melange-thin.css";

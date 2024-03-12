@@ -23,7 +23,7 @@ export default class MediaQueries extends ParsedArg {
       return new MediaQueries(parsedMediaQueries)
     }
     else {
-      return new CLIArgError(this.field,"is required")
+      return new MediaQueries([])
     }
   }
   constructor(mediaQueries) {

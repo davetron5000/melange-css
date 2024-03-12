@@ -27,6 +27,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.grid-2-col-thirds {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
 .green-terminal {
   color: #66ff22;
   text-shadow: rgba(230,255,130,0.61) 0px 0px 5px;
@@ -56,7 +60,7 @@
         <span class="fv-sc tracked">MelangeCSS</span>
             </a>
           </h1>
-          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-RC3</span></p>
+          <p class="f-1 lh-copy mt-1 mb-3 tc tl-ns">Current Version: <span class="ff-mono fw-6">1.0.0-RC4</span></p>
           
           <h2 class="tc tl-ns f-4 f-5-ns ma-0 mb-3">
             Guide
@@ -119,7 +123,7 @@
   &lt;!-- your head existing section --&gt;
 
   &lt;link rel="stylesheet"
-        href="https://unpkg.com/melange-css@1.0.0-RC3/melange.min.css"/&gt;
+        href="https://unpkg.com/melange-css@1.0.0-RC4/melange.min.css"/&gt;
   &lt;style&gt;
     :root {
       --mg-ff-sans: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
@@ -146,15 +150,88 @@
       </p>
       <code class="db bg-black white ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npm install --saveDev melange-cli</code>
       <p class="p mh-auto">
-        Next, create a <code>.css</code> file with the classes you need.  Don't use any suffixes or prefixes—just name the classes however you like when you'll use them for the default breakpoint/no particular media query.  Use <code>npx melange-css</code> to generate a <code>.css</code> file with all the breakpoints and pseudo classes you want.  For example, this would create classes for all three breakpoints, plus hover, plus, active pseudo classes:
+        Next, create a <code>.css</code> file with the classes you need.  This file can be regular CSS, but can also include two additional special forms that allow enhancement of existing properties. When you run the CLI, new CSS is generated based on the contents of this <code>.css</code> file and the media queries and/or psuedo selectors you configure.
       </p>
-      <code class="db bg-black green-terminal ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npx melange-css --input melange-input.css \
-                --output melange-custom-classes.css \
-                --mediaQuery ns \
-                --mediaQuery m \
-                --mediaQuery l \
-                --pseudoSelector active \
-                --pseudoSelector hover</code>
+      <code class="db bg-black green-terminal ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">/* Form 1 - regular CSS */
+.text-shadow-1 {
+  text-shadow: 1px 1px 2px var(--mg-gray-500);
+  /*
+   * This class will be duplicated for each breakpoint and
+   * psuedo-selector you specify on the command-line, using
+   * MelangeCSS's naming scheme.
+   */
+}
+
+/* Form 2 - exact selector from MelangeCSS */
+.bg-red-500 /*
+             * Since this class is part of MelangeCSS, MelangeCSS will
+             * dupicate its definition for each media query and
+             * psuedo-selector you specify on the command-line, using
+             * MelangeCSS's naming scheme.
+             *
+             * This alleviates the need to re-state the definition of the class.
+             */
+
+/* Form 3 - wildcard match to selectors from MelangeCSS */
+.bg-blue-* /*
+            * Since this matches existing classes that are part of MelangeCSS,
+            * it will dupicate its definition for each media query and
+            * psuedo-selector you specify on the command-line, using
+            * MelangeCSS's naming scheme.
+            *
+            * This alleviates the need to re-state the definition of the class.
+            */</code>
+      <p class="p mh-auto">
+        Use <code>npx melange-css</code> to generate a <code>.css</code> file with all the breakpoints and pseudo classes you want.  For example, this would create classes for all three breakpoints, plus hover, plus, active pseudo classes.
+      </p>
+      <code class="db bg-black green-terminal ph-3 pv-1 br-2 ws-pre overflow-x-scroll lh-copy mv-2">npx melange-css \
+      --input melange-input.css \
+      --output melange-custom-classes.css \
+      --mediaQuery ns \
+      --mediaQuery m \
+      --mediaQuery l \
+      --pseudoSelector active \
+      --pseudoSelector hover</code>
+      <p class="p mh-auto">
+        Based on our input file above, this would create the following classes:
+      </p>
+      <dl class="mh-auto measure-wide gap-2 items-center grid-2-col-thirds">
+        <dt><code>text-shadow-1</code></dt>
+        <dd class="p">
+        <code class= "ws-nowrap">text-shadow-1</code>,
+        <code class= "ws-nowrap">text-shadow-1-ns</code>,
+        <code class= "ws-nowrap">text-shadow-1-m</code>,
+        <code class= "ws-nowrap">text-shadow-1-l</code>,
+        <code class= "ws-nowrap">active-text-shadow-1</code>,
+        <code class= "ws-nowrap">active-text-shadow-1-ns</code>,
+        <code class= "ws-nowrap">active-text-shadow-1-m</code>,
+        <code class= "ws-nowrap">active-text-shadow-1-l</code>,
+        <code class= "ws-nowrap">hover-text-shadow-1</code>,
+        <code class= "ws-nowrap">hover-text-shadow-1-ns</code>,
+        <code class= "ws-nowrap">hover-text-shadow-1-m</code>,
+        <code class= "ws-nowrap">hover-text-shadow-1-l</code>.
+        </dd>
+
+        <dt><code>bg-red-500</code></dt>
+        <dd class="p">
+        <code class= "ws-nowrap">active-bg-red-500</code>.
+        (<code class="ws-nowrap gray-400 f-1">hover-bg-red-500</code> is already defined)
+        </dd>
+
+        <dt><code>bg-blue-*</code></dt>
+        <dd class="p">
+        <code class= "ws-nowrap">active-bg-blue-100</code>,
+        <code class= "ws-nowrap">active-bg-blue-200</code>,
+        <code class= "ws-nowrap">active-bg-blue-300</code>,
+        <code class= "ws-nowrap">active-bg-blue-400</code>,
+        <code class= "ws-nowrap">active-bg-blue-500</code>,
+        <code class= "ws-nowrap">active-bg-blue-600</code>,
+        <code class= "ws-nowrap">active-bg-blue-700</code>,
+        <code class= "ws-nowrap">active-bg-blue-800</code>,
+        <code class= "ws-nowrap">active-bg-blue-900</code>.
+        (<code class="ws-nowrap gray-400 f-1">hover-bg-blue-</code>* are already defined)
+        </dd>
+      </dl>
       <p class="p mh-auto">
         Use <code>--help</code> to see what media queries and pseudo-classes are avalable:
       </p>

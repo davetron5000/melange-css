@@ -1,13 +1,16 @@
 import fs from "node:fs"
 import CSSClass from "../lib/CSSClass.js"
+import metaTheme from "../melange/melange.js"
 
-const SELECTOR_REGEXP       = /^\.([^\s,:]+)\s*\{\s*$/
-const SELECTOR_END_REGEXP   = /^\s*\}\s*$/
-const PROPERTY_VALUE_REGEXP = /^\s*([^\s:]+)\s*:\s*(.*)$/
-const BLANK_REGEXP          = /^\s*$/
-const COMMENT_START_REGEXP  = /^\s*\/\*.*$/
-const COMMENT_REGEXP        = /^\s*\*.*$/
-const COMMENT_STOP_REGEXP   = /^.*\*\/\s*$/
+const SELECTOR_REGEXP               = /^\.([^\s,:]+)\s*\{\s*$/
+const EXISTING_SELECTOR_REGEXP      = /^\.([^\s,:]+)\s*$/
+const EXISTING_SELECTOR_GLOB_REGEXP = /^\.([^\s,:]+-)\*\s*$/
+const SELECTOR_END_REGEXP           = /^\s*\}\s*$/
+const PROPERTY_VALUE_REGEXP         = /^\s*([^\s:]+)\s*:\s*(.*)$/
+const BLANK_REGEXP                  = /^\s*$/
+const COMMENT_START_REGEXP          = /^\s*\/\*.*$/
+const COMMENT_REGEXP                = /^\s*\*.*$/
+const COMMENT_STOP_REGEXP           = /^.*\*\/\s*$/
 
 class ParseError {
   constructor(line,lineNumber,errorMessage) {
@@ -24,6 +27,40 @@ class ParsedCSS {
   constructor(cssClasses) {
     this.cssClasses = cssClasses
   }
+}
+
+const findExistingClasses = (selector,{ startsWith=false } = {}) => {
+  const foundClasses = []
+
+  metaTheme.eachCSSClass({
+    onCSSClass: (cssClass, pseudoSelector, _cssClassTemplate, _metaProperty, _metaPropertyGrouping, mediaQuery) => {
+      if (pseudoSelector.isDefault() && mediaQuery.isDefault()) {
+        if (startsWith) {
+          if (cssClass.selector.startsWith(selector)) {
+            foundClasses.push(cssClass)
+          }
+        }
+        else {
+          if (cssClass.selector == selector) {
+            foundClasses.push(cssClass)
+          }
+        }
+      }
+    }
+  })
+  return foundClasses
+}
+
+const melangeDefines = (cssClass) => {
+  let found = false
+  metaTheme.eachCSSClass({
+    onCSSClass: (thisCssClass) => {
+      if (!found) {
+        found = thisCssClass.className() == cssClass.className()
+      }
+    }
+  })
+  return found
 }
 
 const parse = (input) => {
@@ -61,12 +98,34 @@ const parse = (input) => {
       }
     }
     else {
-      const result = SELECTOR_REGEXP.exec(line)
+      let result = SELECTOR_REGEXP.exec(line)
       if (result && result[1]) {
         currentSelector = result[1]
       }
       else {
-        throw new ParseError(line,index+1,"Cannot parse as selector")
+        result = EXISTING_SELECTOR_GLOB_REGEXP.exec(line)
+        if (result && result[1]) {
+          const selectorPattern = result[1]
+          const classes = findExistingClasses(selectorPattern, { startsWith: true })
+          if (classes.length == 0) {
+            throw new ParseError(line,index+1,`${selectorPattern} did not match any selector that's part of MelangeCSS`)
+          }
+          cssClasses.push(...classes)
+        }
+        else {
+          result = EXISTING_SELECTOR_REGEXP.exec(line)
+          if (result && result[1]) {
+            const selector = result[1]
+            const classes = findExistingClasses(selector, { startsWith: false })
+            if (classes.length == 0) {
+              throw new ParseError(line,index+1,`${selector} did not match any selector that's part of MelangeCSS`)
+            }
+            cssClasses.push(...classes)
+          }
+          else {
+            throw new ParseError(line,index+1,"Cannot parse as selector")
+          }
+        }
       }
     }
   })
@@ -102,19 +161,22 @@ class OutputCSS {
       throw "writeClass must be called inside forMediaQuery"
     }
 
-    cssClass.
+    const actualClass = cssClass.
       forSelector(pseudoSelector).
-      atMediaQuery(this.currentMediaQuery).
-      toCSS().
-      split(/\n/).
-      forEach( (line) => {
-        if (!this.currentMediaQuery.isDefault()) {
-          fs.writeSync(this.fd,"  ")
-        }
-        fs.writeSync(this.fd,line)
-        fs.writeSync(this.fd,"\n")
-      })
-    fs.writeSync(this.fd,"\n")
+      atMediaQuery(this.currentMediaQuery)
+
+    if (!melangeDefines(actualClass)) {
+      actualClass.toCSS().
+        split(/\n/).
+        forEach( (line) => {
+          if (!this.currentMediaQuery.isDefault()) {
+            fs.writeSync(this.fd,"  ")
+          }
+          fs.writeSync(this.fd,line)
+          fs.writeSync(this.fd,"\n")
+        })
+      fs.writeSync(this.fd,"\n")
+    }
   }
 
   done() {
