@@ -91,7 +91,7 @@ export default class CSSBuilder {
   }
 
   _reset() {
-    return fs.readFileSync(`${__dirname}/../../../css/necolas-normalize.css`).toString()
+    return fs.readFileSync(`${__dirname}/../../../css/minimal-reset.css`).toString()
   }
 
   _skipMediaQuery(mediaQuery) {

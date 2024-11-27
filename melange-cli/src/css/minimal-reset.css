@@ -1,0 +1,59 @@
+/* Adapted from https://github.com/sindresorhus/modern-normalize?tab=readme-ov-file */
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. */
+}
+
+body {
+	margin: 0; /* Remove the margin in all browsers. */
+}
+
+
+b,
+strong {
+	font-weight: bolder; /** Add the correct font weight in Chrome and Safari. */
+}
+
+
+/** Prevent 'sub' and 'sup' elements from affecting the line height in all browsers. */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+
+progress {
+	vertical-align: baseline; /** Add the correct vertical alignment in Chrome and Firefox. */
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	height: auto; /** Correct the cursor style of increment and decrement buttons in Safari. */
+}
+
+[type='search'] {
+	-webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari. */
+	outline-offset: -2px; /* Correct the outline style in Safari. */
+}
+
+
+::-webkit-search-decoration {
+	-webkit-appearance: none; /** Remove the inner padding in Chrome and Safari on macOS. */
+}
+

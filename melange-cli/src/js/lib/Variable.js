@@ -43,10 +43,10 @@ export default class Variable {
 
   _variableName() {
     if (this.stepName && this.stepName != "") {
-      return `--mg-${this.baseName}-${this.stepName}`
+      return `--${this.baseName}-${this.stepName}`
     }
     else {
-      return `--mg-${this.baseName}`
+      return `--${this.baseName}`
     }
   }
 }

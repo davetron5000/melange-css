@@ -105,7 +105,7 @@ const aliases = new MetaProperty({
     "i": { properties: { "font-style": "italic" }, exampleTemplate: basicExample, summary: "Italic" },
     "sc":{ properties: { "font-variant": "small-caps" }, exampleTemplate: basicExample, summary: "Small Caps" },
     "u": { properties: { "text-decoration": "underline"}, exampleTemplate: basicExample, summary: "Underline" },
-    "p": { properties: { "max-width": "var(--mg-tw)", "line-height": "var(--mg-lh-copy)" }, exampleTemplate: paragraphExample, summary: "Content paragraph with measure and lh-copy" },
+    "p": { properties: { "max-width": "var(--tw)", "line-height": "var(--lh-copy)" }, exampleTemplate: paragraphExample, summary: "Content paragraph with measure and lh-copy" },
   },
   docs: [
     "These violate the naming conventions, but are convienient as aliases for more commonly-used needs.",
